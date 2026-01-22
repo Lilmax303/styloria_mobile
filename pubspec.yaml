@@ -1,0 +1,78 @@
+# lib/pubspec.yaml
+
+name: styloria_mobile
+description: A new Flutter project.
+publish_to: 'none'
+version: 1.0.0+1
+
+
+environment:
+  sdk: '>=3.0.0 <4.0.0' # This is correct for your Dart 3.10.4
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_dotenv: ^6.0.0
+  webview_flutter: ^4.4.2
+  google_fonts: ^7.0.2
+  country_picker: ^2.0.26
+  app_links: ^7.0.0
+
+  flutter_localizations:
+    sdk: flutter
+
+  
+
+  # === Core Networking & Storage ===
+  http: ^1.1.0
+  flutter_secure_storage: ^10.0.0
+  shared_preferences: ^2.2.2
+  permission_handler: ^12.0.1  # Permissions
+
+  # === UI & Forms (From Your Error Log) ===
+  country_state_city_pro: ^0.0.6 # For country/state/city picker
+  intl_phone_field: ^3.1.0      # For international phone input
+  intl: ^0.20.2                 # For date/number formatting (used by currency_helper)
+
+  # === Maps & Location (From Your Error Log) ===
+  google_maps_flutter: ^2.3.2
+  geolocator: ^14.0.2
+  geocoding: ^4.0.0
+  socket_io_client: ^3.1.4  # Real-time (next)
+
+  # === Platform Services (From Your Error Log) ===
+  url_launcher: ^6.1.15  # For launching phone/URLs
+  open_filex: ^4.7.0     # For opening PDFs (replaces open_file)
+
+  # === Download Files on Platform  ===
+  path_provider: ^2.1.4
+  path: ^1.9.0
+
+  # === Other Features You Previously Wanted ===
+  image_picker: ^1.0.4   # For profile picture upload
+  video_player: ^2.9.1
+  chewie: ^1.8.5
+  flutter_stripe: ^12.1.1 # For payments
+  file_picker: ^10.3.8
+  flutterwave_standard: ^1.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  flutter_launcher_icons: ^0.14.4
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "C:/Users/kwame/styloria/styloria_mobile/assets/icons/app_icon.png"  # 1024x1024 PNG
+  adaptive_icon_background: "#00CEC9"
+  adaptive_icon_foreground: "C:/Users/kwame/styloria/styloria_mobile/assets/icons/app_icon_foreground.png"
+
+flutter:
+  uses-material-design: true
+  generate: true
+  assets:
+    - assets/backgrounds/
+    - .env
+    

@@ -1,0 +1,964 @@
+{
+  "@@locale": "ur",
+  "appTitle": "Styloria",
+  "account": "اکاؤنٹ",
+  "profile": "پروفائل",
+  "myBookings": "میری بکنگز",
+  "openJobs": "اوپن جابز",
+  "earnings": "کمائی",
+  "paymentMethods": "ادائیگی کے طریقے",
+  "referFriends": "دوستوں کو ریفر کریں",
+  "language": "زبان",
+  "settings": "سیٹنگز",
+  "darkMode": "ڈارک موڈ",
+  "systemDefault": "سسٹم ڈیفالٹ",
+  "languageUpdated": "زبان اپڈیٹ ہو گئی",
+  "languageSetToSystemDefault": "زبان سسٹم ڈیفالٹ پر سیٹ ہو گئی",
+  "helpAndSupport": "مدد اور سپورٹ",
+  "chatWithCustomerService": "کسٹمر سروس سے چیٹ کریں",
+  "aboutAndPolicies": "تعارف اور پالیسیاں",
+  "viewUserPoliciesAndAgreements": "یوزر پالیسیاں اور معاہدے دیکھیں",
+  "logOut": "لاگ آؤٹ",
+  "deleteAccount": "اکاؤنٹ حذف کریں",
+  "deleteAccountSubtitle": "یہ عمل واپس نہیں ہو سکتا",
+  "deleteAccountTitle": "اکاؤنٹ حذف کریں",
+  "deleteAccountConfirmBody": "کیا آپ واقعی اپنا اکاؤنٹ حذف کرنا چاہتے ہیں؟\n\nیہ عمل آپ کو سائن آؤٹ کر دے گا اور آپ مستقل طور پر رسائی کھو سکتے ہیں۔",
+  "no": "نہیں",
+  "yesDelete": "ہاں، حذف کریں",
+  "deleteAccountSheetTitle": "ہمیں افسوس ہے کہ آپ جا رہے ہیں۔",
+  "deleteAccountSheetPrompt": "کیا آپ وجہ بتا سکتے ہیں؟ (جو لاگو ہو سب منتخب کریں)",
+  "deleteAccountSelectAtLeastOneReason": "براہ کرم کم از کم ایک وجہ منتخب کریں۔",
+  "tellUsMoreOptional": "مزید بتائیں (اختیاری)",
+  "suggestionsToImproveOptional": "بہتری کی تجاویز (اختیاری)",
+  "deleteMyAccount": "میرا اکاؤنٹ حذف کریں",
+  "cancel": "منسوخ",
+  "failedToDeleteAccount": "اکاؤنٹ حذف نہیں ہو سکا۔ دوبارہ کوشش کریں۔",
+  "choosePreferredLanguage": "اپنی پسندیدہ زبان منتخب کریں",
+  "noteSomeTextMayStillAppearInEnglish": "نوٹ: اس سے ایپ کی زبان بدل جائے گی۔ ترجمے شامل ہونے تک کچھ متن انگریزی میں نظر آ سکتا ہے۔",
+  "languageSetToName": "زبان {name} پر سیٹ کر دی گئی",
+  "@languageSetToName": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "deletionReason1": "مجھے Styloria کی مزید ضرورت نہیں",
+  "deletionReason2": "اکاؤنٹ کی تصدیق (ای میل/KYC) میں مسئلہ ہوا",
+  "deletionReason3": "میرے نزدیک سروسز/پرووائیڈرز نہیں ملے",
+  "deletionReason4": "قیمتیں یا فیس بہت زیادہ/غیر واضح تھیں",
+  "deletionReason5": "ایپ سمجھنے میں مشکل / استعمال میں مشکل تھی",
+  "deletionReason6": "بگز یا کارکردگی کے مسائل",
+  "deletionReason7": "ادائیگی/ریفنڈ کے مسائل",
+  "deletionReason8": "کسی پرووائیڈر/یوزر کے ساتھ برا تجربہ",
+  "deletionReason9": "پرائیویسی یا سکیورٹی سے متعلق خدشات",
+  "deletionReason10": "میں نے غلطی سے یہ اکاؤنٹ بنایا",
+  "deletionReason11": "میں کسی اور پلیٹ فارم پر جا رہا ہوں",
+  "deletionReason12": "دیگر",
+  "loginWelcomeTitle": "Styloria میں خوش آمدید",
+  "loginWelcomeSubtitle": "اپنی بکنگز اور سروسز مینیج کرنے کے لیے لاگ اِن کریں۔",
+  "loginFailedToLoadUserInfo": "لاگ اِن کامیاب ہوا لیکن صارف کی معلومات لوڈ نہیں ہو سکیں۔",
+  "username": "یوزرنیم",
+  "password": "پاس ورڈ",
+  "required": "ضروری",
+  "login": "لاگ اِن",
+  "createNewAccount": "نیا اکاؤنٹ بنائیں",
+  "requestEmailVerificationCode": "ای میل ویریفیکیشن کوڈ مانگیں",
+  "createAccountTitle": "اکاؤنٹ بنائیں",
+  "joinStyloria": "Styloria میں شامل ہوں",
+  "registerSubtitle": "سروسز بک کرنے یا پرووائیڈر بننے کے لیے اکاؤنٹ بنائیں",
+  "iWantTo": "میں چاہتا/چاہتی ہوں:",
+  "bookServices": "سروسز بک کریں",
+  "provideServices": "سروسز فراہم کریں",
+  "personalInformation": "ذاتی معلومات",
+  "firstName": "پہلا نام",
+  "lastName": "آخری نام",
+  "selectDateOfBirth": "تاریخِ پیدائش منتخب کریں",
+  "phoneNumber": "فون نمبر",
+  "pleaseEnterPhoneNumber": "براہ کرم فون نمبر درج کریں",
+  "accountInformation": "اکاؤنٹ معلومات",
+  "chooseUniqueUsernameHint": "ایک منفرد یوزرنیم منتخب کریں",
+  "email": "ای میل",
+  "emailHint": "your@email.com",
+  "enterValidEmail": "درست ای میل درج کریں",
+  "security": "سکیورٹی",
+  "passwordHintAtLeast10": "کم از کم 10 حروف",
+  "passwordMin10": "پاس ورڈ کم از کم 10 حروف کا ہونا چاہیے",
+  "iAgreeTo": "میں متفق ہوں ",
+  "termsOfService": "سروس کی شرائط",
+  "and": "اور",
+  "privacyPolicy": "رازداری کی پالیسی",
+  "passwordIsRequired": "پاس ورڈ ضروری ہے",
+  "confirmPassword": "پاس ورڈ کی تصدیق",
+  "passwordsDoNotMatch": "پاس ورڈز میچ نہیں کرتے",
+  "pleaseSelectDob": "براہ کرم اپنی تاریخِ پیدائش منتخب کریں۔",
+  "pleaseSelectCountry": "براہ کرم اپنا ملک منتخب کریں۔",
+  "pleaseSelectCity": "براہ کرم اپنا شہر منتخب کریں۔",
+  "pleaseEnterValidPhone": "براہ کرم درست فون نمبر درج کریں۔",
+  "mustAcceptTerms": "آپ کو شرائط و ضوابط قبول کرنا ہوں گے۔",
+  "mustBeAtLeast18": "رجسٹر ہونے کے لیے آپ کی عمر کم از کم 18 سال ہونی چاہیے۔",
+  "agreeToTerms": "میں سروس کی شرائط اور پرائیویسی پالیسی سے اتفاق کرتا/کرتی ہوں",
+  "createAccountButton": "اکاؤنٹ بنائیں",
+  "alreadyHaveAccount": "کیا آپ کے پاس پہلے سے اکاؤنٹ ہے؟",
+  "emailVerifiedSuccessPleaseLogin": "ای میل کامیابی سے ویریفائی ہوگئی۔ براہ کرم لاگ اِن کریں۔",
+  "pleaseVerifyEmailToContinue": "جاری رکھنے کے لیے براہ کرم اپنی ای میل ویریفائی کریں۔",
+  "requestVerificationCodeTitle": "ویریفیکیشن کوڈ کی درخواست",
+  "requestVerificationInstructions": "اپنی ای میل یا یوزرنیم درج کریں۔\nہم اس اکاؤنٹ کی ای میل پر نیا ویریفیکیشن کوڈ بھیجیں گے۔",
+  "emailOrUsername": "ای میل یا یوزرنیم",
+  "sendCode": "کوڈ بھیجیں",
+  "ifAccountExistsCodeSent": "اگر اکاؤنٹ موجود ہے تو کوڈ بھیج دیا گیا ہے۔",
+  "failedToSendVerificationCode": "ویریفیکیشن کوڈ بھیجنے میں ناکامی۔",
+  "verifyYourEmailTitle": "اپنی ای میل ویریفائی کریں",
+  "verificationCodeSentInfo": "اس اکاؤنٹ کی ای میل پر ویریفیکیشن کوڈ بھیجا گیا ہے۔",
+  "emailVerificationInstructions": "اس اکاؤنٹ کی ای میل پر بھیجا گیا 6 ہندسوں کا کوڈ درج کریں:\n{identifier}",
+  "@emailVerificationInstructions": {
+    "placeholders": {
+      "identifier": {}
+    }
+  },
+  "verificationCodeLabel": "ویریفیکیشن کوڈ",
+  "sendingEllipsis": "بھیج رہے ہیں...",
+  "resendCode": "کوڈ دوبارہ بھیجیں",
+  "enter6DigitCodeError": "6 ہندسوں کا کوڈ درج کریں۔",
+  "verifyingEllipsis": "ویریفائی کر رہے ہیں...",
+  "verify": "تصدیق کریں",
+  "invalidOrExpiredCodeTryResending": "کوڈ غلط یا میعاد ختم ہو چکی ہے۔ دوبارہ بھیج کر دیکھیں۔",
+  "bookingTitle": "بکنگ #{id}",
+  "@bookingTitle": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+  "invalidBookingIdForChat": "چیٹ کے لیے بکنگ آئی ڈی غلط ہے۔",
+  "invalidBookingIdForCall": "کال کے لیے بکنگ آئی ڈی غلط ہے۔",
+  "unableToLoadContactInfo": "رابطہ معلومات لوڈ نہیں ہو سکیں۔ یقین کریں کہ بکنگ فعال ہے۔",
+  "noPhoneNumberAvailableForName": "{name} کے لیے کوئی فون نمبر دستیاب نہیں۔",
+  "@noPhoneNumberAvailableForName": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "deviceCannotPlaceCalls": "یہ ڈیوائس فون کال نہیں کر سکتی۔",
+  "cancelBookingDialogTitle": "بکنگ منسوخ کریں",
+  "cancelBookingDialogBody": "کیا آپ واقعی اس بکنگ کو منسوخ کرنا چاہتے ہیں؟\n\nنوٹ: اگر فراہم کنندہ نے پہلے ہی قبول کر لیا ہے اور 7 منٹ سے زیادہ (لیکن تقریباً 40 منٹ سے کم) گزر چکے ہیں تو قواعد کے مطابق جرمانہ لگ سکتا ہے۔",
+  "yesCancel": "ہاں، منسوخ کریں",
+  "failedToCancelBooking": "بکنگ منسوخ نہیں ہو سکی۔",
+  "bookingCancelledPenaltyApplied": "بکنگ منسوخ کر دی گئی۔ {amount} کا جرمانہ لاگو کیا گیا ہے۔",
+  "@bookingCancelledPenaltyApplied": {
+    "placeholders": {
+      "amount": {}
+    }
+  },
+  "bookingCancelledSuccessfully": "بکنگ کامیابی سے منسوخ ہو گئی۔",
+  "failedToConfirmCompletion": "تکمیل کی تصدیق ناکام رہی۔ براہ کرم دوبارہ کوشش کریں۔",
+  "bothSidesConfirmedCompletedPayoutReleased": "دونوں طرف سے تصدیق ہو گئی۔ بکنگ مکمل قرار دے دی گئی اور ادائیگی جاری کر دی گئی۔",
+  "youConfirmedCompletionWaitingForProvider": "آپ نے تکمیل کی تصدیق کر دی۔ فراہم کنندہ کی تصدیق کا انتظار ہے۔",
+  "youConfirmedCompletionWaitingForUser": "آپ نے تکمیل کی تصدیق کر دی۔ صارف کی تصدیق کا انتظار ہے۔",
+  "statusUnknown": "نامعلوم",
+  "statusAccepted": "قبول شدہ",
+  "statusInProgress": "جاری",
+  "statusCompleted": "مکمل",
+  "statusCancelled": "منسوخ",
+  "paymentPaid": "ادا شدہ",
+  "paymentPending": "زیرِ التواء",
+  "paymentFailed": "ناکام",
+  "bookingAcceptedBy": "بکنگ {name} نے قبول کی",
+  "@bookingAcceptedBy": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "whenLabel": "کب",
+  "atTime": "{time} پر",
+  "@atTime": {
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "userLabel": "صارف",
+  "providerLabel": "فراہم کنندہ",
+  "estimatedPriceLabel": "اندازاً قیمت",
+  "offeredPaidLabel": "پیشکش / ادا شدہ",
+  "distanceLabel": "فاصلہ",
+  "distanceMiles": "{miles} میل",
+  "@distanceMiles": {
+    "placeholders": {
+      "miles": {}
+    }
+  },
+  "acceptedAtLabel": "قبول کیا گیا",
+  "cancelledAtLabel": "منسوخ کیا گیا",
+  "cancelledByLabel": "منسوخ کرنے والا",
+  "penaltyAppliedLabel": "جرمانہ لاگو: {amount}",
+  "@penaltyAppliedLabel": {
+    "placeholders": {
+      "amount": {}
+    }
+  },
+  "userConfirmedLabel": "صارف نے تصدیق کی",
+  "providerConfirmedLabel": "فراہم کنندہ نے تصدیق کی",
+  "payoutReleasedLabel": "ادائیگی جاری",
+  "yesLower": "ہاں",
+  "noLower": "نہیں",
+  "chat": "چیٹ",
+  "call": "کال",
+  "actions": "کارروائیاں",
+  "confirmCompletion": "تکمیل کی تصدیق کریں",
+  "noFurtherActionsForBooking": "اس بکنگ کے لیے مزید کوئی کارروائی دستیاب نہیں۔",
+  "freeCancellationEndsIn": "بلا جرمانہ منسوخی {time} میں ختم ہو جائے گی",
+  "@freeCancellationEndsIn": {
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "earlyFreeCancellationEndedWarning": "ابتدائی بلا جرمانہ منسوخی ختم ہو گئی ہے۔ قبولیت کے بعد تقریباً 40 منٹ تک، دیر سے منسوخی پر جرمانہ لگ سکتا ہے۔",
+  "cancelBooking": "بکنگ منسوخ کریں",
+  "cancelBookingNoPenalty": "بکنگ منسوخ کریں (بلا جرمانہ)",
+  "cancelBookingPenaltyMayApply": "بکنگ منسوخ کریں (جرمانہ لگ سکتا ہے)",
+  "cancellationPolicyInfo": "فراہم کنندہ کے قبول کرنے کے بعد پہلے 7 منٹ میں آپ بلا جرمانہ منسوخ کر سکتے ہیں، اور ضرورت ہو تو تقریباً 40 منٹ بعد دوبارہ بلا جرمانہ منسوخ کر سکتے ہیں۔ ان اوقات کے درمیان قواعد کے مطابق جرمانہ لگ سکتا ہے۔",
+  "ratingLine": "ریٹنگ: {rating} ({reviewCount, plural, =1{1 ریویو} other{{reviewCount} ریویوز}})",
+  "@ratingLine": {
+    "placeholders": {
+      "rating": {},
+      "reviewCount": {
+        "type": "int"
+      }
+    }
+  },
+  "proofOfSkillsPortfolio": "مہارت کا ثبوت (پورٹ فولیو)",
+  "noPortfolioPostsAvailable": "کوئی پورٹ فولیو پوسٹس دستیاب نہیں۔",
+  "bookingLocation": "بکنگ مقام",
+  "location": "مقام",
+  "latitude": "عرضِ بلد",
+  "longitude": "طولِ بلد",
+  "mapWillAppearWhenCoordinatesValid": "جب کوآرڈینیٹس درست ہوں گے تو نقشہ یہاں ظاہر ہوگا۔",
+  "chatForBookingTitle": "بکنگ #{id} کے لیے چیٹ",
+  "@chatForBookingTitle": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+  "unableToStartChat": "چیٹ شروع نہیں ہو سکی۔ چیٹ صرف اس وقت دستیاب ہے جب بکنگ قبول ہو، جاری ہو، یا پچھلے ایک دن کے اندر مکمل ہوئی ہو۔",
+  "invalidChatThreadFromServer": "سرور سے غلط چیٹ تھریڈ موصول ہوا۔",
+  "messageNotSentPolicy": "پیغام نہیں بھیجا گیا۔ نوٹ: چیٹ میں فون نمبر یا ای میل شیئر کرنا منع ہے۔",
+  "unknown": "نامعلوم",
+  "typeMessageHint": "سپورٹ کو پیغام لکھیں...",
+  "uploadProfilePicture": "پروفائل تصویر اپلوڈ کریں",
+  "currentProfilePicture": "موجودہ پروفائل تصویر",
+  "newPicturePreview": "نئی تصویر کا پیش منظر",
+  "chooseImage": "تصویر منتخب کریں",
+  "upload": "اپلوڈ",
+  "noImageBytesFoundWeb": "تصویر کے بائٹس نہیں ملے (ویب)۔",
+  "pleasePickAnImageFirst": "براہ کرم پہلے تصویر منتخب کریں۔",
+  "uploadFailedCheckServerLogs": "اپلوڈ ناکام۔ سرور لاگز / ٹوکن چیک کریں۔",
+  "profilePictureUploadedSuccessfully": "پروفائل تصویر کامیابی سے اپلوڈ ہو گئی!",
+  "errorWithValue": "خرابی: {error}",
+  "@errorWithValue": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "tapToChangeProfilePicture": "پروفائل تصویر بدلنے کے لیے ٹیپ کریں",
+  "usernameValue": "یوزرنیم: {username}",
+  "@usernameValue": {
+    "placeholders": {
+      "username": {}
+    }
+  },
+  "roleValue": "کردار: {role}",
+  "@roleValue": {
+    "placeholders": {
+      "role": {}
+    }
+  },
+  "dateOfBirthYyyyMmDd": "تاریخِ پیدائش (YYYY-MM-DD)",
+  "saveProfile": "پروفائل محفوظ کریں",
+  "failedToSaveProfile": "پروفائل محفوظ نہیں ہو سکا۔ دوبارہ کوشش کریں۔",
+  "profileUpdated": "پروفائل اپڈیٹ ہو گیا۔",
+  "completeYourProviderProfile": "اپنا فراہم کنندہ پروفائل مکمل کریں",
+  "completeProviderProfileBody": "کام قبول کرنے اور پیسے کمانے کے لیے اپنا فراہم کنندہ پروفائل مکمل کریں۔",
+  "setupProfileNow": "ابھی پروفائل سیٹ اپ کریں",
+  "doItLater": "بعد میں",
+  "bookingTimerPenaltyPeriodActive": "جرمانے کی مدت فعال ہے",
+  "bookingTimerFreeCancellationPeriod": "بلا جرمانہ منسوخی کی مدت",
+  "bookingTimerTimeRemaining": "باقی وقت: {time}",
+  "@bookingTimerTimeRemaining": {
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "bookingTimerCancellingNowPenalty": "اب منسوخ کرنے پر 10% جرمانہ ہوگا۔",
+  "bookingTimerCancelNoPenalty": "آپ بلا جرمانہ منسوخ کر سکتے ہیں۔",
+  "myReviewsTitle": "میری ریویوز",
+  "failedToLoadReviews": "ریویوز لوڈ نہیں ہو سکیں۔",
+  "noReviewsYet": "آپ نے ابھی تک کوئی ریویو نہیں دیا۔",
+  "providerWithName": "فراہم کنندہ: {name}",
+  "providerGeneric": "فراہم کنندہ",
+  "ratingWithValue": "ریٹنگ: {rating}",
+  "nearbyOpenJobsTitle": "قریب موجود اوپن جابز",
+  "failedToLoadOpenJobsHint": "اوپن جابز لوڈ نہیں ہو سکیں۔\nیقین کریں کہ آپ کے پاس لوکیشن کے ساتھ پرووائیڈر پروفائل ہے اور available=true ہے۔",
+  "errorLoadingJobsWithValue": "جابز لوڈ کرنے میں خرابی: {error}",
+  "noOpenJobsFoundNearbyTitle": "قریب کوئی اوپن جاب نہیں ملی",
+  "noOpenJobsFoundNearbyBody": "یقین کریں:\n- آپ نے اپنی پرووائیڈر لوکیشن سیٹ کی ہے\n- آپ دستیاب ہیں\n- یوزرز نے بکنگ بنائی اور ادائیگی کی ہے",
+  "currencyLabel": "کرنسی: {symbol}",
+  "pricesShownInCurrency": "قیمتیں {symbol} ({country}) میں دکھائی جا رہی ہیں",
+  "jobTitleWithId": "جاب #{id}",
+  "serviceLine": "سروس: {service}",
+  "whenLine": "وقت: {date} {time}",
+  "priceLine": "قیمت: {price}",
+  "acceptJob": "جاب قبول کریں",
+  "failedToAcceptJob": "جاب قبول نہیں ہو سکی۔",
+  "jobAcceptedSuccessfully": "جاب کامیابی سے قبول ہو گئی۔",
+  "newServiceRequestTitle": "نیا سروس ریکویسٹ",
+  "offeredPriceLabel": "پیش کردہ قیمت",
+  "offeredPriceHint": "مثلاً 25.00",
+  "enterValidPrice": "درست قیمت درج کریں",
+  "bookAndPay": "بک اور ادائیگی",
+  "bookAndPayAmount": "بک اور ادائیگی {amount}",
+  "haircutService": "ہیئر کٹ",
+  "stylingService": "اسٹائلنگ",
+  "timeLabel": "وقت:",
+  "notesLabel": "نوٹس",
+  "requestCreatedAndPaidBroadcast": "ریکویسٹ بن گئی اور ادا ہو گئی! پرووائیڈرز کو بھیج دی گئی۔",
+  "locationLatLng": "لوکیشن: {lat}, {lng}",
+  "paymentMethodsTitle": "ادائیگی کے طریقے",
+  "paymentPreferencesInfo": "یہ ترجیحات آپ کے ڈیوائس پر لوکلی محفوظ ہوتی ہیں۔ اصل ادائیگیاں Stripe/دیگر گیٹ ویز کے ذریعے محفوظ طریقے سے ہوتی ہیں۔",
+  "preferredMethodLabel": "پسندیدہ طریقہ (ملک کے مطابق لوکل گیٹ وے منتخب ہوگا)",
+  "methodVisaMastercard": "Visa/Mastercard",
+  "methodMobileMoney": "Mobile Money (Momo/Paystack/Africa)",
+  "methodPaypal": "PayPal",
+  "methodApplePayGooglePay": "Apple Pay/Google Pay",
+  "methodWeChatPay": "WeChat Pay (China)",
+  "methodAlipay": "Alipay (China)",
+  "methodUnionPay": "UnionPay Card (China)",
+  "mobileMoneyNumberLabel": "موبائل منی نمبر",
+  "wechatAlipayIdLabel": "WeChat/Alipay ID",
+  "cardLast4DigitsLabel": "کارڈ کے آخری 4 ہندسے",
+  "paypalEmailLabel": "PayPal ای میل",
+  "applePayEnabledOnDevice": "اس ڈیوائس پر Apple Pay فعال ہے",
+  "savePaymentPreferences": "ادائیگی کی ترجیحات محفوظ کریں",
+  "paymentPrefsSavedInfo": "ادائیگی کی ترجیحات لوکلی محفوظ ہو گئیں۔ اصل چارجنگ بعد میں Stripe/دیگر گیٹ ویز کے ذریعے ہوگی۔",
+  "failedToLoadImage": "تصویر لوڈ نہیں ہو سکی",
+  "earningsTitle": "کمائی",
+  "couldNotLoadEarningsSummary": "کمائی کا خلاصہ لوڈ نہیں ہو سکا۔",
+  "noData": "کوئی ڈیٹا نہیں۔",
+  "retry": "دوبارہ کوشش کریں",
+  "summaryTitle": "خلاصہ",
+  "totalLabel": "کل",
+  "pendingLabel": "زیرِ التوا",
+  "paidLabel": "ادا شدہ",
+  "pdfReportTitle": "PDF رپورٹ",
+  "periodLabel": "مدت",
+  "periodThisMonth": "اس ماہ",
+  "periodLastMonth": "پچھلا ماہ",
+  "periodYtd": "سال تا حال",
+  "periodAllTime": "ہر وقت",
+  "couldNotDownloadPdfReport": "PDF رپورٹ ڈاؤن لوڈ نہیں ہو سکی۔",
+  "couldNotOpenPdfWithValue": "PDF نہیں کھل سکا: {error}",
+  "savingFilesNotSupportedWeb": "ویب پر فی الحال فائل محفوظ کرنا سپورٹڈ نہیں۔",
+  "savedToDocumentsIosWithPath": "Documents (iOS) میں محفوظ ہوا:\n{path}",
+  "savedToFilesWithPath": "فائلز میں محفوظ ہوا:\n{path}",
+  "open": "کھولیں",
+  "failedToSavePdfWithValue": "PDF محفوظ نہیں ہو سکا: {error}",
+  "openPdfReport": "PDF رپورٹ کھولیں",
+  "savePdfToDownloads": "PDF ڈاؤن لوڈز میں محفوظ کریں",
+  "reportWatermarkNote": "رپورٹ PDF میں Styloria واٹرمارک شامل ہونا چاہیے۔",
+  "referFriendsTitle": "دوستوں کو ریفر کریں",
+  "shareReferralCodeBody": "اپنا ریفرل کوڈ دوستوں کے ساتھ شیئر کریں۔ بعد میں جب وہ سائن اپ کریں اور بکنگ مکمل کریں تو آپ انعامات شامل کر سکتے ہیں۔",
+  "yourReferralCodeLabel": "آپ کا ریفرل کوڈ:",
+  "copy": "کاپی",
+  "referralCodeCopiedWithCode": "ریفرل کوڈ کاپی ہو گیا: {code}",
+  "navHome": "ہوم",
+  "navBookings": "بکنگز",
+  "navNotifications": "نوٹیفیکیشنز",
+  "navAccount": "اکاؤنٹ",
+  "welcome": "خوش آمدید",
+  "welcomeName": "خوش آمدید، {name}",
+  "@welcomeName": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "toggleThemeTooltip": "لائٹ/ڈارک موڈ تبدیل کریں",
+  "loggedInAs": "لاگ اِن بطور: {role}",
+  "@loggedInAs": {
+    "placeholders": {
+      "role": {}
+    }
+  },
+  "locationWithValue": "لوکیشن: {value}",
+  "@locationWithValue": {
+    "placeholders": {
+      "value": {}
+    }
+  },
+
+  "youAreCurrentlyUnavailable": "آپ فی الحال دستیاب نہیں ہیں",
+  "toBrowseAndAcceptJobsEnableAvailability": "قریبی کام کی درخواستیں دیکھنے اور قبول کرنے کے لیے، آپ کو بکنگ کے لیے دستیاب ہونا ضروری ہے۔",
+  "goToProfileSettings": "پروفائل سیٹنگز پر جائیں",
+  "tipToggleAvailableForBookings": "مشورہ: کام کی درخواستیں حاصل کرنا شروع کرنے کے لیے اپنے پرووائیڈر پروفائل میں \"بکنگ کے لیے دستیاب\" آن کریں۔",
+  "requestedBy": "درخواست کنندہ: {name}",
+  "@requestedBy": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "locationLabel": "مقام: {address}",
+  "@locationLabel": {
+    "placeholders": {
+      "address": {
+        "type": "String"
+      }
+    }
+  },
+
+  "homeTagline": "ریئل ٹائم بکنگز اور قابلِ اعتماد پرووائیڈرز کے ساتھ اپنی گرومنگ کا تجربہ بہتر بنائیں۔",
+  "manageProviderProfile": "پرووائیڈر پروفائل مینیج کریں",
+  "browseOpenJobs": "اوپن جابز دیکھیں",
+  "quickActions": "فوری اقدامات",
+  "newBooking": "نئی بکنگ",
+  "notificationsWithUnread": "نوٹیفیکیشنز ({count, plural, =1{1 ان پڑھا} other{{count} ان پڑھے}})",
+  "@notificationsWithUnread": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "liveLocationTrackingTitle": "لائیو لوکیشن ٹریکنگ",
+  "live": "لائیو",
+  "locationServicesDisabled": "لوکیشن سروسز بند ہیں۔",
+  "locationPermissionDenied": "لوکیشن کی اجازت مسترد کر دی گئی۔",
+  "locationPermissionPermanentlyDenied": "لوکیشن کی اجازت مستقل طور پر مسترد ہے۔ براہِ کرم سیٹنگز میں فعال کریں۔",
+  "failedToGetLocationWithValue": "لوکیشن حاصل نہیں ہو سکی: {error}",
+  "@failedToGetLocationWithValue": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "youProvider": "آپ (پرووائیڈر)",
+  "youCustomer": "آپ (کسٹمر)",
+  "customer": "کسٹمر",
+  "bookingDetails": "بکنگ کی تفصیل",
+  "navigate": "نیویگیٹ",
+  "failedToLoadNotifications": "نوٹیفیکیشنز لوڈ نہیں ہو سکیں۔",
+  "failedToMarkAsRead": "پڑھا ہوا مارک نہیں ہو سکا",
+  "noNotificationsYet": "ابھی کوئی نوٹیفیکیشن نہیں۔",
+  "markRead": "پڑھا ہوا",
+  "providerKycTitle": "فراہم کنندہ کی تصدیق (KYC)",
+  "logoutTooltip": "لاگ آؤٹ",
+  "statusLabel": "اسٹیٹس: {status}",
+  "@statusLabel": {
+    "placeholders": {
+      "status": {}
+    }
+  },
+  "rejectedWithNotes": "مسترد: {notes}",
+  "@rejectedWithNotes": {
+    "placeholders": {
+      "notes": {}
+    }
+  },
+  "kycInstructions": "فراہم کنندہ کی خصوصیات تک رسائی کے لیے، تصدیق کے لیے اپنی شناختی دستاویز اور ایک سیلفی اپلوڈ کریں۔",
+  "idFrontRequired": "شناختی دستاویز سامنے (ضروری)",
+  "selectIdFront": "شناختی دستاویز سامنے منتخب کریں",
+  "idBackRequired": "شناختی دستاویز پیچھے (ضروری)",
+  "selectIdBackRequired": "شناختی دستاویز پیچھے منتخب کریں",
+  "selfieRequired": "سیلفی (ضروری)",
+  "selectSelfie": "سیلفی منتخب کریں",
+  "takeSelfie": "سیلفی لیں",
+  "errorUploadAllRequired": "براہ کرم شناختی دستاویز (سامنے)، شناختی دستاویز (پیچھے)، اور سیلفی اپلوڈ کریں۔",
+  "failedSubmitKycCode": "KYC جمع کرانے میں ناکام (کوڈ {code}).",
+  "@failedSubmitKycCode": {
+    "placeholders": {
+      "code": {}
+    }
+  },
+  "submittedCurrentStatus": "جمع ہو گیا۔ موجودہ اسٹیٹس: {status}",
+  "@submittedCurrentStatus": {
+    "placeholders": {
+      "status": {}
+    }
+  },
+  "unknownStatus": "نامعلوم",
+  "submitKyc": "KYC جمع کریں",
+  "verificationMayTakeTimeNote": "نوٹ: تصدیق میں وقت لگ سکتا ہے۔ منظوری کے بعد آپ فراہم کنندہ کی خصوصیات تک رسائی حاصل کر سکیں گے۔",
+  "enterVerificationCodeTitle": "تصدیقی کوڈ درج کریں",
+  "otpSentToUsername": "ہم نے \"{username}\" سے منسلک فون نمبر پر 6 ہندسوں کا کوڈ بھیجا ہے۔\n",
+  "@otpSentToUsername": {
+    "placeholders": {
+      "username": {}
+    }
+  },
+  "sixDigitCodeLabel": "6 ہندسوں کا کوڈ",
+  "enterSixDigitCodeValidation": "6 ہندسوں کا کوڈ درج کریں",
+  "otpInvalidOrExpired": "غلط یا میعاد ختم شدہ کوڈ۔",
+  "failedLoadUserInfoAfterVerification": "تصدیق کے بعد صارف کی معلومات لوڈ نہیں ہو سکیں۔",
+  "chatWithSupportTitle": "سپورٹ سے چیٹ",
+  "unableStartSupportChat": "سپورٹ چیٹ شروع نہیں ہو سکی۔",
+  "invalidSupportThreadReturned": "سرور نے غلط سپورٹ تھریڈ واپس کیا۔",
+  "noMessagesYet": "ابھی کوئی پیغام نہیں۔ گفتگو شروع کریں!",
+  "supportDefaultName": "سپورٹ",
+  "aboutPoliciesTitle": "تعارف اور پالیسیاں",
+  "newBookingTitle": "نئی بکنگ",
+  "appointmentDetailsTitle": "اپائنٹمنٹ کی تفصیلات",
+  "pickDate": "تاریخ منتخب کریں",
+  "pickTime": "وقت منتخب کریں",
+  "serviceTypeTitle": "سروس کی قسم",
+  "serviceDropdownLabel": "سروس",
+  "serviceHaircutLabel": "ہیئر کٹ",
+  "serviceBraidsLabel": "بریڈز",
+  "serviceShaveLabel": "شیو",
+  "serviceHairColoringLabel": "بال رنگ کرنا",
+  "serviceManicureLabel": "مینیکیور",
+  "servicePedicureLabel": "پیڈیکیور",
+  "serviceNailArtLabel": "نیل آرٹ",
+  "serviceMakeupLabel": "میک اپ",
+  "serviceFacialLabel": "فیشل",
+  "serviceWaxingLabel": "ویکسنگ",
+  "serviceMassageLabel": "مساج",
+  "serviceHairStylingLabel": "ہیئر اسٹائلنگ",
+  "serviceHairTreatmentLabel": "ہیئر ٹریٹمنٹ",
+  "serviceHairExtensionsLabel": "ہیئر ایکسٹینشنز",
+  "serviceOtherServicesLabel": "دیگر سروسز",
+  "notesForProviderOptionalLabel": "اپنے فراہم کنندہ کے لیے نوٹس (اختیاری)",
+  "locationTitle": "مقام",
+  "latitudeLabel": "عرضِ بلد",
+  "longitudeLabel": "طولِ بلد",
+  "requiredField": "ضروری",
+  "useMyCurrentLocation": "میرا موجودہ مقام استعمال کریں",
+  "pricesShownIn": "قیمتیں {symbol} میں دکھائی جا رہی ہیں ({country})",
+  "chooseTimeLaterThanCurrent": "براہِ کرم موجودہ وقت سے بعد کا وقت منتخب کریں۔",
+  "pleasePickDateAndTime": "براہِ کرم تاریخ اور وقت منتخب کریں۔",
+  "locationUpdatedFromGps": "GPS سے مقام اپڈیٹ ہو گیا۔",
+  "failedToGetLocation": "مقام حاصل کرنے میں ناکامی: {error}",
+  "bookingCreatedChoosePrice": "بکنگ بن گئی! ID: {id} • اپنی قیمت کا آپشن منتخب کریں۔",
+  "failedToCreateBooking": "بکنگ بنانے میں ناکامی۔",
+  "paymentsNotSupportedLong": "اس پلیٹ فارم پر ادائیگیاں سپورٹ نہیں ہیں۔ حقیقی ادائیگیاں ٹیسٹ کرنے کے لیے ایپ کو Android، iOS، macOS یا Web پر چلائیں۔",
+  "paymentsNotSupportedShort": "اس پلیٹ فارم پر ادائیگیاں سپورٹ نہیں ہیں۔ براہِ کرم Android، iOS، macOS یا Web پر چلائیں۔",
+  "noBookingToConfirm": "تصدیق کے لیے کوئی بکنگ نہیں۔ پہلے بکنگ بنائیں۔",
+  "pleaseChoosePriceOption": "براہِ کرم قیمت کا آپشن منتخب کریں۔",
+  "failedCreatePaymentTryAgain": "سرور پر ادائیگی بنانے میں ناکامی۔ دوبارہ کوشش کریں۔",
+  "paymentSuccessfulMessage": "ادائیگی کامیاب!\nبکنگ #{bookingId} • ادا شدہ: {paid}\nآپ کی درخواست اب قریبی فراہم کنندگان کو نظر آئے گی۔",
+  "paymentSucceededButFailedUpdate": "ادائیگی کامیاب ہوئی، مگر سرور پر بکنگ اپڈیٹ نہیں ہو سکی۔",
+  "paymentCancelledOrFailed": "ادائیگی منسوخ یا ناکام: {reason}",
+  "unexpectedPaymentError": "غیر متوقع ادائیگی کی خرابی: {error}",
+  "createBookingButton": "بکنگ بنائیں",
+  "chooseYourPriceOptionTitle": "اپنی قیمت کا آپشن منتخب کریں",
+  "transportationCostLabel": "ٹرانسپورٹ لاگت: {cost}",
+  "budgetTierTitle": "کم بجٹ",
+  "standardTierTitle": "معیاری",
+  "priorityTierTitle": "ترجیحی",
+  "budgetTierDescription": "قریبی فراہم کنندگان میں بہترین قیمت",
+  "standardTierDescription": "قیمت اور دستیابی کا تجویز کردہ توازن",
+  "priorityTierDescription": "پریمیم آپشن تاکہ بہترین فراہم کنندگان جلد متوجہ ہوں",
+  "naShort": "N/A",
+  "priceBreakdownTitle": "قیمت کی تفصیل",
+  "servicePriceLabel": "سروس کی قیمت",
+  "transportationLabel": "ٹرانسپورٹ",
+  "serviceFeeLabel": "سروس فیس ({percent}%)",
+  "allPricesIn": "تمام قیمتیں {currency} میں ({country})",
+  "userCountryPlaceholder": "صارف کا ملک",
+  "totalToPayTitle": "ادا کرنے کی کل رقم",
+  "includesServiceTransportation": "سروس + ٹرانسپورٹ شامل",
+  "confirmAndPay": "تصدیق کریں اور ادائیگی کریں",
+  "howPricingWorksTitle": "قیمت کیسے بنتی ہے",
+  "howPricingWorksBullets": "• کم بجٹ: قریبی فراہم کنندگان میں بہترین قیمت\n• معیاری: تجویز کردہ ڈیفالٹ\n• ترجیحی: قبولیت تیز کرنے کے لیے پریمیم\n• ٹرانسپورٹ کل میں شامل ہے",
+  "myBookingsTitle": "میری بکنگز",
+  "myAssignedJobsTitle": "میرے تفویض کردہ کام",
+  "pleaseCompleteProviderProfileFirst": "براہِ کرم پہلے اپنا فراہم کنندہ پروفائل مکمل کریں۔",
+  "failedToLoadBookings": "بکنگز لوڈ نہیں ہو سکیں۔",
+  "profileSetupRequiredTitle": "پروفائل سیٹ اپ ضروری ہے",
+  "profileSetupRequiredBody": "تفویض کردہ کام اور کمائی دیکھنے سے پہلے آپ کو اپنا فراہم کنندہ پروفائل مکمل کرنا ہوگا۔",
+  "later": "بعد میں",
+  "setupNow": "ابھی سیٹ اپ کریں",
+  "noBookingsFound": "کوئی بکنگ نہیں ملی۔",
+  "findNearbyOpenJobs": "قریبی کھلے کام تلاش کریں",
+  "pay": "ادائیگی",
+  "rate": "ریٹ کریں",
+  "bookingNumber": "بکنگ #{id}",
+  "whenOn": "وقت: {date}",
+  "whenAt": "وقت: {date} پر {time}",
+  "providerLine": "فراہم کنندہ: {name}",
+  "userLine": "صارف: {name}",
+  "estimatedPriceLine": "متوقع قیمت: {price}",
+  "paymentLine": "ادائیگی: {status}",
+  "paymentUnpaid": "غیر ادا شدہ",
+  "paymentUnknown": "نامعلوم",
+  "confirmPaymentTitle": "ادائیگی کی تصدیق",
+  "confirmPaymentBody": "اس بکنگ کی تصدیق کے لیے {amount} ادا کریں؟",
+  "yesPay": "ہاں، ادائیگی کریں",
+  "failedToCreatePaymentIntent": "ادائیگی بنانے میں ناکامی۔",
+  "paymentSuccessfulShort": "ادائیگی کامیاب۔",
+  "paymentSucceededButFailedUpdateBooking": "ادائیگی کامیاب ہوئی، مگر سرور پر بکنگ اپڈیٹ نہیں ہو سکی۔",
+  "paymentCancelledOrFailedReason": "ادائیگی منسوخ یا ناکام: {reason}",
+  "unexpectedPaymentErrorReason": "غیر متوقع ادائیگی کی خرابی: {error}",
+  "rateProviderTitle": "{providerName} کو ریٹ کریں",
+  "@rateProviderTitle": { 
+    "placeholders": { 
+      "providerName": {} 
+    } 
+  },
+  "selectRatingHelp": "ریٹنگ منتخب کریں (1 = خراب، 5 = بہترین):",
+  "commentsOptionalLabel": "تبصرے (اختیاری)",
+  "submit": "جمع کریں",
+  "reviewSubmitted": "ریویو جمع ہو گیا۔",
+  "failedSubmitReview": "ریویو جمع کرنے میں ناکامی۔",
+  "failedToLoadProfile": "پروفائل لوڈ نہیں ہو سکا: {error}",
+  "profileSavedSuccess": "پروفائل کامیابی سے {action} ہو گیا!",
+  "genericError": "خرابی: {error}",
+  "locationPermissionDeniedEnableInSettings": "لوکیشن کی اجازت مسترد ہے۔ براہِ کرم سیٹنگز میں فعال کریں۔",
+  "locationPermissionPermanentlyDeniedEnableInAppSettings": "لوکیشن کی اجازت مستقل طور پر مسترد ہے۔ براہِ کرم ایپ سیٹنگز میں فعال کریں۔",
+  "errorGettingLocation": "لوکیشن حاصل کرنے میں خرابی: {error}",
+  "pleaseEnterAddress": "براہِ کرم ایک پتہ درج کریں",
+  "locationUpdatedFromAddress": "پتے سے لوکیشن اپڈیٹ ہو گئی",
+  "couldNotFindLocationForAddress": "اس پتے کے لیے لوکیشن نہیں مل سکی",
+  "errorConvertingAddress": "پتہ تبدیل کرنے میں خرابی: {error}",
+  "portfolioUnavailableCompleteKycFirst": "پورٹ فولیو دستیاب نہیں۔ اگر آپ فراہم کنندہ ہیں تو پہلے KYC مکمل کریں۔",
+  "failedToLoadPortfolio": "پورٹ فولیو لوڈ نہیں ہو سکا: {error}",
+  "addPhoto": "تصویر شامل کریں",
+  "addVideo": "ویڈیو شامل کریں",
+  "addPost": "پوسٹ شامل کریں",
+  "captionOptionalTitle": "کیپشن (اختیاری)",
+  "captionHintExample": "مثلاً: “کلائنٹ پر ناٹ لیس بریڈز”",
+  "skip": "چھوڑ دیں",
+  "save": "محفوظ کریں",
+  "failedToCreatePortfolioPost": "پورٹ فولیو پوسٹ بن نہیں سکی۔",
+  "uploadFailedMediaUpload": "اپلوڈ ناکام (میڈیا اپلوڈ).",
+  "uploadFailed": "اپلوڈ ناکام: {error}",
+  "deletePostTitle": "پوسٹ حذف کریں؟",
+  "deletePostBody": "یہ پوسٹ آپ کے پورٹ فولیو سے ہٹا دی جائے گی۔",
+  "delete": "حذف کریں",
+  "deleteFailed": "حذف کرنا ناکام۔",
+  "deleteFailedWithError": "حذف کرنا ناکام: {error}",
+  "portfolioTitle": "پورٹ فولیو",
+  "noPortfolioPostsYetHelpText": "ابھی تک کوئی پورٹ فولیو پوسٹ نہیں۔ اپنے کام کی تصاویر/ویڈیوز شامل کریں تاکہ کلائنٹس آپ کی مہارت پر اعتماد کریں۔",
+  "setupProviderProfileTitle": "پرووائیڈر پروفائل سیٹ اپ",
+  "providerProfileTitle": "پرووائیڈر پروفائل",
+  "welcomeToStyloriaTitle": "Styloria میں خوش آمدید!",
+  "completeProviderProfileToStartEarning": "کام قبول کرنے اور کمائی شروع کرنے کے لیے اپنا پرووائیڈر پروفائل مکمل کریں۔",
+  "reviewCountLabel": "({count} ریویوز)",
+  "topRatedChip": "اعلیٰ ریٹنگ",
+  "bioLabel": "بایو / تفصیل",
+  "bioHint": "کلائنٹس کو اپنی مہارت اور تجربہ بتائیں...",
+  "pleaseEnterBio": "براہِ کرم بایو درج کریں",
+  "bioMinLength": "بایو کم از کم {min} حروف کا ہونا چاہیے",
+  "yourLocationTitle": "آپ کا مقام",
+  "locationHelpMatchNearbyClients": "آپ کا مقام ہمیں قریبی کلائنٹس سے میچ کرنے میں مدد دیتا ہے",
+  "locationHelpUpdateToFindJobs": "مختلف علاقوں میں کام ڈھونڈنے کے لیے مقام اپڈیٹ کریں",
+  "useMyCurrentLocationTitle": "میرا موجودہ مقام استعمال کریں",
+  "gpsSubtitle": "GPS کے ذریعے خودکار طور پر مقام حاصل کریں",
+  "orLabel": "یا",
+  "enterYourAddressTitle": "اپنا پتہ درج کریں",
+  "fullAddressLabel": "مکمل پتہ",
+  "fullAddressHint": "مثلاً: 123 Main St, Accra, Ghana",
+  "find": "تلاش کریں",
+  "addressHelpText": "گلی، شہر اور ملک درج کریں",
+  "coordinatesAutoFilledTitle": "کوآرڈینیٹس (خودکار)",
+  "servicePricingTitle": "سروس کی قیمتیں",
+  "servicePricingHelp": "ہر سروس کے لیے اپنی قیمت مقرر کریں۔ جن سروسز کی آپ پیشکش نہیں کر سکتے اُن کے لیے “Not Offered” منتخب کریں۔",
+  "serviceHeader": "سروس",
+  "priceHeader": "قیمت",
+  "notOfferedHeader": "پیشکش نہیں",
+  "priceHint": "0.00",
+  "providerHowPricingWorksTitle": "قیمت کیسے بنتی ہے:",
+  "providerHowPricingWorksBody": "• آپ کی قیمت وہ ہے جو آپ سروس کے لیے لیتے ہیں\n• ٹرانسپورٹ لاگت = صارف کی کرنسی کا 80% فی کلومیٹر\n• صارف قریبی پرووائیڈرز کی بنیاد پر 3 آپشنز دیکھتا ہے:\n  - Budget: کم ترین قیمت\n  - Standard: اوسط قیمت\n  - Priority: بلند ترین قیمت",
+  "availableForBookingsTitle": "بکنگز کے لیے دستیاب",
+  "availableOnHelp": "✓ آپ قریبی کلائنٹس کے سرچ نتائج میں نظر آئیں گے",
+  "availableOffHelp": "✗ آپ کو نئی جاب آفرز نہیں ملیں گی",
+  "completeSetupStartEarning": "سیٹ اپ مکمل کریں اور کمائی شروع کریں",
+  "updateProfile": "پروفائل اپڈیٹ کریں",
+  "skipForNow": "ابھی چھوڑ دیں",
+
+  "genericContact": "رابطہ",
+  "genericProvider": "سروس فراہم کنندہ",
+  "genericNotAvailable": "موجود نہیں",
+
+  "reviewSelectRatingPrompt": "ریٹنگ منتخب کریں (1 سے 5)۔",
+  "reviewCommentOptionalLabel": "تبصرہ (اختیاری)",
+  "genericCancel": "منسوخ کریں",
+  "genericSubmit": "جمع کریں",
+  "reviewSubmitted": "ریویو جمع ہو گیا۔",
+  "reviewSubmitFailed": "ریویو جمع نہیں ہو سکا۔",
+  "rateThisService": "اس سروس کو ریٹ کریں",
+
+  "tipLeaveTitle": "ٹِپ دیں",
+  "tipChooseAmountPrompt": "ٹِپ کی رقم منتخب کریں یا اپنی مرضی کی رقم درج کریں۔",
+  "tipNoTip": "کوئی ٹِپ نہیں",
+  "tipCustomAmountLabel": "حسبِ ضرورت ٹِپ رقم",
+  "genericContinue": "جاری رکھیں",
+
+  "tipSkipped": "ٹِپ چھوڑ دی گئی۔",
+  "tipFailedToSaveChoice": "ٹِپ کا انتخاب محفوظ نہیں ہو سکا۔",
+  "tipFailedToCreatePayment": "ٹِپ کی ادائیگی بن نہیں سکی۔",
+  "tipPaidSuccessfully": "ٹِپ کامیابی سے ادا ہو گئی۔ شکریہ!",
+  "tipPaidButUpdateFailed": "ٹِپ کی ادائیگی کامیاب ہوئی، لیکن بکنگ اپڈیٹ نہیں ہو سکی۔",
+
+  "tipCancelledOrFailed": "ٹِپ منسوخ/ناکام: {message}",
+  "tipUnexpectedError": "ٹِپ میں غیر متوقع خرابی: {error}",
+
+  "tipAlreadyPaidLabel": "ٹِپ پہلے ہی ادا ہو چکی ہے",
+  "tipSkippedLabel": "ٹِپ چھوڑ دی گئی",
+
+  "walletTitle": "والیٹ",
+  "walletTooltip": "والیٹ",
+  "payoutSettingsTitle": "ادائیگی کی ترتیبات",
+  "payoutSettingsTooltip": "ادائیگی کی ترتیبات",
+  "walletNoWalletYet": "ابھی کوئی والیٹ نہیں ہے۔ کمانے کے لیے کام مکمل کریں۔",
+  "walletCurrencyFieldLabel": "کرنسی",
+  "walletAvailableLine": "دستیاب: {amount} {currency}",
+  "walletPendingLine": "زیرِ التواء: {amount} {currency}",
+  "walletCashOutInstant": "فوری نکالیں",
+  "walletCashOutFailed": "کیش آؤٹ ناکام ہوگیا۔",
+  "walletCashOutSentTransfer": "کیش آؤٹ بھیج دیا گیا۔ ٹرانسفر: {transferId}",
+  "walletTransactionsTitle": "لین دین",
+  "walletNoTransactionsYet": "ابھی کوئی لین دین نہیں۔",
+  "payoutAutoPayoutsTitle": "خودکار ادائیگیاں",
+  "payoutAutoPayoutsSubtitle": "اپنے منتخب شیڈول کے مطابق خودکار ادائیگیاں بھیجیں۔",
+  "payoutDayUtcLabel": "ادائیگی کا دن (UTC)",
+  "payoutHourUtcLabel": "ادائیگی کا وقت (UTC)",
+  "payoutMinimumAmountLabel": "خودکار ادائیگی کی کم از کم رقم",
+  "payoutMinimumAmountHelper": "خودکار ادائیگی تبھی چلے گی جب دستیاب بیلنس ≥ اس رقم کے ہو۔",
+  "payoutInstantCashOutEnabledTitle": "فوری کیش آؤٹ فعال",
+  "payoutInstantCashOutEnabledSubtitle": "“کیش آؤٹ” بٹن کی اجازت دیں (فیس لاگو ہوگی)۔",
+  "payoutSettingsSaved": "ادائیگی کی ترتیبات محفوظ ہوگئیں۔",
+  "payoutSettingsSaveFailed": "ادائیگی کی ترتیبات محفوظ نہیں ہو سکیں۔",
+
+  "tipLeaveButton": "ٹِپ دیں",
+  "@providerWithName": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "@ratingWithValue": {
+    "placeholders": {
+      "rating": {}
+    }
+  },
+  "@errorLoadingJobsWithValue": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@currencyLabel": {
+    "placeholders": {
+      "symbol": {}
+    }
+  },
+  "@pricesShownInCurrency": {
+    "placeholders": {
+      "symbol": {},
+      "country": {}
+    }
+  },
+  "@jobTitleWithId": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+  "@serviceLine": {
+    "placeholders": {
+      "service": {}
+    }
+  },
+  "@whenLine": {
+    "placeholders": {
+      "date": {},
+      "time": {}
+    }
+  },
+  "@priceLine": {
+    "placeholders": {
+      "price": {}
+    }
+  },
+  "@bookAndPayAmount": {
+    "placeholders": {
+      "amount": {}
+    }
+  },
+  "@locationLatLng": {
+    "placeholders": {
+      "lat": {},
+      "lng": {}
+    }
+  },
+  "@couldNotOpenPdfWithValue": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@savedToDocumentsIosWithPath": {
+    "placeholders": {
+      "path": {}
+    }
+  },
+  "@savedToFilesWithPath": {
+    "placeholders": {
+      "path": {}
+    }
+  },
+  "@failedToSavePdfWithValue": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@referralCodeCopiedWithCode": {
+    "placeholders": {
+      "code": {}
+    }
+  },
+  "@pricesShownIn": {
+    "placeholders": {
+      "symbol": {},
+      "country": {}
+    }
+  },
+  "@failedToGetLocation": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@bookingCreatedChoosePrice": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+  "@paymentSuccessfulMessage": {
+    "placeholders": {
+      "bookingId": {},
+      "paid": {}
+    }
+  },
+  "@paymentCancelledOrFailed": {
+    "placeholders": {
+      "reason": {}
+    }
+  },
+  "@unexpectedPaymentError": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@transportationCostLabel": {
+    "placeholders": {
+      "cost": {}
+    }
+  },
+  "@serviceFeeLabel": {
+    "placeholders": {
+      "percent": {}
+    }
+  },
+  "@allPricesIn": {
+    "placeholders": {
+      "currency": {},
+      "country": {}
+    }
+  },
+  "@bookingNumber": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+  "@whenOn": {
+    "placeholders": {
+      "date": {}
+    }
+  },
+  "@whenAt": {
+    "placeholders": {
+      "date": {},
+      "time": {}
+    }
+  },
+  "@providerLine": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "@userLine": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "@estimatedPriceLine": {
+    "placeholders": {
+      "price": {}
+    }
+  },
+  "@paymentLine": {
+    "placeholders": {
+      "status": {}
+    }
+  },
+  "@confirmPaymentBody": {
+    "placeholders": {
+      "amount": {}
+    }
+  },
+  "@paymentCancelledOrFailedReason": {
+    "placeholders": {
+      "reason": {}
+    }
+  },
+  "@unexpectedPaymentErrorReason": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@failedToLoadProfile": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@profileSavedSuccess": {
+    "placeholders": {
+      "action": {}
+    }
+  },
+  "@genericError": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@errorGettingLocation": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@errorConvertingAddress": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@failedToLoadPortfolio": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@uploadFailed": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@deleteFailedWithError": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@reviewCountLabel": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@bioMinLength": {
+    "placeholders": {
+      "min": {
+        "type": "int"
+      }
+    }
+  }
+}

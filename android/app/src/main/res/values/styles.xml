@@ -1,0 +1,16 @@
+<!-- android/app/src/main/res/values/styles.xml -->
+<resources>
+
+    <!-- Theme used while Flutter initializes. -->
+    <style name="LaunchTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- This windowBackground is shown while the Flutter UI loads. -->
+        <item name="android:windowBackground">@drawable/launch_background</item>
+    </style>
+
+    <!-- Normal theme applied after Flutter starts. -->
+    <style name="NormalTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:windowBackground">@android:color/white</item>
+        <!-- You can customize status bar / nav bar colors here if you want. -->
+    </style>
+
+</resources>

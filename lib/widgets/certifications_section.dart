@@ -1,0 +1,577 @@
+// lib/widgets/certifications_section.dart
+
+import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:intl/intl.dart';
+
+import '../api_client.dart';
+
+class CertificationsSection extends StatefulWidget {
+  final VoidCallback? onCertificationsChanged;
+  
+  const CertificationsSection({
+    super.key,
+    this.onCertificationsChanged,
+  });
+
+  @override
+  State<CertificationsSection> createState() => _CertificationsSectionState();
+}
+
+class _CertificationsSectionState extends State<CertificationsSection> {
+  bool _loading = true;
+  List<dynamic> _certifications = [];
+  int? _trustScore;
+  String? _currentTier;
+  String? _error;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadCertifications();
+  }
+
+  Future<void> _loadCertifications() async {
+    setState(() {
+      _loading = true;
+      _error = null;
+    });
+
+    try {
+      final data = await ApiClient.getMyCertifications();
+      if (data != null) {
+        setState(() {
+          _certifications = data['certifications'] as List<dynamic>? ?? [];
+          _trustScore = data['trust_score'] as int?;
+          _currentTier = data['current_tier'] as String?;
+          _loading = false;
+        });
+      } else {
+        setState(() {
+          _error = 'Failed to load certifications';
+          _loading = false;
+        });
+      }
+    } catch (e) {
+      setState(() {
+        _error = e.toString();
+        _loading = false;
+      });
+    }
+  }
+
+  Future<void> _showAddCertificationDialog() async {
+    final nameController = TextEditingController();
+    final orgController = TextEditingController();
+    DateTime? issueDate;
+    DateTime? expiryDate;
+    XFile? selectedFile;
+
+    final result = await showDialog<bool>(
+      context: context,
+      builder: (context) => StatefulBuilder(
+        builder: (context, setDialogState) => AlertDialog(
+          title: const Row(
+            children: [
+              Icon(Icons.add_circle, color: Colors.green),
+              SizedBox(width: 8),
+              Text('Add Certification'),
+            ],
+          ),
+          content: SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                TextField(
+                  controller: nameController,
+                  decoration: const InputDecoration(
+                    labelText: 'Certification Name *',
+                    hintText: 'e.g., Licensed Cosmetologist',
+                    border: OutlineInputBorder(),
+                  ),
+                ),
+                const SizedBox(height: 16),
+                TextField(
+                  controller: orgController,
+                  decoration: const InputDecoration(
+                    labelText: 'Issuing Organization',
+                    hintText: 'e.g., State Board of Cosmetology',
+                    border: OutlineInputBorder(),
+                  ),
+                ),
+                const SizedBox(height: 16),
+                // Issue Date
+                ListTile(
+                  contentPadding: EdgeInsets.zero,
+                  title: Text(
+                    issueDate != null
+                        ? 'Issue Date: ${DateFormat('MMM d, yyyy').format(issueDate!)}'
+                        : 'Issue Date (Optional)',
+                  ),
+                  trailing: const Icon(Icons.calendar_today),
+                  onTap: () async {
+                    final picked = await showDatePicker(
+                      context: context,
+                      initialDate: issueDate ?? DateTime.now(),
+                      firstDate: DateTime(1990),
+                      lastDate: DateTime.now(),
+                    );
+                    if (picked != null) {
+                      setDialogState(() => issueDate = picked);
+                    }
+                  },
+                ),
+                // Expiry Date
+                ListTile(
+                  contentPadding: EdgeInsets.zero,
+                  title: Text(
+                    expiryDate != null
+                        ? 'Expiry Date: ${DateFormat('MMM d, yyyy').format(expiryDate!)}'
+                        : 'Expiry Date (Optional)',
+                  ),
+                  trailing: const Icon(Icons.event),
+                  onTap: () async {
+                    final picked = await showDatePicker(
+                      context: context,
+                      initialDate: expiryDate ?? DateTime.now().add(const Duration(days: 365)),
+                      firstDate: DateTime.now(),
+                      lastDate: DateTime(2100),
+                    );
+                    if (picked != null) {
+                      setDialogState(() => expiryDate = picked);
+                    }
+                  },
+                ),
+                const SizedBox(height: 16),
+                // Document Upload
+                OutlinedButton.icon(
+                  onPressed: () async {
+                    final picker = ImagePicker();
+                    final file = await picker.pickImage(
+                      source: ImageSource.gallery,
+                      maxWidth: 1920,
+                      maxHeight: 1920,
+                    );
+                    if (file != null) {
+                      setDialogState(() => selectedFile = file);
+                    }
+                  },
+                  icon: const Icon(Icons.upload_file),
+                  label: Text(
+                    selectedFile != null
+                        ? 'File: ${selectedFile!.name}'
+                        : 'Upload Document (Optional)',
+                  ),
+                ),
+                if (selectedFile != null)
+                  TextButton(
+                    onPressed: () => setDialogState(() => selectedFile = null),
+                    child: const Text('Remove file', style: TextStyle(color: Colors.red)),
+                  ),
+              ],
+            ),
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(context, false),
+              child: const Text('Cancel'),
+            ),
+            ElevatedButton(
+              onPressed: () => Navigator.pop(context, true),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.green,
+                foregroundColor: Colors.white,
+              ),
+              child: const Text('Add'),
+            ),
+          ],
+        ),
+      ),
+    );
+
+    if (result == true && nameController.text.trim().isNotEmpty) {
+      await _addCertification(
+        name: nameController.text.trim(),
+        organization: orgController.text.trim(),
+        issueDate: issueDate,
+        expiryDate: expiryDate,
+        document: selectedFile,
+      );
+    }
+  }
+
+  Future<void> _addCertification({
+    required String name,
+    String? organization,
+    DateTime? issueDate,
+    DateTime? expiryDate,
+    XFile? document,
+  }) async {
+    // Show loading
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (context) => const Center(child: CircularProgressIndicator()),
+    );
+
+    try {
+      final result = await ApiClient.addCertification(
+        name: name,
+        issuingOrganization: organization,
+        document: document,
+        issueDate: issueDate != null ? DateFormat('yyyy-MM-dd').format(issueDate) : null,
+        expiryDate: expiryDate != null ? DateFormat('yyyy-MM-dd').format(expiryDate) : null,
+      );
+
+      Navigator.pop(context); // Close loading
+
+      if (result != null) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('✅ Certification added! Trust Score: ${result['trust_score']}'),
+            backgroundColor: Colors.green,
+          ),
+        );
+        _loadCertifications();
+        widget.onCertificationsChanged?.call();
+      } else {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('Failed to add certification'),
+            backgroundColor: Colors.red,
+          ),
+        );
+      }
+    } catch (e) {
+      Navigator.pop(context); // Close loading
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Error: $e'), backgroundColor: Colors.red),
+      );
+    }
+  }
+
+  Future<void> _deleteCertification(int id, String name) async {
+    final confirm = await showDialog<bool>(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Text('Delete Certification?'),
+        content: Text('Are you sure you want to delete "$name"?'),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context, false),
+            child: const Text('Cancel'),
+          ),
+          ElevatedButton(
+            onPressed: () => Navigator.pop(context, true),
+            style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
+            child: const Text('Delete', style: TextStyle(color: Colors.white)),
+          ),
+        ],
+      ),
+    );
+
+    if (confirm == true) {
+      final result = await ApiClient.deleteCertification(id);
+      if (result != null) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('Certification deleted. Trust Score: ${result['trust_score']}'),
+            backgroundColor: Colors.orange,
+          ),
+        );
+        _loadCertifications();
+        widget.onCertificationsChanged?.call();
+      }
+    }
+  }
+
+  Map<String, dynamic> _getTierInfo(String? tier) {
+    switch (tier?.toLowerCase()) {
+      case 'premium':
+        return {
+          'color': const Color(0xFFA855F7),
+          'bgColor': const Color(0xFFF3E8FF),
+          'icon': Icons.workspace_premium,
+          'badge': '💜 Premium',
+        };
+      case 'standard':
+        return {
+          'color': const Color(0xFF3B82F6),
+          'bgColor': const Color(0xFFDBEAFE),
+          'icon': Icons.verified_user,
+          'badge': '💙 Standard',
+        };
+      default:
+        return {
+          'color': const Color(0xFF22C55E),
+          'bgColor': const Color(0xFFDCFCE7),
+          'icon': Icons.eco,
+          'badge': '💚 Budget',
+        };
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    if (_loading) {
+      return const Card(
+        child: Padding(
+          padding: EdgeInsets.all(32),
+          child: Center(child: CircularProgressIndicator()),
+        ),
+      );
+    }
+
+    if (_error != null) {
+      return Card(
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            children: [
+              Text('Error: $_error'),
+              const SizedBox(height: 8),
+              ElevatedButton(
+                onPressed: _loadCertifications,
+                child: const Text('Retry'),
+              ),
+            ],
+          ),
+        ),
+      );
+    }
+
+    final tierInfo = _getTierInfo(_currentTier);
+
+    return Card(
+      elevation: 2,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // Header with Trust Score
+            Row(
+              children: [
+                Icon(Icons.verified, color: tierInfo['color'] as Color),
+                const SizedBox(width: 8),
+                const Expanded(
+                  child: Text(
+                    'Certifications & Licenses',
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                // Trust Score Badge
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                  decoration: BoxDecoration(
+                    color: tierInfo['bgColor'] as Color,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(
+                        tierInfo['icon'] as IconData,
+                        size: 16,
+                        color: tierInfo['color'] as Color,
+                      ),
+                      const SizedBox(width: 4),
+                      Text(
+                        '${_trustScore ?? 0}/100',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: tierInfo['color'] as Color,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 8),
+            Text(
+              'Add your professional certifications to increase your trust score and unlock higher-tier jobs.',
+              style: TextStyle(color: Colors.grey.shade600, fontSize: 13),
+            ),
+            const SizedBox(height: 16),
+
+            // Certifications List
+            if (_certifications.isEmpty)
+              Container(
+                padding: const EdgeInsets.all(24),
+                decoration: BoxDecoration(
+                  color: Colors.grey.shade50,
+                  borderRadius: BorderRadius.circular(8),
+                  border: Border.all(color: Colors.grey.shade200),
+                ),
+                child: Column(
+                  children: [
+                    Icon(Icons.description_outlined, size: 48, color: Colors.grey.shade400),
+                    const SizedBox(height: 8),
+                    const Text(
+                      'No certifications yet',
+                      style: TextStyle(fontWeight: FontWeight.w500),
+                    ),
+                    const SizedBox(height: 4),
+                    Text(
+                      'Add your licenses and certifications to earn up to 15 trust points!',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(color: Colors.grey.shade600, fontSize: 12),
+                    ),
+                  ],
+                ),
+              )
+            else
+              ListView.separated(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                itemCount: _certifications.length,
+                separatorBuilder: (_, __) => const Divider(height: 1),
+                itemBuilder: (context, index) {
+                  final cert = _certifications[index] as Map<String, dynamic>;
+                  final isVerified = cert['is_verified'] == true;
+                  final isExpired = cert['is_expired'] == true;
+
+                  return ListTile(
+                    contentPadding: const EdgeInsets.symmetric(vertical: 8),
+                    leading: Container(
+                      width: 48,
+                      height: 48,
+                      decoration: BoxDecoration(
+                        color: isVerified
+                            ? Colors.green.shade50
+                            : isExpired
+                                ? Colors.red.shade50
+                                : Colors.blue.shade50,
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: Icon(
+                        isVerified
+                            ? Icons.verified
+                            : isExpired
+                                ? Icons.warning
+                                : Icons.description,
+                        color: isVerified
+                            ? Colors.green
+                            : isExpired
+                                ? Colors.red
+                                : Colors.blue,
+                      ),
+                    ),
+                    title: Row(
+                      children: [
+                        Expanded(
+                          child: Text(
+                            cert['name']?.toString() ?? 'Certification',
+                            style: const TextStyle(fontWeight: FontWeight.w600),
+                          ),
+                        ),
+                        if (isVerified)
+                          Container(
+                            padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                            decoration: BoxDecoration(
+                              color: Colors.green.shade100,
+                              borderRadius: BorderRadius.circular(4),
+                            ),
+                            child: const Text(
+                              'Verified',
+                              style: TextStyle(fontSize: 10, color: Colors.green),
+                            ),
+                          ),
+                        if (isExpired)
+                          Container(
+                            padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                            decoration: BoxDecoration(
+                              color: Colors.red.shade100,
+                              borderRadius: BorderRadius.circular(4),
+                            ),
+                            child: const Text(
+                              'Expired',
+                              style: TextStyle(fontSize: 10, color: Colors.red),
+                            ),
+                          ),
+                      ],
+                    ),
+                    subtitle: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        if (cert['issuing_organization']?.toString().isNotEmpty == true)
+                          Text(
+                            cert['issuing_organization'].toString(),
+                            style: TextStyle(color: Colors.grey.shade600),
+                          ),
+                        if (cert['expiry_date'] != null)
+                          Text(
+                            'Expires: ${cert['expiry_date']}',
+                            style: TextStyle(
+                              color: isExpired ? Colors.red : Colors.grey.shade500,
+                              fontSize: 12,
+                            ),
+                          ),
+                      ],
+                    ),
+                    trailing: IconButton(
+                      icon: const Icon(Icons.delete_outline, color: Colors.red),
+                      onPressed: () => _deleteCertification(
+                        cert['id'] as int,
+                        cert['name']?.toString() ?? 'Certification',
+                      ),
+                    ),
+                  );
+                },
+              ),
+
+            const SizedBox(height: 16),
+
+            // Add Button
+            SizedBox(
+              width: double.infinity,
+              child: OutlinedButton.icon(
+                onPressed: _certifications.length >= 10 ? null : _showAddCertificationDialog,
+                icon: const Icon(Icons.add),
+                label: Text(
+                  _certifications.length >= 10
+                      ? 'Maximum 10 certifications'
+                      : 'Add Certification',
+                ),
+                style: OutlinedButton.styleFrom(
+                  padding: const EdgeInsets.symmetric(vertical: 12),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                ),
+              ),
+            ),
+
+            // Trust Score Info
+            const SizedBox(height: 12),
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.amber.shade50,
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: Row(
+                children: [
+                  Icon(Icons.lightbulb, size: 20, color: Colors.amber.shade700),
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: Text(
+                      'Certifications add up to 15 points to your trust score. Reach 80+ to unlock Premium jobs!',
+                      style: TextStyle(fontSize: 12, color: Colors.amber.shade900),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}

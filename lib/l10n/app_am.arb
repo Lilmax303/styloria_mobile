@@ -1,0 +1,963 @@
+{
+  "@@locale": "am",
+  "appTitle": "Styloria",
+  "account": "መለያ",
+  "profile": "ፕሮፋይል",
+  "myBookings": "የእኔ ቦታ ማስያዝ",
+  "openJobs": "ክፍት ስራዎች",
+  "earnings": "ገቢ",
+  "paymentMethods": "የክፍያ መንገዶች",
+  "referFriends": "ጓደኞችን ይጋብዙ",
+  "language": "ቋንቋ",
+  "settings": "ቅንብሮች",
+  "darkMode": "ጨለማ ሁኔታ",
+  "systemDefault": "የስርዓት ነባሪ",
+  "languageUpdated": "ቋንቋ ተዘምኗል",
+  "languageSetToSystemDefault": "ቋንቋ ወደ የስርዓት ነባሪ ተመልሷል",
+  "helpAndSupport": "እርዳታ እና ድጋፍ",
+  "chatWithCustomerService": "ከደንበኛ አገልግሎት ጋር ይወያዩ",
+  "aboutAndPolicies": "ስለ እኛ እና ፖሊሲዎች",
+  "viewUserPoliciesAndAgreements": "የተጠቃሚ ፖሊሲዎችን እና ስምምነቶችን ይመልከቱ",
+  "logOut": "ውጣ",
+  "deleteAccount": "መለያ ሰርዝ",
+  "deleteAccountSubtitle": "ይህ እርምጃ ሊመለስ አይችልም",
+  "deleteAccountTitle": "መለያ ሰርዝ",
+  "deleteAccountConfirmBody": "መለያዎን ማጥፋት እርግጠኛ ነዎት?\n\nይህ እርምጃ ከመለያዎ ያወጣዎታል እና ለዘላቂ ጊዜ መዳረሻ ሊጠፋ ይችላል።",
+  "no": "አይ",
+  "yesDelete": "አዎ፣ ሰርዝ",
+  "deleteAccountSheetTitle": "መሄድዎን እናዝናለን።",
+  "deleteAccountSheetPrompt": "ለምን እንደሚሄዱ ሊነግሩን ይችላሉ? (ሁሉንም ይምረጡ)",
+  "deleteAccountSelectAtLeastOneReason": "እባክዎ ቢያንስ አንድ ምክንያት ይምረጡ።",
+  "tellUsMoreOptional": "ተጨማሪ ይንገሩን (አማራጭ)",
+  "suggestionsToImproveOptional": "ለማሻሻል ሀሳቦች (አማራጭ)",
+  "deleteMyAccount": "መለያዬን ሰርዝ",
+  "cancel": "ሰርዝ/ተወው",
+  "failedToDeleteAccount": "መለያ ማጥፋት አልተሳካም። እንደገና ይሞክሩ።",
+  "choosePreferredLanguage": "የሚመርጡትን ቋንቋ ይምረጡ",
+  "noteSomeTextMayStillAppearInEnglish": "ማስታወሻ፡ ይህ የመተግበሪያውን ቋንቋ ይቀይራል። ትርጉሞች እስኪጨምሩ ድረስ አንዳንድ ጽሁፍ በእንግሊዝኛ ሊታይ ይችላል።",
+  "languageSetToName": "ቋንቋ ወደ {name} ተቀይሯል",
+  "@languageSetToName": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "deletionReason1": "Styloria አሁን አልፈልግም",
+  "deletionReason2": "መለያ ማረጋገጥ (ኢሜይል/KYC) ላይ ችግኝ ነበር",
+  "deletionReason3": "በአቅራቢያዬ አገልግሎት/አቅራቢ አላገኘሁም",
+  "deletionReason4": "ዋጋዎች ወይም ክፍያዎች በጣም ከፍ ነበሩ / አልተገለጹም",
+  "deletionReason5": "መተግበሪያው ያስተላለፈ / መጠቀም አስቸጋሪ ነበር",
+  "deletionReason6": "ባግ ወይም የአፈጻጸም ችግኝ",
+  "deletionReason7": "የክፍያ/መመለስ ችግኝ",
+  "deletionReason8": "ከአቅራቢ/ተጠቃሚ ጋር መጥፎ ልምድ",
+  "deletionReason9": "የግል መረጃ ወይም ደህንነት ጉዳይ",
+  "deletionReason10": "መለያውን በስህተት ፈጠርሁ",
+  "deletionReason11": "ወደ ሌላ መድረክ እቀየራለሁ",
+  "deletionReason12": "ሌላ",
+  "loginWelcomeTitle": "ወደ Styloria እንኳን በደህና መጡ",
+  "loginWelcomeSubtitle": "ቦታ ማስያዝዎን እና አገልግሎቶችን ለመቆጣጠር ይግቡ።",
+  "loginFailedToLoadUserInfo": "መግባት ተሳክቷል ነገር ግን የተጠቃሚ መረጃ ማግኘት አልተቻለም።",
+  "username": "የተጠቃሚ ስም",
+  "password": "የይለፍ ቃል",
+  "required": "አስፈላጊ",
+  "login": "ግባ",
+  "createNewAccount": "አዲስ መለያ ፍጠር",
+  "requestEmailVerificationCode": "የኢሜይል ማረጋገጫ ኮድ ጠይቅ",
+  "createAccountTitle": "መለያ ፍጠር",
+  "joinStyloria": "Styloria ተቀላቀል",
+  "registerSubtitle": "አገልግሎት ለማስያዝ ወይም አቅራቢ ለመሆን መለያ ፍጠሩ",
+  "iWantTo": "እፈልጋለሁ:",
+  "bookServices": "አገልግሎት ማስያዝ",
+  "provideServices": "አገልግሎት መስጠት",
+  "personalInformation": "የግል መረጃ",
+  "firstName": "የመጀመሪያ ስም",
+  "lastName": "የአያት ስም",
+  "selectDateOfBirth": "የትውልድ ቀን ይምረጡ",
+  "phoneNumber": "የስልክ ቁጥር",
+  "pleaseEnterPhoneNumber": "እባክዎ ስልክ ቁጥር ያስገቡ",
+  "accountInformation": "የመለያ መረጃ",
+  "chooseUniqueUsernameHint": "ልዩ የተጠቃሚ ስም ይምረጡ",
+  "email": "ኢሜይል",
+  "emailHint": "your@email.com",
+  "enterValidEmail": "ትክክለኛ ኢሜይል ያስገቡ",
+  "security": "ደህንነት",
+  "passwordHintAtLeast10": "ቢያንስ 10 ቁምፊዎች",
+  "passwordMin10": "የይለፍ ቃል ቢያንስ 10 ቁምፊዎች መሆን አለበት",
+  "iAgreeTo": "እስማማለሁ ",
+  "termsOfService": "የአገልግሎት ውል",
+  "and": "እና",
+  "privacyPolicy": "የግላዊነት ፖሊሲ",
+  "passwordIsRequired": "የይለፍ ቃል አስፈላጊ ነው",
+  "confirmPassword": "የይለፍ ቃል አረጋግጥ",
+  "passwordsDoNotMatch": "የይለፍ ቃሎቹ አይመሳሰሉም",
+  "pleaseSelectDob": "እባክዎ የትውልድ ቀን ይምረጡ።",
+  "pleaseSelectCountry": "እባክዎ ሀገር ይምረጡ።",
+  "pleaseSelectCity": "እባክዎ ከተማ ይምረጡ።",
+  "pleaseEnterValidPhone": "እባክዎ ትክክለኛ ስልክ ቁጥር ያስገቡ።",
+  "mustAcceptTerms": "መመሪያዎችን መቀበል አለብዎት።",
+  "mustBeAtLeast18": "ለመመዝገብ ቢያንስ 18 ዓመት መሆን አለብዎት።",
+  "agreeToTerms": "የአገልግሎት መመሪያዎችን እና የግል መረጃ ፖሊሲን እቀበላለሁ",
+  "createAccountButton": "መለያ ፍጠር",
+  "alreadyHaveAccount": "አስቀድሞ መለያ አለዎት?",
+  "emailVerifiedSuccessPleaseLogin": "ኢሜይል ተረጋግጧል። እባክዎ ይግቡ።",
+  "pleaseVerifyEmailToContinue": "ለመቀጠል እባክዎ ኢሜይልዎን ያረጋግጡ።",
+  "requestVerificationCodeTitle": "የማረጋገጫ ኮድ ጠይቅ",
+  "requestVerificationInstructions": "ኢሜይል ወይም የተጠቃሚ ስም ያስገቡ።\nለዚህ መለያ ኢሜይል አዲስ ኮድ እንልካለን።",
+  "emailOrUsername": "ኢሜይል ወይም የተጠቃሚ ስም",
+  "sendCode": "ኮድ ላክ",
+  "ifAccountExistsCodeSent": "መለያው ካለ ኮድ ተልኳል።",
+  "failedToSendVerificationCode": "የማረጋገጫ ኮድ መላክ አልተሳካም።",
+  "verifyYourEmailTitle": "ኢሜይልዎን ያረጋግጡ",
+  "verificationCodeSentInfo": "ለዚህ መለያ ኢሜይል የማረጋገጫ ኮድ ተልኳል።",
+  "emailVerificationInstructions": "ለዚህ መለያ ኢሜይል የተላከውን 6-አሃዝ ኮድ ያስገቡ:\n{identifier}",
+  "@emailVerificationInstructions": {
+    "placeholders": {
+      "identifier": {}
+    }
+  },
+  "verificationCodeLabel": "የማረጋገጫ ኮድ",
+  "sendingEllipsis": "በመላክ ላይ...",
+  "resendCode": "ኮድን ዳግም ላክ",
+  "enter6DigitCodeError": "6-አሃዝ ኮድ ያስገቡ።",
+  "verifyingEllipsis": "በማረጋገጥ ላይ...",
+  "verify": "አረጋግጥ",
+  "invalidOrExpiredCodeTryResending": "ኮዱ ተሳስቷል ወይም ጊዜው አልፎታል። ዳግም ላክ ብለው ይሞክሩ።",
+  "bookingTitle": "ቦታ ማስያዝ #{id}",
+  "@bookingTitle": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+  "invalidBookingIdForChat": "ለቻት የቦታ ማስያዝ ID ትክክል አይደለም።",
+  "invalidBookingIdForCall": "ለጥሪ የቦታ ማስያዝ ID ትክክል አይደለም።",
+  "unableToLoadContactInfo": "የእውቂያ መረጃ መโหลด አልተቻለም። ቦታ ማስያዝ እንዳለ አረጋግጥ።",
+  "noPhoneNumberAvailableForName": "ለ{name} የስልክ ቁጥር አልተገኘም።",
+  "@noPhoneNumberAvailableForName": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "deviceCannotPlaceCalls": "ይህ መሣሪያ የስልክ ጥሪ ማድረግ አይችልም።",
+  "cancelBookingDialogTitle": "ቦታ ማስያዝ ሰርዝ",
+  "cancelBookingDialogBody": "ይህን ቦታ ማስያዝ በእርግጥ መሰረዝ ይፈልጋሉ?\n\nማስታወሻ፦ አቅራቢው አስቀድሞ ከተቀበለ እና ከ7 ደቂቃ በላይ (ነገር ግን ከ40 ደቂቃ በታች) ካለፈ፣ በመመሪያዎች መሠረት ቅጣት ሊተገበር ይችላል።",
+  "yesCancel": "አዎ፣ ሰርዝ",
+  "failedToCancelBooking": "ቦታ ማስያዝ መሰረዝ አልተቻለም።",
+  "bookingCancelledPenaltyApplied": "ቦታ ማስያዝ ተሰርዟል። {amount} ቅጣት ተተግብሯል።",
+  "@bookingCancelledPenaltyApplied": {
+    "placeholders": {
+      "amount": {}
+    }
+  },
+  "bookingCancelledSuccessfully": "ቦታ ማስያዝ በተሳካ ሁኔታ ተሰርዟል።",
+  "failedToConfirmCompletion": "መጨረሻነት ማረጋገጥ አልተቻለም። እባክዎ ደግመው ይሞክሩ።",
+  "bothSidesConfirmedCompletedPayoutReleased": "ሁለቱም ወገኖች አረጋግጠዋል። ቦታ ማስያዝ እንደ ተጠናቀቀ ተመልክቶ ክፍያው ተለቋል።",
+  "youConfirmedCompletionWaitingForProvider": "እርስዎ መጨረሻነትን አረጋግጠዋል። የአቅራቢውን ማረጋገጫ በመጠበቅ ላይ።",
+  "youConfirmedCompletionWaitingForUser": "እርስዎ መጨረሻነትን አረጋግጠዋል። የተጠቃሚውን ማረጋገጫ በመጠበቅ ላይ።",
+  "statusUnknown": "ያልታወቀ",
+  "statusAccepted": "ተቀባይነት ተሰጥቷል",
+  "statusInProgress": "በሂደት ላይ",
+  "statusCompleted": "ተጠናቋል",
+  "statusCancelled": "ተሰርዟል",
+  "paymentPaid": "ተከፍሏል",
+  "paymentPending": "በመጠበቅ ላይ",
+  "paymentFailed": "አልተሳካም",
+  "bookingAcceptedBy": "ቦታ ማስያዝ በ{name} ተቀብሏል",
+  "@bookingAcceptedBy": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "whenLabel": "መቼ",
+  "atTime": "በ {time}",
+  "@atTime": {
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "userLabel": "ተጠቃሚ",
+  "providerLabel": "አቅራቢ",
+  "estimatedPriceLabel": "የተገመተ ዋጋ",
+  "offeredPaidLabel": "ቀርቧል / ተከፍሏል",
+  "distanceLabel": "ርቀት",
+  "distanceMiles": "{miles} ማይል",
+  "@distanceMiles": {
+    "placeholders": {
+      "miles": {}
+    }
+  },
+  "acceptedAtLabel": "ተቀብሏል በ",
+  "cancelledAtLabel": "ተሰርዟል በ",
+  "cancelledByLabel": "ተሰርዟል በ",
+  "penaltyAppliedLabel": "ቅጣት ተተግብሯል: {amount}",
+  "@penaltyAppliedLabel": {
+    "placeholders": {
+      "amount": {}
+    }
+  },
+  "userConfirmedLabel": "ተጠቃሚው አረጋግጧል",
+  "providerConfirmedLabel": "አቅራቢው አረጋግጧል",
+  "payoutReleasedLabel": "ክፍያ ተለቋል",
+  "yesLower": "አዎ",
+  "noLower": "አይ",
+  "chat": "ቻት",
+  "call": "ጥሪ",
+  "actions": "እርምጃዎች",
+  "confirmCompletion": "መጨረሻነትን አረጋግጥ",
+  "noFurtherActionsForBooking": "ለዚህ ቦታ ማስያዝ ተጨማሪ እርምጃ የለም።",
+  "freeCancellationEndsIn": "ነፃ ሰርዝ በ {time} ውስጥ ያበቃል",
+  "@freeCancellationEndsIn": {
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "earlyFreeCancellationEndedWarning": "የመጀመሪያ ነፃ ሰርዝ ጊዜ አበቃ። ከተቀባይነት በኋላ እስከ 40 ደቂቃ ድረስ የዘገየ ሰርዝ ቅጣት ሊኖረው ይችላል።",
+  "cancelBooking": "ቦታ ማስያዝ ሰርዝ",
+  "cancelBookingNoPenalty": "ቦታ ማስያዝ ሰርዝ (ቅጣት የለም)",
+  "cancelBookingPenaltyMayApply": "ቦታ ማስያዝ ሰርዝ (ቅጣት ሊኖር ይችላል)",
+  "cancellationPolicyInfo": "ከአቅራቢው ተቀባይነት በኋላ በመጀመሪያዎቹ 7 ደቂቃዎች ውስጥ ያለ ቅጣት ማሰረዝ ይችላሉ፣ እና ካስፈለገ ከአስቀድሞ 40 ደቂቃ በኋላ ደግሞ። በመካከላቸው ጊዜ ቅጣት ሊተገበር ይችላል።",
+  "ratingLine": "ደረጃ: {rating} ({reviewCount, plural, =1{1 ግምገማ} other{{reviewCount} ግምገማዎች}})",
+  "@ratingLine": {
+    "placeholders": {
+      "rating": {},
+      "reviewCount": {
+        "type": "int"
+      }
+    }
+  },
+  "proofOfSkillsPortfolio": "የችሎታ ማስረጃ (Portfolio)",
+  "noPortfolioPostsAvailable": "ምንም የፖርትፎሊዮ ፖስቶች የሉም።",
+  "bookingLocation": "የቦታ ማስያዝ ቦታ",
+  "location": "ቦታ",
+  "latitude": "Latitude",
+  "longitude": "Longitude",
+  "mapWillAppearWhenCoordinatesValid": "ኮኦርዲኔቶቹ ትክክል ሲሆኑ ካርታው እዚህ ይታያል።",
+  "chatForBookingTitle": "ለቦታ ማስያዝ #{id} ቻት",
+  "@chatForBookingTitle": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+  "unableToStartChat": "ቻት መጀመር አልተቻለም። ቻት ቦታ ማስያዝ ተቀብሏል፣ በሂደት ላይ ነው፣ ወይም ባለፈው 1 ቀን ውስጥ ተጠናቀቀ ብቻ ይገኛል።",
+  "invalidChatThreadFromServer": "ከሰርቨር የተመለሰው የቻት ክር ትክክል አይደለም።",
+  "messageNotSentPolicy": "መልዕክት አልተላከም። ማስታወሻ፡ በውይይት ውስጥ የስልክ ቁጥር ወይም ኢሜይል መแชร์ አይፈቀድም።",
+  "unknown": "ያልታወቀ",
+  "typeMessageHint": "ወደ ድጋፍ መልዕክት ይጻፉ...",
+  "uploadProfilePicture": "የፕሮፋይል ምስል ይስቀሉ",
+  "currentProfilePicture": "የአሁኑ ፕሮፋይል ምስል",
+  "newPicturePreview": "አዲስ ምስል ቅድመ እይታ",
+  "chooseImage": "ምስል ይምረጡ",
+  "upload": "ይስቀሉ",
+  "noImageBytesFoundWeb": "የምስል bytes አልተገኙም (web).",
+  "pleasePickAnImageFirst": "እባክዎ በመጀመሪያ ምስል ይምረጡ።",
+  "uploadFailedCheckServerLogs": "መስቀል አልተሳካም። የሰርቨር ሎጎች / token ይመርምሩ።",
+  "profilePictureUploadedSuccessfully": "የፕሮፋይል ምስል በተሳካ ሁኔታ ተሰቅሏል!",
+  "errorWithValue": "ስህተት: {error}",
+  "@errorWithValue": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "tapToChangeProfilePicture": "ፕሮፋይል ምስል ለመቀየር ይንኩ",
+  "usernameValue": "የተጠቃሚ ስም: {username}",
+  "@usernameValue": {
+    "placeholders": {
+      "username": {}
+    }
+  },
+  "roleValue": "ሚና: {role}",
+  "@roleValue": {
+    "placeholders": {
+      "role": {}
+    }
+  },
+
+  "youAreCurrentlyUnavailable": "አሁን አይገኙም",
+  "toBrowseAndAcceptJobsEnableAvailability": "በአቅራቢያ ያሉ የስራ ጥያቄዎችን ለማሰስ እና ለመቀበል፣ እራስዎን ለቦታ ማስያዝ ዝግጁ አድርገው ማቀናበር አለብዎት።",
+  "goToProfileSettings": "ወደ መገለጫ ቅንብሮች ይሂዱ",
+  "tipToggleAvailableForBookings": "ምክር: የስራ ጥያቄዎችን መቀበል ለመጀመር በአቅራቢ መገለጫዎ ውስጥ \"ለቦታ ማስያዝ ይገኛል\" የሚለውን ያብሩ።",
+  "requestedBy": "ጠያቂ: {name}",
+  "@requestedBy": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "locationLabel": "ቦታ: {address}",
+  "@locationLabel": {
+    "placeholders": {
+      "address": {
+        "type": "String"
+      }
+    }
+  },
+
+  "dateOfBirthYyyyMmDd": "የትውልድ ቀን (YYYY-MM-DD)",
+  "saveProfile": "ፕሮፋይል ያስቀምጡ",
+  "failedToSaveProfile": "መገለጫን ማስቀመጥ አልተሳካም። እባክዎ እንደገና ይሞክሩ።",
+  "profileUpdated": "ፕሮፋይል ተዘምኗል።",
+  "completeYourProviderProfile": "የአቅራቢ ፕሮፋይልዎን ያጠናቅቁ",
+  "completeProviderProfileBody": "ስራዎችን ለመቀበል እና ገንዘብ ለማግኘት፣ የአቅራቢ ፕሮፋይልዎን ያጠናቅቁ።",
+  "setupProfileNow": "ፕሮፋይል አሁን ያዘጋጁ",
+  "doItLater": "በኋላ",
+  "bookingTimerPenaltyPeriodActive": "የቅጣት ጊዜ ንቁ ነው",
+  "bookingTimerFreeCancellationPeriod": "ነፃ ማሰረዝ ጊዜ",
+  "bookingTimerTimeRemaining": "የቀረ ጊዜ: {time}",
+  "@bookingTimerTimeRemaining": {
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "bookingTimerCancellingNowPenalty": "አሁን መሰረዝ 10% ቅጣት ያመጣል።",
+  "bookingTimerCancelNoPenalty": "ያለ ቅጣት ማሰረዝ ይችላሉ።",
+  "myReviewsTitle": "የእኔ ግምገማዎች",
+  "failedToLoadReviews": "ግምገማዎችን መโหลด አልተቻለም።",
+  "noReviewsYet": "እስካሁን ምንም ግምገማ አልተወዱም።",
+  "providerWithName": "አቅራቢ: {name}",
+  "providerGeneric": "አቅራቢ",
+  "ratingWithValue": "ደረጃ: {rating}",
+  "nearbyOpenJobsTitle": "በአቅራቢያ ያሉ ክፍት ስራዎች",
+  "failedToLoadOpenJobsHint": "ክፍት ስራዎችን መโหลด አልተቻለም።\nአቅራቢ ፕሮፋይል ከቦታ ጋር እና available=true መሆኑን ያረጋግጡ።",
+  "errorLoadingJobsWithValue": "ስራዎችን ለመโหลด ስህተት: {error}",
+  "noOpenJobsFoundNearbyTitle": "በአቅራቢያ ምንም ክፍት ስራ አልተገኘም",
+  "noOpenJobsFoundNearbyBody": "ያረጋግጡ:\n- የአቅራቢ ቦታ አስቀምጠዋል\n- እንደ available ተመልክተዋል\n- ተጠቃሚዎች bookings ፈጥረው ከፍለዋል",
+  "currencyLabel": "ገንዘብ: {symbol}",
+  "pricesShownInCurrency": "ዋጋዎች በ {symbol} ({country}) ይታያሉ",
+  "jobTitleWithId": "ስራ #{id}",
+  "serviceLine": "አገልግሎት: {service}",
+  "whenLine": "መቼ: {date} {time}",
+  "priceLine": "ዋጋ: {price}",
+  "acceptJob": "ስራ ተቀበል",
+  "failedToAcceptJob": "ስራውን መቀበል አልተቻለም።",
+  "jobAcceptedSuccessfully": "ስራው በተሳካ ሁኔታ ተቀብሏል።",
+  "newServiceRequestTitle": "አዲስ የአገልግሎት ጥያቄ",
+  "offeredPriceLabel": "የቀረበ ዋጋ",
+  "offeredPriceHint": "ለምሳሌ 25.00",
+  "enterValidPrice": "ትክክለኛ ዋጋ ያስገቡ",
+  "bookAndPay": "ቦታ ያስይዙ እና ይክፈሉ",
+  "bookAndPayAmount": "ቦታ ያስይዙ እና ይክፈሉ {amount}",
+  "haircutService": "ፀጉር መቁረጥ",
+  "stylingService": "ስታይሊንግ",
+  "timeLabel": "ሰዓት:",
+  "notesLabel": "ማስታወሻዎች",
+  "requestCreatedAndPaidBroadcast": "ጥያቄው ተፈጥሯል እና ተከፍሏል! ለአቅራቢዎች ተልኳል።",
+  "locationLatLng": "ቦታ: {lat}, {lng}",
+  "paymentMethodsTitle": "የክፍያ መንገዶች",
+  "paymentPreferencesInfo": "እነዚህ ምርጫዎች በመሣሪያዎ ውስጥ በአካባቢያዊ መልኩ ይቀመጣሉ። እውነተኛ ክፍያ በStripe/ሌሎች መዋቅሮች በደህና ይሰራል።",
+  "preferredMethodLabel": "የተመረጠ መንገድ (በሀገር መሰረት አካባቢያዊ መዋቅር ይመረጣል)",
+  "methodVisaMastercard": "Visa/Mastercard",
+  "methodMobileMoney": "Mobile Money (Momo/Paystack/Africa)",
+  "methodPaypal": "PayPal",
+  "methodApplePayGooglePay": "Apple Pay/Google Pay",
+  "methodWeChatPay": "WeChat Pay (China)",
+  "methodAlipay": "Alipay (China)",
+  "methodUnionPay": "UnionPay Card (China)",
+  "mobileMoneyNumberLabel": "Mobile Money ቁጥር",
+  "wechatAlipayIdLabel": "WeChat/Alipay ID",
+  "cardLast4DigitsLabel": "የካርድ የመጨረሻ 4 አሃዞች",
+  "paypalEmailLabel": "PayPal ኢሜይል",
+  "applePayEnabledOnDevice": "Apple Pay በዚህ መሣሪያ ላይ ነቅቷል",
+  "savePaymentPreferences": "የክፍያ ምርጫዎችን አስቀምጥ",
+  "paymentPrefsSavedInfo": "የክፍያ ምርጫዎች በአካባቢያዊ ሁኔታ ተቀምጠዋል። እውነተኛ መቁረጥ በኋላ በStripe/ሌሎች መዋቅሮች ይሰራል።",
+  "failedToLoadImage": "ምስሉን መโหลด አልተቻለም።",
+  "earningsTitle": "ገቢ",
+  "couldNotLoadEarningsSummary": "የገቢ ማጠቃለያ መโหลด አልተቻለም።",
+  "noData": "ምንም መረጃ የለም።",
+  "retry": "ደግመው ይሞክሩ",
+  "summaryTitle": "ማጠቃለያ",
+  "totalLabel": "ጠቅላላ",
+  "pendingLabel": "በመጠበቅ ላይ",
+  "paidLabel": "ተከፍሏል",
+  "pdfReportTitle": "የPDF ሪፖርት",
+  "periodLabel": "ወቅት",
+  "periodThisMonth": "ይህ ወር",
+  "periodLastMonth": "ያለፈው ወር",
+  "periodYtd": "ከዓመቱ መጀመሪያ ጀምሮ",
+  "periodAllTime": "ሁልጊዜ",
+  "couldNotDownloadPdfReport": "የPDF ሪፖርቱን ማውረድ አልተቻለም።",
+  "couldNotOpenPdfWithValue": "PDF መክፈት አልተቻለም: {error}",
+  "savingFilesNotSupportedWeb": "በWeb ላይ ፋይሎችን ማስቀመጥ አሁን አይደገፍም።",
+  "savedToDocumentsIosWithPath": "በDocuments (iOS) ተቀምጧል:\n{path}",
+  "savedToFilesWithPath": "በፋይሎች ውስጥ ተቀምጧል:\n{path}",
+  "open": "ክፈት",
+  "failedToSavePdfWithValue": "PDF ማስቀመጥ አልተቻለም: {error}",
+  "openPdfReport": "የPDF ሪፖርትን ክፈት",
+  "savePdfToDownloads": "PDF ወደ Downloads አስቀምጥ",
+  "reportWatermarkNote": "የሪፖርት PDF ውስጥ የStyloria watermark መኖር አለበት።",
+  "referFriendsTitle": "ጓደኞችን ያስገቡ",
+  "shareReferralCodeBody": "የሪፈራል ኮድዎን ከጓደኞችዎ ጋር ያጋሩ። በኋላ እነሱ ሲመዝገቡ እና bookings ሲጨርሱ ሽልማት ማከል ይችላሉ።",
+  "yourReferralCodeLabel": "የእርስዎ ሪፈራል ኮድ:",
+  "copy": "ኮፒ",
+  "referralCodeCopiedWithCode": "የሪፈራል ኮድ ተኮፒ ተደርጓል: {code}",
+  "navHome": "መነሻ",
+  "navBookings": "ቦታ ማስያዝ",
+  "navNotifications": "ማሳወቂያዎች",
+  "navAccount": "መለያ",
+  "welcome": "እንኳን ደህና መጡ",
+  "welcomeName": "እንኳን ደህና መጡ፣ {name}",
+  "@welcomeName": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "toggleThemeTooltip": "ብርሃን/ጨለማ ሁኔታ ቀይር",
+  "loggedInAs": "ገብተዋል እንደ: {role}",
+  "@loggedInAs": {
+    "placeholders": {
+      "role": {}
+    }
+  },
+  "locationWithValue": "ቦታ: {value}",
+  "@locationWithValue": {
+    "placeholders": {
+      "value": {}
+    }
+  },
+  "homeTagline": "በቀጥታ ቦታ ማስያዝ እና ታማኝ አቅራቢዎች ጋር የግሩሚንግ ተሞክሮዎን ያሻሽሉ።",
+  "manageProviderProfile": "የአቅራቢ ፕሮፋይል አስተዳድር",
+  "browseOpenJobs": "ክፍት ስራዎችን ተመልከት",
+  "quickActions": "ፈጣን እርምጃዎች",
+  "newBooking": "አዲስ ቦታ ማስያዝ",
+  "notificationsWithUnread": "ማሳወቂያዎች ({count, plural, =1{1 ያልተነበበ} other{{count} ያልተነበቡ}})",
+  "@notificationsWithUnread": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "liveLocationTrackingTitle": "ቀጥታ የቦታ ክትትል",
+  "live": "Live",
+  "locationServicesDisabled": "የቦታ አገልግሎቶች ተዘግተዋል",
+  "locationPermissionDenied": "የቦታ ፍቃድ ተከልክሏል",
+  "locationPermissionPermanentlyDenied": "የቦታ ፍቃድ በቋሚነት ተከልክሏል",
+  "failedToGetLocationWithValue": "ቦታ ማግኘት አልተቻለም: {error}",
+  "@failedToGetLocationWithValue": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "youProvider": "እርስዎ (አቅራቢ)",
+  "youCustomer": "እርስዎ (ደንበኛ)",
+  "customer": "ደንበኛ",
+  "bookingDetails": "የቦታ ማስያዝ ዝርዝር",
+  "navigate": "አቅጣጫ",
+  "failedToLoadNotifications": "ማሳወቂያዎችን መโหลด አልተቻለም።",
+  "failedToMarkAsRead": "እንደ ተነበበ ማስመልከት አልተቻለም",
+  "noNotificationsYet": "እስካሁን ማሳወቂያ የለም።",
+  "markRead": "ተነበበ አድርግ",
+  "providerKycTitle": "የአቅራቢ ማረጋገጫ (KYC)",
+  "logoutTooltip": "ውጣ",
+  "statusLabel": "ሁኔታ፡ {status}",
+  "@statusLabel": {
+    "placeholders": {
+      "status": {}
+    }
+  },
+  "rejectedWithNotes": "ተቀባይነት አልተሰጠም፡ {notes}",
+  "@rejectedWithNotes": {
+    "placeholders": {
+      "notes": {}
+    }
+  },
+  "kycInstructions": "የአቅራቢ ባህሪያትን ለመጠቀም መታወቂያዎን እና ሴልፊ ለማረጋገጫ ይጫኑ።",
+  "idFrontRequired": "መታወቂያ ፊት (አስፈላጊ)",
+  "selectIdFront": "መታወቂያ ፊት ይምረጡ",
+  "idBackRequired": "መታወቂያ ጀርባ (አስፈላጊ)",
+  "selectIdBackRequired": "መታወቂያ ጀርባ ይምረጡ",
+  "selfieRequired": "ሴልፊ (አስፈላጊ)",
+  "selectSelfie": "ሴልፊ ይምረጡ",
+  "takeSelfie": "ሴልፊ ያንሱ",
+  "errorUploadAllRequired": "እባክዎ መታወቂያ (ፊት)፣ መታወቂያ (ጀርባ) እና ሴልፊ ይጫኑ።",
+  "failedSubmitKycCode": "KYC ማስገባት አልተሳካም (ኮድ {code}).",
+  "@failedSubmitKycCode": {
+    "placeholders": {
+      "code": {}
+    }
+  },
+  "submittedCurrentStatus": "ተላክ። የአሁኑ ሁኔታ፡ {status}",
+  "@submittedCurrentStatus": {
+    "placeholders": {
+      "status": {}
+    }
+  },
+  "unknownStatus": "ያልታወቀ",
+  "submitKyc": "KYC ላክ",
+  "verificationMayTakeTimeNote": "ማስታወሻ፡ ማረጋገጫው ጊዜ ሊወስድ ይችላል። ከተፈቀደ በኋላ የአቅራቢ ባህሪያትን መጠቀም ይችላሉ።",
+  "enterVerificationCodeTitle": "የማረጋገጫ ኮድ ያስገቡ",
+  "otpSentToUsername": "ከ\"{username}\" ጋር የተያያዘው ስልክ ቁጥር ወደ 6 አሃዝ ኮድ\nላክነዋል።",
+  "@otpSentToUsername": {
+    "placeholders": {
+      "username": {}
+    }
+  },
+  "sixDigitCodeLabel": "6 አሃዝ ኮድ",
+  "enterSixDigitCodeValidation": "6 አሃዝ ኮድ ያስገቡ",
+  "otpInvalidOrExpired": "የተሳሳተ ወይም ጊዜው ያለፈ ኮድ።",
+  "failedLoadUserInfoAfterVerification": "ማረጋገጫ በኋላ የተጠቃሚ መረጃ መጫን አልተሳካም።",
+  "chatWithSupportTitle": "ከድጋፍ ጋር ውይይት",
+  "unableStartSupportChat": "የድጋፍ ውይይት መጀመር አልተቻለም።",
+  "invalidSupportThreadReturned": "ከሰርቨር የተመለሰው የድጋፍ ትርድ ልክ አይደለም።",
+  "noMessagesYet": "እስካሁን መልዕክቶች የሉም። ውይይት ጀምሩ!",
+  "supportDefaultName": "ድጋፍ",
+  "aboutPoliciesTitle": "ስለ እኛ እና ፖሊሲዎች",
+  "paymentsNotSupportedShort": "በዚህ መድረክ ላይ ክፍያ አይደገፍም። እባክዎ Android, iOS, macOS ወይም Web ላይ ያስኪዱ።",
+  "failedToLoadProfile": "መገለጫን መጫን አልተሳካም፦ {error}",
+  "profileSavedSuccess": "መገለጫ በተሳካ ሁኔታ {action} ተደርጓል!",
+  "genericError": "ስህተት፦ {error}",
+  "locationPermissionDeniedEnableInSettings": "የቦታ ፍቃድ ተከልክሏል። እባክዎ በቅንብሮች ያንቁ።",
+  "locationPermissionPermanentlyDeniedEnableInAppSettings": "የቦታ ፍቃድ በቋሚነት ተከልክሏል። እባክዎ በመተግበሪያ ቅንብሮች ያንቁ።",
+  "errorGettingLocation": "ቦታ ሲያገኝ ስህተት፦ {error}",
+  "pleaseEnterAddress": "እባክዎ አድራሻ ያስገቡ",
+  "locationUpdatedFromAddress": "ቦታ ከአድራሻ ተዘምኗል",
+  "couldNotFindLocationForAddress": "ለዚህ አድራሻ ቦታ ማግኘት አልተቻለም",
+  "errorConvertingAddress": "አድራሻ ሲቀየር ስህተት፦ {error}",
+  "portfolioUnavailableCompleteKycFirst": "ፖርትፎሊዮ አይገኝም። አገልጋይ ከሆኑ መጀመሪያ KYC ማረጋገጫን ያጠናቅቁ።",
+  "failedToLoadPortfolio": "ፖርትፎሊዮን መጫን አልተሳካም፦ {error}",
+  "addPhoto": "ፎቶ ጨምር",
+  "addVideo": "ቪዲዮ ጨምር",
+  "addPost": "ፖስት ጨምር",
+  "captionOptionalTitle": "መግለጫ (አማራጭ)",
+  "captionHintExample": "ምሳሌ፦ “Knotless braids በደንበኛ”",
+  "skip": "ዝለል",
+  "save": "አስቀምጥ",
+  "failedToCreatePortfolioPost": "የፖርትፎሊዮ ፖስት መፍጠር አልተሳካም።",
+  "uploadFailedMediaUpload": "መስቀል (upload) አልተሳካም (ሚዲያ መስቀል).",
+  "uploadFailed": "መስቀል (upload) አልተሳካም፦ {error}",
+  "deletePostTitle": "ፖስት ማጥፋት?",
+  "deletePostBody": "ይህ ፖስቱን ከፖርትፎሊዮዎ ያስወግዳል።",
+  "delete": "አጥፋ",
+  "deleteFailed": "ማጥፋት አልተሳካም።",
+  "deleteFailedWithError": "ማጥፋት አልተሳካም፦ {error}",
+  "portfolioTitle": "ፖርትፎሊዮ",
+  "noPortfolioPostsYetHelpText": "እስካሁን ፖርትፎሊዮ ፖስቶች የሉም። የስራዎን ፎቶ/ቪዲዮ ይጨምሩ እንዲታመኑ ይረዳል።",
+  "setupProviderProfileTitle": "የአገልጋይ መገለጫ አዘጋጅ",
+  "providerProfileTitle": "የአገልጋይ መገለጫ",
+  "welcomeToStyloriaTitle": "ወደ Styloria እንኳን ደህና መጡ!",
+  "completeProviderProfileToStartEarning": "ስራ ለመቀበል እና ገንዘብ ለማግኘት የአገልጋይ መገለጫዎን ያጠናቅቁ።",
+  "reviewCountLabel": "({count} ግምገማዎች)",
+  "topRatedChip": "ከፍተኛ ደረጃ",
+  "bioLabel": "ባዮ / መግለጫ",
+  "bioHint": "ለደንበኞች ስለ ችሎታዎ እና ልምድዎ ይንገሩ...",
+  "pleaseEnterBio": "እባክዎ ባዮ ያስገቡ",
+  "bioMinLength": "ባዮ ቢያንስ {min} ቁምፊ መሆን አለበት",
+  "yourLocationTitle": "ቦታዎ",
+  "locationHelpMatchNearbyClients": "ቦታዎ ከአቅራቢ ደንበኞች ጋር ለመያያዝ ይረዳል",
+  "locationHelpUpdateToFindJobs": "በተለያዩ አካባቢዎች ስራ ለማግኘት ቦታዎን ያዘምኑ",
+  "useMyCurrentLocationTitle": "የአሁኑን ቦታዬን ተጠቀም",
+  "gpsSubtitle": "GPS በመጠቀም ቦታን በራስ-ሰር ያግኙ",
+  "orLabel": "ወይም",
+  "enterYourAddressTitle": "አድራሻዎን ያስገቡ",
+  "fullAddressLabel": "ሙሉ አድራሻ",
+  "fullAddressHint": "ምሳሌ፦ 123 Main St, Accra, Ghana",
+  "find": "ፈልግ",
+  "addressHelpText": "የመንገድ አድራሻ፣ ከተማ፣ እና ሀገር ያስገቡ",
+  "coordinatesAutoFilledTitle": "ኮኦርዲኔቶች (በራስ-ሰር ይሞላ)",
+  "servicePricingTitle": "የአገልግሎት ዋጋ",
+  "servicePricingHelp": "ለእያንዳንዱ አገልግሎት ዋጋዎን ያዘጋጁ። ማቅረብ የማይችሉትን “Not Offered” ይምረጡ።",
+  "serviceHeader": "አገልግሎት",
+  "priceHeader": "ዋጋ",
+  "notOfferedHeader": "አይቀርብም",
+  "priceHint": "0.00",
+  "providerHowPricingWorksTitle": "የዋጋ አሰራር:",
+  "providerHowPricingWorksBody": "• ዋጋዎ ለአገልግሎት የሚያከፍሉት ነው\n• የትራንስፖርት ወጪ = 80% ከተጠቃሚ ምንዛሬ በኪ.ሜ\n• ተጠቃሚዎች በአቅራቢ አገልጋዮች መሠረት 3 አማራጮች ያያሉ:\n  - Budget: ዝቅተኛ ዋጋ\n  - Standard: አማካይ ዋጋ\n  - Priority: ከፍተኛ ዋጋ",
+  "availableForBookingsTitle": "ለቦኪንግ ዝግጁ",
+  "availableOnHelp": "✓ በአቅራቢ ደንበኞች ፍለጋ ውጤቶች ውስጥ ትታያላችሁ",
+  "availableOffHelp": "✗ አዲስ የስራ እንቅስቃሴ አትቀበሉም",
+  "completeSetupStartEarning": "ማዘጋጀት ጨርስ እና መቆጠር ጀምር",
+  "updateProfile": "መገለጫ አዘምን",
+  "skipForNow": "ለአሁን ዝለል",
+  "@providerWithName": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "@ratingWithValue": {
+    "placeholders": {
+      "rating": {}
+    }
+  },
+  "@errorLoadingJobsWithValue": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@currencyLabel": {
+    "placeholders": {
+      "symbol": {}
+    }
+  },
+  "@pricesShownInCurrency": {
+    "placeholders": {
+      "symbol": {},
+      "country": {}
+    }
+  },
+  "@jobTitleWithId": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+  "@serviceLine": {
+    "placeholders": {
+      "service": {}
+    }
+  },
+  "@whenLine": {
+    "placeholders": {
+      "date": {},
+      "time": {}
+    }
+  },
+  "@priceLine": {
+    "placeholders": {
+      "price": {}
+    }
+  },
+  "@bookAndPayAmount": {
+    "placeholders": {
+      "amount": {}
+    }
+  },
+  "@locationLatLng": {
+    "placeholders": {
+      "lat": {},
+      "lng": {}
+    }
+  },
+  "@couldNotOpenPdfWithValue": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@savedToDocumentsIosWithPath": {
+    "placeholders": {
+      "path": {}
+    }
+  },
+  "@savedToFilesWithPath": {
+    "placeholders": {
+      "path": {}
+    }
+  },
+  "@failedToSavePdfWithValue": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@referralCodeCopiedWithCode": {
+    "placeholders": {
+      "code": {}
+    }
+  },
+  "newBookingTitle": "New Booking",
+  "appointmentDetailsTitle": "Appointment details",
+  "pickDate": "Pick date",
+  "pickTime": "Pick time",
+  "serviceTypeTitle": "Service type",
+  "serviceDropdownLabel": "Service",
+  "serviceHaircutLabel": "Haircut",
+  "serviceBraidsLabel": "Braids",
+  "serviceShaveLabel": "Shave",
+  "serviceHairColoringLabel": "Hair Coloring",
+  "serviceManicureLabel": "Manicure",
+  "servicePedicureLabel": "Pedicure",
+  "serviceNailArtLabel": "Nail Art",
+  "serviceMakeupLabel": "Makeup",
+  "serviceFacialLabel": "Facial",
+  "serviceWaxingLabel": "Waxing",
+  "serviceMassageLabel": "Massage",
+  "serviceHairStylingLabel": "Hair Styling",
+  "serviceHairTreatmentLabel": "Hair Treatment",
+  "serviceHairExtensionsLabel": "Hair Extensions",
+  "serviceOtherServicesLabel": "Other Services",
+  "notesForProviderOptionalLabel": "Notes for your provider (optional)",
+  "locationTitle": "Location",
+  "latitudeLabel": "Latitude",
+  "longitudeLabel": "Longitude",
+  "requiredField": "Required",
+  "useMyCurrentLocation": "Use my current location",
+  "pricesShownIn": "Prices shown in {symbol} ({country})",
+  "@pricesShownIn": {
+    "placeholders": {
+      "symbol": {},
+      "country": {}
+    }
+  },
+  "chooseTimeLaterThanCurrent": "Please choose a time later than the current time.",
+  "pleasePickDateAndTime": "Please pick date and time.",
+  "locationUpdatedFromGps": "Location updated from GPS.",
+  "failedToGetLocation": "Failed to get location: {error}",
+  "@failedToGetLocation": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "bookingCreatedChoosePrice": "Booking created! ID: {id} • Choose your price option.",
+  "@bookingCreatedChoosePrice": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+  "failedToCreateBooking": "Failed to create booking.",
+  "paymentsNotSupportedLong": "Payments are not supported on this platform. Please run the app on Android, iOS, macOS, or Web to test real payments.",
+  "noBookingToConfirm": "No booking to confirm. Please create a booking first.",
+  "pleaseChoosePriceOption": "Please choose a price option.",
+  "failedCreatePaymentTryAgain": "Failed to create payment on server. Please try again.",
+  "paymentSuccessfulMessage": "Payment successful!\nBooking #{bookingId} • Paid: {paid}\nYour request is now visible to nearby providers.",
+  "@paymentSuccessfulMessage": {
+    "placeholders": {
+      "bookingId": {},
+      "paid": {}
+    }
+  },
+  "paymentSucceededButFailedUpdate": "Payment succeeded, but failed to update booking on server.",
+  "paymentCancelledOrFailed": "Payment cancelled or failed: {reason}",
+  "@paymentCancelledOrFailed": {
+    "placeholders": {
+      "reason": {}
+    }
+  },
+  "unexpectedPaymentError": "Unexpected payment error: {error}",
+  "@unexpectedPaymentError": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "createBookingButton": "Create Booking",
+  "chooseYourPriceOptionTitle": "Choose Your Price Option",
+  "transportationCostLabel": "Transportation cost: {cost}",
+  "@transportationCostLabel": {
+    "placeholders": {
+      "cost": {}
+    }
+  },
+  "budgetTierTitle": "BUDGET",
+  "standardTierTitle": "STANDARD",
+  "priorityTierTitle": "PRIORITY",
+  "budgetTierDescription": "Best value among nearby providers",
+  "standardTierDescription": "Recommended balance of price & availability",
+  "priorityTierDescription": "Premium option to attract top providers faster",
+  "naShort": "N/A",
+  "priceBreakdownTitle": "Price Breakdown",
+  "servicePriceLabel": "Service Price",
+  "transportationLabel": "Transportation",
+  "serviceFeeLabel": "Service Fee ({percent}%)",
+  "@serviceFeeLabel": {
+    "placeholders": {
+      "percent": {}
+    }
+  },
+  "allPricesIn": "All prices in {currency} ({country})",
+  "@allPricesIn": {
+    "placeholders": {
+      "currency": {},
+      "country": {}
+    }
+  },
+  "genericContact": "እውቂያ",
+  "genericProvider": "አገልግሎት አቅራቢ",
+  "genericNotAvailable": "አይገኝም",
+
+  "rateProviderTitle": "{providerName}ን ደረጃ ይስጡ",
+  "@rateProviderTitle": { 
+    "placeholders": { 
+      "providerName": {} 
+    } 
+  },
+  "reviewSelectRatingPrompt": "ደረጃ ይምረጡ (1 እስከ 5).",
+  "reviewCommentOptionalLabel": "አስተያየት (አማራጭ)",
+  "genericCancel": "ሰርዝ",
+  "genericSubmit": "አስገባ",
+  "reviewSubmitted": "ግምገማ ተልኳል።",
+  "reviewSubmitFailed": "ግምገማ መላክ አልተሳካም።",
+  "rateThisService": "ይህን አገልግሎት ደረጃ ይስጡ",
+
+  "tipLeaveTitle": "ቲፕ ይስጡ",
+  "tipChooseAmountPrompt": "የቲፕ መጠን ይምረጡ ወይም የራስዎን ያስገቡ።",
+  "tipNoTip": "ቲፕ የለም",
+  "tipCustomAmountLabel": "ብጁ የቲፕ መጠን",
+  "genericContinue": "ቀጥል",
+
+  "tipSkipped": "ቲፕ ተወው።",
+  "tipFailedToSaveChoice": "የቲፕ ምርጫ ማስቀመጥ አልተሳካም።",
+  "tipFailedToCreatePayment": "የቲፕ ክፍያ መፍጠር አልተሳካም።",
+  "tipPaidSuccessfully": "ቲፕ በተሳካ ሁኔታ ተከፍሏል። እናመሰግናለን!",
+  "tipPaidButUpdateFailed": "የቲፕ ክፍያ ተሳክቷል፣ ግን ቦታ ማሻሻል አልተሳካም።",
+
+  "tipCancelledOrFailed": "ቲፕ ተሰርዟል/አልተሳካም: {message}",
+  "tipUnexpectedError": "ያልተጠበቀ የቲፕ ስህተት: {error}",
+
+  "tipAlreadyPaidLabel": "ቲፕ አስቀድሞ ተከፍሏል",
+  "tipSkippedLabel": "ቲፕ ተወው",
+  "walletTitle": "ዋሌት",
+  "walletTooltip": "ዋሌት",
+  "payoutSettingsTitle": "የክፍያ ቅንብሮች",
+  "payoutSettingsTooltip": "የክፍያ ቅንብሮች",
+  "walletNoWalletYet": "አሁን ዋሌት የለም። ስራዎችን ጨርሰው ለመገኘት ይጀምሩ።",
+  "walletCurrencyFieldLabel": "ምንዛሬ",
+  "walletAvailableLine": "የሚገኝ: {amount} {currency}",
+  "walletPendingLine": "በመጠባበቅ ላይ: {amount} {currency}",
+  "walletCashOutInstant": "አሁን መውጣት",
+  "walletCashOutFailed": "መውጣት አልተሳካም።",
+  "walletCashOutSentTransfer": "መውጣት ተልኳል። ማስተላለፊያ: {transferId}",
+  "walletTransactionsTitle": "ግብይቶች",
+  "walletNoTransactionsYet": "እስካሁን ግብይት የለም።",
+  "payoutAutoPayoutsTitle": "ራስ-ሰር ክፍያዎች",
+  "payoutAutoPayoutsSubtitle": "እንደ ተመረጠው መርሃ ግብር ክፍያዎችን በራስ-ሰር ይላኩ።",
+  "payoutDayUtcLabel": "የክፍያ ቀን (UTC)",
+  "payoutHourUtcLabel": "የክፍያ ሰዓት (UTC)",
+  "payoutMinimumAmountLabel": "ዝቅተኛ የራስ-ሰር ክፍያ መጠን",
+  "payoutMinimumAmountHelper": "የሚገኝ ቀሪ ሂሳብ ≥ ከዚህ መጠን ሲሆን ብቻ ራስ-ሰር ክፍያ ይሄዳል።",
+  "payoutInstantCashOutEnabledTitle": "ፈጣን መውጣት ነቅቷል",
+  "payoutInstantCashOutEnabledSubtitle": "“መውጣት” አዝራርን ያንቁ (ክፍያ ሊኖር ይችላል)።",
+  "payoutSettingsSaved": "የክፍያ ቅንብሮች ተቀምጠዋል።",
+  "payoutSettingsSaveFailed": "የክፍያ ቅንብሮችን ማስቀመጥ አልተሳካም።",
+  "tipLeaveButton": "ቲፕ ይስጡ",
+
+  "userCountryPlaceholder": "User country",
+  "totalToPayTitle": "Total to Pay",
+  "includesServiceTransportation": "Includes service + transportation",
+  "confirmAndPay": "Confirm & Pay",
+  "howPricingWorksTitle": "How Pricing Works",
+  "howPricingWorksBullets": "• Budget: best value among nearby providers\n• Standard: recommended default\n• Priority: premium option to speed up acceptance\n• Transportation is included in the total",
+  "myBookingsTitle": "My Bookings",
+  "myAssignedJobsTitle": "My Assigned Jobs",
+  "pleaseCompleteProviderProfileFirst": "Please complete your provider profile first.",
+  "failedToLoadBookings": "Failed to load bookings.",
+  "profileSetupRequiredTitle": "Profile Setup Required",
+  "profileSetupRequiredBody": "You need to complete your provider profile before you can view assigned jobs and earnings.",
+  "later": "Later",
+  "setupNow": "Setup Now",
+  "noBookingsFound": "No bookings found.",
+  "findNearbyOpenJobs": "Find Nearby Open Jobs",
+  "pay": "Pay",
+  "rate": "Rate",
+  "bookingNumber": "Booking #{id}",
+  "@bookingNumber": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+  "whenOn": "When: {date}",
+  "@whenOn": {
+    "placeholders": {
+      "date": {}
+    }
+  },
+  "whenAt": "When: {date} at {time}",
+  "@whenAt": {
+    "placeholders": {
+      "date": {},
+      "time": {}
+    }
+  },
+  "providerLine": "Provider: {name}",
+  "@providerLine": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "userLine": "User: {name}",
+  "@userLine": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "estimatedPriceLine": "Estimated price: {price}",
+  "@estimatedPriceLine": {
+    "placeholders": {
+      "price": {}
+    }
+  },
+  "paymentLine": "Payment: {status}",
+  "@paymentLine": {
+    "placeholders": {
+      "status": {}
+    }
+  },
+  "paymentUnpaid": "unpaid",
+  "paymentUnknown": "unknown",
+  "confirmPaymentTitle": "Confirm payment",
+  "confirmPaymentBody": "Pay {amount} to confirm this booking?",
+  "@confirmPaymentBody": {
+    "placeholders": {
+      "amount": {}
+    }
+  },
+  "yesPay": "Yes, Pay",
+  "failedToCreatePaymentIntent": "Failed to create payment intent.",
+  "paymentSuccessfulShort": "Payment successful.",
+  "paymentSucceededButFailedUpdateBooking": "Payment succeeded, but failed to update booking on server.",
+  "paymentCancelledOrFailedReason": "Payment cancelled or failed: {reason}",
+  "@paymentCancelledOrFailedReason": {
+    "placeholders": {
+      "reason": {}
+    }
+  },
+  "unexpectedPaymentErrorReason": "Unexpected payment error: {error}",
+  "@unexpectedPaymentErrorReason": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+
+  "selectRatingHelp": "Select rating (1 = poor, 5 = excellent):",
+  "commentsOptionalLabel": "Comments (optional)",
+  "submit": "Submit",
+  "reviewSubmitted": "Review submitted.",
+  "failedSubmitReview": "Failed to submit review.",
+  "@failedToLoadProfile": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@profileSavedSuccess": {
+    "placeholders": {
+      "action": {}
+    }
+  },
+  "@genericError": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@errorGettingLocation": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@errorConvertingAddress": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@failedToLoadPortfolio": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@uploadFailed": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@deleteFailedWithError": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@reviewCountLabel": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@bioMinLength": {
+    "placeholders": {
+      "min": {
+        "type": "int"
+      }
+    }
+  }
+}

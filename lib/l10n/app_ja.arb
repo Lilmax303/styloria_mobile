@@ -1,0 +1,961 @@
+{
+  "@@locale": "ja",
+  "appTitle": "Styloria",
+  "account": "アカウント",
+  "profile": "プロフィール",
+  "myBookings": "予約一覧",
+  "openJobs": "募集中の案件",
+  "earnings": "収益",
+  "paymentMethods": "支払い方法",
+  "referFriends": "友達を紹介",
+  "language": "言語",
+  "settings": "設定",
+  "darkMode": "ダークモード",
+  "systemDefault": "システム設定",
+  "languageUpdated": "言語を更新しました",
+  "languageSetToSystemDefault": "言語をシステム設定に戻しました",
+  "helpAndSupport": "ヘルプとサポート",
+  "chatWithCustomerService": "カスタマーサポートとチャット",
+  "aboutAndPolicies": "アプリ情報とポリシー",
+  "viewUserPoliciesAndAgreements": "ユーザーポリシーと規約を表示",
+  "logOut": "ログアウト",
+  "deleteAccount": "アカウント削除",
+  "deleteAccountSubtitle": "この操作は取り消せません",
+  "deleteAccountTitle": "アカウント削除",
+  "deleteAccountConfirmBody": "アカウントを削除しますか？\n\nサインアウトされ、今後アクセスできなくなる可能性があります。",
+  "no": "いいえ",
+  "yesDelete": "はい、削除",
+  "deleteAccountSheetTitle": "ご利用ありがとうございました。",
+  "deleteAccountSheetPrompt": "理由を教えてください（複数選択可）",
+  "deleteAccountSelectAtLeastOneReason": "少なくとも1つ理由を選択してください。",
+  "tellUsMoreOptional": "詳細（任意）",
+  "suggestionsToImproveOptional": "改善の提案（任意）",
+  "deleteMyAccount": "アカウントを削除する",
+  "cancel": "キャンセル",
+  "failedToDeleteAccount": "アカウント削除に失敗しました。もう一度お試しください。",
+  "choosePreferredLanguage": "希望の言語を選択",
+  "noteSomeTextMayStillAppearInEnglish": "注：アプリの言語が変更されます。翻訳が追加されるまで一部のテキストは英語のままの場合があります。",
+  "languageSetToName": "言語を{name}に設定しました",
+  "@languageSetToName": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "deletionReason1": "Styloriaが不要になった",
+  "deletionReason2": "アカウント確認（メール/KYC）で問題があった",
+  "deletionReason3": "近くのサービス/提供者が見つからなかった",
+  "deletionReason4": "価格や手数料が高すぎる／分かりにくい",
+  "deletionReason5": "アプリが分かりにくい／使いにくい",
+  "deletionReason6": "バグやパフォーマンスの問題",
+  "deletionReason7": "支払い/返金の問題",
+  "deletionReason8": "提供者/ユーザーとの悪い経験",
+  "deletionReason9": "プライバシーまたはセキュリティの懸念",
+  "deletionReason10": "誤ってアカウントを作成した",
+  "deletionReason11": "別のプラットフォームに移行する",
+  "deletionReason12": "その他",
+  "loginWelcomeTitle": "Styloriaへようこそ",
+  "loginWelcomeSubtitle": "予約やサービスを管理するためにログインしてください。",
+  "loginFailedToLoadUserInfo": "ログインは成功しましたが、ユーザー情報の取得に失敗しました。",
+  "username": "ユーザー名",
+  "password": "パスワード",
+  "required": "必須",
+  "login": "ログイン",
+  "createNewAccount": "新しいアカウントを作成",
+  "requestEmailVerificationCode": "メール確認コードをリクエスト",
+  "createAccountTitle": "アカウント作成",
+  "joinStyloria": "Styloriaに参加",
+  "registerSubtitle": "サービスを予約する、または提供者になるためにアカウントを作成します",
+  "iWantTo": "希望：",
+  "bookServices": "サービスを予約",
+  "provideServices": "サービスを提供",
+  "personalInformation": "個人情報",
+  "firstName": "名",
+  "lastName": "姓",
+  "selectDateOfBirth": "生年月日を選択",
+  "phoneNumber": "電話番号",
+  "pleaseEnterPhoneNumber": "電話番号を入力してください",
+  "accountInformation": "アカウント情報",
+  "chooseUniqueUsernameHint": "ユニークなユーザー名を選択してください",
+  "email": "メール",
+  "emailHint": "your@email.com",
+  "enterValidEmail": "有効なメールアドレスを入力してください",
+  "security": "セキュリティ",
+  "passwordHintAtLeast10": "10文字以上",
+  "passwordMin10": "パスワードは10文字以上である必要があります",
+  "iAgreeTo": "同意します：",
+  "termsOfService": "利用規約",
+  "and": "および",
+  "privacyPolicy": "プライバシーポリシー",
+  "passwordIsRequired": "パスワードは必須です",
+  "confirmPassword": "パスワード確認",
+  "passwordsDoNotMatch": "パスワードが一致しません",
+  "pleaseSelectDob": "生年月日を選択してください。",
+  "pleaseSelectCountry": "国を選択してください。",
+  "pleaseSelectCity": "都市を選択してください。",
+  "pleaseEnterValidPhone": "有効な電話番号を入力してください。",
+  "mustAcceptTerms": "利用規約に同意する必要があります。",
+  "mustBeAtLeast18": "登録するには18歳以上である必要があります。",
+  "agreeToTerms": "利用規約およびプライバシーポリシーに同意します",
+  "createAccountButton": "アカウント作成",
+  "alreadyHaveAccount": "すでにアカウントをお持ちですか？",
+  "emailVerifiedSuccessPleaseLogin": "メール確認が完了しました。ログインしてください。",
+  "pleaseVerifyEmailToContinue": "続行するにはメールを確認してください。",
+  "requestVerificationCodeTitle": "確認コードをリクエスト",
+  "requestVerificationInstructions": "メールアドレスまたはユーザー名を入力してください。\n該当アカウントのメールに新しい確認コードを送信します。",
+  "emailOrUsername": "メールまたはユーザー名",
+  "sendCode": "コードを送信",
+  "ifAccountExistsCodeSent": "アカウントが存在する場合、コードを送信しました。",
+  "failedToSendVerificationCode": "確認コードの送信に失敗しました。",
+  "verifyYourEmailTitle": "メールを確認",
+  "verificationCodeSentInfo": "このアカウントのメールに確認コードを送信しました。",
+  "emailVerificationInstructions": "このアカウントのメールに送信された6桁コードを入力してください:\n{identifier}",
+  "@emailVerificationInstructions": {
+    "placeholders": {
+      "identifier": {}
+    }
+  },
+  "verificationCodeLabel": "確認コード",
+  "sendingEllipsis": "送信中...",
+  "resendCode": "コードを再送信",
+  "enter6DigitCodeError": "6桁のコードを入力してください。",
+  "verifyingEllipsis": "確認中...",
+  "verify": "確認",
+  "invalidOrExpiredCodeTryResending": "コードが無効または期限切れです。再送信してください。",
+  "bookingTitle": "予約 #{id}",
+  "@bookingTitle": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+  "invalidBookingIdForChat": "チャット用の予約IDが無効です。",
+  "invalidBookingIdForCall": "通話用の予約IDが無効です。",
+  "unableToLoadContactInfo": "連絡先情報を読み込めません。予約が有効か確認してください。",
+  "noPhoneNumberAvailableForName": "{name} の電話番号がありません。",
+  "@noPhoneNumberAvailableForName": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "deviceCannotPlaceCalls": "この端末では電話をかけられません。",
+  "cancelBookingDialogTitle": "予約をキャンセル",
+  "cancelBookingDialogBody": "この予約を本当にキャンセルしますか？\n\n注意: 提供者がすでに承認し、7分以上（ただし約40分未満）経過している場合、規約によりペナルティが適用される可能性があります。",
+  "yesCancel": "はい、キャンセル",
+  "failedToCancelBooking": "予約のキャンセルに失敗しました。",
+  "bookingCancelledPenaltyApplied": "予約をキャンセルしました。{amount} のペナルティが適用されました。",
+  "@bookingCancelledPenaltyApplied": {
+    "placeholders": {
+      "amount": {}
+    }
+  },
+
+  "youAreCurrentlyUnavailable": "現在利用不可の状態です",
+  "toBrowseAndAcceptJobsEnableAvailability": "近くの仕事リクエストを閲覧・承諾するには、予約可能に設定する必要があります。",
+  "goToProfileSettings": "プロフィール設定へ移動",
+  "tipToggleAvailableForBookings": "ヒント：プロバイダープロフィールで「予約可能」をオンにすると、仕事リクエストの受信が開始されます。",
+  "requestedBy": "リクエスト者：{name}",
+  "@requestedBy": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "locationLabel": "場所：{address}",
+  "@locationLabel": {
+    "placeholders": {
+      "address": {
+        "type": "String"
+      }
+    }
+  },
+
+  "bookingCancelledSuccessfully": "予約をキャンセルしました。",
+  "failedToConfirmCompletion": "完了の確認に失敗しました。もう一度お試しください。",
+  "bothSidesConfirmedCompletedPayoutReleased": "両者が確認しました。予約は完了としてマークされ、支払いが解放されました。",
+  "youConfirmedCompletionWaitingForProvider": "完了を確認しました。提供者の確認を待っています。",
+  "youConfirmedCompletionWaitingForUser": "完了を確認しました。ユーザーの確認を待っています。",
+  "statusUnknown": "不明",
+  "statusAccepted": "承認済み",
+  "statusInProgress": "進行中",
+  "statusCompleted": "完了",
+  "statusCancelled": "キャンセル",
+  "paymentPaid": "支払い済み",
+  "paymentPending": "保留",
+  "paymentFailed": "失敗",
+  "bookingAcceptedBy": "{name} が予約を承認しました",
+  "@bookingAcceptedBy": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "whenLabel": "日時",
+  "atTime": "{time} に",
+  "@atTime": {
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "userLabel": "ユーザー",
+  "providerLabel": "提供者",
+  "estimatedPriceLabel": "見積もり価格",
+  "offeredPaidLabel": "提示 / 支払い",
+  "distanceLabel": "距離",
+  "distanceMiles": "{miles} マイル",
+  "@distanceMiles": {
+    "placeholders": {
+      "miles": {}
+    }
+  },
+  "acceptedAtLabel": "承認時刻",
+  "cancelledAtLabel": "キャンセル時刻",
+  "cancelledByLabel": "キャンセル者",
+  "penaltyAppliedLabel": "適用されたペナルティ: {amount}",
+  "@penaltyAppliedLabel": {
+    "placeholders": {
+      "amount": {}
+    }
+  },
+  "userConfirmedLabel": "ユーザー確認",
+  "providerConfirmedLabel": "提供者確認",
+  "payoutReleasedLabel": "支払い解放",
+  "yesLower": "はい",
+  "noLower": "いいえ",
+  "chat": "チャット",
+  "call": "通話",
+  "actions": "操作",
+  "confirmCompletion": "完了を確認",
+  "noFurtherActionsForBooking": "この予約で実行できる操作はこれ以上ありません。",
+  "freeCancellationEndsIn": "無料キャンセル終了まで {time}",
+  "@freeCancellationEndsIn": {
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "earlyFreeCancellationEndedWarning": "早期の無料キャンセル期間は終了しました。承認後約40分までは、遅いキャンセルにペナルティが発生する場合があります。",
+  "cancelBooking": "予約をキャンセル",
+  "cancelBookingNoPenalty": "予約をキャンセル（ペナルティなし）",
+  "cancelBookingPenaltyMayApply": "予約をキャンセル（ペナルティの可能性）",
+  "cancellationPolicyInfo": "提供者の承認後最初の7分間はペナルティなしでキャンセルできます。また必要であれば、約40分後にもペナルティなしでキャンセルできます。その間は規約によりペナルティが適用される場合があります。",
+  "ratingLine": "評価: {rating}（{reviewCount, plural, =1{レビュー1件} other{レビュー{reviewCount}件}}）",
+  "@ratingLine": {
+    "placeholders": {
+      "rating": {},
+      "reviewCount": {
+        "type": "int"
+      }
+    }
+  },
+  "proofOfSkillsPortfolio": "スキルの証明（ポートフォリオ）",
+  "noPortfolioPostsAvailable": "ポートフォリオ投稿がありません。",
+  "bookingLocation": "予約場所",
+  "location": "場所",
+  "latitude": "緯度",
+  "longitude": "経度",
+  "mapWillAppearWhenCoordinatesValid": "座標が有効な場合、ここに地図が表示されます。",
+  "chatForBookingTitle": "予約 #{id} のチャット",
+  "@chatForBookingTitle": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+  "unableToStartChat": "チャットを開始できません。チャットは予約が承認済み・進行中、または直近1日以内に完了した場合のみ利用できます。",
+  "invalidChatThreadFromServer": "サーバーから無効なチャットスレッドが返されました。",
+  "messageNotSentPolicy": "メッセージは送信されませんでした。注: チャットで電話番号やメールアドレスを共有することは禁止されています。",
+  "unknown": "不明",
+  "typeMessageHint": "サポートへのメッセージを入力...",
+  "uploadProfilePicture": "プロフィール写真をアップロード",
+  "currentProfilePicture": "現在のプロフィール写真",
+  "newPicturePreview": "新しい写真のプレビュー",
+  "chooseImage": "画像を選択",
+  "upload": "アップロード",
+  "noImageBytesFoundWeb": "画像データが見つかりません（Web）。",
+  "pleasePickAnImageFirst": "まず画像を選択してください。",
+  "uploadFailedCheckServerLogs": "アップロードに失敗しました。サーバーログ / トークンを確認してください。",
+  "profilePictureUploadedSuccessfully": "プロフィール写真をアップロードしました！",
+  "errorWithValue": "エラー: {error}",
+  "@errorWithValue": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "tapToChangeProfilePicture": "タップしてプロフィール写真を変更",
+  "usernameValue": "ユーザー名: {username}",
+  "@usernameValue": {
+    "placeholders": {
+      "username": {}
+    }
+  },
+  "roleValue": "役割: {role}",
+  "@roleValue": {
+    "placeholders": {
+      "role": {}
+    }
+  },
+  "dateOfBirthYyyyMmDd": "生年月日（YYYY-MM-DD）",
+  "saveProfile": "プロフィールを保存",
+  "failedToSaveProfile": "プロフィールの保存に失敗しました。もう一度お試しください。",
+  "profileUpdated": "プロフィールが更新されました。",
+  "completeYourProviderProfile": "提供者プロフィールを完成させてください",
+  "completeProviderProfileBody": "仕事を受けて収益を得るには、提供者プロフィールを完成させてください。",
+  "setupProfileNow": "プロフィールを今すぐ設定",
+  "doItLater": "後で行う",
+  "bookingTimerPenaltyPeriodActive": "ペナルティ期間中",
+  "bookingTimerFreeCancellationPeriod": "無料キャンセル期間",
+  "bookingTimerTimeRemaining": "残り時間: {time}",
+  "@bookingTimerTimeRemaining": {
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "bookingTimerCancellingNowPenalty": "今キャンセルすると10%のペナルティが発生します。",
+  "bookingTimerCancelNoPenalty": "ペナルティなしでキャンセルできます。",
+  "myReviewsTitle": "自分のレビュー",
+  "failedToLoadReviews": "レビューの読み込みに失敗しました。",
+  "noReviewsYet": "まだレビューを投稿していません。",
+  "providerWithName": "提供者: {name}",
+  "providerGeneric": "提供者",
+  "ratingWithValue": "評価: {rating}",
+  "nearbyOpenJobsTitle": "近くのオープンジョブ",
+  "failedToLoadOpenJobsHint": "オープンジョブを読み込めませんでした。\n位置が設定され available=true の提供者プロフィールがあることを確認してください。",
+  "errorLoadingJobsWithValue": "ジョブ読み込みエラー: {error}",
+  "noOpenJobsFoundNearbyTitle": "近くにオープンジョブがありません",
+  "noOpenJobsFoundNearbyBody": "確認してください:\n- 提供者の位置を設定している\n- 利用可能になっている\n- ユーザーが予約を作成して支払っている",
+  "currencyLabel": "通貨: {symbol}",
+  "pricesShownInCurrency": "価格は {symbol}（{country}）で表示",
+  "jobTitleWithId": "ジョブ #{id}",
+  "serviceLine": "サービス: {service}",
+  "whenLine": "日時: {date} {time}",
+  "priceLine": "価格: {price}",
+  "acceptJob": "ジョブを承諾",
+  "failedToAcceptJob": "ジョブの承諾に失敗しました。",
+  "jobAcceptedSuccessfully": "ジョブを承諾しました。",
+  "newServiceRequestTitle": "新しいサービス依頼",
+  "offeredPriceLabel": "提示価格",
+  "offeredPriceHint": "例: 25.00",
+  "enterValidPrice": "有効な価格を入力してください",
+  "bookAndPay": "予約して支払う",
+  "bookAndPayAmount": "予約して支払う {amount}",
+  "haircutService": "ヘアカット",
+  "stylingService": "スタイリング",
+  "timeLabel": "時間:",
+  "notesLabel": "メモ",
+  "requestCreatedAndPaidBroadcast": "依頼が作成され支払いが完了しました。提供者に通知します。",
+  "locationLatLng": "場所: {lat}, {lng}",
+  "paymentMethodsTitle": "支払い方法",
+  "paymentPreferencesInfo": "これらの設定は端末にローカル保存されます。実際の支払いはStripe/他のゲートウェイで安全に処理されます。",
+  "preferredMethodLabel": "希望の方法（国によりローカル決済が選択されます）",
+  "methodVisaMastercard": "Visa/Mastercard",
+  "methodMobileMoney": "モバイルマネー（Momo/Paystack/アフリカ）",
+  "methodPaypal": "PayPal",
+  "methodApplePayGooglePay": "Apple Pay/Google Pay",
+  "methodWeChatPay": "WeChat Pay（中国）",
+  "methodAlipay": "Alipay（中国）",
+  "methodUnionPay": "UnionPay（中国）",
+  "mobileMoneyNumberLabel": "モバイルマネー番号",
+  "wechatAlipayIdLabel": "WeChat/Alipay ID",
+  "cardLast4DigitsLabel": "カード下4桁",
+  "paypalEmailLabel": "PayPalメール",
+  "applePayEnabledOnDevice": "この端末でApple Payが有効",
+  "savePaymentPreferences": "支払い設定を保存",
+  "paymentPrefsSavedInfo": "支払い設定をローカルに保存しました。実際の課金は後でStripe/他のゲートウェイで処理されます。",
+  "failedToLoadImage": "画像の読み込みに失敗しました",
+  "earningsTitle": "収益",
+  "couldNotLoadEarningsSummary": "収益サマリーを読み込めませんでした。",
+  "noData": "データがありません。",
+  "retry": "再試行",
+  "summaryTitle": "サマリー",
+  "totalLabel": "合計",
+  "pendingLabel": "保留中",
+  "paidLabel": "支払い済み",
+  "pdfReportTitle": "PDFレポート",
+  "periodLabel": "期間",
+  "periodThisMonth": "今月",
+  "periodLastMonth": "先月",
+  "periodYtd": "年初から現在まで",
+  "periodAllTime": "全期間",
+  "couldNotDownloadPdfReport": "PDFレポートをダウンロードできませんでした。",
+  "couldNotOpenPdfWithValue": "PDFを開けませんでした: {error}",
+  "savingFilesNotSupportedWeb": "Webでは現在ファイル保存がサポートされていません。",
+  "savedToDocumentsIosWithPath": "Documents（iOS）に保存:\n{path}",
+  "savedToFilesWithPath": "ファイルに保存:\n{path}",
+  "open": "開く",
+  "failedToSavePdfWithValue": "PDFの保存に失敗しました: {error}",
+  "openPdfReport": "PDFレポートを開く",
+  "savePdfToDownloads": "PDFをダウンロードに保存",
+  "reportWatermarkNote": "レポートPDFにはStyloriaの透かしが含まれているはずです。",
+  "referFriendsTitle": "友だちを紹介",
+  "shareReferralCodeBody": "紹介コードを友だちに共有しましょう。後で、友だちが登録して予約を完了したら報酬を追加できます。",
+  "yourReferralCodeLabel": "あなたの紹介コード:",
+  "copy": "コピー",
+  "referralCodeCopiedWithCode": "紹介コードをコピーしました: {code}",
+  "navHome": "ホーム",
+  "navBookings": "予約",
+  "navNotifications": "通知",
+  "navAccount": "アカウント",
+  "welcome": "ようこそ",
+  "welcomeName": "ようこそ、{name}",
+  "@welcomeName": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "toggleThemeTooltip": "ライト/ダークモード切替",
+  "loggedInAs": "ログイン中: {role}",
+  "@loggedInAs": {
+    "placeholders": {
+      "role": {}
+    }
+  },
+  "locationWithValue": "場所: {value}",
+  "@locationWithValue": {
+    "placeholders": {
+      "value": {}
+    }
+  },
+  "homeTagline": "リアルタイム予約と信頼できる提供者で、あなたのグルーミング体験を変えましょう。",
+  "manageProviderProfile": "提供者プロフィールを管理",
+  "browseOpenJobs": "オープンジョブを見る",
+  "quickActions": "クイック操作",
+  "newBooking": "新しい予約",
+  "notificationsWithUnread": "通知（{count, plural, =1{未読1件} other{未読{count}件}}）",
+  "@notificationsWithUnread": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "liveLocationTrackingTitle": "ライブ位置追跡",
+  "live": "ライブ",
+  "locationServicesDisabled": "位置情報サービスが無効です。",
+  "locationPermissionDenied": "位置情報の権限が拒否されました。",
+  "locationPermissionPermanentlyDenied": "位置情報の権限が恒久的に拒否されています。設定で有効にしてください。",
+  "failedToGetLocationWithValue": "位置情報を取得できませんでした: {error}",
+  "@failedToGetLocationWithValue": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "youProvider": "あなた（提供者）",
+  "youCustomer": "あなた（顧客）",
+  "customer": "顧客",
+  "bookingDetails": "予約詳細",
+  "navigate": "ナビ",
+  "failedToLoadNotifications": "通知の読み込みに失敗しました。",
+  "failedToMarkAsRead": "既読にできませんでした",
+  "noNotificationsYet": "通知はまだありません。",
+  "markRead": "既読にする",
+  "providerKycTitle": "提供者の本人確認（KYC）",
+  "logoutTooltip": "ログアウト",
+  "statusLabel": "ステータス: {status}",
+  "@statusLabel": {
+    "placeholders": {
+      "status": {}
+    }
+  },
+  "rejectedWithNotes": "却下: {notes}",
+  "@rejectedWithNotes": {
+    "placeholders": {
+      "notes": {}
+    }
+  },
+  "kycInstructions": "提供者機能を利用するには、本人確認のために身分証と自撮り写真をアップロードしてください。",
+  "idFrontRequired": "身分証（表・必須）",
+  "selectIdFront": "身分証（表）を選択",
+  "idBackRequired": "身分証（裏・必須）",
+  "selectIdBackRequired": "身分証（裏）を選択",
+  "selfieRequired": "自撮り（必須）",
+  "selectSelfie": "自撮りを選択",
+  "takeSelfie": "自撮りを撮影",
+  "errorUploadAllRequired": "身分証（表）、身分証（裏）、自撮り写真をアップロードしてください。",
+  "failedSubmitKycCode": "KYCの送信に失敗しました（コード {code}）。",
+  "@failedSubmitKycCode": {
+    "placeholders": {
+      "code": {}
+    }
+  },
+  "submittedCurrentStatus": "送信しました。現在のステータス: {status}",
+  "@submittedCurrentStatus": {
+    "placeholders": {
+      "status": {}
+    }
+  },
+  "unknownStatus": "不明",
+  "submitKyc": "KYCを送信",
+  "verificationMayTakeTimeNote": "注: 確認には時間がかかる場合があります。承認後に提供者機能を利用できます。",
+  "enterVerificationCodeTitle": "確認コードを入力",
+  "otpSentToUsername": "「{username}」に関連付けられた電話番号へ6桁のコードを送信しました。\n",
+  "@otpSentToUsername": {
+    "placeholders": {
+      "username": {}
+    }
+  },
+  "sixDigitCodeLabel": "6桁コード",
+  "enterSixDigitCodeValidation": "6桁のコードを入力してください",
+  "otpInvalidOrExpired": "コードが無効、または期限切れです。",
+  "failedLoadUserInfoAfterVerification": "確認後にユーザー情報を読み込めませんでした。",
+  "chatWithSupportTitle": "サポートとチャット",
+  "unableStartSupportChat": "サポートチャットを開始できません。",
+  "invalidSupportThreadReturned": "サーバーから無効なサポートスレッドが返されました。",
+  "noMessagesYet": "まだメッセージがありません。会話を始めましょう！",
+  "supportDefaultName": "サポート",
+  "aboutPoliciesTitle": "概要とポリシー",
+  "newBookingTitle": "新規予約",
+  "appointmentDetailsTitle": "予約の詳細",
+  "pickDate": "日付を選択",
+  "pickTime": "時間を選択",
+  "serviceTypeTitle": "サービス種別",
+  "serviceDropdownLabel": "サービス",
+  "serviceHaircutLabel": "カット",
+  "serviceBraidsLabel": "編み込み",
+  "serviceShaveLabel": "シェービング",
+  "serviceHairColoringLabel": "ヘアカラー",
+  "serviceManicureLabel": "マニキュア",
+  "servicePedicureLabel": "ペディキュア",
+  "serviceNailArtLabel": "ネイルアート",
+  "serviceMakeupLabel": "メイク",
+  "serviceFacialLabel": "フェイシャル",
+  "serviceWaxingLabel": "ワックス脱毛",
+  "serviceMassageLabel": "マッサージ",
+  "serviceHairStylingLabel": "ヘアスタイリング",
+  "serviceHairTreatmentLabel": "ヘアトリートメント",
+  "serviceHairExtensionsLabel": "エクステ",
+  "serviceOtherServicesLabel": "その他のサービス",
+  "notesForProviderOptionalLabel": "担当者へのメモ（任意）",
+  "locationTitle": "場所",
+  "latitudeLabel": "緯度",
+  "longitudeLabel": "経度",
+  "requiredField": "必須",
+  "useMyCurrentLocation": "現在地を使用",
+  "pricesShownIn": "表示通貨: {symbol}（{country}）",
+  "chooseTimeLaterThanCurrent": "現在時刻より後の時間を選択してください。",
+  "pleasePickDateAndTime": "日付と時間を選択してください。",
+  "locationUpdatedFromGps": "GPSから位置情報を更新しました。",
+  "failedToGetLocation": "位置情報の取得に失敗しました: {error}",
+  "bookingCreatedChoosePrice": "予約を作成しました！ID: {id} • 価格オプションを選択してください。",
+  "failedToCreateBooking": "予約の作成に失敗しました。",
+  "paymentsNotSupportedLong": "このプラットフォームでは支払いがサポートされていません。Android、iOS、macOS、またはWebで実行して支払いをテストしてください。",
+  "noBookingToConfirm": "確定する予約がありません。先に予約を作成してください。",
+  "pleaseChoosePriceOption": "価格オプションを選択してください。",
+  "failedCreatePaymentTryAgain": "サーバーで支払いの作成に失敗しました。もう一度お試しください。",
+  "paymentSuccessfulMessage": "支払いが完了しました！\n予約 #{bookingId} • 支払額: {paid}\nリクエストは近くの提供者に表示されます。",
+  "paymentSucceededButFailedUpdate": "支払いは成功しましたが、サーバーで予約更新に失敗しました。",
+  "paymentCancelledOrFailed": "支払いがキャンセルまたは失敗しました: {reason}",
+  "unexpectedPaymentError": "予期しない支払いエラー: {error}",
+  "createBookingButton": "予約を作成",
+  "chooseYourPriceOptionTitle": "価格オプションを選択",
+  "transportationCostLabel": "交通費: {cost}",
+  "budgetTierTitle": "BUDGET",
+  "standardTierTitle": "STANDARD",
+  "priorityTierTitle": "PRIORITY",
+  "budgetTierDescription": "近くの提供者の中で最もお得",
+  "standardTierDescription": "価格と空き状況のおすすめバランス",
+  "priorityTierDescription": "より早く優良提供者を呼び込むプレミアムオプション",
+  "naShort": "N/A",
+  "priceBreakdownTitle": "料金内訳",
+  "servicePriceLabel": "サービス料金",
+  "transportationLabel": "交通",
+  "serviceFeeLabel": "サービス手数料（{percent}%）",
+  "allPricesIn": "すべての価格: {currency}（{country}）",
+  "userCountryPlaceholder": "ユーザーの国",
+  "totalToPayTitle": "支払い合計",
+  "includesServiceTransportation": "サービス＋交通費込み",
+  "confirmAndPay": "確定して支払う",
+  "howPricingWorksTitle": "価格の仕組み",
+  "howPricingWorksBullets": "• Budget: 近くで最もお得\n• Standard: 推奨デフォルト\n• Priority: 承認を早めるプレミアム\n• 交通費は合計に含まれます",
+  "myBookingsTitle": "自分の予約",
+  "myAssignedJobsTitle": "割り当てられた仕事",
+  "pleaseCompleteProviderProfileFirst": "先に提供者プロフィールを完了してください。",
+  "failedToLoadBookings": "予約の読み込みに失敗しました。",
+  "profileSetupRequiredTitle": "プロフィール設定が必要です",
+  "profileSetupRequiredBody": "割り当てられた仕事と収益を表示する前に、提供者プロフィールを完了する必要があります。",
+  "later": "後で",
+  "setupNow": "今すぐ設定",
+  "noBookingsFound": "予約が見つかりません。",
+  "findNearbyOpenJobs": "近くの公開案件を探す",
+  "pay": "支払う",
+  "rate": "評価",
+  "bookingNumber": "予約 #{id}",
+  "whenOn": "日時: {date}",
+  "whenAt": "日時: {date} {time}",
+  "providerLine": "提供者: {name}",
+  "userLine": "ユーザー: {name}",
+  "estimatedPriceLine": "見積価格: {price}",
+  "paymentLine": "支払い: {status}",
+  "paymentUnpaid": "未払い",
+  "paymentUnknown": "不明",
+  "confirmPaymentTitle": "支払いを確認",
+  "confirmPaymentBody": "{amount} を支払ってこの予約を確定しますか？",
+  "yesPay": "はい、支払う",
+  "failedToCreatePaymentIntent": "支払いインテントの作成に失敗しました。",
+  "paymentSuccessfulShort": "支払いが完了しました。",
+  "paymentSucceededButFailedUpdateBooking": "支払いは成功しましたが、サーバーで予約更新に失敗しました。",
+  "paymentCancelledOrFailedReason": "支払いがキャンセルまたは失敗しました: {reason}",
+  "unexpectedPaymentErrorReason": "予期しない支払いエラー: {error}",
+  "rateProviderTitle": "{providerName} を評価",
+  "@rateProviderTitle": { 
+    "placeholders": { 
+      "providerName": {} 
+    } 
+  },
+  "selectRatingHelp": "評価を選択してください（1 = 悪い、5 = 最高）:",
+  "commentsOptionalLabel": "コメント（任意）",
+  "submit": "送信",
+  "reviewSubmitted": "レビューを送信しました。",
+  "failedSubmitReview": "レビューの送信に失敗しました。",
+  "failedToLoadProfile": "プロフィールの読み込みに失敗しました: {error}",
+  "profileSavedSuccess": "プロフィールを{action}しました！",
+  "genericError": "エラー: {error}",
+  "locationPermissionDeniedEnableInSettings": "位置情報の権限が拒否されました。設定で有効にしてください。",
+  "locationPermissionPermanentlyDeniedEnableInAppSettings": "位置情報の権限が恒久的に拒否されています。アプリ設定で有効にしてください。",
+  "errorGettingLocation": "位置情報の取得エラー: {error}",
+  "pleaseEnterAddress": "住所を入力してください",
+  "locationUpdatedFromAddress": "住所から位置情報を更新しました",
+  "couldNotFindLocationForAddress": "この住所の位置情報が見つかりませんでした",
+  "errorConvertingAddress": "住所変換エラー: {error}",
+  "portfolioUnavailableCompleteKycFirst": "ポートフォリオを利用できません。提供者の場合は先にKYC認証を完了してください。",
+  "failedToLoadPortfolio": "ポートフォリオの読み込みに失敗しました: {error}",
+  "addPhoto": "写真を追加",
+  "addVideo": "動画を追加",
+  "addPost": "投稿を追加",
+  "captionOptionalTitle": "キャプション（任意）",
+  "captionHintExample": "例：「お客様へのノットレスブレイズ」",
+  "skip": "スキップ",
+  "save": "保存",
+  "failedToCreatePortfolioPost": "ポートフォリオ投稿の作成に失敗しました。",
+  "uploadFailedMediaUpload": "アップロードに失敗しました（メディア）。",
+  "uploadFailed": "アップロードに失敗しました: {error}",
+  "deletePostTitle": "投稿を削除しますか？",
+  "deletePostBody": "ポートフォリオから投稿が削除されます。",
+  "delete": "削除",
+  "deleteFailed": "削除に失敗しました。",
+  "deleteFailedWithError": "削除に失敗しました: {error}",
+  "portfolioTitle": "ポートフォリオ",
+  "noPortfolioPostsYetHelpText": "ポートフォリオ投稿はまだありません。作品の写真/動画を追加して、スキルへの信頼を高めましょう。",
+  "setupProviderProfileTitle": "提供者プロフィールの設定",
+  "providerProfileTitle": "提供者プロフィール",
+  "welcomeToStyloriaTitle": "Styloriaへようこそ！",
+  "completeProviderProfileToStartEarning": "提供者プロフィールを完成させて、仕事を受けて収益を得ましょう。",
+  "reviewCountLabel": "（{count}件のレビュー）",
+  "topRatedChip": "高評価",
+  "bioLabel": "自己紹介 / 説明",
+  "bioHint": "スキルや経験をお客様に伝えましょう...",
+  "pleaseEnterBio": "自己紹介を入力してください",
+  "bioMinLength": "自己紹介は最低{min}文字必要です",
+  "yourLocationTitle": "現在地",
+  "locationHelpMatchNearbyClients": "位置情報は近くのお客様とのマッチングに役立ちます",
+  "locationHelpUpdateToFindJobs": "別のエリアで仕事を探すには位置情報を更新してください",
+  "useMyCurrentLocationTitle": "現在地を使用",
+  "gpsSubtitle": "GPSで自動的に位置情報を取得",
+  "orLabel": "または",
+  "enterYourAddressTitle": "住所を入力",
+  "fullAddressLabel": "住所（全文）",
+  "fullAddressHint": "例：123 Main St, Accra, Ghana",
+  "find": "検索",
+  "addressHelpText": "住所（通り/都市/国）を入力してください",
+  "coordinatesAutoFilledTitle": "座標（自動入力）",
+  "servicePricingTitle": "サービス料金",
+  "servicePricingHelp": "各サービスの料金を設定してください。提供できないサービスは「未提供」をチェックしてください。",
+  "serviceHeader": "サービス",
+  "priceHeader": "料金",
+  "notOfferedHeader": "未提供",
+  "priceHint": "0.00",
+  "providerHowPricingWorksTitle": "料金の仕組み：",
+  "providerHowPricingWorksBody": "• あなたの価格はサービス料金です\n• 交通費 = ユーザー通貨の80%/km\n• ユーザーは近くの提供者に基づく3つの選択肢を見ます:\n  - Budget: 最低価格\n  - Standard: 平均価格\n  - Priority: 最高価格",
+  "availableForBookingsTitle": "予約受付中",
+  "availableOnHelp": "✓ 近くのお客様の検索結果に表示されます",
+  "availableOffHelp": "✗ 新しい仕事のオファーを受け取りません",
+  "completeSetupStartEarning": "設定を完了して収益を開始",
+  "updateProfile": "プロフィールを更新",
+  "skipForNow": "今はスキップ",
+
+  "genericContact": "連絡先",
+  "genericProvider": "提供者",
+  "genericNotAvailable": "該当なし",
+
+  "reviewSelectRatingPrompt": "評価（1〜5）を選択してください。",
+  "reviewCommentOptionalLabel": "コメント（任意）",
+  "genericCancel": "キャンセル",
+  "genericSubmit": "送信",
+  "reviewSubmitted": "レビューを送信しました。",
+  "reviewSubmitFailed": "レビューの送信に失敗しました。",
+  "rateThisService": "このサービスを評価",
+
+  "tipLeaveTitle": "チップを渡す",
+  "tipChooseAmountPrompt": "チップ金額を選ぶか、カスタム金額を入力してください。",
+  "tipNoTip": "チップなし",
+  "tipCustomAmountLabel": "カスタムチップ金額",
+  "genericContinue": "続行",
+
+  "tipSkipped": "チップをスキップしました。",
+  "tipFailedToSaveChoice": "チップの選択を保存できませんでした。",
+  "tipFailedToCreatePayment": "チップ支払いを作成できませんでした。",
+  "tipPaidSuccessfully": "チップの支払いが完了しました。ありがとうございます！",
+  "tipPaidButUpdateFailed": "チップの支払いは成功しましたが、予約の更新に失敗しました。",
+
+  "tipCancelledOrFailed": "チップがキャンセル/失敗しました：{message}",
+  "tipUnexpectedError": "予期しないチップエラー：{error}",
+
+  "tipAlreadyPaidLabel": "チップは支払い済みです",
+  "tipSkippedLabel": "チップをスキップ",
+  "walletTitle": "ウォレット",
+  "walletTooltip": "ウォレット",
+  "payoutSettingsTitle": "振込設定",
+  "payoutSettingsTooltip": "振込設定",
+  "walletNoWalletYet": "ウォレットはまだありません。仕事を完了すると収益が反映されます。",
+  "walletCurrencyFieldLabel": "通貨",
+  "walletAvailableLine": "利用可能: {amount} {currency}",
+  "walletPendingLine": "保留中: {amount} {currency}",
+  "walletCashOutInstant": "即時出金",
+  "walletCashOutFailed": "出金に失敗しました。",
+  "walletCashOutSentTransfer": "出金を送信しました。送金: {transferId}",
+  "walletTransactionsTitle": "取引履歴",
+  "walletNoTransactionsYet": "取引はまだありません。",
+  "payoutAutoPayoutsTitle": "自動振込",
+  "payoutAutoPayoutsSubtitle": "選択したスケジュールで自動的に振り込みます。",
+  "payoutDayUtcLabel": "振込曜日(UTC)",
+  "payoutHourUtcLabel": "振込時間(UTC)",
+  "payoutMinimumAmountLabel": "自動振込の最小金額",
+  "payoutMinimumAmountHelper": "利用可能残高がこの金額以上の場合のみ自動振込が実行されます。",
+  "payoutInstantCashOutEnabledTitle": "即時出金を有効にする",
+  "payoutInstantCashOutEnabledSubtitle": "「即時出金」ボタンを許可します（手数料がかかります）。",
+  "payoutSettingsSaved": "振込設定を保存しました。",
+  "payoutSettingsSaveFailed": "振込設定の保存に失敗しました。",
+  "tipLeaveButton": "チップを渡す",
+  "@providerWithName": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "@ratingWithValue": {
+    "placeholders": {
+      "rating": {}
+    }
+  },
+  "@errorLoadingJobsWithValue": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@currencyLabel": {
+    "placeholders": {
+      "symbol": {}
+    }
+  },
+  "@pricesShownInCurrency": {
+    "placeholders": {
+      "symbol": {},
+      "country": {}
+    }
+  },
+  "@jobTitleWithId": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+  "@serviceLine": {
+    "placeholders": {
+      "service": {}
+    }
+  },
+  "@whenLine": {
+    "placeholders": {
+      "date": {},
+      "time": {}
+    }
+  },
+  "@priceLine": {
+    "placeholders": {
+      "price": {}
+    }
+  },
+  "@bookAndPayAmount": {
+    "placeholders": {
+      "amount": {}
+    }
+  },
+  "@locationLatLng": {
+    "placeholders": {
+      "lat": {},
+      "lng": {}
+    }
+  },
+  "@couldNotOpenPdfWithValue": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@savedToDocumentsIosWithPath": {
+    "placeholders": {
+      "path": {}
+    }
+  },
+  "@savedToFilesWithPath": {
+    "placeholders": {
+      "path": {}
+    }
+  },
+  "@failedToSavePdfWithValue": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@referralCodeCopiedWithCode": {
+    "placeholders": {
+      "code": {}
+    }
+  },
+  "@pricesShownIn": {
+    "placeholders": {
+      "symbol": {},
+      "country": {}
+    }
+  },
+  "@failedToGetLocation": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@bookingCreatedChoosePrice": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+  "@paymentSuccessfulMessage": {
+    "placeholders": {
+      "bookingId": {},
+      "paid": {}
+    }
+  },
+  "@paymentCancelledOrFailed": {
+    "placeholders": {
+      "reason": {}
+    }
+  },
+  "@unexpectedPaymentError": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@transportationCostLabel": {
+    "placeholders": {
+      "cost": {}
+    }
+  },
+  "@serviceFeeLabel": {
+    "placeholders": {
+      "percent": {}
+    }
+  },
+  "@allPricesIn": {
+    "placeholders": {
+      "currency": {},
+      "country": {}
+    }
+  },
+  "@bookingNumber": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+  "@whenOn": {
+    "placeholders": {
+      "date": {}
+    }
+  },
+  "@whenAt": {
+    "placeholders": {
+      "date": {},
+      "time": {}
+    }
+  },
+  "@providerLine": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "@userLine": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "@estimatedPriceLine": {
+    "placeholders": {
+      "price": {}
+    }
+  },
+  "@paymentLine": {
+    "placeholders": {
+      "status": {}
+    }
+  },
+  "@confirmPaymentBody": {
+    "placeholders": {
+      "amount": {}
+    }
+  },
+  "@paymentCancelledOrFailedReason": {
+    "placeholders": {
+      "reason": {}
+    }
+  },
+  "@unexpectedPaymentErrorReason": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@failedToLoadProfile": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@profileSavedSuccess": {
+    "placeholders": {
+      "action": {}
+    }
+  },
+  "@genericError": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@errorGettingLocation": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@errorConvertingAddress": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@failedToLoadPortfolio": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@uploadFailed": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@deleteFailedWithError": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@reviewCountLabel": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@bioMinLength": {
+    "placeholders": {
+      "min": {
+        "type": "int"
+      }
+    }
+  }
+}

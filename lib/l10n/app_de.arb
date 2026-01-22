@@ -1,0 +1,963 @@
+{
+  "@@locale": "de",
+  "appTitle": "Styloria",
+  "account": "Konto",
+  "profile": "Profil",
+  "myBookings": "Meine Buchungen",
+  "openJobs": "Offene Jobs",
+  "earnings": "Einnahmen",
+  "paymentMethods": "Zahlungsmethoden",
+  "referFriends": "Freunde einladen",
+  "language": "Sprache",
+  "settings": "Einstellungen",
+  "darkMode": "Dunkelmodus",
+  "systemDefault": "Systemstandard",
+  "languageUpdated": "Sprache aktualisiert",
+  "languageSetToSystemDefault": "Sprache auf Systemstandard gesetzt",
+  "helpAndSupport": "Hilfe & Support",
+  "chatWithCustomerService": "Mit dem Kundenservice chatten",
+  "aboutAndPolicies": "Info & Richtlinien",
+  "viewUserPoliciesAndAgreements": "Richtlinien und Vereinbarungen anzeigen",
+  "logOut": "Abmelden",
+  "deleteAccount": "Konto löschen",
+  "deleteAccountSubtitle": "Diese Aktion kann nicht rückgängig gemacht werden",
+  "deleteAccountTitle": "Konto löschen",
+  "deleteAccountConfirmBody": "Möchten Sie Ihr Konto wirklich löschen?\n\nDiese Aktion meldet Sie ab und Sie können dauerhaft den Zugriff verlieren.",
+  "no": "Nein",
+  "yesDelete": "Ja, löschen",
+  "deleteAccountSheetTitle": "Schade, dass Sie gehen.",
+  "deleteAccountSheetPrompt": "Können Sie uns sagen warum? (Alle zutreffenden auswählen)",
+  "deleteAccountSelectAtLeastOneReason": "Bitte wählen Sie mindestens einen Grund aus.",
+  "tellUsMoreOptional": "Erzählen Sie uns mehr (optional)",
+  "suggestionsToImproveOptional": "Vorschläge zur Verbesserung (optional)",
+  "deleteMyAccount": "Mein Konto löschen",
+  "cancel": "Abbrechen",
+  "failedToDeleteAccount": "Konto konnte nicht gelöscht werden. Bitte versuchen Sie es erneut.",
+  "choosePreferredLanguage": "Bevorzugte Sprache auswählen",
+  "noteSomeTextMayStillAppearInEnglish": "Hinweis: Dies ändert die App-Sprache. Einige Texte können weiterhin auf Englisch erscheinen, bis Übersetzungen hinzugefügt wurden.",
+  "languageSetToName": "Sprache auf {name} gesetzt",
+  "@languageSetToName": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "deletionReason1": "Ich brauche Styloria nicht mehr",
+  "deletionReason2": "Probleme bei der Kontoverifizierung (E-Mail/KYC)",
+  "deletionReason3": "Keine Services/Anbieter in meiner Nähe gefunden",
+  "deletionReason4": "Preise oder Gebühren waren zu hoch / unklar",
+  "deletionReason5": "Die App war verwirrend / schwer zu bedienen",
+  "deletionReason6": "Bugs oder Leistungsprobleme",
+  "deletionReason7": "Zahlungs-/Rückerstattungsprobleme",
+  "deletionReason8": "Schlechte Erfahrung mit einem Anbieter/Nutzer",
+  "deletionReason9": "Datenschutz- oder Sicherheitsbedenken",
+  "deletionReason10": "Ich habe dieses Konto aus Versehen erstellt",
+  "deletionReason11": "Ich wechsle zu einer anderen Plattform",
+  "deletionReason12": "Sonstiges",
+  "loginWelcomeTitle": "Willkommen bei Styloria",
+  "loginWelcomeSubtitle": "Melden Sie sich an, um Ihre Buchungen und Services zu verwalten.",
+  "loginFailedToLoadUserInfo": "Login erfolgreich, aber Benutzerinfos konnten nicht geladen werden.",
+  "username": "Benutzername",
+  "password": "Passwort",
+  "required": "Erforderlich",
+  "login": "Anmelden",
+  "createNewAccount": "Neues Konto erstellen",
+  "requestEmailVerificationCode": "E-Mail-Bestätigungscode anfordern",
+  "createAccountTitle": "Konto erstellen",
+  "joinStyloria": "Styloria beitreten",
+  "registerSubtitle": "Erstellen Sie ein Konto, um Services zu buchen oder Anbieter zu werden",
+  "iWantTo": "Ich möchte:",
+  "bookServices": "Services buchen",
+  "provideServices": "Services anbieten",
+  "personalInformation": "Persönliche Informationen",
+  "firstName": "Vorname",
+  "lastName": "Nachname",
+  "selectDateOfBirth": "Geburtsdatum auswählen",
+  "phoneNumber": "Telefonnummer",
+  "pleaseEnterPhoneNumber": "Bitte Telefonnummer eingeben",
+  "accountInformation": "Kontoinformationen",
+  "chooseUniqueUsernameHint": "Wählen Sie einen eindeutigen Benutzernamen",
+  "email": "E-Mail",
+  "emailHint": "your@email.com",
+  "enterValidEmail": "Gültige E-Mail eingeben",
+  "security": "Sicherheit",
+  "passwordHintAtLeast10": "Mindestens 10 Zeichen",
+  "passwordMin10": "Das Passwort muss mindestens 10 Zeichen lang sein",
+  "iAgreeTo": "Ich stimme den ",
+  "termsOfService": "Nutzungsbedingungen",
+  "and": "und",
+  "privacyPolicy": "Datenschutzrichtlinie",
+  "passwordIsRequired": "Passwort ist erforderlich",
+  "confirmPassword": "Passwort bestätigen",
+  "passwordsDoNotMatch": "Passwörter stimmen nicht überein",
+  "pleaseSelectDob": "Bitte wählen Sie Ihr Geburtsdatum.",
+  "pleaseSelectCountry": "Bitte wählen Sie Ihr Land.",
+  "pleaseSelectCity": "Bitte wählen Sie Ihre Stadt.",
+  "pleaseEnterValidPhone": "Bitte geben Sie eine gültige Telefonnummer ein.",
+  "mustAcceptTerms": "Sie müssen die Bedingungen akzeptieren.",
+  "mustBeAtLeast18": "Sie müssen mindestens 18 Jahre alt sein, um sich zu registrieren.",
+  "agreeToTerms": "Ich stimme den Nutzungsbedingungen und der Datenschutzrichtlinie zu",
+  "createAccountButton": "Konto erstellen",
+  "alreadyHaveAccount": "Haben Sie bereits ein Konto?",
+  "emailVerifiedSuccessPleaseLogin": "E-Mail erfolgreich verifiziert. Bitte anmelden.",
+  "pleaseVerifyEmailToContinue": "Bitte verifizieren Sie Ihre E-Mail, um fortzufahren.",
+  "requestVerificationCodeTitle": "Bestätigungscode anfordern",
+  "requestVerificationInstructions": "Geben Sie Ihre E-Mail oder Ihren Benutzernamen ein.\nWir senden einen neuen Bestätigungscode an die E-Mail dieses Kontos.",
+  "emailOrUsername": "E-Mail oder Benutzername",
+  "sendCode": "Code senden",
+  "ifAccountExistsCodeSent": "Wenn das Konto existiert, wurde ein Code gesendet.",
+  "failedToSendVerificationCode": "Bestätigungscode konnte nicht gesendet werden.",
+  "verifyYourEmailTitle": "E-Mail verifizieren",
+  "verificationCodeSentInfo": "Ein Bestätigungscode wurde an die E-Mail dieses Kontos gesendet.",
+  "emailVerificationInstructions": "Geben Sie den 6-stelligen Code ein, der an die E-Mail dieses Kontos gesendet wurde:\n{identifier}",
+  "@emailVerificationInstructions": {
+    "placeholders": {
+      "identifier": {}
+    }
+  },
+
+  "youAreCurrentlyUnavailable": "Sie sind derzeit nicht verfügbar",
+  "toBrowseAndAcceptJobsEnableAvailability": "Um Auftragsanfragen in der Nähe zu durchsuchen und anzunehmen, müssen Sie sich als buchbar einstellen.",
+  "goToProfileSettings": "Zu den Profileinstellungen",
+  "tipToggleAvailableForBookings": "Tipp: Schalten Sie \"Für Buchungen verfügbar\" in Ihrem Anbieterprofil ein, um Auftragsanfragen zu erhalten.",
+  "requestedBy": "Angefragt von: {name}",
+  "@requestedBy": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "locationLabel": "Standort: {address}",
+  "@locationLabel": {
+    "placeholders": {
+      "address": {
+        "type": "String"
+      }
+    }
+  },
+
+  "verificationCodeLabel": "Bestätigungscode",
+  "sendingEllipsis": "Senden...",
+  "resendCode": "Code erneut senden",
+  "enter6DigitCodeError": "Geben Sie den 6-stelligen Code ein.",
+  "verifyingEllipsis": "Prüfen...",
+  "verify": "Bestätigen",
+  "invalidOrExpiredCodeTryResending": "Ungültiger oder abgelaufener Code. Versuchen Sie, ihn erneut zu senden.",
+  "invalidBookingIdForChat": "Ungültige Buchungs-ID für den Chat.",
+  "invalidBookingIdForCall": "Ungültige Buchungs-ID für den Anruf.",
+  "unableToLoadContactInfo": "Kontaktinformationen konnten nicht geladen werden. Stelle sicher, dass die Buchung aktiv ist.",
+  "noPhoneNumberAvailableForName": "Keine Telefonnummer verfügbar für {name}.",
+  "@noPhoneNumberAvailableForName": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "deviceCannotPlaceCalls": "Dieses Gerät kann keine Telefonanrufe tätigen.",
+  "cancelBookingDialogTitle": "Buchung stornieren",
+  "cancelBookingDialogBody": "Möchtest du diese Buchung wirklich stornieren?\n\nHinweis: Wenn der Anbieter bereits angenommen hat und mehr als 7 Minuten vergangen sind (aber weniger als ca. 40 Minuten), kann gemäß den Regeln eine Strafe/Gebühr anfallen.",
+  "yesCancel": "Ja, stornieren",
+  "bookingTitle": "Buchung #{id}",
+  "@bookingTitle": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+  "failedToCancelBooking": "Buchung konnte nicht storniert werden.",
+  "bookingCancelledPenaltyApplied": "Buchung storniert. Eine Strafe in Höhe von {amount} wurde angewendet.",
+  "@bookingCancelledPenaltyApplied": {
+    "placeholders": {
+      "amount": {}
+    }
+  },
+  "bookingCancelledSuccessfully": "Buchung erfolgreich storniert.",
+  "failedToConfirmCompletion": "Abschluss konnte nicht bestätigt werden. Bitte versuche es erneut.",
+  "bothSidesConfirmedCompletedPayoutReleased": "Beide Seiten haben bestätigt. Die Buchung wurde als abgeschlossen markiert und die Auszahlung freigegeben.",
+  "youConfirmedCompletionWaitingForProvider": "Du hast den Abschluss bestätigt. Warten auf Bestätigung des Anbieters.",
+  "youConfirmedCompletionWaitingForUser": "Du hast den Abschluss bestätigt. Warten auf Bestätigung des Nutzers.",
+  "statusUnknown": "unbekannt",
+  "statusAccepted": "angenommen",
+  "statusInProgress": "in Arbeit",
+  "statusCompleted": "abgeschlossen",
+  "statusCancelled": "storniert",
+  "paymentPaid": "bezahlt",
+  "paymentPending": "ausstehend",
+  "paymentFailed": "fehlgeschlagen",
+  "bookingAcceptedBy": "Buchung angenommen von {name}",
+  "@bookingAcceptedBy": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "whenLabel": "Wann",
+  "atTime": "um {time}",
+  "@atTime": {
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "userLabel": "Nutzer",
+  "providerLabel": "Anbieter",
+  "estimatedPriceLabel": "Geschätzter Preis",
+  "offeredPaidLabel": "Angeboten / bezahlt",
+  "distanceLabel": "Entfernung",
+  "distanceMiles": "{miles} Meilen",
+  "@distanceMiles": {
+    "placeholders": {
+      "miles": {}
+    }
+  },
+  "acceptedAtLabel": "Angenommen um",
+  "cancelledAtLabel": "Storniert um",
+  "cancelledByLabel": "Storniert von",
+  "penaltyAppliedLabel": "Strafe angewendet: {amount}",
+  "@penaltyAppliedLabel": {
+    "placeholders": {
+      "amount": {}
+    }
+  },
+  "userConfirmedLabel": "Nutzer bestätigt",
+  "providerConfirmedLabel": "Anbieter bestätigt",
+  "payoutReleasedLabel": "Auszahlung freigegeben",
+  "yesLower": "ja",
+  "noLower": "nein",
+  "chat": "Chat",
+  "call": "Anrufen",
+  "actions": "Aktionen",
+  "confirmCompletion": "Abschluss bestätigen",
+  "noFurtherActionsForBooking": "Für diese Buchung sind keine weiteren Aktionen verfügbar.",
+  "freeCancellationEndsIn": "Kostenlose Stornierung endet in {time}",
+  "@freeCancellationEndsIn": {
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "earlyFreeCancellationEndedWarning": "Die frühe kostenlose Stornierung ist beendet. Bis etwa 40 Minuten nach Annahme können späte Stornierungen eine Strafe verursachen.",
+  "cancelBooking": "Buchung stornieren",
+  "cancelBookingNoPenalty": "Buchung stornieren (ohne Strafe)",
+  "cancelBookingPenaltyMayApply": "Buchung stornieren (Strafe möglich)",
+  "cancellationPolicyInfo": "Du kannst in den ersten 7 Minuten nach Annahme durch den Anbieter ohne Strafe stornieren und bei Bedarf erneut nach etwa 40 Minuten. Dazwischen kann gemäß den Regeln eine Strafe anfallen.",
+  "ratingLine": "Bewertung: {rating} ({reviewCount, plural, =1{1 Bewertung} other{{reviewCount} Bewertungen}})",
+  "@ratingLine": {
+    "placeholders": {
+      "rating": {},
+      "reviewCount": {
+        "type": "int"
+      }
+    }
+  },
+  "proofOfSkillsPortfolio": "Nachweis der Fähigkeiten (Portfolio)",
+  "noPortfolioPostsAvailable": "Keine Portfolio-Beiträge verfügbar.",
+  "bookingLocation": "Buchungsort",
+  "location": "Ort",
+  "latitude": "Breitengrad",
+  "longitude": "Längengrad",
+  "mapWillAppearWhenCoordinatesValid": "Die Karte wird hier angezeigt, wenn die Koordinaten gültig sind.",
+  "chatForBookingTitle": "Chat für Buchung #{id}",
+  "@chatForBookingTitle": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+  "unableToStartChat": "Chat konnte nicht gestartet werden. Chat ist nur verfügbar, wenn die Buchung angenommen, in Arbeit oder innerhalb des letzten Tages abgeschlossen wurde.",
+  "invalidChatThreadFromServer": "Ungültiger Chat-Thread vom Server zurückgegeben.",
+  "messageNotSentPolicy": "Nachricht nicht gesendet. Hinweis: Das Teilen von Telefonnummern oder E-Mails ist im Chat nicht erlaubt.",
+  "unknown": "Unbekannt",
+  "typeMessageHint": "Nachricht an den Support schreiben...",
+  "uploadProfilePicture": "Profilbild hochladen",
+  "currentProfilePicture": "Aktuelles Profilbild",
+  "newPicturePreview": "Vorschau des neuen Bildes",
+  "chooseImage": "Bild auswählen",
+  "upload": "Hochladen",
+  "noImageBytesFoundWeb": "Keine Bild-Bytes gefunden (Web).",
+  "pleasePickAnImageFirst": "Bitte wähle zuerst ein Bild aus.",
+  "uploadFailedCheckServerLogs": "Upload fehlgeschlagen. Server-Logs / Token prüfen.",
+  "profilePictureUploadedSuccessfully": "Profilbild erfolgreich hochgeladen!",
+  "errorWithValue": "Fehler: {error}",
+  "@errorWithValue": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "tapToChangeProfilePicture": "Tippe, um das Profilbild zu ändern",
+  "usernameValue": "Benutzername: {username}",
+  "@usernameValue": {
+    "placeholders": {
+      "username": {}
+    }
+  },
+  "roleValue": "Rolle: {role}",
+  "@roleValue": {
+    "placeholders": {
+      "role": {}
+    }
+  },
+  "dateOfBirthYyyyMmDd": "Geburtsdatum (YYYY-MM-DD)",
+  "saveProfile": "Profil speichern",
+  "failedToSaveProfile": "Profil konnte nicht gespeichert werden. Bitte versuche es erneut.",
+  "profileUpdated": "Profil aktualisiert.",
+  "completeYourProviderProfile": "Vervollständige dein Anbieterprofil",
+  "completeProviderProfileBody": "Um Jobs anzunehmen und Geld zu verdienen, vervollständige dein Anbieterprofil.",
+  "setupProfileNow": "Profil jetzt einrichten",
+  "doItLater": "Später",
+  "bookingTimerPenaltyPeriodActive": "Strafzeit aktiv",
+  "bookingTimerFreeCancellationPeriod": "Kostenlose Stornierungszeit",
+  "bookingTimerTimeRemaining": "Verbleibende Zeit: {time}",
+  "@bookingTimerTimeRemaining": {
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "bookingTimerCancellingNowPenalty": "Wenn du jetzt stornierst, fällt eine Strafe von 10 % an.",
+  "bookingTimerCancelNoPenalty": "Du kannst ohne Strafe stornieren.",
+  "myReviewsTitle": "Meine Bewertungen",
+  "failedToLoadReviews": "Bewertungen konnten nicht geladen werden.",
+  "noReviewsYet": "Du hast noch keine Bewertungen abgegeben.",
+  "providerWithName": "Anbieter: {name}",
+  "providerGeneric": "Anbieter",
+  "ratingWithValue": "Bewertung: {rating}",
+  "nearbyOpenJobsTitle": "Offene Jobs in der Nähe",
+  "failedToLoadOpenJobsHint": "Offene Jobs konnten nicht geladen werden.\nStelle sicher, dass du ein Anbieterprofil mit gesetzter Position und available=true hast.",
+  "errorLoadingJobsWithValue": "Fehler beim Laden der Jobs: {error}",
+  "noOpenJobsFoundNearbyTitle": "Keine offenen Jobs in der Nähe gefunden",
+  "noOpenJobsFoundNearbyBody": "Stelle sicher:\n- Du hast deinen Anbieter-Standort gesetzt\n- Du bist als verfügbar markiert\n- Nutzer haben Buchungen erstellt und bezahlt",
+  "currencyLabel": "Währung: {symbol}",
+  "pricesShownInCurrency": "Preise angezeigt in {symbol} ({country})",
+  "jobTitleWithId": "Job #{id}",
+  "serviceLine": "Service: {service}",
+  "whenLine": "Wann: {date} {time}",
+  "priceLine": "Preis: {price}",
+  "acceptJob": "Job annehmen",
+  "failedToAcceptJob": "Job konnte nicht angenommen werden.",
+  "jobAcceptedSuccessfully": "Job erfolgreich angenommen.",
+  "newServiceRequestTitle": "Neue Service-Anfrage",
+  "offeredPriceLabel": "Angebotener Preis",
+  "offeredPriceHint": "z. B. 25.00",
+  "enterValidPrice": "Gib einen gültigen Preis ein",
+  "bookAndPay": "Buchen & bezahlen",
+  "bookAndPayAmount": "Buchen & bezahlen {amount}",
+  "haircutService": "Haarschnitt",
+  "stylingService": "Styling",
+  "timeLabel": "Zeit:",
+  "notesLabel": "Notizen",
+  "requestCreatedAndPaidBroadcast": "Anfrage erstellt & bezahlt! An Anbieter gesendet.",
+  "locationLatLng": "Standort: {lat}, {lng}",
+  "paymentMethodsTitle": "Zahlungsmethoden",
+  "paymentPreferencesInfo": "Diese Einstellungen werden lokal auf deinem Gerät gespeichert. Echte Zahlungen werden sicher über Stripe/andere Gateways verarbeitet.",
+  "preferredMethodLabel": "Bevorzugte Methode (lokales Gateway wird nach Land gewählt)",
+  "methodVisaMastercard": "Visa/Mastercard",
+  "methodMobileMoney": "Mobile Money (Momo/Paystack/Afrika)",
+  "methodPaypal": "PayPal",
+  "methodApplePayGooglePay": "Apple Pay/Google Pay",
+  "methodWeChatPay": "WeChat Pay (China)",
+  "methodAlipay": "Alipay (China)",
+  "methodUnionPay": "UnionPay-Karte (China)",
+  "mobileMoneyNumberLabel": "Mobile-Money-Nummer",
+  "wechatAlipayIdLabel": "WeChat/Alipay-ID",
+  "cardLast4DigitsLabel": "Letzte 4 Ziffern der Karte",
+  "paypalEmailLabel": "PayPal-E-Mail",
+  "applePayEnabledOnDevice": "Apple Pay auf diesem Gerät aktiviert",
+  "savePaymentPreferences": "Zahlungseinstellungen speichern",
+  "paymentPrefsSavedInfo": "Zahlungseinstellungen lokal gespeichert. Das tatsächliche Abbuchen erfolgt später über Stripe/andere Gateways.",
+  "failedToLoadImage": "Bild konnte nicht geladen werden",
+  "earningsTitle": "Einnahmen",
+  "couldNotLoadEarningsSummary": "Einnahmenübersicht konnte nicht geladen werden.",
+  "noData": "Keine Daten.",
+  "retry": "Erneut versuchen",
+  "summaryTitle": "Übersicht",
+  "totalLabel": "Gesamt",
+  "pendingLabel": "Ausstehend",
+  "paidLabel": "Ausgezahlt",
+  "pdfReportTitle": "PDF-Bericht",
+  "periodLabel": "Zeitraum",
+  "periodThisMonth": "Diesen Monat",
+  "periodLastMonth": "Letzten Monat",
+  "periodYtd": "Seit Jahresbeginn",
+  "periodAllTime": "Gesamter Zeitraum",
+  "couldNotDownloadPdfReport": "PDF-Bericht konnte nicht heruntergeladen werden.",
+  "couldNotOpenPdfWithValue": "PDF konnte nicht geöffnet werden: {error}",
+  "savingFilesNotSupportedWeb": "Dateien speichern wird im Web derzeit nicht unterstützt.",
+  "savedToDocumentsIosWithPath": "In Documents (iOS) gespeichert:\n{path}",
+  "savedToFilesWithPath": "In Dateien gespeichert:\n{path}",
+  "open": "Öffnen",
+  "failedToSavePdfWithValue": "PDF konnte nicht gespeichert werden: {error}",
+  "openPdfReport": "PDF-Bericht öffnen",
+  "savePdfToDownloads": "PDF in Downloads speichern",
+  "reportWatermarkNote": "Der PDF-Bericht sollte das Styloria-Wasserzeichen enthalten.",
+  "referFriendsTitle": "Freunde werben",
+  "shareReferralCodeBody": "Teile deinen Empfehlungscode mit Freunden. Später kannst du Belohnungen hinzufügen, wenn sie sich anmelden und Buchungen abschließen.",
+  "yourReferralCodeLabel": "Dein Empfehlungscode:",
+  "copy": "Kopieren",
+  "referralCodeCopiedWithCode": "Empfehlungscode kopiert: {code}",
+  "navHome": "Home",
+  "navBookings": "Buchungen",
+  "navNotifications": "Benachrichtigungen",
+  "navAccount": "Konto",
+  "welcome": "Willkommen",
+  "welcomeName": "Willkommen, {name}",
+  "@welcomeName": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "toggleThemeTooltip": "Hell/Dunkel-Modus umschalten",
+  "loggedInAs": "Angemeldet als: {role}",
+  "@loggedInAs": {
+    "placeholders": {
+      "role": {}
+    }
+  },
+  "locationWithValue": "Standort: {value}",
+  "@locationWithValue": {
+    "placeholders": {
+      "value": {}
+    }
+  },
+  "homeTagline": "Verbessere dein Grooming-Erlebnis mit Echtzeit-Buchungen und vertrauenswürdigen Anbietern.",
+  "manageProviderProfile": "Anbieterprofil verwalten",
+  "browseOpenJobs": "Offene Jobs durchsuchen",
+  "quickActions": "Schnellaktionen",
+  "newBooking": "Neue Buchung",
+  "notificationsWithUnread": "Benachrichtigungen ({count, plural, =1{1 ungelesen} other{{count} ungelesen}})",
+  "@notificationsWithUnread": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "liveLocationTrackingTitle": "Live-Standortverfolgung",
+  "live": "Live",
+  "locationServicesDisabled": "Standortdienste sind deaktiviert",
+  "locationPermissionDenied": "Standortberechtigung verweigert",
+  "locationPermissionPermanentlyDenied": "Standortberechtigung dauerhaft verweigert",
+  "failedToGetLocationWithValue": "Standort konnte nicht abgerufen werden: {error}",
+  "@failedToGetLocationWithValue": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "youProvider": "Du (Anbieter)",
+  "youCustomer": "Du (Kunde)",
+  "customer": "Kunde",
+  "bookingDetails": "Buchungsdetails",
+  "navigate": "Navigieren",
+  "failedToLoadNotifications": "Benachrichtigungen konnten nicht geladen werden.",
+  "failedToMarkAsRead": "Konnte nicht als gelesen markieren",
+  "noNotificationsYet": "Noch keine Benachrichtigungen.",
+  "markRead": "Als gelesen markieren",
+  "providerKycTitle": "Anbieter-Verifizierung (KYC)",
+  "logoutTooltip": "Abmelden",
+  "statusLabel": "Status: {status}",
+  "@statusLabel": {
+    "placeholders": {
+      "status": {}
+    }
+  },
+  "rejectedWithNotes": "Abgelehnt: {notes}",
+  "@rejectedWithNotes": {
+    "placeholders": {
+      "notes": {}
+    }
+  },
+  "kycInstructions": "Um Anbieterfunktionen zu nutzen, laden Sie Ihren Ausweis und ein Selfie zur Verifizierung hoch.",
+  "idFrontRequired": "Ausweis Vorderseite (erforderlich)",
+  "selectIdFront": "Vorderseite auswählen",
+  "idBackRequired": "Ausweis Rückseite (erforderlich)",
+  "selectIdBackRequired": "Rückseite auswählen",
+  "selfieRequired": "Selfie (erforderlich)",
+  "selectSelfie": "Selfie auswählen",
+  "takeSelfie": "Selfie aufnehmen",
+  "errorUploadAllRequired": "Bitte laden Sie Ausweis (Vorderseite), Ausweis (Rückseite) und ein Selfie hoch.",
+  "failedSubmitKycCode": "KYC konnte nicht gesendet werden (Code {code}).",
+  "@failedSubmitKycCode": {
+    "placeholders": {
+      "code": {}
+    }
+  },
+  "submittedCurrentStatus": "Gesendet. Aktueller Status: {status}",
+  "@submittedCurrentStatus": {
+    "placeholders": {
+      "status": {}
+    }
+  },
+  "unknownStatus": "unbekannt",
+  "submitKyc": "KYC senden",
+  "verificationMayTakeTimeNote": "Hinweis: Die Verifizierung kann einige Zeit dauern. Sie können Anbieterfunktionen nach Genehmigung nutzen.",
+  "enterVerificationCodeTitle": "Bestätigungscode eingeben",
+  "otpSentToUsername": "Wir haben einen 6-stelligen Code an die Telefonnummer\nvon \"{username}\" gesendet.",
+  "@otpSentToUsername": {
+    "placeholders": {
+      "username": {}
+    }
+  },
+  "sixDigitCodeLabel": "6-stelliger Code",
+  "enterSixDigitCodeValidation": "Geben Sie den 6-stelligen Code ein",
+  "otpInvalidOrExpired": "Ungültiger oder abgelaufener Code.",
+  "failedLoadUserInfoAfterVerification": "Benutzerinformationen konnten nach der Verifizierung nicht geladen werden.",
+  "chatWithSupportTitle": "Chat mit dem Support",
+  "unableStartSupportChat": "Support-Chat konnte nicht gestartet werden.",
+  "invalidSupportThreadReturned": "Ungültiger Support-Thread vom Server zurückgegeben.",
+  "noMessagesYet": "Noch keine Nachrichten. Starten Sie eine Unterhaltung!",
+  "supportDefaultName": "Support",
+  "aboutPoliciesTitle": "Über uns & Richtlinien",
+  "paymentsNotSupportedShort": "Zahlungen werden auf dieser Plattform nicht unterstützt. Bitte auf Android, iOS, macOS oder Web ausführen.",
+  "failedToLoadProfile": "Profil konnte nicht geladen werden: {error}",
+  "profileSavedSuccess": "Profil erfolgreich {action}!",
+  "genericError": "Fehler: {error}",
+  "locationPermissionDeniedEnableInSettings": "Standortberechtigung abgelehnt. Bitte in den Einstellungen aktivieren.",
+  "locationPermissionPermanentlyDeniedEnableInAppSettings": "Standortberechtigung dauerhaft abgelehnt. Bitte in den App-Einstellungen aktivieren.",
+  "errorGettingLocation": "Fehler beim Abrufen des Standorts: {error}",
+  "pleaseEnterAddress": "Bitte eine Adresse eingeben",
+  "locationUpdatedFromAddress": "Standort anhand der Adresse aktualisiert",
+  "couldNotFindLocationForAddress": "Standort für diese Adresse konnte nicht gefunden werden",
+  "errorConvertingAddress": "Fehler beim Umwandeln der Adresse: {error}",
+  "portfolioUnavailableCompleteKycFirst": "Portfolio nicht verfügbar. Wenn du Anbieter bist, schließe zuerst die KYC-Verifizierung ab.",
+  "failedToLoadPortfolio": "Portfolio konnte nicht geladen werden: {error}",
+  "addPhoto": "Foto hinzufügen",
+  "addVideo": "Video hinzufügen",
+  "addPost": "Beitrag hinzufügen",
+  "captionOptionalTitle": "Bildunterschrift (optional)",
+  "captionHintExample": "z. B. „Knotless Braids beim Kunden“",
+  "skip": "Überspringen",
+  "save": "Speichern",
+  "failedToCreatePortfolioPost": "Portfolio-Beitrag konnte nicht erstellt werden.",
+  "uploadFailedMediaUpload": "Upload fehlgeschlagen (Medien-Upload).",
+  "uploadFailed": "Upload fehlgeschlagen: {error}",
+  "deletePostTitle": "Beitrag löschen?",
+  "deletePostBody": "Dadurch wird der Beitrag aus deinem Portfolio entfernt.",
+  "delete": "Löschen",
+  "deleteFailed": "Löschen fehlgeschlagen.",
+  "deleteFailedWithError": "Löschen fehlgeschlagen: {error}",
+  "portfolioTitle": "Portfolio",
+  "noPortfolioPostsYetHelpText": "Noch keine Portfolio-Beiträge. Füge Fotos/Videos deiner Arbeit hinzu, damit Kunden deinen Fähigkeiten vertrauen.",
+  "setupProviderProfileTitle": "Anbieterprofil einrichten",
+  "providerProfileTitle": "Anbieterprofil",
+  "welcomeToStyloriaTitle": "Willkommen bei Styloria!",
+  "completeProviderProfileToStartEarning": "Vervollständige dein Anbieterprofil, um Jobs anzunehmen und Geld zu verdienen.",
+  "reviewCountLabel": "({count} {count, plural, one{Bewertung} other{Bewertungen}})",
+  "topRatedChip": "Top bewertet",
+  "bioLabel": "Bio / Beschreibung",
+  "bioHint": "Erzähle Kunden von deinen Fähigkeiten und Erfahrungen...",
+  "pleaseEnterBio": "Bitte eine Bio eingeben",
+  "bioMinLength": "Die Bio sollte mindestens {min} Zeichen haben",
+  "yourLocationTitle": "Dein Standort",
+  "locationHelpMatchNearbyClients": "Dein Standort hilft uns, dich mit Kunden in der Nähe zu verbinden",
+  "locationHelpUpdateToFindJobs": "Aktualisiere deinen Standort, um Jobs in anderen Bereichen zu finden",
+  "useMyCurrentLocationTitle": "Meinen aktuellen Standort verwenden",
+  "gpsSubtitle": "Standort automatisch per GPS ermitteln",
+  "orLabel": "ODER",
+  "enterYourAddressTitle": "Adresse eingeben",
+  "fullAddressLabel": "Vollständige Adresse",
+  "fullAddressHint": "z. B. 123 Main St, Accra, Ghana",
+  "find": "Suchen",
+  "addressHelpText": "Straße, Stadt und Land eingeben",
+  "coordinatesAutoFilledTitle": "Koordinaten (automatisch ausgefüllt)",
+  "servicePricingTitle": "Service-Preise",
+  "servicePricingHelp": "Lege deinen Preis für jeden Service fest. Aktiviere „Nicht angeboten“ für Services, die du nicht anbietest.",
+  "serviceHeader": "Service",
+  "priceHeader": "Preis",
+  "notOfferedHeader": "Nicht angeboten",
+  "priceHint": "0.00",
+  "providerHowPricingWorksTitle": "So funktioniert die Preisgestaltung:",
+  "providerHowPricingWorksBody": "• Dein Preis ist das, was du für den Service berechnest\n• Transportkosten = 80% der Währung des Nutzers pro km\n• Nutzer sehen 3 Optionen basierend auf Anbietern in der Nähe:\n  - Budget: Niedrigster Preis\n  - Standard: Durchschnittspreis\n  - Priority: Höchster Preis",
+  "availableForBookingsTitle": "Für Buchungen verfügbar",
+  "availableOnHelp": "✓ Du erscheinst in Suchergebnissen für Kunden in der Nähe",
+  "availableOffHelp": "✗ Du erhältst keine neuen Jobangebote",
+  "completeSetupStartEarning": "Setup abschließen und verdienen",
+  "updateProfile": "Profil aktualisieren",
+  "skipForNow": "Vorerst überspringen",
+  "@providerWithName": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "@ratingWithValue": {
+    "placeholders": {
+      "rating": {}
+    }
+  },
+  "@errorLoadingJobsWithValue": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@currencyLabel": {
+    "placeholders": {
+      "symbol": {}
+    }
+  },
+  "@pricesShownInCurrency": {
+    "placeholders": {
+      "symbol": {},
+      "country": {}
+    }
+  },
+  "@jobTitleWithId": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+  "@serviceLine": {
+    "placeholders": {
+      "service": {}
+    }
+  },
+  "@whenLine": {
+    "placeholders": {
+      "date": {},
+      "time": {}
+    }
+  },
+  "@priceLine": {
+    "placeholders": {
+      "price": {}
+    }
+  },
+  "@bookAndPayAmount": {
+    "placeholders": {
+      "amount": {}
+    }
+  },
+  "@locationLatLng": {
+    "placeholders": {
+      "lat": {},
+      "lng": {}
+    }
+  },
+  "@couldNotOpenPdfWithValue": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@savedToDocumentsIosWithPath": {
+    "placeholders": {
+      "path": {}
+    }
+  },
+  "@savedToFilesWithPath": {
+    "placeholders": {
+      "path": {}
+    }
+  },
+  "@failedToSavePdfWithValue": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@referralCodeCopiedWithCode": {
+    "placeholders": {
+      "code": {}
+    }
+  },
+  "newBookingTitle": "New Booking",
+  "appointmentDetailsTitle": "Appointment details",
+  "pickDate": "Pick date",
+  "pickTime": "Pick time",
+  "serviceTypeTitle": "Service type",
+  "serviceDropdownLabel": "Service",
+  "serviceHaircutLabel": "Haircut",
+  "serviceBraidsLabel": "Braids",
+  "serviceShaveLabel": "Shave",
+  "serviceHairColoringLabel": "Hair Coloring",
+  "serviceManicureLabel": "Manicure",
+  "servicePedicureLabel": "Pedicure",
+  "serviceNailArtLabel": "Nail Art",
+  "serviceMakeupLabel": "Makeup",
+  "serviceFacialLabel": "Facial",
+  "serviceWaxingLabel": "Waxing",
+  "serviceMassageLabel": "Massage",
+  "serviceHairStylingLabel": "Hair Styling",
+  "serviceHairTreatmentLabel": "Hair Treatment",
+  "serviceHairExtensionsLabel": "Hair Extensions",
+  "serviceOtherServicesLabel": "Other Services",
+  "notesForProviderOptionalLabel": "Notes for your provider (optional)",
+  "locationTitle": "Location",
+  "latitudeLabel": "Latitude",
+  "longitudeLabel": "Longitude",
+  "requiredField": "Required",
+  "useMyCurrentLocation": "Use my current location",
+  "pricesShownIn": "Prices shown in {symbol} ({country})",
+  "@pricesShownIn": {
+    "placeholders": {
+      "symbol": {},
+      "country": {}
+    }
+  },
+  "chooseTimeLaterThanCurrent": "Please choose a time later than the current time.",
+  "pleasePickDateAndTime": "Please pick date and time.",
+  "locationUpdatedFromGps": "Location updated from GPS.",
+  "failedToGetLocation": "Failed to get location: {error}",
+  "@failedToGetLocation": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "bookingCreatedChoosePrice": "Booking created! ID: {id} • Choose your price option.",
+  "@bookingCreatedChoosePrice": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+  "failedToCreateBooking": "Failed to create booking.",
+  "paymentsNotSupportedLong": "Payments are not supported on this platform. Please run the app on Android, iOS, macOS, or Web to test real payments.",
+  "noBookingToConfirm": "No booking to confirm. Please create a booking first.",
+  "pleaseChoosePriceOption": "Please choose a price option.",
+  "failedCreatePaymentTryAgain": "Failed to create payment on server. Please try again.",
+  "paymentSuccessfulMessage": "Payment successful!\nBooking #{bookingId} • Paid: {paid}\nYour request is now visible to nearby providers.",
+  "@paymentSuccessfulMessage": {
+    "placeholders": {
+      "bookingId": {},
+      "paid": {}
+    }
+  },
+  "paymentSucceededButFailedUpdate": "Payment succeeded, but failed to update booking on server.",
+  "paymentCancelledOrFailed": "Payment cancelled or failed: {reason}",
+  "@paymentCancelledOrFailed": {
+    "placeholders": {
+      "reason": {}
+    }
+  },
+  "unexpectedPaymentError": "Unexpected payment error: {error}",
+  "@unexpectedPaymentError": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "createBookingButton": "Create Booking",
+  "chooseYourPriceOptionTitle": "Choose Your Price Option",
+  "transportationCostLabel": "Transportation cost: {cost}",
+  "@transportationCostLabel": {
+    "placeholders": {
+      "cost": {}
+    }
+  },
+  "budgetTierTitle": "BUDGET",
+  "standardTierTitle": "STANDARD",
+  "priorityTierTitle": "PRIORITY",
+  "budgetTierDescription": "Best value among nearby providers",
+  "standardTierDescription": "Recommended balance of price & availability",
+  "priorityTierDescription": "Premium option to attract top providers faster",
+  "naShort": "N/A",
+  "priceBreakdownTitle": "Price Breakdown",
+  "servicePriceLabel": "Service Price",
+  "transportationLabel": "Transportation",
+  "serviceFeeLabel": "Service Fee ({percent}%)",
+  "@serviceFeeLabel": {
+    "placeholders": {
+      "percent": {}
+    }
+  },
+  "allPricesIn": "All prices in {currency} ({country})",
+  "@allPricesIn": {
+    "placeholders": {
+      "currency": {},
+      "country": {}
+    }
+  },
+  "userCountryPlaceholder": "User country",
+  "totalToPayTitle": "Total to Pay",
+  "includesServiceTransportation": "Includes service + transportation",
+  "confirmAndPay": "Confirm & Pay",
+  "howPricingWorksTitle": "How Pricing Works",
+  "howPricingWorksBullets": "• Budget: best value among nearby providers\n• Standard: recommended default\n• Priority: premium option to speed up acceptance\n• Transportation is included in the total",
+  "myBookingsTitle": "My Bookings",
+  "myAssignedJobsTitle": "My Assigned Jobs",
+  "pleaseCompleteProviderProfileFirst": "Please complete your provider profile first.",
+  "failedToLoadBookings": "Failed to load bookings.",
+  "profileSetupRequiredTitle": "Profile Setup Required",
+  "profileSetupRequiredBody": "You need to complete your provider profile before you can view assigned jobs and earnings.",
+  "later": "Later",
+  "setupNow": "Setup Now",
+  "noBookingsFound": "No bookings found.",
+  "findNearbyOpenJobs": "Find Nearby Open Jobs",
+  "pay": "Pay",
+  "rate": "Rate",
+  "bookingNumber": "Booking #{id}",
+  "@bookingNumber": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+  "whenOn": "When: {date}",
+  "@whenOn": {
+    "placeholders": {
+      "date": {}
+    }
+  },
+  "whenAt": "When: {date} at {time}",
+  "@whenAt": {
+    "placeholders": {
+      "date": {},
+      "time": {}
+    }
+  },
+  "providerLine": "Provider: {name}",
+  "@providerLine": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "userLine": "User: {name}",
+  "@userLine": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "estimatedPriceLine": "Estimated price: {price}",
+  "@estimatedPriceLine": {
+    "placeholders": {
+      "price": {}
+    }
+  },
+  "paymentLine": "Payment: {status}",
+  "@paymentLine": {
+    "placeholders": {
+      "status": {}
+    }
+  },
+  "paymentUnpaid": "unpaid",
+  "paymentUnknown": "unknown",
+  "confirmPaymentTitle": "Confirm payment",
+  "confirmPaymentBody": "Pay {amount} to confirm this booking?",
+  "@confirmPaymentBody": {
+    "placeholders": {
+      "amount": {}
+    }
+  },
+  "yesPay": "Yes, Pay",
+  "failedToCreatePaymentIntent": "Failed to create payment intent.",
+  "paymentSuccessfulShort": "Payment successful.",
+  "paymentSucceededButFailedUpdateBooking": "Payment succeeded, but failed to update booking on server.",
+  "paymentCancelledOrFailedReason": "Payment cancelled or failed: {reason}",
+  "@paymentCancelledOrFailedReason": {
+    "placeholders": {
+      "reason": {}
+    }
+  },
+  "unexpectedPaymentErrorReason": "Unexpected payment error: {error}",
+  "@unexpectedPaymentErrorReason": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+
+  "genericContact": "Kontakt",
+  "genericProvider": "Dienstleister",
+  "genericNotAvailable": "k. A.",
+
+  "rateProviderTitle": "{providerName} bewerten",
+  "@rateProviderTitle": {
+    "placeholders": {
+      "providerName": {}
+    }
+  },
+
+  "reviewSelectRatingPrompt": "Wähle eine Bewertung (1 bis 5).",
+  "reviewCommentOptionalLabel": "Kommentar (optional)",
+  "genericCancel": "Abbrechen",
+  "genericSubmit": "Senden",
+  "reviewSubmitted": "Bewertung gesendet.",
+  "reviewSubmitFailed": "Bewertung konnte nicht gesendet werden.",
+  "rateThisService": "Diese Leistung bewerten",
+
+  "tipLeaveTitle": "Trinkgeld geben",
+  "tipChooseAmountPrompt": "Wähle einen Trinkgeldbetrag oder gib einen eigenen Betrag ein.",
+  "tipNoTip": "Kein Trinkgeld",
+  "tipCustomAmountLabel": "Eigener Trinkgeldbetrag",
+  "genericContinue": "Weiter",
+
+  "tipSkipped": "Trinkgeld übersprungen.",
+  "tipFailedToSaveChoice": "Trinkgeld-Auswahl konnte nicht gespeichert werden.",
+  "tipFailedToCreatePayment": "Trinkgeld-Zahlung konnte nicht erstellt werden.",
+  "tipPaidSuccessfully": "Trinkgeld erfolgreich bezahlt. Danke!",
+  "tipPaidButUpdateFailed": "Trinkgeldzahlung erfolgreich, aber die Buchung konnte nicht aktualisiert werden.",
+
+  "tipCancelledOrFailed": "Trinkgeld abgebrochen/fehlgeschlagen: {message}",
+  "tipUnexpectedError": "Unerwarteter Trinkgeld-Fehler: {error}",
+
+  "tipAlreadyPaidLabel": "Trinkgeld bereits bezahlt",
+  "tipSkippedLabel": "Trinkgeld übersprungen",
+  "walletTitle": "Wallet",
+  "walletTooltip": "Wallet",
+  "payoutSettingsTitle": "Auszahlungseinstellungen",
+  "payoutSettingsTooltip": "Auszahlungseinstellungen",
+  "walletNoWalletYet": "Noch kein Wallet. Schließe Jobs ab, um zu verdienen.",
+  "walletCurrencyFieldLabel": "Währung",
+  "walletAvailableLine": "Verfügbar: {amount} {currency}",
+  "walletPendingLine": "Ausstehend: {amount} {currency}",
+  "walletCashOutInstant": "Sofort auszahlen",
+  "walletCashOutFailed": "Auszahlung fehlgeschlagen.",
+  "walletCashOutSentTransfer": "Auszahlung gesendet. Transfer: {transferId}",
+  "walletTransactionsTitle": "Transaktionen",
+  "walletNoTransactionsYet": "Noch keine Transaktionen.",
+  "payoutAutoPayoutsTitle": "Automatische Auszahlungen",
+  "payoutAutoPayoutsSubtitle": "Auszahlungen automatisch nach deinem Zeitplan senden.",
+  "payoutDayUtcLabel": "Auszahlungstag (UTC)",
+  "payoutHourUtcLabel": "Auszahlungsstunde (UTC)",
+  "payoutMinimumAmountLabel": "Mindestbetrag für automatische Auszahlung",
+  "payoutMinimumAmountHelper": "Automatische Auszahlung nur, wenn der verfügbare Kontostand ≥ diesem Betrag ist.",
+  "payoutInstantCashOutEnabledTitle": "Sofortauszahlung aktiviert",
+  "payoutInstantCashOutEnabledSubtitle": "Die Schaltfläche „Sofort auszahlen“ erlauben (Gebühr fällt an).",
+  "payoutSettingsSaved": "Auszahlungseinstellungen gespeichert.",
+  "payoutSettingsSaveFailed": "Auszahlungseinstellungen konnten nicht gespeichert werden.",
+  "tipLeaveButton": "Trinkgeld geben",
+  "selectRatingHelp": "Select rating (1 = poor, 5 = excellent):",
+  "commentsOptionalLabel": "Comments (optional)",
+  "submit": "Submit",
+  "reviewSubmitted": "Review submitted.",
+  "failedSubmitReview": "Failed to submit review.",
+  "@failedToLoadProfile": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@profileSavedSuccess": {
+    "placeholders": {
+      "action": {}
+    }
+  },
+  "@genericError": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@errorGettingLocation": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@errorConvertingAddress": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@failedToLoadPortfolio": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@uploadFailed": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@deleteFailedWithError": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@reviewCountLabel": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@bioMinLength": {
+    "placeholders": {
+      "min": {
+        "type": "int"
+      }
+    }
+  }
+}

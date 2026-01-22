@@ -1,0 +1,962 @@
+{
+  "@@locale": "zh",
+  "appTitle": "Styloria",
+  "account": "账户",
+  "profile": "个人资料",
+  "myBookings": "我的预约",
+  "openJobs": "开放订单",
+  "earnings": "收入",
+  "paymentMethods": "支付方式",
+  "referFriends": "邀请好友",
+  "language": "语言",
+  "settings": "设置",
+  "darkMode": "深色模式",
+  "systemDefault": "系统默认",
+  "languageUpdated": "语言已更新",
+  "languageSetToSystemDefault": "语言已设置为系统默认",
+  "helpAndSupport": "帮助与支持",
+  "chatWithCustomerService": "与客服聊天",
+  "aboutAndPolicies": "关于与政策",
+  "viewUserPoliciesAndAgreements": "查看用户政策与协议",
+  "logOut": "退出登录",
+  "deleteAccount": "删除账户",
+  "deleteAccountSubtitle": "此操作无法撤销",
+  "deleteAccountTitle": "删除账户",
+  "deleteAccountConfirmBody": "确定要删除你的账户吗？\n\n此操作将使你退出登录，并且你可能会永久失去访问权限。",
+  "no": "否",
+  "yesDelete": "是，删除",
+  "deleteAccountSheetTitle": "很遗憾看到你离开。",
+  "deleteAccountSheetPrompt": "可以告诉我们原因吗？（可多选）",
+  "deleteAccountSelectAtLeastOneReason": "请至少选择一个原因。",
+  "tellUsMoreOptional": "进一步说明（可选）",
+  "suggestionsToImproveOptional": "改进建议（可选）",
+  "deleteMyAccount": "删除我的账户",
+  "cancel": "取消",
+  "failedToDeleteAccount": "删除账户失败。请重试。",
+  "choosePreferredLanguage": "选择你的首选语言",
+  "noteSomeTextMayStillAppearInEnglish": "注意：这将更改应用语言。在添加翻译之前，部分文字可能仍显示为英文。",
+  "languageSetToName": "语言已设置为{name}",
+  "@languageSetToName": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "deletionReason1": "我不再需要Styloria",
+  "deletionReason2": "我在验证账户时遇到问题（邮箱/KYC）",
+  "deletionReason3": "我找不到附近的服务/服务商",
+  "deletionReason4": "价格或费用过高/不清晰",
+  "deletionReason5": "应用令人困惑/难以使用",
+  "deletionReason6": "Bug或性能问题",
+  "deletionReason7": "支付/退款问题",
+  "deletionReason8": "与服务商/用户的不良体验",
+  "deletionReason9": "隐私或安全担忧",
+  "deletionReason10": "我误创建了此账户",
+  "deletionReason11": "我正在转向其他平台",
+  "deletionReason12": "其他",
+  "loginWelcomeTitle": "欢迎使用 Styloria",
+  "loginWelcomeSubtitle": "登录以管理你的预约和服务。",
+  "loginFailedToLoadUserInfo": "登录成功，但无法加载用户信息。",
+  "username": "用户名",
+  "password": "密码",
+  "required": "必填",
+  "login": "登录",
+  "createNewAccount": "创建新账户",
+  "requestEmailVerificationCode": "请求邮箱验证码",
+  "createAccountTitle": "创建账户",
+  "joinStyloria": "加入 Styloria",
+  "registerSubtitle": "创建账户以预约服务或成为服务提供者",
+  "iWantTo": "我想：",
+  "bookServices": "预约服务",
+  "provideServices": "提供服务",
+  "personalInformation": "个人信息",
+  "firstName": "名",
+  "lastName": "姓",
+  "selectDateOfBirth": "选择出生日期",
+  "phoneNumber": "电话号码",
+  "pleaseEnterPhoneNumber": "请输入电话号码",
+  "accountInformation": "账户信息",
+  "chooseUniqueUsernameHint": "选择一个唯一的用户名",
+  "email": "邮箱",
+  "emailHint": "your@email.com",
+  "enterValidEmail": "请输入有效的邮箱",
+  "security": "安全",
+  "passwordHintAtLeast10": "至少10个字符",
+  "passwordMin10": "密码必须至少包含10个字符",
+  "iAgreeTo": "我同意",
+  "termsOfService": "服务条款",
+  "and": "和",
+  "privacyPolicy": "隐私政策",
+  "passwordIsRequired": "需要密码",
+  "confirmPassword": "确认密码",
+  "passwordsDoNotMatch": "两次密码不一致",
+  "pleaseSelectDob": "请选择你的出生日期。",
+  "pleaseSelectCountry": "请选择你的国家。",
+  "pleaseSelectCity": "请选择你的城市。",
+  "pleaseEnterValidPhone": "请输入有效的电话号码。",
+  "mustAcceptTerms": "你必须同意条款与条件。",
+  "mustBeAtLeast18": "注册需要年满 18 岁。",
+  "agreeToTerms": "我同意服务条款和隐私政策",
+  "createAccountButton": "创建账户",
+  "alreadyHaveAccount": "已有账户？",
+  "emailVerifiedSuccessPleaseLogin": "邮箱验证成功。请登录。",
+  "pleaseVerifyEmailToContinue": "请先验证邮箱以继续。",
+  "requestVerificationCodeTitle": "请求验证码",
+  "requestVerificationInstructions": "请输入你的邮箱或用户名。\n我们会向该账户绑定的邮箱发送新的验证码。",
+  "emailOrUsername": "邮箱或用户名",
+  "sendCode": "发送验证码",
+  "ifAccountExistsCodeSent": "如果该账户存在，验证码已发送。",
+  "failedToSendVerificationCode": "发送验证码失败。",
+  "verifyYourEmailTitle": "验证你的邮箱",
+  "verificationCodeSentInfo": "验证码已发送到该账户的邮箱。",
+  "emailVerificationInstructions": "请输入发送到该账户邮箱的 6 位验证码：\n{identifier}",
+  "@emailVerificationInstructions": {
+    "placeholders": {
+      "identifier": {}
+    }
+  },
+
+  "youAreCurrentlyUnavailable": "您目前不可用",
+  "toBrowseAndAcceptJobsEnableAvailability": "要浏览和接受附近的工作请求，您需要将自己设置为可预约状态。",
+  "goToProfileSettings": "前往个人资料设置",
+  "tipToggleAvailableForBookings": "提示：在您的服务提供者个人资料中开启「可接受预约」以开始接收工作请求。",
+  "requestedBy": "请求者：{name}",
+  "@requestedBy": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "locationLabel": "位置：{address}",
+  "@locationLabel": {
+    "placeholders": {
+      "address": {
+        "type": "String"
+      }
+    }
+  },
+
+  "verificationCodeLabel": "验证码",
+  "sendingEllipsis": "发送中...",
+  "resendCode": "重新发送验证码",
+  "enter6DigitCodeError": "请输入 6 位验证码。",
+  "verifyingEllipsis": "验证中...",
+  "verify": "验证",
+  "invalidOrExpiredCodeTryResending": "验证码无效或已过期。请尝试重新发送。",
+  "bookingTitle": "预约 #{id}",
+  "@bookingTitle": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+  "invalidBookingIdForChat": "用于聊天的预约 ID 无效。",
+  "invalidBookingIdForCall": "用于通话的预约 ID 无效。",
+  "unableToLoadContactInfo": "无法加载联系信息。请确认预约处于有效状态。",
+  "noPhoneNumberAvailableForName": "无法获取 {name} 的电话号码。",
+  "@noPhoneNumberAvailableForName": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "deviceCannotPlaceCalls": "此设备无法拨打电话。",
+  "cancelBookingDialogTitle": "取消预约",
+  "cancelBookingDialogBody": "你确定要取消此预约吗？\n\n注意：如果服务者已接受并且已超过 7 分钟（但少于约 40 分钟），可能会根据规则收取罚金。",
+  "yesCancel": "是，取消",
+  "failedToCancelBooking": "取消预约失败。",
+  "bookingCancelledPenaltyApplied": "预约已取消。已收取 {amount} 的罚金。",
+  "@bookingCancelledPenaltyApplied": {
+    "placeholders": {
+      "amount": {}
+    }
+  },
+  "bookingCancelledSuccessfully": "预约取消成功。",
+  "failedToConfirmCompletion": "确认完成失败，请重试。",
+  "bothSidesConfirmedCompletedPayoutReleased": "双方已确认。预约已标记为完成，款项已释放。",
+  "youConfirmedCompletionWaitingForProvider": "你已确认完成，正在等待服务者确认。",
+  "youConfirmedCompletionWaitingForUser": "你已确认完成，正在等待用户确认。",
+  "statusUnknown": "未知",
+  "statusAccepted": "已接受",
+  "statusInProgress": "进行中",
+  "statusCompleted": "已完成",
+  "statusCancelled": "已取消",
+  "paymentPaid": "已支付",
+  "paymentPending": "待处理",
+  "paymentFailed": "失败",
+  "bookingAcceptedBy": "预约已由 {name} 接受",
+  "@bookingAcceptedBy": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "whenLabel": "时间",
+  "atTime": "{time}",
+  "@atTime": {
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "userLabel": "用户",
+  "providerLabel": "服务者",
+  "estimatedPriceLabel": "预估价格",
+  "offeredPaidLabel": "报价 / 已付",
+  "distanceLabel": "距离",
+  "distanceMiles": "{miles} 英里",
+  "@distanceMiles": {
+    "placeholders": {
+      "miles": {}
+    }
+  },
+  "acceptedAtLabel": "接受时间",
+  "cancelledAtLabel": "取消时间",
+  "cancelledByLabel": "取消方",
+  "penaltyAppliedLabel": "已收取罚金：{amount}",
+  "@penaltyAppliedLabel": {
+    "placeholders": {
+      "amount": {}
+    }
+  },
+  "userConfirmedLabel": "用户已确认",
+  "providerConfirmedLabel": "服务者已确认",
+  "payoutReleasedLabel": "款项已释放",
+  "yesLower": "是",
+  "noLower": "否",
+  "chat": "聊天",
+  "call": "拨打电话",
+  "actions": "操作",
+  "confirmCompletion": "确认完成",
+  "noFurtherActionsForBooking": "该预约没有可进行的后续操作。",
+  "freeCancellationEndsIn": "免费取消倒计时：{time}",
+  "@freeCancellationEndsIn": {
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "earlyFreeCancellationEndedWarning": "早期免费取消已结束。在接受后约 40 分钟内，晚取消可能会产生罚金。",
+  "cancelBooking": "取消预约",
+  "cancelBookingNoPenalty": "取消预约（无罚金）",
+  "cancelBookingPenaltyMayApply": "取消预约（可能有罚金）",
+  "cancellationPolicyInfo": "服务者接受后前 7 分钟内可无罚金取消；如有需要，约 40 分钟后也可无罚金取消。在两者之间取消，可能会按规则收取罚金。",
+  "ratingLine": "评分：{rating}（{reviewCount, plural, =1{1 条评价} other{{reviewCount} 条评价}}）",
+  "@ratingLine": {
+    "placeholders": {
+      "rating": {},
+      "reviewCount": {
+        "type": "int"
+      }
+    }
+  },
+  "proofOfSkillsPortfolio": "技能证明（作品集）",
+  "noPortfolioPostsAvailable": "暂无作品集内容。",
+  "bookingLocation": "预约位置",
+  "location": "位置",
+  "latitude": "纬度",
+  "longitude": "经度",
+  "mapWillAppearWhenCoordinatesValid": "当坐标有效时，地图将显示在此处。",
+  "chatForBookingTitle": "预约 #{id} 的聊天",
+  "@chatForBookingTitle": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+  "unableToStartChat": "无法开始聊天。聊天仅在预约被接受、进行中，或在最近一天内完成时可用。",
+  "invalidChatThreadFromServer": "服务器返回的聊天会话无效。",
+  "messageNotSentPolicy": "消息未发送。注意：聊天中不允许分享电话号码或邮箱。",
+  "unknown": "未知",
+  "typeMessageHint": "输入要发送给支持的消息...",
+  "uploadProfilePicture": "上传头像",
+  "currentProfilePicture": "当前头像",
+  "newPicturePreview": "新头像预览",
+  "chooseImage": "选择图片",
+  "upload": "上传",
+  "noImageBytesFoundWeb": "未找到图片字节（Web）。",
+  "pleasePickAnImageFirst": "请先选择一张图片。",
+  "uploadFailedCheckServerLogs": "上传失败。请检查服务器日志 / token。",
+  "profilePictureUploadedSuccessfully": "头像上传成功！",
+  "errorWithValue": "错误：{error}",
+  "@errorWithValue": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "tapToChangeProfilePicture": "点击更换头像",
+  "usernameValue": "用户名：{username}",
+  "@usernameValue": {
+    "placeholders": {
+      "username": {}
+    }
+  },
+  "roleValue": "角色：{role}",
+  "@roleValue": {
+    "placeholders": {
+      "role": {}
+    }
+  },
+  "dateOfBirthYyyyMmDd": "出生日期（YYYY-MM-DD）",
+  "saveProfile": "保存资料",
+  "failedToSaveProfile": "保存资料失败。请重试。",
+  "profileUpdated": "资料已更新。",
+  "completeYourProviderProfile": "完善你的服务者资料",
+  "completeProviderProfileBody": "要开始接单并赚钱，请先完善你的服务者资料。",
+  "setupProfileNow": "现在完善资料",
+  "doItLater": "稍后再说",
+  "bookingTimerPenaltyPeriodActive": "罚金期已开始",
+  "bookingTimerFreeCancellationPeriod": "免费取消期",
+  "bookingTimerTimeRemaining": "剩余时间：{time}",
+  "@bookingTimerTimeRemaining": {
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "bookingTimerCancellingNowPenalty": "现在取消将产生 10% 的罚金。",
+  "bookingTimerCancelNoPenalty": "你可以无罚金取消。",
+  "myReviewsTitle": "我的评价",
+  "failedToLoadReviews": "加载评价失败。",
+  "noReviewsYet": "你还没有留下任何评价。",
+  "providerWithName": "服务者：{name}",
+  "providerGeneric": "服务者",
+  "ratingWithValue": "评分：{rating}",
+  "nearbyOpenJobsTitle": "附近可接订单",
+  "failedToLoadOpenJobsHint": "加载可接订单失败。\n请确保你有服务者资料、已设置位置且 available=true。",
+  "errorLoadingJobsWithValue": "加载订单出错：{error}",
+  "noOpenJobsFoundNearbyTitle": "附近没有可接订单",
+  "noOpenJobsFoundNearbyBody": "请确认：\n- 你已设置服务者位置\n- 你已标记为可接单\n- 用户已创建并支付预约",
+  "currencyLabel": "货币：{symbol}",
+  "pricesShownInCurrency": "价格以 {symbol}（{country}）显示",
+  "jobTitleWithId": "订单 #{id}",
+  "serviceLine": "服务：{service}",
+  "whenLine": "时间：{date} {time}",
+  "priceLine": "价格：{price}",
+  "acceptJob": "接单",
+  "failedToAcceptJob": "接单失败。",
+  "jobAcceptedSuccessfully": "接单成功。",
+  "newServiceRequestTitle": "新建服务请求",
+  "offeredPriceLabel": "出价",
+  "offeredPriceHint": "例如 25.00",
+  "enterValidPrice": "请输入有效价格",
+  "bookAndPay": "预约并支付",
+  "bookAndPayAmount": "预约并支付 {amount}",
+  "haircutService": "理发",
+  "stylingService": "造型",
+  "timeLabel": "时间：",
+  "notesLabel": "备注",
+  "requestCreatedAndPaidBroadcast": "请求已创建并支付！已向服务者广播。",
+  "locationLatLng": "位置：{lat}, {lng}",
+  "paymentMethodsTitle": "支付方式",
+  "paymentPreferencesInfo": "这些偏好设置保存在你的设备本地。实际支付将通过 Stripe/其他网关安全处理。",
+  "preferredMethodLabel": "首选方式（根据国家选择本地网关）",
+  "methodVisaMastercard": "Visa/Mastercard",
+  "methodMobileMoney": "移动支付（Momo/Paystack/非洲）",
+  "methodPaypal": "PayPal",
+  "methodApplePayGooglePay": "Apple Pay/Google Pay",
+  "methodWeChatPay": "微信支付（中国）",
+  "methodAlipay": "支付宝（中国）",
+  "methodUnionPay": "银联卡（中国）",
+  "mobileMoneyNumberLabel": "移动支付号码",
+  "wechatAlipayIdLabel": "微信/支付宝 ID",
+  "cardLast4DigitsLabel": "卡号后四位",
+  "paypalEmailLabel": "PayPal 邮箱",
+  "applePayEnabledOnDevice": "此设备已启用 Apple Pay",
+  "savePaymentPreferences": "保存支付偏好",
+  "paymentPrefsSavedInfo": "支付偏好已保存到本地。实际扣款稍后由 Stripe/其他网关处理。",
+  "failedToLoadImage": "图片加载失败",
+  "earningsTitle": "收益",
+  "couldNotLoadEarningsSummary": "无法加载收益汇总。",
+  "noData": "暂无数据。",
+  "retry": "重试",
+  "summaryTitle": "汇总",
+  "totalLabel": "合计",
+  "pendingLabel": "待处理",
+  "paidLabel": "已支付",
+  "pdfReportTitle": "PDF 报告",
+  "periodLabel": "周期",
+  "periodThisMonth": "本月",
+  "periodLastMonth": "上月",
+  "periodYtd": "年初至今",
+  "periodAllTime": "全部时间",
+  "couldNotDownloadPdfReport": "无法下载 PDF 报告。",
+  "couldNotOpenPdfWithValue": "无法打开 PDF：{error}",
+  "savingFilesNotSupportedWeb": "Web 端暂不支持保存文件。",
+  "savedToDocumentsIosWithPath": "已保存到 Documents（iOS）：\n{path}",
+  "savedToFilesWithPath": "已保存到文件：\n{path}",
+  "open": "打开",
+  "failedToSavePdfWithValue": "保存 PDF 失败：{error}",
+  "openPdfReport": "打开 PDF 报告",
+  "savePdfToDownloads": "保存 PDF 到下载",
+  "reportWatermarkNote": "报告 PDF 应包含 Styloria 水印。",
+  "referFriendsTitle": "邀请好友",
+  "shareReferralCodeBody": "把你的邀请码分享给好友。之后你可以在他们注册并完成预约后添加奖励。",
+  "yourReferralCodeLabel": "你的邀请码：",
+  "copy": "复制",
+  "referralCodeCopiedWithCode": "邀请码已复制：{code}",
+  "navHome": "首页",
+  "navBookings": "预约",
+  "navNotifications": "通知",
+  "navAccount": "账户",
+  "welcome": "欢迎",
+  "welcomeName": "欢迎，{name}",
+  "@welcomeName": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "toggleThemeTooltip": "切换浅色/深色模式",
+  "loggedInAs": "登录身份：{role}",
+  "@loggedInAs": {
+    "placeholders": {
+      "role": {}
+    }
+  },
+  "locationWithValue": "位置：{value}",
+  "@locationWithValue": {
+    "placeholders": {
+      "value": {}
+    }
+  },
+  "homeTagline": "通过实时预约与可信服务者，升级你的护理体验。",
+  "manageProviderProfile": "管理服务者资料",
+  "browseOpenJobs": "浏览可接订单",
+  "quickActions": "快捷操作",
+  "newBooking": "新建预约",
+  "notificationsWithUnread": "通知（{count, plural, =1{1 条未读} other{{count} 条未读}}）",
+  "@notificationsWithUnread": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "liveLocationTrackingTitle": "实时位置追踪",
+  "live": "实时",
+  "locationServicesDisabled": "定位服务已关闭。",
+  "locationPermissionDenied": "定位权限被拒绝。",
+  "locationPermissionPermanentlyDenied": "定位权限被永久拒绝。请在设置中启用。",
+  "failedToGetLocationWithValue": "获取位置失败：{error}",
+  "@failedToGetLocationWithValue": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "youProvider": "你（服务者）",
+  "youCustomer": "你（客户）",
+  "customer": "客户",
+  "bookingDetails": "预约详情",
+  "navigate": "导航",
+  "failedToLoadNotifications": "加载通知失败。",
+  "failedToMarkAsRead": "标记为已读失败",
+  "noNotificationsYet": "暂无通知。",
+  "markRead": "标记已读",
+  "providerKycTitle": "服务者认证（KYC）",
+  "logoutTooltip": "退出登录",
+  "statusLabel": "状态：{status}",
+  "@statusLabel": {
+    "placeholders": {
+      "status": {}
+    }
+  },
+  "rejectedWithNotes": "已拒绝：{notes}",
+  "@rejectedWithNotes": {
+    "placeholders": {
+      "notes": {}
+    }
+  },
+  "kycInstructions": "要使用服务者功能，请上传身份证件和自拍照进行验证。",
+  "idFrontRequired": "身份证正面（必填）",
+  "selectIdFront": "选择身份证正面",
+  "idBackRequired": "身份证背面（必填）",
+  "selectIdBackRequired": "选择身份证背面",
+  "selfieRequired": "自拍（必填）",
+  "selectSelfie": "选择自拍",
+  "takeSelfie": "拍摄自拍",
+  "errorUploadAllRequired": "请上传身份证（正面）、身份证（背面）和一张自拍照。",
+  "failedSubmitKycCode": "提交 KYC 失败（代码 {code}）。",
+  "@failedSubmitKycCode": {
+    "placeholders": {
+      "code": {}
+    }
+  },
+  "submittedCurrentStatus": "已提交。当前状态：{status}",
+  "@submittedCurrentStatus": {
+    "placeholders": {
+      "status": {}
+    }
+  },
+  "unknownStatus": "未知",
+  "submitKyc": "提交 KYC",
+  "verificationMayTakeTimeNote": "注意：验证可能需要一些时间。通过后即可使用服务者功能。",
+  "enterVerificationCodeTitle": "输入验证码",
+  "otpSentToUsername": "我们已向与“{username}”关联的手机号发送了 6 位验证码。\n",
+  "@otpSentToUsername": {
+    "placeholders": {
+      "username": {}
+    }
+  },
+  "sixDigitCodeLabel": "6 位验证码",
+  "enterSixDigitCodeValidation": "请输入 6 位验证码",
+  "otpInvalidOrExpired": "验证码无效或已过期。",
+  "failedLoadUserInfoAfterVerification": "验证后加载用户信息失败。",
+  "chatWithSupportTitle": "联系支持",
+  "unableStartSupportChat": "无法开始支持聊天。",
+  "invalidSupportThreadReturned": "服务器返回的支持会话无效。",
+  "noMessagesYet": "还没有消息。开始对话吧！",
+  "supportDefaultName": "支持",
+  "aboutPoliciesTitle": "关于与政策",
+  "newBookingTitle": "新建预约",
+  "appointmentDetailsTitle": "预约详情",
+  "pickDate": "选择日期",
+  "pickTime": "选择时间",
+  "serviceTypeTitle": "服务类型",
+  "serviceDropdownLabel": "服务",
+  "serviceHaircutLabel": "理发",
+  "serviceBraidsLabel": "编发",
+  "serviceShaveLabel": "剃须",
+  "serviceHairColoringLabel": "染发",
+  "serviceManicureLabel": "美甲",
+  "servicePedicureLabel": "修脚",
+  "serviceNailArtLabel": "美甲彩绘",
+  "serviceMakeupLabel": "化妆",
+  "serviceFacialLabel": "面部护理",
+  "serviceWaxingLabel": "脱毛",
+  "serviceMassageLabel": "按摩",
+  "serviceHairStylingLabel": "发型造型",
+  "serviceHairTreatmentLabel": "头发护理",
+  "serviceHairExtensionsLabel": "接发",
+  "serviceOtherServicesLabel": "其他服务",
+  "notesForProviderOptionalLabel": "给服务者的备注（可选）",
+  "locationTitle": "位置",
+  "latitudeLabel": "纬度",
+  "longitudeLabel": "经度",
+  "requiredField": "必填",
+  "useMyCurrentLocation": "使用我的当前位置",
+  "pricesShownIn": "价格以 {symbol} 显示（{country}）",
+  "chooseTimeLaterThanCurrent": "请选择晚于当前时间的时间。",
+  "pleasePickDateAndTime": "请选择日期和时间。",
+  "locationUpdatedFromGps": "已通过 GPS 更新位置。",
+  "failedToGetLocation": "获取位置失败：{error}",
+  "bookingCreatedChoosePrice": "预约已创建！ID：{id} • 请选择价格选项。",
+  "failedToCreateBooking": "创建预约失败。",
+  "paymentsNotSupportedLong": "此平台不支持支付。请在 Android、iOS、macOS 或 Web 上运行应用以测试真实支付。",
+  "noBookingToConfirm": "没有可确认的预约。请先创建预约。",
+  "pleaseChoosePriceOption": "请选择一个价格选项。",
+  "failedCreatePaymentTryAgain": "服务器创建支付失败。请重试。",
+  "paymentSuccessfulMessage": "支付成功！\n预约 #{bookingId} • 已支付：{paid}\n你的请求现在对附近的服务者可见。",
+  "paymentSucceededButFailedUpdate": "支付成功，但更新预约到服务器失败。",
+  "paymentCancelledOrFailed": "支付已取消或失败：{reason}",
+  "unexpectedPaymentError": "意外的支付错误：{error}",
+  "createBookingButton": "创建预约",
+  "chooseYourPriceOptionTitle": "选择你的价格选项",
+  "transportationCostLabel": "交通费用：{cost}",
+  "budgetTierTitle": "经济",
+  "standardTierTitle": "标准",
+  "priorityTierTitle": "优先",
+  "budgetTierDescription": "附近服务者中最划算",
+  "standardTierDescription": "价格与可用性的推荐平衡",
+  "priorityTierDescription": "高级选项，更快吸引优质服务者",
+  "naShort": "不适用",
+  "priceBreakdownTitle": "价格明细",
+  "servicePriceLabel": "服务费用",
+  "transportationLabel": "交通",
+  "serviceFeeLabel": "服务费（{percent}%）",
+  "allPricesIn": "所有价格以 {currency}（{country}）计",
+  "userCountryPlaceholder": "用户国家/地区",
+  "totalToPayTitle": "应付总额",
+  "includesServiceTransportation": "包含服务 + 交通",
+  "confirmAndPay": "确认并支付",
+  "howPricingWorksTitle": "定价说明",
+  "howPricingWorksBullets": "• 经济：附近最划算\n• 标准：推荐默认\n• 优先：高级选项，加快接单\n• 交通费用已包含在总价中",
+  "myBookingsTitle": "我的预约",
+  "myAssignedJobsTitle": "我被分配的工作",
+  "pleaseCompleteProviderProfileFirst": "请先完成你的服务者资料。",
+  "failedToLoadBookings": "加载预约失败。",
+  "profileSetupRequiredTitle": "需要完善资料",
+  "profileSetupRequiredBody": "在查看已分配工作和收益之前，你需要先完善服务者资料。",
+  "later": "稍后",
+  "setupNow": "现在设置",
+  "noBookingsFound": "未找到预约。",
+  "findNearbyOpenJobs": "查找附近的公开工作",
+  "pay": "支付",
+  "rate": "评价",
+  "bookingNumber": "预约 #{id}",
+  "whenOn": "时间：{date}",
+  "whenAt": "时间：{date} {time}",
+  "providerLine": "服务者：{name}",
+  "userLine": "用户：{name}",
+  "estimatedPriceLine": "预估价格：{price}",
+  "paymentLine": "支付：{status}",
+  "paymentUnpaid": "未支付",
+  "paymentUnknown": "未知",
+  "confirmPaymentTitle": "确认支付",
+  "confirmPaymentBody": "支付 {amount} 以确认该预约？",
+  "yesPay": "是，支付",
+  "failedToCreatePaymentIntent": "创建支付意图失败。",
+  "paymentSuccessfulShort": "支付成功。",
+  "paymentSucceededButFailedUpdateBooking": "支付成功，但更新预约到服务器失败。",
+  "paymentCancelledOrFailedReason": "支付已取消或失败：{reason}",
+  "unexpectedPaymentErrorReason": "意外的支付错误：{error}",
+  "selectRatingHelp": "选择评分（1 = 差，5 = 优）：",
+  "commentsOptionalLabel": "评论（可选）",
+  "submit": "提交",
+  "reviewSubmitted": "评价已提交。",
+  "failedSubmitReview": "提交评价失败。",
+  "failedToLoadProfile": "加载资料失败：{error}",
+  "profileSavedSuccess": "资料{action}成功！",
+  "genericError": "错误：{error}",
+  "locationPermissionDeniedEnableInSettings": "定位权限被拒绝。请在设置中启用。",
+  "locationPermissionPermanentlyDeniedEnableInAppSettings": "定位权限被永久拒绝。请在应用设置中启用。",
+  "errorGettingLocation": "获取位置出错：{error}",
+  "pleaseEnterAddress": "请输入地址",
+  "locationUpdatedFromAddress": "已根据地址更新位置",
+  "couldNotFindLocationForAddress": "无法找到该地址的位置",
+  "errorConvertingAddress": "转换地址出错：{error}",
+  "portfolioUnavailableCompleteKycFirst": "作品集不可用。如果你是服务者，请先完成 KYC 认证。",
+  "failedToLoadPortfolio": "加载作品集失败：{error}",
+  "addPhoto": "添加照片",
+  "addVideo": "添加视频",
+  "addPost": "添加作品",
+  "captionOptionalTitle": "说明（可选）",
+  "captionHintExample": "例如：“给客户做的无结编发”",
+  "skip": "跳过",
+  "save": "保存",
+  "failedToCreatePortfolioPost": "创建作品集条目失败。",
+  "uploadFailedMediaUpload": "上传失败（媒体上传）。",
+  "uploadFailed": "上传失败：{error}",
+  "deletePostTitle": "删除该作品？",
+  "deletePostBody": "这将从你的作品集中移除该作品。",
+  "delete": "删除",
+  "deleteFailed": "删除失败。",
+  "deleteFailedWithError": "删除失败：{error}",
+  "portfolioTitle": "作品集",
+  "noPortfolioPostsYetHelpText": "还没有作品。添加你的工作照片/视频，帮助客户更信任你的技能。",
+  "setupProviderProfileTitle": "设置服务者资料",
+  "providerProfileTitle": "服务者资料",
+  "welcomeToStyloriaTitle": "欢迎来到 Styloria！",
+  "completeProviderProfileToStartEarning": "完善你的服务者资料，开始接单并赚钱。",
+  "reviewCountLabel": "（{count} 条评价）",
+  "topRatedChip": "高评分",
+  "bioLabel": "简介 / 描述",
+  "bioHint": "向客户介绍你的技能与经验...",
+  "pleaseEnterBio": "请输入简介",
+  "bioMinLength": "简介至少需要 {min} 个字符",
+  "yourLocationTitle": "你的位置",
+  "locationHelpMatchNearbyClients": "你的位置有助于匹配附近客户",
+  "locationHelpUpdateToFindJobs": "更新位置以在不同区域寻找工作",
+  "useMyCurrentLocationTitle": "使用我的当前位置",
+  "gpsSubtitle": "通过 GPS 自动获取位置",
+  "orLabel": "或",
+  "enterYourAddressTitle": "输入你的地址",
+  "fullAddressLabel": "完整地址",
+  "fullAddressHint": "例如：123 Main St, Accra, Ghana",
+  "find": "查找",
+  "addressHelpText": "输入街道、城市和国家/地区",
+  "coordinatesAutoFilledTitle": "坐标（自动填写）",
+  "servicePricingTitle": "服务定价",
+  "servicePricingHelp": "为每项服务设置价格。无法提供的服务请勾选“未提供”。",
+  "serviceHeader": "服务",
+  "priceHeader": "价格",
+  "notOfferedHeader": "未提供",
+  "priceHint": "0.00",
+  "providerHowPricingWorksTitle": "定价说明：",
+  "providerHowPricingWorksBody": "• 你的价格是你对该服务收取的费用\n• 交通费用 = 用户币种的 80% / 公里\n• 用户会根据附近服务者看到 3 个选项：\n  - 经济：最低价\n  - 标准：平均价\n  - 优先：最高价",
+  "availableForBookingsTitle": "可接受预约",
+  "availableOnHelp": "✓ 你会出现在附近客户的搜索结果中",
+  "availableOffHelp": "✗ 你将不会收到新的工作邀约",
+  "completeSetupStartEarning": "完成设置并开始赚钱",
+  "updateProfile": "更新资料",
+  "skipForNow": "暂时跳过",
+  "genericContact": "联系人",
+  "genericProvider": "服务提供者",
+  "genericNotAvailable": "无",
+
+  "rateProviderTitle": "为{providerName}评分",
+  "@rateProviderTitle": {
+    "placeholders": {
+      "providerName": {}
+    }
+  },
+
+  "reviewSelectRatingPrompt": "请选择评分（1 到 5）。",
+  "reviewCommentOptionalLabel": "评论（可选）",
+  "genericCancel": "取消",
+  "genericSubmit": "提交",
+  "reviewSubmitted": "评价已提交。",
+  "reviewSubmitFailed": "评价提交失败。",
+  "rateThisService": "评价此服务",
+
+  "tipLeaveTitle": "打赏小费",
+  "tipChooseAmountPrompt": "选择小费金额，或输入自定义金额。",
+  "tipNoTip": "不打赏",
+  "tipCustomAmountLabel": "自定义小费金额",
+  "genericContinue": "继续",
+
+  "tipSkipped": "已跳过小费。",
+  "tipFailedToSaveChoice": "无法保存小费选择。",
+  "tipFailedToCreatePayment": "无法创建小费支付。",
+  "tipPaidSuccessfully": "小费支付成功。谢谢！",
+  "tipPaidButUpdateFailed": "小费支付成功，但更新订单失败。",
+
+  "walletTitle": "钱包",
+  "walletTooltip": "钱包",
+  "payoutSettingsTitle": "提现设置",
+  "payoutSettingsTooltip": "提现设置",
+  "walletNoWalletYet": "暂无钱包。完成订单后即可获得收入。",
+  "walletCurrencyFieldLabel": "币种",
+  "walletAvailableLine": "可用：{amount} {currency}",
+  "walletPendingLine": "待处理：{amount} {currency}",
+  "walletCashOutInstant": "立即提现",
+  "walletCashOutFailed": "提现失败。",
+  "walletCashOutSentTransfer": "提现已提交。转账：{transferId}",
+  "walletTransactionsTitle": "交易记录",
+  "walletNoTransactionsYet": "暂无交易记录。",
+  "payoutAutoPayoutsTitle": "自动提现",
+  "payoutAutoPayoutsSubtitle": "按您选择的计划自动发起提现。",
+  "payoutDayUtcLabel": "提现日（UTC）",
+  "payoutHourUtcLabel": "提现时间（UTC）",
+  "payoutMinimumAmountLabel": "自动提现最低金额",
+  "payoutMinimumAmountHelper": "仅当可用余额 ≥ 该金额时才会自动提现。",
+  "payoutInstantCashOutEnabledTitle": "启用即时提现",
+  "payoutInstantCashOutEnabledSubtitle": "允许“立即提现”按钮（会收取手续费）。",
+  "payoutSettingsSaved": "提现设置已保存。",
+  "payoutSettingsSaveFailed": "保存提现设置失败。",
+
+  "tipCancelledOrFailed": "小费已取消/失败：{message}",
+  "tipUnexpectedError": "小费发生意外错误：{error}",
+
+  "tipAlreadyPaidLabel": "小费已支付",
+  "tipSkippedLabel": "已跳过小费",
+  "tipLeaveButton": "打赏小费",
+  "@providerWithName": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "@ratingWithValue": {
+    "placeholders": {
+      "rating": {}
+    }
+  },
+  "@errorLoadingJobsWithValue": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@currencyLabel": {
+    "placeholders": {
+      "symbol": {}
+    }
+  },
+  "@pricesShownInCurrency": {
+    "placeholders": {
+      "symbol": {},
+      "country": {}
+    }
+  },
+  "@jobTitleWithId": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+  "@serviceLine": {
+    "placeholders": {
+      "service": {}
+    }
+  },
+  "@whenLine": {
+    "placeholders": {
+      "date": {},
+      "time": {}
+    }
+  },
+  "@priceLine": {
+    "placeholders": {
+      "price": {}
+    }
+  },
+  "@bookAndPayAmount": {
+    "placeholders": {
+      "amount": {}
+    }
+  },
+  "@locationLatLng": {
+    "placeholders": {
+      "lat": {},
+      "lng": {}
+    }
+  },
+  "@couldNotOpenPdfWithValue": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@savedToDocumentsIosWithPath": {
+    "placeholders": {
+      "path": {}
+    }
+  },
+  "@savedToFilesWithPath": {
+    "placeholders": {
+      "path": {}
+    }
+  },
+  "@failedToSavePdfWithValue": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@referralCodeCopiedWithCode": {
+    "placeholders": {
+      "code": {}
+    }
+  },
+  "@pricesShownIn": {
+    "placeholders": {
+      "symbol": {},
+      "country": {}
+    }
+  },
+  "@failedToGetLocation": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@bookingCreatedChoosePrice": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+  "@paymentSuccessfulMessage": {
+    "placeholders": {
+      "bookingId": {},
+      "paid": {}
+    }
+  },
+  "@paymentCancelledOrFailed": {
+    "placeholders": {
+      "reason": {}
+    }
+  },
+  "@unexpectedPaymentError": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@transportationCostLabel": {
+    "placeholders": {
+      "cost": {}
+    }
+  },
+  "@serviceFeeLabel": {
+    "placeholders": {
+      "percent": {}
+    }
+  },
+  "@allPricesIn": {
+    "placeholders": {
+      "currency": {},
+      "country": {}
+    }
+  },
+  "@bookingNumber": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+  "@whenOn": {
+    "placeholders": {
+      "date": {}
+    }
+  },
+  "@whenAt": {
+    "placeholders": {
+      "date": {},
+      "time": {}
+    }
+  },
+  "@providerLine": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "@userLine": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "@estimatedPriceLine": {
+    "placeholders": {
+      "price": {}
+    }
+  },
+  "@paymentLine": {
+    "placeholders": {
+      "status": {}
+    }
+  },
+  "@confirmPaymentBody": {
+    "placeholders": {
+      "amount": {}
+    }
+  },
+  "@paymentCancelledOrFailedReason": {
+    "placeholders": {
+      "reason": {}
+    }
+  },
+  "@unexpectedPaymentErrorReason": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@failedToLoadProfile": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@profileSavedSuccess": {
+    "placeholders": {
+      "action": {}
+    }
+  },
+  "@genericError": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@errorGettingLocation": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@errorConvertingAddress": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@failedToLoadPortfolio": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@uploadFailed": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@deleteFailedWithError": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@reviewCountLabel": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@bioMinLength": {
+    "placeholders": {
+      "min": {
+        "type": "int"
+      }
+    }
+  }
+}

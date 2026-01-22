@@ -1,0 +1,963 @@
+{
+  "@@locale": "ak",
+  "appTitle": "Styloria",
+  "account": "Akaunt",
+  "profile": "Profile",
+  "myBookings": "Me Booking",
+  "openJobs": "Adwuma a ɛda hɔ",
+  "earnings": "Mfaso",
+  "paymentMethods": "Sika tua akwan",
+  "referFriends": "Frɛ nnamfo",
+  "language": "Kasa",
+  "settings": "Nhyehyɛe",
+  "darkMode": "Duru-duru (dark) mode",
+  "systemDefault": "System default",
+  "languageUpdated": "Kasa no asesa",
+  "languageSetToSystemDefault": "Wɔde kasa no asan ahyɛ system default so",
+  "helpAndSupport": "Mmoa ne Support",
+  "chatWithCustomerService": "Kasa ne customer service",
+  "aboutAndPolicies": "Fa ho ne mmara",
+  "viewUserPoliciesAndAgreements": "Hwɛ user mmara ne apam",
+  "logOut": "Pue (log out)",
+  "deleteAccount": "Pepa akaunt",
+  "deleteAccountSubtitle": "Wontumi nsan nsesa bio",
+  "deleteAccountTitle": "Pepa akaunt",
+  "deleteAccountConfirmBody": "Woagye di sɛ wopɛ sɛ wopepa wo akaunt?\n\nEyi bɛma woapue na ebia wobɛyera kwan a wode bɛkɔ mu daa.",
+  "no": "Daabi",
+  "yesDelete": "Aane, pepa",
+  "deleteAccountSheetTitle": "Yɛyɛ yaw sɛ wohuruw reko.",
+  "deleteAccountSheetPrompt": "Wobɛtumi aka yɛn adɛn? (Paw deɛ ɛfa wo nyinaa)",
+  "deleteAccountSelectAtLeastOneReason": "Yɛsrɛ wo paw at least reason baako.",
+  "tellUsMoreOptional": "Ka more (optional)",
+  "suggestionsToImproveOptional": "Adwene a ɛbɛboa ama yɛayɛ no yie (optional)",
+  "deleteMyAccount": "Pepa me akaunt",
+  "cancel": "Gyae",
+  "failedToDeleteAccount": "Akaunt pepae no anomaa. Yɛsrɛ wo san yɛ bio.",
+  "choosePreferredLanguage": "Paw kasa a wopɛ",
+  "noteSomeTextMayStillAppearInEnglish": "Nkae: Eyi bɛsesa app no kasa. Nsɛm bi betumi ada so wɔ Borɔfo mu kosi sɛ yɛde nkyerɛaseɛ bɛka ho.",
+  "languageSetToName": "Wɔde kasa no ahyɛ {name} so",
+  "@languageSetToName": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "deletionReason1": "Me nni Styloria ho hia bio",
+  "deletionReason2": "Mehyiaa ɔhaw wɔ akaunt no verification mu (email/KYC)",
+  "deletionReason3": "M’ani nnye service/provider bi a ɛbɛn me ho",
+  "deletionReason4": "Boɔ anaa fees wo soro / annyɛ clear",
+  "deletionReason5": "App no yɛ basabasa / ɛyɛ den sɛ wobɛde adi dwuma",
+  "deletionReason6": "Bugs anaa performance no wor fam",
+  "deletionReason7": "Payment/refund ɔhaw",
+  "deletionReason8": "M’ani nnye provider/user bi a me ne no hyiaa",
+  "deletionReason9": "Privacy anaa security haw",
+  "deletionReason10": "Meyɛɛ akaunt yi mfomso mu",
+  "deletionReason11": "Merekɔ baabi foforo so",
+  "deletionReason12": "Afoforo",
+  "loginWelcomeTitle": "Akwaaba ba Styloria",
+  "loginWelcomeSubtitle": "Kɔ mu (sign in) na hwɛ wo bookings ne services.",
+  "loginFailedToLoadUserInfo": "Login no yɛɛ yie, nanso anomaa wɔ user info a wɔde bɛbrɛ.",
+  "username": "Username",
+  "password": "Password",
+  "required": "Ɛhia",
+  "login": "Login",
+  "createNewAccount": "Bɔ akaunt foforo",
+  "requestEmailVerificationCode": "Bisa email verification code",
+  "createAccountTitle": "Bɔ Akaunt",
+  "joinStyloria": "Kɔ Styloria mu",
+  "registerSubtitle": "Bɔ akaunt na booking services anaa bɛyɛ provider",
+  "iWantTo": "Mepɛ sɛ:",
+  "bookServices": "Me booking services",
+  "provideServices": "Me provide services",
+  "personalInformation": "W’ankasa ho nsɛm",
+  "firstName": "Edin a edi kan",
+  "lastName": "Edin a ɛto so abien",
+  "selectDateOfBirth": "Paw wo da a wo woo wo",
+  "phoneNumber": "Telefon nɔma",
+  "pleaseEnterPhoneNumber": "Yɛsrɛ wo kyerɛ telefon nɔma",
+  "accountInformation": "Akaunt nsɛm",
+  "chooseUniqueUsernameHint": "Paw username a obi nnim",
+  "email": "Email",
+  "emailHint": "your@email.com",
+  "enterValidEmail": "Kyerɛ email a ɛyɛ nokware",
+  "security": "Ahobammɔ",
+  "passwordHintAtLeast10": "Nkyerɛwde 10 a ɛtwa so",
+  "passwordMin10": "Ɛsɛ sɛ password no yɛ nkyerɛwde 10 a ɛtwa so",
+  "iAgreeTo": "Megye tom sɛ ",
+  "termsOfService": "Dwumadie Nhyehyɛe",
+  "and": "ne",
+  "privacyPolicy": "Kokoamsɛm Nhyehyɛe",
+  "passwordIsRequired": "Password ho hia",
+  "confirmPassword": "San kyerɛ password",
+  "passwordsDoNotMatch": "Passwords no nsɛ",
+  "pleaseSelectDob": "Yɛsrɛ wo paw wo da a wo woo wo.",
+  "pleaseSelectCountry": "Yɛsrɛ wo paw wo man.",
+  "pleaseSelectCity": "Yɛsrɛ wo paw wo kurow.",
+  "pleaseEnterValidPhone": "Yɛsrɛ wo kyerɛ telefon nɔma a ɛyɛ nokware.",
+  "mustAcceptTerms": "Ɛsɛ sɛ wo gye terms ne conditions no to mu.",
+  "mustBeAtLeast18": "Ɛsɛ sɛ w’adi mfe 18 ansa na wobɛtumi akyerɛw wo din.",
+  "agreeToTerms": "M’ani gye Terms of Service ne Privacy Policy no to mu",
+  "createAccountButton": "Bɔ Akaunt",
+  "alreadyHaveAccount": "Wowɔ akaunt dedaw?",
+  "emailVerifiedSuccessPleaseLogin": "Email verification no yɛɛ yie. Yɛsrɛ wo login.",
+  "pleaseVerifyEmailToContinue": "Yɛsrɛ wo verify wo email ansa na woatoa so.",
+  "requestVerificationCodeTitle": "Bisa verification code",
+  "requestVerificationInstructions": "Kyerɛ wo email anaa username.\nYɛbɛsoma verification code foforo akɔ email a ɛwɔ akaunt no so.",
+  "emailOrUsername": "Email anaa Username",
+  "sendCode": "Soma code",
+  "ifAccountExistsCodeSent": "Sɛ akaunt no wɔ hɔ a, wɔasoma code.",
+  "failedToSendVerificationCode": "Anomaa wɔ verification code a wɔde bɛsoma.",
+  "verifyYourEmailTitle": "Verify wo email",
+  "verificationCodeSentInfo": "Wɔasoma verification code akɔ email a ɛwɔ akaunt no so.",
+  "emailVerificationInstructions": "Kyerɛ 6-digit code a wɔasoma akɔ email a ɛwɔ akaunt no so:\n{identifier}",
+  "@emailVerificationInstructions": {
+    "placeholders": {
+      "identifier": {}
+    }
+  },
+  "verificationCodeLabel": "Verification code",
+  "sendingEllipsis": "Ɛresoma...",
+  "resendCode": "Soma code bio",
+  "enter6DigitCodeError": "Yɛsrɛ wo kyerɛ 6-digit code no.",
+  "verifyingEllipsis": "Ɛre-verify...",
+  "verify": "Hyɛ no nokware",
+  "invalidOrExpiredCodeTryResending": "Code no nnyɛ valid anaa ne bere atwa mu. Yɛsrɛ wo san soma bio.",
+  "bookingTitle": "Booking #{id}",
+  "invalidBookingIdForChat": "Booking ID no nyɛ papa ma nkɔmmɔbɔ.",
+  "invalidBookingIdForCall": "Booking ID no nyɛ papa ma frɛ.",
+  "unableToLoadContactInfo": "Ntumi nntwe contact info no. Hwɛ sɛ booking no da so yɛ adwuma.",
+  "noPhoneNumberAvailableForName": "Telefon nɔma biara nni hɔ ma {name}.",
+  "deviceCannotPlaceCalls": "Saa device yi ntumi mfrɛ telefon.",
+  "cancelBookingDialogTitle": "Twa booking no mu",
+  "cancelBookingDialogBody": "Wopɛ sɛ wobɛtwa booking yi mu ampa ara?\n\nHyɛ no nsow: Sɛ provider no agye atom na simma 7 atwam (nanso ɛnyɛ bɛboro bɛyɛ simma 40), ɛtumi aba sɛ wɔde asotwe (penalty) bɛto wo so sɛnea mmara no ka.",
+  "yesCancel": "Aane, twa mu",
+  "failedToCancelBooking": "Entumi antwa booking no mu.",
+  "bookingCancelledPenaltyApplied": "Wɔatwa booking no mu. Wɔde penalty a ɛyɛ {amount} ato wo so.",
+  "bookingCancelledSuccessfully": "Wɔatwa booking no mu yie.",
+  "failedToConfirmCompletion": "Entumi ansi completion no so. San sɔ hwɛ bio.",
+  "bothSidesConfirmedCompletedPayoutReleased": "Akyi no nyinaa agye atom. Wɔahyɛ booking no sɛ awie na wɔama payout no.",
+  "youConfirmedCompletionWaitingForProvider": "Woagye completion no atom. Yɛretwɛn provider no sɛ ɔbɛgye atom.",
+  "youConfirmedCompletionWaitingForUser": "Woagye completion no atom. Yɛretwɛn user no sɛ ɔbɛgye atom.",
+  "statusUnknown": "nnim",
+  "statusAccepted": "agye atom",
+  "statusInProgress": "ɛrekɔ so",
+  "statusCompleted": "awie",
+  "statusCancelled": "wɔatwa mu",
+  "paymentPaid": "atua",
+  "paymentPending": "ɛretwɛn",
+  "paymentFailed": "antumi",
+  "bookingAcceptedBy": "{name} agye booking no atom",
+  "whenLabel": "Bere a",
+  "atTime": "bere {time}",
+  "userLabel": "User",
+  "providerLabel": "Provider",
+  "estimatedPriceLabel": "Bo a wɔbɔ ho akontaa",
+  "offeredPaidLabel": "Wɔde mae / wɔatua",
+  "distanceLabel": "Akwansin",
+  "distanceMiles": "{miles} miles",
+  "acceptedAtLabel": "Wogyee atom bere",
+  "cancelledAtLabel": "Wɔtwaa mu bere",
+  "cancelledByLabel": "Deɛ ɔtwaa mu",
+  "penaltyAppliedLabel": "Penalty: {amount}",
+  "userConfirmedLabel": "User agye atom",
+  "providerConfirmedLabel": "Provider agye atom",
+  "payoutReleasedLabel": "Wɔama payout no",
+  "yesLower": "aane",
+  "noLower": "daabi",
+  "chat": "Nkɔmmɔbɔ",
+  "call": "Frɛ",
+  "actions": "Nneyɛe",
+  "confirmCompletion": "Si completion so",
+  "noFurtherActionsForBooking": "Nneyɛe foforo biara nni hɔ ma booking yi.",
+  "freeCancellationEndsIn": "Free cancellation no bɛba awie wɔ {time} mu",
+  "earlyFreeCancellationEndedWarning": "Free cancellation a ɛwɔ mfiase no awie. Kosi bɛyɛ simma 40 akyi (bere a wɔgyee atom) no, sɛ wotwa mu a penalty betumi aba.",
+  "cancelBooking": "Twa booking no mu",
+  "cancelBookingNoPenalty": "Twa booking no mu (penalty nni hɔ)",
+  "cancelBookingPenaltyMayApply": "Twa booking no mu (penalty betumi aba)",
+  "cancellationPolicyInfo": "Wubetumi atwa mu a penalty nni hɔ wɔ simma 7 a edi kan no (bere a provider no agye atom) akyi, na bio bɛyɛ simma 40 akyi sɛ ɛho hia. Wɔ saa bere a ɛda ntam no mu deɛ, penalty betumi aba sɛnea mmara no ka.",
+  "ratingLine": "Rating: {rating} ({reviewCount, plural, =1{review 1} other{{reviewCount} reviews}})",
+  "proofOfSkillsPortfolio": "Adanse a ɛkyerɛ wo nimdeɛ (Portfolio)",
+  "noPortfolioPostsAvailable": "Portfolio post biara nni hɔ.",
+  "bookingLocation": "Booking no beae",
+  "location": "Beae",
+  "latitude": "Latitude",
+  "longitude": "Longitude",
+  "mapWillAppearWhenCoordinatesValid": "Map no bɛda ha sɛ coordinates no yɛ papa.",
+  "chatForBookingTitle": "Nkɔmmɔbɔ ma booking #{id}",
+  "unableToStartChat": "Ntumi nntumi mfi nkɔmmɔbɔ ase. Nkɔmmɔbɔ no wɔ hɔ kɛkɛ bere a booking no agye atom, ɛrekɔ so, anaasɛ awie wɔ da a atwam no mu.",
+  "invalidChatThreadFromServer": "Chat thread a server no de bae no nyɛ papa.",
+  "messageNotSentPolicy": "Wɔansomaa mesaj no. Hyɛ no nsow: wontumi nkyɛ fon nɔma anaa email wɔ nkɔmmɔ mu.",
+  "unknown": "Nnim",
+  "typeMessageHint": "Kyerɛw mesaj kɔma mmoa...",
+  "uploadProfilePicture": "Fa Profile Picture hyɛ mu",
+  "currentProfilePicture": "Profile Picture a ɛwɔ hɔ seesei",
+  "newPicturePreview": "Mfonini foforo preview",
+  "chooseImage": "Paw mfonini",
+  "upload": "Fa hyɛ mu",
+  "noImageBytesFoundWeb": "Mfonini bytes nni hɔ (web).",
+  "pleasePickAnImageFirst": "Paw mfonini kan.",
+  "uploadFailedCheckServerLogs": "Upload no antumi. Hwɛ server logs / token.",
+  "profilePictureUploadedSuccessfully": "Wɔde profile picture no ahyɛ mu yie!",
+  "errorWithValue": "Mfomso: {error}",
+  "tapToChangeProfilePicture": "Ka so na sesa profile picture",
+  "usernameValue": "Username: {username}",
+  "roleValue": "Role: {role}",
+  "dateOfBirthYyyyMmDd": "Da a w’awo (YYYY-MM-DD)",
+  "saveProfile": "Sie Profile",
+  "failedToSaveProfile": "Antumi ansie profile no. Mesrɛ wo san yɛ bio.",
+  "profileUpdated": "Wɔayɛ profile no foforo.",
+  "completeYourProviderProfile": "Wie wo Provider Profile",
+  "completeProviderProfileBody": "Sɛ wopɛ sɛ wugye adwuma na wonya sika a, wie wo provider profile.",
+  "setupProfileNow": "Hyɛ Profile no seesei",
+  "doItLater": "Mɛyɛ akyiri",
+  "bookingTimerPenaltyPeriodActive": "Penalty bere no rekɔ so",
+  "bookingTimerFreeCancellationPeriod": "Free cancellation bere",
+  "bookingTimerTimeRemaining": "Bere a aka: {time}",
+  "bookingTimerCancellingNowPenalty": "Sɛ wotwa mu seesei a, 10% penalty bɛba.",
+  "bookingTimerCancelNoPenalty": "Wubetumi atwa mu a penalty nni hɔ.",
+  "myReviewsTitle": "Me Reviews",
+  "failedToLoadReviews": "Entumi anntwe reviews no.",
+  "noReviewsYet": "Wonnyɛe review biara da.",
+  "providerWithName": "Provider: {name}",
+  "providerGeneric": "Provider",
+  "ratingWithValue": "Rating: {rating}",
+  "nearbyOpenJobsTitle": "Open Jobs a ɛbɛn ha",
+  "failedToLoadOpenJobsHint": "Entumi anntwe open jobs.\nHwɛ sɛ wowɔ provider profile a location no wɔ hɔ na available=true.",
+  "errorLoadingJobsWithValue": "Mfomso bere a yɛretwe jobs: {error}",
+  "noOpenJobsFoundNearbyTitle": "Open job biara nni hɔ a ɛbɛn ha",
+  "noOpenJobsFoundNearbyBody": "Hwɛ sɛ:\n- Woahyɛ wo provider location\n- Woyɛ available\n- Users ayɛ bookings na wɔatua",
+  "currencyLabel": "Sika: {symbol}",
+  "pricesShownInCurrency": "Bo a wɔda no adi wɔ {symbol} ({country}) mu",
+  "jobTitleWithId": "Job #{id}",
+  "serviceLine": "Service: {service}",
+  "whenLine": "Bere: {date} {time}",
+  "priceLine": "Bo: {price}",
+  "acceptJob": "Gye Job",
+  "failedToAcceptJob": "Entumi annye job no.",
+  "jobAcceptedSuccessfully": "Wogyee job no yie.",
+  "newServiceRequestTitle": "Service Request Foforo",
+  "offeredPriceLabel": "Bo a wo de rema",
+  "offeredPriceHint": "sɛɛ 25.00",
+  "enterValidPrice": "Kyerɛw bo a ɛyɛ papa",
+  "bookAndPay": "Book & Tua",
+  "bookAndPayAmount": "Book & Tua {amount}",
+  "haircutService": "Haircut",
+  "stylingService": "Styling",
+  "timeLabel": "Bere:",
+  "notesLabel": "Notes",
+  "requestCreatedAndPaidBroadcast": "Wɔayɛ request no na wɔatua! Wɔbɛkyekyɛ ama providers.",
+  "locationLatLng": "Beae: {lat}, {lng}",
+  "paymentMethodsTitle": "Payment methods",
+  "paymentPreferencesInfo": "Saa preferences yi sie wɔ wo device so. Payments a ɛyɛ nokware no, wɔde Stripe/other gateways na ɛyɛ no securely.",
+  "preferredMethodLabel": "Method a wopɛ (country na ɛkyerɛ local gateway)",
+  "methodVisaMastercard": "Visa/Mastercard",
+  "methodMobileMoney": "Mobile Money (Momo/Paystack/Africa)",
+  "methodPaypal": "PayPal",
+  "methodApplePayGooglePay": "Apple Pay/Google Pay",
+  "methodWeChatPay": "WeChat Pay (China)",
+  "methodAlipay": "Alipay (China)",
+  "methodUnionPay": "UnionPay Card (China)",
+  "mobileMoneyNumberLabel": "Mobile Money Number",
+  "wechatAlipayIdLabel": "WeChat/Alipay ID",
+  "cardLast4DigitsLabel": "Card digits 4 a ɛtwa to",
+  "paypalEmailLabel": "PayPal email",
+  "applePayEnabledOnDevice": "Apple Pay enable wɔ device yi so",
+  "savePaymentPreferences": "Sie Payment Preferences",
+  "paymentPrefsSavedInfo": "Wɔasie payment preferences no wɔ device so. Actual charging no bɛyɛ via Stripe/other gateways akyiri.",
+  "failedToLoadImage": "Entumi anntwe image no",
+  "earningsTitle": "Earnings",
+  "couldNotLoadEarningsSummary": "Entumi anntwe earnings summary no.",
+  "noData": "Data nni hɔ.",
+  "retry": "San sɔ hwɛ bio",
+  "summaryTitle": "Summary",
+  "totalLabel": "Total",
+  "pendingLabel": "Pending",
+  "paidLabel": "Paid",
+  "pdfReportTitle": "PDF report",
+  "periodLabel": "Period",
+  "periodThisMonth": "Saa bosome yi",
+  "periodLastMonth": "Bosome a atwam",
+  "periodYtd": "Afe yi kosi seesei",
+  "periodAllTime": "Bere nyinaa",
+  "couldNotDownloadPdfReport": "Entumi anntwe PDF report no.",
+  "couldNotOpenPdfWithValue": "Entumi antumi mmue PDF: {error}",
+  "savingFilesNotSupportedWeb": "Web so deɛ, yɛnntumi nsie files seesei.",
+  "savedToDocumentsIosWithPath": "Wɔasie wɔ Documents (iOS):\n{path}",
+  "savedToFilesWithPath": "Wɔasie wɔ files:\n{path}",
+  "open": "Bue",
+  "failedToSavePdfWithValue": "Entumi ansie PDF: {error}",
+  "openPdfReport": "Bue PDF report",
+  "savePdfToDownloads": "Sie PDF kɔ Downloads",
+  "reportWatermarkNote": "Report PDF no, ɛsɛ sɛ Styloria watermark no wɔ mu.",
+  "referFriendsTitle": "Fa wo nnamfo bra",
+  "shareReferralCodeBody": "Kyɛ wo referral code ma wo nnamfo. Akyiri no wobɛtumi de rewards aka ho bere a wɔbɛkyerɛw wɔn ho na wɔawie bookings.",
+  "yourReferralCodeLabel": "Wo referral code:",
+  "copy": "Copy",
+  "referralCodeCopiedWithCode": "Wɔakopi referral code: {code}",
+  "navHome": "Home",
+  "navBookings": "Bookings",
+  "navNotifications": "Notifications",
+  "navAccount": "Account",
+  "welcome": "Akwaaba",
+  "welcomeName": "Akwaaba, {name}",
+  "@welcomeName": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "toggleThemeTooltip": "Sesa light/dark mode",
+  "loggedInAs": "Woahyɛ mu sɛ: {role}",
+  "@loggedInAs": {
+    "placeholders": {
+      "role": {}
+    }
+  },
+  "locationWithValue": "Beae: {value}",
+  "@locationWithValue": {
+    "placeholders": {
+      "value": {}
+    }
+  },
+  "homeTagline": "Sesa wo grooming experience no de real-time bookings ne providers a wogye wɔn di.",
+  "manageProviderProfile": "Hwɛ Provider Profile so",
+  "browseOpenJobs": "Hwɛ Open Jobs",
+  "quickActions": "Nneyɛe ntɛm",
+  "newBooking": "Booking Foforo",
+  "notificationsWithUnread": "Notifications ({count, plural, =1{1 a wɔnnkenkan} other{{count} a wɔnnkenkan}})",
+  "@notificationsWithUnread": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "liveLocationTrackingTitle": "Live Location Tracking",
+  "live": "Live",
+  "locationServicesDisabled": "Location services no adum",
+  "locationPermissionDenied": "Wɔannma location permission",
+  "locationPermissionPermanentlyDenied": "Wɔakyerɛ location permission da koro so (permanently)",
+  "failedToGetLocationWithValue": "Entumi annya location: {error}",
+  "@failedToGetLocationWithValue": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "youProvider": "Wo (Provider)",
+  "youCustomer": "Wo (Customer)",
+  "customer": "Customer",
+  "bookingDetails": "Booking Details",
+  "navigate": "Kɔ (Navigate)",
+  "failedToLoadNotifications": "Entumi anntwe notifications no.",
+  "failedToMarkAsRead": "Entumi anhyɛ sɛ read",
+  "noNotificationsYet": "Notifications biara nni hɔ da.",
+  "markRead": "Hyɛ sɛ read",
+  "providerKycTitle": "Ɔsomfoɔ Nkyerɛkyerɛmu (KYC)",
+  "logoutTooltip": "Pue",
+  "statusLabel": "Tebea: {status}",
+  "@statusLabel": {
+    "placeholders": {
+      "status": {}
+    }
+  },
+  "rejectedWithNotes": "Wɔagyae: {notes}",
+  "@rejectedWithNotes": {
+    "placeholders": {
+      "notes": {}
+    }
+  },
+  "kycInstructions": "Sɛ wopɛ sɛ wunya ɔsomfoɔ nkɔsoɔ/akwan a wɔde di dwuma a, fa wo ID ne selfie bɛto so ma wɔnhwɛ mu.",
+  "idFrontRequired": "ID Anim (ɛho hia)",
+  "selectIdFront": "Paw ID Anim",
+  "idBackRequired": "ID Akyi (ɛho hia)",
+  "selectIdBackRequired": "Paw ID Akyi",
+  "selfieRequired": "Selfie (ɛho hia)",
+  "selectSelfie": "Paw Selfie",
+  "takeSelfie": "Twa Selfie",
+  "errorUploadAllRequired": "Mesrɛ wo, fa ID (anim), ID (akyi), ne selfie to so.",
+  "failedSubmitKycCode": "KYC kɔmaa no antumi (kood {code}).",
+  "@failedSubmitKycCode": {
+    "placeholders": {
+      "code": {}
+    }
+  },
+  "submittedCurrentStatus": "Wɔde akɔma. Tebea seesei: {status}",
+  "@submittedCurrentStatus": {
+    "placeholders": {
+      "status": {}
+    }
+  },
+  "unknownStatus": "ennim",
+  "submitKyc": "Fa KYC Kɔma",
+  "verificationMayTakeTimeNote": "Hyɛ no nsow: Nkyerɛkyerɛmu no betumi agye bere. Wobɛtumi de ɔsomfoɔ akwan adi dwuma bere a wɔagye atom.",
+  "enterVerificationCodeTitle": "Hyehyɛ Nkyerɛkyerɛmu Kood no",
+  "otpSentToUsername": "Yɛde nɔma 6 kood akɔma fon nɔma a ɛfa \"{username}\" ho.\n",
+  "@otpSentToUsername": {
+    "placeholders": {
+      "username": {}
+    }
+  },
+  "sixDigitCodeLabel": "Nɔma 6 kood",
+  "enterSixDigitCodeValidation": "Hyehyɛ nɔma 6 kood no",
+  "otpInvalidOrExpired": "Kood no nyɛ nokware anaa ne bere atwa mu.",
+  "failedLoadUserInfoAfterVerification": "Antumi anloadi nea ɛfa ɔdefoɔ ho bere a wɔahyɛ no nokware no.",
+  "chatWithSupportTitle": "Kasa ne Mmoa",
+  "unableStartSupportChat": "Antumi anhyɛ mmoa nkɔmmɔ ase.",
+  "invalidSupportThreadReturned": "Seva no de mmoa nkɔmmɔ a ɛnyɛ nokware bae.",
+  "noMessagesYet": "Mesaj biara nni hɔ. Fi ase kasa!",
+  "supportDefaultName": "Mmoa",
+  "aboutPoliciesTitle": "Fa Ho & Mmara",
+  "paymentsNotSupportedShort": "Wɔntumi nni sika ho dwuma wɔ platform yi so. Mesrɛ wo, fa Android, iOS, macOS anaa Web so yɛ adwene.",
+  "failedToLoadProfile": "Antumi anloadi profile no: {error}",
+  "profileSavedSuccess": "Wɔa{action} profile no yie!",
+  "genericError": "Mfomso: {error}",
+  "locationPermissionDeniedEnableInSettings": "Wɔagyae wo beaeɛ ho kwan. Mesrɛ wo bue no wɔ settings mu.",
+  "locationPermissionPermanentlyDeniedEnableInAppSettings": "Wɔagyae wo beaeɛ ho kwan daa. Mesrɛ wo bue no wɔ app settings mu.",
+  "errorGettingLocation": "Mfomso bere a yɛre nya beaeɛ: {error}",
+  "pleaseEnterAddress": "Mesrɛ wo, kyerɛw address bi",
+  "locationUpdatedFromAddress": "Wɔde address no asesa beaeɛ no",
+  "couldNotFindLocationForAddress": "Yentumi anhu beaeɛ ama address yi",
+  "errorConvertingAddress": "Mfomso bere a yɛre sesa address: {error}",
+  "portfolioUnavailableCompleteKycFirst": "Portfolio no nni hɔ. Sɛ woyɛ provider a, wie KYC verification no kan.",
+  "failedToLoadPortfolio": "Antumi anloadi portfolio no: {error}",
+  "addPhoto": "Fa foto ka ho",
+  "addVideo": "Fa video ka ho",
+  "addPost": "Fa post ka ho",
+  "captionOptionalTitle": "Caption (ɛnyɛ den)",
+  "captionHintExample": "sɛ nhwɛso: “Knotless braids ma client”",
+  "skip": "Twa mu",
+  "save": "Sie",
+  "failedToCreatePortfolioPost": "Antumi anyɛ portfolio post no.",
+  "uploadFailedMediaUpload": "Upload no antumi (media upload).",
+  "uploadFailed": "Upload no antumi: {error}",
+  "deletePostTitle": "Pepa post no?",
+  "deletePostBody": "Eyi bɛyi post no afi wo portfolio mu.",
+  "delete": "Pepa",
+  "deleteFailed": "Pepa no antumi.",
+  "deleteFailedWithError": "Pepa no antumi: {error}",
+  "portfolioTitle": "Portfolio",
+  "noPortfolioPostsYetHelpText": "Portfolio posts biara nni hɔ. Fa wo adwuma ho foto/video ka ho na ɛboa ma clients gye wo di.",
+  "setupProviderProfileTitle": "Hyɛ Provider Profile no ase",
+  "providerProfileTitle": "Provider Profile",
+  "welcomeToStyloriaTitle": "Akwaaba ba Styloria!",
+  "completeProviderProfileToStartEarning": "Wie wo provider profile no na fi ase gye jobs na nya sika.",
+  "reviewCountLabel": "({count} reviews)",
+  "topRatedChip": "Top Rated",
+  "bioLabel": "Bio / Nkyerɛmu",
+  "bioHint": "Ka kyerɛ clients wo nimdeɛ ne wo osuahu...",
+  "pleaseEnterBio": "Mesrɛ wo, kyerɛw bio no",
+  "bioMinLength": "Bio no ɛsɛ sɛ ɛyɛ {min} characters anaa sene saa",
+  "yourLocationTitle": "Wo beaeɛ",
+  "locationHelpMatchNearbyClients": "Wo beaeɛ boa yɛn ma yɛde wo bɔ clients a wɔbɛn wo no ho",
+  "locationHelpUpdateToFindJobs": "Sesa wo beaeɛ na woatumi ahwehwɛ jobs wɔ mmeaeɛ foforo so",
+  "useMyCurrentLocationTitle": "Fa me beaeɛ a mewɔ seesei no di dwuma",
+  "gpsSubtitle": "Fa GPS nya beaeɛ no otomatik",
+  "orLabel": "ANAASƐ",
+  "enterYourAddressTitle": "Kyerɛw wo address",
+  "fullAddressLabel": "Address nyinaa",
+  "fullAddressHint": "sɛ nhwɛso: 123 Main St, Accra, Ghana",
+  "find": "Hwehwɛ",
+  "addressHelpText": "Kyerɛw wo street address, kuropɔn, ne ɔman",
+  "coordinatesAutoFilledTitle": "Coordinates (wɔhyɛ mu otomatik)",
+  "servicePricingTitle": "Service Pricing",
+  "servicePricingHelp": "Hyɛ wo boɔ ma service biara. Paw “Not Offered” ma services a wontumi nyɛ.",
+  "serviceHeader": "Service",
+  "priceHeader": "Boɔ",
+  "notOfferedHeader": "Not Offered",
+  "priceHint": "0.00",
+  "providerHowPricingWorksTitle": "Sɛnea pricing no yɛ adwuma:",
+  "providerHowPricingWorksBody": "• Wo boɔ no ne nea wogye ma service no\n• Transportation cost = 80% user currency per km\n• Users hu options 3 a ɛgyina providers a wɔbɛn wɔn so:\n  - Budget: Boɔ a ɛyɛ lowest\n  - Standard: Boɔ a ɛyɛ average\n  - Priority: Boɔ a ɛyɛ highest",
+  "availableForBookingsTitle": "Wɔwɔ hɔ ma Bookings",
+  "availableOnHelp": "✓ Wobɛda adi wɔ search results mu ma clients a wɔbɛn wo",
+  "availableOffHelp": "✗ Worennya new job offers",
+  "completeSetupStartEarning": "Wie setup na fi ase nya sika",
+  "updateProfile": "Sesa profile no",
+  "skipForNow": "Twa mu seesei",
+
+  "genericContact": "Nkitahodi",
+  "genericProvider": "Sɛvis Firi",
+  "genericNotAvailable": "Ɛnni hɔ",
+
+  "rateProviderTitle": "Ma {providerName} nkyerɛkyerɛmu",
+  "@rateProviderTitle": { 
+    "placeholders": { 
+      "providerName": {} 
+    } 
+  },
+
+  "youAreCurrentlyUnavailable": "Wontumi mfa wo ho mma seesei",
+  "toBrowseAndAcceptJobsEnableAvailability": "Sɛ wopɛ sɛ wohwɛ na wugye adwuma abisade a ɛbɛn wo a, ɛsɛ sɛ wode wo ho ma booking.",
+  "goToProfileSettings": "Kɔ Profile Nhyehyɛe",
+  "tipToggleAvailableForBookings": "Afotu: So \"Wɔtumi fa wo ama Booking\" wɔ wo Provider Profile mu na woahyɛ ase agye adwuma abisade.",
+  "requestedBy": "Obiara bisa: {name}",
+  "@requestedBy": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "locationLabel": "Beae: {address}",
+  "@locationLabel": {
+    "placeholders": {
+      "address": {
+        "type": "String"
+      }
+    }
+  },
+
+  "reviewSelectRatingPrompt": "Paw nkyerɛkyerɛmu (1 kosi 5).",
+  "reviewCommentOptionalLabel": "Adwene (ɛnyɛ ahyɛde)",
+  "genericCancel": "Gyae",
+  "genericSubmit": "Fa kɔ",
+  "reviewSubmitted": "Wode review akɔ.",
+  "reviewSubmitFailed": "Antumi ankyɛ review no.",
+  "rateThisService": "Ma sɛvis yi nkyerɛkyerɛmu",
+
+  "tipLeaveTitle": "Fa tip ka ho",
+  "tipChooseAmountPrompt": "Paw tip sika no anaa kyerɛw wo ankasa.",
+  "tipNoTip": "Tip nni hɔ",
+  "tipCustomAmountLabel": "Tip sika (wo ankasa)",
+  "genericContinue": "Toa so",
+
+  "tipSkipped": "Wagyae tip.",
+  "tipFailedToSaveChoice": "Antumi ansie tip paw no.",
+  "tipFailedToCreatePayment": "Antumi anyɛ tip payment no.",
+  "tipPaidSuccessfully": "Tip no atu mpɔn. Meda wo ase!",
+  "tipPaidButUpdateFailed": "Tip payment no tuu mpɔn, nanso booking update no antumi annyɛ yie.",
+
+  "tipCancelledOrFailed": "Tip no agyae/antumi ansi: {message}",
+  "tipUnexpectedError": "Tip mfomso a wɔnnhwɛe: {error}",
+
+  "tipAlreadyPaidLabel": "Wɔatua tip no dedaw",
+  "tipSkippedLabel": "Wagyae tip",
+  "walletTitle": "Sika Kɔtɔkɔ",
+  "walletTooltip": "Sika Kɔtɔkɔ",
+  "payoutSettingsTitle": "Sika a Wɔde Bɛma Wo Nhyehyɛe",
+  "payoutSettingsTooltip": "Sika a Wɔde Bɛma Wo Nhyehyɛe",
+  "walletNoWalletYet": "Sika kɔtɔkɔ bi nni hɔ seesei. Wie adwuma na nya sika.",
+  "walletCurrencyFieldLabel": "Sika (Currency)",
+  "walletAvailableLine": "Wɔwɔ hɔ: {amount} {currency}",
+  "walletPendingLine": "Ɛda so retwɛn: {amount} {currency}",
+  "walletCashOutInstant": "Yi Sika (Ntɛm)",
+  "walletCashOutFailed": "Sika-yiyi no amma.",
+  "walletCashOutSentTransfer": "Wɔde sika-yiyi kɔe. Transfer: {transferId}",
+  "walletTransactionsTitle": "Nkitahodi (Transactions)",
+  "walletNoTransactionsYet": "Nkitahodi bi nni hɔ seesei.",
+  "payoutAutoPayoutsTitle": "Auto payout",
+  "payoutAutoPayoutsSubtitle": "Fa wo nhyehyɛe so soma payouts auto.",
+  "payoutDayUtcLabel": "Payout da (UTC)",
+  "payoutHourUtcLabel": "Payout bere (UTC)",
+  "payoutMinimumAmountLabel": "Auto payout sika ketewa a ɛsɛ sɛ ɛwɔ hɔ",
+  "payoutMinimumAmountHelper": "Auto payout bɛkɔ so kɛse a available balance ≥ saa sika yi.",
+  "payoutInstantCashOutEnabledTitle": "Instant cash out ayɛ adwuma",
+  "payoutInstantCashOutEnabledSubtitle": "Ma “Cash Out” button no yɛ adwuma (fee bɛba).",
+  "payoutSettingsSaved": "Wɔakora payout settings no so.",
+  "payoutSettingsSaveFailed": "Antumi ankora payout settings no so.",
+  "tipLeaveButton": "Fa tip ka ho",
+  "@bookingTitle": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+  "@noPhoneNumberAvailableForName": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "@bookingCancelledPenaltyApplied": {
+    "placeholders": {
+      "amount": {}
+    }
+  },
+  "@bookingAcceptedBy": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "@atTime": {
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "@distanceMiles": {
+    "placeholders": {
+      "miles": {}
+    }
+  },
+  "@penaltyAppliedLabel": {
+    "placeholders": {
+      "amount": {}
+    }
+  },
+  "@freeCancellationEndsIn": {
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "@ratingLine": {
+    "placeholders": {
+      "rating": {},
+      "reviewCount": {
+        "type": "int"
+      }
+    }
+  },
+  "@chatForBookingTitle": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+  "@errorWithValue": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@usernameValue": {
+    "placeholders": {
+      "username": {}
+    }
+  },
+  "@roleValue": {
+    "placeholders": {
+      "role": {}
+    }
+  },
+  "@bookingTimerTimeRemaining": {
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "@providerWithName": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "@ratingWithValue": {
+    "placeholders": {
+      "rating": {}
+    }
+  },
+  "@errorLoadingJobsWithValue": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@currencyLabel": {
+    "placeholders": {
+      "symbol": {}
+    }
+  },
+  "@pricesShownInCurrency": {
+    "placeholders": {
+      "symbol": {},
+      "country": {}
+    }
+  },
+  "@jobTitleWithId": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+  "@serviceLine": {
+    "placeholders": {
+      "service": {}
+    }
+  },
+  "@whenLine": {
+    "placeholders": {
+      "date": {},
+      "time": {}
+    }
+  },
+  "@priceLine": {
+    "placeholders": {
+      "price": {}
+    }
+  },
+  "@bookAndPayAmount": {
+    "placeholders": {
+      "amount": {}
+    }
+  },
+  "@locationLatLng": {
+    "placeholders": {
+      "lat": {},
+      "lng": {}
+    }
+  },
+  "@couldNotOpenPdfWithValue": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@savedToDocumentsIosWithPath": {
+    "placeholders": {
+      "path": {}
+    }
+  },
+  "@savedToFilesWithPath": {
+    "placeholders": {
+      "path": {}
+    }
+  },
+  "@failedToSavePdfWithValue": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@referralCodeCopiedWithCode": {
+    "placeholders": {
+      "code": {}
+    }
+  },
+  "newBookingTitle": "New Booking",
+  "appointmentDetailsTitle": "Appointment details",
+  "pickDate": "Pick date",
+  "pickTime": "Pick time",
+  "serviceTypeTitle": "Service type",
+  "serviceDropdownLabel": "Service",
+  "serviceHaircutLabel": "Haircut",
+  "serviceBraidsLabel": "Braids",
+  "serviceShaveLabel": "Shave",
+  "serviceHairColoringLabel": "Hair Coloring",
+  "serviceManicureLabel": "Manicure",
+  "servicePedicureLabel": "Pedicure",
+  "serviceNailArtLabel": "Nail Art",
+  "serviceMakeupLabel": "Makeup",
+  "serviceFacialLabel": "Facial",
+  "serviceWaxingLabel": "Waxing",
+  "serviceMassageLabel": "Massage",
+  "serviceHairStylingLabel": "Hair Styling",
+  "serviceHairTreatmentLabel": "Hair Treatment",
+  "serviceHairExtensionsLabel": "Hair Extensions",
+  "serviceOtherServicesLabel": "Other Services",
+  "notesForProviderOptionalLabel": "Notes for your provider (optional)",
+  "locationTitle": "Location",
+  "latitudeLabel": "Latitude",
+  "longitudeLabel": "Longitude",
+  "requiredField": "Required",
+  "useMyCurrentLocation": "Use my current location",
+  "pricesShownIn": "Prices shown in {symbol} ({country})",
+  "@pricesShownIn": {
+    "placeholders": {
+      "symbol": {},
+      "country": {}
+    }
+  },
+  "chooseTimeLaterThanCurrent": "Please choose a time later than the current time.",
+  "pleasePickDateAndTime": "Please pick date and time.",
+  "locationUpdatedFromGps": "Location updated from GPS.",
+  "failedToGetLocation": "Failed to get location: {error}",
+  "@failedToGetLocation": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "bookingCreatedChoosePrice": "Booking created! ID: {id} • Choose your price option.",
+  "@bookingCreatedChoosePrice": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+  "failedToCreateBooking": "Failed to create booking.",
+  "paymentsNotSupportedLong": "Payments are not supported on this platform. Please run the app on Android, iOS, macOS, or Web to test real payments.",
+  "noBookingToConfirm": "No booking to confirm. Please create a booking first.",
+  "pleaseChoosePriceOption": "Please choose a price option.",
+  "failedCreatePaymentTryAgain": "Failed to create payment on server. Please try again.",
+  "paymentSuccessfulMessage": "Payment successful!\nBooking #{bookingId} • Paid: {paid}\nYour request is now visible to nearby providers.",
+  "@paymentSuccessfulMessage": {
+    "placeholders": {
+      "bookingId": {},
+      "paid": {}
+    }
+  },
+  "paymentSucceededButFailedUpdate": "Payment succeeded, but failed to update booking on server.",
+  "paymentCancelledOrFailed": "Payment cancelled or failed: {reason}",
+  "@paymentCancelledOrFailed": {
+    "placeholders": {
+      "reason": {}
+    }
+  },
+  "unexpectedPaymentError": "Unexpected payment error: {error}",
+  "@unexpectedPaymentError": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "createBookingButton": "Create Booking",
+  "chooseYourPriceOptionTitle": "Choose Your Price Option",
+  "transportationCostLabel": "Transportation cost: {cost}",
+  "@transportationCostLabel": {
+    "placeholders": {
+      "cost": {}
+    }
+  },
+  "budgetTierTitle": "BUDGET",
+  "standardTierTitle": "STANDARD",
+  "priorityTierTitle": "PRIORITY",
+  "budgetTierDescription": "Best value among nearby providers",
+  "standardTierDescription": "Recommended balance of price & availability",
+  "priorityTierDescription": "Premium option to attract top providers faster",
+  "naShort": "N/A",
+  "priceBreakdownTitle": "Price Breakdown",
+  "servicePriceLabel": "Service Price",
+  "transportationLabel": "Transportation",
+  "serviceFeeLabel": "Service Fee ({percent}%)",
+  "@serviceFeeLabel": {
+    "placeholders": {
+      "percent": {}
+    }
+  },
+  "allPricesIn": "All prices in {currency} ({country})",
+  "@allPricesIn": {
+    "placeholders": {
+      "currency": {},
+      "country": {}
+    }
+  },
+  "userCountryPlaceholder": "User country",
+  "totalToPayTitle": "Total to Pay",
+  "includesServiceTransportation": "Includes service + transportation",
+  "confirmAndPay": "Confirm & Pay",
+  "howPricingWorksTitle": "How Pricing Works",
+  "howPricingWorksBullets": "• Budget: best value among nearby providers\n• Standard: recommended default\n• Priority: premium option to speed up acceptance\n• Transportation is included in the total",
+  "myBookingsTitle": "My Bookings",
+  "myAssignedJobsTitle": "My Assigned Jobs",
+  "pleaseCompleteProviderProfileFirst": "Please complete your provider profile first.",
+  "failedToLoadBookings": "Failed to load bookings.",
+  "profileSetupRequiredTitle": "Profile Setup Required",
+  "profileSetupRequiredBody": "You need to complete your provider profile before you can view assigned jobs and earnings.",
+  "later": "Later",
+  "setupNow": "Setup Now",
+  "noBookingsFound": "No bookings found.",
+  "findNearbyOpenJobs": "Find Nearby Open Jobs",
+  "pay": "Pay",
+  "rate": "Rate",
+  "bookingNumber": "Booking #{id}",
+  "@bookingNumber": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+  "whenOn": "When: {date}",
+  "@whenOn": {
+    "placeholders": {
+      "date": {}
+    }
+  },
+  "whenAt": "When: {date} at {time}",
+  "@whenAt": {
+    "placeholders": {
+      "date": {},
+      "time": {}
+    }
+  },
+  "providerLine": "Provider: {name}",
+  "@providerLine": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "userLine": "User: {name}",
+  "@userLine": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "estimatedPriceLine": "Estimated price: {price}",
+  "@estimatedPriceLine": {
+    "placeholders": {
+      "price": {}
+    }
+  },
+  "paymentLine": "Payment: {status}",
+  "@paymentLine": {
+    "placeholders": {
+      "status": {}
+    }
+  },
+  "paymentUnpaid": "unpaid",
+  "paymentUnknown": "unknown",
+  "confirmPaymentTitle": "Confirm payment",
+  "confirmPaymentBody": "Pay {amount} to confirm this booking?",
+  "@confirmPaymentBody": {
+    "placeholders": {
+      "amount": {}
+    }
+  },
+  "yesPay": "Yes, Pay",
+  "failedToCreatePaymentIntent": "Failed to create payment intent.",
+  "paymentSuccessfulShort": "Payment successful.",
+  "paymentSucceededButFailedUpdateBooking": "Payment succeeded, but failed to update booking on server.",
+  "paymentCancelledOrFailedReason": "Payment cancelled or failed: {reason}",
+  "@paymentCancelledOrFailedReason": {
+    "placeholders": {
+      "reason": {}
+    }
+  },
+  "unexpectedPaymentErrorReason": "Unexpected payment error: {error}",
+  "@unexpectedPaymentErrorReason": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+
+  "selectRatingHelp": "Select rating (1 = poor, 5 = excellent):",
+  "commentsOptionalLabel": "Comments (optional)",
+  "submit": "Submit",
+  "reviewSubmitted": "Review submitted.",
+  "failedSubmitReview": "Failed to submit review.",
+  "@failedToLoadProfile": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@profileSavedSuccess": {
+    "placeholders": {
+      "action": {}
+    }
+  },
+  "@genericError": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@errorGettingLocation": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@errorConvertingAddress": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@failedToLoadPortfolio": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@uploadFailed": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@deleteFailedWithError": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@reviewCountLabel": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@bioMinLength": {
+    "placeholders": {
+      "min": {
+        "type": "int"
+      }
+    }
+  }
+}

@@ -1,0 +1,964 @@
+{
+  "@@locale": "af",
+  "appTitle": "Styloria",
+  "account": "Rekening",
+  "profile": "Profiel",
+  "myBookings": "My besprekings",
+  "openJobs": "Oop werke",
+  "earnings": "Verdienste",
+  "paymentMethods": "Betaalmetodes",
+  "referFriends": "Verwys vriende",
+  "language": "Taal",
+  "settings": "Instellings",
+  "darkMode": "Donker modus",
+  "systemDefault": "Stelsel verstek",
+  "languageUpdated": "Taal opgedateer",
+  "languageSetToSystemDefault": "Taal na stelsel verstek gestel",
+  "helpAndSupport": "Hulp en ondersteuning",
+  "chatWithCustomerService": "Gesels met kliëntediens",
+  "aboutAndPolicies": "Oor en beleide",
+  "viewUserPoliciesAndAgreements": "Bekyk gebruikersbeleide en ooreenkomste",
+  "logOut": "Teken uit",
+  "deleteAccount": "Verwyder rekening",
+  "deleteAccountSubtitle": "Hierdie aksie kan nie ongedaan gemaak word nie",
+  "deleteAccountTitle": "Verwyder rekening",
+  "deleteAccountConfirmBody": "Is jy seker jy wil jou rekening verwyder?\n\nHierdie aksie sal jou uitteken en jy kan permanent toegang verloor.",
+  "no": "Nee",
+  "yesDelete": "Ja, verwyder",
+  "deleteAccountSheetTitle": "Ons is jammer om jou te sien gaan.",
+  "deleteAccountSheetPrompt": "Kan jy vir ons sê hoekom? (Kies alles wat van toepassing is)",
+  "deleteAccountSelectAtLeastOneReason": "Kies asseblief minstens een rede.",
+  "tellUsMoreOptional": "Vertel ons meer (opsioneel)",
+  "suggestionsToImproveOptional": "Voorstelle om te verbeter (opsioneel)",
+  "deleteMyAccount": "Verwyder my rekening",
+  "cancel": "Kanselleer",
+  "failedToDeleteAccount": "Kon nie rekening verwyder nie. Probeer asseblief weer.",
+  "choosePreferredLanguage": "Kies jou voorkeurtaal",
+  "noteSomeTextMayStillAppearInEnglish": "Let wel: Dit verander die app-taal. Sommige teks kan steeds in Engels verskyn totdat vertalings bygevoeg is.",
+  "languageSetToName": "Taal gestel na {name}",
+  "@languageSetToName": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "deletionReason1": "Ek het nie meer Styloria nodig nie",
+  "deletionReason2": "Ek het gesukkel met rekeningverifikasie (e-pos/KYC)",
+  "deletionReason3": "Ek kon nie dienste/verskaffers naby my kry nie",
+  "deletionReason4": "Pryse of fooie was te hoog / onduidelik",
+  "deletionReason5": "Die app was verwarrend / moeilik om te gebruik",
+  "deletionReason6": "Foute (bugs) of prestasieprobleme",
+  "deletionReason7": "Betaling/terugbetaling probleme",
+  "deletionReason8": "Slegte ervaring met ’n verskaffer/gebruiker",
+  "deletionReason9": "Privaatheid- of sekuriteitsbekommernisse",
+  "deletionReason10": "Ek het hierdie rekening per ongeluk geskep",
+  "deletionReason11": "Ek skuif na ’n ander platform",
+  "deletionReason12": "Ander",
+  "loginWelcomeTitle": "Welkom by Styloria",
+  "loginWelcomeSubtitle": "Teken in om jou besprekings en dienste te bestuur.",
+  "loginFailedToLoadUserInfo": "Aanmelding het geslaag maar kon nie gebruikersinligting laai nie.",
+  "username": "Gebruikersnaam",
+  "password": "Wagwoord",
+  "required": "Vereis",
+  "login": "Teken in",
+  "createNewAccount": "Skep ’n nuwe rekening",
+  "requestEmailVerificationCode": "Vra e-posverifikasiekode aan",
+  "createAccountTitle": "Skep rekening",
+  "joinStyloria": "Sluit aan by Styloria",
+  "registerSubtitle": "Skep ’n rekening om dienste te bespreek of ’n verskaffer te word",
+  "iWantTo": "Ek wil:",
+  "bookServices": "Dienste bespreek",
+  "provideServices": "Dienste lewer",
+  "personalInformation": "Persoonlike inligting",
+  "firstName": "Voornaam",
+  "lastName": "Van",
+  "selectDateOfBirth": "Kies geboortedatum",
+  "phoneNumber": "Telefoonnommer",
+  "pleaseEnterPhoneNumber": "Voer asseblief ’n telefoonnommer in",
+  "accountInformation": "Rekeninginligting",
+  "chooseUniqueUsernameHint": "Kies ’n unieke gebruikersnaam",
+  "email": "E-pos",
+  "emailHint": "your@email.com",
+  "enterValidEmail": "Voer ’n geldige e-pos in",
+  "security": "Sekuriteit",
+  "passwordHintAtLeast10": "Ten minste 10 karakters",
+  "passwordMin10": "Wagwoord moet ten minste 10 karakters wees",
+  "iAgreeTo": "Ek stem in tot die ",
+  "termsOfService": "Diensvoorwaardes",
+  "and": "en",
+  "privacyPolicy": "Privaatheidsbeleid",
+  "passwordIsRequired": "Wagwoord is vereis",
+  "confirmPassword": "Bevestig wagwoord",
+  "passwordsDoNotMatch": "Wagwoorde stem nie ooreen nie",
+  "pleaseSelectDob": "Kies asseblief jou geboortedatum.",
+  "pleaseSelectCountry": "Kies asseblief jou land.",
+  "pleaseSelectCity": "Kies asseblief jou stad.",
+  "pleaseEnterValidPhone": "Voer asseblief ’n geldige telefoonnommer in.",
+  "mustAcceptTerms": "Jy moet die bepalings aanvaar.",
+  "mustBeAtLeast18": "Jy moet minstens 18 jaar oud wees om te registreer.",
+  "agreeToTerms": "Ek stem in tot die Diensvoorwaardes en Privaatheidsbeleid",
+  "createAccountButton": "Skep rekening",
+  "alreadyHaveAccount": "Het jy reeds ’n rekening?",
+  "emailVerifiedSuccessPleaseLogin": "E-pos suksesvol geverifieer. Teken asseblief in.",
+  "pleaseVerifyEmailToContinue": "Verifieer asseblief jou e-pos om voort te gaan.",
+  "requestVerificationCodeTitle": "Vra verifikasiekode aan",
+  "requestVerificationInstructions": "Voer jou e-pos of gebruikersnaam in.\nOns sal ’n nuwe verifikasiekode na die e-pos van dié rekening stuur.",
+  "emailOrUsername": "E-pos of gebruikersnaam",
+  "sendCode": "Stuur kode",
+  "ifAccountExistsCodeSent": "As die rekening bestaan, is ’n kode gestuur.",
+  "failedToSendVerificationCode": "Kon nie verifikasiekode stuur nie.",
+  "verifyYourEmailTitle": "Verifieer jou e-pos",
+  "verificationCodeSentInfo": "’n Verifikasiekode is na die e-pos van hierdie rekening gestuur.",
+  "emailVerificationInstructions": "Voer die 6-syfer kode in wat na die e-pos van hierdie rekening gestuur is:\n{identifier}",
+  "@emailVerificationInstructions": {
+    "placeholders": {
+      "identifier": {}
+    }
+  },
+  "verificationCodeLabel": "Verifikasiekode",
+  "sendingEllipsis": "Stuur...",
+  "resendCode": "Stuur kode weer",
+  "enter6DigitCodeError": "Voer die 6-syfer kode in.",
+  "verifyingEllipsis": "Verifieer...",
+  "verify": "Verifieer",
+  "invalidOrExpiredCodeTryResending": "Ongeldige of vervalde kode. Probeer weer stuur.",
+  "bookingTitle": "Bespreking #{id}",
+  "@bookingTitle": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+  "invalidBookingIdForChat": "Ongeldige besprekings-ID vir klets.",
+  "invalidBookingIdForCall": "Ongeldige besprekings-ID vir oproep.",
+  "unableToLoadContactInfo": "Kan nie kontak-inligting laai nie. Maak seker die bespreking is aktief.",
+  "noPhoneNumberAvailableForName": "Geen telefoonnommer beskikbaar vir {name} nie.",
+  "@noPhoneNumberAvailableForName": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "deviceCannotPlaceCalls": "Hierdie toestel kan nie telefoonoproepe maak nie.",
+  "cancelBookingDialogTitle": "Kanselleer bespreking",
+  "cancelBookingDialogBody": "Wil jy regtig hierdie bespreking kanselleer?\n\nLet wel: As die verskaffer reeds aanvaar het en meer as 7 minute verloop het (maar minder as ongeveer 40 minute), kan ’n boete volgens die reëls toegepas word.",
+  "yesCancel": "Ja, kanselleer",
+  "failedToCancelBooking": "Kon nie die bespreking kanselleer nie.",
+  "bookingCancelledPenaltyApplied": "Bespreking gekanselleer. ’n Boete van {amount} is toegepas.",
+  "@bookingCancelledPenaltyApplied": {
+    "placeholders": {
+      "amount": {}
+    }
+  },
+  "bookingCancelledSuccessfully": "Bespreking suksesvol gekanselleer.",
+  "failedToConfirmCompletion": "Kon nie voltooiing bevestig nie. Probeer asseblief weer.",
+  "bothSidesConfirmedCompletedPayoutReleased": "Albei kante het bevestig. Bespreking is as voltooi gemerk en uitbetaling is vrygestel.",
+  "youConfirmedCompletionWaitingForProvider": "Jy het voltooiing bevestig. Wag vir die verskaffer om te bevestig.",
+  "youConfirmedCompletionWaitingForUser": "Jy het voltooiing bevestig. Wag vir die gebruiker om te bevestig.",
+  "statusUnknown": "onbekend",
+  "statusAccepted": "aanvaar",
+  "statusInProgress": "aan die gang",
+  "statusCompleted": "voltooi",
+  "statusCancelled": "gekanselleer",
+  "paymentPaid": "betaal",
+  "paymentPending": "hangend",
+  "paymentFailed": "misluk",
+  "bookingAcceptedBy": "Bespreking aanvaar deur {name}",
+  "@bookingAcceptedBy": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "whenLabel": "Wanneer",
+  "atTime": "om {time}",
+  "@atTime": {
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "userLabel": "Gebruiker",
+  "providerLabel": "Verskaffer",
+  "estimatedPriceLabel": "Geskatte prys",
+  "offeredPaidLabel": "Aangebied / betaal",
+  "distanceLabel": "Afstand",
+  "distanceMiles": "{miles} myl",
+  "@distanceMiles": {
+    "placeholders": {
+      "miles": {}
+    }
+  },
+  "acceptedAtLabel": "Aanvaar om",
+  "cancelledAtLabel": "Gekanselleer om",
+  "cancelledByLabel": "Gekanselleer deur",
+  "penaltyAppliedLabel": "Boete toegepas: {amount}",
+  "@penaltyAppliedLabel": {
+    "placeholders": {
+      "amount": {}
+    }
+  },
+  "userConfirmedLabel": "Gebruiker het bevestig",
+  "providerConfirmedLabel": "Verskaffer het bevestig",
+  "payoutReleasedLabel": "Uitbetaling vrygestel",
+  "yesLower": "ja",
+  "noLower": "nee",
+  "chat": "Klets",
+  "call": "Bel",
+  "actions": "Aksies",
+  "confirmCompletion": "Bevestig voltooiing",
+  "noFurtherActionsForBooking": "Geen verdere aksies beskikbaar vir hierdie bespreking nie.",
+  "freeCancellationEndsIn": "Gratis kansellasie eindig oor {time}",
+  "@freeCancellationEndsIn": {
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "earlyFreeCancellationEndedWarning": "Vroeë gratis kansellasie het geëindig. Tot ongeveer 40 minute na aanvaarding kan laat kansellasies ’n boete meebring.",
+  "cancelBooking": "Kanselleer bespreking",
+  "cancelBookingNoPenalty": "Kanselleer bespreking (geen boete)",
+  "cancelBookingPenaltyMayApply": "Kanselleer bespreking (boete kan geld)",
+  "cancellationPolicyInfo": "Jy kan sonder boete kanselleer binne die eerste 7 minute ná die verskaffer se aanvaarding, en weer ná ongeveer 40 minute indien nodig. Tussen hierdie tye kan ’n boete volgens die reëls toegepas word.",
+  "ratingLine": "Gradering: {rating} ({reviewCount, plural, =1{1 resensie} other{{reviewCount} resensies}})",
+  "@ratingLine": {
+    "placeholders": {
+      "rating": {},
+      "reviewCount": {
+        "type": "int"
+      }
+    }
+  },
+  "proofOfSkillsPortfolio": "Bewys van vaardighede (Portefeulje)",
+  "noPortfolioPostsAvailable": "Geen portefeulje-plasings beskikbaar nie.",
+  "bookingLocation": "Besprekingsplek",
+  "location": "Ligging",
+  "latitude": "Breedtegraad",
+  "longitude": "Lengtegraad",
+  "mapWillAppearWhenCoordinatesValid": "Die kaart sal hier verskyn wanneer koördinate geldig is.",
+  "chatForBookingTitle": "Klets vir bespreking #{id}",
+  "@chatForBookingTitle": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+  "unableToStartChat": "Kan nie klets begin nie. Klets is slegs beskikbaar wanneer die bespreking aanvaar is, aan die gang is, of binne die laaste dag voltooi is.",
+  "invalidChatThreadFromServer": "Ongeldige kletsdraad vanaf die bediener teruggestuur.",
+  "messageNotSentPolicy": "Boodskap nie gestuur nie. Nota: die deel van foonnommers of e-posse is nie in die klets toegelaat nie.",
+  "unknown": "Onbekend",
+  "typeMessageHint": "Tik ’n boodskap aan ondersteuning...",
+  "uploadProfilePicture": "Laai profielfoto op",
+  "currentProfilePicture": "Huidige profielfoto",
+  "newPicturePreview": "Voorskou van nuwe foto",
+  "chooseImage": "Kies prent",
+  "upload": "Laai op",
+  "noImageBytesFoundWeb": "Geen prent-bytes gevind nie (web).",
+  "pleasePickAnImageFirst": "Kies asseblief eers ’n prent.",
+  "uploadFailedCheckServerLogs": "Oplaai het misluk. Kontroleer bedienerlogboeke / token.",
+  "profilePictureUploadedSuccessfully": "Profielfoto suksesvol opgelaai!",
+  "errorWithValue": "Fout: {error}",
+  "@errorWithValue": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "tapToChangeProfilePicture": "Tik om profielfoto te verander",
+  "usernameValue": "Gebruikersnaam: {username}",
+  "@usernameValue": {
+    "placeholders": {
+      "username": {}
+    }
+  },
+  "roleValue": "Rol: {role}",
+  "@roleValue": {
+    "placeholders": {
+      "role": {}
+    }
+  },
+  "dateOfBirthYyyyMmDd": "Geboortedatum (JJJJ-MM-DD)",
+  "saveProfile": "Stoor profiel",
+  "failedToSaveProfile": "Kon nie profiel stoor nie. Probeer asseblief weer.",
+  "profileUpdated": "Profiel opgedateer.",
+  "completeYourProviderProfile": "Voltooi jou verskafferprofiel",
+  "completeProviderProfileBody": "Om werk te begin aanvaar en geld te verdien, voltooi jou verskafferprofiel.",
+  "setupProfileNow": "Stel profiel nou op",
+  "doItLater": "Doen dit later",
+  "bookingTimerPenaltyPeriodActive": "Boeteperiode aktief",
+  "bookingTimerFreeCancellationPeriod": "Gratis kansellasieperiode",
+  "bookingTimerTimeRemaining": "Tyd oor: {time}",
+  "@bookingTimerTimeRemaining": {
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "bookingTimerCancellingNowPenalty": "Om nou te kanselleer sal ’n 10% boete meebring.",
+  "bookingTimerCancelNoPenalty": "Jy kan kanselleer sonder ’n boete.",
+  "myReviewsTitle": "My resensies",
+  "failedToLoadReviews": "Kon nie resensies laai nie.",
+  "noReviewsYet": "Jy het nog geen resensies gelaat nie.",
+  "providerWithName": "Verskaffer: {name}",
+  "providerGeneric": "Verskaffer",
+  "ratingWithValue": "Gradering: {rating}",
+  "nearbyOpenJobsTitle": "Oop werke naby",
+  "failedToLoadOpenJobsHint": "Kon nie oop werke laai nie.\nMaak seker jy het ’n verskafferprofiel met ligging gestel en available=true.",
+  "errorLoadingJobsWithValue": "Fout met laai van werke: {error}",
+  "noOpenJobsFoundNearbyTitle": "Geen oop werke naby gevind nie",
+  "noOpenJobsFoundNearbyBody": "Maak seker:\n- Jy het jou verskafferligging gestel\n- Jy is as beskikbaar gemerk\n- Gebruikers het besprekings geskep en betaal",
+  "currencyLabel": "Geldeenheid: {symbol}",
+  "pricesShownInCurrency": "Pryse word in {symbol} ({country}) gewys",
+  "jobTitleWithId": "Werk #{id}",
+  "serviceLine": "Diens: {service}",
+  "whenLine": "Wanneer: {date} {time}",
+  "priceLine": "Prys: {price}",
+  "acceptJob": "Aanvaar werk",
+  "failedToAcceptJob": "Kon nie werk aanvaar nie.",
+  "jobAcceptedSuccessfully": "Werk suksesvol aanvaar.",
+  "newServiceRequestTitle": "Nuwe diensversoek",
+  "offeredPriceLabel": "Aangebied prys",
+  "offeredPriceHint": "bv. 25.00",
+  "enterValidPrice": "Voer ’n geldige prys in",
+  "bookAndPay": "Bespreek en betaal",
+  "bookAndPayAmount": "Bespreek en betaal {amount}",
+  "haircutService": "Haarsny",
+  "stylingService": "Styling",
+  "timeLabel": "Tyd:",
+  "notesLabel": "Notas",
+  "requestCreatedAndPaidBroadcast": "Versoek geskep en betaal! Na verskaffers gestuur.",
+  "locationLatLng": "Ligging: {lat}, {lng}",
+  "paymentMethodsTitle": "Betaalmetodes",
+  "paymentPreferencesInfo": "Hierdie voorkeure word plaaslik op jou toestel gestoor. Werklike betalings word veilig via Stripe/ander gateways verwerk.",
+  "preferredMethodLabel": "Voorkeurmetode (plaaslike gateway word per land gekies)",
+  "methodVisaMastercard": "Visa/Mastercard",
+  "methodMobileMoney": "Mobile Money (Momo/Paystack/Africa)",
+  "methodPaypal": "PayPal",
+  "methodApplePayGooglePay": "Apple Pay/Google Pay",
+  "methodWeChatPay": "WeChat Pay (China)",
+  "methodAlipay": "Alipay (China)",
+  "methodUnionPay": "UnionPay-kaart (China)",
+  "mobileMoneyNumberLabel": "Mobile Money-nommer",
+  "wechatAlipayIdLabel": "WeChat/Alipay ID",
+  "cardLast4DigitsLabel": "Laaste 4 syfers van kaart",
+  "paypalEmailLabel": "PayPal-e-pos",
+  "applePayEnabledOnDevice": "Apple Pay geaktiveer op hierdie toestel",
+  "savePaymentPreferences": "Stoor betaalvoorkeure",
+  "paymentPrefsSavedInfo": "Betaalvoorkeure plaaslik gestoor. Werklike heffing word later via Stripe/ander gateways hanteer.",
+  "failedToLoadImage": "Kon nie beeld laai nie",
+  "earningsTitle": "Verdienste",
+  "couldNotLoadEarningsSummary": "Kon nie verdienstesamevatting laai nie.",
+  "noData": "Geen data.",
+  "retry": "Probeer weer",
+  "summaryTitle": "Opsomming",
+  "totalLabel": "Totaal",
+  "pendingLabel": "Hangend",
+  "paidLabel": "Betaal",
+  "pdfReportTitle": "PDF-verslag",
+  "periodLabel": "Tydperk",
+  "periodThisMonth": "Hierdie maand",
+  "periodLastMonth": "Verlede maand",
+  "periodYtd": "Jaar tot datum",
+  "periodAllTime": "Alle tye",
+  "couldNotDownloadPdfReport": "Kon nie PDF-verslag aflaai nie.",
+  "couldNotOpenPdfWithValue": "Kon nie PDF oopmaak nie: {error}",
+  "savingFilesNotSupportedWeb": "Die stoor van lêers word tans nie op Web ondersteun nie.",
+  "savedToDocumentsIosWithPath": "Gestoor in Documents (iOS):\n{path}",
+  "savedToFilesWithPath": "Gestoor in lêers:\n{path}",
+  "open": "Maak oop",
+  "failedToSavePdfWithValue": "Kon nie PDF stoor nie: {error}",
+  "openPdfReport": "Maak PDF-verslag oop",
+  "savePdfToDownloads": "Stoor PDF na Downloads",
+  "reportWatermarkNote": "Die PDF-verslag behoort die Styloria-watermerk te bevat.",
+  "referFriendsTitle": "Verwys vriende",
+  "shareReferralCodeBody": "Deel jou verwysingskode met vriende. Later kan jy belonings byvoeg wanneer hulle registreer en besprekings voltooi.",
+  "yourReferralCodeLabel": "Jou verwysingskode:",
+  "copy": "Kopieer",
+  "referralCodeCopiedWithCode": "Verwysingskode gekopieer: {code}",
+  "navHome": "Tuis",
+  "navBookings": "Besprekings",
+  "navNotifications": "Kennisgewings",
+  "navAccount": "Rekening",
+  "welcome": "Welkom",
+  "welcomeName": "Welkom, {name}",
+  "@welcomeName": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "toggleThemeTooltip": "Skakel lig/donker modus",
+  "loggedInAs": "Aangemeld as: {role}",
+  "@loggedInAs": {
+    "placeholders": {
+      "role": {}
+    }
+  },
+  "locationWithValue": "Ligging: {value}",
+  "@locationWithValue": {
+    "placeholders": {
+      "value": {}
+    }
+  },
+  "homeTagline": "Transformeer jou grooming-ervaring met intydse besprekings en betroubare verskaffers.",
+  "manageProviderProfile": "Bestuur verskafferprofiel",
+  "browseOpenJobs": "Blaai oop werke",
+  "quickActions": "Vinnige aksies",
+  "newBooking": "Nuwe bespreking",
+  "notificationsWithUnread": "Kennisgewings ({count, plural, =1{1 ongelees} other{{count} ongelees}})",
+  "@notificationsWithUnread": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "liveLocationTrackingTitle": "Lewendige liggingnasporing",
+  "live": "Live",
+  "locationServicesDisabled": "Liggingdienste is gedeaktiveer",
+  "locationPermissionDenied": "Liggingtoestemming geweier",
+  "locationPermissionPermanentlyDenied": "Liggingtoestemming permanent geweier",
+  "failedToGetLocationWithValue": "Kon nie ligging kry nie: {error}",
+  "@failedToGetLocationWithValue": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "youProvider": "Jy (verskaffer)",
+  "youCustomer": "Jy (kliënt)",
+  "customer": "Kliënt",
+  "bookingDetails": "Besprekingsbesonderhede",
+  "navigate": "Navigeer",
+  "failedToLoadNotifications": "Kon nie kennisgewings laai nie.",
+  "failedToMarkAsRead": "Kon nie as gelees merk nie",
+  "noNotificationsYet": "Nog geen kennisgewings nie.",
+  "markRead": "Merk as gelees",
+  "providerKycTitle": "Verskaffer-verifikasie (KYC)",
+  "logoutTooltip": "Meld af",
+  "statusLabel": "Status: {status}",
+  "@statusLabel": {
+    "placeholders": {
+      "status": {}
+    }
+  },
+  "rejectedWithNotes": "Geweier: {notes}",
+  "@rejectedWithNotes": {
+    "placeholders": {
+      "notes": {}
+    }
+  },
+
+  "youAreCurrentlyUnavailable": "Jy is tans nie beskikbaar nie",
+  "toBrowseAndAcceptJobsEnableAvailability": "Om werkversoeke in die omgewing te blaai en te aanvaar, moet jy jouself as beskikbaar vir besprekings stel.",
+  "goToProfileSettings": "Gaan na profielinstellings",
+  "tipToggleAvailableForBookings": "Wenk: Skakel \"Beskikbaar vir Besprekings\" AAN in jou Verskaffer Profiel om werkversoeke te begin ontvang.",
+  "requestedBy": "Versoek deur: {name}",
+  "@requestedBy": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "locationLabel": "Ligging: {address}",
+  "@locationLabel": {
+    "placeholders": {
+      "address": {
+        "type": "String"
+      }
+    }
+  },
+
+  "kycInstructions": "Om toegang tot verskaffer-funksies te kry, laai jou ID en ’n selfie op vir verifikasie.",
+  "idFrontRequired": "ID Voor (vereis)",
+  "selectIdFront": "Kies ID Voor",
+  "idBackOptional": "ID Agter (opsioneel)",
+  "selectIdBackOptional": "Kies ID Agter (Opsioneel)",
+  "selfieRequired": "Selfie (vereis)",
+  "selectSelfie": "Kies Selfie",
+  "takeSelfie": "Neem Selfie",
+  "errorUploadAllRequired": "Laai asseblief ID (voor), ID (agter) en ’n selfie op.",
+  "failedSubmitKycCode": "Kon nie KYC indien nie (kode {code}).",
+  "@failedSubmitKycCode": {
+    "placeholders": {
+      "code": {}
+    }
+  },
+  "submittedCurrentStatus": "Ingedien. Huidige status: {status}",
+  "@submittedCurrentStatus": {
+    "placeholders": {
+      "status": {}
+    }
+  },
+  "unknownStatus": "onbekend",
+  "submitKyc": "Dien KYC in",
+  "verificationMayTakeTimeNote": "Nota: Verifikasie kan tyd neem. Jy sal verskaffer-funksies kan gebruik sodra dit goedgekeur is.",
+  "enterVerificationCodeTitle": "Voer verifikasiekode in",
+  "otpSentToUsername": "Ons het ’n 6-syfer kode na die foonnommer\ngeassosieer met \"{username}\" gestuur.",
+  "@otpSentToUsername": {
+    "placeholders": {
+      "username": {}
+    }
+  },
+  "sixDigitCodeLabel": "6-syfer kode",
+  "enterSixDigitCodeValidation": "Voer die 6-syfer kode in",
+  "otpInvalidOrExpired": "Ongeldige of vervalde kode.",
+  "failedLoadUserInfoAfterVerification": "Kon nie gebruikersinligting laai na verifikasie nie.",
+  "chatWithSupportTitle": "Gesels met Ondersteuning",
+  "unableStartSupportChat": "Kan nie ondersteuning-klets begin nie.",
+  "invalidSupportThreadReturned": "Ongeldige ondersteuning-thread vanaf die bediener teruggestuur.",
+  "noMessagesYet": "Nog geen boodskappe nie. Begin ’n gesprek!",
+  "supportDefaultName": "Ondersteuning",
+  "aboutPoliciesTitle": "Oor & Beleide",
+  "paymentsNotSupportedShort": "Betalings word nie op hierdie platform ondersteun nie. Gebruik asseblief Android, iOS, macOS of Web.",
+  "failedToLoadProfile": "Kon nie profiel laai nie: {error}",
+  "profileSavedSuccess": "Profiel suksesvol {action}!",
+  "genericError": "Fout: {error}",
+  "locationPermissionDeniedEnableInSettings": "Liggingtoestemming geweier. Aktiveer asseblief in instellings.",
+  "locationPermissionPermanentlyDeniedEnableInAppSettings": "Liggingtoestemming permanent geweier. Aktiveer asseblief in app-instellings.",
+  "errorGettingLocation": "Fout met die verkryging van ligging: {error}",
+  "pleaseEnterAddress": "Voer asseblief 'n adres in",
+  "locationUpdatedFromAddress": "Ligging vanaf adres opgedateer",
+  "couldNotFindLocationForAddress": "Kon nie ligging vir hierdie adres vind nie",
+  "errorConvertingAddress": "Fout met die omskakeling van adres: {error}",
+  "portfolioUnavailableCompleteKycFirst": "Portefeulje nie beskikbaar nie. As jy ’n verskaffer is, voltooi eers KYC-verifikasie.",
+  "failedToLoadPortfolio": "Kon nie portefeulje laai nie: {error}",
+  "addPhoto": "Voeg foto by",
+  "addVideo": "Voeg video by",
+  "addPost": "Voeg plasing by",
+  "captionOptionalTitle": "Byskrif (opsioneel)",
+  "captionHintExample": "bv. “Knotless braids op kliënt”",
+  "skip": "Slaan oor",
+  "save": "Stoor",
+  "failedToCreatePortfolioPost": "Kon nie portefeulje-plasing skep nie.",
+  "uploadFailedMediaUpload": "Oplaai het misluk (media-oplaai).",
+  "uploadFailed": "Oplaai het misluk: {error}",
+  "deletePostTitle": "Vee plasing uit?",
+  "deletePostBody": "Dit sal die plasing uit jou portefeulje verwyder.",
+  "delete": "Vee uit",
+  "deleteFailed": "Uitvee het misluk.",
+  "deleteFailedWithError": "Uitvee het misluk: {error}",
+  "portfolioTitle": "Portefeulje",
+  "noPortfolioPostsYetHelpText": "Nog geen portefeulje-plasings nie. Voeg foto’s/video’s van jou werk by om kliënte te help om jou vaardighede te vertrou.",
+  "setupProviderProfileTitle": "Stel verskafferprofiel op",
+  "providerProfileTitle": "Verskafferprofiel",
+  "welcomeToStyloriaTitle": "Welkom by Styloria!",
+  "completeProviderProfileToStartEarning": "Voltooi jou verskafferprofiel om te begin om werk te aanvaar en geld te verdien.",
+  "reviewCountLabel": "({count} resensies)",
+  "topRatedChip": "Topgegradeer",
+  "bioLabel": "Bio / Beskrywing",
+  "bioHint": "Vertel kliënte van jou vaardighede en ervaring...",
+  "pleaseEnterBio": "Voer asseblief 'n bio in",
+  "bioMinLength": "Bio moet minstens {min} karakters wees",
+  "yourLocationTitle": "Jou ligging",
+  "locationHelpMatchNearbyClients": "Jou ligging help ons om jou met nabygeleë kliënte te pas",
+  "locationHelpUpdateToFindJobs": "Werk jou ligging by om werk in ander areas te vind",
+  "useMyCurrentLocationTitle": "Gebruik my huidige ligging",
+  "gpsSubtitle": "Kry ligging outomaties met GPS",
+  "orLabel": "OF",
+  "enterYourAddressTitle": "Voer jou adres in",
+  "fullAddressLabel": "Volledige adres",
+  "fullAddressHint": "bv. 123 Main St, Accra, Ghana",
+  "find": "Soek",
+  "addressHelpText": "Voer jou straatadres, stad en land in",
+  "coordinatesAutoFilledTitle": "Koördinate (outomaties ingevul)",
+  "servicePricingTitle": "Dienspryse",
+  "servicePricingHelp": "Stel jou prys vir elke diens. Merk \"Nie aangebied\" vir dienste wat jy nie kan lewer nie.",
+  "serviceHeader": "Diens",
+  "priceHeader": "Prys",
+  "notOfferedHeader": "Nie aangebied",
+  "priceHint": "0.00",
+  "providerHowPricingWorksTitle": "Hoe pryse werk:",
+  "providerHowPricingWorksBody": "• Jou prys is wat jy vir die diens vra\n• Vervoerkoste = 80% van die gebruiker se geldeenheid per km\n• Gebruikers sien 3 opsies op grond van nabygeleë verskaffers:\n  - Budget: Laagste prys\n  - Standard: Gemiddelde prys\n  - Priority: Hoogste prys",
+  "availableForBookingsTitle": "Beskikbaar vir besprekings",
+  "availableOnHelp": "✓ Jy sal in soekresultate vir nabygeleë kliënte verskyn",
+  "availableOffHelp": "✗ Jy sal nie nuwe werkaanbiedings ontvang nie",
+  "completeSetupStartEarning": "Voltooi opstelling en begin verdien",
+  "updateProfile": "Werk profiel by",
+  "skipForNow": "Slaan vir nou oor",
+  "@providerWithName": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "@ratingWithValue": {
+    "placeholders": {
+      "rating": {}
+    }
+  },
+  "@errorLoadingJobsWithValue": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@currencyLabel": {
+    "placeholders": {
+      "symbol": {}
+    }
+  },
+  "@pricesShownInCurrency": {
+    "placeholders": {
+      "symbol": {},
+      "country": {}
+    }
+  },
+  "@jobTitleWithId": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+  "@serviceLine": {
+    "placeholders": {
+      "service": {}
+    }
+  },
+  "@whenLine": {
+    "placeholders": {
+      "date": {},
+      "time": {}
+    }
+  },
+  "@priceLine": {
+    "placeholders": {
+      "price": {}
+    }
+  },
+  "@bookAndPayAmount": {
+    "placeholders": {
+      "amount": {}
+    }
+  },
+  "@locationLatLng": {
+    "placeholders": {
+      "lat": {},
+      "lng": {}
+    }
+  },
+  "@couldNotOpenPdfWithValue": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@savedToDocumentsIosWithPath": {
+    "placeholders": {
+      "path": {}
+    }
+  },
+  "@savedToFilesWithPath": {
+    "placeholders": {
+      "path": {}
+    }
+  },
+  "@failedToSavePdfWithValue": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@referralCodeCopiedWithCode": {
+    "placeholders": {
+      "code": {}
+    }
+  },
+  "idBackRequired": "ID Back (required)",
+  "selectIdBackRequired": "Select ID Back",
+  "newBookingTitle": "New Booking",
+  "appointmentDetailsTitle": "Appointment details",
+  "pickDate": "Pick date",
+  "pickTime": "Pick time",
+  "serviceTypeTitle": "Service type",
+  "serviceDropdownLabel": "Service",
+  "serviceHaircutLabel": "Haircut",
+  "serviceBraidsLabel": "Braids",
+  "serviceShaveLabel": "Shave",
+  "serviceHairColoringLabel": "Hair Coloring",
+  "serviceManicureLabel": "Manicure",
+  "servicePedicureLabel": "Pedicure",
+  "serviceNailArtLabel": "Nail Art",
+  "serviceMakeupLabel": "Makeup",
+  "serviceFacialLabel": "Facial",
+  "serviceWaxingLabel": "Waxing",
+  "serviceMassageLabel": "Massage",
+  "serviceHairStylingLabel": "Hair Styling",
+  "serviceHairTreatmentLabel": "Hair Treatment",
+  "serviceHairExtensionsLabel": "Hair Extensions",
+  "serviceOtherServicesLabel": "Other Services",
+  "notesForProviderOptionalLabel": "Notes for your provider (optional)",
+  "locationTitle": "Location",
+  "latitudeLabel": "Latitude",
+  "longitudeLabel": "Longitude",
+  "requiredField": "Required",
+  "useMyCurrentLocation": "Use my current location",
+  "pricesShownIn": "Prices shown in {symbol} ({country})",
+  "@pricesShownIn": {
+    "placeholders": {
+      "symbol": {},
+      "country": {}
+    }
+  },
+  "chooseTimeLaterThanCurrent": "Please choose a time later than the current time.",
+  "pleasePickDateAndTime": "Please pick date and time.",
+  "locationUpdatedFromGps": "Location updated from GPS.",
+  "failedToGetLocation": "Failed to get location: {error}",
+  "@failedToGetLocation": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "bookingCreatedChoosePrice": "Booking created! ID: {id} • Choose your price option.",
+  "@bookingCreatedChoosePrice": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+  "failedToCreateBooking": "Failed to create booking.",
+  "paymentsNotSupportedLong": "Payments are not supported on this platform. Please run the app on Android, iOS, macOS, or Web to test real payments.",
+  "noBookingToConfirm": "No booking to confirm. Please create a booking first.",
+  "pleaseChoosePriceOption": "Please choose a price option.",
+  "failedCreatePaymentTryAgain": "Failed to create payment on server. Please try again.",
+  "paymentSuccessfulMessage": "Payment successful!\nBooking #{bookingId} • Paid: {paid}\nYour request is now visible to nearby providers.",
+  "@paymentSuccessfulMessage": {
+    "placeholders": {
+      "bookingId": {},
+      "paid": {}
+    }
+  },
+  "paymentSucceededButFailedUpdate": "Payment succeeded, but failed to update booking on server.",
+  "paymentCancelledOrFailed": "Payment cancelled or failed: {reason}",
+  "@paymentCancelledOrFailed": {
+    "placeholders": {
+      "reason": {}
+    }
+  },
+  "unexpectedPaymentError": "Unexpected payment error: {error}",
+  "@unexpectedPaymentError": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "createBookingButton": "Create Booking",
+  "chooseYourPriceOptionTitle": "Choose Your Price Option",
+  "transportationCostLabel": "Transportation cost: {cost}",
+  "@transportationCostLabel": {
+    "placeholders": {
+      "cost": {}
+    }
+  },
+  "budgetTierTitle": "BUDGET",
+  "standardTierTitle": "STANDARD",
+  "priorityTierTitle": "PRIORITY",
+  "budgetTierDescription": "Best value among nearby providers",
+  "standardTierDescription": "Recommended balance of price & availability",
+  "priorityTierDescription": "Premium option to attract top providers faster",
+  "naShort": "N/A",
+  "priceBreakdownTitle": "Price Breakdown",
+  "servicePriceLabel": "Service Price",
+  "transportationLabel": "Transportation",
+  "serviceFeeLabel": "Service Fee ({percent}%)",
+  "@serviceFeeLabel": {
+    "placeholders": {
+      "percent": {}
+    }
+  },
+  "allPricesIn": "All prices in {currency} ({country})",
+  "@allPricesIn": {
+    "placeholders": {
+      "currency": {},
+      "country": {}
+    }
+  },
+  "userCountryPlaceholder": "User country",
+  "totalToPayTitle": "Total to Pay",
+  "includesServiceTransportation": "Includes service + transportation",
+  "confirmAndPay": "Confirm & Pay",
+  "howPricingWorksTitle": "How Pricing Works",
+  "howPricingWorksBullets": "• Budget: best value among nearby providers\n• Standard: recommended default\n• Priority: premium option to speed up acceptance\n• Transportation is included in the total",
+  "myBookingsTitle": "My Bookings",
+  "myAssignedJobsTitle": "My Assigned Jobs",
+  "pleaseCompleteProviderProfileFirst": "Please complete your provider profile first.",
+  "failedToLoadBookings": "Failed to load bookings.",
+  "profileSetupRequiredTitle": "Profile Setup Required",
+  "profileSetupRequiredBody": "You need to complete your provider profile before you can view assigned jobs and earnings.",
+  "later": "Later",
+  "setupNow": "Setup Now",
+  "noBookingsFound": "No bookings found.",
+  "findNearbyOpenJobs": "Find Nearby Open Jobs",
+  "pay": "Pay",
+  "rate": "Rate",
+  "bookingNumber": "Booking #{id}",
+  "@bookingNumber": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+  "whenOn": "When: {date}",
+  "@whenOn": {
+    "placeholders": {
+      "date": {}
+    }
+  },
+  "whenAt": "When: {date} at {time}",
+  "@whenAt": {
+    "placeholders": {
+      "date": {},
+      "time": {}
+    }
+  },
+  "providerLine": "Provider: {name}",
+  "@providerLine": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "userLine": "User: {name}",
+  "@userLine": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "estimatedPriceLine": "Estimated price: {price}",
+  "@estimatedPriceLine": {
+    "placeholders": {
+      "price": {}
+    }
+  },
+  "paymentLine": "Payment: {status}",
+  "@paymentLine": {
+    "placeholders": {
+      "status": {}
+    }
+  },
+  "paymentUnpaid": "unpaid",
+  "paymentUnknown": "unknown",
+  "confirmPaymentTitle": "Confirm payment",
+  "confirmPaymentBody": "Pay {amount} to confirm this booking?",
+  "@confirmPaymentBody": {
+    "placeholders": {
+      "amount": {}
+    }
+  },
+  "yesPay": "Yes, Pay",
+  "failedToCreatePaymentIntent": "Failed to create payment intent.",
+  "paymentSuccessfulShort": "Payment successful.",
+  "paymentSucceededButFailedUpdateBooking": "Payment succeeded, but failed to update booking on server.",
+  "paymentCancelledOrFailedReason": "Payment cancelled or failed: {reason}",
+  "@paymentCancelledOrFailedReason": {
+    "placeholders": {
+      "reason": {}
+    }
+  },
+  "unexpectedPaymentErrorReason": "Unexpected payment error: {error}",
+  "@unexpectedPaymentErrorReason": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "rateProviderTitle": "Rate {providerName}",
+  "@rateProviderTitle": {
+    "placeholders": {
+      "providerName": {}
+    }
+  },
+  "genericContact": "Kontak",
+  "genericProvider": "Diensverskaffer",
+  "genericNotAvailable": "NVT",
+
+  "reviewSelectRatingPrompt": "Kies ’n gradering (1 tot 5).",
+  "reviewCommentOptionalLabel": "Kommentaar (opsioneel)",
+  "genericCancel": "Kanselleer",
+  "genericSubmit": "Dien in",
+  "reviewSubmitted": "Resensie ingedien.",
+  "reviewSubmitFailed": "Kon nie resensie indien nie.",
+  "rateThisService": "Beoordeel hierdie diens",
+
+  "tipLeaveTitle": "Los ’n fooi",
+  "tipChooseAmountPrompt": "Kies ’n fooibedrag of voer ’n eie bedrag in.",
+  "tipNoTip": "Geen fooi",
+  "tipCustomAmountLabel": "Pasgemaakte fooibedrag",
+  "genericContinue": "Gaan voort",
+
+  "tipSkipped": "Fooi oorgeslaan.",
+  "tipFailedToSaveChoice": "Kon nie fooikeuse stoor nie.",
+  "tipFailedToCreatePayment": "Kon nie fooibetaling skep nie.",
+  "tipPaidSuccessfully": "Fooi suksesvol betaal. Dankie!",
+  "tipPaidButUpdateFailed": "Fooibetaling was suksesvol, maar die bespreking kon nie opgedateer word nie.",
+
+  "tipCancelledOrFailed": "Fooi gekanselleer/misluk: {message}",
+  "tipUnexpectedError": "Onverwagte fooifout: {error}",
+
+  "tipAlreadyPaidLabel": "Fooi reeds betaal",
+  "tipSkippedLabel": "Fooi oorgeslaan",
+  "walletTitle": "Beursie",
+  "walletTooltip": "Beursie",
+  "payoutSettingsTitle": "Uitbetalingsinstellings",
+  "payoutSettingsTooltip": "Uitbetalingsinstellings",
+  "walletNoWalletYet": "Nog geen beursie nie. Voltooi werk om te verdien.",
+  "walletCurrencyFieldLabel": "Geldeenheid",
+  "walletAvailableLine": "Beskikbaar: {amount} {currency}",
+  "walletPendingLine": "Hangende: {amount} {currency}",
+  "walletCashOutInstant": "Kontant uit (onmiddellik)",
+  "walletCashOutFailed": "Kontantuitbetaling het misluk.",
+  "walletCashOutSentTransfer": "Kontantuitbetaling gestuur. Oordrag: {transferId}",
+  "walletTransactionsTitle": "Transaksies",
+  "walletNoTransactionsYet": "Nog geen transaksies nie.",
+  "payoutAutoPayoutsTitle": "Outomatiese uitbetalings",
+  "payoutAutoPayoutsSubtitle": "Stuur uitbetalings outomaties volgens jou skedule.",
+  "payoutDayUtcLabel": "Uitbetalingsdag (UTC)",
+  "payoutHourUtcLabel": "Uitbetalingstyd (UTC)",
+  "payoutMinimumAmountLabel": "Minimum outomatiese uitbetalingsbedrag",
+  "payoutMinimumAmountHelper": "Outomatiese uitbetaling loop net as die beskikbare balans ≥ hierdie bedrag is.",
+  "payoutInstantCashOutEnabledTitle": "Onmiddellike kontantuitbetaling geaktiveer",
+  "payoutInstantCashOutEnabledSubtitle": "Laat die “Kontant uit”-knoppie toe (fooi geld).",
+  "payoutSettingsSaved": "Uitbetalingsinstellings gestoor.",
+  "payoutSettingsSaveFailed": "Kon nie uitbetalingsinstellings stoor nie.",
+  "tipLeaveButton": "Los ’n fooi",
+
+  "selectRatingHelp": "Select rating (1 = poor, 5 = excellent):",
+  "commentsOptionalLabel": "Comments (optional)",
+  "submit": "Submit",
+  "reviewSubmitted": "Review submitted.",
+  "failedSubmitReview": "Failed to submit review.",
+  "@failedToLoadProfile": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@profileSavedSuccess": {
+    "placeholders": {
+      "action": {}
+    }
+  },
+  "@genericError": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@errorGettingLocation": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@errorConvertingAddress": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@failedToLoadPortfolio": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@uploadFailed": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@deleteFailedWithError": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@reviewCountLabel": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@bioMinLength": {
+    "placeholders": {
+      "min": {
+        "type": "int"
+      }
+    }
+  }
+}

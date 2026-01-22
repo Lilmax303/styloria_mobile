@@ -1,0 +1,963 @@
+{
+  "@@locale": "ha",
+  "appTitle": "Styloria",
+  "account": "Asusu",
+  "profile": "Bayanin martaba",
+  "myBookings": "Ajiyata na",
+  "openJobs": "Ayyuka a bude",
+  "earnings": "Kuɗaɗen shiga",
+  "paymentMethods": "Hanyoyin biya",
+  "referFriends": "Gayyaci abokai",
+  "language": "Harshe",
+  "settings": "Saituna",
+  "darkMode": "Yanayin duhu",
+  "systemDefault": "Tsohon saitin tsarin",
+  "languageUpdated": "An sabunta harshe",
+  "languageSetToSystemDefault": "An saita harshe zuwa tsohon saitin tsarin",
+  "helpAndSupport": "Taimako da goyon baya",
+  "chatWithCustomerService": "Tattauna da sabis na abokan ciniki",
+  "aboutAndPolicies": "Game da manhaja da manufofi",
+  "viewUserPoliciesAndAgreements": "Duba manufofi da yarjejeniyar mai amfani",
+  "logOut": "Fita",
+  "deleteAccount": "Goge asusu",
+  "deleteAccountSubtitle": "Ba za a iya mayar da wannan ba",
+  "deleteAccountTitle": "Goge asusu",
+  "deleteAccountConfirmBody": "Ka tabbata kana so ka goge asusunka?\n\nWannan zai fitar da kai kuma kana iya rasa damar shiga har abada.",
+  "no": "A’a",
+  "yesDelete": "Eh, goge",
+  "deleteAccountSheetTitle": "Mun yi nadamar ganin ka tafi.",
+  "deleteAccountSheetPrompt": "Za ka iya gaya mana dalili? (Zaɓi duk abin da ya dace)",
+  "deleteAccountSelectAtLeastOneReason": "Da fatan za a zaɓi aƙalla dalili ɗaya.",
+  "tellUsMoreOptional": "Faɗa mana ƙari (na zaɓi)",
+  "suggestionsToImproveOptional": "Shawarwari don ingantawa (na zaɓi)",
+  "deleteMyAccount": "Goge asusuna",
+  "cancel": "Soke",
+  "failedToDeleteAccount": "An kasa goge asusu. Da fatan a sake gwadawa.",
+  "choosePreferredLanguage": "Zaɓi harshen da kake so",
+  "noteSomeTextMayStillAppearInEnglish": "Lura: Wannan yana canza harshen manhaja. Wasu rubutu na iya ci gaba da kasancewa Turanci har sai an ƙara fassara.",
+  "languageSetToName": "An saita harshe zuwa {name}",
+  "@languageSetToName": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "deletionReason1": "Ba na buƙatar Styloria kuma",
+  "deletionReason2": "Na fuskanci matsala wajen tabbatar da asusu (imel/KYC)",
+  "deletionReason3": "Ban samu sabis/masu bayar da sabis kusa da ni ba",
+  "deletionReason4": "Farashi ko kuɗaɗe sun yi yawa / ba su da bayani",
+  "deletionReason5": "Manhajar ta rikitar / ta yi wahala amfani",
+  "deletionReason6": "Kurakurai ko matsalolin aiki",
+  "deletionReason7": "Matsalolin biya/mayar da kuɗi",
+  "deletionReason8": "Mummunan ƙwarewa da mai bayar da sabis/mai amfani",
+  "deletionReason9": "Damuwar sirri ko tsaro",
+  "deletionReason10": "Na ƙirƙiri wannan asusu bisa kuskure",
+  "deletionReason11": "Ina komawa wani dandali",
+  "deletionReason12": "Sauran",
+  "loginWelcomeTitle": "Barka da zuwa Styloria",
+  "loginWelcomeSubtitle": "Shiga domin sarrafa ajiyarka da ayyuka.",
+  "loginFailedToLoadUserInfo": "An shiga amma an kasa loda bayanan mai amfani.",
+  "username": "Sunan mai amfani",
+  "password": "Kalmar sirri",
+  "required": "Dole",
+  "login": "Shiga",
+  "createNewAccount": "Ƙirƙiri sabon asusu",
+  "requestEmailVerificationCode": "Nemi lambar tantance imel",
+  "createAccountTitle": "Ƙirƙiri asusu",
+  "joinStyloria": "Shiga Styloria",
+  "registerSubtitle": "Ƙirƙiri asusu don yin booking ko zama mai bada sabis",
+  "iWantTo": "Ina so:",
+  "bookServices": "In yi booking sabis",
+  "provideServices": "In bada sabis",
+  "personalInformation": "Bayanan mutum",
+  "firstName": "Sunan farko",
+  "lastName": "Sunan ƙarshe",
+  "selectDateOfBirth": "Zaɓi ranar haihuwa",
+  "phoneNumber": "Lambar waya",
+  "pleaseEnterPhoneNumber": "Da fatan a shigar da lambar waya",
+  "accountInformation": "Bayanan asusu",
+  "chooseUniqueUsernameHint": "Zaɓi sunan mai amfani na musamman",
+  "email": "Imel",
+  "emailHint": "your@email.com",
+  "enterValidEmail": "Shigar da imel mai inganci",
+  "security": "Tsaro",
+  "passwordHintAtLeast10": "Aƙalla haruffa 10",
+  "passwordMin10": "Kalmar sirri dole ta kasance aƙalla haruffa 10",
+  "iAgreeTo": "Na yarda da ",
+  "termsOfService": "Sharuɗɗan Sabis",
+  "and": "da",
+  "privacyPolicy": "Manufar Sirri",
+  "passwordIsRequired": "Kalmar sirri dole ne",
+  "confirmPassword": "Tabbatar da kalmar sirri",
+  "passwordsDoNotMatch": "Kalmar sirri ba su yi daidai ba",
+  "pleaseSelectDob": "Da fatan a zaɓi ranar haihuwa.",
+  "pleaseSelectCountry": "Da fatan a zaɓi ƙasa.",
+  "pleaseSelectCity": "Da fatan a zaɓi birni.",
+  "pleaseEnterValidPhone": "Da fatan a shigar da lambar waya mai inganci.",
+  "mustAcceptTerms": "Dole ne ka amince da sharuɗɗa.",
+  "mustBeAtLeast18": "Dole ne ka zama aƙalla shekara 18 don yin rajista.",
+  "agreeToTerms": "Na amince da Sharuɗɗan Sabis da Manufofin Sirri",
+  "createAccountButton": "Ƙirƙiri asusu",
+  "alreadyHaveAccount": "Kana da asusu tuni?",
+  "emailVerifiedSuccessPleaseLogin": "An tabbatar da imel. Da fatan a shiga.",
+  "pleaseVerifyEmailToContinue": "Da fatan a tabbatar da imel don ci gaba.",
+  "requestVerificationCodeTitle": "Nemi lambar tantancewa",
+  "requestVerificationInstructions": "Shigar da imel ko sunan mai amfani.\nZa mu aika sabon lambar tantancewa zuwa imel na wannan asusu.",
+  "emailOrUsername": "Imel ko Sunan mai amfani",
+  "sendCode": "Aika lamba",
+  "ifAccountExistsCodeSent": "Idan asusun yana akwai, an aika lamba.",
+  "failedToSendVerificationCode": "An kasa aika lambar tantancewa.",
+  "verifyYourEmailTitle": "Tabbatar da imel ɗinka",
+  "verificationCodeSentInfo": "An aika lambar tantancewa zuwa imel na wannan asusu.",
+  "emailVerificationInstructions": "Shigar da lambar 6-digit da aka aika zuwa imel na wannan asusu:\n{identifier}",
+  "@emailVerificationInstructions": {
+    "placeholders": {
+      "identifier": {}
+    }
+  },
+  "verificationCodeLabel": "Lambar tantancewa",
+  "sendingEllipsis": "Ana aikawa...",
+  "resendCode": "Sake aika lamba",
+  "enter6DigitCodeError": "Shigar da lambar 6-digit.",
+  "verifyingEllipsis": "Ana tantancewa...",
+  "verify": "Tabbatar",
+  "invalidOrExpiredCodeTryResending": "Lamba ba daidai ba ko ta ƙare. Gwada sake aikawa.",
+  "bookingTitle": "Ajiyar #{id}",
+  "@bookingTitle": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+  "invalidBookingIdForChat": "ID ɗin ajiyar ba daidai ba ne don hira.",
+  "invalidBookingIdForCall": "ID ɗin ajiyar ba daidai ba ne don kira.",
+  "unableToLoadContactInfo": "Ba a iya ɗauko bayanan tuntuɓa ba. Tabbatar ajiyar tana aiki.",
+  "noPhoneNumberAvailableForName": "Babu lambar waya da ake da ita ga {name}.",
+  "@noPhoneNumberAvailableForName": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "deviceCannotPlaceCalls": "Wannan na’urar ba za ta iya yin kira ba.",
+  "cancelBookingDialogTitle": "Soke ajiyar",
+  "cancelBookingDialogBody": "Kana son soke wannan ajiyar da gaske?\n\nLura: Idan mai bayar da sabis ya riga ya amince kuma fiye da minti 7 sun wuce (amma ƙasa da kusan minti 40), ana iya saka tara bisa ƙa’ida.",
+  "yesCancel": "Eh, soke",
+  "failedToCancelBooking": "An kasa soke ajiyar.",
+  "bookingCancelledPenaltyApplied": "An soke ajiyar. An saka tara {amount}.",
+  "@bookingCancelledPenaltyApplied": {
+    "placeholders": {
+      "amount": {}
+    }
+  },
+  "bookingCancelledSuccessfully": "An soke ajiyar cikin nasara.",
+  "failedToConfirmCompletion": "An kasa tabbatar da kammalawa. Da fatan a sake gwadawa.",
+  "bothSidesConfirmedCompletedPayoutReleased": "Duk ɓangarorin sun tabbatar. An sanya ajiyar a matsayin an kammala kuma an saki biya.",
+  "youConfirmedCompletionWaitingForProvider": "Ka tabbatar da kammalawa. Ana jiran mai bayar da sabis ya tabbatar.",
+  "youConfirmedCompletionWaitingForUser": "Ka tabbatar da kammalawa. Ana jiran mai amfani ya tabbatar.",
+  "statusUnknown": "ba a sani ba",
+  "statusAccepted": "an amince",
+  "statusInProgress": "ana yi",
+  "statusCompleted": "an kammala",
+  "statusCancelled": "an soke",
+  "paymentPaid": "an biya",
+  "paymentPending": "ana jira",
+  "paymentFailed": "ya gaza",
+  "bookingAcceptedBy": "{name} ya amince da ajiyar",
+  "@bookingAcceptedBy": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "whenLabel": "Yaushe",
+  "atTime": "da {time}",
+  "@atTime": {
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "userLabel": "Mai amfani",
+  "providerLabel": "Mai bayar da sabis",
+  "estimatedPriceLabel": "Farashi da aka kiyasta",
+  "offeredPaidLabel": "An bayar / an biya",
+  "distanceLabel": "Nisa",
+  "distanceMiles": "{miles} miles",
+  "@distanceMiles": {
+    "placeholders": {
+      "miles": {}
+    }
+  },
+  "acceptedAtLabel": "An amince da",
+  "cancelledAtLabel": "An soke da",
+  "cancelledByLabel": "Wanda ya soke",
+  "penaltyAppliedLabel": "An saka tara: {amount}",
+  "@penaltyAppliedLabel": {
+    "placeholders": {
+      "amount": {}
+    }
+  },
+  "userConfirmedLabel": "Mai amfani ya tabbatar",
+  "providerConfirmedLabel": "Mai bayar da sabis ya tabbatar",
+  "payoutReleasedLabel": "An saki biya",
+  "yesLower": "eh",
+  "noLower": "a’a",
+  "chat": "Hira",
+  "call": "Kira",
+  "actions": "Ayyuka",
+  "confirmCompletion": "Tabbatar da kammalawa",
+  "noFurtherActionsForBooking": "Babu ƙarin aiki ga wannan ajiyar.",
+  "freeCancellationEndsIn": "Soke kyauta zai ƙare cikin {time}",
+  "@freeCancellationEndsIn": {
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "earlyFreeCancellationEndedWarning": "Lokacin soke kyauta na farko ya ƙare. Har zuwa kusan minti 40 bayan amincewa, soke da wuri na iya jawo tara.",
+  "cancelBooking": "Soke ajiyar",
+  "cancelBookingNoPenalty": "Soke ajiyar (ba tare da tara ba)",
+  "cancelBookingPenaltyMayApply": "Soke ajiyar (tara na iya kasancewa)",
+  "cancellationPolicyInfo": "Za ka iya soke ba tare da tara ba cikin minti 7 na farko bayan mai bayar da sabis ya amince, sannan kuma bayan kusan minti 40 idan ya zama dole. Tsakanin waɗannan lokuta, tara na iya kasancewa bisa ƙa’ida.",
+  "ratingLine": "Kima: {rating} ({reviewCount, plural, =1{bita 1} other{bita {reviewCount}}})",
+  "@ratingLine": {
+    "placeholders": {
+      "rating": {},
+      "reviewCount": {
+        "type": "int"
+      }
+    }
+  },
+  "proofOfSkillsPortfolio": "Shaidar ƙwarewa (Portfolio)",
+  "noPortfolioPostsAvailable": "Babu posts na portfolio da ake da su.",
+  "bookingLocation": "Wurin ajiyar",
+  "location": "Wuri",
+  "latitude": "Latitude",
+  "longitude": "Longitude",
+  "mapWillAppearWhenCoordinatesValid": "Taswira za ta bayyana a nan idan coordinates sun inganta.",
+  "chatForBookingTitle": "Hira don ajiyar #{id}",
+  "@chatForBookingTitle": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+  "unableToStartChat": "An kasa fara hira. Hira tana samuwa ne kawai idan ajiyar ta amince, ana yi, ko an kammala cikin ranar da ta wuce.",
+  "invalidChatThreadFromServer": "An dawo da chat thread mara inganci daga server.",
+  "messageNotSentPolicy": "Ba a aika saƙo ba. Lura: ba a yarda a raba lambar waya ko imel a cikin tattaunawa ba.",
+  "unknown": "Ba a sani ba",
+  "typeMessageHint": "Rubuta saƙo zuwa tallafi...",
+  "uploadProfilePicture": "Loda hoton bayanin martaba",
+  "currentProfilePicture": "Hoton bayanin martaba na yanzu",
+  "newPicturePreview": "Duba hoton sabo",
+  "chooseImage": "Zaɓi hoto",
+  "upload": "Loda",
+  "noImageBytesFoundWeb": "Ba a sami bytes na hoto ba (web).",
+  "pleasePickAnImageFirst": "Da fatan a zaɓi hoto da farko.",
+  "uploadFailedCheckServerLogs": "Loda ya gaza. Duba server logs / token.",
+  "profilePictureUploadedSuccessfully": "An loda hoton bayanin martaba cikin nasara!",
+  "errorWithValue": "Kuskure: {error}",
+  "@errorWithValue": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+
+  "youAreCurrentlyUnavailable": "Ba ka samuwa a yanzu",
+  "toBrowseAndAcceptJobsEnableAvailability": "Don duba da karɓar buƙatun aiki a kusa, kana buƙatar sanya kanka a matsayin mai samuwa don ajiya.",
+  "goToProfileSettings": "Je zuwa Saituna na Bayanan Martaba",
+  "tipToggleAvailableForBookings": "Shawara: Kunna \"Akwai don Ajiya\" a Bayanan Martabar Mai Ba da Sabis ɗinka don fara karɓar buƙatun aiki.",
+  "requestedBy": "An buƙata daga: {name}",
+  "@requestedBy": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "locationLabel": "Wuri: {address}",
+  "@locationLabel": {
+    "placeholders": {
+      "address": {
+        "type": "String"
+      }
+    }
+  },
+
+  "tapToChangeProfilePicture": "Taɓa don canza hoton bayanin martaba",
+  "usernameValue": "Sunan mai amfani: {username}",
+  "@usernameValue": {
+    "placeholders": {
+      "username": {}
+    }
+  },
+  "roleValue": "Matsayi: {role}",
+  "@roleValue": {
+    "placeholders": {
+      "role": {}
+    }
+  },
+  "dateOfBirthYyyyMmDd": "Ranar haihuwa (YYYY-MM-DD)",
+  "saveProfile": "Ajiye bayanin martaba",
+  "failedToSaveProfile": "An kasa ajiye bayanan martaba. Da fatan a sake gwadawa.",
+  "profileUpdated": "An sabunta bayanin martaba.",
+  "completeYourProviderProfile": "Kammala bayanin martabar mai bayar da sabis",
+  "completeProviderProfileBody": "Don fara karɓar ayyuka da samun kuɗi, kammala bayanin martabar mai bayar da sabis.",
+  "setupProfileNow": "Saita bayanin martaba yanzu",
+  "doItLater": "Daga baya",
+  "bookingTimerPenaltyPeriodActive": "Lokacin tara yana aiki",
+  "bookingTimerFreeCancellationPeriod": "Lokacin soke kyauta",
+  "bookingTimerTimeRemaining": "Lokaci ya rage: {time}",
+  "@bookingTimerTimeRemaining": {
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "bookingTimerCancellingNowPenalty": "Soke yanzu zai jawo tara 10%.",
+  "bookingTimerCancelNoPenalty": "Za ka iya soke ba tare da tara ba.",
+  "myReviewsTitle": "Bitocina na",
+  "failedToLoadReviews": "An kasa loda bitoci.",
+  "noReviewsYet": "Har yanzu baka bar bitoci ba.",
+  "providerWithName": "Mai bayar da sabis: {name}",
+  "providerGeneric": "Mai bayar da sabis",
+  "ratingWithValue": "Kima: {rating}",
+  "nearbyOpenJobsTitle": "Ayyuka masu budewa a kusa",
+  "failedToLoadOpenJobsHint": "An kasa loda ayyuka masu budewa.\nTabbatar kana da provider profile da location kuma available=true.",
+  "errorLoadingJobsWithValue": "Kuskure yayin loda ayyuka: {error}",
+  "noOpenJobsFoundNearbyTitle": "Ba a sami aikin budewa a kusa ba",
+  "noOpenJobsFoundNearbyBody": "Tabbatar:\n- Ka saita provider location\n- Kana a matsayin available\n- Masu amfani sun kirkira kuma sun biya bookings",
+  "currencyLabel": "Kuɗi: {symbol}",
+  "pricesShownInCurrency": "Ana nuna farashi a {symbol} ({country})",
+  "jobTitleWithId": "Aiki #{id}",
+  "serviceLine": "Sabis: {service}",
+  "whenLine": "Lokaci: {date} {time}",
+  "priceLine": "Farashi: {price}",
+  "acceptJob": "Karɓi aiki",
+  "failedToAcceptJob": "An kasa karɓar aikin.",
+  "jobAcceptedSuccessfully": "An karɓi aikin cikin nasara.",
+  "newServiceRequestTitle": "Sabon buƙatar sabis",
+  "offeredPriceLabel": "Farashin da aka bayar",
+  "offeredPriceHint": "misali 25.00",
+  "enterValidPrice": "Shigar da farashi mai inganci",
+  "bookAndPay": "Yi booking & biya",
+  "bookAndPayAmount": "Yi booking & biya {amount}",
+  "haircutService": "Aski",
+  "stylingService": "Gyara",
+  "timeLabel": "Lokaci:",
+  "notesLabel": "Bayanan kula",
+  "requestCreatedAndPaidBroadcast": "An ƙirƙiri buƙata kuma an biya! An tura wa providers.",
+  "locationLatLng": "Wuri: {lat}, {lng}",
+  "paymentMethodsTitle": "Hanyoyin biya",
+  "paymentPreferencesInfo": "Ana adana waɗannan zaɓuɓɓuka a cikin na’urarka. Ainihin biyan kuɗi ana sarrafa shi ta Stripe/wasu gateways.",
+  "preferredMethodLabel": "Hanyar da aka fi so (gateway na gida bisa ƙasa)",
+  "methodVisaMastercard": "Visa/Mastercard",
+  "methodMobileMoney": "Mobile Money (Momo/Paystack/Africa)",
+  "methodPaypal": "PayPal",
+  "methodApplePayGooglePay": "Apple Pay/Google Pay",
+  "methodWeChatPay": "WeChat Pay (China)",
+  "methodAlipay": "Alipay (China)",
+  "methodUnionPay": "UnionPay Card (China)",
+  "mobileMoneyNumberLabel": "Lambar Mobile Money",
+  "wechatAlipayIdLabel": "WeChat/Alipay ID",
+  "cardLast4DigitsLabel": "Lambobi 4 na ƙarshe na kati",
+  "paypalEmailLabel": "PayPal email",
+  "applePayEnabledOnDevice": "Apple Pay yana kunne a wannan na’urar",
+  "savePaymentPreferences": "Ajiye zaɓin biyan kuɗi",
+  "paymentPrefsSavedInfo": "An ajiye zaɓin biyan kuɗi a cikin na’ura. Ainihin caji za a yi shi daga baya ta Stripe/wasu gateways.",
+  "failedToLoadImage": "An kasa loda hoto",
+  "earningsTitle": "Kuɗin shiga",
+  "couldNotLoadEarningsSummary": "An kasa loda taƙaitaccen kuɗin shiga.",
+  "noData": "Babu data.",
+  "retry": "Sake gwadawa",
+  "summaryTitle": "Taƙaitawa",
+  "totalLabel": "Jimla",
+  "pendingLabel": "Ana jira",
+  "paidLabel": "An biya",
+  "pdfReportTitle": "Rahoton PDF",
+  "periodLabel": "Lokaci",
+  "periodThisMonth": "Wannan wata",
+  "periodLastMonth": "Watan da ya gabata",
+  "periodYtd": "Shekara zuwa yanzu",
+  "periodAllTime": "Duk lokaci",
+  "couldNotDownloadPdfReport": "An kasa sauke rahoton PDF.",
+  "couldNotOpenPdfWithValue": "An kasa buɗe PDF: {error}",
+  "savingFilesNotSupportedWeb": "Ajiye fayil ba ya aiki a Web a yanzu.",
+  "savedToDocumentsIosWithPath": "An ajiye a Documents (iOS):\n{path}",
+  "savedToFilesWithPath": "An ajiye a files:\n{path}",
+  "open": "Buɗe",
+  "failedToSavePdfWithValue": "An kasa ajiye PDF: {error}",
+  "openPdfReport": "Buɗe rahoton PDF",
+  "savePdfToDownloads": "Ajiye PDF zuwa Downloads",
+  "reportWatermarkNote": "Rahoton PDF ya kamata ya ƙunshi Styloria watermark.",
+  "referFriendsTitle": "Gayya abokai",
+  "shareReferralCodeBody": "Raba lambar referral ɗinka da abokai. Daga baya zaka iya ƙara lada idan sun yi rajista kuma sun kammala bookings.",
+  "yourReferralCodeLabel": "Lambar referral ɗinka:",
+  "copy": "Kwafi",
+  "referralCodeCopiedWithCode": "An kwafi lambar referral: {code}",
+  "navHome": "Gida",
+  "navBookings": "Bookings",
+  "navNotifications": "Sanarwa",
+  "navAccount": "Asusu",
+  "welcome": "Barka da zuwa",
+  "welcomeName": "Barka da zuwa, {name}",
+  "@welcomeName": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "toggleThemeTooltip": "Canza haske/duhu",
+  "loggedInAs": "Ka shiga a matsayin: {role}",
+  "@loggedInAs": {
+    "placeholders": {
+      "role": {}
+    }
+  },
+  "locationWithValue": "Wuri: {value}",
+  "@locationWithValue": {
+    "placeholders": {
+      "value": {}
+    }
+  },
+  "homeTagline": "Ka inganta grooming ɗinka da real-time bookings da providers masu aminci.",
+  "manageProviderProfile": "Sarrafa provider profile",
+  "browseOpenJobs": "Duba open jobs",
+  "quickActions": "Ayyuka na gaggawa",
+  "newBooking": "Sabon booking",
+  "notificationsWithUnread": "Sanarwa ({count, plural, =1{1 ba a karanta ba} other{{count} ba a karanta ba}})",
+  "@notificationsWithUnread": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "liveLocationTrackingTitle": "Bin diddigin wuri kai tsaye",
+  "live": "Live",
+  "locationServicesDisabled": "An kashe location services",
+  "locationPermissionDenied": "An hana izinin location",
+  "locationPermissionPermanentlyDenied": "An hana izinin location har abada",
+  "failedToGetLocationWithValue": "An kasa samun wuri: {error}",
+  "@failedToGetLocationWithValue": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "youProvider": "Kai (Provider)",
+  "youCustomer": "Kai (Customer)",
+  "customer": "Customer",
+  "bookingDetails": "Booking details",
+  "navigate": "Navigate",
+  "failedToLoadNotifications": "An kasa loda sanarwa.",
+  "failedToMarkAsRead": "An kasa sanya a matsayin an karanta",
+  "noNotificationsYet": "Babu sanarwa tukuna.",
+  "markRead": "Sanya an karanta",
+  "providerKycTitle": "Tabbatar da Mai Ba da Sabis (KYC)",
+  "logoutTooltip": "Fita",
+  "statusLabel": "Matsayi: {status}",
+  "@statusLabel": {
+    "placeholders": {
+      "status": {}
+    }
+  },
+  "rejectedWithNotes": "An ƙi: {notes}",
+  "@rejectedWithNotes": {
+    "placeholders": {
+      "notes": {}
+    }
+  },
+  "kycInstructions": "Don samun damar fasalolin mai ba da sabis, loda katin shaida da selfie don tabbaci.",
+  "idFrontRequired": "Gaban shaida (dole)",
+  "selectIdFront": "Zaɓi gaban shaida",
+  "idBackRequired": "Bayan shaida (dole)",
+  "selectIdBackRequired": "Zaɓi bayan shaida",
+  "selfieRequired": "Selfie (dole)",
+  "selectSelfie": "Zaɓi selfie",
+  "takeSelfie": "Dauki selfie",
+  "errorUploadAllRequired": "Da fatan za a loda shaida (gaba), shaida (baya), da selfie.",
+  "failedSubmitKycCode": "An kasa aika KYC (lamba {code}).",
+  "@failedSubmitKycCode": {
+    "placeholders": {
+      "code": {}
+    }
+  },
+  "submittedCurrentStatus": "An aika. Matsayi na yanzu: {status}",
+  "@submittedCurrentStatus": {
+    "placeholders": {
+      "status": {}
+    }
+  },
+  "unknownStatus": "ba a sani ba",
+  "submitKyc": "Aika KYC",
+  "verificationMayTakeTimeNote": "Lura: Tabbatarwa na iya ɗaukar lokaci. Za ka iya amfani da fasalolin mai ba da sabis idan an amince.",
+  "enterVerificationCodeTitle": "Shigar da lambar tabbaci",
+  "otpSentToUsername": "Mun aika lambar digit 6 zuwa lambar waya\nmai alaƙa da \"{username}\".",
+  "@otpSentToUsername": {
+    "placeholders": {
+      "username": {}
+    }
+  },
+  "sixDigitCodeLabel": "Lambar digit 6",
+  "enterSixDigitCodeValidation": "Shigar da lambar digit 6",
+  "otpInvalidOrExpired": "Lamba ba daidai ba ko ta ƙare.",
+  "failedLoadUserInfoAfterVerification": "An kasa loda bayanan mai amfani bayan tabbaci.",
+  "chatWithSupportTitle": "Tattauna da Tallafi",
+  "unableStartSupportChat": "An kasa fara tattaunawar tallafi.",
+  "invalidSupportThreadReturned": "An dawo da thread na tallafi mara inganci daga uwar garke.",
+  "noMessagesYet": "Babu saƙonni tukuna. Fara hira!",
+  "supportDefaultName": "Tallafi",
+  "aboutPoliciesTitle": "Game da & Manufofi",
+  "paymentsNotSupportedShort": "Ba a goyon bayan biyan kuɗi a wannan dandali. Da fatan a yi amfani da Android, iOS, macOS ko Web.",
+  "failedToLoadProfile": "An kasa ɗora bayanan martaba: {error}",
+  "profileSavedSuccess": "An {action} bayanan martaba cikin nasara!",
+  "genericError": "Kuskure: {error}",
+  "locationPermissionDeniedEnableInSettings": "An ƙi izinin wuri. Da fatan a kunna shi a saituna.",
+  "locationPermissionPermanentlyDeniedEnableInAppSettings": "An ƙi izinin wuri har abada. Da fatan a kunna shi a saitunan manhaja.",
+  "errorGettingLocation": "Kuskure wajen samun wuri: {error}",
+  "pleaseEnterAddress": "Da fatan a shigar da adireshi",
+  "locationUpdatedFromAddress": "An sabunta wuri daga adireshi",
+  "couldNotFindLocationForAddress": "Ba a samu wurin wannan adireshin ba",
+  "errorConvertingAddress": "Kuskure wajen canza adireshi: {error}",
+  "portfolioUnavailableCompleteKycFirst": "Portfolio baya samuwa. Idan kai mai ba da sabis ne, ka kammala tantancewar KYC da farko.",
+  "failedToLoadPortfolio": "An kasa ɗora portfolio: {error}",
+  "addPhoto": "Ƙara hoto",
+  "addVideo": "Ƙara bidiyo",
+  "addPost": "Ƙara post",
+  "captionOptionalTitle": "Bayani (zaɓi)",
+  "captionHintExample": "misali: “Knotless braids ga abokin ciniki”",
+  "skip": "Tsallake",
+  "save": "Ajiye",
+  "failedToCreatePortfolioPost": "An kasa ƙirƙirar post na portfolio.",
+  "uploadFailedMediaUpload": "Tura (upload) ya gaza (tura media).",
+  "uploadFailed": "Tura (upload) ya gaza: {error}",
+  "deletePostTitle": "A goge post?",
+  "deletePostBody": "Wannan zai cire post ɗin daga portfolio ɗinka.",
+  "delete": "Goge",
+  "deleteFailed": "Goge ya gaza.",
+  "deleteFailedWithError": "Goge ya gaza: {error}",
+  "portfolioTitle": "Portfolio",
+  "noPortfolioPostsYetHelpText": "Babu posts a portfolio tukuna. Ƙara hotuna/bidiyo na aikinka domin taimaka wa kwastomomi su yarda da ƙwarewarka.",
+  "setupProviderProfileTitle": "Saita bayanan mai ba da sabis",
+  "providerProfileTitle": "Bayanan mai ba da sabis",
+  "welcomeToStyloriaTitle": "Barka da zuwa Styloria!",
+  "completeProviderProfileToStartEarning": "Cika bayanan mai ba da sabis domin fara karɓar aiki da samun kuɗi.",
+  "reviewCountLabel": "({count} bita)",
+  "topRatedChip": "Mafi ƙima",
+  "bioLabel": "Bio / Bayani",
+  "bioHint": "Faɗa wa kwastomomi game da ƙwarewarka da gogewarka...",
+  "pleaseEnterBio": "Da fatan a shigar da bio",
+  "bioMinLength": "Bio ya kamata ya kasance aƙalla haruffa {min}",
+  "yourLocationTitle": "Wurinka",
+  "locationHelpMatchNearbyClients": "Wurinka yana taimaka mana mu haɗa ka da kwastomomi a kusa",
+  "locationHelpUpdateToFindJobs": "Sabunta wuri don nemo ayyuka a wasu yankuna",
+  "useMyCurrentLocationTitle": "Yi amfani da wurina na yanzu",
+  "gpsSubtitle": "Samo wuri ta atomatik ta GPS",
+  "orLabel": "KO",
+  "enterYourAddressTitle": "Shigar da adireshinka",
+  "fullAddressLabel": "Cikakken adireshi",
+  "fullAddressHint": "misali: 123 Main St, Accra, Ghana",
+  "find": "Nemo",
+  "addressHelpText": "Shigar da adireshin titi, birni, da ƙasa",
+  "coordinatesAutoFilledTitle": "Kodinates (ana cikawa ta atomatik)",
+  "servicePricingTitle": "Farashin sabis",
+  "servicePricingHelp": "Saita farashinka ga kowane sabis. Zaɓi \"Ba a bayar\" ga sabis ɗin da ba za ka iya yi ba.",
+  "serviceHeader": "Sabis",
+  "priceHeader": "Farashi",
+  "notOfferedHeader": "Ba a bayar",
+  "priceHint": "0.00",
+  "providerHowPricingWorksTitle": "Yadda farashi ke aiki:",
+  "providerHowPricingWorksBody": "• Farashinka shi ne abin da kake caji don sabis\n• Kudin sufuri = 80% na kudin mai amfani a kowace km\n• Masu amfani suna ganin zaɓuɓɓuka 3 bisa masu ba da sabis a kusa:\n  - Budget: mafi ƙanƙanta farashi\n  - Standard: matsakaicin farashi\n  - Priority: mafi girma farashi",
+  "availableForBookingsTitle": "Akwai don booking",
+  "availableOnHelp": "✓ Za ka bayyana a sakamakon bincike ga kwastomomi a kusa",
+  "availableOffHelp": "✗ Ba za ka karɓi sabbin tayin aiki ba",
+  "completeSetupStartEarning": "Kammala saitin kuma fara samun kuɗi",
+  "updateProfile": "Sabunta bayanan martaba",
+  "skipForNow": "Tsallake yanzu",
+  "@providerWithName": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "@ratingWithValue": {
+    "placeholders": {
+      "rating": {}
+    }
+  },
+  "@errorLoadingJobsWithValue": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@currencyLabel": {
+    "placeholders": {
+      "symbol": {}
+    }
+  },
+  "@pricesShownInCurrency": {
+    "placeholders": {
+      "symbol": {},
+      "country": {}
+    }
+  },
+  "@jobTitleWithId": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+  "@serviceLine": {
+    "placeholders": {
+      "service": {}
+    }
+  },
+  "@whenLine": {
+    "placeholders": {
+      "date": {},
+      "time": {}
+    }
+  },
+  "@priceLine": {
+    "placeholders": {
+      "price": {}
+    }
+  },
+  "@bookAndPayAmount": {
+    "placeholders": {
+      "amount": {}
+    }
+  },
+  "@locationLatLng": {
+    "placeholders": {
+      "lat": {},
+      "lng": {}
+    }
+  },
+  "@couldNotOpenPdfWithValue": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@savedToDocumentsIosWithPath": {
+    "placeholders": {
+      "path": {}
+    }
+  },
+  "@savedToFilesWithPath": {
+    "placeholders": {
+      "path": {}
+    }
+  },
+  "@failedToSavePdfWithValue": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@referralCodeCopiedWithCode": {
+    "placeholders": {
+      "code": {}
+    }
+  },
+  "newBookingTitle": "New Booking",
+  "appointmentDetailsTitle": "Appointment details",
+  "pickDate": "Pick date",
+  "pickTime": "Pick time",
+  "serviceTypeTitle": "Service type",
+  "serviceDropdownLabel": "Service",
+  "serviceHaircutLabel": "Haircut",
+  "serviceBraidsLabel": "Braids",
+  "serviceShaveLabel": "Shave",
+  "serviceHairColoringLabel": "Hair Coloring",
+  "serviceManicureLabel": "Manicure",
+  "servicePedicureLabel": "Pedicure",
+  "serviceNailArtLabel": "Nail Art",
+  "serviceMakeupLabel": "Makeup",
+  "serviceFacialLabel": "Facial",
+  "serviceWaxingLabel": "Waxing",
+  "serviceMassageLabel": "Massage",
+  "serviceHairStylingLabel": "Hair Styling",
+  "serviceHairTreatmentLabel": "Hair Treatment",
+  "serviceHairExtensionsLabel": "Hair Extensions",
+  "serviceOtherServicesLabel": "Other Services",
+  "notesForProviderOptionalLabel": "Notes for your provider (optional)",
+  "locationTitle": "Location",
+  "latitudeLabel": "Latitude",
+  "longitudeLabel": "Longitude",
+  "requiredField": "Required",
+  "useMyCurrentLocation": "Use my current location",
+  "pricesShownIn": "Prices shown in {symbol} ({country})",
+  "@pricesShownIn": {
+    "placeholders": {
+      "symbol": {},
+      "country": {}
+    }
+  },
+  "chooseTimeLaterThanCurrent": "Please choose a time later than the current time.",
+  "pleasePickDateAndTime": "Please pick date and time.",
+  "locationUpdatedFromGps": "Location updated from GPS.",
+  "failedToGetLocation": "Failed to get location: {error}",
+  "@failedToGetLocation": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "bookingCreatedChoosePrice": "Booking created! ID: {id} • Choose your price option.",
+  "@bookingCreatedChoosePrice": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+  "failedToCreateBooking": "Failed to create booking.",
+  "paymentsNotSupportedLong": "Payments are not supported on this platform. Please run the app on Android, iOS, macOS, or Web to test real payments.",
+  "noBookingToConfirm": "No booking to confirm. Please create a booking first.",
+  "pleaseChoosePriceOption": "Please choose a price option.",
+  "failedCreatePaymentTryAgain": "Failed to create payment on server. Please try again.",
+  "paymentSuccessfulMessage": "Payment successful!\nBooking #{bookingId} • Paid: {paid}\nYour request is now visible to nearby providers.",
+  "@paymentSuccessfulMessage": {
+    "placeholders": {
+      "bookingId": {},
+      "paid": {}
+    }
+  },
+  "paymentSucceededButFailedUpdate": "Payment succeeded, but failed to update booking on server.",
+  "paymentCancelledOrFailed": "Payment cancelled or failed: {reason}",
+  "@paymentCancelledOrFailed": {
+    "placeholders": {
+      "reason": {}
+    }
+  },
+  "unexpectedPaymentError": "Unexpected payment error: {error}",
+  "@unexpectedPaymentError": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "createBookingButton": "Create Booking",
+  "chooseYourPriceOptionTitle": "Choose Your Price Option",
+  "transportationCostLabel": "Transportation cost: {cost}",
+  "@transportationCostLabel": {
+    "placeholders": {
+      "cost": {}
+    }
+  },
+  "budgetTierTitle": "BUDGET",
+  "standardTierTitle": "STANDARD",
+  "priorityTierTitle": "PRIORITY",
+  "budgetTierDescription": "Best value among nearby providers",
+  "standardTierDescription": "Recommended balance of price & availability",
+  "priorityTierDescription": "Premium option to attract top providers faster",
+  "naShort": "N/A",
+  "priceBreakdownTitle": "Price Breakdown",
+  "servicePriceLabel": "Service Price",
+  "transportationLabel": "Transportation",
+  "serviceFeeLabel": "Service Fee ({percent}%)",
+  "@serviceFeeLabel": {
+    "placeholders": {
+      "percent": {}
+    }
+  },
+  "allPricesIn": "All prices in {currency} ({country})",
+  "@allPricesIn": {
+    "placeholders": {
+      "currency": {},
+      "country": {}
+    }
+  },
+  "userCountryPlaceholder": "User country",
+  "totalToPayTitle": "Total to Pay",
+  "includesServiceTransportation": "Includes service + transportation",
+  "confirmAndPay": "Confirm & Pay",
+  "howPricingWorksTitle": "How Pricing Works",
+  "howPricingWorksBullets": "• Budget: best value among nearby providers\n• Standard: recommended default\n• Priority: premium option to speed up acceptance\n• Transportation is included in the total",
+  "myBookingsTitle": "My Bookings",
+  "myAssignedJobsTitle": "My Assigned Jobs",
+  "pleaseCompleteProviderProfileFirst": "Please complete your provider profile first.",
+  "failedToLoadBookings": "Failed to load bookings.",
+  "profileSetupRequiredTitle": "Profile Setup Required",
+  "profileSetupRequiredBody": "You need to complete your provider profile before you can view assigned jobs and earnings.",
+  "later": "Later",
+  "setupNow": "Setup Now",
+  "noBookingsFound": "No bookings found.",
+  "findNearbyOpenJobs": "Find Nearby Open Jobs",
+  "pay": "Pay",
+  "rate": "Rate",
+  "bookingNumber": "Booking #{id}",
+  "@bookingNumber": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+  "whenOn": "When: {date}",
+  "@whenOn": {
+    "placeholders": {
+      "date": {}
+    }
+  },
+  "whenAt": "When: {date} at {time}",
+  "@whenAt": {
+    "placeholders": {
+      "date": {},
+      "time": {}
+    }
+  },
+  "providerLine": "Provider: {name}",
+  "@providerLine": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "userLine": "User: {name}",
+  "@userLine": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "estimatedPriceLine": "Estimated price: {price}",
+  "@estimatedPriceLine": {
+    "placeholders": {
+      "price": {}
+    }
+  },
+  "paymentLine": "Payment: {status}",
+  "@paymentLine": {
+    "placeholders": {
+      "status": {}
+    }
+  },
+  "paymentUnpaid": "unpaid",
+  "paymentUnknown": "unknown",
+  "confirmPaymentTitle": "Confirm payment",
+  "confirmPaymentBody": "Pay {amount} to confirm this booking?",
+  "@confirmPaymentBody": {
+    "placeholders": {
+      "amount": {}
+    }
+  },
+  "yesPay": "Yes, Pay",
+  "failedToCreatePaymentIntent": "Failed to create payment intent.",
+  "paymentSuccessfulShort": "Payment successful.",
+  "paymentSucceededButFailedUpdateBooking": "Payment succeeded, but failed to update booking on server.",
+  "paymentCancelledOrFailedReason": "Payment cancelled or failed: {reason}",
+  "@paymentCancelledOrFailedReason": {
+    "placeholders": {
+      "reason": {}
+    }
+  },
+  "unexpectedPaymentErrorReason": "Unexpected payment error: {error}",
+  "@unexpectedPaymentErrorReason": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "genericContact": "Tuntuɓa",
+  "genericProvider": "Mai bada sabis",
+  "genericNotAvailable": "Ba ya nan",
+
+  "rateProviderTitle": "Kimanta {providerName}",
+  "@rateProviderTitle": {
+    "placeholders": {
+      "provider": {}
+    }
+  },
+
+  "reviewSelectRatingPrompt": "Zaɓi ƙima (1 zuwa 5).",
+  "reviewCommentOptionalLabel": "Sharhi (na zaɓi)",
+  "genericCancel": "Soke",
+  "genericSubmit": "Aika",
+  "reviewSubmitted": "An aika da ra’ayi.",
+  "reviewSubmitFailed": "An kasa aika da ra’ayi.",
+  "rateThisService": "Kimanta wannan sabis",
+
+  "tipLeaveTitle": "Ba da tip",
+  "tipChooseAmountPrompt": "Zaɓi adadin tip ko shigar da naka.",
+  "tipNoTip": "Babu tip",
+  "tipCustomAmountLabel": "Adadin tip na musamman",
+  "genericContinue": "Ci gaba",
+
+  "tipSkipped": "An tsallake tip.",
+  "tipFailedToSaveChoice": "An kasa ajiye zaɓin tip.",
+  "tipFailedToCreatePayment": "An kasa ƙirƙirar biyan tip.",
+  "tipPaidSuccessfully": "An biya tip cikin nasara. Na gode!",
+  "tipPaidButUpdateFailed": "Biyan tip ya yi nasara, amma sabunta booking ya gaza.",
+
+  "tipCancelledOrFailed": "An soke/ya gaza tip: {message}",
+  "tipUnexpectedError": "Kuskuren tip da ba a zata ba: {error}",
+
+  "tipAlreadyPaidLabel": "An riga an biya tip",
+  "tipSkippedLabel": "An tsallake tip",
+  "walletTitle": "Walati",
+  "walletTooltip": "Walati",
+  "payoutSettingsTitle": "Saitunan biyan kuɗi",
+  "payoutSettingsTooltip": "Saitunan biyan kuɗi",
+  "walletNoWalletYet": "Har yanzu babu walati. Kammala ayyuka don samun kuɗi.",
+  "walletCurrencyFieldLabel": "Kuɗi",
+  "walletAvailableLine": "Akwai: {amount} {currency}",
+  "walletPendingLine": "Ana jira: {amount} {currency}",
+  "walletCashOutInstant": "Cire kuɗi nan take",
+  "walletCashOutFailed": "Cire kuɗi ya gaza.",
+  "walletCashOutSentTransfer": "An aika cire kuɗi. Canja wuri: {transferId}",
+  "walletTransactionsTitle": "Ma'amaloli",
+  "walletNoTransactionsYet": "Babu ma'amala tukuna.",
+  "payoutAutoPayoutsTitle": "Biyan kuɗi ta atomatik",
+  "payoutAutoPayoutsSubtitle": "Aika biyan kuɗi ta atomatik bisa jadawalinku.",
+  "payoutDayUtcLabel": "Ranar biya (UTC)",
+  "payoutHourUtcLabel": "Lokacin biya (UTC)",
+  "payoutMinimumAmountLabel": "Mafi ƙarancin adadin biyan kuɗi ta atomatik",
+  "payoutMinimumAmountHelper": "Biyan kuɗi ta atomatik zai gudana ne kawai idan adadin da ake da shi ≥ wannan.",
+  "payoutInstantCashOutEnabledTitle": "An kunna cire kuɗi nan take",
+  "payoutInstantCashOutEnabledSubtitle": "Ba da damar maɓallin “Cire kuɗi” (ana iya caji).",
+  "payoutSettingsSaved": "An adana saitunan biyan kuɗi.",
+  "payoutSettingsSaveFailed": "An kasa adana saitunan biyan kuɗi.",
+  "tipLeaveButton": "Ba da tip",
+
+  "selectRatingHelp": "Select rating (1 = poor, 5 = excellent):",
+  "commentsOptionalLabel": "Comments (optional)",
+  "submit": "Submit",
+  "reviewSubmitted": "Review submitted.",
+  "failedSubmitReview": "Failed to submit review.",
+  "@failedToLoadProfile": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@profileSavedSuccess": {
+    "placeholders": {
+      "action": {}
+    }
+  },
+  "@genericError": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@errorGettingLocation": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@errorConvertingAddress": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@failedToLoadPortfolio": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@uploadFailed": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@deleteFailedWithError": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@reviewCountLabel": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@bioMinLength": {
+    "placeholders": {
+      "min": {
+        "type": "int"
+      }
+    }
+  }
+}

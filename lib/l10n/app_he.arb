@@ -1,0 +1,962 @@
+{
+  "@@locale": "he",
+  "appTitle": "Styloria",
+  "account": "חשבון",
+  "profile": "פרופיל",
+  "myBookings": "ההזמנות שלי",
+  "openJobs": "משרות פתוחות",
+  "earnings": "רווחים",
+  "paymentMethods": "אמצעי תשלום",
+  "referFriends": "הזמנת חברים",
+  "language": "שפה",
+  "settings": "הגדרות",
+  "darkMode": "מצב כהה",
+  "systemDefault": "ברירת מחדל של המערכת",
+  "languageUpdated": "השפה עודכנה",
+  "languageSetToSystemDefault": "השפה הוגדרה לברירת המחדל של המערכת",
+  "helpAndSupport": "עזרה ותמיכה",
+  "chatWithCustomerService": "צ'אט עם שירות הלקוחות",
+  "aboutAndPolicies": "אודות ומדיניות",
+  "viewUserPoliciesAndAgreements": "צפייה במדיניות ובהסכמי משתמש",
+  "logOut": "התנתקות",
+  "deleteAccount": "מחיקת חשבון",
+  "deleteAccountSubtitle": "לא ניתן לבטל פעולה זו",
+  "deleteAccountTitle": "מחיקת חשבון",
+  "deleteAccountConfirmBody": "האם אתה בטוח שברצונך למחוק את החשבון שלך?\n\nפעולה זו תנתק אותך וייתכן שתאבד גישה לצמיתות.",
+  "no": "לא",
+  "yesDelete": "כן, למחוק",
+  "deleteAccountSheetTitle": "מצטערים לראות אותך עוזב/ת.",
+  "deleteAccountSheetPrompt": "אפשר לדעת למה? (בחר/י את כל המתאים)",
+  "deleteAccountSelectAtLeastOneReason": "אנא בחר/י לפחות סיבה אחת.",
+  "tellUsMoreOptional": "ספר/י לנו עוד (אופציונלי)",
+  "suggestionsToImproveOptional": "הצעות לשיפור (אופציונלי)",
+  "deleteMyAccount": "מחק את החשבון שלי",
+  "cancel": "ביטול",
+  "failedToDeleteAccount": "מחיקת החשבון נכשלה. נסה/י שוב.",
+  "choosePreferredLanguage": "בחר/י את השפה המועדפת",
+  "noteSomeTextMayStillAppearInEnglish": "הערה: פעולה זו משנה את שפת האפליקציה. ייתכן שחלק מהטקסט יופיע באנגלית עד שיוסיפו תרגומים.",
+  "languageSetToName": "השפה הוגדרה ל־{name}",
+  "@languageSetToName": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "deletionReason1": "אני כבר לא צריך/ה את Styloria",
+  "deletionReason2": "הייתה לי בעיה באימות החשבון (אימייל/KYC)",
+  "deletionReason3": "לא מצאתי שירותים/ספקים בקרבתי",
+  "deletionReason4": "המחירים או העמלות היו גבוהים מדי / לא ברורים",
+  "deletionReason5": "האפליקציה הייתה מבלבלת / קשה לשימוש",
+  "deletionReason6": "באגים או בעיות ביצועים",
+  "deletionReason7": "בעיות תשלום/החזר",
+  "deletionReason8": "חוויה רעה עם ספק/משתמש",
+  "deletionReason9": "חששות לגבי פרטיות או אבטחה",
+  "deletionReason10": "יצרתי את החשבון הזה בטעות",
+  "deletionReason11": "אני עובר/ת לפלטפורמה אחרת",
+  "deletionReason12": "אחר",
+  "loginWelcomeTitle": "ברוך הבא ל‑Styloria",
+  "loginWelcomeSubtitle": "התחבר כדי לנהל הזמנות ושירותים.",
+  "loginFailedToLoadUserInfo": "ההתחברות הצליחה אך לא ניתן לטעון את פרטי המשתמש.",
+  "username": "שם משתמש",
+  "password": "סיסמה",
+  "required": "נדרש",
+  "login": "התחברות",
+  "createNewAccount": "יצירת חשבון חדש",
+  "requestEmailVerificationCode": "בקשת קוד אימות לאימייל",
+  "createAccountTitle": "יצירת חשבון",
+  "joinStyloria": "הצטרפות ל‑Styloria",
+  "registerSubtitle": "צרו חשבון כדי להזמין שירותים או להפוך לספק",
+  "iWantTo": "אני רוצה:",
+  "bookServices": "להזמין שירותים",
+  "provideServices": "להציע שירותים",
+  "personalInformation": "פרטים אישיים",
+  "firstName": "שם פרטי",
+  "lastName": "שם משפחה",
+  "selectDateOfBirth": "בחר/י תאריך לידה",
+  "phoneNumber": "מספר טלפון",
+  "pleaseEnterPhoneNumber": "נא להזין מספר טלפון",
+  "accountInformation": "פרטי חשבון",
+  "chooseUniqueUsernameHint": "בחר/י שם משתמש ייחודי",
+  "email": "אימייל",
+  "emailHint": "your@email.com",
+  "enterValidEmail": "נא להזין אימייל תקין",
+  "security": "אבטחה",
+  "passwordHintAtLeast10": "לפחות 10 תווים",
+  "passwordMin10": "הסיסמה חייבת להכיל לפחות 10 תווים",
+  "iAgreeTo": "אני מסכים ל",
+  "termsOfService": "תנאי השירות",
+  "and": "ו",
+  "privacyPolicy": "מדיניות הפרטיות",
+  "passwordIsRequired": "סיסמה נדרשת",
+  "confirmPassword": "אימות סיסמה",
+  "passwordsDoNotMatch": "הסיסמאות אינן תואמות",
+  "pleaseSelectDob": "נא לבחור תאריך לידה.",
+  "pleaseSelectCountry": "נא לבחור מדינה.",
+  "pleaseSelectCity": "נא לבחור עיר.",
+  "pleaseEnterValidPhone": "נא להזין מספר טלפון תקין.",
+  "mustAcceptTerms": "חובה לאשר את התנאים.",
+  "mustBeAtLeast18": "עליך להיות בן/בת 18 לפחות כדי להירשם.",
+  "agreeToTerms": "אני מסכים/ה לתנאי השירות ולמדיניות הפרטיות",
+  "createAccountButton": "יצירת חשבון",
+  "alreadyHaveAccount": "כבר יש לך חשבון?",
+  "emailVerifiedSuccessPleaseLogin": "האימייל אומת בהצלחה. נא להתחבר.",
+  "pleaseVerifyEmailToContinue": "נא לאמת את האימייל כדי להמשיך.",
+  "requestVerificationCodeTitle": "בקשת קוד אימות",
+  "requestVerificationInstructions": "הזן/י אימייל או שם משתמש.\nנשלח קוד אימות חדש לאימייל של החשבון.",
+  "emailOrUsername": "אימייל או שם משתמש",
+  "sendCode": "שליחת קוד",
+  "ifAccountExistsCodeSent": "אם החשבון קיים, נשלח קוד.",
+  "failedToSendVerificationCode": "שליחת קוד האימות נכשלה.",
+  "verifyYourEmailTitle": "אימות אימייל",
+  "verificationCodeSentInfo": "קוד אימות נשלח לאימייל של החשבון הזה.",
+  "emailVerificationInstructions": "הזן/י את הקוד בן 6 הספרות שנשלח לאימייל של החשבון:\n{identifier}",
+  "@emailVerificationInstructions": {
+    "placeholders": {
+      "identifier": {}
+    }
+  },
+  "verificationCodeLabel": "קוד אימות",
+  "sendingEllipsis": "שולח...",
+  "resendCode": "שלח מחדש",
+  "enter6DigitCodeError": "הזן/י קוד בן 6 ספרות.",
+  "verifyingEllipsis": "מאמת...",
+  "verify": "אמת",
+  "invalidOrExpiredCodeTryResending": "הקוד שגוי או פג תוקף. נסה/י לשלוח מחדש.",
+  "bookingTitle": "הזמנה #{id}",
+  "@bookingTitle": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+  "invalidBookingIdForChat": "מזהה הזמנה לא תקין לצ'אט.",
+  "invalidBookingIdForCall": "מזהה הזמנה לא תקין לשיחה.",
+  "unableToLoadContactInfo": "לא ניתן לטעון פרטי קשר. ודא/י שההזמנה פעילה.",
+  "noPhoneNumberAvailableForName": "אין מספר טלפון זמין עבור {name}.",
+  "@noPhoneNumberAvailableForName": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "deviceCannotPlaceCalls": "המכשיר הזה לא יכול לבצע שיחות טלפון.",
+  "cancelBookingDialogTitle": "ביטול הזמנה",
+  "cancelBookingDialogBody": "האם באמת ברצונך לבטל את ההזמנה הזו?\n\nהערה: אם הספק כבר אישר ועברו יותר מ-7 דקות (אך פחות מכ-40 דקות), ייתכן שיוחל קנס לפי הכללים.",
+  "yesCancel": "כן, לבטל",
+  "failedToCancelBooking": "ביטול ההזמנה נכשל.",
+  "bookingCancelledPenaltyApplied": "ההזמנה בוטלה. הוחל קנס בסך {amount}.",
+  "@bookingCancelledPenaltyApplied": {
+    "placeholders": {
+      "amount": {}
+    }
+  },
+  "bookingCancelledSuccessfully": "ההזמנה בוטלה בהצלחה.",
+  "failedToConfirmCompletion": "אישור הסיום נכשל. נסה/י שוב.",
+  "bothSidesConfirmedCompletedPayoutReleased": "שני הצדדים אישרו. ההזמנה סומנה כהושלמה והתווך שוחרר.",
+  "youConfirmedCompletionWaitingForProvider": "אישרת סיום. ממתינים לאישור הספק.",
+  "youConfirmedCompletionWaitingForUser": "אישרת סיום. ממתינים לאישור המשתמש.",
+  "statusUnknown": "לא ידוע",
+  "statusAccepted": "התקבל",
+  "statusInProgress": "בתהליך",
+  "statusCompleted": "הושלם",
+  "statusCancelled": "בוטל",
+  "paymentPaid": "שולם",
+  "paymentPending": "בהמתנה",
+  "paymentFailed": "נכשל",
+  "bookingAcceptedBy": "ההזמנה אושרה על ידי {name}",
+  "@bookingAcceptedBy": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "whenLabel": "מתי",
+  "atTime": "בשעה {time}",
+  "@atTime": {
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "userLabel": "משתמש",
+  "providerLabel": "ספק",
+  "estimatedPriceLabel": "מחיר משוער",
+  "offeredPaidLabel": "הוצע / שולם",
+  "distanceLabel": "מרחק",
+  "distanceMiles": "{miles} מייל",
+  "@distanceMiles": {
+    "placeholders": {
+      "miles": {}
+    }
+  },
+
+  "youAreCurrentlyUnavailable": "אתה כרגע לא זמין",
+  "toBrowseAndAcceptJobsEnableAvailability": "כדי לעיין ולקבל בקשות עבודה בקרבת מקום, עליך להגדיר את עצמך כזמין להזמנות.",
+  "goToProfileSettings": "עבור להגדרות הפרופיל",
+  "tipToggleAvailableForBookings": "טיפ: הפעל את \"זמין להזמנות\" בפרופיל הספק שלך כדי להתחיל לקבל בקשות עבודה.",
+  "requestedBy": "התבקש על ידי: {name}",
+  "@requestedBy": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "locationLabel": "מיקום: {address}",
+  "@locationLabel": {
+    "placeholders": {
+      "address": {
+        "type": "String"
+      }
+    }
+  },
+
+  "acceptedAtLabel": "אושר ב-",
+  "cancelledAtLabel": "בוטל ב-",
+  "cancelledByLabel": "בוטל על ידי",
+  "penaltyAppliedLabel": "הוחל קנס: {amount}",
+  "@penaltyAppliedLabel": {
+    "placeholders": {
+      "amount": {}
+    }
+  },
+  "userConfirmedLabel": "המשתמש אישר",
+  "providerConfirmedLabel": "הספק אישר",
+  "payoutReleasedLabel": "התשלום שוחרר",
+  "yesLower": "כן",
+  "noLower": "לא",
+  "chat": "צ'אט",
+  "call": "שיחה",
+  "actions": "פעולות",
+  "confirmCompletion": "אשר/י סיום",
+  "noFurtherActionsForBooking": "אין פעולות נוספות זמינות עבור הזמנה זו.",
+  "freeCancellationEndsIn": "הביטול החינמי מסתיים בעוד {time}",
+  "@freeCancellationEndsIn": {
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "earlyFreeCancellationEndedWarning": "תקופת הביטול החינמי המוקדמת הסתיימה. עד כ-40 דקות לאחר האישור, ביטול מאוחר עלול לגרור קנס.",
+  "cancelBooking": "בטל/י הזמנה",
+  "cancelBookingNoPenalty": "בטל/י הזמנה (ללא קנס)",
+  "cancelBookingPenaltyMayApply": "בטל/י הזמנה (ייתכן קנס)",
+  "cancellationPolicyInfo": "ניתן לבטל ללא קנס בשבע הדקות הראשונות לאחר אישור הספק, ושוב לאחר כ-40 דקות במידת הצורך. בין הזמנים הללו ייתכן שיוחל קנס לפי הכללים.",
+  "ratingLine": "דירוג: {rating} ({reviewCount, plural, =1{ביקורת אחת} other{{reviewCount} ביקורות}})",
+  "@ratingLine": {
+    "placeholders": {
+      "rating": {},
+      "reviewCount": {
+        "type": "int"
+      }
+    }
+  },
+  "proofOfSkillsPortfolio": "הוכחת מיומנויות (תיק עבודות)",
+  "noPortfolioPostsAvailable": "אין פריטי תיק עבודות זמינים.",
+  "bookingLocation": "מיקום ההזמנה",
+  "location": "מיקום",
+  "latitude": "קו רוחב",
+  "longitude": "קו אורך",
+  "mapWillAppearWhenCoordinatesValid": "המפה תופיע כאן כאשר הקואורדינטות תקינות.",
+  "chatForBookingTitle": "צ'אט להזמנה #{id}",
+  "@chatForBookingTitle": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+  "unableToStartChat": "לא ניתן להתחיל צ'אט. הצ'אט זמין רק כאשר ההזמנה אושרה, בתהליך, או הושלמה בתוך היום האחרון.",
+  "invalidChatThreadFromServer": "השרת החזיר שרשור צ'אט לא תקין.",
+  "messageNotSentPolicy": "ההודעה לא נשלחה. הערה: אסור לשתף מספרי טלפון או אימייל בצ'אט.",
+  "unknown": "לא ידוע",
+  "typeMessageHint": "הקלד הודעה לתמיכה...",
+  "uploadProfilePicture": "העלה/י תמונת פרופיל",
+  "currentProfilePicture": "תמונת פרופיל נוכחית",
+  "newPicturePreview": "תצוגה מקדימה של תמונה חדשה",
+  "chooseImage": "בחר/י תמונה",
+  "upload": "העלה/י",
+  "noImageBytesFoundWeb": "לא נמצאו נתוני תמונה (ווב).",
+  "pleasePickAnImageFirst": "בחר/י קודם תמונה.",
+  "uploadFailedCheckServerLogs": "ההעלאה נכשלה. בדוק/י לוגים בשרת / טוקן.",
+  "profilePictureUploadedSuccessfully": "תמונת הפרופיל הועלתה בהצלחה!",
+  "errorWithValue": "שגיאה: {error}",
+  "@errorWithValue": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "tapToChangeProfilePicture": "הקש/י כדי לשנות תמונת פרופיל",
+  "usernameValue": "שם משתמש: {username}",
+  "@usernameValue": {
+    "placeholders": {
+      "username": {}
+    }
+  },
+  "roleValue": "תפקיד: {role}",
+  "@roleValue": {
+    "placeholders": {
+      "role": {}
+    }
+  },
+  "dateOfBirthYyyyMmDd": "תאריך לידה (YYYY-MM-DD)",
+  "saveProfile": "שמור/י פרופיל",
+  "failedToSaveProfile": "נכשל לשמור את הפרופיל. נסה שוב.",
+  "profileUpdated": "הפרופיל עודכן.",
+  "completeYourProviderProfile": "השלם/י את פרופיל הספק",
+  "completeProviderProfileBody": "כדי להתחיל לקבל עבודות ולהרוויח כסף, השלם/י את פרופיל הספק.",
+  "setupProfileNow": "הגדר פרופיל עכשיו",
+  "doItLater": "אחר כך",
+  "bookingTimerPenaltyPeriodActive": "תקופת קנס פעילה",
+  "bookingTimerFreeCancellationPeriod": "תקופת ביטול חינמית",
+  "bookingTimerTimeRemaining": "זמן שנותר: {time}",
+  "@bookingTimerTimeRemaining": {
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "bookingTimerCancellingNowPenalty": "ביטול עכשיו יגרור קנס של 10%.",
+  "bookingTimerCancelNoPenalty": "אפשר לבטל ללא קנס.",
+  "myReviewsTitle": "הביקורות שלי",
+  "failedToLoadReviews": "טעינת הביקורות נכשלה.",
+  "noReviewsYet": "עדיין לא השארת ביקורות.",
+  "providerWithName": "ספק: {name}",
+  "providerGeneric": "ספק",
+  "ratingWithValue": "דירוג: {rating}",
+  "nearbyOpenJobsTitle": "עבודות פתוחות בקרבת מקום",
+  "failedToLoadOpenJobsHint": "לא ניתן לטעון עבודות פתוחות.\nודא/י שיש לך פרופיל ספק עם מיקום מוגדר ו available=true.",
+  "errorLoadingJobsWithValue": "שגיאה בטעינת עבודות: {error}",
+  "noOpenJobsFoundNearbyTitle": "לא נמצאו עבודות פתוחות בקרבת מקום",
+  "noOpenJobsFoundNearbyBody": "ודא/י:\n- שהגדרת מיקום ספק\n- שסומנת כזמין/ה\n- שמשתמשים יצרו ושילמו על הזמנות",
+  "currencyLabel": "מטבע: {symbol}",
+  "pricesShownInCurrency": "המחירים מוצגים ב-{symbol} ({country})",
+  "jobTitleWithId": "עבודה #{id}",
+  "serviceLine": "שירות: {service}",
+  "whenLine": "מתי: {date} {time}",
+  "priceLine": "מחיר: {price}",
+  "acceptJob": "קבל/י עבודה",
+  "failedToAcceptJob": "הקבלה של העבודה נכשלה.",
+  "jobAcceptedSuccessfully": "העבודה התקבלה בהצלחה.",
+  "newServiceRequestTitle": "בקשת שירות חדשה",
+  "offeredPriceLabel": "מחיר מוצע",
+  "offeredPriceHint": "לדוגמה 25.00",
+  "enterValidPrice": "הזן/י מחיר תקין",
+  "bookAndPay": "הזמן/י ושלם/י",
+  "bookAndPayAmount": "הזמן/י ושלם/י {amount}",
+  "haircutService": "תספורת",
+  "stylingService": "עיצוב שיער",
+  "timeLabel": "זמן:",
+  "notesLabel": "הערות",
+  "requestCreatedAndPaidBroadcast": "הבקשה נוצרה ושולמה! נשלח לספקים.",
+  "locationLatLng": "מיקום: {lat}, {lng}",
+  "paymentMethodsTitle": "אמצעי תשלום",
+  "paymentPreferencesInfo": "ההעדפות נשמרות מקומית במכשיר. תשלומים בפועל מעובדים בצורה מאובטחת דרך Stripe/שערים אחרים.",
+  "preferredMethodLabel": "שיטה מועדפת (שער מקומי נבחר לפי מדינה)",
+  "methodVisaMastercard": "Visa/Mastercard",
+  "methodMobileMoney": "Mobile Money (Momo/Paystack/Africa)",
+  "methodPaypal": "PayPal",
+  "methodApplePayGooglePay": "Apple Pay/Google Pay",
+  "methodWeChatPay": "WeChat Pay (סין)",
+  "methodAlipay": "Alipay (סין)",
+  "methodUnionPay": "UnionPay (סין)",
+  "mobileMoneyNumberLabel": "מספר Mobile Money",
+  "wechatAlipayIdLabel": "מזהה WeChat/Alipay",
+  "cardLast4DigitsLabel": "4 ספרות אחרונות של הכרטיס",
+  "paypalEmailLabel": "אימייל PayPal",
+  "applePayEnabledOnDevice": "Apple Pay מופעל במכשיר זה",
+  "savePaymentPreferences": "שמור/י העדפות תשלום",
+  "paymentPrefsSavedInfo": "העדפות התשלום נשמרו מקומית. חיוב בפועל יטופל בהמשך דרך Stripe/שערים אחרים.",
+  "failedToLoadImage": "טעינת התמונה נכשלה",
+  "earningsTitle": "רווחים",
+  "couldNotLoadEarningsSummary": "לא ניתן לטעון סיכום רווחים.",
+  "noData": "אין נתונים.",
+  "retry": "נסה/י שוב",
+  "summaryTitle": "סיכום",
+  "totalLabel": "סה״כ",
+  "pendingLabel": "ממתין",
+  "paidLabel": "שולם",
+  "pdfReportTitle": "דוח PDF",
+  "periodLabel": "תקופה",
+  "periodThisMonth": "החודש",
+  "periodLastMonth": "החודש הקודם",
+  "periodYtd": "מתחילת השנה",
+  "periodAllTime": "כל הזמן",
+  "couldNotDownloadPdfReport": "לא ניתן להוריד דוח PDF.",
+  "couldNotOpenPdfWithValue": "לא ניתן לפתוח PDF: {error}",
+  "savingFilesNotSupportedWeb": "שמירת קבצים אינה נתמכת בווב כרגע.",
+  "savedToDocumentsIosWithPath": "נשמר ב-Documents (iOS):\n{path}",
+  "savedToFilesWithPath": "נשמר בקבצים:\n{path}",
+  "open": "פתח",
+  "failedToSavePdfWithValue": "שמירת PDF נכשלה: {error}",
+  "openPdfReport": "פתח דוח PDF",
+  "savePdfToDownloads": "שמור PDF להורדות",
+  "reportWatermarkNote": "דוח ה-PDF צריך לכלול סימן מים של Styloria.",
+  "referFriendsTitle": "הזמן/י חברים",
+  "shareReferralCodeBody": "שתף/י את קוד ההפניה עם חברים. בהמשך ניתן להוסיף תגמולים כשהם נרשמים ומסיימים הזמנות.",
+  "yourReferralCodeLabel": "קוד ההפניה שלך:",
+  "copy": "העתק",
+  "referralCodeCopiedWithCode": "קוד ההפניה הועתק: {code}",
+  "navHome": "בית",
+  "navBookings": "הזמנות",
+  "navNotifications": "התראות",
+  "navAccount": "חשבון",
+  "welcome": "ברוך הבא",
+  "welcomeName": "ברוך הבא, {name}",
+  "@welcomeName": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "toggleThemeTooltip": "החלפת מצב בהיר/כהה",
+  "loggedInAs": "מחובר כ: {role}",
+  "@loggedInAs": {
+    "placeholders": {
+      "role": {}
+    }
+  },
+  "locationWithValue": "מיקום: {value}",
+  "@locationWithValue": {
+    "placeholders": {
+      "value": {}
+    }
+  },
+  "homeTagline": "שדרגו את חוויית הטיפוח שלכם עם הזמנות בזמן אמת וספקים אמינים.",
+  "manageProviderProfile": "ניהול פרופיל ספק",
+  "browseOpenJobs": "עיון בעבודות פתוחות",
+  "quickActions": "פעולות מהירות",
+  "newBooking": "הזמנה חדשה",
+  "notificationsWithUnread": "התראות ({count, plural, =1{1 לא נקראה} other{{count} לא נקראו}})",
+  "@notificationsWithUnread": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "liveLocationTrackingTitle": "מעקב מיקום בזמן אמת",
+  "live": "חי",
+  "locationServicesDisabled": "שירותי מיקום מושבתים.",
+  "locationPermissionDenied": "הרשאת מיקום נדחתה.",
+  "locationPermissionPermanentlyDenied": "הרשאת מיקום נדחתה לצמיתות. אנא אפשר בהגדרות.",
+  "failedToGetLocationWithValue": "נכשל לקבל מיקום: {error}",
+  "@failedToGetLocationWithValue": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "youProvider": "אתה (ספק)",
+  "youCustomer": "אתה (לקוח)",
+  "customer": "לקוח",
+  "bookingDetails": "פרטי הזמנה",
+  "navigate": "נווט",
+  "failedToLoadNotifications": "טעינת ההתראות נכשלה.",
+  "failedToMarkAsRead": "נכשל לסמן כנקרא",
+  "noNotificationsYet": "אין התראות עדיין.",
+  "markRead": "סמן כנקרא",
+  "providerKycTitle": "אימות ספק (KYC)",
+  "logoutTooltip": "התנתקות",
+  "statusLabel": "סטטוס: {status}",
+  "@statusLabel": {
+    "placeholders": {
+      "status": {}
+    }
+  },
+  "rejectedWithNotes": "נדחה: {notes}",
+  "@rejectedWithNotes": {
+    "placeholders": {
+      "notes": {}
+    }
+  },
+  "kycInstructions": "כדי לקבל גישה לתכונות ספק, העלו תעודת זהות וסלפי לצורך אימות.",
+  "idFrontRequired": "תעודה קדמית (נדרש)",
+  "selectIdFront": "בחר תעודה קדמית",
+  "idBackRequired": "תעודה אחורית (נדרש)",
+  "selectIdBackRequired": "בחר תעודה אחורית",
+  "selfieRequired": "סלפי (נדרש)",
+  "selectSelfie": "בחר סלפי",
+  "takeSelfie": "צלם סלפי",
+  "errorUploadAllRequired": "אנא העלו תעודה (קדמי), תעודה (אחורי) וסלפי.",
+  "failedSubmitKycCode": "נכשל שליחת KYC (קוד {code}).",
+  "@failedSubmitKycCode": {
+    "placeholders": {
+      "code": {}
+    }
+  },
+  "submittedCurrentStatus": "נשלח. סטטוס נוכחי: {status}",
+  "@submittedCurrentStatus": {
+    "placeholders": {
+      "status": {}
+    }
+  },
+  "unknownStatus": "לא ידוע",
+  "submitKyc": "שלח KYC",
+  "verificationMayTakeTimeNote": "הערה: האימות עשוי לקחת זמן. תוכלו לגשת לתכונות ספק לאחר אישור.",
+  "enterVerificationCodeTitle": "הזן קוד אימות",
+  "otpSentToUsername": "שלחנו קוד בן 6 ספרות למספר הטלפון\nהמשויך ל-\"{username}\".",
+  "@otpSentToUsername": {
+    "placeholders": {
+      "username": {}
+    }
+  },
+  "sixDigitCodeLabel": "קוד בן 6 ספרות",
+  "enterSixDigitCodeValidation": "הזן את הקוד בן 6 הספרות",
+  "otpInvalidOrExpired": "קוד לא תקין או שפג תוקפו.",
+  "failedLoadUserInfoAfterVerification": "נכשל לטעון מידע משתמש לאחר האימות.",
+  "chatWithSupportTitle": "צ'אט עם התמיכה",
+  "unableStartSupportChat": "לא ניתן להתחיל צ'אט תמיכה.",
+  "invalidSupportThreadReturned": "התקבלה שיחת תמיכה לא תקינה מהשרת.",
+  "noMessagesYet": "אין הודעות עדיין. התחילו שיחה!",
+  "supportDefaultName": "תמיכה",
+  "aboutPoliciesTitle": "אודות ומדיניות",
+  "newBookingTitle": "הזמנה חדשה",
+  "appointmentDetailsTitle": "פרטי פגישה",
+  "pickDate": "בחר תאריך",
+  "pickTime": "בחר שעה",
+  "serviceTypeTitle": "סוג שירות",
+  "serviceDropdownLabel": "שירות",
+  "serviceHaircutLabel": "תספורת",
+  "serviceBraidsLabel": "צמות",
+  "serviceShaveLabel": "גילוח",
+  "serviceHairColoringLabel": "צביעת שיער",
+  "serviceManicureLabel": "מניקור",
+  "servicePedicureLabel": "פדיקור",
+  "serviceNailArtLabel": "קישוט ציפורניים",
+  "serviceMakeupLabel": "איפור",
+  "serviceFacialLabel": "טיפול פנים",
+  "serviceWaxingLabel": "שעווה",
+  "serviceMassageLabel": "עיסוי",
+  "serviceHairStylingLabel": "עיצוב שיער",
+  "serviceHairTreatmentLabel": "טיפול שיער",
+  "serviceHairExtensionsLabel": "תוספות שיער",
+  "serviceOtherServicesLabel": "שירותים אחרים",
+  "notesForProviderOptionalLabel": "הערות לספק (אופציונלי)",
+  "locationTitle": "מיקום",
+  "latitudeLabel": "קו רוחב",
+  "longitudeLabel": "קו אורך",
+  "requiredField": "נדרש",
+  "useMyCurrentLocation": "השתמש במיקום הנוכחי שלי",
+  "pricesShownIn": "המחירים מוצגים ב־{symbol} ({country})",
+  "chooseTimeLaterThanCurrent": "אנא בחר זמן מאוחר יותר מהזמן הנוכחי.",
+  "pleasePickDateAndTime": "אנא בחר תאריך ושעה.",
+  "locationUpdatedFromGps": "המיקום עודכן מה‑GPS.",
+  "failedToGetLocation": "נכשל לקבל מיקום: {error}",
+  "bookingCreatedChoosePrice": "ההזמנה נוצרה! מזהה: {id} • בחר אפשרות מחיר.",
+  "failedToCreateBooking": "נכשל ליצור הזמנה.",
+  "paymentsNotSupportedLong": "תשלומים אינם נתמכים בפלטפורמה זו. הרץ את האפליקציה ב‑Android, iOS, macOS או Web כדי לבדוק תשלומים אמיתיים.",
+  "paymentsNotSupportedShort": "תשלומים אינם נתמכים בפלטפורמה זו. הרץ ב‑Android, iOS, macOS או Web.",
+  "noBookingToConfirm": "אין הזמנה לאישור. אנא צור הזמנה תחילה.",
+  "pleaseChoosePriceOption": "אנא בחר אפשרות מחיר.",
+  "failedCreatePaymentTryAgain": "נכשל ליצור תשלום בשרת. נסה שוב.",
+  "paymentSuccessfulMessage": "התשלום הצליח!\nהזמנה #{bookingId} • שולם: {paid}\nהבקשה שלך כעת נראית לספקים בקרבת מקום.",
+  "paymentSucceededButFailedUpdate": "התשלום הצליח, אך עדכון ההזמנה בשרת נכשל.",
+  "paymentCancelledOrFailed": "התשלום בוטל או נכשל: {reason}",
+  "unexpectedPaymentError": "שגיאת תשלום לא צפויה: {error}",
+  "createBookingButton": "צור הזמנה",
+  "chooseYourPriceOptionTitle": "בחר אפשרות מחיר",
+  "transportationCostLabel": "עלות נסיעה: {cost}",
+  "budgetTierTitle": "חסכוני",
+  "standardTierTitle": "סטנדרטי",
+  "priorityTierTitle": "עדיפות",
+  "budgetTierDescription": "הערך הטוב ביותר מבין ספקים קרובים",
+  "standardTierDescription": "איזון מומלץ בין מחיר לזמינות",
+  "priorityTierDescription": "אפשרות פרימיום למשיכת ספקים מובילים מהר יותר",
+  "naShort": "לא זמין",
+  "priceBreakdownTitle": "פירוט מחיר",
+  "servicePriceLabel": "מחיר שירות",
+  "transportationLabel": "נסיעה",
+  "serviceFeeLabel": "עמלת שירות ({percent}%)",
+  "allPricesIn": "כל המחירים ב־{currency} ({country})",
+  "userCountryPlaceholder": "מדינת משתמש",
+  "totalToPayTitle": "סה״כ לתשלום",
+  "includesServiceTransportation": "כולל שירות + נסיעה",
+  "confirmAndPay": "אישור ותשלום",
+  "howPricingWorksTitle": "איך התמחור עובד",
+  "howPricingWorksBullets": "• חסכוני: הערך הטוב ביותר בקרבת מקום\n• סטנדרטי: ברירת מחדל מומלצת\n• עדיפות: פרימיום להאצת קבלה\n• הנסיעה כלולה בסכום הכולל",
+  "myBookingsTitle": "ההזמנות שלי",
+  "myAssignedJobsTitle": "העבודות שהוקצו לי",
+  "pleaseCompleteProviderProfileFirst": "אנא השלם תחילה את פרופיל הספק.",
+  "failedToLoadBookings": "נכשל לטעון הזמנות.",
+  "profileSetupRequiredTitle": "נדרשת הגדרת פרופיל",
+  "profileSetupRequiredBody": "עליך להשלים את פרופיל הספק לפני שתוכל לראות עבודות שהוקצו ורווחים.",
+  "later": "אחר כך",
+  "setupNow": "הגדר עכשיו",
+  "noBookingsFound": "לא נמצאו הזמנות.",
+  "findNearbyOpenJobs": "מצא עבודות פתוחות בקרבת מקום",
+  "pay": "שלם",
+  "rate": "דרג",
+  "bookingNumber": "הזמנה #{id}",
+  "whenOn": "מתי: {date}",
+  "whenAt": "מתי: {date} בשעה {time}",
+  "providerLine": "ספק: {name}",
+  "userLine": "משתמש: {name}",
+  "estimatedPriceLine": "מחיר משוער: {price}",
+  "paymentLine": "תשלום: {status}",
+  "paymentUnpaid": "לא שולם",
+  "paymentUnknown": "לא ידוע",
+  "confirmPaymentTitle": "אשר תשלום",
+  "confirmPaymentBody": "לשלם {amount} כדי לאשר הזמנה זו?",
+  "yesPay": "כן, שלם",
+  "failedToCreatePaymentIntent": "נכשל ליצור תשלום.",
+  "paymentSuccessfulShort": "התשלום הצליח.",
+  "paymentSucceededButFailedUpdateBooking": "התשלום הצליח, אך עדכון ההזמנה בשרת נכשל.",
+  "paymentCancelledOrFailedReason": "התשלום בוטל או נכשל: {reason}",
+  "unexpectedPaymentErrorReason": "שגיאת תשלום לא צפויה: {error}",
+  "rateProviderTitle": "דרג את {providerName}",
+  "@rateProviderTitle": { 
+    "placeholders": { 
+      "providerName": {} 
+    } 
+  },
+  "selectRatingHelp": "בחר דירוג (1 = גרוע, 5 = מצוין):",
+  "commentsOptionalLabel": "תגובות (אופציונלי)",
+  "submit": "שלח",
+  "reviewSubmitted": "הדירוג נשלח.",
+  "failedSubmitReview": "נכשל לשלוח דירוג.",
+  "failedToLoadProfile": "נכשל לטעון פרופיל: {error}",
+  "profileSavedSuccess": "הפרופיל {action} בהצלחה!",
+  "genericError": "שגיאה: {error}",
+  "locationPermissionDeniedEnableInSettings": "הרשאת מיקום נדחתה. אנא אפשר בהגדרות.",
+  "locationPermissionPermanentlyDeniedEnableInAppSettings": "הרשאת מיקום נדחתה לצמיתות. אנא אפשר בהגדרות האפליקציה.",
+  "errorGettingLocation": "שגיאה בקבלת מיקום: {error}",
+  "pleaseEnterAddress": "אנא הזן כתובת",
+  "locationUpdatedFromAddress": "המיקום עודכן מהכתובת",
+  "couldNotFindLocationForAddress": "לא ניתן למצוא מיקום עבור כתובת זו",
+  "errorConvertingAddress": "שגיאה בהמרת כתובת: {error}",
+  "portfolioUnavailableCompleteKycFirst": "הפורטפוליו אינו זמין. אם אתה ספק, השלם תחילה אימות KYC.",
+  "failedToLoadPortfolio": "נכשל לטעון פורטפוליו: {error}",
+  "addPhoto": "הוסף תמונה",
+  "addVideo": "הוסף וידאו",
+  "addPost": "הוסף פוסט",
+  "captionOptionalTitle": "כיתוב (אופציונלי)",
+  "captionHintExample": "למשל: \"צמות ללא קשר ללקוחה\"",
+  "skip": "דלג",
+  "save": "שמור",
+  "failedToCreatePortfolioPost": "נכשל ליצור פוסט בפורטפוליו.",
+  "uploadFailedMediaUpload": "העלאה נכשלה (העלאת מדיה).",
+  "uploadFailed": "העלאה נכשלה: {error}",
+  "deletePostTitle": "למחוק את הפוסט?",
+  "deletePostBody": "הפוסט יוסר מהפורטפוליו שלך.",
+  "delete": "מחק",
+  "deleteFailed": "המחיקה נכשלה.",
+  "deleteFailedWithError": "המחיקה נכשלה: {error}",
+  "portfolioTitle": "פורטפוליו",
+  "noPortfolioPostsYetHelpText": "אין עדיין פוסטים בפורטפוליו. הוסף תמונות/וידאו של העבודה שלך כדי לעזור ללקוחות לסמוך על הכישורים שלך.",
+  "setupProviderProfileTitle": "הגדרת פרופיל ספק",
+  "providerProfileTitle": "פרופיל ספק",
+  "welcomeToStyloriaTitle": "ברוך הבא ל‑Styloria!",
+  "completeProviderProfileToStartEarning": "השלם את פרופיל הספק כדי להתחיל לקבל עבודות ולהרוויח.",
+  "reviewCountLabel": "({count} ביקורות)",
+  "topRatedChip": "מדורג גבוה",
+  "bioLabel": "ביו / תיאור",
+  "bioHint": "ספר ללקוחות על הכישורים והניסיון שלך...",
+  "pleaseEnterBio": "אנא הזן ביו",
+  "bioMinLength": "הביו צריך להיות לפחות {min} תווים",
+  "yourLocationTitle": "המיקום שלך",
+  "locationHelpMatchNearbyClients": "המיקום שלך עוזר לנו להתאים אותך ללקוחות קרובים",
+  "locationHelpUpdateToFindJobs": "עדכן מיקום כדי למצוא עבודות באזורים אחרים",
+  "useMyCurrentLocationTitle": "השתמש במיקום הנוכחי שלי",
+  "gpsSubtitle": "קבל מיקום אוטומטית באמצעות GPS",
+  "orLabel": "או",
+  "enterYourAddressTitle": "הזן את הכתובת שלך",
+  "fullAddressLabel": "כתובת מלאה",
+  "fullAddressHint": "למשל: 123 Main St, Accra, Ghana",
+  "find": "חפש",
+  "addressHelpText": "הזן רחוב, עיר ומדינה",
+  "coordinatesAutoFilledTitle": "קואורדינטות (מילוי אוטומטי)",
+  "servicePricingTitle": "תמחור שירותים",
+  "servicePricingHelp": "קבע מחיר לכל שירות. סמן \"לא מוצע\" לשירותים שאינך מספק.",
+  "serviceHeader": "שירות",
+  "priceHeader": "מחיר",
+  "notOfferedHeader": "לא מוצע",
+  "priceHint": "0.00",
+  "providerHowPricingWorksTitle": "איך התמחור עובד:",
+  "providerHowPricingWorksBody": "• המחיר שלך הוא מה שאתה גובה עבור השירות\n• עלות נסיעה = 80% ממטבע המשתמש לכל ק\"מ\n• המשתמשים רואים 3 אפשרויות לפי ספקים קרובים:\n  - Budget: המחיר הנמוך ביותר\n  - Standard: מחיר ממוצע\n  - Priority: המחיר הגבוה ביותר",
+  "availableForBookingsTitle": "זמין להזמנות",
+  "availableOnHelp": "✓ תופיע בתוצאות החיפוש של לקוחות קרובים",
+  "availableOffHelp": "✗ לא תקבל הצעות עבודה חדשות",
+  "completeSetupStartEarning": "סיים הגדרה והתחל להרוויח",
+  "updateProfile": "עדכן פרופיל",
+  "skipForNow": "דלג בינתיים",
+
+  "genericContact": "איש קשר",
+  "genericProvider": "נותן שירות",
+  "genericNotAvailable": "לא זמין",
+
+  "reviewSelectRatingPrompt": "בחר/י דירוג (1 עד 5).",
+  "reviewCommentOptionalLabel": "תגובה (אופציונלי)",
+  "genericCancel": "ביטול",
+  "genericSubmit": "שליחה",
+  "reviewSubmitted": "הביקורת נשלחה.",
+  "reviewSubmitFailed": "שליחת הביקורת נכשלה.",
+  "rateThisService": "דרג/י את השירות",
+
+  "tipLeaveTitle": "השאר/י טיפ",
+  "tipChooseAmountPrompt": "בחר/י סכום טיפ או הזן/י סכום מותאם.",
+  "tipNoTip": "בלי טיפ",
+  "tipCustomAmountLabel": "סכום טיפ מותאם",
+  "genericContinue": "המשך",
+
+  "tipSkipped": "הטיפ דולג.",
+  "tipFailedToSaveChoice": "לא ניתן לשמור את בחירת הטיפ.",
+  "tipFailedToCreatePayment": "לא ניתן ליצור תשלום טיפ.",
+  "tipPaidSuccessfully": "הטיפ שולם בהצלחה. תודה!",
+  "tipPaidButUpdateFailed": "תשלום הטיפ הצליח, אך עדכון ההזמנה נכשל.",
+
+  "tipCancelledOrFailed": "הטיפ בוטל/נכשל: {message}",
+  "tipUnexpectedError": "שגיאת טיפ לא צפויה: {error}",
+
+  "tipAlreadyPaidLabel": "הטיפ כבר שולם",
+  "tipSkippedLabel": "טיפ דולג",
+  "walletTitle": "ארנק",
+  "walletTooltip": "ארנק",
+  "payoutSettingsTitle": "הגדרות תשלום",
+  "payoutSettingsTooltip": "הגדרות תשלום",
+  "walletNoWalletYet": "אין ארנק עדיין. השלימו עבודות כדי להרוויח.",
+  "walletCurrencyFieldLabel": "מטבע",
+  "walletAvailableLine": "זמין: {amount} {currency}",
+  "walletPendingLine": "בהמתנה: {amount} {currency}",
+  "walletCashOutInstant": "משיכה מיידית",
+  "walletCashOutFailed": "המשיכה נכשלה.",
+  "walletCashOutSentTransfer": "בקשת המשיכה נשלחה. העברה: {transferId}",
+  "walletTransactionsTitle": "עסקאות",
+  "walletNoTransactionsYet": "אין עסקאות עדיין.",
+  "payoutAutoPayoutsTitle": "תשלומים אוטומטיים",
+  "payoutAutoPayoutsSubtitle": "שליחת תשלומים אוטומטית לפי לוח הזמנים שבחרת.",
+  "payoutDayUtcLabel": "יום תשלום (UTC)",
+  "payoutHourUtcLabel": "שעת תשלום (UTC)",
+  "payoutMinimumAmountLabel": "סכום מינימלי לתשלום אוטומטי",
+  "payoutMinimumAmountHelper": "תשלום אוטומטי יתבצע רק אם היתרה הזמינה ≥ סכום זה.",
+  "payoutInstantCashOutEnabledTitle": "הפעלת משיכה מיידית",
+  "payoutInstantCashOutEnabledSubtitle": "לאפשר כפתור „משיכה” (חלה עמלה).",
+  "payoutSettingsSaved": "הגדרות התשלום נשמרו.",
+  "payoutSettingsSaveFailed": "שמירת הגדרות התשלום נכשלה.",
+  "tipLeaveButton": "השאר/י טיפ",
+  "@providerWithName": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "@ratingWithValue": {
+    "placeholders": {
+      "rating": {}
+    }
+  },
+  "@errorLoadingJobsWithValue": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@currencyLabel": {
+    "placeholders": {
+      "symbol": {}
+    }
+  },
+  "@pricesShownInCurrency": {
+    "placeholders": {
+      "symbol": {},
+      "country": {}
+    }
+  },
+  "@jobTitleWithId": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+  "@serviceLine": {
+    "placeholders": {
+      "service": {}
+    }
+  },
+  "@whenLine": {
+    "placeholders": {
+      "date": {},
+      "time": {}
+    }
+  },
+  "@priceLine": {
+    "placeholders": {
+      "price": {}
+    }
+  },
+  "@bookAndPayAmount": {
+    "placeholders": {
+      "amount": {}
+    }
+  },
+  "@locationLatLng": {
+    "placeholders": {
+      "lat": {},
+      "lng": {}
+    }
+  },
+  "@couldNotOpenPdfWithValue": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@savedToDocumentsIosWithPath": {
+    "placeholders": {
+      "path": {}
+    }
+  },
+  "@savedToFilesWithPath": {
+    "placeholders": {
+      "path": {}
+    }
+  },
+  "@failedToSavePdfWithValue": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@referralCodeCopiedWithCode": {
+    "placeholders": {
+      "code": {}
+    }
+  },
+  "@pricesShownIn": {
+    "placeholders": {
+      "symbol": {},
+      "country": {}
+    }
+  },
+  "@failedToGetLocation": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@bookingCreatedChoosePrice": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+  "@paymentSuccessfulMessage": {
+    "placeholders": {
+      "bookingId": {},
+      "paid": {}
+    }
+  },
+  "@paymentCancelledOrFailed": {
+    "placeholders": {
+      "reason": {}
+    }
+  },
+  "@unexpectedPaymentError": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@transportationCostLabel": {
+    "placeholders": {
+      "cost": {}
+    }
+  },
+  "@serviceFeeLabel": {
+    "placeholders": {
+      "percent": {}
+    }
+  },
+  "@allPricesIn": {
+    "placeholders": {
+      "currency": {},
+      "country": {}
+    }
+  },
+  "@bookingNumber": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+  "@whenOn": {
+    "placeholders": {
+      "date": {}
+    }
+  },
+  "@whenAt": {
+    "placeholders": {
+      "date": {},
+      "time": {}
+    }
+  },
+  "@providerLine": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "@userLine": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "@estimatedPriceLine": {
+    "placeholders": {
+      "price": {}
+    }
+  },
+  "@paymentLine": {
+    "placeholders": {
+      "status": {}
+    }
+  },
+  "@confirmPaymentBody": {
+    "placeholders": {
+      "amount": {}
+    }
+  },
+  "@paymentCancelledOrFailedReason": {
+    "placeholders": {
+      "reason": {}
+    }
+  },
+  "@unexpectedPaymentErrorReason": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@failedToLoadProfile": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@profileSavedSuccess": {
+    "placeholders": {
+      "action": {}
+    }
+  },
+  "@genericError": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@errorGettingLocation": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@errorConvertingAddress": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@failedToLoadPortfolio": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@uploadFailed": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@deleteFailedWithError": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@reviewCountLabel": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@bioMinLength": {
+    "placeholders": {
+      "min": {
+        "type": "int"
+      }
+    }
+  }
+}

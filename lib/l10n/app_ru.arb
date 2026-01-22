@@ -1,0 +1,961 @@
+{
+  "@@locale": "ru",
+  "appTitle": "Styloria",
+  "account": "Аккаунт",
+  "profile": "Профиль",
+  "myBookings": "Мои бронирования",
+  "openJobs": "Открытые заявки",
+  "earnings": "Заработок",
+  "paymentMethods": "Способы оплаты",
+  "referFriends": "Пригласить друзей",
+  "language": "Язык",
+  "settings": "Настройки",
+  "darkMode": "Тёмная тема",
+  "systemDefault": "По умолчанию (система)",
+  "languageUpdated": "Язык обновлён",
+  "languageSetToSystemDefault": "Язык установлен как системный",
+  "helpAndSupport": "Помощь и поддержка",
+  "chatWithCustomerService": "Чат со службой поддержки",
+  "aboutAndPolicies": "О приложении и политики",
+  "viewUserPoliciesAndAgreements": "Просмотр политик и соглашений пользователя",
+  "logOut": "Выйти",
+  "deleteAccount": "Удалить аккаунт",
+  "deleteAccountSubtitle": "Это действие нельзя отменить",
+  "deleteAccountTitle": "Удалить аккаунт",
+  "deleteAccountConfirmBody": "Вы уверены, что хотите удалить аккаунт?\n\nВы выйдете из системы и можете навсегда потерять доступ.",
+  "no": "Нет",
+  "yesDelete": "Да, удалить",
+  "deleteAccountSheetTitle": "Нам жаль, что вы уходите.",
+  "deleteAccountSheetPrompt": "Почему вы уходите? (выберите все подходящее)",
+  "deleteAccountSelectAtLeastOneReason": "Выберите хотя бы одну причину.",
+  "tellUsMoreOptional": "Расскажите подробнее (необязательно)",
+  "suggestionsToImproveOptional": "Предложения по улучшению (необязательно)",
+  "deleteMyAccount": "Удалить мой аккаунт",
+  "cancel": "Отмена",
+  "failedToDeleteAccount": "Не удалось удалить аккаунт. Попробуйте ещё раз.",
+  "choosePreferredLanguage": "Выберите предпочитаемый язык",
+  "noteSomeTextMayStillAppearInEnglish": "Примечание: это изменит язык приложения. Некоторый текст может оставаться на английском, пока переводы не добавлены.",
+  "languageSetToName": "Язык установлен: {name}",
+  "@languageSetToName": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "deletionReason1": "Мне больше не нужен Styloria",
+  "deletionReason2": "Были проблемы с верификацией аккаунта (email/KYC)",
+  "deletionReason3": "Не нашёл(ла) сервисы/провайдеров рядом",
+  "deletionReason4": "Цены или комиссии слишком высокие / непонятные",
+  "deletionReason5": "Приложение было неудобным / сложным",
+  "deletionReason6": "Ошибки или проблемы с производительностью",
+  "deletionReason7": "Проблемы с оплатой/возвратом",
+  "deletionReason8": "Плохой опыт с провайдером/пользователем",
+  "deletionReason9": "Опасения по поводу конфиденциальности или безопасности",
+  "deletionReason10": "Я создал(а) аккаунт по ошибке",
+  "deletionReason11": "Перехожу на другую платформу",
+  "deletionReason12": "Другое",
+  "loginWelcomeTitle": "Добро пожаловать в Styloria",
+  "loginWelcomeSubtitle": "Войдите, чтобы управлять бронированиями и услугами.",
+  "loginFailedToLoadUserInfo": "Вход выполнен, но не удалось загрузить данные пользователя.",
+  "username": "Имя пользователя",
+  "password": "Пароль",
+  "required": "Обязательно",
+  "login": "Войти",
+  "createNewAccount": "Создать новый аккаунт",
+  "requestEmailVerificationCode": "Запросить код подтверждения e-mail",
+  "createAccountTitle": "Создать аккаунт",
+  "joinStyloria": "Присоединиться к Styloria",
+  "registerSubtitle": "Создайте аккаунт, чтобы бронировать услуги или стать провайдером",
+  "iWantTo": "Я хочу:",
+  "bookServices": "Бронировать услуги",
+  "provideServices": "Предоставлять услуги",
+  "personalInformation": "Личная информация",
+  "firstName": "Имя",
+  "lastName": "Фамилия",
+  "selectDateOfBirth": "Выберите дату рождения",
+  "phoneNumber": "Номер телефона",
+  "pleaseEnterPhoneNumber": "Введите номер телефона",
+  "accountInformation": "Данные аккаунта",
+  "chooseUniqueUsernameHint": "Выберите уникальное имя пользователя",
+  "email": "E-mail",
+  "emailHint": "your@email.com",
+  "enterValidEmail": "Введите корректный email",
+  "security": "Безопасность",
+  "passwordHintAtLeast10": "Минимум 10 символов",
+  "passwordMin10": "Пароль должен содержать не менее 10 символов",
+  "iAgreeTo": "Я соглашаюсь с ",
+  "termsOfService": "Условиями использования",
+  "and": "и",
+  "privacyPolicy": "Политикой конфиденциальности",
+  "passwordIsRequired": "Пароль обязателен",
+  "confirmPassword": "Подтвердите пароль",
+  "passwordsDoNotMatch": "Пароли не совпадают",
+  "pleaseSelectDob": "Пожалуйста, выберите дату рождения.",
+  "pleaseSelectCountry": "Пожалуйста, выберите страну.",
+  "pleaseSelectCity": "Пожалуйста, выберите город.",
+  "pleaseEnterValidPhone": "Пожалуйста, введите корректный номер телефона.",
+  "mustAcceptTerms": "Необходимо принять условия.",
+  "mustBeAtLeast18": "Для регистрации вам должно быть не менее 18 лет.",
+  "agreeToTerms": "Я согласен(на) с Условиями обслуживания и Политикой конфиденциальности",
+  "createAccountButton": "Создать аккаунт",
+  "alreadyHaveAccount": "Уже есть аккаунт?",
+  "emailVerifiedSuccessPleaseLogin": "Email успешно подтверждён. Пожалуйста, войдите.",
+  "pleaseVerifyEmailToContinue": "Подтвердите email, чтобы продолжить.",
+  "requestVerificationCodeTitle": "Запросить код подтверждения",
+  "requestVerificationInstructions": "Введите email или имя пользователя.\nМы отправим новый код подтверждения на email этого аккаунта.",
+  "emailOrUsername": "Email или имя пользователя",
+  "sendCode": "Отправить код",
+  "ifAccountExistsCodeSent": "Если аккаунт существует, код был отправлен.",
+  "failedToSendVerificationCode": "Не удалось отправить код подтверждения.",
+  "verifyYourEmailTitle": "Подтвердите ваш email",
+  "verificationCodeSentInfo": "Код подтверждения отправлен на email этого аккаунта.",
+  "emailVerificationInstructions": "Введите 6-значный код, отправленный на email этого аккаунта:\n{identifier}",
+  "@emailVerificationInstructions": {
+    "placeholders": {
+      "identifier": {}
+    }
+  },
+
+  "youAreCurrentlyUnavailable": "Вы сейчас недоступны",
+  "toBrowseAndAcceptJobsEnableAvailability": "Чтобы просматривать и принимать запросы на работу поблизости, вам нужно установить статус доступности для бронирований.",
+  "goToProfileSettings": "Перейти к настройкам профиля",
+  "tipToggleAvailableForBookings": "Совет: Включите «Доступен для бронирований» в профиле поставщика услуг, чтобы начать получать запросы на работу.",
+  "requestedBy": "Запросил: {name}",
+  "@requestedBy": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "locationLabel": "Местоположение: {address}",
+  "@locationLabel": {
+    "placeholders": {
+      "address": {
+        "type": "String"
+      }
+    } 
+  },
+
+  "verificationCodeLabel": "Код подтверждения",
+  "sendingEllipsis": "Отправка...",
+  "resendCode": "Отправить код ещё раз",
+  "enter6DigitCodeError": "Введите 6-значный код.",
+  "verifyingEllipsis": "Проверка...",
+  "verify": "Подтвердить",
+  "invalidOrExpiredCodeTryResending": "Код недействителен или истёк. Попробуйте отправить ещё раз.",
+  "bookingTitle": "Бронирование №{id}",
+  "@bookingTitle": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+  "invalidBookingIdForChat": "Неверный ID бронирования для чата.",
+  "invalidBookingIdForCall": "Неверный ID бронирования для звонка.",
+  "unableToLoadContactInfo": "Не удалось загрузить контактные данные. Убедитесь, что бронирование активно.",
+  "noPhoneNumberAvailableForName": "Нет доступного номера телефона для {name}.",
+  "@noPhoneNumberAvailableForName": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "deviceCannotPlaceCalls": "Это устройство не может совершать телефонные звонки.",
+  "cancelBookingDialogTitle": "Отменить бронирование",
+  "cancelBookingDialogBody": "Вы действительно хотите отменить это бронирование?\n\nПримечание: если исполнитель уже принял заказ и прошло более 7 минут (но меньше примерно 40 минут), может быть применён штраф согласно правилам.",
+  "yesCancel": "Да, отменить",
+  "failedToCancelBooking": "Не удалось отменить бронирование.",
+  "bookingCancelledPenaltyApplied": "Бронирование отменено. Применён штраф {amount}.",
+  "@bookingCancelledPenaltyApplied": {
+    "placeholders": {
+      "amount": {}
+    }
+  },
+  "bookingCancelledSuccessfully": "Бронирование успешно отменено.",
+  "failedToConfirmCompletion": "Не удалось подтвердить завершение. Пожалуйста, попробуйте снова.",
+  "bothSidesConfirmedCompletedPayoutReleased": "Обе стороны подтвердили. Бронирование отмечено как завершённое, выплата разблокирована.",
+  "youConfirmedCompletionWaitingForProvider": "Вы подтвердили завершение. Ожидаем подтверждения исполнителя.",
+  "youConfirmedCompletionWaitingForUser": "Вы подтвердили завершение. Ожидаем подтверждения пользователя.",
+  "statusUnknown": "неизвестно",
+  "statusAccepted": "принято",
+  "statusInProgress": "в процессе",
+  "statusCompleted": "завершено",
+  "statusCancelled": "отменено",
+  "paymentPaid": "оплачено",
+  "paymentPending": "в ожидании",
+  "paymentFailed": "ошибка",
+  "bookingAcceptedBy": "Бронирование принято: {name}",
+  "@bookingAcceptedBy": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "whenLabel": "Когда",
+  "atTime": "в {time}",
+  "@atTime": {
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "userLabel": "Пользователь",
+  "providerLabel": "Исполнитель",
+  "estimatedPriceLabel": "Ориентировочная цена",
+  "offeredPaidLabel": "Предложено / оплачено",
+  "distanceLabel": "Расстояние",
+  "distanceMiles": "{miles} миль",
+  "@distanceMiles": {
+    "placeholders": {
+      "miles": {}
+    }
+  },
+  "acceptedAtLabel": "Принято в",
+  "cancelledAtLabel": "Отменено в",
+  "cancelledByLabel": "Отменил",
+  "penaltyAppliedLabel": "Штраф применён: {amount}",
+  "@penaltyAppliedLabel": {
+    "placeholders": {
+      "amount": {}
+    }
+  },
+  "userConfirmedLabel": "Пользователь подтвердил",
+  "providerConfirmedLabel": "Исполнитель подтвердил",
+  "payoutReleasedLabel": "Выплата разблокирована",
+  "yesLower": "да",
+  "noLower": "нет",
+  "chat": "Чат",
+  "call": "Позвонить",
+  "actions": "Действия",
+  "confirmCompletion": "Подтвердить завершение",
+  "noFurtherActionsForBooking": "Для этого бронирования больше нет доступных действий.",
+  "freeCancellationEndsIn": "Бесплатная отмена закончится через {time}",
+  "@freeCancellationEndsIn": {
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "earlyFreeCancellationEndedWarning": "Период ранней бесплатной отмены завершён. До примерно 40 минут после принятия поздняя отмена может привести к штрафу.",
+  "cancelBooking": "Отменить бронирование",
+  "cancelBookingNoPenalty": "Отменить бронирование (без штрафа)",
+  "cancelBookingPenaltyMayApply": "Отменить бронирование (возможен штраф)",
+  "cancellationPolicyInfo": "Вы можете отменить без штрафа в первые 7 минут после принятия исполнителем, а также снова примерно через 40 минут при необходимости. Между этими периодами может применяться штраф согласно правилам.",
+  "ratingLine": "Рейтинг: {rating} ({reviewCount, plural, =1{1 отзыв} few{{reviewCount} отзыва} many{{reviewCount} отзывов} other{{reviewCount} отзывов}})",
+  "@ratingLine": {
+    "placeholders": {
+      "rating": {},
+      "reviewCount": {
+        "type": "int"
+      }
+    }
+  },
+  "proofOfSkillsPortfolio": "Подтверждение навыков (Портфолио)",
+  "noPortfolioPostsAvailable": "Нет доступных работ в портфолио.",
+  "bookingLocation": "Место бронирования",
+  "location": "Местоположение",
+  "latitude": "Широта",
+  "longitude": "Долгота",
+  "mapWillAppearWhenCoordinatesValid": "Карта появится здесь, когда координаты будут корректными.",
+  "chatForBookingTitle": "Чат по бронированию №{id}",
+  "@chatForBookingTitle": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+  "unableToStartChat": "Не удалось начать чат. Чат доступен только когда бронирование принято, в процессе, или завершено в течение последнего дня.",
+  "invalidChatThreadFromServer": "С сервера получен неверный чат-поток.",
+  "messageNotSentPolicy": "Сообщение не отправлено. Примечание: делиться телефонами или e-mail в чате запрещено.",
+  "unknown": "Неизвестно",
+  "typeMessageHint": "Введите сообщение в поддержку...",
+  "uploadProfilePicture": "Загрузить фото профиля",
+  "currentProfilePicture": "Текущее фото профиля",
+  "newPicturePreview": "Предпросмотр нового фото",
+  "chooseImage": "Выбрать изображение",
+  "upload": "Загрузить",
+  "noImageBytesFoundWeb": "Не найдены байты изображения (web).",
+  "pleasePickAnImageFirst": "Сначала выберите изображение.",
+  "uploadFailedCheckServerLogs": "Загрузка не удалась. Проверьте логи сервера / токен.",
+  "profilePictureUploadedSuccessfully": "Фото профиля успешно загружено!",
+  "errorWithValue": "Ошибка: {error}",
+  "@errorWithValue": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "tapToChangeProfilePicture": "Нажмите, чтобы изменить фото профиля",
+  "usernameValue": "Имя пользователя: {username}",
+  "@usernameValue": {
+    "placeholders": {
+      "username": {}
+    }
+  },
+  "roleValue": "Роль: {role}",
+  "@roleValue": {
+    "placeholders": {
+      "role": {}
+    }
+  },
+  "dateOfBirthYyyyMmDd": "Дата рождения (ГГГГ-ММ-ДД)",
+  "saveProfile": "Сохранить профиль",
+  "failedToSaveProfile": "Не удалось сохранить профиль. Попробуйте ещё раз.",
+  "profileUpdated": "Профиль обновлён.",
+  "completeYourProviderProfile": "Заполните профиль исполнителя",
+  "completeProviderProfileBody": "Чтобы начать принимать заказы и зарабатывать, заполните профиль исполнителя.",
+  "setupProfileNow": "Настроить профиль сейчас",
+  "doItLater": "Сделать позже",
+  "bookingTimerPenaltyPeriodActive": "Период штрафа активен",
+  "bookingTimerFreeCancellationPeriod": "Период бесплатной отмены",
+  "bookingTimerTimeRemaining": "Осталось времени: {time}",
+  "@bookingTimerTimeRemaining": {
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "bookingTimerCancellingNowPenalty": "Отмена сейчас приведёт к штрафу 10%.",
+  "bookingTimerCancelNoPenalty": "Вы можете отменить без штрафа.",
+  "myReviewsTitle": "Мои отзывы",
+  "failedToLoadReviews": "Не удалось загрузить отзывы.",
+  "noReviewsYet": "Вы ещё не оставили ни одного отзыва.",
+  "providerWithName": "Исполнитель: {name}",
+  "providerGeneric": "Исполнитель",
+  "ratingWithValue": "Рейтинг: {rating}",
+  "nearbyOpenJobsTitle": "Открытые заказы рядом",
+  "failedToLoadOpenJobsHint": "Не удалось загрузить открытые заказы.\nУбедитесь, что у вас есть профиль исполнителя, задана локация и available=true.",
+  "errorLoadingJobsWithValue": "Ошибка загрузки заказов: {error}",
+  "noOpenJobsFoundNearbyTitle": "Поблизости нет открытых заказов",
+  "noOpenJobsFoundNearbyBody": "Убедитесь, что:\n- Вы установили локацию исполнителя\n- Вы отмечены как доступный\n- Пользователи создали и оплатили бронирования",
+  "currencyLabel": "Валюта: {symbol}",
+  "pricesShownInCurrency": "Цены указаны в {symbol} ({country})",
+  "jobTitleWithId": "Заказ №{id}",
+  "serviceLine": "Услуга: {service}",
+  "whenLine": "Когда: {date} {time}",
+  "priceLine": "Цена: {price}",
+  "acceptJob": "Принять заказ",
+  "failedToAcceptJob": "Не удалось принять заказ.",
+  "jobAcceptedSuccessfully": "Заказ успешно принят.",
+  "newServiceRequestTitle": "Новый запрос услуги",
+  "offeredPriceLabel": "Предложенная цена",
+  "offeredPriceHint": "например 25.00",
+  "enterValidPrice": "Введите корректную цену",
+  "bookAndPay": "Забронировать и оплатить",
+  "bookAndPayAmount": "Забронировать и оплатить {amount}",
+  "haircutService": "Стрижка",
+  "stylingService": "Укладка",
+  "timeLabel": "Время:",
+  "notesLabel": "Заметки",
+  "requestCreatedAndPaidBroadcast": "Запрос создан и оплачен! Отправлено исполнителям.",
+  "locationLatLng": "Местоположение: {lat}, {lng}",
+  "paymentMethodsTitle": "Способы оплаты",
+  "paymentPreferencesInfo": "Эти настройки хранятся локально на вашем устройстве. Реальные платежи обрабатываются безопасно через Stripe/другие шлюзы.",
+  "preferredMethodLabel": "Предпочтительный метод (локальный шлюз выбирается по стране)",
+  "methodVisaMastercard": "Visa/Mastercard",
+  "methodMobileMoney": "Mobile Money (Momo/Paystack/Africa)",
+  "methodPaypal": "PayPal",
+  "methodApplePayGooglePay": "Apple Pay/Google Pay",
+  "methodWeChatPay": "WeChat Pay (Китай)",
+  "methodAlipay": "Alipay (Китай)",
+  "methodUnionPay": "UnionPay (Китай)",
+  "mobileMoneyNumberLabel": "Номер Mobile Money",
+  "wechatAlipayIdLabel": "ID WeChat/Alipay",
+  "cardLast4DigitsLabel": "Последние 4 цифры карты",
+  "paypalEmailLabel": "Email PayPal",
+  "applePayEnabledOnDevice": "Apple Pay включён на этом устройстве",
+  "savePaymentPreferences": "Сохранить настройки оплаты",
+  "paymentPrefsSavedInfo": "Настройки оплаты сохранены локально. Реальное списание будет выполняться через Stripe/другие шлюзы позже.",
+  "failedToLoadImage": "Не удалось загрузить изображение",
+  "earningsTitle": "Доход",
+  "couldNotLoadEarningsSummary": "Не удалось загрузить сводку доходов.",
+  "noData": "Нет данных.",
+  "retry": "Повторить",
+  "summaryTitle": "Сводка",
+  "totalLabel": "Итого",
+  "pendingLabel": "Ожидается",
+  "paidLabel": "Оплачено",
+  "pdfReportTitle": "PDF-отчёт",
+  "periodLabel": "Период",
+  "periodThisMonth": "Этот месяц",
+  "periodLastMonth": "Прошлый месяц",
+  "periodYtd": "С начала года",
+  "periodAllTime": "За всё время",
+  "couldNotDownloadPdfReport": "Не удалось скачать PDF-отчёт.",
+  "couldNotOpenPdfWithValue": "Не удалось открыть PDF: {error}",
+  "savingFilesNotSupportedWeb": "Сохранение файлов в веб-версии пока не поддерживается.",
+  "savedToDocumentsIosWithPath": "Сохранено в Documents (iOS):\n{path}",
+  "savedToFilesWithPath": "Сохранено в файлы:\n{path}",
+  "open": "Открыть",
+  "failedToSavePdfWithValue": "Не удалось сохранить PDF: {error}",
+  "openPdfReport": "Открыть PDF-отчёт",
+  "savePdfToDownloads": "Сохранить PDF в Загрузки",
+  "reportWatermarkNote": "PDF-отчёт должен содержать водяной знак Styloria.",
+  "referFriendsTitle": "Пригласить друзей",
+  "shareReferralCodeBody": "Поделитесь своим реферальным кодом с друзьями. Позже вы сможете добавить награды, когда они зарегистрируются и завершат бронирования.",
+  "yourReferralCodeLabel": "Ваш реферальный код:",
+  "copy": "Копировать",
+  "referralCodeCopiedWithCode": "Реферальный код скопирован: {code}",
+  "navHome": "Главная",
+  "navBookings": "Бронирования",
+  "navNotifications": "Уведомления",
+  "navAccount": "Аккаунт",
+  "welcome": "Добро пожаловать",
+  "welcomeName": "Добро пожаловать, {name}",
+  "@welcomeName": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "toggleThemeTooltip": "Переключить светлую/тёмную тему",
+  "loggedInAs": "Вы вошли как: {role}",
+  "@loggedInAs": {
+    "placeholders": {
+      "role": {}
+    }
+  },
+  "locationWithValue": "Местоположение: {value}",
+  "@locationWithValue": {
+    "placeholders": {
+      "value": {}
+    }
+  },
+  "homeTagline": "Преобразите свой уход с бронированиями в реальном времени и проверенными исполнителями.",
+  "manageProviderProfile": "Управление профилем исполнителя",
+  "browseOpenJobs": "Просмотреть открытые заказы",
+  "quickActions": "Быстрые действия",
+  "newBooking": "Новое бронирование",
+  "notificationsWithUnread": "Уведомления ({count, plural, =1{1 непрочитано} few{{count} непрочитано} many{{count} непрочитано} other{{count} непрочитано}})",
+  "@notificationsWithUnread": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "liveLocationTrackingTitle": "Отслеживание локации в реальном времени",
+  "live": "Онлайн",
+  "locationServicesDisabled": "Службы геолокации отключены.",
+  "locationPermissionDenied": "Доступ к геолокации запрещён.",
+  "locationPermissionPermanentlyDenied": "Доступ к геолокации запрещён навсегда. Включите его в настройках.",
+  "failedToGetLocationWithValue": "Не удалось получить местоположение: {error}",
+  "@failedToGetLocationWithValue": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "youProvider": "Вы (исполнитель)",
+  "youCustomer": "Вы (клиент)",
+  "customer": "Клиент",
+  "bookingDetails": "Детали бронирования",
+  "navigate": "Навигация",
+  "failedToLoadNotifications": "Не удалось загрузить уведомления.",
+  "failedToMarkAsRead": "Не удалось пометить как прочитанное",
+  "noNotificationsYet": "Уведомлений пока нет.",
+  "markRead": "Пометить прочитанным",
+  "providerKycTitle": "Проверка поставщика (KYC)",
+  "logoutTooltip": "Выйти",
+  "statusLabel": "Статус: {status}",
+  "@statusLabel": {
+    "placeholders": {
+      "status": {}
+    }
+  },
+  "rejectedWithNotes": "Отклонено: {notes}",
+  "@rejectedWithNotes": {
+    "placeholders": {
+      "notes": {}
+    }
+  },
+  "kycInstructions": "Чтобы получить доступ к функциям поставщика, загрузите удостоверение личности и селфи для проверки.",
+  "idFrontRequired": "ID (лицевая сторона, обязательно)",
+  "selectIdFront": "Выбрать лицевую сторону",
+  "idBackRequired": "ID (обратная сторона, обязательно)",
+  "selectIdBackRequired": "Выбрать обратную сторону",
+  "selfieRequired": "Селфи (обязательно)",
+  "selectSelfie": "Выбрать селфи",
+  "takeSelfie": "Сделать селфи",
+  "errorUploadAllRequired": "Пожалуйста, загрузите ID (лицевая сторона), ID (обратная сторона) и селфи.",
+  "failedSubmitKycCode": "Не удалось отправить KYC (код {code}).",
+  "@failedSubmitKycCode": {
+    "placeholders": {
+      "code": {}
+    }
+  },
+  "submittedCurrentStatus": "Отправлено. Текущий статус: {status}",
+  "@submittedCurrentStatus": {
+    "placeholders": {
+      "status": {}
+    }
+  },
+  "unknownStatus": "неизвестно",
+  "submitKyc": "Отправить KYC",
+  "verificationMayTakeTimeNote": "Примечание: проверка может занять время. Доступ к функциям поставщика появится после одобрения.",
+  "enterVerificationCodeTitle": "Введите код подтверждения",
+  "otpSentToUsername": "Мы отправили 6-значный код на номер телефона,\nсвязанный с \"{username}\".",
+  "@otpSentToUsername": {
+    "placeholders": {
+      "username": {}
+    }
+  },
+  "sixDigitCodeLabel": "6-значный код",
+  "enterSixDigitCodeValidation": "Введите 6-значный код",
+  "otpInvalidOrExpired": "Неверный или истёкший код.",
+  "failedLoadUserInfoAfterVerification": "Не удалось загрузить данные пользователя после подтверждения.",
+  "chatWithSupportTitle": "Чат с поддержкой",
+  "unableStartSupportChat": "Не удалось начать чат с поддержкой.",
+  "invalidSupportThreadReturned": "Сервер вернул некорректный поток поддержки.",
+  "noMessagesYet": "Сообщений пока нет. Начните разговор!",
+  "supportDefaultName": "Поддержка",
+  "aboutPoliciesTitle": "О приложении и политиках",
+  "newBookingTitle": "Новая бронь",
+  "appointmentDetailsTitle": "Детали встречи",
+  "pickDate": "Выбрать дату",
+  "pickTime": "Выбрать время",
+  "serviceTypeTitle": "Тип услуги",
+  "serviceDropdownLabel": "Услуга",
+  "serviceHaircutLabel": "Стрижка",
+  "serviceBraidsLabel": "Косы",
+  "serviceShaveLabel": "Бритьё",
+  "serviceHairColoringLabel": "Окрашивание волос",
+  "serviceManicureLabel": "Маникюр",
+  "servicePedicureLabel": "Педикюр",
+  "serviceNailArtLabel": "Дизайн ногтей",
+  "serviceMakeupLabel": "Макияж",
+  "serviceFacialLabel": "Уход за лицом",
+  "serviceWaxingLabel": "Восковая эпиляция",
+  "serviceMassageLabel": "Массаж",
+  "serviceHairStylingLabel": "Укладка",
+  "serviceHairTreatmentLabel": "Лечение волос",
+  "serviceHairExtensionsLabel": "Наращивание волос",
+  "serviceOtherServicesLabel": "Другие услуги",
+  "notesForProviderOptionalLabel": "Заметки для мастера (необязательно)",
+  "locationTitle": "Местоположение",
+  "latitudeLabel": "Широта",
+  "longitudeLabel": "Долгота",
+  "requiredField": "Обязательно",
+  "useMyCurrentLocation": "Использовать моё текущее местоположение",
+  "pricesShownIn": "Цены показаны в {symbol} ({country})",
+  "chooseTimeLaterThanCurrent": "Пожалуйста, выберите время позже текущего.",
+  "pleasePickDateAndTime": "Пожалуйста, выберите дату и время.",
+  "locationUpdatedFromGps": "Местоположение обновлено по GPS.",
+  "failedToGetLocation": "Не удалось получить местоположение: {error}",
+  "bookingCreatedChoosePrice": "Бронь создана! ID: {id} • Выберите вариант цены.",
+  "failedToCreateBooking": "Не удалось создать бронь.",
+  "paymentsNotSupportedLong": "Платежи не поддерживаются на этой платформе. Запустите приложение на Android, iOS, macOS или Web для теста оплат.",
+  "noBookingToConfirm": "Нет брони для подтверждения. Сначала создайте бронь.",
+  "pleaseChoosePriceOption": "Пожалуйста, выберите вариант цены.",
+  "failedCreatePaymentTryAgain": "Не удалось создать платёж на сервере. Попробуйте ещё раз.",
+  "paymentSuccessfulMessage": "Оплата прошла успешно!\nБронь #{bookingId} • Оплачено: {paid}\nВаш запрос теперь виден ближайшим мастерам.",
+  "paymentSucceededButFailedUpdate": "Оплата прошла, но обновить бронь на сервере не удалось.",
+  "paymentCancelledOrFailed": "Оплата отменена или не удалась: {reason}",
+  "unexpectedPaymentError": "Неожиданная ошибка оплаты: {error}",
+  "createBookingButton": "Создать бронь",
+  "chooseYourPriceOptionTitle": "Выберите вариант цены",
+  "transportationCostLabel": "Стоимость транспорта: {cost}",
+  "budgetTierTitle": "ЭКОНОМ",
+  "standardTierTitle": "СТАНДАРТ",
+  "priorityTierTitle": "ПРИОРИТЕТ",
+  "budgetTierDescription": "Лучшая цена среди ближайших мастеров",
+  "standardTierDescription": "Рекомендуемый баланс цены и доступности",
+  "priorityTierDescription": "Премиум-опция для быстрого привлечения лучших мастеров",
+  "naShort": "Н/Д",
+  "priceBreakdownTitle": "Разбивка цены",
+  "servicePriceLabel": "Стоимость услуги",
+  "transportationLabel": "Транспорт",
+  "serviceFeeLabel": "Сервисный сбор ({percent}%)",
+  "allPricesIn": "Все цены в {currency} ({country})",
+  "userCountryPlaceholder": "Страна пользователя",
+  "totalToPayTitle": "Итого к оплате",
+  "includesServiceTransportation": "Включает услугу + транспорт",
+  "confirmAndPay": "Подтвердить и оплатить",
+  "howPricingWorksTitle": "Как формируется цена",
+  "howPricingWorksBullets": "• Эконом: лучшая цена среди ближайших мастеров\n• Стандарт: рекомендуемый вариант\n• Приоритет: премиум-опция для ускорения принятия\n• Транспорт включён в итоговую сумму",
+  "myBookingsTitle": "Мои бронирования",
+  "myAssignedJobsTitle": "Мои назначенные заказы",
+  "pleaseCompleteProviderProfileFirst": "Пожалуйста, сначала заполните профиль мастера.",
+  "failedToLoadBookings": "Не удалось загрузить бронирования.",
+  "profileSetupRequiredTitle": "Требуется настройка профиля",
+  "profileSetupRequiredBody": "Нужно заполнить профиль мастера, прежде чем вы сможете видеть назначенные заказы и доход.",
+  "later": "Позже",
+  "setupNow": "Настроить сейчас",
+  "noBookingsFound": "Бронирования не найдены.",
+  "findNearbyOpenJobs": "Найти открытые заказы рядом",
+  "pay": "Оплатить",
+  "rate": "Оценить",
+  "bookingNumber": "Бронь #{id}",
+  "whenOn": "Когда: {date}",
+  "whenAt": "Когда: {date} в {time}",
+  "providerLine": "Мастер: {name}",
+  "userLine": "Пользователь: {name}",
+  "estimatedPriceLine": "Оценочная цена: {price}",
+  "paymentLine": "Оплата: {status}",
+  "paymentUnpaid": "не оплачено",
+  "paymentUnknown": "неизвестно",
+  "confirmPaymentTitle": "Подтвердить оплату",
+  "confirmPaymentBody": "Оплатить {amount}, чтобы подтвердить эту бронь?",
+  "yesPay": "Да, оплатить",
+  "failedToCreatePaymentIntent": "Не удалось создать intent оплаты.",
+  "paymentSuccessfulShort": "Оплата прошла успешно.",
+  "paymentSucceededButFailedUpdateBooking": "Оплата прошла, но обновить бронь на сервере не удалось.",
+  "paymentCancelledOrFailedReason": "Оплата отменена или не удалась: {reason}",
+  "unexpectedPaymentErrorReason": "Неожиданная ошибка оплаты: {error}",
+  "rateProviderTitle": "Оценить {providerName}",
+  "@rateProviderTitle": { 
+    "placeholders": { 
+      "providerName": {} 
+    } 
+  },
+  "selectRatingHelp": "Выберите рейтинг (1 = плохо, 5 = отлично):",
+  "commentsOptionalLabel": "Комментарий (необязательно)",
+  "submit": "Отправить",
+  "reviewSubmitted": "Отзыв отправлен.",
+  "failedSubmitReview": "Не удалось отправить отзыв.",
+  "failedToLoadProfile": "Не удалось загрузить профиль: {error}",
+  "profileSavedSuccess": "Профиль успешно {action}!",
+  "genericError": "Ошибка: {error}",
+  "locationPermissionDeniedEnableInSettings": "Доступ к геолокации запрещён. Включите его в настройках.",
+  "locationPermissionPermanentlyDeniedEnableInAppSettings": "Доступ к геолокации запрещён навсегда. Включите его в настройках приложения.",
+  "errorGettingLocation": "Ошибка при получении местоположения: {error}",
+  "pleaseEnterAddress": "Введите адрес",
+  "locationUpdatedFromAddress": "Местоположение обновлено по адресу",
+  "couldNotFindLocationForAddress": "Не удалось найти местоположение для этого адреса",
+  "errorConvertingAddress": "Ошибка при преобразовании адреса: {error}",
+  "portfolioUnavailableCompleteKycFirst": "Портфолио недоступно. Если вы провайдер, сначала пройдите проверку KYC.",
+  "failedToLoadPortfolio": "Не удалось загрузить портфолио: {error}",
+  "addPhoto": "Добавить фото",
+  "addVideo": "Добавить видео",
+  "addPost": "Добавить пост",
+  "captionOptionalTitle": "Подпись (необязательно)",
+  "captionHintExample": "например: «Knotless braids для клиента»",
+  "skip": "Пропустить",
+  "save": "Сохранить",
+  "failedToCreatePortfolioPost": "Не удалось создать пост портфолио.",
+  "uploadFailedMediaUpload": "Загрузка не удалась (загрузка медиа).",
+  "uploadFailed": "Загрузка не удалась: {error}",
+  "deletePostTitle": "Удалить пост?",
+  "deletePostBody": "Пост будет удалён из вашего портфолио.",
+  "delete": "Удалить",
+  "deleteFailed": "Удаление не удалось.",
+  "deleteFailedWithError": "Удаление не удалось: {error}",
+  "portfolioTitle": "Портфолио",
+  "noPortfolioPostsYetHelpText": "Постов портфолио пока нет. Добавьте фото/видео своей работы, чтобы повысить доверие клиентов.",
+  "setupProviderProfileTitle": "Настройка профиля провайдера",
+  "providerProfileTitle": "Профиль провайдера",
+  "welcomeToStyloriaTitle": "Добро пожаловать в Styloria!",
+  "completeProviderProfileToStartEarning": "Заполните профиль провайдера, чтобы начать принимать заказы и зарабатывать.",
+  "reviewCountLabel": "({count} {count, plural, one{отзыв} few{отзыва} many{отзывов} other{отзыва}})",
+  "topRatedChip": "Топовый рейтинг",
+  "bioLabel": "Био / Описание",
+  "bioHint": "Расскажите клиентам о ваших навыках и опыте...",
+  "pleaseEnterBio": "Введите био",
+  "bioMinLength": "Био должно быть не короче {min} символов",
+  "yourLocationTitle": "Ваше местоположение",
+  "locationHelpMatchNearbyClients": "Ваше местоположение помогает подобрать клиентов поблизости",
+  "locationHelpUpdateToFindJobs": "Обновите местоположение, чтобы искать заказы в других районах",
+  "useMyCurrentLocationTitle": "Использовать текущее местоположение",
+  "gpsSubtitle": "Получить местоположение автоматически через GPS",
+  "orLabel": "ИЛИ",
+  "enterYourAddressTitle": "Введите адрес",
+  "fullAddressLabel": "Полный адрес",
+  "fullAddressHint": "например: 123 Main St, Accra, Ghana",
+  "find": "Найти",
+  "addressHelpText": "Введите улицу, город и страну",
+  "coordinatesAutoFilledTitle": "Координаты (автозаполнение)",
+  "servicePricingTitle": "Цены на услуги",
+  "servicePricingHelp": "Укажите цену для каждой услуги. Отметьте «Не предлагаю» для услуг, которые вы не оказываете.",
+  "serviceHeader": "Услуга",
+  "priceHeader": "Цена",
+  "notOfferedHeader": "Не предлагаю",
+  "priceHint": "0.00",
+  "providerHowPricingWorksTitle": "Как формируется цена:",
+  "providerHowPricingWorksBody": "• Ваша цена — это стоимость услуги\n• Стоимость транспорта = 80% валюты пользователя за км\n• Пользователь видит 3 варианта по провайдерам рядом:\n  - Бюджет: самая низкая цена\n  - Стандарт: средняя цена\n  - Приоритет: самая высокая цена",
+  "availableForBookingsTitle": "Доступен для бронирований",
+  "availableOnHelp": "✓ Вы будете отображаться в поиске для клиентов поблизости",
+  "availableOffHelp": "✗ Вы не будете получать новые предложения",
+  "completeSetupStartEarning": "Завершить настройку и начать зарабатывать",
+  "updateProfile": "Обновить профиль",
+  "skipForNow": "Пропустить сейчас",
+
+  "genericContact": "Контакт",
+  "genericProvider": "Исполнитель",
+  "genericNotAvailable": "Н/Д",
+
+  "reviewSelectRatingPrompt": "Выберите оценку (от 1 до 5).",
+  "reviewCommentOptionalLabel": "Комментарий (необязательно)",
+  "genericCancel": "Отмена",
+  "genericSubmit": "Отправить",
+  "reviewSubmitted": "Отзыв отправлен.",
+  "reviewSubmitFailed": "Не удалось отправить отзыв.",
+  "rateThisService": "Оценить услугу",
+
+  "tipLeaveTitle": "Оставить чаевые",
+  "tipChooseAmountPrompt": "Выберите сумму чаевых или введите свою.",
+  "tipNoTip": "Без чаевых",
+  "tipCustomAmountLabel": "Своя сумма чаевых",
+  "genericContinue": "Продолжить",
+
+  "tipSkipped": "Чаевые пропущены.",
+  "tipFailedToSaveChoice": "Не удалось сохранить выбор чаевых.",
+  "tipFailedToCreatePayment": "Не удалось создать оплату чаевых.",
+  "tipPaidSuccessfully": "Чаевые успешно оплачены. Спасибо!",
+  "tipPaidButUpdateFailed": "Оплата чаевых прошла успешно, но обновить бронирование не удалось.",
+
+  "tipCancelledOrFailed": "Чаевые отменены/не удались: {message}",
+  "tipUnexpectedError": "Неожиданная ошибка чаевых: {error}",
+
+  "tipAlreadyPaidLabel": "Чаевые уже оплачены",
+  "tipSkippedLabel": "Чаевые пропущены",
+  "tipLeaveButton": "Оставить чаевые",
+  "walletTitle": "Кошелёк",
+  "walletTooltip": "Кошелёк",
+  "payoutSettingsTitle": "Настройки выплат",
+  "payoutSettingsTooltip": "Настройки выплат",
+  "walletNoWalletYet": "Кошелёк пока отсутствует. Выполните заказы, чтобы заработать.",
+  "walletCurrencyFieldLabel": "Валюта",
+  "walletAvailableLine": "Доступно: {amount} {currency}",
+  "walletPendingLine": "В ожидании: {amount} {currency}",
+  "walletCashOutInstant": "Вывести (мгновенно)",
+  "walletCashOutFailed": "Не удалось вывести средства.",
+  "walletCashOutSentTransfer": "Запрос на вывод отправлен. Перевод: {transferId}",
+  "walletTransactionsTitle": "Транзакции",
+  "walletNoTransactionsYet": "Транзакций пока нет.",
+  "payoutAutoPayoutsTitle": "Автовыплаты",
+  "payoutAutoPayoutsSubtitle": "Автоматически отправлять выплаты по выбранному расписанию.",
+  "payoutDayUtcLabel": "День выплаты (UTC)",
+  "payoutHourUtcLabel": "Час выплаты (UTC)",
+  "payoutMinimumAmountLabel": "Минимальная сумма для автовыплаты",
+  "payoutMinimumAmountHelper": "Автовыплата выполняется только если доступный баланс ≥ этой суммы.",
+  "payoutInstantCashOutEnabledTitle": "Мгновенный вывод включён",
+  "payoutInstantCashOutEnabledSubtitle": "Разрешить кнопку «Вывести» (взимается комиссия).",
+  "payoutSettingsSaved": "Настройки выплат сохранены.",
+  "payoutSettingsSaveFailed": "Не удалось сохранить настройки выплат.",
+  "@providerWithName": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "@ratingWithValue": {
+    "placeholders": {
+      "rating": {}
+    }
+  },
+  "@errorLoadingJobsWithValue": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@currencyLabel": {
+    "placeholders": {
+      "symbol": {}
+    }
+  },
+  "@pricesShownInCurrency": {
+    "placeholders": {
+      "symbol": {},
+      "country": {}
+    }
+  },
+  "@jobTitleWithId": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+  "@serviceLine": {
+    "placeholders": {
+      "service": {}
+    }
+  },
+  "@whenLine": {
+    "placeholders": {
+      "date": {},
+      "time": {}
+    }
+  },
+  "@priceLine": {
+    "placeholders": {
+      "price": {}
+    }
+  },
+  "@bookAndPayAmount": {
+    "placeholders": {
+      "amount": {}
+    }
+  },
+  "@locationLatLng": {
+    "placeholders": {
+      "lat": {},
+      "lng": {}
+    }
+  },
+  "@couldNotOpenPdfWithValue": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@savedToDocumentsIosWithPath": {
+    "placeholders": {
+      "path": {}
+    }
+  },
+  "@savedToFilesWithPath": {
+    "placeholders": {
+      "path": {}
+    }
+  },
+  "@failedToSavePdfWithValue": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@referralCodeCopiedWithCode": {
+    "placeholders": {
+      "code": {}
+    }
+  },
+  "@pricesShownIn": {
+    "placeholders": {
+      "symbol": {},
+      "country": {}
+    }
+  },
+  "@failedToGetLocation": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@bookingCreatedChoosePrice": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+  "@paymentSuccessfulMessage": {
+    "placeholders": {
+      "bookingId": {},
+      "paid": {}
+    }
+  },
+  "@paymentCancelledOrFailed": {
+    "placeholders": {
+      "reason": {}
+    }
+  },
+  "@unexpectedPaymentError": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@transportationCostLabel": {
+    "placeholders": {
+      "cost": {}
+    }
+  },
+  "@serviceFeeLabel": {
+    "placeholders": {
+      "percent": {}
+    }
+  },
+  "@allPricesIn": {
+    "placeholders": {
+      "currency": {},
+      "country": {}
+    }
+  },
+  "@bookingNumber": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+  "@whenOn": {
+    "placeholders": {
+      "date": {}
+    }
+  },
+  "@whenAt": {
+    "placeholders": {
+      "date": {},
+      "time": {}
+    }
+  },
+  "@providerLine": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "@userLine": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "@estimatedPriceLine": {
+    "placeholders": {
+      "price": {}
+    }
+  },
+  "@paymentLine": {
+    "placeholders": {
+      "status": {}
+    }
+  },
+  "@confirmPaymentBody": {
+    "placeholders": {
+      "amount": {}
+    }
+  },
+  "@paymentCancelledOrFailedReason": {
+    "placeholders": {
+      "reason": {}
+    }
+  },
+  "@unexpectedPaymentErrorReason": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@failedToLoadProfile": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@profileSavedSuccess": {
+    "placeholders": {
+      "action": {}
+    }
+  },
+  "@genericError": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@errorGettingLocation": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@errorConvertingAddress": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@failedToLoadPortfolio": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@uploadFailed": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@deleteFailedWithError": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@reviewCountLabel": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@bioMinLength": {
+    "placeholders": {
+      "min": {
+        "type": "int"
+      }
+    }
+  }
+}

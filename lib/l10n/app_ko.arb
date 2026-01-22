@@ -1,0 +1,938 @@
+{
+  "@@locale": "ko",
+  "appTitle": "Styloria",
+  "account": "계정",
+  "profile": "프로필",
+  "myBookings": "내 예약",
+  "openJobs": "오픈 잡",
+  "earnings": "수익",
+  "paymentMethods": "결제 수단",
+  "referFriends": "친구 추천",
+  "language": "언어",
+  "settings": "설정",
+  "darkMode": "다크 모드",
+  "systemDefault": "시스템 기본값",
+  "languageUpdated": "언어가 업데이트되었습니다",
+  "languageSetToSystemDefault": "언어가 시스템 기본값으로 설정되었습니다",
+  "helpAndSupport": "도움말 및 지원",
+  "chatWithCustomerService": "고객 지원과 채팅",
+  "aboutAndPolicies": "정보 및 정책",
+  "viewUserPoliciesAndAgreements": "사용자 정책 및 약관 보기",
+  "logOut": "로그아웃",
+  "deleteAccount": "계정 삭제",
+  "deleteAccountSubtitle": "이 작업은 되돌릴 수 없습니다",
+  "deleteAccountTitle": "계정 삭제",
+  "deleteAccountConfirmBody": "계정을 삭제하시겠습니까?\n\n이 작업은 로그아웃되며 영구적으로 접근 권한을 잃을 수 있습니다.",
+  "no": "아니오",
+  "yesDelete": "예, 삭제",
+  "deleteAccountSheetTitle": "떠나셔서 아쉽습니다.",
+  "deleteAccountSheetPrompt": "이유를 알려주실 수 있나요? (해당되는 항목 모두 선택)",
+  "deleteAccountSelectAtLeastOneReason": "최소 한 가지 이유를 선택해 주세요.",
+  "tellUsMoreOptional": "자세히 알려주세요(선택)",
+  "suggestionsToImproveOptional": "개선 제안(선택)",
+  "deleteMyAccount": "내 계정 삭제",
+  "cancel": "취소",
+  "failedToDeleteAccount": "계정 삭제에 실패했습니다. 다시 시도해 주세요.",
+  "choosePreferredLanguage": "선호 언어 선택",
+  "noteSomeTextMayStillAppearInEnglish": "참고: 앱 언어가 변경됩니다. 번역이 추가되기 전까지 일부 텍스트는 영어로 표시될 수 있습니다.",
+  "languageSetToName": "언어가 {name}(으)로 설정되었습니다",
+  "@languageSetToName": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "deletionReason1": "Styloria가 더 이상 필요하지 않아요",
+  "deletionReason2": "계정 인증(이메일/KYC)에 문제가 있었어요",
+  "deletionReason3": "근처에서 서비스/제공자를 찾을 수 없었어요",
+  "deletionReason4": "가격 또는 수수료가 너무 비싸거나 불명확했어요",
+  "deletionReason5": "앱이 혼란스럽거나 사용하기 어려웠어요",
+  "deletionReason6": "버그 또는 성능 문제",
+  "deletionReason7": "결제/환불 문제",
+  "deletionReason8": "제공자/사용자와의 나쁜 경험",
+  "deletionReason9": "개인정보 또는 보안 우려",
+  "deletionReason10": "실수로 계정을 만들었어요",
+  "deletionReason11": "다른 플랫폼으로 옮길 거예요",
+  "deletionReason12": "기타",
+  "loginWelcomeTitle": "Styloria에 오신 것을 환영합니다",
+  "loginWelcomeSubtitle": "예약과 서비스를 관리하려면 로그인하세요.",
+  "loginFailedToLoadUserInfo": "로그인은 성공했지만 사용자 정보를 불러오지 못했습니다.",
+  "username": "사용자 이름",
+  "password": "비밀번호",
+  "required": "필수",
+  "login": "로그인",
+  "createNewAccount": "새 계정 만들기",
+  "requestEmailVerificationCode": "이메일 인증 코드 요청",
+  "createAccountTitle": "계정 만들기",
+  "joinStyloria": "Styloria 가입",
+  "registerSubtitle": "서비스를 예약하거나 제공자가 되기 위해 계정을 만드세요",
+  "iWantTo": "원하는 작업:",
+  "bookServices": "서비스 예약",
+  "provideServices": "서비스 제공",
+  "personalInformation": "개인 정보",
+  "firstName": "이름",
+  "lastName": "성",
+  "selectDateOfBirth": "생년월일 선택",
+  "phoneNumber": "전화번호",
+  "pleaseEnterPhoneNumber": "전화번호를 입력해 주세요",
+  "accountInformation": "계정 정보",
+  "chooseUniqueUsernameHint": "고유한 사용자 이름을 선택하세요",
+  "email": "이메일",
+  "emailHint": "your@email.com",
+  "enterValidEmail": "유효한 이메일을 입력하세요",
+  "security": "보안",
+  "passwordHintAtLeast10": "최소 10자 이상",
+  "passwordMin10": "비밀번호는 최소 10자 이상이어야 합니다",
+  "iAgreeTo": "동의합니다: ",
+  "termsOfService": "서비스 약관",
+  "and": "및",
+  "privacyPolicy": "개인정보 처리방침",
+  "passwordIsRequired": "비밀번호가 필요합니다",
+  "confirmPassword": "비밀번호 확인",
+  "passwordsDoNotMatch": "비밀번호가 일치하지 않습니다",
+  "pleaseSelectDob": "생년월일을 선택해 주세요.",
+  "pleaseSelectCountry": "국가를 선택해 주세요.",
+  "pleaseSelectCity": "도시를 선택해 주세요.",
+  "pleaseEnterValidPhone": "유효한 전화번호를 입력해 주세요.",
+  "mustAcceptTerms": "약관에 동의해야 합니다.",
+  "mustBeAtLeast18": "가입하려면 만 18세 이상이어야 합니다.",
+  "agreeToTerms": "서비스 약관 및 개인정보 처리방침에 동의합니다",
+  "createAccountButton": "계정 만들기",
+  "alreadyHaveAccount": "이미 계정이 있으신가요?",
+  "emailVerifiedSuccessPleaseLogin": "이메일 인증이 완료되었습니다. 로그인해 주세요.",
+  "pleaseVerifyEmailToContinue": "계속하려면 이메일을 인증해 주세요.",
+  "requestVerificationCodeTitle": "인증 코드 요청",
+  "requestVerificationInstructions": "이메일 또는 사용자 이름을 입력하세요.\n해당 계정의 이메일로 새 인증 코드를 보내드립니다.",
+  "emailOrUsername": "이메일 또는 사용자 이름",
+  "sendCode": "코드 보내기",
+  "ifAccountExistsCodeSent": "계정이 존재한다면 코드가 전송되었습니다.",
+  "failedToSendVerificationCode": "인증 코드 전송에 실패했습니다.",
+  "verifyYourEmailTitle": "이메일 인증",
+  "verificationCodeSentInfo": "이 계정의 이메일로 인증 코드가 전송되었습니다.",
+  "emailVerificationInstructions": "이 계정의 이메일로 전송된 6자리 코드를 입력하세요:\n{identifier}",
+  "@emailVerificationInstructions": {
+    "placeholders": {
+      "identifier": {}
+    }
+  },
+  "verificationCodeLabel": "인증 코드",
+  "sendingEllipsis": "전송 중...",
+  "resendCode": "코드 재전송",
+  "enter6DigitCodeError": "6자리 코드를 입력하세요.",
+  "verifyingEllipsis": "확인 중...",
+  "verify": "확인",
+  "invalidOrExpiredCodeTryResending": "코드가 잘못되었거나 만료되었습니다. 다시 전송해 보세요.",
+  "bookingTitle": "예약 #{id}",
+  "@bookingTitle": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+  "invalidBookingIdForChat": "채팅을 위한 예약 ID가 올바르지 않습니다.",
+  "invalidBookingIdForCall": "통화를 위한 예약 ID가 올바르지 않습니다.",
+  "unableToLoadContactInfo": "연락처 정보를 불러올 수 없습니다. 예약이 활성 상태인지 확인하세요.",
+  "noPhoneNumberAvailableForName": "{name}의 전화번호를 사용할 수 없습니다.",
+  "@noPhoneNumberAvailableForName": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "deviceCannotPlaceCalls": "이 기기에서는 전화 통화를 할 수 없습니다.",
+  "cancelBookingDialogTitle": "예약 취소",
+  "cancelBookingDialogBody": "이 예약을 정말로 취소하시겠습니까?\n\n참고: 제공자가 이미 수락했고 7분이 지났다면(약 40분 미만), 규정에 따라 페널티가 적용될 수 있습니다.",
+  "yesCancel": "예, 취소",
+  "failedToCancelBooking": "예약 취소에 실패했습니다.",
+  "bookingCancelledPenaltyApplied": "예약이 취소되었습니다. {amount}의 페널티가 적용되었습니다.",
+  "@bookingCancelledPenaltyApplied": {
+    "placeholders": {
+      "amount": {}
+    }
+  },
+
+  "youAreCurrentlyUnavailable": "현재 이용 불가 상태입니다",
+  "toBrowseAndAcceptJobsEnableAvailability": "주변 작업 요청을 찾아보고 수락하려면 예약 가능 상태로 설정해야 합니다.",
+  "goToProfileSettings": "프로필 설정으로 이동",
+  "tipToggleAvailableForBookings": "팁: 서비스 제공자 프로필에서 \"예약 가능\"을 켜서 작업 요청을 받기 시작하세요.",
+  "requestedBy": "요청자: {name}",
+  "@requestedBy": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "locationLabel": "위치: {address}",
+  "@locationLabel": {
+    "placeholders": {
+      "address": {
+        "type": "String"
+      }
+    }
+  },
+
+  "bookingCancelledSuccessfully": "예약이 성공적으로 취소되었습니다.",
+  "failedToConfirmCompletion": "완료 확인에 실패했습니다. 다시 시도해 주세요.",
+  "bothSidesConfirmedCompletedPayoutReleased": "양쪽 모두 확인했습니다. 예약이 완료로 표시되고 정산이 해제되었습니다.",
+  "youConfirmedCompletionWaitingForProvider": "완료를 확인했습니다. 제공자의 확인을 기다리는 중입니다.",
+  "youConfirmedCompletionWaitingForUser": "완료를 확인했습니다. 사용자의 확인을 기다리는 중입니다.",
+  "statusUnknown": "알 수 없음",
+  "statusAccepted": "수락됨",
+  "statusInProgress": "진행 중",
+  "statusCompleted": "완료됨",
+  "statusCancelled": "취소됨",
+  "paymentPaid": "결제됨",
+  "paymentPending": "대기 중",
+  "paymentFailed": "실패",
+  "bookingAcceptedBy": "{name}님이 예약을 수락했습니다",
+  "@bookingAcceptedBy": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "whenLabel": "일정",
+  "atTime": "{time}에",
+  "@atTime": {
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "userLabel": "사용자",
+  "providerLabel": "제공자",
+  "estimatedPriceLabel": "예상 가격",
+  "offeredPaidLabel": "제안 / 결제",
+  "distanceLabel": "거리",
+  "distanceMiles": "{miles}마일",
+  "@distanceMiles": {
+    "placeholders": {
+      "miles": {}
+    }
+  },
+  "acceptedAtLabel": "수락 시간",
+  "cancelledAtLabel": "취소 시간",
+  "cancelledByLabel": "취소한 사람",
+  "penaltyAppliedLabel": "적용된 페널티: {amount}",
+  "@penaltyAppliedLabel": {
+    "placeholders": {
+      "amount": {}
+    }
+  },
+  "userConfirmedLabel": "사용자 확인",
+  "providerConfirmedLabel": "제공자 확인",
+  "payoutReleasedLabel": "정산 해제",
+  "yesLower": "예",
+  "noLower": "아니요",
+  "chat": "채팅",
+  "call": "전화",
+  "actions": "작업",
+  "confirmCompletion": "완료 확인",
+  "noFurtherActionsForBooking": "이 예약에 대해 더 이상 가능한 작업이 없습니다.",
+  "freeCancellationEndsIn": "무료 취소 종료까지 {time}",
+  "@freeCancellationEndsIn": {
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "earlyFreeCancellationEndedWarning": "초기 무료 취소 기간이 종료되었습니다. 수락 후 약 40분까지는 늦은 취소에 페널티가 부과될 수 있습니다.",
+  "cancelBooking": "예약 취소",
+  "cancelBookingNoPenalty": "예약 취소(페널티 없음)",
+  "cancelBookingPenaltyMayApply": "예약 취소(페널티 발생 가능)",
+  "cancellationPolicyInfo": "제공자 수락 후 처음 7분 동안은 페널티 없이 취소할 수 있으며, 필요 시 약 40분 이후에도 다시 페널티 없이 취소할 수 있습니다. 그 사이에는 규정에 따라 페널티가 적용될 수 있습니다.",
+  "ratingLine": "평점: {rating} ({reviewCount, plural, =1{리뷰 1개} other{리뷰 {reviewCount}개}})",
+  "@ratingLine": {
+    "placeholders": {
+      "rating": {},
+      "reviewCount": {
+        "type": "int"
+      }
+    }
+  },
+  "proofOfSkillsPortfolio": "기술 증빙(포트폴리오)",
+  "noPortfolioPostsAvailable": "포트폴리오 게시물이 없습니다.",
+  "bookingLocation": "예약 위치",
+  "location": "위치",
+  "latitude": "위도",
+  "longitude": "경도",
+  "mapWillAppearWhenCoordinatesValid": "좌표가 유효하면 여기에 지도가 표시됩니다.",
+  "chatForBookingTitle": "예약 #{id} 채팅",
+  "@chatForBookingTitle": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+  "unableToStartChat": "채팅을 시작할 수 없습니다. 채팅은 예약이 수락됨/진행 중이거나 최근 1일 내 완료된 경우에만 가능합니다.",
+  "invalidChatThreadFromServer": "서버에서 반환된 채팅 스레드가 올바르지 않습니다.",
+  "messageNotSentPolicy": "메시지가 전송되지 않았습니다. 참고: 채팅에서 전화번호나 이메일 공유는 허용되지 않습니다.",
+  "unknown": "알 수 없음",
+  "typeMessageHint": "지원팀에 보낼 메시지를 입력하세요...",
+  "uploadProfilePicture": "프로필 사진 업로드",
+  "currentProfilePicture": "현재 프로필 사진",
+  "newPicturePreview": "새 사진 미리보기",
+  "chooseImage": "이미지 선택",
+  "upload": "업로드",
+  "noImageBytesFoundWeb": "이미지 바이트를 찾을 수 없습니다(웹).",
+  "pleasePickAnImageFirst": "먼저 이미지를 선택하세요.",
+  "uploadFailedCheckServerLogs": "업로드에 실패했습니다. 서버 로그/토큰을 확인하세요.",
+  "profilePictureUploadedSuccessfully": "프로필 사진이 성공적으로 업로드되었습니다!",
+  "errorWithValue": "오류: {error}",
+  "@errorWithValue": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "tapToChangeProfilePicture": "탭하여 프로필 사진 변경",
+  "usernameValue": "사용자 이름: {username}",
+  "@usernameValue": {
+    "placeholders": {
+      "username": {}
+    }
+  },
+  "roleValue": "역할: {role}",
+  "@roleValue": {
+    "placeholders": {
+      "role": {}
+    }
+  },
+  "dateOfBirthYyyyMmDd": "생년월일(YYYY-MM-DD)",
+  "saveProfile": "프로필 저장",
+  "failedToSaveProfile": "프로필 저장에 실패했습니다. 다시 시도해 주세요.",
+  "profileUpdated": "프로필이 업데이트되었습니다.",
+  "completeYourProviderProfile": "제공자 프로필을 완료하세요",
+  "completeProviderProfileBody": "일을 수락하고 수익을 얻으려면 제공자 프로필을 완료하세요.",
+  "setupProfileNow": "프로필 지금 설정",
+  "doItLater": "나중에 하기",
+  "bookingTimerPenaltyPeriodActive": "페널티 기간 활성",
+  "bookingTimerFreeCancellationPeriod": "무료 취소 기간",
+  "bookingTimerTimeRemaining": "남은 시간: {time}",
+  "@bookingTimerTimeRemaining": {
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "bookingTimerCancellingNowPenalty": "지금 취소하면 10% 페널티가 부과됩니다.",
+  "bookingTimerCancelNoPenalty": "페널티 없이 취소할 수 있습니다.",
+  "myReviewsTitle": "내 리뷰",
+  "failedToLoadReviews": "리뷰를 불러오지 못했습니다.",
+  "noReviewsYet": "아직 남긴 리뷰가 없습니다.",
+  "providerWithName": "제공자: {name}",
+  "providerGeneric": "제공자",
+  "ratingWithValue": "평점: {rating}",
+  "nearbyOpenJobsTitle": "근처 오픈 작업",
+  "failedToLoadOpenJobsHint": "오픈 작업을 불러오지 못했습니다.\n위치가 설정되어 있고 available=true인 제공자 프로필이 있는지 확인하세요.",
+  "errorLoadingJobsWithValue": "작업 로드 오류: {error}",
+  "noOpenJobsFoundNearbyTitle": "근처에 오픈 작업이 없습니다",
+  "noOpenJobsFoundNearbyBody": "확인 사항:\n- 제공자 위치를 설정했는지\n- 사용 가능으로 표시되어 있는지\n- 사용자가 예약을 만들고 결제했는지",
+  "currencyLabel": "통화: {symbol}",
+  "pricesShownInCurrency": "가격은 {symbol} ({country}) 기준으로 표시됩니다",
+  "jobTitleWithId": "작업 #{id}",
+  "serviceLine": "서비스: {service}",
+  "whenLine": "시간: {date} {time}",
+  "priceLine": "가격: {price}",
+  "acceptJob": "작업 수락",
+  "failedToAcceptJob": "작업 수락에 실패했습니다.",
+  "jobAcceptedSuccessfully": "작업을 성공적으로 수락했습니다.",
+  "newServiceRequestTitle": "새 서비스 요청",
+  "offeredPriceLabel": "제안 가격",
+  "offeredPriceHint": "예: 25.00",
+  "enterValidPrice": "올바른 가격을 입력하세요",
+  "bookAndPay": "예약 및 결제",
+  "bookAndPayAmount": "예약 및 결제 {amount}",
+  "haircutService": "헤어컷",
+  "stylingService": "스타일링",
+  "timeLabel": "시간:",
+  "notesLabel": "메모",
+  "requestCreatedAndPaidBroadcast": "요청이 생성되고 결제되었습니다! 제공자에게 전송됩니다.",
+  "locationLatLng": "위치: {lat}, {lng}",
+  "paymentMethodsTitle": "결제 수단",
+  "paymentPreferencesInfo": "이 설정은 기기에 로컬로 저장됩니다. 실제 결제는 Stripe/기타 게이트웨이를 통해 안전하게 처리됩니다.",
+  "preferredMethodLabel": "선호 결제 수단(국가별 로컬 게이트웨이 선택)",
+  "methodVisaMastercard": "Visa/Mastercard",
+  "methodMobileMoney": "모바일 머니(Momo/Paystack/아프리카)",
+  "methodPaypal": "PayPal",
+  "methodApplePayGooglePay": "Apple Pay/Google Pay",
+  "methodWeChatPay": "WeChat Pay(중국)",
+  "methodAlipay": "Alipay(중국)",
+  "methodUnionPay": "UnionPay 카드(중국)",
+  "mobileMoneyNumberLabel": "모바일 머니 번호",
+  "wechatAlipayIdLabel": "WeChat/Alipay ID",
+  "cardLast4DigitsLabel": "카드 뒤 4자리",
+  "paypalEmailLabel": "PayPal 이메일",
+  "applePayEnabledOnDevice": "이 기기에서 Apple Pay 사용",
+  "savePaymentPreferences": "결제 설정 저장",
+  "paymentPrefsSavedInfo": "결제 설정이 로컬에 저장되었습니다. 실제 결제는 추후 Stripe/기타 게이트웨이로 처리됩니다.",
+  "failedToLoadImage": "이미지 로드 실패",
+  "earningsTitle": "수익",
+  "couldNotLoadEarningsSummary": "수익 요약을 불러올 수 없습니다.",
+  "noData": "데이터 없음.",
+  "retry": "다시 시도",
+  "summaryTitle": "요약",
+  "totalLabel": "합계",
+  "pendingLabel": "대기",
+  "paidLabel": "지급됨",
+  "pdfReportTitle": "PDF 보고서",
+  "periodLabel": "기간",
+  "periodThisMonth": "이번 달",
+  "periodLastMonth": "지난달",
+  "periodYtd": "연초 이후",
+  "periodAllTime": "전체",
+  "couldNotDownloadPdfReport": "PDF 보고서를 다운로드할 수 없습니다.",
+  "couldNotOpenPdfWithValue": "PDF를 열 수 없습니다: {error}",
+  "savingFilesNotSupportedWeb": "웹에서는 현재 파일 저장이 지원되지 않습니다.",
+  "savedToDocumentsIosWithPath": "Documents(iOS)에 저장됨:\n{path}",
+  "savedToFilesWithPath": "파일에 저장됨:\n{path}",
+  "open": "열기",
+  "failedToSavePdfWithValue": "PDF 저장 실패: {error}",
+  "openPdfReport": "PDF 보고서 열기",
+  "savePdfToDownloads": "PDF를 다운로드에 저장",
+  "reportWatermarkNote": "보고서 PDF에는 Styloria 워터마크가 포함되어야 합니다.",
+  "referFriendsTitle": "친구 추천",
+  "shareReferralCodeBody": "추천 코드를 친구와 공유하세요. 나중에 친구가 가입하고 예약을 완료하면 보상을 추가할 수 있습니다.",
+  "yourReferralCodeLabel": "내 추천 코드:",
+  "copy": "복사",
+  "referralCodeCopiedWithCode": "추천 코드가 복사됨: {code}",
+  "navHome": "홈",
+  "navBookings": "예약",
+  "navNotifications": "알림",
+  "navAccount": "계정",
+  "welcome": "환영합니다",
+  "welcomeName": "{name}님, 환영합니다",
+  "@welcomeName": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "toggleThemeTooltip": "라이트/다크 모드 전환",
+  "loggedInAs": "로그인: {role}",
+  "@loggedInAs": {
+    "placeholders": {
+      "role": {}
+    }
+  },
+  "locationWithValue": "위치: {value}",
+  "@locationWithValue": {
+    "placeholders": {
+      "value": {}
+    }
+  },
+  "homeTagline": "실시간 예약과 신뢰할 수 있는 제공자와 함께 그루밍 경험을 업그레이드하세요.",
+  "manageProviderProfile": "제공자 프로필 관리",
+  "browseOpenJobs": "오픈 작업 보기",
+  "quickActions": "빠른 작업",
+  "newBooking": "새 예약",
+  "notificationsWithUnread": "알림 ({count, plural, =1{1개 읽지 않음} other{{count}개 읽지 않음}})",
+  "@notificationsWithUnread": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "liveLocationTrackingTitle": "실시간 위치 추적",
+  "live": "실시간",
+  "locationServicesDisabled": "위치 서비스가 비활성화되어 있습니다.",
+  "locationPermissionDenied": "위치 권한이 거부되었습니다.",
+  "locationPermissionPermanentlyDenied": "위치 권한이 영구적으로 거부되었습니다. 설정에서 활성화해 주세요.",
+  "failedToGetLocationWithValue": "위치를 가져오지 못했습니다: {error}",
+  "@failedToGetLocationWithValue": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "youProvider": "나(제공자)",
+  "youCustomer": "나(고객)",
+  "customer": "고객",
+  "bookingDetails": "예약 상세",
+  "navigate": "길찾기",
+  "failedToLoadNotifications": "알림을 불러오지 못했습니다.",
+  "failedToMarkAsRead": "읽음 처리에 실패했습니다",
+  "noNotificationsYet": "아직 알림이 없습니다.",
+  "markRead": "읽음",
+  "providerKycTitle": "제공자 인증(KYC)",
+  "logoutTooltip": "로그아웃",
+  "statusLabel": "상태: {status}",
+  "@statusLabel": {
+    "placeholders": {
+      "status": {}
+    }
+  },
+  "rejectedWithNotes": "거절됨: {notes}",
+  "@rejectedWithNotes": {
+    "placeholders": {
+      "notes": {}
+    }
+  },
+  "kycInstructions": "제공자 기능을 사용하려면 신분증과 셀피를 업로드하여 인증을 완료하세요.",
+  "idFrontRequired": "신분증 앞면(필수)",
+  "selectIdFront": "신분증 앞면 선택",
+  "idBackRequired": "신분증 뒷면(필수)",
+  "selectIdBackRequired": "신분증 뒷면 선택",
+  "selfieRequired": "셀피(필수)",
+  "selectSelfie": "셀피 선택",
+  "takeSelfie": "셀피 촬영",
+  "errorUploadAllRequired": "신분증(앞면), 신분증(뒷면), 셀피를 모두 업로드해 주세요.",
+  "failedSubmitKycCode": "KYC 제출에 실패했습니다(코드 {code}).",
+  "@failedSubmitKycCode": {
+    "placeholders": {
+      "code": {}
+    }
+  },
+  "submittedCurrentStatus": "제출됨. 현재 상태: {status}",
+  "@submittedCurrentStatus": {
+    "placeholders": {
+      "status": {}
+    }
+  },
+  "unknownStatus": "알 수 없음",
+  "submitKyc": "KYC 제출",
+  "verificationMayTakeTimeNote": "참고: 인증에는 시간이 걸릴 수 있습니다. 승인되면 제공자 기능을 사용할 수 있습니다.",
+  "enterVerificationCodeTitle": "인증 코드 입력",
+  "otpSentToUsername": "\"{username}\"에 연결된 전화번호로 6자리 코드를 보냈습니다.\n",
+  "@otpSentToUsername": {
+    "placeholders": {
+      "username": {}
+    }
+  },
+  "sixDigitCodeLabel": "6자리 코드",
+  "enterSixDigitCodeValidation": "6자리 코드를 입력하세요",
+  "otpInvalidOrExpired": "코드가 올바르지 않거나 만료되었습니다.",
+  "failedLoadUserInfoAfterVerification": "인증 후 사용자 정보를 불러오지 못했습니다.",
+  "chatWithSupportTitle": "지원팀과 채팅",
+  "unableStartSupportChat": "지원 채팅을 시작할 수 없습니다.",
+  "invalidSupportThreadReturned": "서버에서 잘못된 지원 스레드를 반환했습니다.",
+  "noMessagesYet": "아직 메시지가 없습니다. 대화를 시작해 보세요!",
+  "supportDefaultName": "지원",
+  "aboutPoliciesTitle": "정보 및 정책",
+  "newBookingTitle": "새 예약",
+  "appointmentDetailsTitle": "예약 상세",
+  "pickDate": "날짜 선택",
+  "pickTime": "시간 선택",
+  "serviceTypeTitle": "서비스 유형",
+  "serviceDropdownLabel": "서비스",
+  "serviceHaircutLabel": "커트",
+  "serviceBraidsLabel": "브레이드",
+  "serviceShaveLabel": "면도",
+  "serviceHairColoringLabel": "염색",
+  "serviceManicureLabel": "매니큐어",
+  "servicePedicureLabel": "페디큐어",
+  "serviceNailArtLabel": "네일 아트",
+  "serviceMakeupLabel": "메이크업",
+  "serviceFacialLabel": "페이셜",
+  "serviceWaxingLabel": "왁싱",
+  "serviceMassageLabel": "마사지",
+  "serviceHairStylingLabel": "헤어 스타일링",
+  "serviceHairTreatmentLabel": "헤어 트리트먼트",
+  "serviceHairExtensionsLabel": "헤어 익스텐션",
+  "serviceOtherServicesLabel": "기타 서비스",
+  "notesForProviderOptionalLabel": "제공자에게 메모(선택)",
+  "locationTitle": "위치",
+  "latitudeLabel": "위도",
+  "longitudeLabel": "경도",
+  "requiredField": "필수",
+  "useMyCurrentLocation": "현재 위치 사용",
+  "pricesShownIn": "표시 가격: {symbol} ({country})",
+  "chooseTimeLaterThanCurrent": "현재 시간보다 늦은 시간을 선택해 주세요.",
+  "pleasePickDateAndTime": "날짜와 시간을 선택해 주세요.",
+  "locationUpdatedFromGps": "GPS로 위치가 업데이트되었습니다.",
+  "failedToGetLocation": "위치를 가져오지 못했습니다: {error}",
+  "bookingCreatedChoosePrice": "예약이 생성되었습니다! ID: {id} • 가격 옵션을 선택하세요.",
+  "failedToCreateBooking": "예약 생성에 실패했습니다.",
+  "paymentsNotSupportedLong": "이 플랫폼에서는 결제를 지원하지 않습니다. 실제 결제를 테스트하려면 Android, iOS, macOS 또는 Web에서 실행하세요.",
+  "noBookingToConfirm": "확인할 예약이 없습니다. 먼저 예약을 생성해 주세요.",
+  "pleaseChoosePriceOption": "가격 옵션을 선택해 주세요.",
+  "failedCreatePaymentTryAgain": "서버에서 결제를 생성하지 못했습니다. 다시 시도해 주세요.",
+  "paymentSuccessfulMessage": "결제 성공!\n예약 #{bookingId} • 결제 금액: {paid}\n요청이 이제 근처 제공자에게 표시됩니다.",
+  "paymentSucceededButFailedUpdate": "결제는 성공했지만 서버에서 예약 업데이트에 실패했습니다.",
+  "paymentCancelledOrFailed": "결제가 취소되었거나 실패했습니다: {reason}",
+  "unexpectedPaymentError": "예기치 않은 결제 오류: {error}",
+  "createBookingButton": "예약 생성",
+  "chooseYourPriceOptionTitle": "가격 옵션 선택",
+  "transportationCostLabel": "교통비: {cost}",
+  "budgetTierTitle": "BUDGET",
+  "standardTierTitle": "STANDARD",
+  "priorityTierTitle": "PRIORITY",
+  "budgetTierDescription": "근처 제공자 중 최고의 가성비",
+  "standardTierDescription": "가격과 가용성의 추천 균형",
+  "priorityTierDescription": "상위 제공자를 더 빠르게 끌어들이는 프리미엄 옵션",
+  "naShort": "해당 없음",
+  "priceBreakdownTitle": "가격 구성",
+  "servicePriceLabel": "서비스 요금",
+  "transportationLabel": "교통",
+  "serviceFeeLabel": "서비스 수수료({percent}%)",
+  "allPricesIn": "모든 가격: {currency} ({country})",
+  "userCountryPlaceholder": "사용자 국가",
+  "totalToPayTitle": "결제 총액",
+  "includesServiceTransportation": "서비스 + 교통 포함",
+  "confirmAndPay": "확인 및 결제",
+  "howPricingWorksTitle": "가격 책정 방식",
+  "howPricingWorksBullets": "• Budget: 근처 제공자 중 최고의 가성비\n• Standard: 추천 기본 옵션\n• Priority: 빠른 수락을 위한 프리미엄 옵션\n• 교통비는 총액에 포함됩니다",
+  "myBookingsTitle": "내 예약",
+  "myAssignedJobsTitle": "내 배정 작업",
+  "pleaseCompleteProviderProfileFirst": "먼저 제공자 프로필을 완료해 주세요.",
+  "failedToLoadBookings": "예약을 불러오지 못했습니다.",
+  "profileSetupRequiredTitle": "프로필 설정 필요",
+  "profileSetupRequiredBody": "배정된 작업과 수익을 보려면 제공자 프로필을 완료해야 합니다.",
+  "later": "나중에",
+  "setupNow": "지금 설정",
+  "noBookingsFound": "예약이 없습니다.",
+  "findNearbyOpenJobs": "근처 오픈 작업 찾기",
+  "pay": "결제",
+  "rate": "평가",
+  "bookingNumber": "예약 #{id}",
+  "whenOn": "일시: {date}",
+  "whenAt": "일시: {date} {time}",
+  "providerLine": "제공자: {name}",
+  "userLine": "사용자: {name}",
+  "estimatedPriceLine": "예상 금액: {price}",
+  "paymentLine": "결제: {status}",
+  "paymentUnpaid": "미결제",
+  "paymentUnknown": "알 수 없음",
+  "confirmPaymentTitle": "결제 확인",
+  "confirmPaymentBody": "{amount}을(를) 결제하여 예약을 확정할까요?",
+  "yesPay": "예, 결제",
+  "failedToCreatePaymentIntent": "결제 인텐트를 생성하지 못했습니다.",
+  "paymentSuccessfulShort": "결제 성공.",
+  "paymentSucceededButFailedUpdateBooking": "결제는 성공했지만 서버에서 예약 업데이트에 실패했습니다.",
+  "paymentCancelledOrFailedReason": "결제가 취소되었거나 실패했습니다: {reason}",
+  "unexpectedPaymentErrorReason": "예기치 않은 결제 오류: {error}",
+  "rateProviderTitle": "{providerName} 평가",
+  "@rateProviderTitle": { 
+    "placeholders": { 
+      "providerName": {} 
+    } 
+  },
+  "selectRatingHelp": "평점을 선택하세요(1 = 나쁨, 5 = 매우 좋음):",
+  "commentsOptionalLabel": "코멘트(선택)",
+  "submit": "제출",
+  "reviewSubmitted": "리뷰가 제출되었습니다.",
+  "failedSubmitReview": "리뷰 제출에 실패했습니다.",
+  "failedToLoadProfile": "프로필을 불러오지 못했습니다: {error}",
+  "profileSavedSuccess": "프로필이 성공적으로 {action}되었습니다!",
+  "genericError": "오류: {error}",
+  "locationPermissionDeniedEnableInSettings": "위치 권한이 거부되었습니다. 설정에서 활성화해 주세요.",
+  "locationPermissionPermanentlyDeniedEnableInAppSettings": "위치 권한이 영구적으로 거부되었습니다. 앱 설정에서 활성화해 주세요.",
+  "errorGettingLocation": "위치를 가져오는 중 오류: {error}",
+  "pleaseEnterAddress": "주소를 입력해 주세요",
+  "locationUpdatedFromAddress": "주소로 위치가 업데이트되었습니다",
+  "couldNotFindLocationForAddress": "이 주소의 위치를 찾을 수 없습니다",
+  "errorConvertingAddress": "주소 변환 오류: {error}",
+  "portfolioUnavailableCompleteKycFirst": "포트폴리오를 사용할 수 없습니다. 제공자라면 먼저 KYC 인증을 완료해 주세요.",
+  "failedToLoadPortfolio": "포트폴리오를 불러오지 못했습니다: {error}",
+  "addPhoto": "사진 추가",
+  "addVideo": "동영상 추가",
+  "addPost": "게시물 추가",
+  "captionOptionalTitle": "캡션(선택)",
+  "captionHintExample": "예: “고객에게 한 노트리스 브레이드”",
+  "skip": "건너뛰기",
+  "save": "저장",
+  "failedToCreatePortfolioPost": "포트폴리오 게시물을 만들지 못했습니다.",
+  "uploadFailedMediaUpload": "업로드 실패(미디어 업로드).",
+  "uploadFailed": "업로드 실패: {error}",
+  "deletePostTitle": "게시물을 삭제할까요?",
+  "deletePostBody": "포트폴리오에서 해당 게시물이 제거됩니다.",
+  "delete": "삭제",
+  "deleteFailed": "삭제에 실패했습니다.",
+  "deleteFailedWithError": "삭제 실패: {error}",
+  "portfolioTitle": "포트폴리오",
+  "noPortfolioPostsYetHelpText": "포트폴리오 게시물이 아직 없습니다. 작업 사진/영상을 추가하면 고객 신뢰에 도움이 됩니다.",
+  "setupProviderProfileTitle": "제공자 프로필 설정",
+  "providerProfileTitle": "제공자 프로필",
+  "welcomeToStyloriaTitle": "Styloria에 오신 것을 환영합니다!",
+  "completeProviderProfileToStartEarning": "제공자 프로필을 완료하여 작업을 수락하고 수익을 얻으세요.",
+  "reviewCountLabel": "({count}개 리뷰)",
+  "topRatedChip": "최고 평점",
+  "bioLabel": "소개 / 설명",
+  "bioHint": "고객에게 당신의 기술과 경험을 알려 주세요...",
+  "pleaseEnterBio": "소개를 입력해 주세요",
+  "bioMinLength": "소개는 최소 {min}자 이상이어야 합니다",
+  "yourLocationTitle": "내 위치",
+  "locationHelpMatchNearbyClients": "위치는 근처 고객과 매칭하는 데 도움이 됩니다",
+  "locationHelpUpdateToFindJobs": "다른 지역에서 일을 찾으려면 위치를 업데이트하세요",
+  "useMyCurrentLocationTitle": "현재 위치 사용",
+  "gpsSubtitle": "GPS로 자동으로 위치 가져오기",
+  "orLabel": "또는",
+  "enterYourAddressTitle": "주소 입력",
+  "fullAddressLabel": "전체 주소",
+  "fullAddressHint": "예: 123 Main St, Accra, Ghana",
+  "find": "찾기",
+  "addressHelpText": "도로명 주소, 도시, 국가를 입력하세요",
+  "coordinatesAutoFilledTitle": "좌표(자동 입력)",
+  "servicePricingTitle": "서비스 가격",
+  "servicePricingHelp": "각 서비스의 가격을 설정하세요. 제공할 수 없는 서비스는 “미제공”을 체크하세요.",
+  "serviceHeader": "서비스",
+  "priceHeader": "가격",
+  "notOfferedHeader": "미제공",
+  "priceHint": "0.00",
+  "providerHowPricingWorksTitle": "가격 책정 방식:",
+  "providerHowPricingWorksBody": "• 당신의 가격은 서비스에 대해 청구하는 금액입니다\n• 교통비 = 사용자 통화의 80% / km\n• 사용자는 근처 제공자 기준 3가지 옵션을 봅니다:\n  - Budget: 최저가\n  - Standard: 평균가\n  - Priority: 최고가",
+  "availableForBookingsTitle": "예약 가능",
+  "availableOnHelp": "✓ 근처 고객의 검색 결과에 표시됩니다",
+  "availableOffHelp": "✗ 새로운 작업 제안을 받지 않습니다",
+  "completeSetupStartEarning": "설정 완료 및 수익 시작",
+  "updateProfile": "프로필 업데이트",
+  "skipForNow": "지금은 건너뛰기",
+
+  "genericContact": "연락처",
+  "genericProvider": "서비스 제공자",
+  "genericNotAvailable": "해당 없음",
+
+  "reviewSelectRatingPrompt": "평점을 선택하세요(1~5).",
+  "reviewCommentOptionalLabel": "댓글(선택 사항)",
+  "genericCancel": "취소",
+  "genericSubmit": "제출",
+  "reviewSubmitted": "리뷰가 제출되었습니다.",
+  "reviewSubmitFailed": "리뷰 제출에 실패했습니다.",
+  "rateThisService": "이 서비스 평가하기",
+
+  "tipLeaveTitle": "팁 남기기",
+  "tipChooseAmountPrompt": "팁 금액을 선택하거나 직접 입력하세요.",
+  "tipNoTip": "팁 없음",
+  "tipCustomAmountLabel": "사용자 지정 팁 금액",
+  "genericContinue": "계속",
+
+  "tipSkipped": "팁을 건너뛰었습니다.",
+  "tipFailedToSaveChoice": "팁 선택을 저장하지 못했습니다.",
+  "tipFailedToCreatePayment": "팁 결제를 생성하지 못했습니다.",
+  "tipPaidSuccessfully": "팁 결제가 완료되었습니다. 감사합니다!",
+  "tipPaidButUpdateFailed": "팁 결제는 성공했지만 예약 업데이트에 실패했습니다.",
+
+  "tipCancelledOrFailed": "팁이 취소/실패했습니다: {message}",
+  "tipUnexpectedError": "예기치 않은 팁 오류: {error}",
+
+  "tipAlreadyPaidLabel": "이미 팁을 결제했습니다",
+  "tipSkippedLabel": "팁 건너뜀",
+  "tipLeaveButton": "팁 남기기",
+  "@providerWithName": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "@ratingWithValue": {
+    "placeholders": {
+      "rating": {}
+    }
+  },
+  "@errorLoadingJobsWithValue": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@currencyLabel": {
+    "placeholders": {
+      "symbol": {}
+    }
+  },
+  "@pricesShownInCurrency": {
+    "placeholders": {
+      "symbol": {},
+      "country": {}
+    }
+  },
+  "@jobTitleWithId": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+  "@serviceLine": {
+    "placeholders": {
+      "service": {}
+    }
+  },
+  "@whenLine": {
+    "placeholders": {
+      "date": {},
+      "time": {}
+    }
+  },
+  "@priceLine": {
+    "placeholders": {
+      "price": {}
+    }
+  },
+  "@bookAndPayAmount": {
+    "placeholders": {
+      "amount": {}
+    }
+  },
+  "@locationLatLng": {
+    "placeholders": {
+      "lat": {},
+      "lng": {}
+    }
+  },
+  "@couldNotOpenPdfWithValue": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@savedToDocumentsIosWithPath": {
+    "placeholders": {
+      "path": {}
+    }
+  },
+  "@savedToFilesWithPath": {
+    "placeholders": {
+      "path": {}
+    }
+  },
+  "@failedToSavePdfWithValue": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@referralCodeCopiedWithCode": {
+    "placeholders": {
+      "code": {}
+    }
+  },
+  "@pricesShownIn": {
+    "placeholders": {
+      "symbol": {},
+      "country": {}
+    }
+  },
+  "@failedToGetLocation": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@bookingCreatedChoosePrice": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+  "@paymentSuccessfulMessage": {
+    "placeholders": {
+      "bookingId": {},
+      "paid": {}
+    }
+  },
+  "@paymentCancelledOrFailed": {
+    "placeholders": {
+      "reason": {}
+    }
+  },
+  "@unexpectedPaymentError": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@transportationCostLabel": {
+    "placeholders": {
+      "cost": {}
+    }
+  },
+  "@serviceFeeLabel": {
+    "placeholders": {
+      "percent": {}
+    }
+  },
+  "@allPricesIn": {
+    "placeholders": {
+      "currency": {},
+      "country": {}
+    }
+  },
+  "@bookingNumber": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+  "@whenOn": {
+    "placeholders": {
+      "date": {}
+    }
+  },
+  "@whenAt": {
+    "placeholders": {
+      "date": {},
+      "time": {}
+    }
+  },
+  "@providerLine": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "@userLine": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "@estimatedPriceLine": {
+    "placeholders": {
+      "price": {}
+    }
+  },
+  "@paymentLine": {
+    "placeholders": {
+      "status": {}
+    }
+  },
+  "@confirmPaymentBody": {
+    "placeholders": {
+      "amount": {}
+    }
+  },
+  "@paymentCancelledOrFailedReason": {
+    "placeholders": {
+      "reason": {}
+    }
+  },
+  "@unexpectedPaymentErrorReason": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@failedToLoadProfile": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@profileSavedSuccess": {
+    "placeholders": {
+      "action": {}
+    }
+  },
+  "@genericError": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@errorGettingLocation": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@errorConvertingAddress": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@failedToLoadPortfolio": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@uploadFailed": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@deleteFailedWithError": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@reviewCountLabel": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@bioMinLength": {
+    "placeholders": {
+      "min": {
+        "type": "int"
+      }
+    }
+  }
+}

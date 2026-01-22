@@ -1,0 +1,963 @@
+{
+  "@@locale": "hi",
+  "appTitle": "Styloria",
+  "account": "खाता",
+  "profile": "प्रोफ़ाइल",
+  "myBookings": "मेरी बुकिंग",
+  "openJobs": "खुले जॉब्स",
+  "earnings": "कमाई",
+  "paymentMethods": "भुगतान के तरीके",
+  "referFriends": "दोस्तों को रेफ़र करें",
+  "language": "भाषा",
+  "settings": "सेटिंग्स",
+  "darkMode": "डार्क मोड",
+  "systemDefault": "सिस्टम डिफ़ॉल्ट",
+  "languageUpdated": "भाषा अपडेट हो गई",
+  "languageSetToSystemDefault": "भाषा सिस्टम डिफ़ॉल्ट पर सेट हो गई",
+  "helpAndSupport": "सहायता और समर्थन",
+  "chatWithCustomerService": "कस्टमर सर्विस से चैट करें",
+  "aboutAndPolicies": "जानकारी और नीतियाँ",
+  "viewUserPoliciesAndAgreements": "उपयोगकर्ता नीतियाँ और समझौते देखें",
+  "logOut": "लॉग आउट",
+  "deleteAccount": "खाता हटाएँ",
+  "deleteAccountSubtitle": "यह कार्रवाई वापस नहीं ली जा सकती",
+  "deleteAccountTitle": "खाता हटाएँ",
+  "deleteAccountConfirmBody": "क्या आप वाकई अपना खाता हटाना चाहते हैं?\n\nयह आपको साइन आउट कर देगा और आप स्थायी रूप से एक्सेस खो सकते हैं।",
+  "no": "नहीं",
+  "yesDelete": "हाँ, हटाएँ",
+  "deleteAccountSheetTitle": "आपके जाने का दुख है।",
+  "deleteAccountSheetPrompt": "क्या आप कारण बता सकते हैं? (जो लागू हो, सभी चुनें)",
+  "deleteAccountSelectAtLeastOneReason": "कृपया कम से कम एक कारण चुनें।",
+  "tellUsMoreOptional": "और बताएं (वैकल्पिक)",
+  "suggestionsToImproveOptional": "सुधार के सुझाव (वैकल्पिक)",
+  "deleteMyAccount": "मेरा खाता हटाएँ",
+  "cancel": "रद्द करें",
+  "failedToDeleteAccount": "खाता हटाने में विफल। कृपया फिर से प्रयास करें।",
+  "choosePreferredLanguage": "अपनी पसंदीदा भाषा चुनें",
+  "noteSomeTextMayStillAppearInEnglish": "नोट: इससे ऐप की भाषा बदल जाएगी। अनुवाद जोड़ने तक कुछ टेक्स्ट अंग्रेज़ी में दिख सकता है।",
+  "languageSetToName": "भाषा {name} पर सेट की गई",
+  "@languageSetToName": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "deletionReason1": "अब मुझे Styloria की ज़रूरत नहीं है",
+  "deletionReason2": "खाता सत्यापन (ईमेल/KYC) में समस्या हुई",
+  "deletionReason3": "मेरे पास सेवाएँ/प्रोवाइडर नहीं मिले",
+  "deletionReason4": "कीमतें या शुल्क बहुत ज़्यादा / अस्पष्ट थे",
+  "deletionReason5": "ऐप भ्रमित करने वाला / उपयोग में कठिन था",
+  "deletionReason6": "बग या प्रदर्शन संबंधी समस्याएँ",
+  "deletionReason7": "भुगतान/रिफंड समस्याएँ",
+  "deletionReason8": "प्रोवाइडर/यूज़र के साथ खराब अनुभव",
+  "deletionReason9": "गोपनीयता या सुरक्षा संबंधी चिंताएँ",
+  "deletionReason10": "मैंने गलती से यह खाता बनाया",
+  "deletionReason11": "मैं किसी अन्य प्लेटफ़ॉर्म पर जा रहा/रही हूँ",
+  "deletionReason12": "अन्य",
+  "loginWelcomeTitle": "Styloria में आपका स्वागत है",
+  "loginWelcomeSubtitle": "अपनी बुकिंग और सेवाएँ मैनेज करने के लिए साइन इन करें।",
+  "loginFailedToLoadUserInfo": "लॉगिन सफल हुआ लेकिन उपयोगकर्ता जानकारी लोड नहीं हो पाई।",
+  "username": "यूज़रनेम",
+  "password": "पासवर्ड",
+  "required": "आवश्यक",
+  "login": "लॉगिन",
+  "createNewAccount": "नया अकाउंट बनाएं",
+  "requestEmailVerificationCode": "ईमेल सत्यापन कोड माँगें",
+  "createAccountTitle": "अकाउंट बनाएं",
+  "joinStyloria": "Styloria से जुड़ें",
+  "registerSubtitle": "सेवाएँ बुक करने या प्रदाता बनने के लिए अकाउंट बनाएं",
+  "iWantTo": "मैं चाहता/चाहती हूँ:",
+  "bookServices": "सेवाएँ बुक करें",
+  "provideServices": "सेवाएँ प्रदान करें",
+  "personalInformation": "व्यक्तिगत जानकारी",
+  "firstName": "पहला नाम",
+  "lastName": "अंतिम नाम",
+  "selectDateOfBirth": "जन्म तिथि चुनें",
+  "phoneNumber": "फोन नंबर",
+  "pleaseEnterPhoneNumber": "कृपया फोन नंबर दर्ज करें",
+  "accountInformation": "अकाउंट जानकारी",
+  "chooseUniqueUsernameHint": "एक यूनिक यूज़रनेम चुनें",
+  "email": "ईमेल",
+  "emailHint": "your@email.com",
+  "enterValidEmail": "एक वैध ईमेल दर्ज करें",
+  "security": "सुरक्षा",
+  "passwordHintAtLeast10": "कम से कम 10 अक्षर",
+  "passwordMin10": "पासवर्ड कम से कम 10 अक्षरों का होना चाहिए",
+  "iAgreeTo": "मैं सहमत हूं ",
+  "termsOfService": "सेवा की शर्तें",
+  "and": "और",
+  "privacyPolicy": "गोपनीयता नीति",
+  "passwordIsRequired": "पासवर्ड आवश्यक है",
+  "confirmPassword": "पासवर्ड की पुष्टि करें",
+  "passwordsDoNotMatch": "पासवर्ड मेल नहीं खाते",
+  "pleaseSelectDob": "कृपया अपनी जन्म तिथि चुनें।",
+  "pleaseSelectCountry": "कृपया अपना देश चुनें।",
+  "pleaseSelectCity": "कृपया अपना शहर चुनें।",
+  "pleaseEnterValidPhone": "कृपया एक वैध फोन नंबर दर्ज करें।",
+  "mustAcceptTerms": "आपको नियम और शर्तें स्वीकार करनी होंगी।",
+  "mustBeAtLeast18": "रजिस्टर करने के लिए आपकी उम्र कम से कम 18 वर्ष होनी चाहिए।",
+  "agreeToTerms": "मैं सेवा की शर्तों और गोपनीयता नीति से सहमत हूँ",
+  "createAccountButton": "अकाउंट बनाएं",
+  "alreadyHaveAccount": "पहले से अकाउंट है?",
+  "emailVerifiedSuccessPleaseLogin": "ईमेल सफलतापूर्वक सत्यापित हो गया। कृपया लॉगिन करें।",
+  "pleaseVerifyEmailToContinue": "जारी रखने के लिए कृपया अपना ईमेल सत्यापित करें।",
+  "requestVerificationCodeTitle": "सत्यापन कोड माँगें",
+  "requestVerificationInstructions": "अपना ईमेल या यूज़रनेम दर्ज करें।\nहम इस अकाउंट के ईमेल पर नया सत्यापन कोड भेजेंगे।",
+  "emailOrUsername": "ईमेल या यूज़रनेम",
+  "sendCode": "कोड भेजें",
+  "ifAccountExistsCodeSent": "यदि अकाउंट मौजूद है, तो कोड भेज दिया गया है।",
+  "failedToSendVerificationCode": "सत्यापन कोड भेजने में विफल।",
+  "verifyYourEmailTitle": "अपने ईमेल को सत्यापित करें",
+  "verificationCodeSentInfo": "इस अकाउंट के ईमेल पर सत्यापन कोड भेज दिया गया है।",
+  "emailVerificationInstructions": "इस अकाउंट के ईमेल पर भेजा गया 6-अंकीय कोड दर्ज करें:\n{identifier}",
+  "@emailVerificationInstructions": {
+    "placeholders": {
+      "identifier": {}
+    }
+  },
+  "verificationCodeLabel": "सत्यापन कोड",
+  "sendingEllipsis": "भेजा जा रहा है...",
+  "resendCode": "कोड फिर से भेजें",
+  "enter6DigitCodeError": "6-अंकीय कोड दर्ज करें।",
+  "verifyingEllipsis": "सत्यापित किया जा रहा है...",
+  "verify": "सत्यापित करें",
+  "invalidOrExpiredCodeTryResending": "कोड गलत या समाप्त हो गया है। फिर से भेजकर देखें।",
+  "bookingTitle": "बुकिंग #{id}",
+  "@bookingTitle": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+  "invalidBookingIdForChat": "चैट के लिए बुकिंग ID अमान्य है।",
+  "invalidBookingIdForCall": "कॉल के लिए बुकिंग ID अमान्य है।",
+  "unableToLoadContactInfo": "संपर्क जानकारी लोड नहीं हो सकी। सुनिश्चित करें कि बुकिंग सक्रिय है।",
+  "noPhoneNumberAvailableForName": "{name} के लिए कोई फोन नंबर उपलब्ध नहीं है।",
+  "@noPhoneNumberAvailableForName": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "deviceCannotPlaceCalls": "यह डिवाइस फोन कॉल नहीं कर सकता।",
+  "cancelBookingDialogTitle": "बुकिंग रद्द करें",
+  "cancelBookingDialogBody": "क्या आप सच में यह बुकिंग रद्द करना चाहते हैं?\n\nनोट: यदि प्रदाता ने पहले ही स्वीकार कर लिया है और 7 मिनट से अधिक (लेकिन लगभग 40 मिनट से कम) समय बीत चुका है, तो नियमों के अनुसार जुर्माना लग सकता है।",
+  "yesCancel": "हाँ, रद्द करें",
+  "failedToCancelBooking": "बुकिंग रद्द नहीं हो सकी।",
+  "bookingCancelledPenaltyApplied": "बुकिंग रद्द कर दी गई। {amount} का जुर्माना लगाया गया है।",
+  "@bookingCancelledPenaltyApplied": {
+    "placeholders": {
+      "amount": {}
+    }
+  },
+  "bookingCancelledSuccessfully": "बुकिंग सफलतापूर्वक रद्द की गई।",
+  "failedToConfirmCompletion": "पूर्णता की पुष्टि नहीं हो सकी। कृपया फिर से प्रयास करें।",
+  "bothSidesConfirmedCompletedPayoutReleased": "दोनों पक्षों ने पुष्टि की। बुकिंग को पूर्ण के रूप में चिह्नित किया गया और भुगतान जारी कर दिया गया।",
+  "youConfirmedCompletionWaitingForProvider": "आपने पूर्णता की पुष्टि की। प्रदाता की पुष्टि की प्रतीक्षा है।",
+  "youConfirmedCompletionWaitingForUser": "आपने पूर्णता की पुष्टि की। उपयोगकर्ता की पुष्टि की प्रतीक्षा है।",
+  "statusUnknown": "अज्ञात",
+  "statusAccepted": "स्वीकृत",
+  "statusInProgress": "प्रगति पर",
+  "statusCompleted": "पूर्ण",
+  "statusCancelled": "रद्द",
+  "paymentPaid": "भुगतान किया गया",
+  "paymentPending": "लंबित",
+  "paymentFailed": "विफल",
+  "bookingAcceptedBy": "बुकिंग {name} द्वारा स्वीकार की गई",
+  "@bookingAcceptedBy": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "whenLabel": "कब",
+  "atTime": "{time} पर",
+  "@atTime": {
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "userLabel": "उपयोगकर्ता",
+  "providerLabel": "प्रदाता",
+  "estimatedPriceLabel": "अनुमानित कीमत",
+  "offeredPaidLabel": "प्रस्तावित / भुगतान",
+  "distanceLabel": "दूरी",
+  "distanceMiles": "{miles} मील",
+  "@distanceMiles": {
+    "placeholders": {
+      "miles": {}
+    }
+  },
+  "acceptedAtLabel": "स्वीकृत समय",
+  "cancelledAtLabel": "रद्द समय",
+  "cancelledByLabel": "द्वारा रद्द",
+  "penaltyAppliedLabel": "जुर्माना लगाया गया: {amount}",
+  "@penaltyAppliedLabel": {
+    "placeholders": {
+      "amount": {}
+    }
+  },
+  "userConfirmedLabel": "उपयोगकर्ता ने पुष्टि की",
+  "providerConfirmedLabel": "प्रदाता ने पुष्टि की",
+  "payoutReleasedLabel": "भुगतान जारी",
+  "yesLower": "हाँ",
+  "noLower": "नहीं",
+  "chat": "चैट",
+  "call": "कॉल",
+  "actions": "कार्रवाइयाँ",
+  "confirmCompletion": "पूर्णता की पुष्टि करें",
+  "noFurtherActionsForBooking": "इस बुकिंग के लिए आगे कोई कार्रवाई उपलब्ध नहीं है।",
+  "freeCancellationEndsIn": "नि:शुल्क रद्दीकरण {time} में समाप्त होगा",
+  "@freeCancellationEndsIn": {
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "earlyFreeCancellationEndedWarning": "शुरुआती नि:शुल्क रद्दीकरण समाप्त हो गया है। स्वीकार करने के लगभग 40 मिनट तक, देर से रद्द करने पर जुर्माना लग सकता है।",
+  "cancelBooking": "बुकिंग रद्द करें",
+  "cancelBookingNoPenalty": "बुकिंग रद्द करें (बिना जुर्माना)",
+  "cancelBookingPenaltyMayApply": "बुकिंग रद्द करें (जुर्माना लग सकता है)",
+  "cancellationPolicyInfo": "प्रदाता के स्वीकार करने के बाद पहले 7 मिनट में आप बिना जुर्माना रद्द कर सकते हैं, और आवश्यकता होने पर लगभग 40 मिनट बाद फिर से बिना जुर्माना रद्द कर सकते हैं। इन समयों के बीच नियमों के अनुसार जुर्माना लग सकता है।",
+  "ratingLine": "रेटिंग: {rating} ({reviewCount, plural, =1{1 समीक्षा} other{{reviewCount} समीक्षाएँ}})",
+  "@ratingLine": {
+    "placeholders": {
+      "rating": {},
+      "reviewCount": {
+        "type": "int"
+      }
+    }
+  },
+  "proofOfSkillsPortfolio": "कौशल का प्रमाण (पोर्टफोलियो)",
+  "noPortfolioPostsAvailable": "कोई पोर्टफोलियो पोस्ट उपलब्ध नहीं है।",
+  "bookingLocation": "बुकिंग स्थान",
+  "location": "स्थान",
+  "latitude": "अक्षांश",
+  "longitude": "देशांतर",
+  "mapWillAppearWhenCoordinatesValid": "जब निर्देशांक मान्य होंगे, तब नक्शा यहाँ दिखाई देगा।",
+  "chatForBookingTitle": "बुकिंग #{id} के लिए चैट",
+  "@chatForBookingTitle": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+  "unableToStartChat": "चैट शुरू नहीं हो सकी। चैट केवल तब उपलब्ध है जब बुकिंग स्वीकार हो, प्रगति पर हो, या पिछले एक दिन के भीतर पूर्ण हुई हो।",
+  "invalidChatThreadFromServer": "सर्वर से अमान्य चैट थ्रेड मिला।",
+  "messageNotSentPolicy": "मैसेज नहीं भेजा गया। नोट: चैट में फ़ोन नंबर या ईमेल साझा करना अनुमत नहीं है।",
+  "unknown": "अज्ञात",
+  "typeMessageHint": "सपोर्ट को संदेश लिखें...",
+  "uploadProfilePicture": "प्रोफ़ाइल तस्वीर अपलोड करें",
+  "currentProfilePicture": "वर्तमान प्रोफ़ाइल तस्वीर",
+  "newPicturePreview": "नई तस्वीर का पूर्वावलोकन",
+  "chooseImage": "तस्वीर चुनें",
+  "upload": "अपलोड",
+  "noImageBytesFoundWeb": "चित्र बाइट्स नहीं मिले (वेब)।",
+  "pleasePickAnImageFirst": "कृपया पहले एक तस्वीर चुनें।",
+  "uploadFailedCheckServerLogs": "अपलोड विफल। सर्वर लॉग / टोकन जांचें।",
+  "profilePictureUploadedSuccessfully": "प्रोफ़ाइल तस्वीर सफलतापूर्वक अपलोड हुई!",
+  "errorWithValue": "त्रुटि: {error}",
+  "@errorWithValue": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "tapToChangeProfilePicture": "प्रोफ़ाइल तस्वीर बदलने के लिए टैप करें",
+  "usernameValue": "यूज़रनेम: {username}",
+  "@usernameValue": {
+    "placeholders": {
+      "username": {}
+    }
+  },
+  "roleValue": "भूमिका: {role}",
+  "@roleValue": {
+    "placeholders": {
+      "role": {}
+    }
+  },
+  "dateOfBirthYyyyMmDd": "जन्मतिथि (YYYY-MM-DD)",
+  "saveProfile": "प्रोफ़ाइल सहेजें",
+  "failedToSaveProfile": "प्रोफ़ाइल सेव नहीं हो सकी। कृपया फिर से प्रयास करें।",
+  "profileUpdated": "प्रोफ़ाइल अपडेट हो गई।",
+  "completeYourProviderProfile": "अपनी प्रदाता प्रोफ़ाइल पूरी करें",
+  "completeProviderProfileBody": "काम स्वीकार करने और पैसे कमाने के लिए अपनी प्रदाता प्रोफ़ाइल पूरी करें।",
+  "setupProfileNow": "अभी प्रोफ़ाइल सेटअप करें",
+  "doItLater": "बाद में",
+  "bookingTimerPenaltyPeriodActive": "जुर्माना अवधि सक्रिय",
+  "bookingTimerFreeCancellationPeriod": "नि:शुल्क रद्दीकरण अवधि",
+  "bookingTimerTimeRemaining": "बचा समय: {time}",
+  "@bookingTimerTimeRemaining": {
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "bookingTimerCancellingNowPenalty": "अब रद्द करने पर 10% जुर्माना लगेगा।",
+  "bookingTimerCancelNoPenalty": "आप बिना जुर्माना रद्द कर सकते हैं।",
+  "myReviewsTitle": "मेरे रिव्यू",
+  "failedToLoadReviews": "रिव्यू लोड नहीं हो पाए।",
+  "noReviewsYet": "आपने अभी तक कोई रिव्यू नहीं छोड़ा है।",
+  "providerWithName": "प्रदाता: {name}",
+  "providerGeneric": "प्रदाता",
+  "ratingWithValue": "रेटिंग: {rating}",
+  "nearbyOpenJobsTitle": "पास के खुले जॉब्स",
+  "failedToLoadOpenJobsHint": "खुले जॉब्स लोड नहीं हो पाए।\nसुनिश्चित करें कि आपके पास लोकेशन सेट और available=true वाला प्रदाता प्रोफ़ाइल है।",
+  "errorLoadingJobsWithValue": "जॉब्स लोड करने में त्रुटि: {error}",
+  "noOpenJobsFoundNearbyTitle": "पास में कोई खुला जॉब नहीं मिला",
+  "noOpenJobsFoundNearbyBody": "सुनिश्चित करें:\n- आपने प्रदाता लोकेशन सेट की है\n- आप उपलब्ध के रूप में मार्क हैं\n- यूज़र्स ने बुकिंग बनाई और भुगतान किया है",
+  "currencyLabel": "मुद्रा: {symbol}",
+  "pricesShownInCurrency": "कीमतें {symbol} ({country}) में दिखाई जा रही हैं",
+  "jobTitleWithId": "जॉब #{id}",
+  "serviceLine": "सेवा: {service}",
+  "whenLine": "कब: {date} {time}",
+  "priceLine": "कीमत: {price}",
+  "acceptJob": "जॉब स्वीकार करें",
+  "failedToAcceptJob": "जॉब स्वीकार नहीं हो सका।",
+  "jobAcceptedSuccessfully": "जॉब सफलतापूर्वक स्वीकार हो गया।",
+  "newServiceRequestTitle": "नई सेवा अनुरोध",
+  "offeredPriceLabel": "प्रस्तावित कीमत",
+  "offeredPriceHint": "जैसे 25.00",
+  "enterValidPrice": "एक वैध कीमत दर्ज करें",
+  "bookAndPay": "बुक करें और भुगतान करें",
+  "bookAndPayAmount": "बुक करें और भुगतान करें {amount}",
+  "haircutService": "हेयरकट",
+  "stylingService": "स्टाइलिंग",
+  "timeLabel": "समय:",
+  "notesLabel": "नोट्स",
+  "requestCreatedAndPaidBroadcast": "अनुरोध बना दिया गया और भुगतान हो गया! प्रदाताओं को भेजा गया।",
+  "locationLatLng": "लोकेशन: {lat}, {lng}",
+  "paymentMethodsTitle": "भुगतान के तरीके",
+  "paymentPreferencesInfo": "ये प्राथमिकताएँ आपके डिवाइस पर लोकली सेव होती हैं। वास्तविक भुगतान Stripe/अन्य गेटवे के जरिए सुरक्षित रूप से प्रोसेस होते हैं।",
+  "preferredMethodLabel": "पसंदीदा तरीका (देश के अनुसार लोकल गेटवे चुना जाएगा)",
+  "methodVisaMastercard": "Visa/Mastercard",
+  "methodMobileMoney": "Mobile Money (Momo/Paystack/Africa)",
+  "methodPaypal": "PayPal",
+  "methodApplePayGooglePay": "Apple Pay/Google Pay",
+  "methodWeChatPay": "WeChat Pay (चीन)",
+  "methodAlipay": "Alipay (चीन)",
+  "methodUnionPay": "UnionPay कार्ड (चीन)",
+  "mobileMoneyNumberLabel": "मोबाइल मनी नंबर",
+  "wechatAlipayIdLabel": "WeChat/Alipay ID",
+  "cardLast4DigitsLabel": "कार्ड के अंतिम 4 अंक",
+  "paypalEmailLabel": "PayPal ईमेल",
+  "applePayEnabledOnDevice": "इस डिवाइस पर Apple Pay सक्षम है",
+  "savePaymentPreferences": "भुगतान प्राथमिकताएँ सहेजें",
+  "paymentPrefsSavedInfo": "भुगतान प्राथमिकताएँ लोकली सहेज दी गईं। वास्तविक चार्जिंग बाद में Stripe/अन्य गेटवे के जरिए होगी।",
+  "failedToLoadImage": "छवि लोड नहीं हो सकी",
+  "earningsTitle": "कमाई",
+  "couldNotLoadEarningsSummary": "कमाई का सार लोड नहीं हो सका।",
+  "noData": "कोई डेटा नहीं।",
+  "retry": "पुनः प्रयास करें",
+  "summaryTitle": "सारांश",
+  "totalLabel": "कुल",
+  "pendingLabel": "लंबित",
+  "paidLabel": "भुगतान",
+  "pdfReportTitle": "PDF रिपोर्ट",
+  "periodLabel": "अवधि",
+  "periodThisMonth": "इस महीने",
+  "periodLastMonth": "पिछला महीना",
+  "periodYtd": "वर्ष की शुरुआत से अब तक",
+  "periodAllTime": "सभी समय",
+  "couldNotDownloadPdfReport": "PDF रिपोर्ट डाउनलोड नहीं हो सकी।",
+  "couldNotOpenPdfWithValue": "PDF नहीं खुल सका: {error}",
+  "savingFilesNotSupportedWeb": "वेब पर अभी फाइल सेव करना समर्थित नहीं है।",
+  "savedToDocumentsIosWithPath": "Documents (iOS) में सहेजा गया:\n{path}",
+  "savedToFilesWithPath": "Files में सहेजा गया:\n{path}",
+  "open": "खोलें",
+  "failedToSavePdfWithValue": "PDF सहेजने में विफल: {error}",
+  "openPdfReport": "PDF रिपोर्ट खोलें",
+  "savePdfToDownloads": "PDF को Downloads में सहेजें",
+  "reportWatermarkNote": "रिपोर्ट PDF में Styloria वॉटरमार्क होना चाहिए।",
+  "referFriendsTitle": "दोस्तों को रेफ़र करें",
+  "shareReferralCodeBody": "अपना रेफ़रल कोड दोस्तों के साथ साझा करें। बाद में जब वे साइन अप करें और बुकिंग पूरी करें, तब आप इनाम जोड़ सकते हैं।",
+  "yourReferralCodeLabel": "आपका रेफ़रल कोड:",
+  "copy": "कॉपी",
+  "referralCodeCopiedWithCode": "रेफ़रल कोड कॉपी हुआ: {code}",
+  "navHome": "होम",
+  "navBookings": "बुकिंग्स",
+  "navNotifications": "सूचनाएँ",
+  "navAccount": "अकाउंट",
+  "welcome": "स्वागत है",
+  "welcomeName": "स्वागत है, {name}",
+  "@welcomeName": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "toggleThemeTooltip": "लाइट/डार्क मोड बदलें",
+  "loggedInAs": "लॉग इन: {role}",
+  "@loggedInAs": {
+    "placeholders": {
+      "role": {}
+    }
+  },
+  "locationWithValue": "लोकेशन: {value}",
+  "@locationWithValue": {
+    "placeholders": {
+      "value": {}
+    }
+  },
+
+  "youAreCurrentlyUnavailable": "आप वर्तमान में उपलब्ध नहीं हैं",
+  "toBrowseAndAcceptJobsEnableAvailability": "आस-पास की नौकरी अनुरोधों को ब्राउज़ और स्वीकार करने के लिए, आपको बुकिंग के लिए उपलब्ध के रूप में सेट करना होगा।",
+  "goToProfileSettings": "प्रोफ़ाइल सेटिंग्स पर जाएं",
+  "tipToggleAvailableForBookings": "सुझाव: नौकरी अनुरोध प्राप्त करना शुरू करने के लिए अपनी प्रोवाइडर प्रोफ़ाइल में \"बुकिंग के लिए उपलब्ध\" चालू करें।",
+  "requestedBy": "अनुरोधकर्ता: {name}",
+  "@requestedBy": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "locationLabel": "स्थान: {address}",
+  "@locationLabel": {
+    "placeholders": {
+      "address": {
+        "type": "String"
+      }
+    }
+  },
+
+  "homeTagline": "रीयल-टाइम बुकिंग्स और भरोसेमंद प्रदाताओं के साथ अपने ग्रूमिंग अनुभव को बदलें।",
+  "manageProviderProfile": "प्रदाता प्रोफ़ाइल मैनेज करें",
+  "browseOpenJobs": "ओपन जॉब्स देखें",
+  "quickActions": "त्वरित कार्रवाइयाँ",
+  "newBooking": "नई बुकिंग",
+  "notificationsWithUnread": "सूचनाएँ ({count, plural, =1{1 अपठित} other{{count} अपठित}})",
+  "@notificationsWithUnread": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "liveLocationTrackingTitle": "लाइव लोकेशन ट्रैकिंग",
+  "live": "लाइव",
+  "locationServicesDisabled": "लोकेशन सेवाएँ बंद हैं",
+  "locationPermissionDenied": "लोकेशन अनुमति अस्वीकार की गई",
+  "locationPermissionPermanentlyDenied": "लोकेशन अनुमति स्थायी रूप से अस्वीकार की गई",
+  "failedToGetLocationWithValue": "लोकेशन नहीं मिल सकी: {error}",
+  "@failedToGetLocationWithValue": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "youProvider": "आप (प्रदाता)",
+  "youCustomer": "आप (ग्राहक)",
+  "customer": "ग्राहक",
+  "bookingDetails": "बुकिंग विवरण",
+  "navigate": "नेविगेट",
+  "failedToLoadNotifications": "सूचनाएँ लोड नहीं हो सकीं।",
+  "failedToMarkAsRead": "पढ़ा हुआ मार्क नहीं हो सका",
+  "noNotificationsYet": "अभी कोई सूचना नहीं।",
+  "markRead": "पढ़ा हुआ",
+  "providerKycTitle": "प्रोवाइडर सत्यापन (KYC)",
+  "logoutTooltip": "लॉग आउट",
+  "statusLabel": "स्थिति: {status}",
+  "@statusLabel": {
+    "placeholders": {
+      "status": {}
+    }
+  },
+  "rejectedWithNotes": "अस्वीकृत: {notes}",
+  "@rejectedWithNotes": {
+    "placeholders": {
+      "notes": {}
+    }
+  },
+  "kycInstructions": "प्रोवाइडर फ़ीचर्स तक पहुँचने के लिए, सत्यापन हेतु अपना आईडी और एक सेल्फ़ी अपलोड करें।",
+  "idFrontRequired": "आईडी फ्रंट (आवश्यक)",
+  "selectIdFront": "आईडी फ्रंट चुनें",
+  "idBackRequired": "आईडी बैक (आवश्यक)",
+  "selectIdBackRequired": "आईडी बैक चुनें",
+  "selfieRequired": "सेल्फ़ी (आवश्यक)",
+  "selectSelfie": "सेल्फ़ी चुनें",
+  "takeSelfie": "सेल्फ़ी लें",
+  "errorUploadAllRequired": "कृपया आईडी (फ्रंट), आईडी (बैक), और एक सेल्फ़ी अपलोड करें।",
+  "failedSubmitKycCode": "KYC सबमिट करने में विफल (कोड {code}).",
+  "@failedSubmitKycCode": {
+    "placeholders": {
+      "code": {}
+    }
+  },
+  "submittedCurrentStatus": "सबमिट किया गया। वर्तमान स्थिति: {status}",
+  "@submittedCurrentStatus": {
+    "placeholders": {
+      "status": {}
+    }
+  },
+  "unknownStatus": "अज्ञात",
+  "submitKyc": "KYC सबमिट करें",
+  "verificationMayTakeTimeNote": "नोट: सत्यापन में समय लग सकता है। स्वीकृत होने के बाद आप प्रोवाइडर फ़ीचर्स का उपयोग कर पाएँगे।",
+  "enterVerificationCodeTitle": "सत्यापन कोड दर्ज करें",
+  "otpSentToUsername": "हमने \"{username}\" से जुड़े फ़ोन नंबर पर 6-अंकों का कोड भेजा है।\n",
+  "@otpSentToUsername": {
+    "placeholders": {
+      "username": {}
+    }
+  },
+  "sixDigitCodeLabel": "6-अंकों का कोड",
+  "enterSixDigitCodeValidation": "6-अंकों का कोड दर्ज करें",
+  "otpInvalidOrExpired": "अमान्य या समाप्त कोड।",
+  "failedLoadUserInfoAfterVerification": "सत्यापन के बाद उपयोगकर्ता जानकारी लोड करने में विफल।",
+  "chatWithSupportTitle": "सपोर्ट से चैट",
+  "unableStartSupportChat": "सपोर्ट चैट शुरू नहीं हो सकी।",
+  "invalidSupportThreadReturned": "सर्वर से अमान्य सपोर्ट थ्रेड मिला।",
+  "noMessagesYet": "अभी कोई संदेश नहीं। बातचीत शुरू करें!",
+  "supportDefaultName": "सपोर्ट",
+  "aboutPoliciesTitle": "परिचय और नीतियाँ",
+  "paymentsNotSupportedShort": "इस प्लेटफ़ॉर्म पर भुगतान समर्थित नहीं है। कृपया Android, iOS, macOS या Web पर चलाएँ।",
+  "failedToLoadProfile": "प्रोफ़ाइल लोड नहीं हो सकी: {error}",
+  "profileSavedSuccess": "प्रोफ़ाइल सफलतापूर्वक {action} हुई!",
+  "genericError": "त्रुटि: {error}",
+  "locationPermissionDeniedEnableInSettings": "लोकेशन अनुमति अस्वीकार की गई। कृपया सेटिंग्स में सक्षम करें।",
+  "locationPermissionPermanentlyDeniedEnableInAppSettings": "लोकेशन अनुमति स्थायी रूप से अस्वीकार है। कृपया ऐप सेटिंग्स में सक्षम करें।",
+  "errorGettingLocation": "लोकेशन प्राप्त करने में त्रुटि: {error}",
+  "pleaseEnterAddress": "कृपया एक पता दर्ज करें",
+  "locationUpdatedFromAddress": "पते से लोकेशन अपडेट हो गई",
+  "couldNotFindLocationForAddress": "इस पते के लिए लोकेशन नहीं मिल सकी",
+  "errorConvertingAddress": "पता बदलने में त्रुटि: {error}",
+  "portfolioUnavailableCompleteKycFirst": "पोर्टफोलियो उपलब्ध नहीं है। यदि आप प्रदाता हैं, तो पहले KYC सत्यापन पूरा करें।",
+  "failedToLoadPortfolio": "पोर्टफोलियो लोड नहीं हो सका: {error}",
+  "addPhoto": "फ़ोटो जोड़ें",
+  "addVideo": "वीडियो जोड़ें",
+  "addPost": "पोस्ट जोड़ें",
+  "captionOptionalTitle": "कैप्शन (वैकल्पिक)",
+  "captionHintExample": "जैसे: “क्लाइंट पर नॉटलेस ब्रेड्स”",
+  "skip": "छोड़ें",
+  "save": "सेव",
+  "failedToCreatePortfolioPost": "पोर्टफोलियो पोस्ट नहीं बन सकी।",
+  "uploadFailedMediaUpload": "अपलोड विफल (मीडिया अपलोड)।",
+  "uploadFailed": "अपलोड विफल: {error}",
+  "deletePostTitle": "पोस्ट हटाएँ?",
+  "deletePostBody": "यह आपके पोर्टफोलियो से पोस्ट हटा देगा।",
+  "delete": "हटाएँ",
+  "deleteFailed": "हटाना विफल रहा।",
+  "deleteFailedWithError": "हटाना विफल: {error}",
+  "portfolioTitle": "पोर्टफोलियो",
+  "noPortfolioPostsYetHelpText": "अभी कोई पोर्टफोलियो पोस्ट नहीं। अपने काम की फ़ोटो/वीडियो जोड़ें ताकि क्लाइंट आपकी स्किल्स पर भरोसा करें।",
+  "setupProviderProfileTitle": "प्रदाता प्रोफ़ाइल सेटअप",
+  "providerProfileTitle": "प्रदाता प्रोफ़ाइल",
+  "welcomeToStyloriaTitle": "Styloria में आपका स्वागत है!",
+  "completeProviderProfileToStartEarning": "जॉब्स स्वीकार करने और कमाई शुरू करने के लिए अपनी प्रदाता प्रोफ़ाइल पूरी करें।",
+  "reviewCountLabel": "({count} रिव्यू)",
+  "topRatedChip": "टॉप रेटेड",
+  "bioLabel": "बायो / विवरण",
+  "bioHint": "क्लाइंट को अपनी स्किल्स और अनुभव के बारे में बताएं...",
+  "pleaseEnterBio": "कृपया बायो दर्ज करें",
+  "bioMinLength": "बायो कम से कम {min} अक्षरों की होनी चाहिए",
+  "yourLocationTitle": "आपका स्थान",
+  "locationHelpMatchNearbyClients": "आपका स्थान हमें पास के क्लाइंट्स से मैच करने में मदद करता है",
+  "locationHelpUpdateToFindJobs": "अलग क्षेत्रों में जॉब्स ढूँढने के लिए स्थान अपडेट करें",
+  "useMyCurrentLocationTitle": "मेरा वर्तमान स्थान उपयोग करें",
+  "gpsSubtitle": "GPS से स्वतः स्थान प्राप्त करें",
+  "orLabel": "या",
+  "enterYourAddressTitle": "अपना पता दर्ज करें",
+  "fullAddressLabel": "पूरा पता",
+  "fullAddressHint": "जैसे: 123 Main St, Accra, Ghana",
+  "find": "खोजें",
+  "addressHelpText": "अपना स्ट्रीट पता, शहर और देश दर्ज करें",
+  "coordinatesAutoFilledTitle": "निर्देशांक (ऑटो-फिल)",
+  "servicePricingTitle": "सेवा मूल्य निर्धारण",
+  "servicePricingHelp": "हर सेवा के लिए अपना मूल्य सेट करें। जिन सेवाओं को आप नहीं दे सकते उनके लिए \"Not Offered\" चुनें।",
+  "serviceHeader": "सेवा",
+  "priceHeader": "मूल्य",
+  "notOfferedHeader": "उपलब्ध नहीं",
+  "priceHint": "0.00",
+  "providerHowPricingWorksTitle": "प्राइसिंग कैसे काम करती है:",
+  "providerHowPricingWorksBody": "• आपकी कीमत वही है जो आप सेवा के लिए लेते हैं\n• परिवहन लागत = उपयोगकर्ता की मुद्रा का 80% प्रति किमी\n• उपयोगकर्ताओं को पास के प्रदाताओं के आधार पर 3 विकल्प दिखते हैं:\n  - Budget: सबसे कम कीमत\n  - Standard: औसत कीमत\n  - Priority: सबसे अधिक कीमत",
+  "availableForBookingsTitle": "बुकिंग के लिए उपलब्ध",
+  "availableOnHelp": "✓ आप पास के क्लाइंट्स के सर्च परिणामों में दिखेंगे",
+  "availableOffHelp": "✗ आपको नई जॉब ऑफ़र नहीं मिलेंगी",
+  "completeSetupStartEarning": "सेटअप पूरा करें और कमाई शुरू करें",
+  "updateProfile": "प्रोफ़ाइल अपडेट करें",
+  "skipForNow": "अभी छोड़ें",
+
+  "genericContact": "संपर्क",
+  "genericProvider": "सेवा प्रदाता",
+  "genericNotAvailable": "उपलब्ध नहीं",
+
+  "rateProviderTitle": "{providerName} को रेट करें",
+  "@rateProviderTitle": {
+    "placeholders": {
+      "providerName": {}
+    }
+  },
+
+  "reviewSelectRatingPrompt": "रेटिंग चुनें (1 से 5)।",
+  "reviewCommentOptionalLabel": "टिप्पणी (वैकल्पिक)",
+  "genericCancel": "रद्द करें",
+  "genericSubmit": "जमा करें",
+  "reviewSubmitted": "समीक्षा सबमिट हो गई।",
+  "reviewSubmitFailed": "समीक्षा सबमिट नहीं हो सकी।",
+  "rateThisService": "इस सेवा को रेट करें",
+
+  "tipLeaveTitle": "टिप दें",
+  "tipChooseAmountPrompt": "टिप राशि चुनें या कस्टम राशि दर्ज करें।",
+  "tipNoTip": "टिप नहीं",
+  "tipCustomAmountLabel": "कस्टम टिप राशि",
+  "genericContinue": "जारी रखें",
+
+  "tipSkipped": "टिप छोड़ दी गई।",
+  "tipFailedToSaveChoice": "टिप चयन सहेजा नहीं जा सका।",
+  "tipFailedToCreatePayment": "टिप भुगतान बनाया नहीं जा सका।",
+  "tipPaidSuccessfully": "टिप सफलतापूर्वक भुगतान हो गई। धन्यवाद!",
+  "tipPaidButUpdateFailed": "टिप भुगतान सफल हुआ, लेकिन बुकिंग अपडेट नहीं हो सकी।",
+
+  "tipCancelledOrFailed": "टिप रद्द/विफल: {message}",
+  "tipUnexpectedError": "टिप में अनपेक्षित त्रुटि: {error}",
+
+  "tipAlreadyPaidLabel": "टिप पहले ही भुगतान हो चुकी है",
+  "tipSkippedLabel": "टिप छोड़ी गई",
+  "walletTitle": "वॉलेट",
+  "walletTooltip": "वॉलेट",
+  "payoutSettingsTitle": "भुगतान सेटिंग्स",
+  "payoutSettingsTooltip": "भुगतान सेटिंग्स",
+  "walletNoWalletYet": "अभी कोई वॉलेट नहीं है। कमाने के लिए काम पूरा करें।",
+  "walletCurrencyFieldLabel": "मुद्रा",
+  "walletAvailableLine": "उपलब्ध: {amount} {currency}",
+  "walletPendingLine": "लंबित: {amount} {currency}",
+  "walletCashOutInstant": "तुरंत निकासी",
+  "walletCashOutFailed": "निकासी विफल हुई।",
+  "walletCashOutSentTransfer": "निकासी भेज दी गई। ट्रांसफ़र: {transferId}",
+  "walletTransactionsTitle": "लेन-देन",
+  "walletNoTransactionsYet": "अभी कोई लेन-देन नहीं।",
+  "payoutAutoPayoutsTitle": "स्वचालित भुगतान",
+  "payoutAutoPayoutsSubtitle": "आपके चुने हुए शेड्यूल पर अपने आप भुगतान भेजें।",
+  "payoutDayUtcLabel": "भुगतान दिन (UTC)",
+  "payoutHourUtcLabel": "भुगतान समय (UTC)",
+  "payoutMinimumAmountLabel": "स्वचालित भुगतान की न्यूनतम राशि",
+  "payoutMinimumAmountHelper": "स्वचालित भुगतान तभी चलेगा जब उपलब्ध बैलेंस ≥ इस राशि के हो।",
+  "payoutInstantCashOutEnabledTitle": "तुरंत निकासी सक्षम",
+  "payoutInstantCashOutEnabledSubtitle": "“निकासी” बटन की अनुमति दें (शुल्क लागू होगा)।",
+  "payoutSettingsSaved": "भुगतान सेटिंग्स सहेजी गईं।",
+  "payoutSettingsSaveFailed": "भुगतान सेटिंग्स सहेजने में विफल।",
+  "tipLeaveButton": "टिप दें",
+  "@providerWithName": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "@ratingWithValue": {
+    "placeholders": {
+      "rating": {}
+    }
+  },
+  "@errorLoadingJobsWithValue": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@currencyLabel": {
+    "placeholders": {
+      "symbol": {}
+    }
+  },
+  "@pricesShownInCurrency": {
+    "placeholders": {
+      "symbol": {},
+      "country": {}
+    }
+  },
+  "@jobTitleWithId": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+  "@serviceLine": {
+    "placeholders": {
+      "service": {}
+    }
+  },
+  "@whenLine": {
+    "placeholders": {
+      "date": {},
+      "time": {}
+    }
+  },
+  "@priceLine": {
+    "placeholders": {
+      "price": {}
+    }
+  },
+  "@bookAndPayAmount": {
+    "placeholders": {
+      "amount": {}
+    }
+  },
+  "@locationLatLng": {
+    "placeholders": {
+      "lat": {},
+      "lng": {}
+    }
+  },
+  "@couldNotOpenPdfWithValue": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@savedToDocumentsIosWithPath": {
+    "placeholders": {
+      "path": {}
+    }
+  },
+  "@savedToFilesWithPath": {
+    "placeholders": {
+      "path": {}
+    }
+  },
+  "@failedToSavePdfWithValue": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@referralCodeCopiedWithCode": {
+    "placeholders": {
+      "code": {}
+    }
+  },
+  "newBookingTitle": "New Booking",
+  "appointmentDetailsTitle": "Appointment details",
+  "pickDate": "Pick date",
+  "pickTime": "Pick time",
+  "serviceTypeTitle": "Service type",
+  "serviceDropdownLabel": "Service",
+  "serviceHaircutLabel": "Haircut",
+  "serviceBraidsLabel": "Braids",
+  "serviceShaveLabel": "Shave",
+  "serviceHairColoringLabel": "Hair Coloring",
+  "serviceManicureLabel": "Manicure",
+  "servicePedicureLabel": "Pedicure",
+  "serviceNailArtLabel": "Nail Art",
+  "serviceMakeupLabel": "Makeup",
+  "serviceFacialLabel": "Facial",
+  "serviceWaxingLabel": "Waxing",
+  "serviceMassageLabel": "Massage",
+  "serviceHairStylingLabel": "Hair Styling",
+  "serviceHairTreatmentLabel": "Hair Treatment",
+  "serviceHairExtensionsLabel": "Hair Extensions",
+  "serviceOtherServicesLabel": "Other Services",
+  "notesForProviderOptionalLabel": "Notes for your provider (optional)",
+  "locationTitle": "Location",
+  "latitudeLabel": "Latitude",
+  "longitudeLabel": "Longitude",
+  "requiredField": "Required",
+  "useMyCurrentLocation": "Use my current location",
+  "pricesShownIn": "Prices shown in {symbol} ({country})",
+  "@pricesShownIn": {
+    "placeholders": {
+      "symbol": {},
+      "country": {}
+    }
+  },
+  "chooseTimeLaterThanCurrent": "Please choose a time later than the current time.",
+  "pleasePickDateAndTime": "Please pick date and time.",
+  "locationUpdatedFromGps": "Location updated from GPS.",
+  "failedToGetLocation": "Failed to get location: {error}",
+  "@failedToGetLocation": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "bookingCreatedChoosePrice": "Booking created! ID: {id} • Choose your price option.",
+  "@bookingCreatedChoosePrice": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+  "failedToCreateBooking": "Failed to create booking.",
+  "paymentsNotSupportedLong": "Payments are not supported on this platform. Please run the app on Android, iOS, macOS, or Web to test real payments.",
+  "noBookingToConfirm": "No booking to confirm. Please create a booking first.",
+  "pleaseChoosePriceOption": "Please choose a price option.",
+  "failedCreatePaymentTryAgain": "Failed to create payment on server. Please try again.",
+  "paymentSuccessfulMessage": "Payment successful!\nBooking #{bookingId} • Paid: {paid}\nYour request is now visible to nearby providers.",
+  "@paymentSuccessfulMessage": {
+    "placeholders": {
+      "bookingId": {},
+      "paid": {}
+    }
+  },
+  "paymentSucceededButFailedUpdate": "Payment succeeded, but failed to update booking on server.",
+  "paymentCancelledOrFailed": "Payment cancelled or failed: {reason}",
+  "@paymentCancelledOrFailed": {
+    "placeholders": {
+      "reason": {}
+    }
+  },
+  "unexpectedPaymentError": "Unexpected payment error: {error}",
+  "@unexpectedPaymentError": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "createBookingButton": "Create Booking",
+  "chooseYourPriceOptionTitle": "Choose Your Price Option",
+  "transportationCostLabel": "Transportation cost: {cost}",
+  "@transportationCostLabel": {
+    "placeholders": {
+      "cost": {}
+    }
+  },
+  "budgetTierTitle": "BUDGET",
+  "standardTierTitle": "STANDARD",
+  "priorityTierTitle": "PRIORITY",
+  "budgetTierDescription": "Best value among nearby providers",
+  "standardTierDescription": "Recommended balance of price & availability",
+  "priorityTierDescription": "Premium option to attract top providers faster",
+  "naShort": "N/A",
+  "priceBreakdownTitle": "Price Breakdown",
+  "servicePriceLabel": "Service Price",
+  "transportationLabel": "Transportation",
+  "serviceFeeLabel": "Service Fee ({percent}%)",
+  "@serviceFeeLabel": {
+    "placeholders": {
+      "percent": {}
+    }
+  },
+  "allPricesIn": "All prices in {currency} ({country})",
+  "@allPricesIn": {
+    "placeholders": {
+      "currency": {},
+      "country": {}
+    }
+  },
+  "userCountryPlaceholder": "User country",
+  "totalToPayTitle": "Total to Pay",
+  "includesServiceTransportation": "Includes service + transportation",
+  "confirmAndPay": "Confirm & Pay",
+  "howPricingWorksTitle": "How Pricing Works",
+  "howPricingWorksBullets": "• Budget: best value among nearby providers\n• Standard: recommended default\n• Priority: premium option to speed up acceptance\n• Transportation is included in the total",
+  "myBookingsTitle": "My Bookings",
+  "myAssignedJobsTitle": "My Assigned Jobs",
+  "pleaseCompleteProviderProfileFirst": "Please complete your provider profile first.",
+  "failedToLoadBookings": "Failed to load bookings.",
+  "profileSetupRequiredTitle": "Profile Setup Required",
+  "profileSetupRequiredBody": "You need to complete your provider profile before you can view assigned jobs and earnings.",
+  "later": "Later",
+  "setupNow": "Setup Now",
+  "noBookingsFound": "No bookings found.",
+  "findNearbyOpenJobs": "Find Nearby Open Jobs",
+  "pay": "Pay",
+  "rate": "Rate",
+  "bookingNumber": "Booking #{id}",
+  "@bookingNumber": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+  "whenOn": "When: {date}",
+  "@whenOn": {
+    "placeholders": {
+      "date": {}
+    }
+  },
+  "whenAt": "When: {date} at {time}",
+  "@whenAt": {
+    "placeholders": {
+      "date": {},
+      "time": {}
+    }
+  },
+  "providerLine": "Provider: {name}",
+  "@providerLine": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "userLine": "User: {name}",
+  "@userLine": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "estimatedPriceLine": "Estimated price: {price}",
+  "@estimatedPriceLine": {
+    "placeholders": {
+      "price": {}
+    }
+  },
+  "paymentLine": "Payment: {status}",
+  "@paymentLine": {
+    "placeholders": {
+      "status": {}
+    }
+  },
+  "paymentUnpaid": "unpaid",
+  "paymentUnknown": "unknown",
+  "confirmPaymentTitle": "Confirm payment",
+  "confirmPaymentBody": "Pay {amount} to confirm this booking?",
+  "@confirmPaymentBody": {
+    "placeholders": {
+      "amount": {}
+    }
+  },
+  "yesPay": "Yes, Pay",
+  "failedToCreatePaymentIntent": "Failed to create payment intent.",
+  "paymentSuccessfulShort": "Payment successful.",
+  "paymentSucceededButFailedUpdateBooking": "Payment succeeded, but failed to update booking on server.",
+  "paymentCancelledOrFailedReason": "Payment cancelled or failed: {reason}",
+  "@paymentCancelledOrFailedReason": {
+    "placeholders": {
+      "reason": {}
+    }
+  },
+  "unexpectedPaymentErrorReason": "Unexpected payment error: {error}",
+  "@unexpectedPaymentErrorReason": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "selectRatingHelp": "Select rating (1 = poor, 5 = excellent):",
+  "commentsOptionalLabel": "Comments (optional)",
+  "submit": "Submit",
+  "reviewSubmitted": "Review submitted.",
+  "failedSubmitReview": "Failed to submit review.",
+  "@failedToLoadProfile": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@profileSavedSuccess": {
+    "placeholders": {
+      "action": {}
+    }
+  },
+  "@genericError": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@errorGettingLocation": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@errorConvertingAddress": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@failedToLoadPortfolio": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@uploadFailed": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@deleteFailedWithError": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@reviewCountLabel": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@bioMinLength": {
+    "placeholders": {
+      "min": {
+        "type": "int"
+      }
+    }
+  }
+}

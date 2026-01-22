@@ -1,0 +1,962 @@
+{
+  "@@locale": "ar",
+  "appTitle": "Styloria",
+  "account": "الحساب",
+  "profile": "الملف الشخصي",
+  "myBookings": "حجوزاتي",
+  "openJobs": "الوظائف المتاحة",
+  "earnings": "الأرباح",
+  "paymentMethods": "طرق الدفع",
+  "referFriends": "دعوة الأصدقاء",
+  "language": "اللغة",
+  "settings": "الإعدادات",
+  "darkMode": "الوضع الداكن",
+  "systemDefault": "افتراضي النظام",
+  "languageUpdated": "تم تحديث اللغة",
+  "languageSetToSystemDefault": "تم ضبط اللغة على افتراضي النظام",
+  "helpAndSupport": "المساعدة والدعم",
+  "chatWithCustomerService": "الدردشة مع خدمة العملاء",
+  "aboutAndPolicies": "حول والسياسات",
+  "viewUserPoliciesAndAgreements": "عرض سياسات واتفاقيات المستخدم",
+  "logOut": "تسجيل الخروج",
+  "deleteAccount": "حذف الحساب",
+  "deleteAccountSubtitle": "لا يمكن التراجع عن هذا الإجراء",
+  "deleteAccountTitle": "حذف الحساب",
+  "deleteAccountConfirmBody": "هل أنت متأكد أنك تريد حذف حسابك؟\n\nسيؤدي هذا الإجراء إلى تسجيل خروجك وقد تفقد الوصول بشكل دائم.",
+  "no": "لا",
+  "yesDelete": "نعم، احذف",
+  "deleteAccountSheetTitle": "نأسف لرؤيتك تغادر.",
+  "deleteAccountSheetPrompt": "هل يمكنك إخبارنا بالسبب؟ (حدد كل ما ينطبق)",
+  "deleteAccountSelectAtLeastOneReason": "يرجى اختيار سبب واحد على الأقل.",
+  "tellUsMoreOptional": "أخبرنا المزيد (اختياري)",
+  "suggestionsToImproveOptional": "اقتراحات للتحسين (اختياري)",
+  "deleteMyAccount": "احذف حسابي",
+  "cancel": "إلغاء",
+  "failedToDeleteAccount": "فشل حذف الحساب. يرجى المحاولة مرة أخرى.",
+  "choosePreferredLanguage": "اختر لغتك المفضلة",
+  "noteSomeTextMayStillAppearInEnglish": "ملاحظة: سيؤدي ذلك إلى تغيير لغة التطبيق. قد يظهر بعض النص باللغة الإنجليزية حتى تتم إضافة الترجمات.",
+  "languageSetToName": "تم ضبط اللغة على {name}",
+  "@languageSetToName": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "deletionReason1": "لم أعد بحاجة إلى Styloria",
+  "deletionReason2": "واجهت مشكلة في التحقق من الحساب (البريد/KYC)",
+  "deletionReason3": "لم أتمكن من العثور على خدمات/مقدمي خدمات بالقرب مني",
+  "deletionReason4": "الأسعار أو الرسوم مرتفعة جدًا / غير واضحة",
+  "deletionReason5": "كان التطبيق مربكًا / صعب الاستخدام",
+  "deletionReason6": "أخطاء أو مشاكل في الأداء",
+  "deletionReason7": "مشاكل الدفع/الاسترداد",
+  "deletionReason8": "تجربة سيئة مع مقدم خدمة/مستخدم",
+  "deletionReason9": "مخاوف تتعلق بالخصوصية أو الأمان",
+  "deletionReason10": "أنشأت هذا الحساب بالخطأ",
+  "deletionReason11": "سأنتقل إلى منصة أخرى",
+  "deletionReason12": "أخرى",
+  "loginWelcomeTitle": "مرحبًا بك في Styloria",
+  "loginWelcomeSubtitle": "سجّل الدخول لإدارة حجوزاتك وخدماتك.",
+  "loginFailedToLoadUserInfo": "تم تسجيل الدخول لكن تعذر تحميل معلومات المستخدم.",
+  "username": "اسم المستخدم",
+  "password": "كلمة المرور",
+  "required": "مطلوب",
+  "login": "تسجيل الدخول",
+  "createNewAccount": "إنشاء حساب جديد",
+  "requestEmailVerificationCode": "طلب رمز التحقق من البريد الإلكتروني",
+  "createAccountTitle": "إنشاء حساب",
+  "joinStyloria": "انضم إلى Styloria",
+  "registerSubtitle": "أنشئ حسابًا لحجز الخدمات أو لتصبح مقدم خدمة",
+  "iWantTo": "أريد:",
+  "bookServices": "حجز خدمات",
+  "provideServices": "تقديم خدمات",
+  "personalInformation": "المعلومات الشخصية",
+  "firstName": "الاسم الأول",
+  "lastName": "اسم العائلة",
+  "selectDateOfBirth": "اختر تاريخ الميلاد",
+  "phoneNumber": "رقم الهاتف",
+  "pleaseEnterPhoneNumber": "يرجى إدخال رقم هاتف",
+  "accountInformation": "معلومات الحساب",
+  "chooseUniqueUsernameHint": "اختر اسم مستخدم فريدًا",
+  "email": "البريد الإلكتروني",
+  "emailHint": "your@email.com",
+  "enterValidEmail": "أدخل بريدًا إلكترونيًا صالحًا",
+  "security": "الأمان",
+  "passwordHintAtLeast10": "10 أحرف على الأقل",
+  "passwordMin10": "يجب أن تتكون كلمة المرور من 10 أحرف على الأقل",
+  "iAgreeTo": "أوافق على ",
+  "termsOfService": "شروط الخدمة",
+  "and": "و",
+  "privacyPolicy": "سياسة الخصوصية",
+  "passwordIsRequired": "كلمة المرور مطلوبة",
+  "confirmPassword": "تأكيد كلمة المرور",
+  "passwordsDoNotMatch": "كلمتا المرور غير متطابقتين",
+  "pleaseSelectDob": "يرجى اختيار تاريخ الميلاد.",
+  "pleaseSelectCountry": "يرجى اختيار الدولة.",
+  "pleaseSelectCity": "يرجى اختيار المدينة.",
+  "pleaseEnterValidPhone": "يرجى إدخال رقم هاتف صالح.",
+  "mustAcceptTerms": "يجب قبول الشروط والأحكام.",
+  "mustBeAtLeast18": "يجب أن يكون عمرك 18 عامًا على الأقل للتسجيل.",
+  "agreeToTerms": "أوافق على شروط الخدمة وسياسة الخصوصية",
+  "createAccountButton": "إنشاء حساب",
+  "alreadyHaveAccount": "هل لديك حساب بالفعل؟",
+  "emailVerifiedSuccessPleaseLogin": "تم التحقق من البريد الإلكتروني بنجاح. يرجى تسجيل الدخول.",
+  "pleaseVerifyEmailToContinue": "يرجى التحقق من بريدك الإلكتروني للمتابعة.",
+  "requestVerificationCodeTitle": "طلب رمز التحقق",
+  "requestVerificationInstructions": "أدخل بريدك الإلكتروني أو اسم المستخدم.\nسنرسل رمز تحقق جديدًا إلى البريد الإلكتروني المرتبط بهذا الحساب.",
+  "emailOrUsername": "البريد الإلكتروني أو اسم المستخدم",
+  "sendCode": "إرسال الرمز",
+  "ifAccountExistsCodeSent": "إذا كان الحساب موجودًا، فقد تم إرسال الرمز.",
+  "failedToSendVerificationCode": "فشل إرسال رمز التحقق.",
+  "verifyYourEmailTitle": "تحقق من بريدك الإلكتروني",
+  "verificationCodeSentInfo": "تم إرسال رمز تحقق إلى البريد الإلكتروني المرتبط بهذا الحساب.",
+  "emailVerificationInstructions": "أدخل الرمز المكوّن من 6 أرقام المُرسل إلى بريد هذا الحساب:\n{identifier}",
+  "@emailVerificationInstructions": {
+    "placeholders": {
+      "identifier": {}
+    }
+  },
+  "verificationCodeLabel": "رمز التحقق",
+  "sendingEllipsis": "جارٍ الإرسال...",
+  "resendCode": "إعادة إرسال الرمز",
+  "enter6DigitCodeError": "أدخل الرمز المكوّن من 6 أرقام.",
+  "verifyingEllipsis": "جارٍ التحقق...",
+  "verify": "تحقق",
+  "invalidOrExpiredCodeTryResending": "الرمز غير صالح أو منتهي. جرّب إعادة الإرسال.",
+  "bookingTitle": "الحجز رقم {id}",
+  "@bookingTitle": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+
+  "youAreCurrentlyUnavailable": "أنت غير متاح حالياً",
+  "toBrowseAndAcceptJobsEnableAvailability": "لتصفح وقبول طلبات العمل القريبة، تحتاج إلى تعيين نفسك كمتاح للحجوزات.",
+  "goToProfileSettings": "الذهاب إلى إعدادات الملف الشخصي",
+  "tipToggleAvailableForBookings": "نصيحة: قم بتفعيل \"متاح للحجوزات\" في ملف تعريف مقدم الخدمة الخاص بك لبدء استلام طلبات العمل.",
+  "requestedBy": "طلب من: {name}",
+  "@requestedBy": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "locationLabel": "الموقع: {address}",
+  "@locationLabel": {
+    "placeholders": {
+      "address": {
+        "type": "String"
+      }
+    }
+  },
+
+  "invalidBookingIdForChat": "معرّف الحجز غير صالح للدردشة.",
+  "invalidBookingIdForCall": "معرّف الحجز غير صالح للمكالمة.",
+  "unableToLoadContactInfo": "تعذّر تحميل معلومات الاتصال. تأكد من أن الحجز نشط.",
+  "noPhoneNumberAvailableForName": "لا يوجد رقم هاتف متاح لـ {name}.",
+  "@noPhoneNumberAvailableForName": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "deviceCannotPlaceCalls": "هذا الجهاز لا يمكنه إجراء مكالمات هاتفية.",
+  "cancelBookingDialogTitle": "إلغاء الحجز",
+  "cancelBookingDialogBody": "هل تريد فعلاً إلغاء هذا الحجز؟\n\nملاحظة: إذا كان المزوّد قد قبل بالفعل ومرّ أكثر من 7 دقائق (ولكن أقل من حوالي 40 دقيقة)، فقد تُطبَّق غرامة وفقاً للقواعد.",
+  "yesCancel": "نعم، إلغاء",
+  "failedToCancelBooking": "فشل إلغاء الحجز.",
+  "bookingCancelledPenaltyApplied": "تم إلغاء الحجز. تم تطبيق غرامة قدرها {amount}.",
+  "@bookingCancelledPenaltyApplied": {
+    "placeholders": {
+      "amount": {}
+    }
+  },
+  "bookingCancelledSuccessfully": "تم إلغاء الحجز بنجاح.",
+  "failedToConfirmCompletion": "فشل تأكيد الإكمال. يرجى المحاولة مرة أخرى.",
+  "bothSidesConfirmedCompletedPayoutReleased": "أكد الطرفان. تم وضع علامة الحجز كمكتمل وتم تحرير الدفعة.",
+  "youConfirmedCompletionWaitingForProvider": "لقد أكدت الإكمال. بانتظار تأكيد المزوّد.",
+  "youConfirmedCompletionWaitingForUser": "لقد أكدت الإكمال. بانتظار تأكيد المستخدم.",
+  "statusUnknown": "غير معروف",
+  "statusAccepted": "تم القبول",
+  "statusInProgress": "قيد التنفيذ",
+  "statusCompleted": "مكتمل",
+  "statusCancelled": "ملغي",
+  "paymentPaid": "مدفوع",
+  "paymentPending": "قيد الانتظار",
+  "paymentFailed": "فشل",
+  "bookingAcceptedBy": "تم قبول الحجز بواسطة {name}",
+  "@bookingAcceptedBy": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "whenLabel": "الموعد",
+  "atTime": "الساعة {time}",
+  "@atTime": {
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "userLabel": "المستخدم",
+  "providerLabel": "المزوّد",
+  "estimatedPriceLabel": "السعر التقديري",
+  "offeredPaidLabel": "المعروض / المدفوع",
+  "distanceLabel": "المسافة",
+  "distanceMiles": "{miles} ميل",
+  "@distanceMiles": {
+    "placeholders": {
+      "miles": {}
+    }
+  },
+  "acceptedAtLabel": "تم القبول في",
+  "cancelledAtLabel": "تم الإلغاء في",
+  "cancelledByLabel": "تم الإلغاء بواسطة",
+  "penaltyAppliedLabel": "تم تطبيق غرامة: {amount}",
+  "@penaltyAppliedLabel": {
+    "placeholders": {
+      "amount": {}
+    }
+  },
+  "userConfirmedLabel": "تأكيد المستخدم",
+  "providerConfirmedLabel": "تأكيد المزوّد",
+  "payoutReleasedLabel": "تم تحرير الدفعة",
+  "yesLower": "نعم",
+  "noLower": "لا",
+  "chat": "دردشة",
+  "call": "اتصال",
+  "actions": "إجراءات",
+  "confirmCompletion": "تأكيد الإكمال",
+  "noFurtherActionsForBooking": "لا توجد إجراءات أخرى متاحة لهذا الحجز.",
+  "freeCancellationEndsIn": "تنتهي الإلغاء المجاني خلال {time}",
+  "@freeCancellationEndsIn": {
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "earlyFreeCancellationEndedWarning": "انتهت فترة الإلغاء المجاني المبكرة. حتى حوالي 40 دقيقة بعد القبول، قد تؤدي الإلغاءات المتأخرة إلى غرامة.",
+  "cancelBooking": "إلغاء الحجز",
+  "cancelBookingNoPenalty": "إلغاء الحجز (بدون غرامة)",
+  "cancelBookingPenaltyMayApply": "إلغاء الحجز (قد تُطبق غرامة)",
+  "cancellationPolicyInfo": "يمكنك الإلغاء بدون غرامة خلال أول 7 دقائق بعد قبول المزوّد، ثم مرة أخرى بعد حوالي 40 دقيقة إذا لزم الأمر. بين ذلك قد تُطبق غرامة وفقاً للقواعد.",
+  "ratingLine": "التقييم: {rating} ({reviewCount, plural, =1{مراجعة واحدة} other{{reviewCount} مراجعات}})",
+  "@ratingLine": {
+    "placeholders": {
+      "rating": {},
+      "reviewCount": {
+        "type": "int"
+      }
+    }
+  },
+  "proofOfSkillsPortfolio": "إثبات المهارات (المعرض)",
+  "noPortfolioPostsAvailable": "لا توجد عناصر معرض متاحة.",
+  "bookingLocation": "موقع الحجز",
+  "location": "الموقع",
+  "latitude": "خط العرض",
+  "longitude": "خط الطول",
+  "mapWillAppearWhenCoordinatesValid": "ستظهر الخريطة هنا عندما تكون الإحداثيات صالحة.",
+  "chatForBookingTitle": "دردشة للحجز رقم {id}",
+  "@chatForBookingTitle": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+  "unableToStartChat": "تعذّر بدء الدردشة. الدردشة متاحة فقط عندما يكون الحجز مقبولاً أو قيد التنفيذ أو مكتملًا خلال اليوم الماضي.",
+  "invalidChatThreadFromServer": "تم إرجاع سلسلة دردشة غير صالحة من الخادم.",
+  "messageNotSentPolicy": "لم يتم إرسال الرسالة. ملاحظة: لا يُسمح بمشاركة أرقام الهاتف أو البريد الإلكتروني في الدردشة.",
+  "unknown": "غير معروف",
+  "typeMessageHint": "اكتب رسالة إلى الدعم...",
+  "uploadProfilePicture": "رفع صورة الملف الشخصي",
+  "currentProfilePicture": "صورة الملف الشخصي الحالية",
+  "newPicturePreview": "معاينة الصورة الجديدة",
+  "chooseImage": "اختر صورة",
+  "upload": "رفع",
+  "noImageBytesFoundWeb": "لم يتم العثور على بيانات الصورة (ويب).",
+  "pleasePickAnImageFirst": "يرجى اختيار صورة أولاً.",
+  "uploadFailedCheckServerLogs": "فشل الرفع. تحقق من سجلات الخادم / الرمز.",
+  "profilePictureUploadedSuccessfully": "تم رفع صورة الملف الشخصي بنجاح!",
+  "errorWithValue": "خطأ: {error}",
+  "@errorWithValue": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "tapToChangeProfilePicture": "اضغط لتغيير صورة الملف الشخصي",
+  "usernameValue": "اسم المستخدم: {username}",
+  "@usernameValue": {
+    "placeholders": {
+      "username": {}
+    }
+  },
+  "roleValue": "الدور: {role}",
+  "@roleValue": {
+    "placeholders": {
+      "role": {}
+    }
+  },
+  "dateOfBirthYyyyMmDd": "تاريخ الميلاد (YYYY-MM-DD)",
+  "saveProfile": "حفظ الملف الشخصي",
+  "failedToSaveProfile": "فشل حفظ الملف الشخصي. حاول مرة أخرى.",
+  "profileUpdated": "تم تحديث الملف الشخصي.",
+  "completeYourProviderProfile": "أكمل ملف المزوّد الخاص بك",
+  "completeProviderProfileBody": "لبدء قبول الأعمال وكسب المال، أكمل ملف المزوّد الخاص بك.",
+  "setupProfileNow": "إعداد الملف الآن",
+  "doItLater": "لاحقاً",
+  "bookingTimerPenaltyPeriodActive": "فترة الغرامة نشطة",
+  "bookingTimerFreeCancellationPeriod": "فترة الإلغاء المجاني",
+  "bookingTimerTimeRemaining": "الوقت المتبقي: {time}",
+  "@bookingTimerTimeRemaining": {
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "bookingTimerCancellingNowPenalty": "الإلغاء الآن سيؤدي إلى غرامة 10%.",
+  "bookingTimerCancelNoPenalty": "يمكنك الإلغاء بدون غرامة.",
+  "myReviewsTitle": "مراجعاتي",
+  "failedToLoadReviews": "فشل تحميل المراجعات.",
+  "noReviewsYet": "لم تترك أي مراجعات بعد.",
+  "providerWithName": "المزوّد: {name}",
+  "providerGeneric": "المزوّد",
+  "ratingWithValue": "التقييم: {rating}",
+  "nearbyOpenJobsTitle": "وظائف متاحة بالقرب",
+  "failedToLoadOpenJobsHint": "تعذّر تحميل الوظائف المتاحة.\nتأكد من وجود ملف مزوّد مع موقع محدد و available=true.",
+  "errorLoadingJobsWithValue": "خطأ في تحميل الوظائف: {error}",
+  "noOpenJobsFoundNearbyTitle": "لا توجد وظائف متاحة بالقرب",
+  "noOpenJobsFoundNearbyBody": "تأكد من:\n- ضبط موقع المزوّد\n- أنك مميز كمتاح\n- أن المستخدمين أنشأوا الحجوزات ودفعوا",
+  "currencyLabel": "العملة: {symbol}",
+  "pricesShownInCurrency": "الأسعار معروضة بـ {symbol} ({country})",
+  "jobTitleWithId": "الوظيفة رقم {id}",
+  "serviceLine": "الخدمة: {service}",
+  "whenLine": "الموعد: {date} {time}",
+  "priceLine": "السعر: {price}",
+  "acceptJob": "قبول الوظيفة",
+  "failedToAcceptJob": "فشل قبول الوظيفة.",
+  "jobAcceptedSuccessfully": "تم قبول الوظيفة بنجاح.",
+  "newServiceRequestTitle": "طلب خدمة جديد",
+  "offeredPriceLabel": "السعر المقترح",
+  "offeredPriceHint": "مثلاً 25.00",
+  "enterValidPrice": "أدخل سعراً صحيحاً",
+  "bookAndPay": "احجز وادفع",
+  "bookAndPayAmount": "احجز وادفع {amount}",
+  "haircutService": "قص شعر",
+  "stylingService": "تصفيف",
+  "timeLabel": "الوقت:",
+  "notesLabel": "ملاحظات",
+  "requestCreatedAndPaidBroadcast": "تم إنشاء الطلب والدفع! تم إرساله للمزوّدين.",
+  "locationLatLng": "الموقع: {lat}, {lng}",
+  "paymentMethodsTitle": "طرق الدفع",
+  "paymentPreferencesInfo": "يتم حفظ هذه التفضيلات محلياً على جهازك. تتم معالجة المدفوعات الفعلية بأمان عبر Stripe/بوابات أخرى.",
+  "preferredMethodLabel": "الطريقة المفضلة (يتم اختيار البوابة المحلية حسب البلد)",
+  "methodVisaMastercard": "Visa/Mastercard",
+  "methodMobileMoney": "Mobile Money (Momo/Paystack/Africa)",
+  "methodPaypal": "PayPal",
+  "methodApplePayGooglePay": "Apple Pay/Google Pay",
+  "methodWeChatPay": "WeChat Pay (الصين)",
+  "methodAlipay": "Alipay (الصين)",
+  "methodUnionPay": "UnionPay (الصين)",
+  "mobileMoneyNumberLabel": "رقم Mobile Money",
+  "wechatAlipayIdLabel": "معرّف WeChat/Alipay",
+  "cardLast4DigitsLabel": "آخر 4 أرقام من البطاقة",
+  "paypalEmailLabel": "بريد PayPal",
+  "applePayEnabledOnDevice": "Apple Pay مفعّل على هذا الجهاز",
+  "savePaymentPreferences": "حفظ تفضيلات الدفع",
+  "paymentPrefsSavedInfo": "تم حفظ تفضيلات الدفع محلياً. سيتم التعامل مع الخصم الفعلي لاحقاً عبر Stripe/بوابات أخرى.",
+  "failedToLoadImage": "فشل تحميل الصورة",
+  "earningsTitle": "الأرباح",
+  "couldNotLoadEarningsSummary": "تعذّر تحميل ملخص الأرباح.",
+  "noData": "لا توجد بيانات.",
+  "retry": "إعادة المحاولة",
+  "summaryTitle": "الملخص",
+  "totalLabel": "الإجمالي",
+  "pendingLabel": "قيد الانتظار",
+  "paidLabel": "مدفوع",
+  "pdfReportTitle": "تقرير PDF",
+  "periodLabel": "الفترة",
+  "periodThisMonth": "هذا الشهر",
+  "periodLastMonth": "الشهر الماضي",
+  "periodYtd": "منذ بداية السنة",
+  "periodAllTime": "كل الوقت",
+  "couldNotDownloadPdfReport": "تعذّر تنزيل تقرير PDF.",
+  "couldNotOpenPdfWithValue": "تعذّر فتح PDF: {error}",
+  "savingFilesNotSupportedWeb": "حفظ الملفات غير مدعوم على الويب حالياً.",
+  "savedToDocumentsIosWithPath": "تم الحفظ في Documents (iOS):\n{path}",
+  "savedToFilesWithPath": "تم الحفظ في الملفات:\n{path}",
+  "open": "فتح",
+  "failedToSavePdfWithValue": "فشل حفظ PDF: {error}",
+  "openPdfReport": "فتح تقرير PDF",
+  "savePdfToDownloads": "حفظ PDF إلى التنزيلات",
+  "reportWatermarkNote": "يجب أن يتضمن ملف PDF علامة Styloria المائية.",
+  "referFriendsTitle": "ادعُ الأصدقاء",
+  "shareReferralCodeBody": "شارك رمز الإحالة مع أصدقائك. لاحقاً يمكنك إضافة مكافآت عندما يسجلون ويكملون الحجوزات.",
+  "yourReferralCodeLabel": "رمز الإحالة الخاص بك:",
+  "copy": "نسخ",
+  "referralCodeCopiedWithCode": "تم نسخ رمز الإحالة: {code}",
+  "navHome": "الرئيسية",
+  "navBookings": "الحجوزات",
+  "navNotifications": "الإشعارات",
+  "navAccount": "الحساب",
+  "welcome": "مرحباً",
+  "welcomeName": "مرحباً، {name}",
+  "@welcomeName": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "toggleThemeTooltip": "تبديل الوضع الفاتح/الداكن",
+  "loggedInAs": "تم تسجيل الدخول كـ: {role}",
+  "@loggedInAs": {
+    "placeholders": {
+      "role": {}
+    }
+  },
+  "locationWithValue": "الموقع: {value}",
+  "@locationWithValue": {
+    "placeholders": {
+      "value": {}
+    }
+  },
+  "homeTagline": "حوّل تجربة العناية بك عبر حجوزات فورية ومزوّدين موثوقين.",
+  "manageProviderProfile": "إدارة ملف المزوّد",
+  "browseOpenJobs": "تصفح الوظائف المتاحة",
+  "quickActions": "إجراءات سريعة",
+  "newBooking": "حجز جديد",
+  "notificationsWithUnread": "الإشعارات ({count, plural, =1{1 غير مقروء} other{{count} غير مقروءة}})",
+  "@notificationsWithUnread": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "liveLocationTrackingTitle": "تتبع الموقع المباشر",
+  "live": "مباشر",
+  "locationServicesDisabled": "خدمات الموقع معطلة.",
+  "locationPermissionDenied": "تم رفض إذن الموقع.",
+  "locationPermissionPermanentlyDenied": "تم رفض إذن الموقع بشكل دائم. يرجى تفعيله من الإعدادات.",
+  "failedToGetLocationWithValue": "فشل الحصول على الموقع: {error}",
+  "@failedToGetLocationWithValue": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "youProvider": "أنت (مزوّد)",
+  "youCustomer": "أنت (عميل)",
+  "customer": "عميل",
+  "bookingDetails": "تفاصيل الحجز",
+  "navigate": "تنقّل",
+  "failedToLoadNotifications": "فشل تحميل الإشعارات.",
+  "failedToMarkAsRead": "فشل وضع علامة كمقروء",
+  "noNotificationsYet": "لا توجد إشعارات بعد.",
+  "markRead": "وضع علامة مقروء",
+  "providerKycTitle": "التحقق من المزوّد (اعرف عميلك)",
+  "logoutTooltip": "تسجيل الخروج",
+  "statusLabel": "الحالة: {status}",
+  "@statusLabel": {
+    "placeholders": {
+      "status": {}
+    }
+  },
+  "rejectedWithNotes": "مرفوض: {notes}",
+  "@rejectedWithNotes": {
+    "placeholders": {
+      "notes": {}
+    }
+  },
+  "kycInstructions": "للوصول إلى ميزات المزوّد، قم برفع هويتك وصورة سيلفي للتحقق.",
+  "idFrontRequired": "الهوية (الواجهة الأمامية - مطلوب)",
+  "selectIdFront": "اختر واجهة الهوية",
+  "idBackRequired": "الهوية (الواجهة الخلفية - مطلوب)",
+  "selectIdBackRequired": "اختر خلفية الهوية",
+  "selfieRequired": "سيلفي (مطلوب)",
+  "selectSelfie": "اختر سيلفي",
+  "takeSelfie": "التقاط سيلفي",
+  "errorUploadAllRequired": "يرجى رفع الهوية (الأمام)، والهوية (الخلف)، وصورة سيلفي.",
+  "failedSubmitKycCode": "فشل إرسال التحقق (الرمز {code}).",
+  "@failedSubmitKycCode": {
+    "placeholders": {
+      "code": {}
+    }
+  },
+  "submittedCurrentStatus": "تم الإرسال. الحالة الحالية: {status}",
+  "@submittedCurrentStatus": {
+    "placeholders": {
+      "status": {}
+    }
+  },
+  "unknownStatus": "غير معروف",
+  "submitKyc": "إرسال التحقق",
+  "verificationMayTakeTimeNote": "ملاحظة: قد يستغرق التحقق بعض الوقت. ستتمكن من الوصول إلى ميزات المزوّد بعد الموافقة.",
+  "enterVerificationCodeTitle": "أدخل رمز التحقق",
+  "otpSentToUsername": "أرسلنا رمزًا مكوّنًا من 6 أرقام إلى رقم الهاتف\nالمرتبط بـ \"{username}\".",
+  "@otpSentToUsername": {
+    "placeholders": {
+      "username": {}
+    }
+  },
+  "sixDigitCodeLabel": "رمز من 6 أرقام",
+  "enterSixDigitCodeValidation": "أدخل الرمز المكوّن من 6 أرقام",
+  "otpInvalidOrExpired": "رمز غير صالح أو منتهي الصلاحية.",
+  "failedLoadUserInfoAfterVerification": "فشل تحميل معلومات المستخدم بعد التحقق.",
+  "chatWithSupportTitle": "الدردشة مع الدعم",
+  "unableStartSupportChat": "تعذر بدء دردشة الدعم.",
+  "invalidSupportThreadReturned": "تم إرجاع محادثة دعم غير صالحة من الخادم.",
+  "noMessagesYet": "لا توجد رسائل بعد. ابدأ محادثة!",
+  "supportDefaultName": "الدعم",
+  "aboutPoliciesTitle": "حول والسياسات",
+  "newBookingTitle": "حجز جديد",
+  "appointmentDetailsTitle": "تفاصيل الموعد",
+  "pickDate": "اختر التاريخ",
+  "pickTime": "اختر الوقت",
+  "serviceTypeTitle": "نوع الخدمة",
+  "serviceDropdownLabel": "الخدمة",
+  "serviceHaircutLabel": "قص شعر",
+  "serviceBraidsLabel": "ضفائر",
+  "serviceShaveLabel": "حلاقة",
+  "serviceHairColoringLabel": "صبغ الشعر",
+  "serviceManicureLabel": "مانيكير",
+  "servicePedicureLabel": "باديكير",
+  "serviceNailArtLabel": "فن الأظافر",
+  "serviceMakeupLabel": "مكياج",
+  "serviceFacialLabel": "عناية بالوجه",
+  "serviceWaxingLabel": "إزالة شعر بالشمع",
+  "serviceMassageLabel": "مساج",
+  "serviceHairStylingLabel": "تصفيف الشعر",
+  "serviceHairTreatmentLabel": "علاج الشعر",
+  "serviceHairExtensionsLabel": "وصلات شعر",
+  "serviceOtherServicesLabel": "خدمات أخرى",
+  "notesForProviderOptionalLabel": "ملاحظات لمقدم الخدمة (اختياري)",
+  "locationTitle": "الموقع",
+  "latitudeLabel": "خط العرض",
+  "longitudeLabel": "خط الطول",
+  "requiredField": "مطلوب",
+  "useMyCurrentLocation": "استخدام موقعي الحالي",
+  "pricesShownIn": "الأسعار معروضة بـ {symbol} ({country})",
+  "chooseTimeLaterThanCurrent": "يرجى اختيار وقت لاحق من الوقت الحالي.",
+  "pleasePickDateAndTime": "يرجى اختيار التاريخ والوقت.",
+  "locationUpdatedFromGps": "تم تحديث الموقع عبر GPS.",
+  "failedToGetLocation": "فشل الحصول على الموقع: {error}",
+  "bookingCreatedChoosePrice": "تم إنشاء الحجز! المعرّف: {id} • اختر خيار السعر.",
+  "failedToCreateBooking": "فشل إنشاء الحجز.",
+  "paymentsNotSupportedLong": "المدفوعات غير مدعومة على هذه المنصة. يرجى تشغيل التطبيق على Android أو iOS أو macOS أو الويب لاختبار المدفوعات.",
+  "paymentsNotSupportedShort": "المدفوعات غير مدعومة على هذه المنصة. يرجى تشغيل التطبيق على Android أو iOS أو macOS أو الويب.",
+  "noBookingToConfirm": "لا يوجد حجز للتأكيد. يرجى إنشاء حجز أولاً.",
+  "pleaseChoosePriceOption": "يرجى اختيار خيار السعر.",
+  "failedCreatePaymentTryAgain": "فشل إنشاء الدفع على الخادم. حاول مرة أخرى.",
+  "paymentSuccessfulMessage": "تم الدفع بنجاح!\nالحجز #{bookingId} • المدفوع: {paid}\nطلبك أصبح مرئيًا لمقدمي الخدمة القريبين.",
+  "paymentSucceededButFailedUpdate": "نجح الدفع، لكن فشل تحديث الحجز على الخادم.",
+  "paymentCancelledOrFailed": "تم إلغاء الدفع أو فشل: {reason}",
+  "unexpectedPaymentError": "خطأ دفع غير متوقع: {error}",
+  "createBookingButton": "إنشاء حجز",
+  "chooseYourPriceOptionTitle": "اختر خيار السعر",
+  "transportationCostLabel": "تكلفة النقل: {cost}",
+  "budgetTierTitle": "اقتصادي",
+  "standardTierTitle": "قياسي",
+  "priorityTierTitle": "أولوية",
+  "budgetTierDescription": "أفضل قيمة بين مقدمي الخدمة القريبين",
+  "standardTierDescription": "توازن موصى به بين السعر والتوفر",
+  "priorityTierDescription": "خيار مميز لجذب أفضل مقدمي الخدمة بسرعة",
+  "naShort": "غير متاح",
+  "priceBreakdownTitle": "تفاصيل السعر",
+  "servicePriceLabel": "سعر الخدمة",
+  "transportationLabel": "النقل",
+  "serviceFeeLabel": "رسوم الخدمة ({percent}%)",
+  "allPricesIn": "جميع الأسعار بـ {currency} ({country})",
+  "userCountryPlaceholder": "بلد المستخدم",
+  "totalToPayTitle": "الإجمالي للدفع",
+  "includesServiceTransportation": "يشمل الخدمة + النقل",
+  "confirmAndPay": "تأكيد والدفع",
+  "howPricingWorksTitle": "كيف يعمل التسعير",
+  "howPricingWorksBullets": "• اقتصادي: أفضل قيمة بين القريبين\n• قياسي: الخيار الافتراضي الموصى به\n• أولوية: خيار مميز لتسريع القبول\n• النقل مشمول في الإجمالي",
+  "myBookingsTitle": "حجوزاتي",
+  "myAssignedJobsTitle": "مهامي المعيّنة",
+  "pleaseCompleteProviderProfileFirst": "يرجى إكمال ملف مقدم الخدمة أولاً.",
+  "failedToLoadBookings": "فشل تحميل الحجوزات.",
+  "profileSetupRequiredTitle": "إعداد الملف مطلوب",
+  "profileSetupRequiredBody": "يجب إكمال ملف مقدم الخدمة قبل عرض المهام المعيّنة والأرباح.",
+  "later": "لاحقًا",
+  "setupNow": "إعداد الآن",
+  "noBookingsFound": "لم يتم العثور على حجوزات.",
+  "findNearbyOpenJobs": "ابحث عن أعمال مفتوحة بالقرب",
+  "pay": "ادفع",
+  "rate": "قيّم",
+  "bookingNumber": "الحجز #{id}",
+  "whenOn": "الموعد: {date}",
+  "whenAt": "الموعد: {date} عند {time}",
+  "providerLine": "مقدم الخدمة: {name}",
+  "userLine": "المستخدم: {name}",
+  "estimatedPriceLine": "السعر التقديري: {price}",
+  "paymentLine": "الدفع: {status}",
+  "paymentUnpaid": "غير مدفوع",
+  "paymentUnknown": "غير معروف",
+  "confirmPaymentTitle": "تأكيد الدفع",
+  "confirmPaymentBody": "ادفع {amount} لتأكيد هذا الحجز؟",
+  "yesPay": "نعم، ادفع",
+  "failedToCreatePaymentIntent": "فشل إنشاء عملية الدفع.",
+  "paymentSuccessfulShort": "تم الدفع بنجاح.",
+  "paymentSucceededButFailedUpdateBooking": "نجح الدفع، لكن فشل تحديث الحجز على الخادم.",
+  "paymentCancelledOrFailedReason": "تم إلغاء الدفع أو فشل: {reason}",
+  "unexpectedPaymentErrorReason": "خطأ دفع غير متوقع: {error}",
+  "rateProviderTitle": "قيّم {providerName}",
+  "@rateProviderTitle": { 
+    "placeholders": { 
+      "providerName": {} 
+    } 
+  },
+  "selectRatingHelp": "اختر التقييم (1 = سيئ، 5 = ممتاز):",
+  "commentsOptionalLabel": "تعليقات (اختياري)",
+  "submit": "إرسال",
+  "reviewSubmitted": "تم إرسال التقييم.",
+  "failedSubmitReview": "فشل إرسال التقييم.",
+  "failedToLoadProfile": "فشل تحميل الملف الشخصي: {error}",
+  "profileSavedSuccess": "تم {action} الملف الشخصي بنجاح!",
+  "genericError": "خطأ: {error}",
+  "locationPermissionDeniedEnableInSettings": "تم رفض إذن الموقع. يرجى تفعيله من الإعدادات.",
+  "locationPermissionPermanentlyDeniedEnableInAppSettings": "تم رفض إذن الموقع بشكل دائم. يرجى تفعيله من إعدادات التطبيق.",
+  "errorGettingLocation": "خطأ في الحصول على الموقع: {error}",
+  "pleaseEnterAddress": "يرجى إدخال عنوان",
+  "locationUpdatedFromAddress": "تم تحديث الموقع من العنوان",
+  "couldNotFindLocationForAddress": "تعذر العثور على موقع لهذا العنوان",
+  "errorConvertingAddress": "خطأ في تحويل العنوان: {error}",
+  "portfolioUnavailableCompleteKycFirst": "المعرض غير متاح. إذا كنت مزود خدمة، أكمل التحقق KYC أولاً.",
+  "failedToLoadPortfolio": "فشل تحميل المعرض: {error}",
+  "addPhoto": "إضافة صورة",
+  "addVideo": "إضافة فيديو",
+  "addPost": "إضافة منشور",
+  "captionOptionalTitle": "وصف (اختياري)",
+  "captionHintExample": "مثال: \"ضفائر بدون عقد للعميلة\"",
+  "skip": "تخطي",
+  "save": "حفظ",
+  "failedToCreatePortfolioPost": "فشل إنشاء منشور المعرض.",
+  "uploadFailedMediaUpload": "فشل الرفع (رفع الوسائط).",
+  "uploadFailed": "فشل الرفع: {error}",
+  "deletePostTitle": "حذف المنشور؟",
+  "deletePostBody": "سيتم إزالة المنشور من معرضك.",
+  "delete": "حذف",
+  "deleteFailed": "فشل الحذف.",
+  "deleteFailedWithError": "فشل الحذف: {error}",
+  "portfolioTitle": "المعرض",
+  "noPortfolioPostsYetHelpText": "لا توجد منشورات بعد. أضف صورًا/فيديوهات لعملك لمساعدة العملاء على الثقة بمهاراتك.",
+  "setupProviderProfileTitle": "إعداد ملف مزود الخدمة",
+  "providerProfileTitle": "ملف مزود الخدمة",
+  "welcomeToStyloriaTitle": "مرحبًا بك في Styloria!",
+  "completeProviderProfileToStartEarning": "أكمل ملف مزود الخدمة لبدء قبول الأعمال وكسب المال.",
+  "reviewCountLabel": "({count} مراجعات)",
+  "topRatedChip": "أعلى تقييم",
+  "bioLabel": "نبذة / وصف",
+  "bioHint": "أخبر العملاء عن مهاراتك وخبرتك...",
+  "pleaseEnterBio": "يرجى إدخال نبذة",
+  "bioMinLength": "يجب أن تكون النبذة {min} حرفًا على الأقل",
+  "yourLocationTitle": "موقعك",
+  "locationHelpMatchNearbyClients": "يساعدنا موقعك في مطابقتك مع العملاء القريبين",
+  "locationHelpUpdateToFindJobs": "حدّث موقعك للعثور على أعمال في مناطق مختلفة",
+  "useMyCurrentLocationTitle": "استخدام موقعي الحالي",
+  "gpsSubtitle": "الحصول على الموقع تلقائيًا عبر GPS",
+  "orLabel": "أو",
+  "enterYourAddressTitle": "أدخل عنوانك",
+  "fullAddressLabel": "العنوان الكامل",
+  "fullAddressHint": "مثال: 123 Main St, Accra, Ghana",
+  "find": "بحث",
+  "addressHelpText": "أدخل الشارع والمدينة والبلد",
+  "coordinatesAutoFilledTitle": "الإحداثيات (تعبئة تلقائية)",
+  "servicePricingTitle": "تسعير الخدمات",
+  "servicePricingHelp": "حدّد سعرك لكل خدمة. اختر \"غير متاح\" للخدمات التي لا تقدمها.",
+  "serviceHeader": "الخدمة",
+  "priceHeader": "السعر",
+  "notOfferedHeader": "غير متاح",
+  "priceHint": "0.00",
+  "providerHowPricingWorksTitle": "كيف يعمل التسعير:",
+  "providerHowPricingWorksBody": "• سعرك هو ما تتقاضاه مقابل الخدمة\n• تكلفة النقل = 80% من عملة المستخدم لكل كم\n• يرى المستخدم 3 خيارات حسب مقدمي الخدمة القريبين:\n  - Budget: أقل سعر\n  - Standard: متوسط السعر\n  - Priority: أعلى سعر",
+  "availableForBookingsTitle": "متاح للحجوزات",
+  "availableOnHelp": "✓ ستظهر في نتائج البحث للعملاء القريبين",
+  "availableOffHelp": "✗ لن تتلقى عروض عمل جديدة",
+  "completeSetupStartEarning": "أكمل الإعداد وابدأ الكسب",
+  "updateProfile": "تحديث الملف",
+  "skipForNow": "تخطي الآن",
+
+  "genericContact": "جهة الاتصال",
+  "genericProvider": "مقدّم الخدمة",
+  "genericNotAvailable": "غير متوفر",
+
+  "reviewSelectRatingPrompt": "اختر تقييمًا (من 1 إلى 5).",
+  "reviewCommentOptionalLabel": "تعليق (اختياري)",
+  "genericCancel": "إلغاء",
+  "genericSubmit": "إرسال",
+  "reviewSubmitted": "تم إرسال التقييم.",
+  "reviewSubmitFailed": "فشل إرسال التقييم.",
+  "rateThisService": "قيّم هذه الخدمة",
+
+  "tipLeaveTitle": "اترك إكرامية",
+  "tipChooseAmountPrompt": "اختر مبلغ الإكرامية أو أدخل مبلغًا مخصصًا.",
+  "tipNoTip": "بدون إكرامية",
+  "tipCustomAmountLabel": "مبلغ إكرامية مخصص",
+  "genericContinue": "متابعة",
+
+  "tipSkipped": "تم تخطي الإكرامية.",
+  "tipFailedToSaveChoice": "تعذر حفظ اختيار الإكرامية.",
+  "tipFailedToCreatePayment": "تعذر إنشاء دفع الإكرامية.",
+  "tipPaidSuccessfully": "تم دفع الإكرامية بنجاح. شكرًا لك!",
+  "tipPaidButUpdateFailed": "نجح دفع الإكرامية، لكن فشل تحديث الحجز.",
+
+  "tipCancelledOrFailed": "تم إلغاء/فشل الإكرامية: {message}",
+  "tipUnexpectedError": "خطأ غير متوقع في الإكرامية: {error}",
+
+  "tipAlreadyPaidLabel": "تم دفع الإكرامية بالفعل",
+  "tipSkippedLabel": "تم تخطي الإكرامية",
+  "walletTitle": "المحفظة",
+  "walletTooltip": "المحفظة",
+  "payoutSettingsTitle": "إعدادات السحب",
+  "payoutSettingsTooltip": "إعدادات السحب",
+  "walletNoWalletYet": "لا توجد محفظة بعد. أكمل المهام لكسب المال.",
+  "walletCurrencyFieldLabel": "العملة",
+  "walletAvailableLine": "المتاح: {amount} {currency}",
+  "walletPendingLine": "قيد الانتظار: {amount} {currency}",
+  "walletCashOutInstant": "سحب فوري",
+  "walletCashOutFailed": "فشل السحب.",
+  "walletCashOutSentTransfer": "تم إرسال طلب السحب. التحويل: {transferId}",
+  "walletTransactionsTitle": "المعاملات",
+  "walletNoTransactionsYet": "لا توجد معاملات بعد.",
+  "payoutAutoPayoutsTitle": "السحب التلقائي",
+  "payoutAutoPayoutsSubtitle": "إرسال السحوبات تلقائيًا حسب الجدول الذي اخترته.",
+  "payoutDayUtcLabel": "يوم السحب (UTC)",
+  "payoutHourUtcLabel": "ساعة السحب (UTC)",
+  "payoutMinimumAmountLabel": "الحد الأدنى للسحب التلقائي",
+  "payoutMinimumAmountHelper": "لن يتم السحب التلقائي إلا إذا كان الرصيد المتاح ≥ هذا المبلغ.",
+  "payoutInstantCashOutEnabledTitle": "تمكين السحب الفوري",
+  "payoutInstantCashOutEnabledSubtitle": "السماح بزر «سحب فوري» (قد تُطبق رسوم).",
+  "payoutSettingsSaved": "تم حفظ إعدادات السحب.",
+  "payoutSettingsSaveFailed": "تعذر حفظ إعدادات السحب.",
+  "tipLeaveButton": "اترك إكرامية",
+  "@providerWithName": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "@ratingWithValue": {
+    "placeholders": {
+      "rating": {}
+    }
+  },
+  "@errorLoadingJobsWithValue": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@currencyLabel": {
+    "placeholders": {
+      "symbol": {}
+    }
+  },
+  "@pricesShownInCurrency": {
+    "placeholders": {
+      "symbol": {},
+      "country": {}
+    }
+  },
+  "@jobTitleWithId": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+  "@serviceLine": {
+    "placeholders": {
+      "service": {}
+    }
+  },
+  "@whenLine": {
+    "placeholders": {
+      "date": {},
+      "time": {}
+    }
+  },
+  "@priceLine": {
+    "placeholders": {
+      "price": {}
+    }
+  },
+  "@bookAndPayAmount": {
+    "placeholders": {
+      "amount": {}
+    }
+  },
+  "@locationLatLng": {
+    "placeholders": {
+      "lat": {},
+      "lng": {}
+    }
+  },
+  "@couldNotOpenPdfWithValue": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@savedToDocumentsIosWithPath": {
+    "placeholders": {
+      "path": {}
+    }
+  },
+  "@savedToFilesWithPath": {
+    "placeholders": {
+      "path": {}
+    }
+  },
+  "@failedToSavePdfWithValue": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@referralCodeCopiedWithCode": {
+    "placeholders": {
+      "code": {}
+    }
+  },
+  "@pricesShownIn": {
+    "placeholders": {
+      "symbol": {},
+      "country": {}
+    }
+  },
+  "@failedToGetLocation": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@bookingCreatedChoosePrice": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+  "@paymentSuccessfulMessage": {
+    "placeholders": {
+      "bookingId": {},
+      "paid": {}
+    }
+  },
+  "@paymentCancelledOrFailed": {
+    "placeholders": {
+      "reason": {}
+    }
+  },
+  "@unexpectedPaymentError": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@transportationCostLabel": {
+    "placeholders": {
+      "cost": {}
+    }
+  },
+  "@serviceFeeLabel": {
+    "placeholders": {
+      "percent": {}
+    }
+  },
+  "@allPricesIn": {
+    "placeholders": {
+      "currency": {},
+      "country": {}
+    }
+  },
+  "@bookingNumber": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+  "@whenOn": {
+    "placeholders": {
+      "date": {}
+    }
+  },
+  "@whenAt": {
+    "placeholders": {
+      "date": {},
+      "time": {}
+    }
+  },
+  "@providerLine": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "@userLine": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "@estimatedPriceLine": {
+    "placeholders": {
+      "price": {}
+    }
+  },
+  "@paymentLine": {
+    "placeholders": {
+      "status": {}
+    }
+  },
+  "@confirmPaymentBody": {
+    "placeholders": {
+      "amount": {}
+    }
+  },
+  "@paymentCancelledOrFailedReason": {
+    "placeholders": {
+      "reason": {}
+    }
+  },
+  "@unexpectedPaymentErrorReason": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@failedToLoadProfile": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@profileSavedSuccess": {
+    "placeholders": {
+      "action": {}
+    }
+  },
+  "@genericError": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@errorGettingLocation": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@errorConvertingAddress": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@failedToLoadPortfolio": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@uploadFailed": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@deleteFailedWithError": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@reviewCountLabel": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@bioMinLength": {
+    "placeholders": {
+      "min": {
+        "type": "int"
+      }
+    }
+  }
+}

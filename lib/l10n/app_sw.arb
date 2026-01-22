@@ -1,0 +1,963 @@
+{
+  "@@locale": "sw",
+  "appTitle": "Styloria",
+  "account": "Akaunti",
+  "profile": "Wasifu",
+  "myBookings": "Nafasi zangu",
+  "openJobs": "Kazi zilizo wazi",
+  "earnings": "Mapato",
+  "paymentMethods": "Njia za malipo",
+  "referFriends": "Alika marafiki",
+  "language": "Lugha",
+  "settings": "Mipangilio",
+  "darkMode": "Hali ya giza",
+  "systemDefault": "Chaguo-msingi la mfumo",
+  "languageUpdated": "Lugha imesasishwa",
+  "languageSetToSystemDefault": "Lugha imewekwa kuwa chaguo-msingi la mfumo",
+  "helpAndSupport": "Msaada na usaidizi",
+  "chatWithCustomerService": "Ongea na huduma kwa wateja",
+  "aboutAndPolicies": "Kuhusu na sera",
+  "viewUserPoliciesAndAgreements": "Tazama sera na makubaliano ya mtumiaji",
+  "logOut": "Toka",
+  "deleteAccount": "Futa akaunti",
+  "deleteAccountSubtitle": "Kitendo hiki hakiwezi kutenduliwa",
+  "deleteAccountTitle": "Futa akaunti",
+  "deleteAccountConfirmBody": "Una uhakika unataka kufuta akaunti yako?\n\nHatua hii itakuondoa (sign out) na unaweza kupoteza ufikiaji kabisa.",
+  "no": "Hapana",
+  "yesDelete": "Ndiyo, futa",
+  "deleteAccountSheetTitle": "Tunasikitika kukuona unaondoka.",
+  "deleteAccountSheetPrompt": "Unaweza kutuambia kwa nini? (Chagua yote yanayohusika)",
+  "deleteAccountSelectAtLeastOneReason": "Tafadhali chagua angalau sababu moja.",
+  "tellUsMoreOptional": "Tuambie zaidi (hiari)",
+  "suggestionsToImproveOptional": "Mapendekezo ya kuboresha (hiari)",
+  "deleteMyAccount": "Futa akaunti yangu",
+  "cancel": "Ghairi",
+  "failedToDeleteAccount": "Imeshindikana kufuta akaunti. Tafadhali jaribu tena.",
+  "choosePreferredLanguage": "Chagua lugha unayopendelea",
+  "noteSomeTextMayStillAppearInEnglish": "Kumbuka: Hii hubadilisha lugha ya programu. Maandishi mengine yanaweza kuonekana kwa Kiingereza hadi tafsiri ziongezwe.",
+  "languageSetToName": "Lugha imewekwa kuwa {name}",
+  "@languageSetToName": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "deletionReason1": "Sihitaji Styloria tena",
+  "deletionReason2": "Nilipata shida kuthibitisha akaunti yangu (barua pepe/KYC)",
+  "deletionReason3": "Sikuweza kupata huduma/watoa huduma karibu nami",
+  "deletionReason4": "Bei au ada zilikuwa juu sana / hazikuwa wazi",
+  "deletionReason5": "Programu ilikuwa inachanganya / ilikuwa ngumu kutumia",
+  "deletionReason6": "Hitilafu (bugs) au matatizo ya utendaji",
+  "deletionReason7": "Matatizo ya malipo/marejesho",
+  "deletionReason8": "Uzoefu mbaya na mtoa huduma/mtumiaji",
+  "deletionReason9": "Wasiwasi wa faragha au usalama",
+  "deletionReason10": "Niliunda akaunti hii kimakosa",
+  "deletionReason11": "Ninahama kwenda kwenye jukwaa lingine",
+  "deletionReason12": "Nyingine",
+  "loginWelcomeTitle": "Karibu Styloria",
+  "loginWelcomeSubtitle": "Ingia ili kudhibiti nafasi zako na huduma.",
+  "loginFailedToLoadUserInfo": "Umefanikiwa kuingia lakini taarifa za mtumiaji hazikupatikana.",
+  "username": "Jina la mtumiaji",
+  "password": "Nenosiri",
+  "required": "Inahitajika",
+  "login": "Ingia",
+  "createNewAccount": "Unda akaunti mpya",
+  "requestEmailVerificationCode": "Omba msimbo wa uthibitishaji wa barua pepe",
+  "createAccountTitle": "Unda akaunti",
+  "joinStyloria": "Jiunge na Styloria",
+  "registerSubtitle": "Unda akaunti ili kuweka nafasi au kuwa mtoa huduma",
+  "iWantTo": "Ninataka:",
+  "bookServices": "Kuweka nafasi ya huduma",
+  "provideServices": "Kutoa huduma",
+  "personalInformation": "Taarifa binafsi",
+  "firstName": "Jina la kwanza",
+  "lastName": "Jina la mwisho",
+  "selectDateOfBirth": "Chagua tarehe ya kuzaliwa",
+  "phoneNumber": "Nambari ya simu",
+  "pleaseEnterPhoneNumber": "Tafadhali ingiza namba ya simu",
+  "accountInformation": "Taarifa za akaunti",
+  "chooseUniqueUsernameHint": "Chagua jina la mtumiaji la kipekee",
+  "email": "Barua pepe",
+  "emailHint": "your@email.com",
+  "enterValidEmail": "Ingiza barua pepe halali",
+  "security": "Usalama",
+  "passwordHintAtLeast10": "Angalau herufi 10",
+  "passwordMin10": "Nenosiri lazima liwe na angalau herufi 10",
+  "iAgreeTo": "Ninakubali ",
+  "termsOfService": "Masharti ya Huduma",
+  "and": "na",
+  "privacyPolicy": "Sera ya Faragha", 
+  "passwordIsRequired": "Nenosiri linahitajika",
+  "confirmPassword": "Thibitisha nenosiri",
+  "passwordsDoNotMatch": "Nenosiri hazilingani",
+  "pleaseSelectDob": "Tafadhali chagua tarehe yako ya kuzaliwa.",
+  "pleaseSelectCountry": "Tafadhali chagua nchi yako.",
+  "pleaseSelectCity": "Tafadhali chagua jiji lako.",
+  "pleaseEnterValidPhone": "Tafadhali ingiza namba ya simu halali.",
+  "mustAcceptTerms": "Lazima ukubali masharti.",
+  "mustBeAtLeast18": "Lazima uwe na umri wa angalau miaka 18 kujiandikisha.",
+  "agreeToTerms": "Nakubali Masharti ya Huduma na Sera ya Faragha",
+  "createAccountButton": "Unda akaunti",
+  "alreadyHaveAccount": "Tayari una akaunti?",
+  "emailVerifiedSuccessPleaseLogin": "Barua pepe imethibitishwa. Tafadhali ingia.",
+  "pleaseVerifyEmailToContinue": "Tafadhali thibitisha barua pepe yako ili kuendelea.",
+  "requestVerificationCodeTitle": "Omba msimbo wa uthibitishaji",
+  "requestVerificationInstructions": "Ingiza barua pepe au jina la mtumiaji.\nTutatuma msimbo mpya wa uthibitishaji kwenye barua pepe ya akaunti hiyo.",
+  "emailOrUsername": "Barua pepe au jina la mtumiaji",
+  "sendCode": "Tuma msimbo",
+  "ifAccountExistsCodeSent": "Ikiwa akaunti ipo, msimbo umetumwa.",
+  "failedToSendVerificationCode": "Imeshindikana kutuma msimbo wa uthibitishaji.",
+  "verifyYourEmailTitle": "Thibitisha barua pepe yako",
+  "verificationCodeSentInfo": "Msimbo wa uthibitishaji umetumwa kwenye barua pepe ya akaunti hii.",
+  "emailVerificationInstructions": "Ingiza msimbo wa tarakimu 6 uliotumwa kwenye barua pepe ya akaunti hii:\n{identifier}",
+  "@emailVerificationInstructions": {
+    "placeholders": {
+      "identifier": {}
+    }
+  },
+  "verificationCodeLabel": "Msimbo wa uthibitishaji",
+  "sendingEllipsis": "Inatuma...",
+  "resendCode": "Tuma tena msimbo",
+  "enter6DigitCodeError": "Ingiza msimbo wa tarakimu 6.",
+  "verifyingEllipsis": "Inathibitisha...",
+  "verify": "Thibitisha",
+  "invalidOrExpiredCodeTryResending": "Msimbo si sahihi au muda umeisha. Jaribu kutuma tena.",
+  "bookingTitle": "Uhifadhi #{id}",
+  "@bookingTitle": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+  "invalidBookingIdForChat": "Kitambulisho cha uhifadhi si sahihi kwa mazungumzo.",
+  "invalidBookingIdForCall": "Kitambulisho cha uhifadhi si sahihi kwa simu.",
+  "unableToLoadContactInfo": "Imeshindikana kupakia taarifa za mawasiliano. Hakikisha uhifadhi uko hai.",
+  "noPhoneNumberAvailableForName": "Hakuna nambari ya simu inayopatikana kwa {name}.",
+  "@noPhoneNumberAvailableForName": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "deviceCannotPlaceCalls": "Kifaa hiki hakiwezi kupiga simu.",
+  "cancelBookingDialogTitle": "Ghairi uhifadhi",
+  "cancelBookingDialogBody": "Je, kweli unataka kughairi uhifadhi huu?\n\nKumbuka: Ikiwa mtoa huduma tayari amekubali na zaidi ya dakika 7 zimepita (lakini chini ya takriban dakika 40), adhabu inaweza kutumika kulingana na sheria.",
+  "yesCancel": "Ndiyo, ghairi",
+  "failedToCancelBooking": "Imeshindikana kughairi uhifadhi.",
+  "bookingCancelledPenaltyApplied": "Uhifadhi umeghairiwa. Adhabu ya {amount} imetumika.",
+  "@bookingCancelledPenaltyApplied": {
+    "placeholders": {
+      "amount": {}
+    }
+  },
+  "bookingCancelledSuccessfully": "Uhifadhi umeghairiwa kwa mafanikio.",
+  "failedToConfirmCompletion": "Imeshindikana kuthibitisha kukamilika. Tafadhali jaribu tena.",
+  "bothSidesConfirmedCompletedPayoutReleased": "Pande zote zimethibitisha. Uhifadhi umewekwa kuwa umekamilika na malipo yametolewa.",
+  "youConfirmedCompletionWaitingForProvider": "Umethibitisha kukamilika. Inasubiri uthibitisho wa mtoa huduma.",
+  "youConfirmedCompletionWaitingForUser": "Umethibitisha kukamilika. Inasubiri uthibitisho wa mtumiaji.",
+  "statusUnknown": "haijulikani",
+  "statusAccepted": "imekubaliwa",
+  "statusInProgress": "inaendelea",
+  "statusCompleted": "imekamilika",
+  "statusCancelled": "imeghairiwa",
+  "paymentPaid": "imelipwa",
+  "paymentPending": "inasubiri",
+  "paymentFailed": "imeshindikana",
+  "bookingAcceptedBy": "Uhifadhi umekubaliwa na {name}",
+  "@bookingAcceptedBy": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "whenLabel": "Lini",
+  "atTime": "saa {time}",
+  "@atTime": {
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "userLabel": "Mtumiaji",
+  "providerLabel": "Mtoa huduma",
+  "estimatedPriceLabel": "Bei inayokadiriwa",
+  "offeredPaidLabel": "Iliyotolewa / iliyolipwa",
+  "distanceLabel": "Umbali",
+  "distanceMiles": "maili {miles}",
+  "@distanceMiles": {
+    "placeholders": {
+      "miles": {}
+    }
+  },
+  "acceptedAtLabel": "Imekubaliwa saa",
+  "cancelledAtLabel": "Imeghairiwa saa",
+  "cancelledByLabel": "Imeghairiwa na",
+  "penaltyAppliedLabel": "Adhabu imetumika: {amount}",
+  "@penaltyAppliedLabel": {
+    "placeholders": {
+      "amount": {}
+    }
+  },
+  "userConfirmedLabel": "Mtumiaji amethibitisha",
+  "providerConfirmedLabel": "Mtoa huduma amethibitisha",
+  "payoutReleasedLabel": "Malipo yametolewa",
+  "yesLower": "ndiyo",
+  "noLower": "hapana",
+  "chat": "Mazungumzo",
+  "call": "Piga simu",
+  "actions": "Vitendo",
+  "confirmCompletion": "Thibitisha kukamilika",
+  "noFurtherActionsForBooking": "Hakuna vitendo vingine vinavyopatikana kwa uhifadhi huu.",
+  "freeCancellationEndsIn": "Kughairi bure kunaisha ndani ya {time}",
+  "@freeCancellationEndsIn": {
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "earlyFreeCancellationEndedWarning": "Kipindi cha awali cha kughairi bure kimeisha. Hadi takriban dakika 40 baada ya kukubaliwa, kughairi kuchelewa kunaweza kusababisha adhabu.",
+  "cancelBooking": "Ghairi uhifadhi",
+  "cancelBookingNoPenalty": "Ghairi uhifadhi (hakuna adhabu)",
+  "cancelBookingPenaltyMayApply": "Ghairi uhifadhi (adhabu inaweza kutumika)",
+  "cancellationPolicyInfo": "Unaweza kughairi bila adhabu ndani ya dakika 7 za kwanza baada ya mtoa huduma kukubali, na tena baada ya takriban dakika 40 ikihitajika. Kati ya nyakati hizo, adhabu inaweza kutumika kulingana na sheria.",
+  "ratingLine": "Ukadiriaji: {rating} ({reviewCount, plural, =1{mapitio 1} other{mapitio {reviewCount}}})",
+  "@ratingLine": {
+    "placeholders": {
+      "rating": {},
+      "reviewCount": {
+        "type": "int"
+      }
+    }
+  },
+
+  "youAreCurrentlyUnavailable": "Huwezi kupatikana kwa sasa",
+  "toBrowseAndAcceptJobsEnableAvailability": "Ili kuvinjari na kukubali maombi ya kazi ya karibu, unahitaji kujiweka kuwa unapatikana kwa nafasi.",
+  "goToProfileSettings": "Nenda kwa Mipangilio ya Wasifu",
+  "tipToggleAvailableForBookings": "Kidokezo: Washa \"Inapatikana kwa Nafasi\" katika Wasifu wako wa Mtoa Huduma ili kuanza kupokea maombi ya kazi.",
+  "requestedBy": "Imeombwa na: {name}",
+  "@requestedBy": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "locationLabel": "Mahali: {address}",
+  "@locationLabel": {
+    "placeholders": {
+      "address": {
+        "type": "String"
+      }
+    }
+  },
+
+  "proofOfSkillsPortfolio": "Uthibitisho wa ujuzi (Portfolio)",
+  "noPortfolioPostsAvailable": "Hakuna machapisho ya portfolio yanayopatikana.",
+  "bookingLocation": "Eneo la uhifadhi",
+  "location": "Eneo",
+  "latitude": "Latitudo",
+  "longitude": "Longitudo",
+  "mapWillAppearWhenCoordinatesValid": "Ramani itaonekana hapa wakati viwianishi ni sahihi.",
+  "chatForBookingTitle": "Mazungumzo ya uhifadhi #{id}",
+  "@chatForBookingTitle": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+  "unableToStartChat": "Imeshindikana kuanza mazungumzo. Mazungumzo yanapatikana tu wakati uhifadhi umekubaliwa, unaendelea, au umekamilika ndani ya siku iliyopita.",
+  "invalidChatThreadFromServer": "Thread ya mazungumzo isiyo sahihi imerudishwa na seva.",
+  "messageNotSentPolicy": "Ujumbe haukutumwa. Kumbuka: kushiriki namba za simu au barua pepe hairuhusiwi kwenye gumzo.",
+  "unknown": "Haijulikani",
+  "typeMessageHint": "Andika ujumbe kwa msaada...",
+  "uploadProfilePicture": "Pakia picha ya wasifu",
+  "currentProfilePicture": "Picha ya wasifu ya sasa",
+  "newPicturePreview": "Mwonekano wa picha mpya",
+  "chooseImage": "Chagua picha",
+  "upload": "Pakia",
+  "noImageBytesFoundWeb": "Hakuna data ya picha iliyopatikana (web).",
+  "pleasePickAnImageFirst": "Tafadhali chagua picha kwanza.",
+  "uploadFailedCheckServerLogs": "Kupakia kumeshindikana. Angalia server logs / token.",
+  "profilePictureUploadedSuccessfully": "Picha ya wasifu imepakiwa kwa mafanikio!",
+  "errorWithValue": "Hitilafu: {error}",
+  "@errorWithValue": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "tapToChangeProfilePicture": "Gusa ili kubadilisha picha ya wasifu",
+  "usernameValue": "Jina la mtumiaji: {username}",
+  "@usernameValue": {
+    "placeholders": {
+      "username": {}
+    }
+  },
+  "roleValue": "Wajibu: {role}",
+  "@roleValue": {
+    "placeholders": {
+      "role": {}
+    }
+  },
+  "dateOfBirthYyyyMmDd": "Tarehe ya kuzaliwa (YYYY-MM-DD)",
+  "saveProfile": "Hifadhi wasifu",
+  "failedToSaveProfile": "Imeshindikana kuhifadhi wasifu. Tafadhali jaribu tena.",
+  "profileUpdated": "Wasifu umesasishwa.",
+  "completeYourProviderProfile": "Kamilisha wasifu wako wa mtoa huduma",
+  "completeProviderProfileBody": "Ili uanze kukubali kazi na kupata pesa, kamilisha wasifu wako wa mtoa huduma.",
+  "setupProfileNow": "Sanidi wasifu sasa",
+  "doItLater": "Baadaye",
+  "bookingTimerPenaltyPeriodActive": "Kipindi cha adhabu kimeanza",
+  "bookingTimerFreeCancellationPeriod": "Kipindi cha kughairi bure",
+  "bookingTimerTimeRemaining": "Muda uliobaki: {time}",
+  "@bookingTimerTimeRemaining": {
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "bookingTimerCancellingNowPenalty": "Kughairi sasa kutasababisha adhabu ya 10%.",
+  "bookingTimerCancelNoPenalty": "Unaweza kughairi bila adhabu.",
+  "myReviewsTitle": "Maoni yangu",
+  "failedToLoadReviews": "Imeshindikana kupakia maoni.",
+  "noReviewsYet": "Bado hujaacha maoni yoyote.",
+  "providerWithName": "Mtoa huduma: {name}",
+  "providerGeneric": "Mtoa huduma",
+  "ratingWithValue": "Ukadiriaji: {rating}",
+  "nearbyOpenJobsTitle": "Kazi zilizo wazi karibu",
+  "failedToLoadOpenJobsHint": "Imeshindikana kupakia kazi zilizo wazi.\nHakikisha una wasifu wa mtoa huduma wenye eneo na available=true.",
+  "errorLoadingJobsWithValue": "Hitilafu kupakia kazi: {error}",
+  "noOpenJobsFoundNearbyTitle": "Hakuna kazi zilizo wazi karibu",
+  "noOpenJobsFoundNearbyBody": "Hakikisha:\n- Umeweka eneo la mtoa huduma\n- Umewekwa kuwa unapatikana\n- Watumiaji wameunda na kulipia bookings",
+  "currencyLabel": "Sarafu: {symbol}",
+  "pricesShownInCurrency": "Bei zinaonyeshwa kwa {symbol} ({country})",
+  "jobTitleWithId": "Kazi #{id}",
+  "serviceLine": "Huduma: {service}",
+  "whenLine": "Lini: {date} {time}",
+  "priceLine": "Bei: {price}",
+  "acceptJob": "Kubali kazi",
+  "failedToAcceptJob": "Imeshindikana kukubali kazi.",
+  "jobAcceptedSuccessfully": "Kazi imekubaliwa kwa mafanikio.",
+  "newServiceRequestTitle": "Ombi jipya la huduma",
+  "offeredPriceLabel": "Bei iliyotolewa",
+  "offeredPriceHint": "mf. 25.00",
+  "enterValidPrice": "Weka bei sahihi",
+  "bookAndPay": "Weka nafasi na ulipe",
+  "bookAndPayAmount": "Weka nafasi na ulipe {amount}",
+  "haircutService": "Kunyoa",
+  "stylingService": "Styling",
+  "timeLabel": "Muda:",
+  "notesLabel": "Maelezo",
+  "requestCreatedAndPaidBroadcast": "Ombi limeundwa na kulipwa! Limetumwa kwa watoa huduma.",
+  "locationLatLng": "Eneo: {lat}, {lng}",
+  "paymentMethodsTitle": "Njia za malipo",
+  "paymentPreferencesInfo": "Mapendeleo haya yanahifadhiwa ndani ya kifaa chako. Malipo halisi huchakatwa kwa usalama kupitia Stripe/viingilio vingine.",
+  "preferredMethodLabel": "Njia unayopendelea (kiingilio cha ndani huchaguliwa kulingana na nchi)",
+  "methodVisaMastercard": "Visa/Mastercard",
+  "methodMobileMoney": "Mobile Money (Momo/Paystack/Africa)",
+  "methodPaypal": "PayPal",
+  "methodApplePayGooglePay": "Apple Pay/Google Pay",
+  "methodWeChatPay": "WeChat Pay (China)",
+  "methodAlipay": "Alipay (China)",
+  "methodUnionPay": "UnionPay Card (China)",
+  "mobileMoneyNumberLabel": "Nambari ya Mobile Money",
+  "wechatAlipayIdLabel": "WeChat/Alipay ID",
+  "cardLast4DigitsLabel": "Nambari 4 za mwisho za kadi",
+  "paypalEmailLabel": "Barua pepe ya PayPal",
+  "applePayEnabledOnDevice": "Apple Pay imewezeshwa kwenye kifaa hiki",
+  "savePaymentPreferences": "Hifadhi mapendeleo ya malipo",
+  "paymentPrefsSavedInfo": "Mapendeleo ya malipo yamehifadhiwa ndani ya kifaa. Kuchaji halisi kutafanywa baadaye kupitia Stripe/viingilio vingine.",
+  "failedToLoadImage": "Imeshindikana kupakia picha",
+  "earningsTitle": "Mapato",
+  "couldNotLoadEarningsSummary": "Imeshindikana kupakia muhtasari wa mapato.",
+  "noData": "Hakuna data.",
+  "retry": "Jaribu tena",
+  "summaryTitle": "Muhtasari",
+  "totalLabel": "Jumla",
+  "pendingLabel": "Inasubiri",
+  "paidLabel": "Iliyolipwa",
+  "pdfReportTitle": "Ripoti ya PDF",
+  "periodLabel": "Kipindi",
+  "periodThisMonth": "Mwezi huu",
+  "periodLastMonth": "Mwezi uliopita",
+  "periodYtd": "Mwaka hadi sasa",
+  "periodAllTime": "Muda wote",
+  "couldNotDownloadPdfReport": "Imeshindikana kupakua ripoti ya PDF.",
+  "couldNotOpenPdfWithValue": "Imeshindikana kufungua PDF: {error}",
+  "savingFilesNotSupportedWeb": "Kuhifadhi faili hakutumiki kwenye Web kwa sasa.",
+  "savedToDocumentsIosWithPath": "Imehifadhiwa kwenye Documents (iOS):\n{path}",
+  "savedToFilesWithPath": "Imehifadhiwa kwenye faili:\n{path}",
+  "open": "Fungua",
+  "failedToSavePdfWithValue": "Imeshindikana kuhifadhi PDF: {error}",
+  "openPdfReport": "Fungua ripoti ya PDF",
+  "savePdfToDownloads": "Hifadhi PDF kwenye Downloads",
+  "reportWatermarkNote": "Ripoti ya PDF inapaswa kuwa na watermark ya Styloria.",
+  "referFriendsTitle": "Waite marafiki",
+  "shareReferralCodeBody": "Shiriki msimbo wako wa rufaa kwa marafiki. Baadaye unaweza kuongeza zawadi watakaposajili na kukamilisha bookings.",
+  "yourReferralCodeLabel": "Msimbo wako wa rufaa:",
+  "copy": "Nakili",
+  "referralCodeCopiedWithCode": "Msimbo wa rufaa umenakiliwa: {code}",
+  "navHome": "Nyumbani",
+  "navBookings": "Bookings",
+  "navNotifications": "Arifa",
+  "navAccount": "Akaunti",
+  "welcome": "Karibu",
+  "welcomeName": "Karibu, {name}",
+  "@welcomeName": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "toggleThemeTooltip": "Badilisha mwanga/giza",
+  "loggedInAs": "Umeingia kama: {role}",
+  "@loggedInAs": {
+    "placeholders": {
+      "role": {}
+    }
+  },
+  "locationWithValue": "Eneo: {value}",
+  "@locationWithValue": {
+    "placeholders": {
+      "value": {}
+    }
+  },
+  "homeTagline": "Badilisha uzoefu wako wa grooming kwa bookings za papo hapo na watoa huduma wanaoaminika.",
+  "manageProviderProfile": "Simamia wasifu wa mtoa huduma",
+  "browseOpenJobs": "Vinjari kazi zilizo wazi",
+  "quickActions": "Vitendo vya haraka",
+  "newBooking": "Booking mpya",
+  "notificationsWithUnread": "Arifa ({count, plural, =1{1 haijasomwa} other{{count} hazijasomwa}})",
+  "@notificationsWithUnread": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "liveLocationTrackingTitle": "Ufuatiliaji wa eneo la moja kwa moja",
+  "live": "Live",
+  "locationServicesDisabled": "Huduma za eneo zimezimwa",
+  "locationPermissionDenied": "Ruhusa ya eneo imekataliwa",
+  "locationPermissionPermanentlyDenied": "Ruhusa ya eneo imekataliwa kabisa",
+  "failedToGetLocationWithValue": "Imeshindikana kupata eneo: {error}",
+  "@failedToGetLocationWithValue": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "youProvider": "Wewe (mtoa huduma)",
+  "youCustomer": "Wewe (mteja)",
+  "customer": "Mteja",
+  "bookingDetails": "Maelezo ya booking",
+  "navigate": "Elekeza",
+  "failedToLoadNotifications": "Imeshindikana kupakia arifa.",
+  "failedToMarkAsRead": "Imeshindikana kuweka kama imesomwa",
+  "noNotificationsYet": "Bado hakuna arifa.",
+  "markRead": "Weka imesomwa",
+  "providerKycTitle": "Uthibitishaji wa Mtoa Huduma (KYC)",
+  "logoutTooltip": "Toka",
+  "statusLabel": "Hali: {status}",
+  "@statusLabel": {
+    "placeholders": {
+      "status": {}
+    }
+  },
+  "rejectedWithNotes": "Imekataliwa: {notes}",
+  "@rejectedWithNotes": {
+    "placeholders": {
+      "notes": {}
+    }
+  },
+  "kycInstructions": "Ili kupata vipengele vya watoa huduma, pakia kitambulisho chako na selfie kwa uthibitisho.",
+  "idFrontRequired": "Kitambulisho Mbele (inahitajika)",
+  "selectIdFront": "Chagua Kitambulisho Mbele",
+  "idBackRequired": "Kitambulisho Nyuma (inahitajika)",
+  "selectIdBackRequired": "Chagua Kitambulisho Nyuma",
+  "selfieRequired": "Selfie (inahitajika)",
+  "selectSelfie": "Chagua Selfie",
+  "takeSelfie": "Piga Selfie",
+  "errorUploadAllRequired": "Tafadhali pakia kitambulisho (mbele), kitambulisho (nyuma), na selfie.",
+  "failedSubmitKycCode": "Imeshindikana kutuma KYC (msimbo {code}).",
+  "@failedSubmitKycCode": {
+    "placeholders": {
+      "code": {}
+    }
+  },
+  "submittedCurrentStatus": "Imetumwa. Hali ya sasa: {status}",
+  "@submittedCurrentStatus": {
+    "placeholders": {
+      "status": {}
+    }
+  },
+  "unknownStatus": "haijulikani",
+  "submitKyc": "Wasilisha KYC",
+  "verificationMayTakeTimeNote": "Kumbuka: Uthibitishaji unaweza kuchukua muda. Utaweza kutumia vipengele vya mtoa huduma ukishakubaliwa.",
+  "enterVerificationCodeTitle": "Weka Msimbo wa Uthibitisho",
+  "otpSentToUsername": "Tumetuma msimbo wa tarakimu 6 kwa namba ya simu\ninayohusishwa na \"{username}\".",
+  "@otpSentToUsername": {
+    "placeholders": {
+      "username": {}
+    }
+  },
+  "sixDigitCodeLabel": "Msimbo wa tarakimu 6",
+  "enterSixDigitCodeValidation": "Weka msimbo wa tarakimu 6",
+  "otpInvalidOrExpired": "Msimbo si sahihi au muda umeisha.",
+  "failedLoadUserInfoAfterVerification": "Imeshindikana kupakia taarifa za mtumiaji baada ya uthibitisho.",
+  "chatWithSupportTitle": "Zungumza na Msaada",
+  "unableStartSupportChat": "Imeshindikana kuanzisha gumzo la msaada.",
+  "invalidSupportThreadReturned": "Thread ya msaada isiyo sahihi imerudishwa na seva.",
+  "noMessagesYet": "Hakuna ujumbe bado. Anza mazungumzo!",
+  "supportDefaultName": "Msaada",
+  "aboutPoliciesTitle": "Kuhusu na Sera",
+  "paymentsNotSupportedShort": "Malipo hayatumiki kwenye jukwaa hili. Tafadhali tumia Android, iOS, macOS au Web.",
+  "failedToLoadProfile": "Imeshindikana kupakia wasifu: {error}",
+  "profileSavedSuccess": "Wasifu ume{action} kwa mafanikio!",
+  "genericError": "Hitilafu: {error}",
+  "locationPermissionDeniedEnableInSettings": "Ruhusa ya eneo imekataliwa. Tafadhali washa kwenye mipangilio.",
+  "locationPermissionPermanentlyDeniedEnableInAppSettings": "Ruhusa ya eneo imekataliwa kabisa. Tafadhali washa kwenye mipangilio ya programu.",
+  "errorGettingLocation": "Hitilafu kupata eneo: {error}",
+  "pleaseEnterAddress": "Tafadhali weka anwani",
+  "locationUpdatedFromAddress": "Eneo limesasishwa kutoka anwani",
+  "couldNotFindLocationForAddress": "Haikuweza kupata eneo kwa anwani hii",
+  "errorConvertingAddress": "Hitilafu kubadilisha anwani: {error}",
+  "portfolioUnavailableCompleteKycFirst": "Portfolio haipatikani. Ikiwa wewe ni mtoa huduma, kamilisha uthibitisho wa KYC kwanza.",
+  "failedToLoadPortfolio": "Imeshindikana kupakia portfolio: {error}",
+  "addPhoto": "Ongeza Picha",
+  "addVideo": "Ongeza Video",
+  "addPost": "Ongeza chapisho",
+  "captionOptionalTitle": "Maelezo (hiari)",
+  "captionHintExample": "mfano: “Knotless braids kwa mteja”",
+  "skip": "Ruka",
+  "save": "Hifadhi",
+  "failedToCreatePortfolioPost": "Imeshindikana kuunda chapisho la portfolio.",
+  "uploadFailedMediaUpload": "Upakiaji umeshindikana (upakiaji wa media).",
+  "uploadFailed": "Upakiaji umeshindikana: {error}",
+  "deletePostTitle": "Futa chapisho?",
+  "deletePostBody": "Hii itaondoa chapisho kwenye portfolio yako.",
+  "delete": "Futa",
+  "deleteFailed": "Kufuta kumeshindikana.",
+  "deleteFailedWithError": "Kufuta kumeshindikana: {error}",
+  "portfolioTitle": "Portfolio",
+  "noPortfolioPostsYetHelpText": "Hakuna machapisho bado. Ongeza picha/video za kazi yako ili kuwasaidia wateja kukuamini.",
+  "setupProviderProfileTitle": "Weka Wasifu wa Mtoa Huduma",
+  "providerProfileTitle": "Wasifu wa Mtoa Huduma",
+  "welcomeToStyloriaTitle": "Karibu Styloria!",
+  "completeProviderProfileToStartEarning": "Kamilisha wasifu wako wa mtoa huduma ili uanze kukubali kazi na kupata kipato.",
+  "reviewCountLabel": "({count} maoni)",
+  "topRatedChip": "Kiwango cha Juu",
+  "bioLabel": "Wasifu / Maelezo",
+  "bioHint": "Waambie wateja kuhusu ujuzi na uzoefu wako...",
+  "pleaseEnterBio": "Tafadhali weka wasifu",
+  "bioMinLength": "Wasifu uwe angalau herufi {min}",
+  "yourLocationTitle": "Eneo Lako",
+  "locationHelpMatchNearbyClients": "Eneo lako hutusaidia kukuunganisha na wateja wa karibu",
+  "locationHelpUpdateToFindJobs": "Sasisha eneo ili kupata kazi katika maeneo tofauti",
+  "useMyCurrentLocationTitle": "Tumia Eneo Langu la Sasa",
+  "gpsSubtitle": "Pata eneo kiotomatiki kwa kutumia GPS",
+  "orLabel": "AU",
+  "enterYourAddressTitle": "Weka Anwani Yako",
+  "fullAddressLabel": "Anwani Kamili",
+  "fullAddressHint": "mfano: 123 Main St, Accra, Ghana",
+  "find": "Tafuta",
+  "addressHelpText": "Weka anwani ya barabara, jiji, na nchi",
+  "coordinatesAutoFilledTitle": "Koordinati (Hujazwa kiotomatiki)",
+  "servicePricingTitle": "Bei za Huduma",
+  "servicePricingHelp": "Weka bei yako kwa kila huduma. Tia alama \"Haipatikani\" kwa huduma usizoweza kutoa.",
+  "serviceHeader": "Huduma",
+  "priceHeader": "Bei",
+  "notOfferedHeader": "Haipatikani",
+  "priceHint": "0.00",
+  "providerHowPricingWorksTitle": "Jinsi Bei Inavyofanya Kazi:",
+  "providerHowPricingWorksBody": "• Bei yako ndiyo unayotoza kwa huduma\n• Gharama ya usafiri = 80% ya sarafu ya mtumiaji kwa km\n• Watumiaji huona chaguo 3 kulingana na watoa huduma wa karibu:\n  - Budget: Bei ya chini zaidi\n  - Standard: Bei ya wastani\n  - Priority: Bei ya juu zaidi",
+  "availableForBookingsTitle": "Inapatikana kwa Miadi",
+  "availableOnHelp": "✓ Utaonekana kwenye matokeo ya utafutaji kwa wateja wa karibu",
+  "availableOffHelp": "✗ Hutapokea ofa mpya za kazi",
+  "completeSetupStartEarning": "Maliza Usanidi na Anza Kupata",
+  "updateProfile": "Sasisha Wasifu",
+  "skipForNow": "Ruka Kwa Sasa",
+  "@providerWithName": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "@ratingWithValue": {
+    "placeholders": {
+      "rating": {}
+    }
+  },
+  "@errorLoadingJobsWithValue": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@currencyLabel": {
+    "placeholders": {
+      "symbol": {}
+    }
+  },
+  "@pricesShownInCurrency": {
+    "placeholders": {
+      "symbol": {},
+      "country": {}
+    }
+  },
+  "@jobTitleWithId": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+  "@serviceLine": {
+    "placeholders": {
+      "service": {}
+    }
+  },
+  "@whenLine": {
+    "placeholders": {
+      "date": {},
+      "time": {}
+    }
+  },
+  "@priceLine": {
+    "placeholders": {
+      "price": {}
+    }
+  },
+  "@bookAndPayAmount": {
+    "placeholders": {
+      "amount": {}
+    }
+  },
+  "@locationLatLng": {
+    "placeholders": {
+      "lat": {},
+      "lng": {}
+    }
+  },
+  "@couldNotOpenPdfWithValue": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@savedToDocumentsIosWithPath": {
+    "placeholders": {
+      "path": {}
+    }
+  },
+  "@savedToFilesWithPath": {
+    "placeholders": {
+      "path": {}
+    }
+  },
+  "@failedToSavePdfWithValue": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@referralCodeCopiedWithCode": {
+    "placeholders": {
+      "code": {}
+    }
+  },
+  "newBookingTitle": "New Booking",
+  "appointmentDetailsTitle": "Appointment details",
+  "pickDate": "Pick date",
+  "pickTime": "Pick time",
+  "serviceTypeTitle": "Service type",
+  "serviceDropdownLabel": "Service",
+  "serviceHaircutLabel": "Haircut",
+  "serviceBraidsLabel": "Braids",
+  "serviceShaveLabel": "Shave",
+  "serviceHairColoringLabel": "Hair Coloring",
+  "serviceManicureLabel": "Manicure",
+  "servicePedicureLabel": "Pedicure",
+  "serviceNailArtLabel": "Nail Art",
+  "serviceMakeupLabel": "Makeup",
+  "serviceFacialLabel": "Facial",
+  "serviceWaxingLabel": "Waxing",
+  "serviceMassageLabel": "Massage",
+  "serviceHairStylingLabel": "Hair Styling",
+  "serviceHairTreatmentLabel": "Hair Treatment",
+  "serviceHairExtensionsLabel": "Hair Extensions",
+  "serviceOtherServicesLabel": "Other Services",
+  "notesForProviderOptionalLabel": "Notes for your provider (optional)",
+  "locationTitle": "Location",
+  "latitudeLabel": "Latitude",
+  "longitudeLabel": "Longitude",
+  "requiredField": "Required",
+  "useMyCurrentLocation": "Use my current location",
+  "pricesShownIn": "Prices shown in {symbol} ({country})",
+  "@pricesShownIn": {
+    "placeholders": {
+      "symbol": {},
+      "country": {}
+    }
+  },
+  "chooseTimeLaterThanCurrent": "Please choose a time later than the current time.",
+  "pleasePickDateAndTime": "Please pick date and time.",
+  "locationUpdatedFromGps": "Location updated from GPS.",
+  "failedToGetLocation": "Failed to get location: {error}",
+  "@failedToGetLocation": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "bookingCreatedChoosePrice": "Booking created! ID: {id} • Choose your price option.",
+  "@bookingCreatedChoosePrice": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+  "failedToCreateBooking": "Failed to create booking.",
+  "paymentsNotSupportedLong": "Payments are not supported on this platform. Please run the app on Android, iOS, macOS, or Web to test real payments.",
+  "noBookingToConfirm": "No booking to confirm. Please create a booking first.",
+  "pleaseChoosePriceOption": "Please choose a price option.",
+  "failedCreatePaymentTryAgain": "Failed to create payment on server. Please try again.",
+  "paymentSuccessfulMessage": "Payment successful!\nBooking #{bookingId} • Paid: {paid}\nYour request is now visible to nearby providers.",
+  "@paymentSuccessfulMessage": {
+    "placeholders": {
+      "bookingId": {},
+      "paid": {}
+    }
+  },
+  "paymentSucceededButFailedUpdate": "Payment succeeded, but failed to update booking on server.",
+  "paymentCancelledOrFailed": "Payment cancelled or failed: {reason}",
+  "@paymentCancelledOrFailed": {
+    "placeholders": {
+      "reason": {}
+    }
+  },
+  "unexpectedPaymentError": "Unexpected payment error: {error}",
+  "@unexpectedPaymentError": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "createBookingButton": "Create Booking",
+  "chooseYourPriceOptionTitle": "Choose Your Price Option",
+  "transportationCostLabel": "Transportation cost: {cost}",
+  "@transportationCostLabel": {
+    "placeholders": {
+      "cost": {}
+    }
+  },
+  "budgetTierTitle": "BUDGET",
+  "standardTierTitle": "STANDARD",
+  "priorityTierTitle": "PRIORITY",
+  "budgetTierDescription": "Best value among nearby providers",
+  "standardTierDescription": "Recommended balance of price & availability",
+  "priorityTierDescription": "Premium option to attract top providers faster",
+  "naShort": "N/A",
+  "priceBreakdownTitle": "Price Breakdown",
+  "servicePriceLabel": "Service Price",
+  "transportationLabel": "Transportation",
+  "serviceFeeLabel": "Service Fee ({percent}%)",
+  "@serviceFeeLabel": {
+    "placeholders": {
+      "percent": {}
+    }
+  },
+  "allPricesIn": "All prices in {currency} ({country})",
+  "@allPricesIn": {
+    "placeholders": {
+      "currency": {},
+      "country": {}
+    }
+  },
+  "userCountryPlaceholder": "User country",
+  "totalToPayTitle": "Total to Pay",
+  "includesServiceTransportation": "Includes service + transportation",
+  "confirmAndPay": "Confirm & Pay",
+  "howPricingWorksTitle": "How Pricing Works",
+  "howPricingWorksBullets": "• Budget: best value among nearby providers\n• Standard: recommended default\n• Priority: premium option to speed up acceptance\n• Transportation is included in the total",
+  "myBookingsTitle": "My Bookings",
+  "myAssignedJobsTitle": "My Assigned Jobs",
+  "pleaseCompleteProviderProfileFirst": "Please complete your provider profile first.",
+  "failedToLoadBookings": "Failed to load bookings.",
+  "profileSetupRequiredTitle": "Profile Setup Required",
+  "profileSetupRequiredBody": "You need to complete your provider profile before you can view assigned jobs and earnings.",
+  "later": "Later",
+  "setupNow": "Setup Now",
+  "noBookingsFound": "No bookings found.",
+  "findNearbyOpenJobs": "Find Nearby Open Jobs",
+  "pay": "Pay",
+  "rate": "Rate",
+  "bookingNumber": "Booking #{id}",
+  "@bookingNumber": {
+    "placeholders": {
+      "id": {}
+    }
+  },
+  "whenOn": "When: {date}",
+  "@whenOn": {
+    "placeholders": {
+      "date": {}
+    }
+  },
+  "whenAt": "When: {date} at {time}",
+  "@whenAt": {
+    "placeholders": {
+      "date": {},
+      "time": {}
+    }
+  },
+  "providerLine": "Provider: {name}",
+  "@providerLine": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "userLine": "User: {name}",
+  "@userLine": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "estimatedPriceLine": "Estimated price: {price}",
+  "@estimatedPriceLine": {
+    "placeholders": {
+      "price": {}
+    }
+  },
+  "paymentLine": "Payment: {status}",
+  "@paymentLine": {
+    "placeholders": {
+      "status": {}
+    }
+  },
+  "paymentUnpaid": "unpaid",
+  "paymentUnknown": "unknown",
+  "confirmPaymentTitle": "Confirm payment",
+  "confirmPaymentBody": "Pay {amount} to confirm this booking?",
+  "@confirmPaymentBody": {
+    "placeholders": {
+      "amount": {}
+    }
+  },
+  "yesPay": "Yes, Pay",
+  "failedToCreatePaymentIntent": "Failed to create payment intent.",
+  "paymentSuccessfulShort": "Payment successful.",
+  "paymentSucceededButFailedUpdateBooking": "Payment succeeded, but failed to update booking on server.",
+  "paymentCancelledOrFailedReason": "Payment cancelled or failed: {reason}",
+  "@paymentCancelledOrFailedReason": {
+    "placeholders": {
+      "reason": {}
+    }
+  },
+  "unexpectedPaymentErrorReason": "Unexpected payment error: {error}",
+  "@unexpectedPaymentErrorReason": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "genericContact": "Mawasiliano",
+  "genericProvider": "Mtoa huduma",
+  "genericNotAvailable": "Haipatikani",
+
+  "rateProviderTitle": "Kadiria {providerName}",
+  "@rateProviderTitle": {
+    "placeholders": {
+      "providerName": {}
+    }
+  },
+
+  "reviewSelectRatingPrompt": "Chagua alama (1 hadi 5).",
+  "reviewCommentOptionalLabel": "Maoni (si lazima)",
+  "genericCancel": "Ghairi",
+  "genericSubmit": "Wasilisha",
+  "reviewSubmitted": "Mapitio yamewasilishwa.",
+  "reviewSubmitFailed": "Imeshindikana kuwasilisha mapitio.",
+  "rateThisService": "Kadiria huduma hii",
+
+  "tipLeaveTitle": "Toa bakshishi",
+  "tipChooseAmountPrompt": "Chagua kiasi cha bakshishi au weka kiasi chako.",
+  "tipNoTip": "Hakuna bakshishi",
+  "tipCustomAmountLabel": "Kiasi cha bakshishi maalum",
+  "genericContinue": "Endelea",
+
+  "tipSkipped": "Bakshishi imerukwa.",
+  "tipFailedToSaveChoice": "Imeshindikana kuhifadhi chaguo la bakshishi.",
+  "tipFailedToCreatePayment": "Imeshindikana kuunda malipo ya bakshishi.",
+  "tipPaidSuccessfully": "Bakshishi imelipwa kikamilifu. Asante!",
+  "tipPaidButUpdateFailed": "Malipo ya bakshishi yamefanikiwa, lakini kusasisha booking kumesindikana.",
+
+  "tipCancelledOrFailed": "Bakshishi imeghairiwa/imeshindwa: {message}",
+  "tipUnexpectedError": "Hitilafu isiyotarajiwa ya bakshishi: {error}",
+
+  "tipAlreadyPaidLabel": "Bakshishi tayari imelipwa",
+  "tipSkippedLabel": "Bakshishi imerukwa",
+  "walletTitle": "Pochi",
+  "walletTooltip": "Pochi",
+  "payoutSettingsTitle": "Mipangilio ya malipo",
+  "payoutSettingsTooltip": "Mipangilio ya malipo",
+  "walletNoWalletYet": "Bado hakuna pochi. Kamilisha kazi ili upate mapato.",
+  "walletCurrencyFieldLabel": "Sarafu",
+  "walletAvailableLine": "Inapatikana: {amount} {currency}",
+  "walletPendingLine": "Inasubiri: {amount} {currency}",
+  "walletCashOutInstant": "Toa pesa (haraka)",
+  "walletCashOutFailed": "Kutolea pesa kumeshindikana.",
+  "walletCashOutSentTransfer": "Ombi la kutoa pesa limetumwa. Uhamisho: {transferId}",
+  "walletTransactionsTitle": "Miamala",
+  "walletNoTransactionsYet": "Bado hakuna miamala.",
+  "payoutAutoPayoutsTitle": "Malipo ya kiotomatiki",
+  "payoutAutoPayoutsSubtitle": "Tuma malipo kiotomatiki kulingana na ratiba uliyoweka.",
+  "payoutDayUtcLabel": "Siku ya malipo (UTC)",
+  "payoutHourUtcLabel": "Saa ya malipo (UTC)",
+  "payoutMinimumAmountLabel": "Kiwango cha chini cha malipo ya kiotomatiki",
+  "payoutMinimumAmountHelper": "Malipo ya kiotomatiki yataendeshwa tu ikiwa salio linalopatikana ≥ kiasi hiki.",
+  "payoutInstantCashOutEnabledTitle": "Utoaji wa haraka umewezeshwa",
+  "payoutInstantCashOutEnabledSubtitle": "Ruhusu kitufe cha “Toa pesa” (ada itatumika).",
+  "payoutSettingsSaved": "Mipangilio ya malipo imehifadhiwa.",
+  "payoutSettingsSaveFailed": "Imeshindwa kuhifadhi mipangilio ya malipo.",
+  "tipLeaveButton": "Toa bakshishi",
+
+  "selectRatingHelp": "Select rating (1 = poor, 5 = excellent):",
+  "commentsOptionalLabel": "Comments (optional)",
+  "submit": "Submit",
+  "reviewSubmitted": "Review submitted.",
+  "failedSubmitReview": "Failed to submit review.",
+  "@failedToLoadProfile": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@profileSavedSuccess": {
+    "placeholders": {
+      "action": {}
+    }
+  },
+  "@genericError": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@errorGettingLocation": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@errorConvertingAddress": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@failedToLoadPortfolio": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@uploadFailed": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@deleteFailedWithError": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@reviewCountLabel": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@bioMinLength": {
+    "placeholders": {
+      "min": {
+        "type": "int"
+      }
+    }
+  }
+}

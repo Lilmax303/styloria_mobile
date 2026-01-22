@@ -1,0 +1,14 @@
+<!-- android/app/src/main/res/values-night/styles.xml -->
+<resources>
+
+    <style name="LaunchTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Dark theme background while loading in night mode -->
+        <item name="android:windowBackground">@drawable/launch_background</item>
+    </style>
+
+    <style name="NormalTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Dark background for the app in night mode -->
+        <item name="android:windowBackground">@android:color/black</item>
+    </style>
+
+</resources>
