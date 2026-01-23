@@ -5,6 +5,8 @@ workflows:
     
     environment:
       flutter: stable
+      xcode: latest
+      cocoapods: default
       vars:
         STRIPE_PUBLISHABLE_KEY: ${STRIPE_PUBLISHABLE_KEY}
         GOOGLE_MAPS_API_KEY: ${GOOGLE_MAPS_API_KEY}
@@ -23,14 +25,18 @@ workflows:
         script: |
           flutter pub get
       
+      - name: Install CocoaPods
+        script: |
+          cd ios && pod install
+      
       - name: Build Android Debug APK
         script: |
           flutter build apk --debug
       
-      - name: Build iOS
+      - name: Build iOS Simulator
         script: |
-          flutter build ios --debug --no-codesign
+          flutter build ios --debug --simulator
     
     artifacts:
       - build/**/outputs/**/*.apk
-      - build/ios/ipa/*.ipa
+      - build/ios/iphonesimulator/**/*.app
