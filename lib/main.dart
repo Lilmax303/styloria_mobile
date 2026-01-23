@@ -1,5 +1,7 @@
 // lib/main.dart
 
+// lib/main.dart
+
 import 'dart:io' show Platform;
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:styloria_mobile/gen_l10n/app_localizations.dart';
@@ -9,10 +11,10 @@ import 'package:flutter_stripe/flutter_stripe.dart' as stripe;
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import 'app_theme.dart'; // NEW: centralized luxury theme
+import 'app_theme.dart';
 import 'widgets/background_layer.dart';
 import 'profile_picture_screen.dart';
-import 'my_reputation_screen.dart';  // ADD THIS IMPORT
+import 'my_reputation_screen.dart';
 import 'api_client.dart';
 import 'app_tab_state.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
@@ -38,10 +40,8 @@ import 'dart:async';
 import 'forgot_password_screen.dart';
 import 'l10n/fallback_localization_delegates.dart';
 
-// NEW: Luxury header gradient (dark/charcoal)
-// Gold accents now come from Theme (AppTheme) instead of the gradient.
-const Color kGradientStart = Color(0xFF111827); // deep charcoal
-const Color kGradientEnd = Color(0xFF0B0F14); // near-black
+const Color kGradientStart = Color(0xFF111827);
+const Color kGradientEnd = Color(0xFF0B0F14);
 
 bool get _stripeSupported {
   if (kIsWeb) return true;
@@ -51,11 +51,33 @@ bool get _stripeSupported {
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  await dotenv.load(fileName: ".env");
+  // ✅ Safely load .env file with error handling
+  bool envLoaded = false;
+  try {
+    await dotenv.load(fileName: ".env");
+    envLoaded = true;
+    debugPrint('✅ .env file loaded successfully');
+  } catch (e) {
+    debugPrint('⚠️ Warning: Could not load .env file: $e');
+  }
 
+  // ✅ Safely initialize Stripe with error handling
   if (_stripeSupported) {
-    stripe.Stripe.publishableKey = dotenv.env['STRIPE_PUBLISHABLE_KEY'] ?? '';
-    await stripe.Stripe.instance.applySettings();
+    final stripeKey = envLoaded 
+        ? (dotenv.env['STRIPE_PUBLISHABLE_KEY'] ?? '')
+        : '';
+    
+    if (stripeKey.isNotEmpty) {
+      try {
+        stripe.Stripe.publishableKey = stripeKey;
+        await stripe.Stripe.instance.applySettings();
+        debugPrint('✅ Stripe initialized successfully');
+      } catch (e) {
+        debugPrint('⚠️ Warning: Stripe initialization failed: $e');
+      }
+    } else {
+      debugPrint('⚠️ Warning: STRIPE_PUBLISHABLE_KEY is empty or not set');
+    }
   } else {
     debugPrint(
       'Stripe is not initialized on this platform '
@@ -65,6 +87,7 @@ void main() async {
 
   runApp(const StyloriaApp());
 }
+
 
 // =======================
 // ROOT APP WITH THEME MODE

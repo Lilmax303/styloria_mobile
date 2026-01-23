@@ -65,9 +65,9 @@ dev_dependencies:
 flutter_launcher_icons:
   android: true
   ios: true
-  image_path: "C:/Users/kwame/styloria/styloria_mobile/assets/icons/app_icon.png"  # 1024x1024 PNG
+  image_path: "assets/icons/app_icon.png"   # 1024x1024 PNG
   adaptive_icon_background: "#00CEC9"
-  adaptive_icon_foreground: "C:/Users/kwame/styloria/styloria_mobile/assets/icons/app_icon_foreground.png"
+  adaptive_icon_foreground: "assets/icons/app_icon_foreground.png"
 
 flutter:
   uses-material-design: true
