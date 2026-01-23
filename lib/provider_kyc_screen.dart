@@ -8,7 +8,6 @@ import 'package:image_picker/image_picker.dart';
 import 'package:styloria_mobile/gen_l10n/app_localizations.dart';
 
 import 'main.dart';
-
 import 'api_client.dart';
 
 class ProviderKycScreen extends StatefulWidget {
@@ -33,31 +32,110 @@ class _ProviderKycScreenState extends State<ProviderKycScreen> {
   String? _status;
 
   Future<void> _pickIdFront() async {
-    final x = await _picker.pickImage(source: ImageSource.gallery, imageQuality: 85);
-    if (x == null) return;
-    final bytes = await x.readAsBytes();
-    if (!mounted) return;
-    setState(() => _idFrontBytes = bytes);
+    try {
+      final x = await _picker.pickImage(source: ImageSource.gallery, imageQuality: 85);
+      if (x == null) return;
+      final bytes = await x.readAsBytes();
+      if (!mounted) return;
+      setState(() {
+        _idFrontBytes = bytes;
+        _error = null;
+      });
+    } catch (e) {
+      debugPrint('Error picking ID front: $e');
+      if (!mounted) return;
+      setState(() => _error = 'Failed to select image. Please try again.');
+    }
   }
 
   Future<void> _pickIdBack() async {
-    final x = await _picker.pickImage(source: ImageSource.gallery, imageQuality: 85);
-    if (x == null) return;
-    final bytes = await x.readAsBytes();
-    if (!mounted) return;
-    setState(() => _idBackBytes = bytes);
+    try {
+      final x = await _picker.pickImage(source: ImageSource.gallery, imageQuality: 85);
+      if (x == null) return;
+      final bytes = await x.readAsBytes();
+      if (!mounted) return;
+      setState(() {
+        _idBackBytes = bytes;
+        _error = null;
+      });
+    } catch (e) {
+      debugPrint('Error picking ID back: $e');
+      if (!mounted) return;
+      setState(() => _error = 'Failed to select image. Please try again.');
+    }
   }
 
   Future<void> _pickSelfie() async {
-    // Camera preferred for selfie; fallback to gallery if needed
-    final x = await _picker.pickImage(
-      source: kIsWeb ? ImageSource.gallery : ImageSource.camera,
-      imageQuality: 85,
-    );    
-    if (x == null) return;
-    final bytes = await x.readAsBytes();
-    if (!mounted) return;
-    setState(() => _selfieBytes = bytes);
+    try {
+      XFile? x;
+      
+      // Try camera first (for non-web platforms)
+      if (!kIsWeb) {
+        try {
+          x = await _picker.pickImage(
+            source: ImageSource.camera,
+            preferredCameraDevice: CameraDevice.front, // Front camera for selfie
+            imageQuality: 85,
+          );
+        } catch (cameraError) {
+          debugPrint('Camera not available: $cameraError');
+          // Camera failed, show option to use gallery
+          if (!mounted) return;
+          
+          final useGallery = await _showCameraFallbackDialog();
+          if (useGallery == true) {
+            x = await _picker.pickImage(
+              source: ImageSource.gallery,
+              imageQuality: 85,
+            );
+          } else {
+            return; // User cancelled
+          }
+        }
+      } else {
+        // Web: use gallery directly
+        x = await _picker.pickImage(
+          source: ImageSource.gallery,
+          imageQuality: 85,
+        );
+      }
+
+      if (x == null) return;
+      
+      final bytes = await x.readAsBytes();
+      if (!mounted) return;
+      setState(() {
+        _selfieBytes = bytes;
+        _error = null;
+      });
+    } catch (e) {
+      debugPrint('Error picking selfie: $e');
+      if (!mounted) return;
+      setState(() => _error = 'Failed to capture selfie. Please try again.');
+    }
+  }
+
+  /// Shows a dialog when camera is not available, offering gallery as fallback
+  Future<bool?> _showCameraFallbackDialog() async {
+    return showDialog<bool>(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Text('Camera Not Available'),
+        content: const Text(
+          'Unable to access the camera. Would you like to select a selfie from your photo gallery instead?',
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.of(context).pop(false),
+            child: const Text('Cancel'),
+          ),
+          ElevatedButton(
+            onPressed: () => Navigator.of(context).pop(true),
+            child: const Text('Use Gallery'),
+          ),
+        ],
+      ),
+    );
   }
 
   Future<void> _submit() async {
@@ -74,47 +152,56 @@ class _ProviderKycScreenState extends State<ProviderKycScreen> {
       _status = null;
     });
 
-    final res = await ApiClient.submitProviderVerificationBytes(
-      idDocumentFrontBytes: _idFrontBytes!,
-      idDocumentBackBytes: _idBackBytes!,
-      verificationSelfieBytes: _selfieBytes!,
-      idDocumentFrontFilename: 'id_front.jpg',
-      idDocumentBackFilename: 'id_back.jpg',
-      verificationSelfieFilename: 'selfie.jpg',
-    );
+    try {
+      final res = await ApiClient.submitProviderVerificationBytes(
+        idDocumentFrontBytes: _idFrontBytes!,
+        idDocumentBackBytes: _idBackBytes!,
+        verificationSelfieBytes: _selfieBytes!,
+        idDocumentFrontFilename: 'id_front.jpg',
+        idDocumentBackFilename: 'id_back.jpg',
+        verificationSelfieFilename: 'selfie.jpg',
+      );
 
-    if (!mounted) return;
+      if (!mounted) return;
 
-    if (res['ok'] != true) {
-      final data = res['data'];
-      final msg = (data is Map && data['detail'] != null)
-          ? data['detail'].toString()
-          : l10n.failedSubmitKycCode(res['status_code'].toString());
+      if (res['ok'] != true) {
+        final data = res['data'];
+        final msg = (data is Map && data['detail'] != null)
+            ? data['detail'].toString()
+            : l10n.failedSubmitKycCode(res['status_code'].toString());
+        setState(() {
+          _submitting = false;
+          _error = msg;
+        });
+        return;
+      }
+
+      // Re-check status
+      final profile = await ApiClient.getMyProviderProfileAnyStatus();
+
+      if (!mounted) return;
+
+      final verificationStatus = profile?['verification_status']?.toString();
+
       setState(() {
         _submitting = false;
-        _error = msg;
+        _status = l10n.submittedCurrentStatus(
+          verificationStatus ?? l10n.unknownStatus,
+        );
       });
-      return;
-    }
 
-    // Re-check status
-    final profile = await ApiClient.getMyProviderProfileAnyStatus();
-
-    if (!mounted) return;
-
-    final verificationStatus = profile?['verification_status']?.toString();
-
-    setState(() {
-      _submitting = false;
-      _status = l10n.submittedCurrentStatus(
-        verificationStatus ?? l10n.unknownStatus,
-      );
-    });
-
-    // If instantly approved (unlikely), allow leaving this screen
-    if (verificationStatus == 'approved') {
+      // If instantly approved (unlikely), allow leaving this screen
+      if (verificationStatus == 'approved') {
+        if (!mounted) return;
+        Navigator.of(context).pop(true);
+      }
+    } catch (e) {
+      debugPrint('Error submitting KYC: $e');
       if (!mounted) return;
-      Navigator.of(context).pop(true);
+      setState(() {
+        _submitting = false;
+        _error = 'Failed to submit verification. Please try again.';
+      });
     }
   }
 
@@ -144,7 +231,7 @@ class _ProviderKycScreenState extends State<ProviderKycScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(l10n.providerKycTitle),
-        automaticallyImplyLeading: false, // force gating
+        automaticallyImplyLeading: false,
         actions: [
           IconButton(
             tooltip: l10n.logoutTooltip,
@@ -172,7 +259,6 @@ class _ProviderKycScreenState extends State<ProviderKycScreen> {
               ),
             const SizedBox(height: 12),
 
-            // ✅ PASTE REJECTION BOX HERE
             if (widget.verificationStatus == 'rejected' &&
                 (widget.reviewNotes ?? '').trim().isNotEmpty)
               Container(
@@ -220,8 +306,30 @@ class _ProviderKycScreenState extends State<ProviderKycScreen> {
 
             const SizedBox(height: 16),
 
-            if (_error != null) Text(_error!, style: const TextStyle(color: Colors.red)),
-            if (_status != null) Text(_status!, style: const TextStyle(color: Colors.green)),
+            if (_error != null)
+              Container(
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  color: Colors.red.withOpacity(0.1),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Text(
+                  _error!,
+                  style: const TextStyle(color: Colors.red),
+                ),
+              ),
+            if (_status != null)
+              Container(
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  color: Colors.green.withOpacity(0.1),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Text(
+                  _status!,
+                  style: const TextStyle(color: Colors.green),
+                ),
+              ),
 
             const SizedBox(height: 12),
 
