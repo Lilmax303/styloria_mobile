@@ -51,38 +51,28 @@ bool get _stripeSupported {
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  // ✅ Safely load .env file with error handling
-  bool envLoaded = false;
-  try {
-    await dotenv.load(fileName: ".env");
-    envLoaded = true;
-    debugPrint('✅ .env file loaded successfully');
-  } catch (e) {
-    debugPrint('⚠️ Warning: Could not load .env file: $e');
-  }
+  // Use compile-time environment variable OR default
+  const apiBaseUrl = String.fromEnvironment(
+    'API_BASE_URL',
+    defaultValue: 'https://styloria.up.railway.app',
+  );
+  
+  const stripeKey = String.fromEnvironment(
+    'STRIPE_PUBLISHABLE_KEY',
+    defaultValue: '', // Empty default, Stripe won't initialize
+  );
 
-  // ✅ Safely initialize Stripe with error handling
-  if (_stripeSupported) {
-    final stripeKey = envLoaded 
-        ? (dotenv.env['STRIPE_PUBLISHABLE_KEY'] ?? '')
-        : '';
-    
-    if (stripeKey.isNotEmpty) {
-      try {
-        stripe.Stripe.publishableKey = stripeKey;
-        await stripe.Stripe.instance.applySettings();
-        debugPrint('✅ Stripe initialized successfully');
-      } catch (e) {
-        debugPrint('⚠️ Warning: Stripe initialization failed: $e');
-      }
-    } else {
-      debugPrint('⚠️ Warning: STRIPE_PUBLISHABLE_KEY is empty or not set');
+  debugPrint('API URL: $apiBaseUrl');
+
+  // Initialize Stripe if key is provided
+  if (_stripeSupported && stripeKey.isNotEmpty) {
+    try {
+      stripe.Stripe.publishableKey = stripeKey;
+      await stripe.Stripe.instance.applySettings();
+      debugPrint('✅ Stripe initialized successfully');
+    } catch (e) {
+      debugPrint('⚠️ Warning: Stripe initialization failed: $e');
     }
-  } else {
-    debugPrint(
-      'Stripe is not initialized on this platform '
-      '(only Android, iOS, macOS, and Web are supported).',
-    );
   }
 
   runApp(const StyloriaApp());
