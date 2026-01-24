@@ -52,6 +52,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   // GPS Detection state
   bool _detectingLocation = false;
   String? _detectedCountry;
+  String? _detectedCity;
   bool _locationDetectionAttempted = false;
   bool _userChangedCountry = false;
 
@@ -105,8 +106,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
       final detected = _detectedCountry!.toLowerCase();
       
       if (currentCountry.isNotEmpty && currentCountry != detected) {
+        if (!_userChangedCountry) {
+          setState(() {
+            _userChangedCountry = true;
+          });
+        }
+      } else if (currentCountry == detected && _userChangedCountry) {
         setState(() {
-          _userChangedCountry = true;
+          _userChangedCountry = false;
         });
       }
     }
@@ -152,7 +159,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       // Get current position
       final position = await Geolocator.getCurrentPosition(
         desiredAccuracy: LocationAccuracy.low, // Low accuracy is faster and sufficient for country
-        timeLimit: const Duration(seconds: 10),
+        timeLimit: const Duration(seconds: 15),
       );
 
       // Reverse geocode to get country
@@ -169,6 +176,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
         if (country != null && country.isNotEmpty) {
           setState(() {
             _detectedCountry = country;
+            _detectedCity = city;
             _detectingLocation = false;
             _locationDetectionAttempted = true;
           });
@@ -185,17 +193,18 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
           // Sync phone country code
           _syncPhoneCountryWithSelectedCountry();
+          return;
         }
       }
     } catch (e) {
-      print('Location detection failed: $e');
-    } finally {
-      if (mounted) {
-        setState(() {
-          _detectingLocation = false;
-          _locationDetectionAttempted = true;
-        });
-      }
+      debugPrint('Location detection failed: $e');
+    }
+
+    if (mounted) {
+      setState(() {
+        _detectingLocation = false;
+        _locationDetectionAttempted = true;
+      });
     }
   }
 
@@ -361,6 +370,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
     final cs = Theme.of(context).colorScheme;
+    final screenWidth = MediaQuery.of(context).size.width;
+    final isSmallScreen = screenWidth < 360;
+    final horizontalPadding = isSmallScreen ? 12.0 : 16.0;
 
     final dateText = _selectedDate == null
         ? l10n.selectDateOfBirth
@@ -374,17 +386,20 @@ class _RegisterScreenState extends State<RegisterScreen> {
         overlayOpacity: 0.68,
         child: SafeArea(
           child: SingleChildScrollView(
-            padding: const EdgeInsets.all(16.0),
+            padding: EdgeInsets.symmetric(
+              horizontal: horizontalPadding,
+              vertical: 16.0,
+            ),
             child: Center(
               child: ConstrainedBox(
-                constraints: const BoxConstraints(maxWidth: 520),
+                constraints: BoxConstraints(maxWidth: isSmallScreen ? double.infinity : 520),
                 child: Card(
                   elevation: 12,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(18),
                   ),
                   child: Padding(
-                    padding: const EdgeInsets.all(16.0),
+                    padding: EdgeInsets.all(isSmallScreen ? 12.0 : 16.0),
                     child: Form(
                       key: _formKey,
                       child: Column(
@@ -553,15 +568,18 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                       style: TextStyle(color: Colors.green.shade700, fontSize: 13),
                                     ),
                                   ),
-                                  TextButton(
+                                  IconButton(
+                                    icon: Icon(Icons.refresh, color: Colors.green.shade700, size: 20),
                                     onPressed: _detectLocationAndAutoFill,
-                                    child: Text(l10n.refresh),
+                                    tooltip: l10n.refresh,
+                                    padding: EdgeInsets.zero,
+                                    constraints: const BoxConstraints(),
                                   ),
                                 ],
                               ),
                             ),
 
-                          // Warning if user changed country
+                          // Country Mismatch Warning
                           if (_userChangedCountry && _detectedCountry != null)
                             Container(
                               padding: const EdgeInsets.all(12),
@@ -697,12 +715,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             obscureText: !_showPassword,
                             validator: (value) => _validatePassword(context, value),
                           ),
-                          const SizedBox(height: 4),
-                          Text(
-                            l10n.tapEyeToShowPassword,
-                            style: TextStyle(
-                              fontSize: 12,
-                              color: Colors.grey.shade600,
+                          Padding(
+                            padding: const EdgeInsets.only(top: 4, left: 4),
+                            child: Text(
+                              l10n.tapEyeToShowPassword,
+                              style: TextStyle(fontSize: 11, color: cs.onSurfaceVariant),
                             ),
                           ),
                           const SizedBox(height: 12),

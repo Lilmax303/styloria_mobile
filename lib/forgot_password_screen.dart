@@ -323,12 +323,14 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                             return null;
                           },
                         ),
-                        const SizedBox(height: 4),
-                        Text(
-                          l10n.tapEyeToShowPassword,
-                          style: TextStyle(
-                            fontSize: 12,
-                            color: Colors.grey.shade600,
+                        Padding(
+                          padding: const EdgeInsets.only(top: 4),
+                          child: Text(
+                            l10n.tapEyeToShowPassword,
+                            style: TextStyle(
+                              fontSize: 11,
+                              color: Colors.grey.shade600,
+                            ),
                           ),
                         ),
                         const SizedBox(height: 20),

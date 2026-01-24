@@ -3446,6 +3446,36 @@ abstract class AppLocalizations {
   /// **'This service requires a verified certification'**
   String get requiresCertificationTooltip;
 
+  /// No description provided for @detectingYourLocation.
+  ///
+  /// In en, this message translates to:
+  /// **'Detecting your location...'**
+  String get detectingYourLocation;
+
+  /// No description provided for @locationDetectedAs.
+  ///
+  /// In en, this message translates to:
+  /// **'Location detected: {country}'**
+  String locationDetectedAs(Object country);
+
+  /// No description provided for @refresh.
+  ///
+  /// In en, this message translates to:
+  /// **'Refresh'**
+  String get refresh;
+
+  /// No description provided for @countryMismatchWarningTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Different country selected'**
+  String get countryMismatchWarningTitle;
+
+  /// No description provided for @countryMismatchWarningBody.
+  ///
+  /// In en, this message translates to:
+  /// **'We detected your location as {country}. If you\'re traveling or relocating, you can continue with your selection. Your currency will be based on your selected country.'**
+  String countryMismatchWarningBody(Object country);
+
   /// No description provided for @reviewSelectRatingPrompt.
   ///
   /// In en, this message translates to:
@@ -3709,6 +3739,378 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Failed to save payout settings.'**
   String get payoutSettingsSaveFailed;
+
+  /// No description provided for @servicePricingStepIndicator.
+  ///
+  /// In en, this message translates to:
+  /// **'Step {current} of {total}'**
+  String servicePricingStepIndicator(Object current, Object total);
+
+  /// No description provided for @serviceSelectionTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'What services do you offer?'**
+  String get serviceSelectionTitle;
+
+  /// No description provided for @serviceSelectionSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap to select the services you provide. You can change this anytime.'**
+  String get serviceSelectionSubtitle;
+
+  /// No description provided for @priceSettingTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Set your prices'**
+  String get priceSettingTitle;
+
+  /// No description provided for @priceSettingSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your price for each service you selected.'**
+  String get priceSettingSubtitle;
+
+  /// No description provided for @nextButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Next'**
+  String get nextButton;
+
+  /// No description provided for @backButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Back'**
+  String get backButton;
+
+  /// No description provided for @editServicesLink.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit services'**
+  String get editServicesLink;
+
+  /// No description provided for @selectAtLeastOneService.
+  ///
+  /// In en, this message translates to:
+  /// **'Please select at least one service to continue.'**
+  String get selectAtLeastOneService;
+
+  /// No description provided for @noServicesSelectedYet.
+  ///
+  /// In en, this message translates to:
+  /// **'No services selected yet. Go back to select services.'**
+  String get noServicesSelectedYet;
+
+  /// No description provided for @servicesSelectedCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} {count, plural, =1{service} other{services}} selected'**
+  String servicesSelectedCount(int count);
+
+  /// No description provided for @certificationRequiredChip.
+  ///
+  /// In en, this message translates to:
+  /// **'Requires certification'**
+  String get certificationRequiredChip;
+
+  /// No description provided for @savePrices.
+  ///
+  /// In en, this message translates to:
+  /// **'Save Prices'**
+  String get savePrices;
+
+  /// No description provided for @onboardingSkip.
+  ///
+  /// In en, this message translates to:
+  /// **'Skip'**
+  String get onboardingSkip;
+
+  /// No description provided for @onboardingGetStarted.
+  ///
+  /// In en, this message translates to:
+  /// **'Get Started'**
+  String get onboardingGetStarted;
+
+  /// No description provided for @onboardingMaybeLater.
+  ///
+  /// In en, this message translates to:
+  /// **'Maybe Later'**
+  String get onboardingMaybeLater;
+
+  /// No description provided for @onboardingEnableLocation.
+  ///
+  /// In en, this message translates to:
+  /// **'Enable Location'**
+  String get onboardingEnableLocation;
+
+  /// No description provided for @onboardingWelcomeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome to Styloria'**
+  String get onboardingWelcomeTitle;
+
+  /// No description provided for @onboardingWelcomeSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Your personal beauty & grooming marketplace'**
+  String get onboardingWelcomeSubtitle;
+
+  /// No description provided for @onboardingWelcomeDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Book professional stylists, barbers, and beauty experts — anytime, anywhere.'**
+  String get onboardingWelcomeDescription;
+
+  /// No description provided for @onboardingCustomerTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Book Services Instantly'**
+  String get onboardingCustomerTitle;
+
+  /// No description provided for @onboardingCustomerSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Find and book beauty services with ease'**
+  String get onboardingCustomerSubtitle;
+
+  /// No description provided for @onboardingCustomerBullet1.
+  ///
+  /// In en, this message translates to:
+  /// **'Find verified providers near you'**
+  String get onboardingCustomerBullet1;
+
+  /// No description provided for @onboardingCustomerBullet2.
+  ///
+  /// In en, this message translates to:
+  /// **'Compare prices transparently'**
+  String get onboardingCustomerBullet2;
+
+  /// No description provided for @onboardingCustomerBullet3.
+  ///
+  /// In en, this message translates to:
+  /// **'Pay securely in-app'**
+  String get onboardingCustomerBullet3;
+
+  /// No description provided for @onboardingCustomerBullet4.
+  ///
+  /// In en, this message translates to:
+  /// **'Track your provider in real-time'**
+  String get onboardingCustomerBullet4;
+
+  /// No description provided for @onboardingProviderTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Grow Your Business'**
+  String get onboardingProviderTitle;
+
+  /// No description provided for @onboardingProviderSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Turn your skills into income'**
+  String get onboardingProviderSubtitle;
+
+  /// No description provided for @onboardingProviderBullet1.
+  ///
+  /// In en, this message translates to:
+  /// **'Set your own prices & schedule'**
+  String get onboardingProviderBullet1;
+
+  /// No description provided for @onboardingProviderBullet2.
+  ///
+  /// In en, this message translates to:
+  /// **'Get matched with nearby clients'**
+  String get onboardingProviderBullet2;
+
+  /// No description provided for @onboardingProviderBullet3.
+  ///
+  /// In en, this message translates to:
+  /// **'Build your reputation with reviews'**
+  String get onboardingProviderBullet3;
+
+  /// No description provided for @onboardingProviderBullet4.
+  ///
+  /// In en, this message translates to:
+  /// **'Instant payouts to your account'**
+  String get onboardingProviderBullet4;
+
+  /// No description provided for @onboardingLocationTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Enable Location Services'**
+  String get onboardingLocationTitle;
+
+  /// No description provided for @onboardingLocationSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Styloria uses your location to connect you with nearby services'**
+  String get onboardingLocationSubtitle;
+
+  /// No description provided for @onboardingLocationBenefit1.
+  ///
+  /// In en, this message translates to:
+  /// **'Find service providers near you'**
+  String get onboardingLocationBenefit1;
+
+  /// No description provided for @onboardingLocationBenefit2.
+  ///
+  /// In en, this message translates to:
+  /// **'Calculate accurate transportation costs'**
+  String get onboardingLocationBenefit2;
+
+  /// No description provided for @onboardingLocationBenefit3.
+  ///
+  /// In en, this message translates to:
+  /// **'Match you with available professionals'**
+  String get onboardingLocationBenefit3;
+
+  /// No description provided for @onboardingLocationBenefit4.
+  ///
+  /// In en, this message translates to:
+  /// **'Enable real-time tracking during appointments'**
+  String get onboardingLocationBenefit4;
+
+  /// No description provided for @onboardingLocationPrivacyNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Your location is only used while the app is open. We never track you in the background.'**
+  String get onboardingLocationPrivacyNote;
+
+  /// No description provided for @onboardingLocationEnabled.
+  ///
+  /// In en, this message translates to:
+  /// **'Location enabled successfully!'**
+  String get onboardingLocationEnabled;
+
+  /// No description provided for @onboardingLocationDeniedTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Location Permission Denied'**
+  String get onboardingLocationDeniedTitle;
+
+  /// No description provided for @onboardingLocationDeniedMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Without location access, you\'ll need to enter your address manually when booking services. You can enable location later in your device settings.'**
+  String get onboardingLocationDeniedMessage;
+
+  /// No description provided for @onboardingContinueWithoutLocation.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue Without Location'**
+  String get onboardingContinueWithoutLocation;
+
+  /// No description provided for @onboardingOpenSettings.
+  ///
+  /// In en, this message translates to:
+  /// **'Open Settings'**
+  String get onboardingOpenSettings;
+
+  /// No description provided for @onboardingLocationServicesOffTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Location Services Disabled'**
+  String get onboardingLocationServicesOffTitle;
+
+  /// No description provided for @onboardingLocationServicesOffMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Your device\'s location services are turned off. Enable them to get the full Styloria experience.'**
+  String get onboardingLocationServicesOffMessage;
+
+  /// No description provided for @onboardingEnableLocationServices.
+  ///
+  /// In en, this message translates to:
+  /// **'Enable Location Services'**
+  String get onboardingEnableLocationServices;
+
+  /// No description provided for @providerLocationRequiredTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Location Required'**
+  String get providerLocationRequiredTitle;
+
+  /// No description provided for @providerLocationRequiredMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'To appear in search results and receive job requests from nearby clients, you need to enable location access.'**
+  String get providerLocationRequiredMessage;
+
+  /// No description provided for @providerLocationRequiredBenefitsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Why we need your location:'**
+  String get providerLocationRequiredBenefitsTitle;
+
+  /// No description provided for @providerLocationRequiredBenefit1.
+  ///
+  /// In en, this message translates to:
+  /// **'• Appear in nearby client searches'**
+  String get providerLocationRequiredBenefit1;
+
+  /// No description provided for @providerLocationRequiredBenefit2.
+  ///
+  /// In en, this message translates to:
+  /// **'• Receive job requests in your area'**
+  String get providerLocationRequiredBenefit2;
+
+  /// No description provided for @providerLocationRequiredBenefit3.
+  ///
+  /// In en, this message translates to:
+  /// **'• Calculate accurate distances for clients'**
+  String get providerLocationRequiredBenefit3;
+
+  /// No description provided for @providerStayUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Stay Unavailable'**
+  String get providerStayUnavailable;
+
+  /// No description provided for @providerEnableLocation.
+  ///
+  /// In en, this message translates to:
+  /// **'Enable Location'**
+  String get providerEnableLocation;
+
+  /// No description provided for @providerLocationEnabledNowAvailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Location enabled! You\'re now available for bookings.'**
+  String get providerLocationEnabledNowAvailable;
+
+  /// No description provided for @providerLocationPermanentlyDeniedTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Location Permission Required'**
+  String get providerLocationPermanentlyDeniedTitle;
+
+  /// No description provided for @providerLocationPermanentlyDeniedMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Location permission was permanently denied. To enable availability, please open your device settings and grant location access to Styloria.'**
+  String get providerLocationPermanentlyDeniedMessage;
+
+  /// No description provided for @providerOpenSettings.
+  ///
+  /// In en, this message translates to:
+  /// **'Open Settings'**
+  String get providerOpenSettings;
+
+  /// No description provided for @providerLocationServicesDisabled.
+  ///
+  /// In en, this message translates to:
+  /// **'Location services are disabled on your device.'**
+  String get providerLocationServicesDisabled;
+
+  /// No description provided for @providerEnableLocationServices.
+  ///
+  /// In en, this message translates to:
+  /// **'Enable'**
+  String get providerEnableLocationServices;
+
+  /// No description provided for @providerLocationDeniedCannotBeAvailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Location access denied. You cannot be available for bookings without location enabled.'**
+  String get providerLocationDeniedCannotBeAvailable;
 }
 
 class _AppLocalizationsDelegate

@@ -11,6 +11,7 @@ import 'widgets/certifications_section.dart';
 
 import 'api_client.dart';
 import 'portfolio_viewer_screen.dart';
+import 'services/location_service.dart';
 
 class ProviderProfileScreen extends StatefulWidget {
   const ProviderProfileScreen({super.key});
@@ -94,6 +95,9 @@ class _ProviderProfileScreenState extends State<ProviderProfileScreen> {
   bool _reviewsExpanded = false;
   static const int _initialReviewsToShow = 2;
 
+  // Service Pricing Wizard
+  int _servicePricingStep = 1;
+
   // UPDATED SERVICE TYPES LIST - MATCHES BACKEND
   final List<Map<String, dynamic>> _serviceTypes = [
     {
@@ -173,6 +177,13 @@ class _ProviderProfileScreenState extends State<ProviderProfileScreen> {
       'offered': false,
       'category': 'other',
       'requiresCertification': true
+    },
+    {
+      'id': 'tattoo',
+      'name': 'Tattoo',
+      'price': 0.0,
+      'offered': false,
+      'category': 'other'
     },
     {
       'id': 'styling',
@@ -304,6 +315,12 @@ class _ProviderProfileScreenState extends State<ProviderProfileScreen> {
           }
         }
 
+        // Smart default: If any service is offered with a price, start on Step 2
+        final hasConfiguredServices = _serviceTypes.any(
+          (s) => s['offered'] == true && (s['price'] as double) > 0
+        );
+        _servicePricingStep = hasConfiguredServices ? 2 : 1;
+
         if (data['location_latitude'] != null &&
             data['location_longitude'] != null) {
           await _getAddressFromCoordinates(
@@ -342,6 +359,7 @@ class _ProviderProfileScreenState extends State<ProviderProfileScreen> {
         _lngController.text = '-0.1870';
         _available = true;
         _isCreatingProfile = true;
+        _servicePricingStep = 1;
         await _getAddressFromCoordinates(5.6037, -0.1870);
       }
     } catch (e) {
@@ -604,6 +622,139 @@ class _ProviderProfileScreenState extends State<ProviderProfileScreen> {
     });
   }
 
+  Future<void> _handleAvailabilityToggle(bool wantsToBeAvailable) async {
+    final l10n = AppLocalizations.of(context)!;
+
+    // If turning OFF, no location check needed
+    if (!wantsToBeAvailable) {
+      setState(() => _available = false);
+      return;
+    }
+
+    // If turning ON, check location permission
+    final hasPermission = await LocationService.isPermissionGranted();
+
+    if (hasPermission) {
+      // Permission granted, enable availability
+      setState(() => _available = true);
+      return;
+    }
+
+    // Permission not granted, show explanation dialog
+    if (!mounted) return;
+
+    final shouldRequest = await showDialog<bool>(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: Row(
+          children: [
+            Icon(Icons.location_on, color: Theme.of(context).primaryColor),
+            const SizedBox(width: 8),
+            Expanded(child: Text(l10n.providerLocationRequiredTitle)),
+          ],
+        ),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(l10n.providerLocationRequiredMessage),
+            const SizedBox(height: 16),
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.blue.shade50,
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    l10n.providerLocationRequiredBenefitsTitle,
+                    style: const TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(height: 8),
+                  Text(l10n.providerLocationRequiredBenefit1),
+                  Text(l10n.providerLocationRequiredBenefit2),
+                  Text(l10n.providerLocationRequiredBenefit3),
+                ],
+              ),
+            ),
+          ],
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx, false),
+            child: Text(l10n.providerStayUnavailable),
+          ),
+          ElevatedButton.icon(
+            onPressed: () => Navigator.pop(ctx, true),
+            icon: const Icon(Icons.location_on, size: 18),
+            label: Text(l10n.providerEnableLocation),
+          ),
+        ],
+      ),
+    );
+
+    if (shouldRequest != true) return;
+
+    // Request permission
+    final result = await LocationService.requestLocationPermission();
+
+    if (!mounted) return;
+
+    if (result.granted) {
+      setState(() => _available = true);
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(l10n.providerLocationEnabledNowAvailable),
+          backgroundColor: Colors.green,
+        ),
+      );
+    } else if (result.status == LocationPermissionStatus.permanentlyDenied) {
+      // Show settings prompt
+      final openSettings = await showDialog<bool>(
+        context: context,
+        builder: (ctx) => AlertDialog(
+          title: Text(l10n.providerLocationPermanentlyDeniedTitle),
+          content: Text(l10n.providerLocationPermanentlyDeniedMessage),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(ctx, false),
+              child: Text(l10n.cancel),
+            ),
+            ElevatedButton(
+              onPressed: () => Navigator.pop(ctx, true),
+              child: Text(l10n.providerOpenSettings),
+            ),
+          ],
+        ),
+      );
+
+      if (openSettings == true) {
+        await LocationService.openAppSettings();
+      }
+    } else if (result.status == LocationPermissionStatus.serviceDisabled) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(l10n.providerLocationServicesDisabled),
+          backgroundColor: Colors.orange,
+          action: SnackBarAction(
+            label: l10n.providerEnableLocationServices,
+            textColor: Colors.white,
+            onPressed: () => LocationService.openLocationSettings(),
+          ),
+        ),
+      );
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(l10n.providerLocationDeniedCannotBeAvailable),
+          backgroundColor: Colors.orange,
+        ),
+      );
+    }
+  }
+
   void _showCertificationRequiredDialog(String serviceId, bool hasPendingCert, bool isExpired) {
     final l10n = AppLocalizations.of(context)!;
     String title;
@@ -626,40 +777,42 @@ class _ProviderProfileScreenState extends State<ProviderProfileScreen> {
         title: Row(
           children: [
             Icon(
-              isExpired ? Icons.warning : Icons.verified_user,
+              isExpired ? Icons.warning_amber : Icons.verified_user,
               color: isExpired ? Colors.orange : Colors.blue,
             ),
             const SizedBox(width: 8),
-            Expanded(child: Text(title)),
+            Expanded(child: Text(title, style: const TextStyle(fontSize: 18))),
           ],
         ),
-        content: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(message),
-            const SizedBox(height: 16),
-            Container(
-              padding: const EdgeInsets.all(12),
-              decoration: BoxDecoration(
-                color: Colors.blue.shade50,
-                borderRadius: BorderRadius.circular(8),
+        content: SingleChildScrollView(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(message),
+              const SizedBox(height: 16),
+              Container(
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  color: Colors.blue.shade50,
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      l10n.certificationStepsTitle,
+                      style: const TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    const SizedBox(height: 8),
+                    Text(l10n.certificationStep1),
+                    Text(l10n.certificationStep2),
+                    Text(l10n.certificationStep3),
+                  ],
+                ),
               ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    l10n.certificationStepsTitle,
-                    style: const TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                  const SizedBox(height: 8),
-                  Text(l10n.certificationStep1),
-                  Text(l10n.certificationStep2),
-                  Text(l10n.certificationStep3),
-                ],
-              ),
-            ),
-          ],
+            ],
+          ),
         ),
         actions: [
           TextButton(
@@ -678,7 +831,7 @@ class _ProviderProfileScreenState extends State<ProviderProfileScreen> {
                   ),
                 );
               },
-              icon: const Icon(Icons.add),
+              icon: const Icon(Icons.add, size: 18),
               label: Text(l10n.addCertification),
             ),
         ],
@@ -1262,6 +1415,530 @@ class _ProviderProfileScreenState extends State<ProviderProfileScreen> {
     );
   }
 
+
+  // -------------------------
+  // Service Pricing Wizard
+  // -------------------------
+  
+  int get _selectedServicesCount =>
+      _serviceTypes.where((s) => s['offered'] == true).length;
+
+  void _goToStep(int step) {
+    setState(() {
+      _servicePricingStep = step;
+    });
+  }
+
+  void _handleNextStep(AppLocalizations l10n) {
+    // Validate at least one service is selected
+    if (_selectedServicesCount == 0) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(l10n.selectAtLeastOneService),
+          backgroundColor: Colors.orange,
+        ),
+      );
+      return;
+    }
+    _goToStep(2);
+  }
+
+  Widget _buildServicePricingWizard(AppLocalizations l10n) {
+    return Card(
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // Header with step indicator
+            Row(
+              children: [
+                Expanded(
+                  child: Text(
+                    l10n.servicePricingTitle,
+                    style: const TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                Container(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 12,
+                    vertical: 6,
+                  ),
+                  decoration: BoxDecoration(
+                    color: Theme.of(context).primaryColor.withOpacity(0.1),
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                  child: Text(
+                    l10n.servicePricingStepIndicator(
+                      _servicePricingStep.toString(),
+                      '2',
+                    ),
+                    style: TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.bold,
+                      color: Theme.of(context).primaryColor,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 4),
+            
+            // Progress indicator
+            ClipRRect(
+              borderRadius: BorderRadius.circular(4),
+              child: LinearProgressIndicator(
+                value: _servicePricingStep / 2,
+                backgroundColor: Colors.grey.shade200,
+                minHeight: 4,
+              ),
+            ),
+            const SizedBox(height: 16),
+            
+            // Step content
+            if (_servicePricingStep == 1)
+              _buildServiceSelectionStep(l10n)
+            else
+              _buildPriceSettingStep(l10n),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildServiceSelectionStep(AppLocalizations l10n) {
+    // Group services by category
+    final hairServices =
+        _serviceTypes.where((s) => s['category'] == 'hair').toList();
+    final otherServices =
+        _serviceTypes.where((s) => s['category'] == 'other').toList();
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        // Title
+        Text(
+          l10n.serviceSelectionTitle,
+          style: const TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+        const SizedBox(height: 4),
+        Text(
+          l10n.serviceSelectionSubtitle,
+          style: TextStyle(
+            fontSize: 13,
+            color: Colors.grey[600],
+          ),
+        ),
+        const SizedBox(height: 16),
+
+        // Hair Services
+        Text(
+          'Hair Services',
+          style: TextStyle(
+            fontSize: 13,
+            fontWeight: FontWeight.w600,
+            color: Colors.grey[700],
+          ),
+        ),
+        const SizedBox(height: 8),
+        _buildServiceChips(hairServices, l10n),
+        const SizedBox(height: 16),
+
+        // Beauty & Wellness Services
+        Text(
+          'Beauty & Wellness',
+          style: TextStyle(
+            fontSize: 13,
+            fontWeight: FontWeight.w600,
+            color: Colors.grey[700],
+          ),
+        ),
+        const SizedBox(height: 8),
+        _buildServiceChips(otherServices, l10n),
+        const SizedBox(height: 16),
+
+        // Selected count
+        if (_selectedServicesCount > 0)
+          Container(
+            padding: const EdgeInsets.all(12),
+            decoration: BoxDecoration(
+              color: Colors.green.shade50,
+              borderRadius: BorderRadius.circular(8),
+              border: Border.all(color: Colors.green.shade200),
+            ),
+            child: Row(
+              children: [
+                Icon(Icons.check_circle, color: Colors.green[700], size: 20),
+                const SizedBox(width: 8),
+                Text(
+                  l10n.servicesSelectedCount(_selectedServicesCount),
+                  style: TextStyle(
+                    color: Colors.green[700],
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        const SizedBox(height: 16),
+
+        // Next button
+        SizedBox(
+          width: double.infinity,
+          child: ElevatedButton.icon(
+            onPressed: () => _handleNextStep(l10n),
+            icon: const Icon(Icons.arrow_forward, size: 18),
+            label: Text(l10n.nextButton),
+            style: ElevatedButton.styleFrom(
+              padding: const EdgeInsets.symmetric(vertical: 14),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildServiceChips(
+      List<Map<String, dynamic>> services, AppLocalizations l10n) {
+    return Wrap(
+      spacing: 8,
+      runSpacing: 8,
+      children: services.map((service) {
+        final serviceId = service['id'] as String;
+        final isOffered = service['offered'] as bool;
+        final requiresCert = service['requiresCertification'] == true;
+        final hasVerifiedCert =
+            _certificationStatus[serviceId]?['has_verified_cert'] == true;
+        final hasPendingCert =
+            _certificationStatus[serviceId]?['has_pending_cert'] == true;
+        final isExpired =
+            _certificationStatus[serviceId]?['is_expired'] == true;
+
+        // Determine chip state
+        final bool isLocked = requiresCert && !hasVerifiedCert;
+
+        return FilterChip(
+          label: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(_serviceLabel(serviceId, l10n)),
+              if (requiresCert) ...[
+                const SizedBox(width: 4),
+                Icon(
+                  hasVerifiedCert
+                      ? Icons.verified
+                      : (hasPendingCert ? Icons.hourglass_top : Icons.lock),
+                  size: 14,
+                  color: hasVerifiedCert
+                      ? Colors.green
+                      : (hasPendingCert ? Colors.orange : Colors.grey),
+                ),
+              ],
+            ],
+          ),
+          selected: isOffered,
+          onSelected: (selected) {
+            if (isLocked && selected) {
+              // Show certification required dialog
+              _showCertificationRequiredDialog(
+                serviceId,
+                hasPendingCert,
+                isExpired,
+              );
+              return;
+            }
+            final index = _serviceTypes.indexWhere((s) => s['id'] == serviceId);
+            if (index != -1) {
+              setState(() {
+                _serviceTypes[index]['offered'] = selected;
+                if (!selected) {
+                  _serviceTypes[index]['price'] = 0.0;
+                }
+              });
+            }
+          },
+          selectedColor: Theme.of(context).primaryColor.withOpacity(0.2),
+          checkmarkColor: Theme.of(context).primaryColor,
+          backgroundColor: isLocked ? Colors.grey.shade100 : null,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20),
+            side: BorderSide(
+              color: isOffered
+                  ? Theme.of(context).primaryColor
+                  : Colors.grey.shade300,
+            ),
+          ),
+        );
+      }).toList(),
+    );
+  }
+
+  Widget _buildPriceSettingStep(AppLocalizations l10n) {
+    final offeredServices =
+        _serviceTypes.where((s) => s['offered'] == true).toList();
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        // Title with Edit Services link
+        Row(
+          children: [
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    l10n.priceSettingTitle,
+                    style: const TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  const SizedBox(height: 4),
+                  Text(
+                    l10n.priceSettingSubtitle,
+                    style: TextStyle(
+                      fontSize: 13,
+                      color: Colors.grey[600],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            TextButton.icon(
+              onPressed: () => _goToStep(1),
+              icon: const Icon(Icons.edit, size: 16),
+              label: Text(l10n.editServicesLink),
+              style: TextButton.styleFrom(
+                padding: const EdgeInsets.symmetric(horizontal: 8),
+              ),
+            ),
+          ],
+        ),
+        const SizedBox(height: 16),
+
+        // Price inputs for selected services
+        if (offeredServices.isEmpty)
+          Container(
+            padding: const EdgeInsets.all(16),
+            decoration: BoxDecoration(
+              color: Colors.orange.shade50,
+              borderRadius: BorderRadius.circular(8),
+              border: Border.all(color: Colors.orange.shade200),
+            ),
+            child: Row(
+              children: [
+                Icon(Icons.info_outline, color: Colors.orange[700]),
+                const SizedBox(width: 12),
+                Expanded(
+                  child: Text(
+                    l10n.noServicesSelectedYet,
+                    style: TextStyle(color: Colors.orange[800]),
+                  ),
+                ),
+              ],
+            ),
+          )
+        else
+          ListView.separated(
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            itemCount: offeredServices.length,
+            separatorBuilder: (_, __) => const SizedBox(height: 12),
+            itemBuilder: (context, index) {
+              final service = offeredServices[index];
+              final serviceId = service['id'] as String;
+              final serviceIndex = _serviceTypes.indexWhere(
+                (s) => s['id'] == serviceId,
+              );
+
+              return _buildPriceInputCard(service, serviceIndex, l10n);
+            },
+          ),
+        const SizedBox(height: 16),
+
+        // How Pricing Works info
+        Container(
+          padding: const EdgeInsets.all(12),
+          decoration: BoxDecoration(
+            color: Colors.blue.shade50,
+            borderRadius: BorderRadius.circular(8),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  Icon(Icons.info_outline, size: 18, color: Colors.blue[700]),
+                  const SizedBox(width: 8),
+                  Text(
+                    l10n.providerHowPricingWorksTitle,
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.blue[700],
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 8),
+              Text(
+                l10n.providerHowPricingWorksBody,
+                style: const TextStyle(fontSize: 12),
+              ),
+            ],
+          ),
+        ),
+        const SizedBox(height: 16),
+
+        // Navigation buttons
+        Row(
+          children: [
+            Expanded(
+              child: OutlinedButton.icon(
+                onPressed: () => _goToStep(1),
+                icon: const Icon(Icons.arrow_back, size: 18),
+                label: Text(l10n.backButton),
+                style: OutlinedButton.styleFrom(
+                  padding: const EdgeInsets.symmetric(vertical: 14),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ],
+    );
+  }
+
+  Widget _buildPriceInputCard(
+    Map<String, dynamic> service,
+    int serviceIndex,
+    AppLocalizations l10n,
+  ) {
+    final serviceId = service['id'] as String;
+    final price = service['price'] as double;
+    final requiresCert = service['requiresCertification'] == true;
+    final hasVerifiedCert =
+        _certificationStatus[serviceId]?['has_verified_cert'] == true;
+
+    return Container(
+      padding: const EdgeInsets.all(12),
+      decoration: BoxDecoration(
+        color: Colors.grey.shade50,
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(color: Colors.grey.shade200),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          // Service name with optional certification badge
+          Row(
+            children: [
+              Expanded(
+                child: Text(
+                  _serviceLabel(serviceId, l10n),
+                  style: const TextStyle(
+                    fontWeight: FontWeight.w600,
+                    fontSize: 15,
+                  ),
+                ),
+              ),
+              if (requiresCert && hasVerifiedCert)
+                Container(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 8,
+                    vertical: 4,
+                  ),
+                  decoration: BoxDecoration(
+                    color: Colors.green.shade50,
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(Icons.verified, size: 14, color: Colors.green[700]),
+                      const SizedBox(width: 4),
+                      Text(
+                        'Certified',
+                        style: TextStyle(
+                          fontSize: 11,
+                          color: Colors.green[700],
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              // Remove button
+              IconButton(
+                onPressed: () {
+                  setState(() {
+                    _serviceTypes[serviceIndex]['offered'] = false;
+                    _serviceTypes[serviceIndex]['price'] = 0.0;
+                  });
+                },
+                icon: const Icon(Icons.close, size: 18),
+                tooltip: 'Remove service',
+                padding: EdgeInsets.zero,
+                constraints: const BoxConstraints(),
+                color: Colors.grey[600],
+              ),
+            ],
+          ),
+          const SizedBox(height: 12),
+
+          // Price input
+          TextFormField(
+            initialValue: price > 0 ? price.toStringAsFixed(2) : '',
+            keyboardType: const TextInputType.numberWithOptions(decimal: true),
+            inputFormatters: [
+              FilteringTextInputFormatter.allow(RegExp(r'^\d*\.?\d{0,2}')),
+            ],
+            onChanged: (value) {
+              _updateServicePrice(serviceIndex, value);
+            },
+            decoration: InputDecoration(
+              hintText: '0.00',
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(8),
+              ),
+              contentPadding: const EdgeInsets.symmetric(
+                horizontal: 12,
+                vertical: 14,
+              ),
+              prefixIcon: Container(
+                width: 50,
+                alignment: Alignment.center,
+                child: Text(
+                  _currencySymbol,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16,
+                  ),
+                ),
+              ),
+              prefixIconConstraints: const BoxConstraints(
+                minWidth: 50,
+                maxWidth: 50,
+              ),
+              filled: true,
+              fillColor: Colors.white,
+            ),
+            style: const TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
   // -------------------------
   // UI
   // -------------------------
@@ -1571,192 +2248,9 @@ class _ProviderProfileScreenState extends State<ProviderProfileScreen> {
                               ),
                             ),
                             const SizedBox(height: 16),
-                            Card(
-                              child: Padding(
-                                padding: const EdgeInsets.all(16.0),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      l10n.servicePricingTitle,
-                                      style: TextStyle(
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.bold),
-                                    ),
-                                    const SizedBox(height: 8),
-                                    Text(
-                                      l10n.servicePricingHelp,
-                                      style:
-                                          const TextStyle(color: Colors.grey),
-                                    ),
-                                    const SizedBox(height: 16),
-                                    Table(
-                                      columnWidths: const {
-                                        0: FlexColumnWidth(2.5),
-                                        1: FlexColumnWidth(2.8),
-                                        2: FlexColumnWidth(1),
-                                      },
-                                      border:
-                                          TableBorder.all(color: Colors.grey),
-                                      children: [
-                                        TableRow(
-                                          decoration: BoxDecoration(
-                                              color: Colors.grey.shade100),
-                                          children: [
-                                            Padding(
-                                              padding: EdgeInsets.all(8.0),
-                                              child: Text(l10n.serviceHeader,
-                                                  style: const TextStyle(
-                                                      fontWeight:
-                                                          FontWeight.bold)),
-                                            ),
-                                            Padding(
-                                              padding: EdgeInsets.all(8.0),
-                                              child: Text(l10n.priceHeader,
-                                                  style: const TextStyle(
-                                                      fontWeight:
-                                                          FontWeight.bold)),
-                                            ),
-                                            Padding(
-                                              padding: EdgeInsets.all(8.0),
-                                              child: Text(l10n.notOfferedHeader,
-                                                  style: const TextStyle(
-                                                      fontWeight:
-                                                          FontWeight.bold)),
-                                            ),
-                                          ],
-                                        ),
-                                        ..._serviceTypes.map((service) {
-                                          return TableRow(
-                                            decoration: BoxDecoration(
-                                              color: service['offered']
-                                                  ? Colors.transparent
-                                                  : Colors.grey.shade50,
-                                            ),
-                                            children: [
-                                              Padding(
-                                                padding:
-                                                    const EdgeInsets.all(8.0),
-                                                child: Row(
-                                                  children: [
-                                                    Expanded(
-                                                      child: Text(_serviceLabel(
-                                                          service['id'] as String,
-                                                          l10n)),
-                                                    ),
-                                                    if (service['requiresCertification'] == true)
-                                                      Tooltip(
-                                                        message: l10n.requiresCertificationTooltip,
-                                                        child: Icon(
-                                                          _certificationStatus[service['id']]?['has_verified_cert'] == true
-                                                              ? Icons.verified
-                                                              : Icons.shield_outlined,
-                                                          size: 16,
-                                                          color: _certificationStatus[service['id']]?['has_verified_cert'] == true
-                                                              ? Colors.green
-                                                              : Colors.orange,
-                                                        ),
-                                                      ),
-                                                  ],
-                                                ),
-                                              ),
-                                              Padding(
-                                                padding:
-                                                    const EdgeInsets.all(8.0),
-                                                child: TextFormField(
-                                                  enabled: service['offered'],
-                                                  initialValue: service['price']
-                                                      .toStringAsFixed(2),
-                                                  keyboardType:
-                                                      const TextInputType
-                                                          .numberWithOptions(
-                                                          decimal: true),
-                                                  inputFormatters: [
-                                                    FilteringTextInputFormatter
-                                                        .allow(RegExp(
-                                                            r'^\d*\.?\d{0,2}')),
-                                                  ],
-                                                  onChanged: (value) {
-                                                    final index = _serviceTypes
-                                                        .indexOf(service);
-                                                    _updateServicePrice(
-                                                        index, value);
-                                                  },
-                                                  decoration: InputDecoration(
-                                                    hintText: '0.00',
-                                                    border: const OutlineInputBorder(),
-                                                    isDense: true,
-                                                    contentPadding: const EdgeInsets.symmetric(
-                                                      horizontal: 8,
-                                                      vertical: 12,
-                                                    ),
-                                                    prefixIcon: Container(
-                                                      width: 32,
-                                                      alignment: Alignment.center,
-                                                      child: Text(
-                                                        _currencySymbol,
-                                                        style: TextStyle(
-                                                          fontWeight: FontWeight.bold,
-                                                          color: service['offered']
-                                                              ? Colors.black87
-                                                              : Colors.grey,
-                                                        ),
-                                                      ),
-                                                    ),
-                                                    prefixIconConstraints: const BoxConstraints(
-                                                      minWidth: 32,
-                                                      maxWidth: 32,
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                              Padding(
-                                                padding:
-                                                    const EdgeInsets.all(8.0),
-                                                child: Checkbox(
-                                                  value: !service['offered'],
-                                                  onChanged: (_) {
-                                                    final index = _serviceTypes
-                                                        .indexOf(service);
-                                                    _toggleServiceOffered(
-                                                        index);
-                                                  },
-                                                ),
-                                              ),
-                                            ],
-                                          );
-                                        }).toList(),
-                                      ],
-                                    ),
-                                    const SizedBox(height: 16),
-                                    Container(
-                                      padding: const EdgeInsets.all(12),
-                                      decoration: BoxDecoration(
-                                        color: Colors.blue.shade50,
-                                        borderRadius: BorderRadius.circular(8),
-                                      ),
-                                      child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Text(
-                                            l10n.providerHowPricingWorksTitle,
-                                            style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: Colors.blue),
-                                          ),
-                                          SizedBox(height: 8),
-                                          Text(
-                                            l10n.providerHowPricingWorksBody,
-                                            style: TextStyle(fontSize: 12),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
+
+                            _buildServicePricingWizard(l10n),
+
                             const SizedBox(height: 16),
                             Card(
                               child: Padding(
@@ -1766,7 +2260,7 @@ class _ProviderProfileScreenState extends State<ProviderProfileScreen> {
                                     Switch(
                                       value: _available,
                                       onChanged: (value) =>
-                                          setState(() => _available = value),
+                                          _handleAvailabilityToggle(value),
                                     ),
                                     const SizedBox(width: 8),
                                     Expanded(

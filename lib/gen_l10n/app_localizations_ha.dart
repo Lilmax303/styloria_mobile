@@ -1936,6 +1936,25 @@ class AppLocalizationsHa extends AppLocalizations {
       'This service requires a verified certification';
 
   @override
+  String get detectingYourLocation => 'Detecting your location...';
+
+  @override
+  String locationDetectedAs(Object country) {
+    return 'Location detected: $country';
+  }
+
+  @override
+  String get refresh => 'Refresh';
+
+  @override
+  String get countryMismatchWarningTitle => 'Different country selected';
+
+  @override
+  String countryMismatchWarningBody(Object country) {
+    return 'We detected your location as $country. If you\'re traveling or relocating, you can continue with your selection. Your currency will be based on your selected country.';
+  }
+
+  @override
   String get reviewSelectRatingPrompt => 'Zaɓi ƙima (1 zuwa 5).';
 
   @override
@@ -2082,4 +2101,224 @@ class AppLocalizationsHa extends AppLocalizations {
 
   @override
   String get payoutSettingsSaveFailed => 'An kasa adana saitunan biyan kuɗi.';
+
+  @override
+  String servicePricingStepIndicator(Object current, Object total) {
+    return 'Step $current of $total';
+  }
+
+  @override
+  String get serviceSelectionTitle => 'What services do you offer?';
+
+  @override
+  String get serviceSelectionSubtitle =>
+      'Tap to select the services you provide. You can change this anytime.';
+
+  @override
+  String get priceSettingTitle => 'Set your prices';
+
+  @override
+  String get priceSettingSubtitle =>
+      'Enter your price for each service you selected.';
+
+  @override
+  String get nextButton => 'Next';
+
+  @override
+  String get backButton => 'Back';
+
+  @override
+  String get editServicesLink => 'Edit services';
+
+  @override
+  String get selectAtLeastOneService =>
+      'Please select at least one service to continue.';
+
+  @override
+  String get noServicesSelectedYet =>
+      'No services selected yet. Go back to select services.';
+
+  @override
+  String servicesSelectedCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'services',
+      one: 'service',
+    );
+    return '$count $_temp0 selected';
+  }
+
+  @override
+  String get certificationRequiredChip => 'Requires certification';
+
+  @override
+  String get savePrices => 'Save Prices';
+
+  @override
+  String get onboardingSkip => 'Skip';
+
+  @override
+  String get onboardingGetStarted => 'Get Started';
+
+  @override
+  String get onboardingMaybeLater => 'Maybe Later';
+
+  @override
+  String get onboardingEnableLocation => 'Enable Location';
+
+  @override
+  String get onboardingWelcomeTitle => 'Welcome to Styloria';
+
+  @override
+  String get onboardingWelcomeSubtitle =>
+      'Your personal beauty & grooming marketplace';
+
+  @override
+  String get onboardingWelcomeDescription =>
+      'Book professional stylists, barbers, and beauty experts — anytime, anywhere.';
+
+  @override
+  String get onboardingCustomerTitle => 'Book Services Instantly';
+
+  @override
+  String get onboardingCustomerSubtitle =>
+      'Find and book beauty services with ease';
+
+  @override
+  String get onboardingCustomerBullet1 => 'Find verified providers near you';
+
+  @override
+  String get onboardingCustomerBullet2 => 'Compare prices transparently';
+
+  @override
+  String get onboardingCustomerBullet3 => 'Pay securely in-app';
+
+  @override
+  String get onboardingCustomerBullet4 => 'Track your provider in real-time';
+
+  @override
+  String get onboardingProviderTitle => 'Grow Your Business';
+
+  @override
+  String get onboardingProviderSubtitle => 'Turn your skills into income';
+
+  @override
+  String get onboardingProviderBullet1 => 'Set your own prices & schedule';
+
+  @override
+  String get onboardingProviderBullet2 => 'Get matched with nearby clients';
+
+  @override
+  String get onboardingProviderBullet3 => 'Build your reputation with reviews';
+
+  @override
+  String get onboardingProviderBullet4 => 'Instant payouts to your account';
+
+  @override
+  String get onboardingLocationTitle => 'Enable Location Services';
+
+  @override
+  String get onboardingLocationSubtitle =>
+      'Styloria uses your location to connect you with nearby services';
+
+  @override
+  String get onboardingLocationBenefit1 => 'Find service providers near you';
+
+  @override
+  String get onboardingLocationBenefit2 =>
+      'Calculate accurate transportation costs';
+
+  @override
+  String get onboardingLocationBenefit3 =>
+      'Match you with available professionals';
+
+  @override
+  String get onboardingLocationBenefit4 =>
+      'Enable real-time tracking during appointments';
+
+  @override
+  String get onboardingLocationPrivacyNote =>
+      'Your location is only used while the app is open. We never track you in the background.';
+
+  @override
+  String get onboardingLocationEnabled => 'Location enabled successfully!';
+
+  @override
+  String get onboardingLocationDeniedTitle => 'Location Permission Denied';
+
+  @override
+  String get onboardingLocationDeniedMessage =>
+      'Without location access, you\'ll need to enter your address manually when booking services. You can enable location later in your device settings.';
+
+  @override
+  String get onboardingContinueWithoutLocation => 'Continue Without Location';
+
+  @override
+  String get onboardingOpenSettings => 'Open Settings';
+
+  @override
+  String get onboardingLocationServicesOffTitle => 'Location Services Disabled';
+
+  @override
+  String get onboardingLocationServicesOffMessage =>
+      'Your device\'s location services are turned off. Enable them to get the full Styloria experience.';
+
+  @override
+  String get onboardingEnableLocationServices => 'Enable Location Services';
+
+  @override
+  String get providerLocationRequiredTitle => 'Location Required';
+
+  @override
+  String get providerLocationRequiredMessage =>
+      'To appear in search results and receive job requests from nearby clients, you need to enable location access.';
+
+  @override
+  String get providerLocationRequiredBenefitsTitle =>
+      'Why we need your location:';
+
+  @override
+  String get providerLocationRequiredBenefit1 =>
+      '• Appear in nearby client searches';
+
+  @override
+  String get providerLocationRequiredBenefit2 =>
+      '• Receive job requests in your area';
+
+  @override
+  String get providerLocationRequiredBenefit3 =>
+      '• Calculate accurate distances for clients';
+
+  @override
+  String get providerStayUnavailable => 'Stay Unavailable';
+
+  @override
+  String get providerEnableLocation => 'Enable Location';
+
+  @override
+  String get providerLocationEnabledNowAvailable =>
+      'Location enabled! You\'re now available for bookings.';
+
+  @override
+  String get providerLocationPermanentlyDeniedTitle =>
+      'Location Permission Required';
+
+  @override
+  String get providerLocationPermanentlyDeniedMessage =>
+      'Location permission was permanently denied. To enable availability, please open your device settings and grant location access to Styloria.';
+
+  @override
+  String get providerOpenSettings => 'Open Settings';
+
+  @override
+  String get providerLocationServicesDisabled =>
+      'Location services are disabled on your device.';
+
+  @override
+  String get providerEnableLocationServices => 'Enable';
+
+  @override
+  String get providerLocationDeniedCannotBeAvailable =>
+      'Location access denied. You cannot be available for bookings without location enabled.';
 }

@@ -929,5 +929,90 @@
   "payoutInstantCashOutEnabledSubtitle": "Allow the “Cash Out” button (fee applies).",
 
   "payoutSettingsSaved": "Payout settings saved.",
-  "payoutSettingsSaveFailed": "Failed to save payout settings."
+  "payoutSettingsSaveFailed": "Failed to save payout settings.",
+
+  "servicePricingStepIndicator": "Step {current} of {total}",
+  "@servicePricingStepIndicator": {
+    "placeholders": {
+      "current": {},
+      "total": {}
+    }
+  },
+  "serviceSelectionTitle": "What services do you offer?",
+  "serviceSelectionSubtitle": "Tap to select the services you provide. You can change this anytime.",
+  "priceSettingTitle": "Set your prices",
+  "priceSettingSubtitle": "Enter your price for each service you selected.",
+  "nextButton": "Next",
+  "backButton": "Back",
+  "editServicesLink": "Edit services",
+  "selectAtLeastOneService": "Please select at least one service to continue.",
+  "noServicesSelectedYet": "No services selected yet. Go back to select services.",
+  "servicesSelectedCount": "{count} {count, plural, =1{service} other{services}} selected",
+  "@servicesSelectedCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "certificationRequiredChip": "Requires certification",
+  "savePrices": "Save Prices",
+  "onboardingSkip": "Skip",
+  "onboardingGetStarted": "Get Started",
+  "onboardingMaybeLater": "Maybe Later",
+  "onboardingEnableLocation": "Enable Location",
+
+  "onboardingWelcomeTitle": "Welcome to Styloria",
+  "onboardingWelcomeSubtitle": "Your personal beauty & grooming marketplace",
+  "onboardingWelcomeDescription": "Book professional stylists, barbers, and beauty experts — anytime, anywhere.",
+
+  "onboardingCustomerTitle": "Book Services Instantly",
+  "onboardingCustomerSubtitle": "Find and book beauty services with ease",
+  "onboardingCustomerBullet1": "Find verified providers near you",
+  "onboardingCustomerBullet2": "Compare prices transparently",
+  "onboardingCustomerBullet3": "Pay securely in-app",
+  "onboardingCustomerBullet4": "Track your provider in real-time",
+
+  "onboardingProviderTitle": "Grow Your Business",
+  "onboardingProviderSubtitle": "Turn your skills into income",
+  "onboardingProviderBullet1": "Set your own prices & schedule",
+  "onboardingProviderBullet2": "Get matched with nearby clients",
+  "onboardingProviderBullet3": "Build your reputation with reviews",
+  "onboardingProviderBullet4": "Instant payouts to your account",
+
+  "onboardingLocationTitle": "Enable Location Services",
+  "onboardingLocationSubtitle": "Styloria uses your location to connect you with nearby services",
+  "onboardingLocationBenefit1": "Find service providers near you",
+  "onboardingLocationBenefit2": "Calculate accurate transportation costs",
+  "onboardingLocationBenefit3": "Match you with available professionals",
+  "onboardingLocationBenefit4": "Enable real-time tracking during appointments",
+  "onboardingLocationPrivacyNote": "Your location is only used while the app is open. We never track you in the background.",
+  "onboardingLocationEnabled": "Location enabled successfully!",
+
+  "onboardingLocationDeniedTitle": "Location Permission Denied",
+  "onboardingLocationDeniedMessage": "Without location access, you'll need to enter your address manually when booking services. You can enable location later in your device settings.",
+  "onboardingContinueWithoutLocation": "Continue Without Location",
+  "onboardingOpenSettings": "Open Settings",
+
+  "onboardingLocationServicesOffTitle": "Location Services Disabled",
+  "onboardingLocationServicesOffMessage": "Your device's location services are turned off. Enable them to get the full Styloria experience.",
+  "onboardingEnableLocationServices": "Enable Location Services",
+
+  "providerLocationRequiredTitle": "Location Required",
+  "providerLocationRequiredMessage": "To appear in search results and receive job requests from nearby clients, you need to enable location access.",
+  "providerLocationRequiredBenefitsTitle": "Why we need your location:",
+  "providerLocationRequiredBenefit1": "• Appear in nearby client searches",
+  "providerLocationRequiredBenefit2": "• Receive job requests in your area",
+  "providerLocationRequiredBenefit3": "• Calculate accurate distances for clients",
+  "providerStayUnavailable": "Stay Unavailable",
+  "providerEnableLocation": "Enable Location",
+  "providerLocationEnabledNowAvailable": "Location enabled! You're now available for bookings.",
+
+  "providerLocationPermanentlyDeniedTitle": "Location Permission Required",
+  "providerLocationPermanentlyDeniedMessage": "Location permission was permanently denied. To enable availability, please open your device settings and grant location access to Styloria.",
+  "providerOpenSettings": "Open Settings",
+
+  "providerLocationServicesDisabled": "Location services are disabled on your device.",
+  "providerEnableLocationServices": "Enable",
+  "providerLocationDeniedCannotBeAvailable": "Location access denied. You cannot be available for bookings without location enabled."
 }

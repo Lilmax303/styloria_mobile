@@ -285,6 +285,9 @@ class ApiClient {
     }
   }
 
+  // HTTP timeout duration
+  static const Duration _requestTimeout = Duration(seconds: 30);
+
   static Future<http.Response> _authorizedRequest(
     String method,
     String path, {
@@ -316,18 +319,34 @@ class ApiClient {
     }
 
     Future<http.Response> send() {
+      Future<http.Response> request;
       switch (method.toUpperCase()) {
         case 'GET':
-          return http.get(uri, headers: baseHeaders);
+          request = http.get(uri, headers: baseHeaders);
+          break;
         case 'POST':
-          return http.post(uri, headers: baseHeaders, body: body);
+          request = http.post(uri, headers: baseHeaders, body: body);
+          break;
         case 'PATCH':
-          return http.patch(uri, headers: baseHeaders, body: body);
+          request = http.patch(uri, headers: baseHeaders, body: body);
+          break;
         case 'DELETE': // NEW
-          return http.delete(uri, headers: baseHeaders);
+          request = http.delete(uri, headers: baseHeaders);
+          break;
         default:
           throw UnsupportedError('HTTP method $method not supported');
       }
+
+      return request.timeout(
+        _requestTimeout,
+        onTimeout: () {
+          return http.Response(
+            jsonEncode({'detail': 'Request timed out. Please check your internet connection.'}),
+            408,
+            headers: {'content-type': 'application/json'},
+          );
+        },
+      );
     }
 
     try {
@@ -463,14 +482,25 @@ class ApiClient {
         'password': password,
         'password_confirm': passwordConfirm,
         'date_of_birth': dateOfBirth,
-        if (detectedCountry != null) 'detected_country': detectedCountry,
-        if (countryMismatch != null) 'country_mismatch': countryMismatch,
+        if (detectedCountry != null && detectedCountry.isNotEmpty) 
+          'detected_country': detectedCountry,
+        if (countryMismatch != null) 
+          'country_mismatch': countryMismatch,
       };
 
       final response = await http.post(
         url,
         headers: {'Content-Type': 'application/json'},
         body: jsonEncode(body),
+
+      ).timeout(
+        _requestTimeout,
+        onTimeout: () {
+          return http.Response(
+            jsonEncode({'detail': 'Request timed out'}),
+            408,
+          );
+        },
       );
 
       if (response.statusCode == 201) return null;

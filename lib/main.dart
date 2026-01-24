@@ -1,7 +1,5 @@
 // lib/main.dart
 
-// lib/main.dart
-
 import 'dart:io' show Platform;
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:styloria_mobile/gen_l10n/app_localizations.dart';
@@ -39,6 +37,7 @@ import 'package:app_links/app_links.dart';
 import 'dart:async';
 import 'forgot_password_screen.dart';
 import 'l10n/fallback_localization_delegates.dart';
+import 'onboarding_screen.dart';
 
 const Color kGradientStart = Color(0xFF111827);
 const Color kGradientEnd = Color(0xFF0B0F14);
@@ -432,6 +431,27 @@ class _AuthGateState extends State<AuthGate> {
   }
 
   Future<void> _bootstrap() async {
+    // 0) Check if onboarding is complete
+    final onboardingComplete = await OnboardingScreen.isOnboardingComplete();
+    if (!onboardingComplete) {
+      if (!mounted) return;
+      setState(() {
+        _child = OnboardingScreen(
+          onComplete: () {
+            if (!mounted) return;
+            // Restart bootstrap after onboarding
+            setState(() {
+              _loading = true;
+              _child = null;
+            });
+            _bootstrap();
+          },
+        );
+        _loading = false;
+      });
+      return;
+    }
+
     // 1) Check if we even have a token
     final hasToken = await ApiClient.hasAccessToken();
     if (!hasToken) {
@@ -660,12 +680,15 @@ class _LoginScreenState extends State<LoginScreen> {
                                       ? l10n.required
                                       : null,
                             ),
-                            const SizedBox(height: 4),
-                            Text(
-                              l10n.tapEyeToShowPassword,
-                              style: TextStyle(
-                                fontSize: 12,
-                                color: Colors.grey.shade600,
+
+                            Padding(
+                              padding: const EdgeInsets.only(top: 4, left: 4),
+                              child: Text(
+                                l10n.tapEyeToShowPassword,
+                                style: TextStyle(
+                                  fontSize: 11,
+                                  color: Theme.of(context).colorScheme.onSurfaceVariant,
+                                ),
                               ),
                             ),
                             const SizedBox(height: 16),
