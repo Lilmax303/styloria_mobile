@@ -74,4 +74,3 @@ flutter:
   generate: true
   assets:
     - assets/backgrounds/
-    - .env    
