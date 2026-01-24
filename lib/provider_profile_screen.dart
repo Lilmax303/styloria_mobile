@@ -44,6 +44,8 @@ class _ProviderProfileScreenState extends State<ProviderProfileScreen> {
         return l10n.serviceWaxingLabel;
       case 'massage':
         return l10n.serviceMassageLabel;
+      case 'tattoo':
+        return l10n.serviceTattooLabel;
       case 'styling':
         return l10n.serviceHairStylingLabel;
       case 'treatment':
@@ -169,7 +171,8 @@ class _ProviderProfileScreenState extends State<ProviderProfileScreen> {
       'name': 'Massage',
       'price': 0.0,
       'offered': false,
-      'category': 'other'
+      'category': 'other',
+      'requiresCertification': true
     },
     {
       'id': 'styling',
@@ -200,6 +203,9 @@ class _ProviderProfileScreenState extends State<ProviderProfileScreen> {
       'category': 'other'
     },
   ];
+
+  // Certification status for restricted services
+  Map<String, dynamic> _certificationStatus = {};
 
   @override
   void initState() {
@@ -323,6 +329,11 @@ class _ProviderProfileScreenState extends State<ProviderProfileScreen> {
             'CNY': '¥',
           };
           _currencySymbol = symbols[_userCurrency] ?? '\$';
+        }
+
+        // Load certification status for restricted services
+        if (data['certification_status'] != null) {
+          _certificationStatus = Map<String, dynamic>.from(data['certification_status']);
         }
       } else {
         // new profile defaults
@@ -569,12 +580,110 @@ class _ProviderProfileScreenState extends State<ProviderProfileScreen> {
   }
 
   void _toggleServiceOffered(int index) {
+    final service = _serviceTypes[index];
+    final serviceId = service['id'] as String;
+    final wantsToOffer = !service['offered'];
+    
+    // Check if this service requires certification
+    if (wantsToOffer && service['requiresCertification'] == true) {
+      final certStatus = _certificationStatus[serviceId];
+      final hasVerifiedCert = certStatus?['has_verified_cert'] == true;
+      final hasPendingCert = certStatus?['has_pending_cert'] == true;
+      final isExpired = certStatus?['is_expired'] == true;
+      
+      if (!hasVerifiedCert) {
+        _showCertificationRequiredDialog(serviceId, hasPendingCert, isExpired);
+        return;
+      }
+    }
     setState(() {
-      _serviceTypes[index]['offered'] = !_serviceTypes[index]['offered'];
+      _serviceTypes[index]['offered'] = wantsToOffer;
       if (!_serviceTypes[index]['offered']) {
         _serviceTypes[index]['price'] = 0.0;
       }
     });
+  }
+
+  void _showCertificationRequiredDialog(String serviceId, bool hasPendingCert, bool isExpired) {
+    final l10n = AppLocalizations.of(context)!;
+    String title;
+    String message;
+    
+    if (isExpired) {
+      title = l10n.certificationExpiredTitle;
+      message = l10n.certificationExpiredMessage;
+    } else if (hasPendingCert) {
+      title = l10n.certificationPendingTitle;
+      message = l10n.certificationPendingMessage;
+    } else {
+      title = l10n.certificationRequiredTitle;
+      message = l10n.certificationRequiredMessage(serviceId);
+    }
+    
+    showDialog(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: Row(
+          children: [
+            Icon(
+              isExpired ? Icons.warning : Icons.verified_user,
+              color: isExpired ? Colors.orange : Colors.blue,
+            ),
+            const SizedBox(width: 8),
+            Expanded(child: Text(title)),
+          ],
+        ),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(message),
+            const SizedBox(height: 16),
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.blue.shade50,
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    l10n.certificationStepsTitle,
+                    style: const TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(height: 8),
+                  Text(l10n.certificationStep1),
+                  Text(l10n.certificationStep2),
+                  Text(l10n.certificationStep3),
+                ],
+              ),
+            ),
+          ],
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx),
+            child: Text(l10n.cancel),
+          ),
+          if (!hasPendingCert)
+            ElevatedButton.icon(
+              onPressed: () {
+                Navigator.pop(ctx);
+                // Scroll to certifications section or show add dialog
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text(l10n.scrollToCertificationsHint),
+                    backgroundColor: Colors.blue,
+                  ),
+                );
+              },
+              icon: const Icon(Icons.add),
+              label: Text(l10n.addCertification),
+            ),
+        ],
+      ),
+    );
   }
 
   // -------------------------
@@ -1483,8 +1592,8 @@ class _ProviderProfileScreenState extends State<ProviderProfileScreen> {
                                     const SizedBox(height: 16),
                                     Table(
                                       columnWidths: const {
-                                        0: FlexColumnWidth(3),
-                                        1: FlexColumnWidth(2),
+                                        0: FlexColumnWidth(2.5),
+                                        1: FlexColumnWidth(2.8),
                                         2: FlexColumnWidth(1),
                                       },
                                       border:
@@ -1528,9 +1637,28 @@ class _ProviderProfileScreenState extends State<ProviderProfileScreen> {
                                               Padding(
                                                 padding:
                                                     const EdgeInsets.all(8.0),
-                                                child: Text(_serviceLabel(
-                                                    service['id'] as String,
-                                                    l10n)),
+                                                child: Row(
+                                                  children: [
+                                                    Expanded(
+                                                      child: Text(_serviceLabel(
+                                                          service['id'] as String,
+                                                          l10n)),
+                                                    ),
+                                                    if (service['requiresCertification'] == true)
+                                                      Tooltip(
+                                                        message: l10n.requiresCertificationTooltip,
+                                                        child: Icon(
+                                                          _certificationStatus[service['id']]?['has_verified_cert'] == true
+                                                              ? Icons.verified
+                                                              : Icons.shield_outlined,
+                                                          size: 16,
+                                                          color: _certificationStatus[service['id']]?['has_verified_cert'] == true
+                                                              ? Colors.green
+                                                              : Colors.orange,
+                                                        ),
+                                                      ),
+                                                  ],
+                                                ),
                                               ),
                                               Padding(
                                                 padding:
@@ -1555,10 +1683,30 @@ class _ProviderProfileScreenState extends State<ProviderProfileScreen> {
                                                         index, value);
                                                   },
                                                   decoration: InputDecoration(
-                                                    hintText: l10n.priceHint,
-                                                    border:
-                                                        const OutlineInputBorder(),
-                                                    prefixText: _currencySymbol,
+                                                    hintText: '0.00',
+                                                    border: const OutlineInputBorder(),
+                                                    isDense: true,
+                                                    contentPadding: const EdgeInsets.symmetric(
+                                                      horizontal: 8,
+                                                      vertical: 12,
+                                                    ),
+                                                    prefixIcon: Container(
+                                                      width: 32,
+                                                      alignment: Alignment.center,
+                                                      child: Text(
+                                                        _currencySymbol,
+                                                        style: TextStyle(
+                                                          fontWeight: FontWeight.bold,
+                                                          color: service['offered']
+                                                              ? Colors.black87
+                                                              : Colors.grey,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    prefixIconConstraints: const BoxConstraints(
+                                                      minWidth: 32,
+                                                      maxWidth: 32,
+                                                    ),
                                                   ),
                                                 ),
                                               ),

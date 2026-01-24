@@ -560,6 +560,7 @@
   "serviceFacialLabel": "Facial",
   "serviceWaxingLabel": "Waxing",
   "serviceMassageLabel": "Massage",
+  "serviceTattooLabel": "Tattoo",
   "serviceHairStylingLabel": "Hair Styling",
   "serviceHairTreatmentLabel": "Hair Treatment",
   "serviceHairExtensionsLabel": "Hair Extensions",
@@ -818,6 +819,44 @@
   "genericProvider": "Provider",
   "genericNotAvailable": "N/A",
 
+  "showPassword": "Show password",
+  "hidePassword": "Hide password",
+  "tapEyeToShowPassword": "Tap the eye icon to show/hide password",
+
+  "certificationRequiredTitle": "Certification Required",
+  "certificationRequiredMessage": "This service requires a verified professional certification to protect both you and your clients.\n\nMassage services require proof of massage therapy training/licensing.",
+  "@certificationRequiredMessage": {
+    "placeholders": {
+      "service": {}
+    }
+  },
+  "certificationPendingTitle": "Certification Pending Review",
+  "certificationPendingMessage": "Your certification is awaiting admin verification. This usually takes 24-48 hours. You'll be able to offer this service once approved.",
+  "certificationExpiredTitle": "Certification Expired",
+  "certificationExpiredMessage": "Your certification has expired. Please upload a valid, current certification to continue offering this service.",
+  "certificationStepsTitle": "How to get certified:",
+  "certificationStep1": "1. Go to 'Certifications & Licenses' section below",
+  "certificationStep2": "2. Upload your massage therapy license/certificate",
+  "certificationStep3": "3. Wait for admin verification (24-48 hours)",
+  "addCertification": "Add Certification",
+  "scrollToCertificationsHint": "Scroll down to the Certifications section to add your certification",
+  "requiresCertificationTooltip": "This service requires a verified certification",
+
+  "detectingYourLocation": "Detecting your location...",
+  "locationDetectedAs": "Location detected: {country}",
+  "@locationDetectedAs": {
+    "placeholders": {
+      "country": {}
+    }
+  },
+  "refresh": "Refresh",
+  "countryMismatchWarningTitle": "Different country selected",
+  "countryMismatchWarningBody": "We detected your location as {country}. If you're traveling or relocating, you can continue with your selection. Your currency will be based on your selected country.",
+  "@countryMismatchWarningBody": {
+    "placeholders": {
+      "country": {}
+    }
+  },
 
   "reviewSelectRatingPrompt": "Select a rating (1 to 5).",
   "reviewCommentOptionalLabel": "Comment (optional)",

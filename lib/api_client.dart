@@ -444,6 +444,8 @@ class ApiClient {
     required String password,
     required String passwordConfirm,
     required String dateOfBirth,
+    String? detectedCountry,
+    bool? countryMismatch,
   }) async {
     final url = Uri.parse('$baseUrl/api/users/');
 
@@ -461,6 +463,8 @@ class ApiClient {
         'password': password,
         'password_confirm': passwordConfirm,
         'date_of_birth': dateOfBirth,
+        if (detectedCountry != null) 'detected_country': detectedCountry,
+        if (countryMismatch != null) 'country_mismatch': countryMismatch,
       };
 
       final response = await http.post(

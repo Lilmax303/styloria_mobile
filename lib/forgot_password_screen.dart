@@ -25,6 +25,10 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
   // Steps: 1 = Enter email, 2 = Enter code + new password
   int _step = 1;
 
+  // Password visibility toggles
+  bool _showNewPassword = false;
+  bool _showConfirmPassword = false;
+
   @override
   void dispose() {
     _emailController.dispose();
@@ -275,11 +279,17 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                         const SizedBox(height: 16),
                         TextFormField(
                           controller: _newPasswordController,
-                          obscureText: true,
+                          obscureText: !_showNewPassword,
                           decoration: InputDecoration(
                             labelText: l10n.newPassword,
                             prefixIcon: const Icon(Icons.lock_outline),
                             border: const OutlineInputBorder(),
+                            suffixIcon: IconButton(
+                              icon: Icon(
+                                _showNewPassword ? Icons.visibility_off : Icons.visibility,
+                              ),
+                              onPressed: () => setState(() => _showNewPassword = !_showNewPassword),
+                            ),
                           ),
                           validator: (value) {
                             if (value == null || value.isEmpty) {
@@ -294,11 +304,17 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                         const SizedBox(height: 16),
                         TextFormField(
                           controller: _confirmPasswordController,
-                          obscureText: true,
+                          obscureText: !_showConfirmPassword,
                           decoration: InputDecoration(
                             labelText: l10n.confirmPassword,
                             prefixIcon: const Icon(Icons.lock_outline),
                             border: const OutlineInputBorder(),
+                            suffixIcon: IconButton(
+                              icon: Icon(
+                                _showConfirmPassword ? Icons.visibility_off : Icons.visibility,
+                              ),
+                              onPressed: () => setState(() => _showConfirmPassword = !_showConfirmPassword),
+                            ),
                           ),
                           validator: (value) {
                             if (value == null || value.isEmpty) {
@@ -306,6 +322,14 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                             }
                             return null;
                           },
+                        ),
+                        const SizedBox(height: 4),
+                        Text(
+                          l10n.tapEyeToShowPassword,
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: Colors.grey.shade600,
+                          ),
                         ),
                         const SizedBox(height: 20),
                         ElevatedButton(

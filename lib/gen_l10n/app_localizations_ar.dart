@@ -1323,6 +1323,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get serviceMassageLabel => 'مساج';
 
   @override
+  String get serviceTattooLabel => 'Tattoo';
+
+  @override
   String get serviceHairStylingLabel => 'تصفيف الشعر';
 
   @override
@@ -1851,6 +1854,63 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get genericNotAvailable => 'غير متوفر';
+
+  @override
+  String get showPassword => 'Show password';
+
+  @override
+  String get hidePassword => 'Hide password';
+
+  @override
+  String get tapEyeToShowPassword => 'Tap the eye icon to show/hide password';
+
+  @override
+  String get certificationRequiredTitle => 'Certification Required';
+
+  @override
+  String certificationRequiredMessage(Object service) {
+    return 'This service requires a verified professional certification to protect both you and your clients.\n\nMassage services require proof of massage therapy training/licensing.';
+  }
+
+  @override
+  String get certificationPendingTitle => 'Certification Pending Review';
+
+  @override
+  String get certificationPendingMessage =>
+      'Your certification is awaiting admin verification. This usually takes 24-48 hours. You\'ll be able to offer this service once approved.';
+
+  @override
+  String get certificationExpiredTitle => 'Certification Expired';
+
+  @override
+  String get certificationExpiredMessage =>
+      'Your certification has expired. Please upload a valid, current certification to continue offering this service.';
+
+  @override
+  String get certificationStepsTitle => 'How to get certified:';
+
+  @override
+  String get certificationStep1 =>
+      '1. Go to \'Certifications & Licenses\' section below';
+
+  @override
+  String get certificationStep2 =>
+      '2. Upload your massage therapy license/certificate';
+
+  @override
+  String get certificationStep3 =>
+      '3. Wait for admin verification (24-48 hours)';
+
+  @override
+  String get addCertification => 'Add Certification';
+
+  @override
+  String get scrollToCertificationsHint =>
+      'Scroll down to the Certifications section to add your certification';
+
+  @override
+  String get requiresCertificationTooltip =>
+      'This service requires a verified certification';
 
   @override
   String get reviewSelectRatingPrompt => 'اختر تقييمًا (من 1 إلى 5).';

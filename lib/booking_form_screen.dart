@@ -1257,6 +1257,8 @@ class _BookingFormScreenState extends State<BookingFormScreen> {
                       DropdownMenuEntry(
                           value: 'massage', label: l10n.serviceMassageLabel),
                       DropdownMenuEntry(
+                          value: 'tattoo', label: l10n.serviceTattooLabel),
+                      DropdownMenuEntry(
                           value: 'styling',
                           label: l10n.serviceHairStylingLabel),
                       DropdownMenuEntry(

@@ -9,6 +9,8 @@ import 'api_client.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'email_verification_screen.dart';
 import 'widgets/background_layer.dart';
+import 'package:geolocator/geolocator.dart';
+import 'package:geocoding/geocoding.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
@@ -43,16 +45,30 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
   String _selectedIso2ForPhone = 'GH';
 
+  // Password visibility toggles
+  bool _showPassword = false;
+  bool _showConfirmPassword = false;
+
+  // GPS Detection state
+  bool _detectingLocation = false;
+  String? _detectedCountry;
+  bool _locationDetectionAttempted = false;
+  bool _userChangedCountry = false;
+
   @override
   void initState() {
     super.initState();
     _selectedDate = DateTime.now().subtract(const Duration(days: 365 * 18));
     _countryController.addListener(_syncPhoneCountryWithSelectedCountry);
+    _countryController.addListener(_onCountryChanged);
+    // Auto-detect location on startup
+    _detectLocationAndAutoFill();
   }
 
   @override
   void dispose() {
     _countryController.removeListener(_syncPhoneCountryWithSelectedCountry);
+    _countryController.removeListener(_onCountryChanged);
 
     _countryController.dispose();
     _stateController.dispose();
@@ -79,6 +95,107 @@ class _RegisterScreenState extends State<RegisterScreen> {
         _selectedIso2ForPhone = iso2;
         _completePhoneNumber = '';
       });
+    }
+  }
+
+  void _onCountryChanged() {
+    // Check if user manually changed the country after auto-detection
+    if (_detectedCountry != null && _locationDetectionAttempted) {
+      final currentCountry = _countryController.text.trim().toLowerCase();
+      final detected = _detectedCountry!.toLowerCase();
+      
+      if (currentCountry.isNotEmpty && currentCountry != detected) {
+        setState(() {
+          _userChangedCountry = true;
+        });
+      }
+    }
+  }
+
+  Future<void> _detectLocationAndAutoFill() async {
+    setState(() {
+      _detectingLocation = true;
+    });
+
+    try {
+      // Check if location services are enabled
+      final serviceEnabled = await Geolocator.isLocationServiceEnabled();
+      if (!serviceEnabled) {
+        setState(() {
+          _detectingLocation = false;
+          _locationDetectionAttempted = true;
+        });
+        return;
+      }
+
+      // Check/request permission
+      var permission = await Geolocator.checkPermission();
+      if (permission == LocationPermission.denied) {
+        permission = await Geolocator.requestPermission();
+        if (permission == LocationPermission.denied) {
+          setState(() {
+            _detectingLocation = false;
+            _locationDetectionAttempted = true;
+          });
+          return;
+        }
+      }
+
+      if (permission == LocationPermission.deniedForever) {
+        setState(() {
+          _detectingLocation = false;
+          _locationDetectionAttempted = true;
+        });
+        return;
+      }
+
+      // Get current position
+      final position = await Geolocator.getCurrentPosition(
+        desiredAccuracy: LocationAccuracy.low, // Low accuracy is faster and sufficient for country
+        timeLimit: const Duration(seconds: 10),
+      );
+
+      // Reverse geocode to get country
+      final placemarks = await placemarkFromCoordinates(
+        position.latitude,
+        position.longitude,
+      );
+
+      if (placemarks.isNotEmpty && mounted) {
+        final placemark = placemarks.first;
+        final country = placemark.country;
+        final city = placemark.locality ?? placemark.administrativeArea;
+
+        if (country != null && country.isNotEmpty) {
+          setState(() {
+            _detectedCountry = country;
+            _detectingLocation = false;
+            _locationDetectionAttempted = true;
+          });
+
+          // Auto-fill the country field
+          // Note: CountryStateCityPicker uses specific country names
+          // We need to set it programmatically
+          _countryController.text = country;
+          
+          // Try to auto-fill city too if available
+          if (city != null && city.isNotEmpty) {
+            _cityController.text = city;
+          }
+
+          // Sync phone country code
+          _syncPhoneCountryWithSelectedCountry();
+        }
+      }
+    } catch (e) {
+      print('Location detection failed: $e');
+    } finally {
+      if (mounted) {
+        setState(() {
+          _detectingLocation = false;
+          _locationDetectionAttempted = true;
+        });
+      }
     }
   }
 
@@ -206,6 +323,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
       passwordConfirm: _passwordConfirmController.text,
       dateOfBirth:
           '${dateOfBirth.year}-${dateOfBirth.month.toString().padLeft(2, '0')}-${dateOfBirth.day.toString().padLeft(2, '0')}',
+      detectedCountry: _detectedCountry,
+      countryMismatch: _userChangedCountry,
     );
 
     if (!mounted) return;
@@ -387,6 +506,103 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           ),
                           const SizedBox(height: 12),
 
+                          // Location Detection Status
+                          if (_detectingLocation)
+                            Container(
+                              padding: const EdgeInsets.all(12),
+                              margin: const EdgeInsets.only(bottom: 12),
+                              decoration: BoxDecoration(
+                                color: cs.primaryContainer,
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                              child: Row(
+                                children: [
+                                  const SizedBox(
+                                    width: 20,
+                                    height: 20,
+                                    child: CircularProgressIndicator(strokeWidth: 2),
+                                  ),
+                                  const SizedBox(width: 12),
+                                  Expanded(
+                                    child: Text(
+                                      l10n.detectingYourLocation,
+                                      style: TextStyle(color: cs.onPrimaryContainer),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+
+                          // Location Detected Success Message
+                          if (_detectedCountry != null && !_userChangedCountry && !_detectingLocation)
+                            Container(
+                              padding: const EdgeInsets.all(12),
+                              margin: const EdgeInsets.only(bottom: 12),
+                              decoration: BoxDecoration(
+                                color: Colors.green.shade50,
+                                borderRadius: BorderRadius.circular(8),
+                                border: Border.all(color: Colors.green.shade200),
+                              ),
+                              child: Row(
+                                children: [
+                                  Icon(Icons.location_on, color: Colors.green.shade700, size: 20),
+                                  const SizedBox(width: 8),
+                                  Expanded(
+                                    child: Text(
+                                      l10n.locationDetectedAs(_detectedCountry!),
+                                      style: TextStyle(color: Colors.green.shade700, fontSize: 13),
+                                    ),
+                                  ),
+                                  TextButton(
+                                    onPressed: _detectLocationAndAutoFill,
+                                    child: Text(l10n.refresh),
+                                  ),
+                                ],
+                              ),
+                            ),
+
+                          // Warning if user changed country
+                          if (_userChangedCountry && _detectedCountry != null)
+                            Container(
+                              padding: const EdgeInsets.all(12),
+                              margin: const EdgeInsets.only(bottom: 12),
+                              decoration: BoxDecoration(
+                                color: Colors.orange.shade50,
+                                borderRadius: BorderRadius.circular(8),
+                                border: Border.all(color: Colors.orange.shade200),
+                              ),
+                              child: Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Icon(Icons.info_outline, color: Colors.orange.shade700, size: 20),
+                                  const SizedBox(width: 8),
+                                  Expanded(
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          l10n.countryMismatchWarningTitle,
+                                          style: TextStyle(
+                                            color: Colors.orange.shade800,
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 13,
+                                          ),
+                                        ),
+                                        const SizedBox(height: 4),
+                                        Text(
+                                          l10n.countryMismatchWarningBody(_detectedCountry!),
+                                          style: TextStyle(
+                                            color: Colors.orange.shade700,
+                                            fontSize: 12,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+
                           CountryStateCityPicker(
                             country: _countryController,
                             state: _stateController,
@@ -470,9 +686,24 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               labelText: l10n.password,
                               border: const OutlineInputBorder(),
                               hintText: l10n.passwordHintAtLeast10,
+                              suffixIcon: IconButton(
+                                icon: Icon(
+                                  _showPassword ? Icons.visibility_off : Icons.visibility,
+                                ),
+                                onPressed: () => setState(() => _showPassword = !_showPassword),
+                                tooltip: _showPassword ? l10n.hidePassword : l10n.showPassword,
+                              ),
                             ),
-                            obscureText: true,
+                            obscureText: !_showPassword,
                             validator: (value) => _validatePassword(context, value),
+                          ),
+                          const SizedBox(height: 4),
+                          Text(
+                            l10n.tapEyeToShowPassword,
+                            style: TextStyle(
+                              fontSize: 12,
+                              color: Colors.grey.shade600,
+                            ),
                           ),
                           const SizedBox(height: 12),
 
@@ -481,8 +712,15 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             decoration: InputDecoration(
                               labelText: l10n.confirmPassword,
                               border: const OutlineInputBorder(),
+                              suffixIcon: IconButton(
+                                icon: Icon(
+                                  _showConfirmPassword ? Icons.visibility_off : Icons.visibility,
+                                ),
+                                onPressed: () => setState(() => _showConfirmPassword = !_showConfirmPassword),
+                                tooltip: _showConfirmPassword ? l10n.hidePassword : l10n.showPassword,
+                              ),
                             ),
-                            obscureText: true,
+                            obscureText: !_showConfirmPassword,
                             validator: (value) {
                               if (value == null || value.isEmpty) return l10n.required;
                               if (value != _passwordController.text) return l10n.passwordsDoNotMatch;

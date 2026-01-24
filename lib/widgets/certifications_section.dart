@@ -569,6 +569,42 @@ class _CertificationsSectionState extends State<CertificationsSection> {
                 ],
               ),
             ),
+            const SizedBox(height: 8),
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.blue.shade50,
+                borderRadius: BorderRadius.circular(8),
+                border: Border.all(color: Colors.blue.shade200),
+              ),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Icon(Icons.shield, size: 20, color: Colors.blue.shade700),
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Massage Service Requirement',
+                          style: TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.blue.shade900,
+                          ),
+                        ),
+                        const SizedBox(height: 4),
+                        Text(
+                          'To offer massage services, you must upload a verified massage therapy certification. Include "massage" in the certification name.',
+                          style: TextStyle(fontSize: 11, color: Colors.blue.shade800),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),

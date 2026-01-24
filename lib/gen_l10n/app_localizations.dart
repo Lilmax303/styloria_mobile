@@ -2444,6 +2444,12 @@ abstract class AppLocalizations {
   /// **'Massage'**
   String get serviceMassageLabel;
 
+  /// No description provided for @serviceTattooLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Tattoo'**
+  String get serviceTattooLabel;
+
   /// No description provided for @serviceHairStylingLabel.
   ///
   /// In en, this message translates to:
@@ -3343,6 +3349,102 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'N/A'**
   String get genericNotAvailable;
+
+  /// No description provided for @showPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Show password'**
+  String get showPassword;
+
+  /// No description provided for @hidePassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Hide password'**
+  String get hidePassword;
+
+  /// No description provided for @tapEyeToShowPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap the eye icon to show/hide password'**
+  String get tapEyeToShowPassword;
+
+  /// No description provided for @certificationRequiredTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Certification Required'**
+  String get certificationRequiredTitle;
+
+  /// No description provided for @certificationRequiredMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'This service requires a verified professional certification to protect both you and your clients.\n\nMassage services require proof of massage therapy training/licensing.'**
+  String certificationRequiredMessage(Object service);
+
+  /// No description provided for @certificationPendingTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Certification Pending Review'**
+  String get certificationPendingTitle;
+
+  /// No description provided for @certificationPendingMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Your certification is awaiting admin verification. This usually takes 24-48 hours. You\'ll be able to offer this service once approved.'**
+  String get certificationPendingMessage;
+
+  /// No description provided for @certificationExpiredTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Certification Expired'**
+  String get certificationExpiredTitle;
+
+  /// No description provided for @certificationExpiredMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Your certification has expired. Please upload a valid, current certification to continue offering this service.'**
+  String get certificationExpiredMessage;
+
+  /// No description provided for @certificationStepsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'How to get certified:'**
+  String get certificationStepsTitle;
+
+  /// No description provided for @certificationStep1.
+  ///
+  /// In en, this message translates to:
+  /// **'1. Go to \'Certifications & Licenses\' section below'**
+  String get certificationStep1;
+
+  /// No description provided for @certificationStep2.
+  ///
+  /// In en, this message translates to:
+  /// **'2. Upload your massage therapy license/certificate'**
+  String get certificationStep2;
+
+  /// No description provided for @certificationStep3.
+  ///
+  /// In en, this message translates to:
+  /// **'3. Wait for admin verification (24-48 hours)'**
+  String get certificationStep3;
+
+  /// No description provided for @addCertification.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Certification'**
+  String get addCertification;
+
+  /// No description provided for @scrollToCertificationsHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Scroll down to the Certifications section to add your certification'**
+  String get scrollToCertificationsHint;
+
+  /// No description provided for @requiresCertificationTooltip.
+  ///
+  /// In en, this message translates to:
+  /// **'This service requires a verified certification'**
+  String get requiresCertificationTooltip;
 
   /// No description provided for @reviewSelectRatingPrompt.
   ///

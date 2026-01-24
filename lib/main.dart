@@ -541,6 +541,7 @@ class _LoginScreenState extends State<LoginScreen> {
   final _passwordController = TextEditingController();
   bool _loading = false;
   String? _error;
+  bool _showPassword = false;
 
   Future<void> _handleLogin() async {
     if (!_formKey.currentState!.validate()) return;
@@ -643,12 +644,29 @@ class _LoginScreenState extends State<LoginScreen> {
                               decoration: InputDecoration(
                                 labelText: l10n.password,
                                 border: const OutlineInputBorder(),
+                                suffixIcon: IconButton(
+                                  icon: Icon(
+                                    _showPassword ? Icons.visibility_off : Icons.visibility,
+                                  ),
+                                  onPressed: () => setState(() => _showPassword = !_showPassword),
+                                  tooltip: _showPassword
+                                      ? l10n.hidePassword
+                                      : l10n.showPassword,
+                                ),
                               ),
-                              obscureText: true,
+                              obscureText: !_showPassword,
                               validator: (value) =>
                                   (value == null || value.isEmpty)
                                       ? l10n.required
                                       : null,
+                            ),
+                            const SizedBox(height: 4),
+                            Text(
+                              l10n.tapEyeToShowPassword,
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: Colors.grey.shade600,
+                              ),
                             ),
                             const SizedBox(height: 16),
                             if (_error != null)
