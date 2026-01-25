@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
+import 'package:file_picker/file_picker.dart';
 
 import '../api_client.dart';
 
@@ -65,7 +66,8 @@ class _CertificationsSectionState extends State<CertificationsSection> {
     final orgController = TextEditingController();
     DateTime? issueDate;
     DateTime? expiryDate;
-    XFile? selectedFile;
+    PlatformFile? selectedFile;
+    String? fileError;
 
     final result = await showDialog<bool>(
       context: context,
@@ -144,31 +146,140 @@ class _CertificationsSectionState extends State<CertificationsSection> {
                   },
                 ),
                 const SizedBox(height: 16),
-                // Document Upload
-                OutlinedButton.icon(
-                  onPressed: () async {
-                    final picker = ImagePicker();
-                    final file = await picker.pickImage(
-                      source: ImageSource.gallery,
-                      maxWidth: 1920,
-                      maxHeight: 1920,
-                    );
-                    if (file != null) {
-                      setDialogState(() => selectedFile = file);
-                    }
-                  },
-                  icon: const Icon(Icons.upload_file),
-                  label: Text(
-                    selectedFile != null
-                        ? 'File: ${selectedFile!.name}'
-                        : 'Upload Document (Optional)',
+                // Document Upload (REQUIRED)
+                Container(
+                  padding: const EdgeInsets.all(12),
+                  decoration: BoxDecoration(
+                    color: selectedFile != null 
+                        ? Colors.green.shade50 
+                        : Colors.orange.shade50,
+                    borderRadius: BorderRadius.circular(8),
+                    border: Border.all(
+                      color: selectedFile != null 
+                          ? Colors.green.shade300 
+                          : Colors.orange.shade300,
+                    ),
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      Row(
+                        children: [
+                          Icon(
+                            selectedFile != null 
+                                ? Icons.check_circle 
+                                : Icons.warning_amber,
+                            size: 18,
+                            color: selectedFile != null 
+                                ? Colors.green 
+                                : Colors.orange.shade700,
+                          ),
+                          const SizedBox(width: 8),
+                          Text(
+                            'Document Upload *',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: selectedFile != null 
+                                  ? Colors.green.shade700 
+                                  : Colors.orange.shade700,
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 8),
+                      Text(
+                        selectedFile != null
+                            ? 'Required for verification'
+                            : 'A document is required to verify your certification',
+                        style: TextStyle(
+                          fontSize: 11,
+                          color: selectedFile != null 
+                              ? Colors.green.shade600 
+                              : Colors.orange.shade600,
+                        ),
+                      ),
+                      const SizedBox(height: 12),
+                      OutlinedButton.icon(
+                        onPressed: () async {
+                          final result = await FilePicker.platform.pickFiles(
+                            type: FileType.custom,
+                            allowedExtensions: ['pdf', 'jpg', 'jpeg', 'png', 'doc', 'docx'],
+                            withData: true,
+                          );
+                          if (result != null && result.files.isNotEmpty) {
+                            setDialogState(() {
+                              selectedFile = result.files.first;
+                              fileError = null;
+                            });
+                          }
+                        },
+                        icon: Icon(
+                          selectedFile != null ? Icons.swap_horiz : Icons.upload_file,
+                        ),
+                        label: Text(
+                          selectedFile != null
+                              ? 'Change Document'
+                              : 'Select Document',
+                        ),
+                        style: OutlinedButton.styleFrom(
+                          foregroundColor: selectedFile != null 
+                              ? Colors.green 
+                              : Colors.orange.shade700,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
                 if (selectedFile != null)
-                  TextButton(
-                    onPressed: () => setDialogState(() => selectedFile = null),
-                    child: const Text('Remove file', style: TextStyle(color: Colors.red)),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 8),
+                    child: Row(
+                      children: [
+                        const Icon(Icons.attach_file, size: 16, color: Colors.green),
+                        const SizedBox(width: 4),
+                        Expanded(
+                          child: Text(
+                            selectedFile!.name,
+                            style: const TextStyle(fontSize: 12),
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
+                        TextButton(
+                          onPressed: () => setDialogState(() => selectedFile = null),
+                          child: const Text('Remove', style: TextStyle(color: Colors.red, fontSize: 12)),
+                        ),
+                      ],
+                    ),
                   ),
+                if (fileError != null)
+                  Padding(
+                    padding: const EdgeInsets.only(top: 4),
+                    child: Text(
+                      fileError!,
+                      style: const TextStyle(color: Colors.red, fontSize: 12),
+                    ),
+                  ),
+                const SizedBox(height: 12),
+                // Info about verification
+                Container(
+                  padding: const EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                    color: Colors.blue.shade50,
+                    borderRadius: BorderRadius.circular(6),
+                  ),
+                  child: Row(
+                    children: [
+                      Icon(Icons.info_outline, size: 16, color: Colors.blue.shade700),
+                      const SizedBox(width: 8),
+                      Expanded(
+                        child: Text(
+                          'Trust score will be added after admin verification (24-48 hours)',
+                          style: TextStyle(fontSize: 11, color: Colors.blue.shade700),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ],
             ),
           ),
@@ -178,7 +289,16 @@ class _CertificationsSectionState extends State<CertificationsSection> {
               child: const Text('Cancel'),
             ),
             ElevatedButton(
-              onPressed: () => Navigator.pop(context, true),
+              onPressed: () {
+                // Validate document is selected
+                if (selectedFile == null) {
+                  setDialogState(() {
+                    fileError = 'Please upload a document to verify your certification';
+                  });
+                  return;
+                }
+                Navigator.pop(context, true);
+              },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.green,
                 foregroundColor: Colors.white,
@@ -190,7 +310,7 @@ class _CertificationsSectionState extends State<CertificationsSection> {
       ),
     );
 
-    if (result == true && nameController.text.trim().isNotEmpty) {
+    if (result == true && nameController.text.trim().isNotEmpty && selectedFile != null) {
       await _addCertification(
         name: nameController.text.trim(),
         organization: orgController.text.trim(),
@@ -206,7 +326,7 @@ class _CertificationsSectionState extends State<CertificationsSection> {
     String? organization,
     DateTime? issueDate,
     DateTime? expiryDate,
-    XFile? document,
+    PlatformFile? document,
   }) async {
     // Show loading
     showDialog(
@@ -219,7 +339,8 @@ class _CertificationsSectionState extends State<CertificationsSection> {
       final result = await ApiClient.addCertification(
         name: name,
         issuingOrganization: organization,
-        document: document,
+        documentBytes: document?.bytes,
+        documentName: document?.name,
         issueDate: issueDate != null ? DateFormat('yyyy-MM-dd').format(issueDate) : null,
         expiryDate: expiryDate != null ? DateFormat('yyyy-MM-dd').format(expiryDate) : null,
       );
@@ -228,8 +349,8 @@ class _CertificationsSectionState extends State<CertificationsSection> {
 
       if (result != null) {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text('✅ Certification added! Trust Score: ${result['trust_score']}'),
+          const SnackBar(
+            content: Text('✅ Certification submitted! Trust score will update after verification.'),
             backgroundColor: Colors.green,
           ),
         );
@@ -314,6 +435,8 @@ class _CertificationsSectionState extends State<CertificationsSection> {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+
     if (_loading) {
       return const Card(
         child: Padding(
@@ -369,7 +492,9 @@ class _CertificationsSectionState extends State<CertificationsSection> {
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
                   decoration: BoxDecoration(
-                    color: tierInfo['bgColor'] as Color,
+                     color: isDark 
+                        ? (tierInfo['color'] as Color).withOpacity(0.2)
+                        : tierInfo['bgColor'] as Color,
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: Row(
@@ -396,7 +521,10 @@ class _CertificationsSectionState extends State<CertificationsSection> {
             const SizedBox(height: 8),
             Text(
               'Add your professional certifications to increase your trust score and unlock higher-tier jobs.',
-              style: TextStyle(color: Colors.grey.shade600, fontSize: 13),
+              style: TextStyle(
+                color: isDark ? Colors.grey.shade400 : Colors.grey.shade600, 
+                fontSize: 13,
+              ),
             ),
             const SizedBox(height: 16),
 
@@ -405,13 +533,19 @@ class _CertificationsSectionState extends State<CertificationsSection> {
               Container(
                 padding: const EdgeInsets.all(24),
                 decoration: BoxDecoration(
-                  color: Colors.grey.shade50,
+                  color: isDark ? Colors.grey.shade800 : Colors.grey.shade50,
                   borderRadius: BorderRadius.circular(8),
-                  border: Border.all(color: Colors.grey.shade200),
+                  border: Border.all(
+                    color: isDark ? Colors.grey.shade700 : Colors.grey.shade200,
+                  ),
                 ),
                 child: Column(
                   children: [
-                    Icon(Icons.description_outlined, size: 48, color: Colors.grey.shade400),
+                    Icon(
+                      Icons.description_outlined, 
+                      size: 48, 
+                      color: isDark ? Colors.grey.shade500 : Colors.grey.shade400,
+                    ),
                     const SizedBox(height: 8),
                     const Text(
                       'No certifications yet',
@@ -421,7 +555,10 @@ class _CertificationsSectionState extends State<CertificationsSection> {
                     Text(
                       'Add your licenses and certifications to earn up to 15 trust points!',
                       textAlign: TextAlign.center,
-                      style: TextStyle(color: Colors.grey.shade600, fontSize: 12),
+                      style: TextStyle(
+                        color: isDark ? Colors.grey.shade400 : Colors.grey.shade600, 
+                        fontSize: 12,
+                      ),
                     ),
                   ],
                 ),
@@ -436,6 +573,7 @@ class _CertificationsSectionState extends State<CertificationsSection> {
                   final cert = _certifications[index] as Map<String, dynamic>;
                   final isVerified = cert['is_verified'] == true;
                   final isExpired = cert['is_expired'] == true;
+                  final isPending = !isVerified && !isExpired;
 
                   return ListTile(
                     contentPadding: const EdgeInsets.symmetric(vertical: 8),
@@ -444,10 +582,10 @@ class _CertificationsSectionState extends State<CertificationsSection> {
                       height: 48,
                       decoration: BoxDecoration(
                         color: isVerified
-                            ? Colors.green.shade50
+                            ? (isDark ? Colors.green.shade900 : Colors.green.shade50)
                             : isExpired
-                                ? Colors.red.shade50
-                                : Colors.blue.shade50,
+                                ? (isDark ? Colors.red.shade900 : Colors.red.shade50)
+                                : (isDark ? Colors.orange.shade900 : Colors.orange.shade50),
                         borderRadius: BorderRadius.circular(8),
                       ),
                       child: Icon(
@@ -455,12 +593,12 @@ class _CertificationsSectionState extends State<CertificationsSection> {
                             ? Icons.verified
                             : isExpired
                                 ? Icons.warning
-                                : Icons.description,
+                                : Icons.hourglass_top,
                         color: isVerified
-                            ? Colors.green
+                            ? (isDark ? Colors.green.shade300 : Colors.green)
                             : isExpired
-                                ? Colors.red
-                                : Colors.blue,
+                                ? (isDark ? Colors.red.shade300 : Colors.red)
+                                : (isDark ? Colors.orange.shade300 : Colors.orange),
                       ),
                     ),
                     title: Row(
@@ -475,24 +613,45 @@ class _CertificationsSectionState extends State<CertificationsSection> {
                           Container(
                             padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
                             decoration: BoxDecoration(
-                              color: Colors.green.shade100,
+                              color: isDark ? Colors.green.shade900 : Colors.green.shade100,
                               borderRadius: BorderRadius.circular(4),
                             ),
-                            child: const Text(
+                            child: Text(
                               'Verified',
-                              style: TextStyle(fontSize: 10, color: Colors.green),
+                              style: TextStyle(
+                                fontSize: 10, 
+                                color: isDark ? Colors.green.shade300 : Colors.green,
+                              ),
+                            ),
+                          ),
+                        if (isPending)
+                          Container(
+                            padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                            decoration: BoxDecoration(
+                              color: isDark ? Colors.orange.shade900 : Colors.orange.shade100,
+                              borderRadius: BorderRadius.circular(4),
+                            ),
+                            child: Text(
+                              'Pending',
+                              style: TextStyle(
+                                fontSize: 10, 
+                                color: isDark ? Colors.orange.shade300 : Colors.orange,
+                              ),
                             ),
                           ),
                         if (isExpired)
                           Container(
                             padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
                             decoration: BoxDecoration(
-                              color: Colors.red.shade100,
+                              color: isDark ? Colors.red.shade900 : Colors.red.shade100,
                               borderRadius: BorderRadius.circular(4),
                             ),
-                            child: const Text(
+                            child: Text(
                               'Expired',
-                              style: TextStyle(fontSize: 10, color: Colors.red),
+                              style: TextStyle(
+                                fontSize: 10, 
+                                color: isDark ? Colors.red.shade300 : Colors.red,
+                              ),
                             ),
                           ),
                       ],
@@ -503,7 +662,9 @@ class _CertificationsSectionState extends State<CertificationsSection> {
                         if (cert['issuing_organization']?.toString().isNotEmpty == true)
                           Text(
                             cert['issuing_organization'].toString(),
-                            style: TextStyle(color: Colors.grey.shade600),
+                            style: TextStyle(
+                              color: isDark ? Colors.grey.shade400 : Colors.grey.shade600,
+                            ),
                           ),
                         if (cert['expiry_date'] != null)
                           Text(
@@ -511,6 +672,15 @@ class _CertificationsSectionState extends State<CertificationsSection> {
                             style: TextStyle(
                               color: isExpired ? Colors.red : Colors.grey.shade500,
                               fontSize: 12,
+                            ),
+                          ),
+                        if (isPending)
+                          Text(
+                            'Under review (24-48 hours)',
+                            style: TextStyle(
+                              color: isDark ? Colors.orange.shade300 : Colors.orange,
+                              fontSize: 11,
+                              fontStyle: FontStyle.italic,
                             ),
                           ),
                       ],
@@ -553,17 +723,25 @@ class _CertificationsSectionState extends State<CertificationsSection> {
             Container(
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
-                color: Colors.amber.shade50,
+                color: isDark ? Colors.amber.shade900.withOpacity(0.3) : Colors.amber.shade50,
                 borderRadius: BorderRadius.circular(8),
+                border: isDark ? Border.all(color: Colors.amber.shade700) : null,
               ),
               child: Row(
                 children: [
-                  Icon(Icons.lightbulb, size: 20, color: Colors.amber.shade700),
+                  Icon(
+                    Icons.lightbulb, 
+                    size: 20, 
+                    color: isDark ? Colors.amber.shade300 : Colors.amber.shade700,
+                  ),
                   const SizedBox(width: 8),
                   Expanded(
                     child: Text(
                       'Certifications add up to 15 points to your trust score. Reach 80+ to unlock Premium jobs!',
-                      style: TextStyle(fontSize: 12, color: Colors.amber.shade900),
+                      style: TextStyle(
+                        fontSize: 12, 
+                        color: isDark ? Colors.amber.shade100 : Colors.amber.shade900,
+                      ),
                     ),
                   ),
                 ],
@@ -573,14 +751,20 @@ class _CertificationsSectionState extends State<CertificationsSection> {
             Container(
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
-                color: Colors.blue.shade50,
+                color: isDark ? Colors.blue.shade900.withOpacity(0.3) : Colors.blue.shade50,
                 borderRadius: BorderRadius.circular(8),
-                border: Border.all(color: Colors.blue.shade200),
+                border: Border.all(
+                  color: isDark ? Colors.blue.shade700 : Colors.blue.shade200,
+                ),
               ),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Icon(Icons.shield, size: 20, color: Colors.blue.shade700),
+                  Icon(
+                    Icons.shield, 
+                    size: 20, 
+                    color: isDark ? Colors.blue.shade300 : Colors.blue.shade700,
+                  ),
                   const SizedBox(width: 8),
                   Expanded(
                     child: Column(
@@ -591,13 +775,16 @@ class _CertificationsSectionState extends State<CertificationsSection> {
                           style: TextStyle(
                             fontSize: 12,
                             fontWeight: FontWeight.bold,
-                            color: Colors.blue.shade900,
+                            color: isDark ? Colors.blue.shade200 : Colors.blue.shade900,
                           ),
                         ),
                         const SizedBox(height: 4),
                         Text(
                           'To offer massage services, you must upload a verified massage therapy certification. Include "massage" in the certification name.',
-                          style: TextStyle(fontSize: 11, color: Colors.blue.shade800),
+                          style: TextStyle(
+                            fontSize: 11, 
+                            color: isDark ? Colors.blue.shade300 : Colors.blue.shade800,
+                          ),
                         ),
                       ],
                     ),

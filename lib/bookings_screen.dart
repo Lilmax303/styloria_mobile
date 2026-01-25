@@ -399,40 +399,35 @@ class _BookingsScreenState extends State<BookingsScreen> {
         }
  
         // Open Paystack checkout in WebView or external browser
-        final result = await _openPaystackCheckout(authorizationUrl, reference);
+        final result = await _openPaystackCheckout(authorizationUrl, reference, bookingId);
         if (!mounted) return;
  
         if (result == true) {
-          // Verify the payment
-          final verifyRes = await ApiClient.verifyPaystackPayment(reference: reference);
-          if (!mounted) return;
- 
-          if (verifyRes['verified'] == true) {
-            await showDialog(
-              context: context,
-              builder: (dialogContext) => AlertDialog(
-                title: const Text('Payment successful'),
-                content: Text(l10n.paymentSuccessfulShort),
-                actions: [
-                  TextButton(
-                    onPressed: () => Navigator.of(dialogContext).pop(),
-                    child: const Text('OK'),
-                  ),
+          // Payment was verified automatically by the polling dialog
+          await showDialog(
+            context: context,
+            builder: (dialogContext) => AlertDialog(
+              title: Row(
+                children: const [
+                  Icon(Icons.check_circle, color: Colors.green),
+                  SizedBox(width: 8),
+                  Text('Payment Successful'),
                 ],
               ),
-            );
-            mainTabIndex.value = 1;
-            _loadBookings();
-            return;
-          } else {
-            messenger.showSnackBar(
-              SnackBar(
-                content: Text(verifyRes['detail']?.toString() ?? 'Payment verification failed'),
-                backgroundColor: Colors.red,
-              ),
-            );
-          }
+              content: Text(l10n.paymentSuccessfulShort),
+              actions: [
+                ElevatedButton(
+                  onPressed: () => Navigator.of(dialogContext).pop(),
+                  child: const Text('OK'),
+                ),
+              ],
+            ),
+          );
+          mainTabIndex.value = 1;
+          _loadBookings();
+          return;
         }
+
         // Payment was cancelled or failed - refresh bookings anyway
         _loadBookings();
         return;
@@ -611,90 +606,58 @@ class _BookingsScreenState extends State<BookingsScreen> {
     }
   }
 
-  /// Opens Paystack checkout URL in browser and waits for result
-  Future<bool?> _openPaystackCheckout(String authorizationUrl, String reference) async {
+  /// Opens Paystack checkout URL and automatically polls for payment completion
+  Future<bool> _openPaystackCheckout(String authorizationUrl, String reference, int bookingId) async {
     final uri = Uri.parse(authorizationUrl);
+    bool paymentVerified = false;
+    bool dialogDismissed = false;
     
-    // Show loading dialog while opening browser
-    if (!mounted) return null;
-    
-    showDialog(
-      context: context,
-      barrierDismissible: false,
-      builder: (ctx) => AlertDialog(
-        content: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            const CircularProgressIndicator(),
-            const SizedBox(height: 16),
-            const Text('Opening payment page...'),
-            const SizedBox(height: 8),
-            Text(
-              'Complete your payment in the browser, then return here.',
-              style: TextStyle(fontSize: 12, color: Colors.grey[600]),
-              textAlign: TextAlign.center,
-            ),
-          ],
-        ),
-      ),
+    // Launch Paystack checkout URL
+    final launched = await launchUrl(
+      uri,
+      mode: LaunchMode.externalApplication,
     );
-
-    try {
-      // Launch Paystack checkout URL
-      final launched = await launchUrl(
-        uri,
-        mode: LaunchMode.externalApplication,
-      );
-
-      if (!mounted) return null;
-      Navigator.of(context).pop(); // Dismiss loading dialog
-
-      if (!launched) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Could not open payment page')),
-        );
-        return false;
-      }
-
-      // Wait a moment for user to potentially complete payment
-      // The deep link handler in main.dart will handle the callback
-      // But we also provide a manual verification option
-      
-      await Future.delayed(const Duration(seconds: 2));
-      if (!mounted) return null;
-
-      // Show dialog asking user if they completed payment
-      final completed = await showDialog<bool>(
-        context: context,
-        barrierDismissible: false,
-        builder: (ctx) => AlertDialog(
-          title: const Text('Payment Status'),
-          content: const Text(
-            'Did you complete the payment in your browser?\n\n'
-            'Tap "Verify Payment" to check your payment status.',
-          ),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.pop(ctx, false),
-              child: const Text('Cancel'),
-            ),
-            ElevatedButton(
-              onPressed: () => Navigator.pop(ctx, true),
-              child: const Text('Verify Payment'),
-            ),
-          ],
-        ),
-      );
-
-      return completed;
-    } catch (e) {
-      if (!mounted) return null;
-      Navigator.of(context).pop(); // Dismiss loading dialog if still showing
+ 
+    if (!launched) {
+      if (!mounted) return false;
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Error opening payment: $e')),
+        const SnackBar(content: Text('Could not open payment page')),
       );
       return false;
     }
+ 
+    if (!mounted) return false;
+ 
+    // Show waiting dialog with auto-polling
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (dialogContext) => _PaymentWaitingDialog(
+        reference: reference,
+        bookingId: bookingId,
+        onPaymentVerified: () {
+          paymentVerified = true;
+          if (!dialogDismissed) {
+            dialogDismissed = true;
+            Navigator.of(dialogContext).pop();
+          }
+        },
+        onCancel: () {
+          if (!dialogDismissed) {
+            dialogDismissed = true;
+            Navigator.of(dialogContext).pop();
+          }
+        },
+      ),
+    );
+ 
+    // Wait for dialog to be dismissed
+    await Future.doWhile(() async {
+      await Future.delayed(const Duration(milliseconds: 100));
+      return !dialogDismissed && mounted;
+    });
+ 
+    return paymentVerified;
   }
 
   Future<void> _openReviewDialog(int providerId, String providerName, int bookingId) async {
@@ -1157,6 +1120,201 @@ class _ReviewDialogWidgetState extends State<_ReviewDialogWidget> {
               : Text(l10n.submit),
         ),
       ],
+    );
+  }
+}
+
+
+/// Dialog that shows while waiting for Paystack payment and auto-polls for verification
+class _PaymentWaitingDialog extends StatefulWidget {
+  final String reference;
+  final int bookingId;
+  final VoidCallback onPaymentVerified;
+  final VoidCallback onCancel;
+
+  const _PaymentWaitingDialog({
+    required this.reference,
+    required this.bookingId,
+    required this.onPaymentVerified,
+    required this.onCancel,
+  });
+
+  @override
+  State<_PaymentWaitingDialog> createState() => _PaymentWaitingDialogState();
+}
+
+class _PaymentWaitingDialogState extends State<_PaymentWaitingDialog> {
+  bool _polling = true;
+  String _statusText = 'Complete your payment in the browser...';
+  int _pollCount = 0;
+  static const int _maxPolls = 60; // 60 polls × 3 seconds = 3 minutes max
+
+  @override
+  void initState() {
+    super.initState();
+    _startPolling();
+  }
+
+  @override
+  void dispose() {
+    _polling = false;
+    super.dispose();
+  }
+
+  Future<void> _startPolling() async {
+    while (_polling && mounted && _pollCount < _maxPolls) {
+      await Future.delayed(const Duration(seconds: 3));
+      if (!_polling || !mounted) break;
+
+      _pollCount++;
+
+      // Update status text periodically
+      if (mounted) {
+        setState(() {
+          if (_pollCount < 5) {
+            _statusText = 'Complete your payment in the browser...';
+          } else if (_pollCount < 15) {
+            _statusText = 'Waiting for payment confirmation...';
+          } else {
+            _statusText = 'Still waiting... Please complete payment.';
+          }
+        });
+      }
+
+      // Check payment status via API
+      try {
+        // Method 1: Check booking status directly
+        final booking = await ApiClient.getServiceRequest(widget.bookingId);
+        if (!mounted || !_polling) break;
+
+        if (booking != null) {
+          final paymentStatus = (booking['payment_status'] ?? '').toString();
+          if (paymentStatus == 'paid') {
+            _polling = false;
+            widget.onPaymentVerified();
+            return;
+          }
+        }
+
+        // Method 2: Also try verifying with Paystack reference
+        final verifyResult = await ApiClient.verifyPaystackPayment(
+          reference: widget.reference,
+        );
+        if (!mounted || !_polling) break;
+
+        if (verifyResult['verified'] == true) {
+          _polling = false;
+          widget.onPaymentVerified();
+          return;
+        }
+      } catch (e) {
+        // Ignore errors during polling, just continue
+        debugPrint('Payment polling error: $e');
+      }
+    }
+
+    // If we've exceeded max polls, show timeout message
+    if (mounted && _polling && _pollCount >= _maxPolls) {
+      setState(() {
+        _statusText = 'Payment verification timed out. Please check your bookings.';
+      });
+      await Future.delayed(const Duration(seconds: 2));
+      if (mounted && _polling) {
+        widget.onCancel();
+      }
+    }
+  }
+
+  void _handleManualCheck() async {
+    if (!mounted) return;
+
+    setState(() {
+      _statusText = 'Checking payment status...';
+    });
+
+    try {
+      final verifyResult = await ApiClient.verifyPaystackPayment(
+        reference: widget.reference,
+      );
+
+      if (!mounted) return;
+
+      if (verifyResult['verified'] == true) {
+        _polling = false;
+        widget.onPaymentVerified();
+      } else {
+        setState(() {
+          _statusText = 'Payment not yet received. Please complete payment.';
+        });
+      }
+    } catch (e) {
+      if (!mounted) return;
+      setState(() {
+        _statusText = 'Could not verify. Please try again.';
+      });
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(
+      content: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          const SizedBox(
+            width: 50,
+            height: 50,
+            child: CircularProgressIndicator(strokeWidth: 3),
+          ),
+          const SizedBox(height: 20),
+          const Text(
+            'Processing Payment',
+            style: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          const SizedBox(height: 12),
+          Text(
+            _statusText,
+            style: TextStyle(
+              fontSize: 14,
+              color: Colors.grey[600],
+            ),
+            textAlign: TextAlign.center,
+          ),
+          const SizedBox(height: 8),
+          Text(
+            'This will update automatically when payment is complete.',
+            style: TextStyle(
+              fontSize: 12,
+              color: Colors.grey[500],
+            ),
+            textAlign: TextAlign.center,
+          ),
+          const SizedBox(height: 20),
+          Row(
+            children: [
+              Expanded(
+                child: OutlinedButton(
+                  onPressed: () {
+                    _polling = false;
+                    widget.onCancel();
+                  },
+                  child: const Text('Cancel'),
+                ),
+              ),
+              const SizedBox(width: 12),
+              Expanded(
+                child: ElevatedButton(
+                  onPressed: _handleManualCheck,
+                  child: const Text('Check Now'),
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }

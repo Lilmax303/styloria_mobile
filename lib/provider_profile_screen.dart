@@ -1606,6 +1606,8 @@ class _ProviderProfileScreenState extends State<ProviderProfileScreen> {
 
   Widget _buildServiceChips(
       List<Map<String, dynamic>> services, AppLocalizations l10n) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+
     return Wrap(
       spacing: 8,
       runSpacing: 8,
@@ -1627,7 +1629,14 @@ class _ProviderProfileScreenState extends State<ProviderProfileScreen> {
           label: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Text(_serviceLabel(serviceId, l10n)),
+              Text(
+                _serviceLabel(serviceId, l10n),
+                style: TextStyle(
+                  color: isLocked
+                      ? (isDark ? Colors.grey.shade400 : Colors.grey.shade600)
+                      : null,
+                ),
+              ),
               if (requiresCert) ...[
                 const SizedBox(width: 4),
                 Icon(
@@ -1636,8 +1645,10 @@ class _ProviderProfileScreenState extends State<ProviderProfileScreen> {
                       : (hasPendingCert ? Icons.hourglass_top : Icons.lock),
                   size: 14,
                   color: hasVerifiedCert
-                      ? Colors.green
-                      : (hasPendingCert ? Colors.orange : Colors.grey),
+                      ? (isDark ? Colors.green.shade300 : Colors.green)
+                      : (hasPendingCert 
+                          ? (isDark ? Colors.orange.shade300 : Colors.orange) 
+                          : (isDark ? Colors.grey.shade400 : Colors.grey)),
                 ),
               ],
             ],
@@ -1665,13 +1676,17 @@ class _ProviderProfileScreenState extends State<ProviderProfileScreen> {
           },
           selectedColor: Theme.of(context).primaryColor.withOpacity(0.2),
           checkmarkColor: Theme.of(context).primaryColor,
-          backgroundColor: isLocked ? Colors.grey.shade100 : null,
+          backgroundColor: isLocked 
+              ? (isDark ? Colors.grey.shade800 : Colors.grey.shade100) 
+              : null,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(20),
             side: BorderSide(
-              color: isOffered
-                  ? Theme.of(context).primaryColor
-                  : Colors.grey.shade300,
+              color: isLocked
+                  ? (isDark ? Colors.grey.shade600 : Colors.grey.shade400)
+                  : (isOffered
+                      ? Theme.of(context).primaryColor
+                      : (isDark ? Colors.grey.shade600 : Colors.grey.shade300)),
             ),
           ),
         );
@@ -1682,6 +1697,8 @@ class _ProviderProfileScreenState extends State<ProviderProfileScreen> {
   Widget _buildPriceSettingStep(AppLocalizations l10n) {
     final offeredServices =
         _serviceTypes.where((s) => s['offered'] == true).toList();
+
+    final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -1767,21 +1784,22 @@ class _ProviderProfileScreenState extends State<ProviderProfileScreen> {
         Container(
           padding: const EdgeInsets.all(12),
           decoration: BoxDecoration(
-            color: Colors.blue.shade50,
+            color: isDark ? Colors.blue.shade900.withOpacity(0.3) : Colors.blue.shade50,
             borderRadius: BorderRadius.circular(8),
+            border: isDark ? Border.all(color: Colors.blue.shade700) : null,
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Row(
                 children: [
-                  Icon(Icons.info_outline, size: 18, color: Colors.blue[700]),
+                  Icon(Icons.info_outline, size: 18, color: isDark ? Colors.blue.shade300 : Colors.blue[700]),
                   const SizedBox(width: 8),
                   Text(
                     l10n.providerHowPricingWorksTitle,
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      color: Colors.blue[700],
+                      color: isDark ? Colors.blue.shade300 : Colors.blue[700],
                     ),
                   ),
                 ],
@@ -1789,7 +1807,10 @@ class _ProviderProfileScreenState extends State<ProviderProfileScreen> {
               const SizedBox(height: 8),
               Text(
                 l10n.providerHowPricingWorksBody,
-                style: const TextStyle(fontSize: 12),
+                style: TextStyle(
+                  fontSize: 12,
+                  color: isDark ? Colors.blue.shade100 : Colors.black87,
+                ),
               ),
             ],
           ),
@@ -1826,12 +1847,16 @@ class _ProviderProfileScreenState extends State<ProviderProfileScreen> {
     final hasVerifiedCert =
         _certificationStatus[serviceId]?['has_verified_cert'] == true;
 
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+
     return Container(
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
-        color: Colors.grey.shade50,
+        color: isDark ? Colors.grey.shade800 : Colors.grey.shade50,
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: Colors.grey.shade200),
+        border: Border.all(
+          color: isDark ? Colors.grey.shade700 : Colors.grey.shade200,
+        ),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -1855,19 +1880,19 @@ class _ProviderProfileScreenState extends State<ProviderProfileScreen> {
                     vertical: 4,
                   ),
                   decoration: BoxDecoration(
-                    color: Colors.green.shade50,
+                    color: isDark ? Colors.green.shade900 : Colors.green.shade50,
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Icon(Icons.verified, size: 14, color: Colors.green[700]),
+                      Icon(Icons.verified, size: 14, color: isDark ? Colors.green.shade300 : Colors.green[700]),
                       const SizedBox(width: 4),
                       Text(
                         'Certified',
                         style: TextStyle(
                           fontSize: 11,
-                          color: Colors.green[700],
+                          color: isDark ? Colors.green.shade300 : Colors.green[700],
                           fontWeight: FontWeight.w500,
                         ),
                       ),
@@ -1886,7 +1911,7 @@ class _ProviderProfileScreenState extends State<ProviderProfileScreen> {
                 tooltip: 'Remove service',
                 padding: EdgeInsets.zero,
                 constraints: const BoxConstraints(),
-                color: Colors.grey[600],
+                color: isDark ? Colors.grey.shade400 : Colors.grey[600],
               ),
             ],
           ),
@@ -1916,9 +1941,10 @@ class _ProviderProfileScreenState extends State<ProviderProfileScreen> {
                 alignment: Alignment.center,
                 child: Text(
                   _currencySymbol,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 16,
+                    color: isDark ? Colors.white : Colors.black87,
                   ),
                 ),
               ),
@@ -1927,11 +1953,12 @@ class _ProviderProfileScreenState extends State<ProviderProfileScreen> {
                 maxWidth: 50,
               ),
               filled: true,
-              fillColor: Colors.white,
+              fillColor: isDark ? Colors.grey.shade900 : Colors.white,
             ),
-            style: const TextStyle(
+            style: TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.w600,
+              color: isDark ? Colors.white : Colors.black87,
             ),
           ),
         ],

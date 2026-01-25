@@ -8,8 +8,10 @@ import 'dart:typed_data';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:http/http.dart' as http;
+import 'package:http_parser/http_parser.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:flutter/foundation.dart' show debugPrint, kIsWeb;
 
 class ApiClient {
   // Backend base URL
@@ -2257,7 +2259,8 @@ class ApiClient {
   static Future<Map<String, dynamic>?> addCertification({
     required String name,
     String? issuingOrganization,
-    XFile? document,
+    Uint8List? documentBytes,
+    String? documentName,
     String? issueDate,
     String? expiryDate,
   }) async {
@@ -2278,21 +2281,35 @@ class ApiClient {
         req.fields['expiry_date'] = expiryDate;
       }
 
-      if (document != null) {
-        if (kIsWeb) {
-          final bytes = await document.readAsBytes();
-          req.files.add(http.MultipartFile.fromBytes(
-            'document',
-            bytes,
-            filename: document.name,
-          ));
-        } else {
-          req.files.add(await http.MultipartFile.fromPath(
-            'document',
-            document.path,
-            filename: document.name,
-          ));
+      if (documentBytes != null && documentName != null) {
+        // Determine content type from file extension
+        String contentType = 'application/octet-stream';
+        final ext = documentName.toLowerCase().split('.').last;
+        switch (ext) {
+          case 'pdf':
+            contentType = 'application/pdf';
+            break;
+          case 'jpg':
+          case 'jpeg':
+            contentType = 'image/jpeg';
+            break;
+          case 'png':
+            contentType = 'image/png';
+            break;
+          case 'doc':
+            contentType = 'application/msword';
+            break;
+          case 'docx':
+            contentType = 'application/vnd.openxmlformats-officedocument.wordprocessingml.document';
+            break;
         }
+        
+        req.files.add(http.MultipartFile.fromBytes(
+          'document',
+          documentBytes,
+          filename: documentName,
+          contentType: MediaType.parse(contentType),
+        ));
       }
 
       final streamed = await req.send();
@@ -2317,6 +2334,10 @@ class ApiClient {
       if (decoded is Map<String, dynamic>) return decoded;
       if (decoded is Map) return Map<String, dynamic>.from(decoded);
     }
+
+    // Log error for debugging
+    debugPrint('addCertification failed: ${resp.statusCode} ${resp.body}');
+
     return null;
   }
 
