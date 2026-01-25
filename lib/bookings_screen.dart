@@ -6,6 +6,7 @@ import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:flutter_stripe/flutter_stripe.dart' as stripe;
 import 'package:styloria_mobile/gen_l10n/app_localizations.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import 'api_client.dart';
 import 'app_tab_state.dart';
@@ -314,9 +315,14 @@ class _BookingsScreenState extends State<BookingsScreen> {
     final messenger = ScaffoldMessenger.of(context);
     final navigator = Navigator.of(context);
 
-    final isAfrica = isAfricanCountryName(_userCountry);
-    // Only block if we actually need Stripe.
-    if (!isAfrica && !_stripeSupported) {
+    // Determine the correct payment gateway
+    final paymentGateway = ApiClient.getPaymentGateway(_userCountry);
+    final isPaystack = paymentGateway == 'paystack';
+    final isFlutterwave = paymentGateway == 'flutterwave';
+    final isStripe = paymentGateway == 'stripe';
+
+    // Only block if we actually need Stripe and it's not supported
+    if (isStripe && !_stripeSupported) {
       if (!mounted) return;
       messenger.showSnackBar(SnackBar(content: Text(l10n.paymentsNotSupportedShort)));
       return;
@@ -365,8 +371,77 @@ class _BookingsScreenState extends State<BookingsScreen> {
         return null;
       }
 
-      // AFRICA -> Flutterwave
-      if (isAfrica) {
+      // PAYSTACK COUNTRIES (Ghana, Nigeria, South Africa, Kenya, Côte d'Ivoire)
+      if (isPaystack) {
+        // Reset any previous failed/cancelled payment attempt
+        await ApiClient.resetPaystackPayment(bookingId);
+ 
+        final checkout = await ApiClient.createPaystackCheckout(
+          serviceRequestId: bookingId,
+          amount: amount,
+        );
+        if (!mounted) return;
+        if (checkout == null) {
+          messenger.showSnackBar(
+            SnackBar(content: Text(l10n.failedToCreatePaymentIntent)),
+          );
+          return;
+        }
+ 
+        final authorizationUrl = (checkout['authorization_url'] ?? '').toString();
+        final reference = (checkout['reference'] ?? '').toString();
+ 
+        if (authorizationUrl.isEmpty) {
+          messenger.showSnackBar(
+            SnackBar(content: Text(l10n.failedToCreatePaymentIntent)),
+          );
+          return;
+        }
+ 
+        // Open Paystack checkout in WebView or external browser
+        final result = await _openPaystackCheckout(authorizationUrl, reference);
+        if (!mounted) return;
+ 
+        if (result == true) {
+          // Verify the payment
+          final verifyRes = await ApiClient.verifyPaystackPayment(reference: reference);
+          if (!mounted) return;
+ 
+          if (verifyRes['verified'] == true) {
+            await showDialog(
+              context: context,
+              builder: (dialogContext) => AlertDialog(
+                title: const Text('Payment successful'),
+                content: Text(l10n.paymentSuccessfulShort),
+                actions: [
+                  TextButton(
+                    onPressed: () => Navigator.of(dialogContext).pop(),
+                    child: const Text('OK'),
+                  ),
+                ],
+              ),
+            );
+            mainTabIndex.value = 1;
+            _loadBookings();
+            return;
+          } else {
+            messenger.showSnackBar(
+              SnackBar(
+                content: Text(verifyRes['detail']?.toString() ?? 'Payment verification failed'),
+                backgroundColor: Colors.red,
+              ),
+            );
+          }
+        }
+        // Payment was cancelled or failed - refresh bookings anyway
+        _loadBookings();
+        return;
+      }
+ 
+      // OTHER AFRICAN COUNTRIES -> Flutterwave
+      if (isFlutterwave) {
+        // Reset any previous failed/cancelled payment attempt
+        await ApiClient.resetFlutterwavePayment(bookingId);
 
         final checkout = await ApiClient.createFlutterwaveCheckout(
           serviceRequestId: bookingId,
@@ -533,6 +608,92 @@ class _BookingsScreenState extends State<BookingsScreen> {
           content: Text(l10n.unexpectedPaymentErrorReason(e.toString())),
         ),
       );
+    }
+  }
+
+  /// Opens Paystack checkout URL in browser and waits for result
+  Future<bool?> _openPaystackCheckout(String authorizationUrl, String reference) async {
+    final uri = Uri.parse(authorizationUrl);
+    
+    // Show loading dialog while opening browser
+    if (!mounted) return null;
+    
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (ctx) => AlertDialog(
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const CircularProgressIndicator(),
+            const SizedBox(height: 16),
+            const Text('Opening payment page...'),
+            const SizedBox(height: 8),
+            Text(
+              'Complete your payment in the browser, then return here.',
+              style: TextStyle(fontSize: 12, color: Colors.grey[600]),
+              textAlign: TextAlign.center,
+            ),
+          ],
+        ),
+      ),
+    );
+
+    try {
+      // Launch Paystack checkout URL
+      final launched = await launchUrl(
+        uri,
+        mode: LaunchMode.externalApplication,
+      );
+
+      if (!mounted) return null;
+      Navigator.of(context).pop(); // Dismiss loading dialog
+
+      if (!launched) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Could not open payment page')),
+        );
+        return false;
+      }
+
+      // Wait a moment for user to potentially complete payment
+      // The deep link handler in main.dart will handle the callback
+      // But we also provide a manual verification option
+      
+      await Future.delayed(const Duration(seconds: 2));
+      if (!mounted) return null;
+
+      // Show dialog asking user if they completed payment
+      final completed = await showDialog<bool>(
+        context: context,
+        barrierDismissible: false,
+        builder: (ctx) => AlertDialog(
+          title: const Text('Payment Status'),
+          content: const Text(
+            'Did you complete the payment in your browser?\n\n'
+            'Tap "Verify Payment" to check your payment status.',
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(ctx, false),
+              child: const Text('Cancel'),
+            ),
+            ElevatedButton(
+              onPressed: () => Navigator.pop(ctx, true),
+              child: const Text('Verify Payment'),
+            ),
+          ],
+        ),
+      );
+
+      return completed;
+    } catch (e) {
+      if (!mounted) return null;
+      Navigator.of(context).pop(); // Dismiss loading dialog if still showing
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Error opening payment: $e')),
+      );
+      return false;
     }
   }
 
