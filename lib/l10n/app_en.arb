@@ -90,6 +90,15 @@
   "createNewAccount": "Create a new account",
   "requestEmailVerificationCode": "Request email verification code",
 
+  "serviceLocationHint": "Enter where you want the service performed. This can be different from your current location.",
+  "serviceAddressLabel": "Service Address",
+  "serviceAddressHint": "e.g., 123 Main St, Accra, Ghana",
+  "searchAddressTooltip": "Find this address",
+  "serviceLocationSet": "Service location set",
+  "coordinatesLabel": "Coordinates",
+  "pleaseEnterAddress": "Please enter an address",
+  "locationUpdatedFromAddress": "Location updated from address",
+
   "createAccountTitle": "Create Account",
   "joinStyloria": "Join Styloria",
   "registerSubtitle": "Create an account to book services or become a provider",

@@ -54,7 +54,10 @@ class _BookingFormScreenState extends State<BookingFormScreen> {
 
   final _latController = TextEditingController(text: '5.6037');
   final _lngController = TextEditingController(text: '-0.1870');
+  final _addressController = TextEditingController();
   String? _locationAddress;
+  bool _isSearchingAddress = false;
+  bool _usingCustomAddress = false;
 
   String _serviceType = 'haircut';
   final _notesController = TextEditingController();
@@ -97,6 +100,7 @@ class _BookingFormScreenState extends State<BookingFormScreen> {
   void dispose() {
     _latController.dispose();
     _lngController.dispose();
+    _addressController.dispose();
     _notesController.dispose();
     _linkSubscription?.cancel();
     super.dispose();
@@ -168,12 +172,15 @@ class _BookingFormScreenState extends State<BookingFormScreen> {
  
       if (!mounted) return;
  
-      // Update UI
-      setState(() {
-        _latController.text = position.latitude.toStringAsFixed(6);
-        _lngController.text = position.longitude.toStringAsFixed(6);
-        _locationAddress = address;
-      });
+      // Only update service location if user hasn't entered a custom address
+      if (!_usingCustomAddress) {
+        setState(() {
+          _latController.text = position.latitude.toStringAsFixed(6);
+          _lngController.text = position.longitude.toStringAsFixed(6);
+          _locationAddress = address;
+          _addressController.text = address ?? '';
+        });
+      }
  
       debugPrint('Auto-fetched location: ${position.latitude}, ${position.longitude}');
     } catch (e) {
@@ -531,6 +538,8 @@ class _BookingFormScreenState extends State<BookingFormScreen> {
         _latController.text = position.latitude.toStringAsFixed(6);
         _lngController.text = position.longitude.toStringAsFixed(6);
         _locationAddress = address;
+        _addressController.text = address ?? '';
+        _usingCustomAddress = false; // Reset since using current location
         _resultIsSuccess = true;
         _resultMessage = address != null
             ? '${AppLocalizations.of(context)!.locationUpdatedFromGps}\n$address'
@@ -558,6 +567,56 @@ class _BookingFormScreenState extends State<BookingFormScreen> {
     final sym = _userCurrencySymbol ?? '\$';
     if (d == null) return '${sym}0.00';
     return '$sym${d.toStringAsFixed(2)}';
+  }
+
+  /// Convert user-entered address to coordinates
+  Future<void> _searchAddress() async {
+    final address = _addressController.text.trim();
+    if (address.isEmpty) {
+      setState(() {
+        _resultIsSuccess = false;
+        _resultMessage = AppLocalizations.of(context)!.pleaseEnterAddress;
+      });
+      return;
+    }
+ 
+    setState(() {
+      _isSearchingAddress = true;
+      _resultMessage = null;
+    });
+ 
+    try {
+      final locations = await locationFromAddress(address);
+ 
+      if (!mounted) return;
+ 
+      if (locations.isNotEmpty) {
+        final location = locations.first;
+       
+        setState(() {
+          _latController.text = location.latitude.toStringAsFixed(6);
+          _lngController.text = location.longitude.toStringAsFixed(6);
+          _locationAddress = address;
+          _usingCustomAddress = true;
+          _isSearchingAddress = false;
+          _resultIsSuccess = true;
+          _resultMessage = AppLocalizations.of(context)!.locationUpdatedFromAddress;
+        });
+      } else {
+        setState(() {
+          _isSearchingAddress = false;
+          _resultIsSuccess = false;
+          _resultMessage = AppLocalizations.of(context)!.couldNotFindLocationForAddress;
+        });
+      }
+    } catch (e) {
+      if (!mounted) return;
+      setState(() {
+        _isSearchingAddress = false;
+        _resultIsSuccess = false;
+        _resultMessage = AppLocalizations.of(context)!.errorConvertingAddress(e.toString());
+      });
+    }
   }
 
   Future<void> _createBooking() async {
@@ -1379,40 +1438,65 @@ class _BookingFormScreenState extends State<BookingFormScreen> {
                         ),
                   ),
                   const SizedBox(height: 8),
-                  Row(
-                    children: [
-                      Expanded(
-                        child: TextFormField(
-                          controller: _latController,
-                          decoration: InputDecoration(
-                            labelText: l10n.latitudeLabel,
-                            border: const OutlineInputBorder(),
+                  // Service location explanation
+                  Container(
+                    padding: const EdgeInsets.all(12),
+                    decoration: BoxDecoration(
+                      color: cs.primaryContainer.withOpacity(0.3),
+                      borderRadius: BorderRadius.circular(8),
+                      border: Border.all(color: cs.outline.withOpacity(0.5)),
+                    ),
+                    child: Row(
+                      children: [
+                        Icon(Icons.info_outline, size: 18, color: cs.primary),
+                        const SizedBox(width: 8),
+                        Expanded(
+                          child: Text(
+                            l10n.serviceLocationHint,
+                            style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                                  color: cs.onSurfaceVariant,
+                                ),
                           ),
-                          keyboardType: const TextInputType.numberWithOptions(
-                              decimal: true),
-                          validator: (value) => (value == null || value.isEmpty)
-                              ? l10n.requiredField
-                              : null,
                         ),
-                      ),
-                      const SizedBox(width: 8),
-                      Expanded(
-                        child: TextFormField(
-                          controller: _lngController,
-                          decoration: InputDecoration(
-                            labelText: l10n.longitudeLabel,
-                            border: const OutlineInputBorder(),
-                          ),
-                          keyboardType: const TextInputType.numberWithOptions(
-                              decimal: true),
-                          validator: (value) => (value == null || value.isEmpty)
-                              ? l10n.requiredField
-                              : null,
-                        ),
-                      ),
-                    ],
+                      ],
+                    ),
+                  ),
+                  const SizedBox(height: 12),
+                  // Address input field
+                  TextFormField(
+                    controller: _addressController,
+                    decoration: InputDecoration(
+                      labelText: l10n.serviceAddressLabel,
+                      hintText: l10n.serviceAddressHint,
+                      border: const OutlineInputBorder(),
+                      prefixIcon: const Icon(Icons.location_on),
+                      suffixIcon: _isSearchingAddress
+                          ? const Padding(
+                              padding: EdgeInsets.all(12),
+                              child: SizedBox(
+                                height: 20,
+                                width: 20,
+                                child: CircularProgressIndicator(strokeWidth: 2),
+                              ),
+                            )
+                          : IconButton(
+                              icon: const Icon(Icons.search),
+                              onPressed: _searchAddress,
+                              tooltip: l10n.searchAddressTooltip,
+                            ),
+                    ),
+                    maxLines: 2,
+                    textInputAction: TextInputAction.search,
+                    onFieldSubmitted: (_) => _searchAddress(),
+                    onChanged: (value) {
+                      // Mark as custom address when user types
+                      if (value.isNotEmpty && !_usingCustomAddress) {
+                        setState(() => _usingCustomAddress = true);
+                      }
+                    },
                   ),
                   const SizedBox(height: 8),
+                  // Use current location button
                   Align(
                     alignment: Alignment.centerLeft,
                     child: TextButton.icon(
@@ -1421,6 +1505,52 @@ class _BookingFormScreenState extends State<BookingFormScreen> {
                       label: Text(l10n.useMyCurrentLocation),
                     ),
                   ),
+                  const SizedBox(height: 8),
+                  // Show current coordinates (read-only, collapsible)
+                  if (_locationAddress != null || _latController.text.isNotEmpty)
+                    Container(
+                      padding: const EdgeInsets.all(12),
+                      decoration: BoxDecoration(
+                        color: cs.surfaceContainerHighest,
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              Icon(Icons.check_circle, size: 16, color: Colors.green),
+                              const SizedBox(width: 8),
+                              Text(
+                                l10n.serviceLocationSet,
+                                style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                                      fontWeight: FontWeight.w600,
+                                      color: Colors.green,
+                                    ),
+                              ),
+                            ],
+                          ),
+                          if (_locationAddress != null) ...[
+                            const SizedBox(height: 4),
+                            Text(
+                              _locationAddress!,
+                              style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                                    color: cs.onSurfaceVariant,
+                                  ),
+                            ),
+                          ],
+                          const SizedBox(height: 4),
+                          Text(
+                            '${l10n.coordinatesLabel}: ${_latController.text}, ${_lngController.text}',
+                            style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                                  fontSize: 10,
+                                  color: cs.onSurfaceVariant.withOpacity(0.7),
+                                ),
+                          ),
+                        ],
+                      ),
+                    ),
+
                   const SizedBox(height: 16),
                   if (_userCountry != null && _userCurrencySymbol != null)
                     Container(
