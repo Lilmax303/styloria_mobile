@@ -1877,6 +1877,27 @@ class ApiClient {
   }
 
   // ---------- LOCATION ----------
+  /// Update the current user's general location (not booking-specific).
+  /// For providers: also updates ServiceProvider.location_latitude/longitude.
+  /// Endpoint: POST /api/users/me/location/
+  static Future<Map<String, dynamic>?> updateMyLocation({
+    required double latitude,
+    required double longitude,
+  }) async {
+    final response = await _authorizedRequest(
+      'POST',
+      '/api/users/me/location/',
+      headers: {'Content-Type': 'application/json'},
+      body: jsonEncode({
+        'latitude': latitude,
+        'longitude': longitude,
+      }),
+    );
+    if (response.statusCode == 200) {
+      return jsonDecode(response.body) as Map<String, dynamic>;
+    }
+    return null;
+  }
 
   static Future<bool> updateLocation({
     required int bookingId,

@@ -635,8 +635,8 @@ class _ProviderProfileScreenState extends State<ProviderProfileScreen> {
     final hasPermission = await LocationService.isPermissionGranted();
 
     if (hasPermission) {
-      // Permission granted, enable availability
-      setState(() => _available = true);
+      // Permission granted, fetch location and update backend
+      await _updateLocationAndSetAvailable();
       return;
     }
 
@@ -703,13 +703,17 @@ class _ProviderProfileScreenState extends State<ProviderProfileScreen> {
     if (!mounted) return;
 
     if (result.granted) {
-      setState(() => _available = true);
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(l10n.providerLocationEnabledNowAvailable),
-          backgroundColor: Colors.green,
-        ),
-      );
+
+      // Permission granted, fetch location and update backend
+      await _updateLocationAndSetAvailable();
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(l10n.providerLocationEnabledNowAvailable),
+            backgroundColor: Colors.green,
+          ),
+        );
+      }
     } else if (result.status == LocationPermissionStatus.permanentlyDenied) {
       // Show settings prompt
       final openSettings = await showDialog<bool>(
@@ -752,6 +756,64 @@ class _ProviderProfileScreenState extends State<ProviderProfileScreen> {
           backgroundColor: Colors.orange,
         ),
       );
+    }
+  }
+
+  /// Fetches current GPS location, updates backend, and sets available = true
+  Future<void> _updateLocationAndSetAvailable() async {
+    try {
+      // Show loading indicator
+      setState(() => _gettingLocation = true);
+ 
+      // Get current position
+      final position = await Geolocator.getCurrentPosition(
+        desiredAccuracy: LocationAccuracy.high,
+        timeLimit: const Duration(seconds: 15),
+      );
+ 
+      // Update local text fields
+      _latController.text = position.latitude.toStringAsFixed(6);
+      _lngController.text = position.longitude.toStringAsFixed(6);
+ 
+      // Update backend with new location
+      final result = await ApiClient.updateMyLocation(
+        latitude: position.latitude,
+        longitude: position.longitude,
+      );
+ 
+      if (result != null) {
+        debugPrint('Location updated on backend: ${result['latitude']}, ${result['longitude']}');
+      }
+ 
+      // Get human-readable address
+      await _getAddressFromCoordinates(position.latitude, position.longitude);
+ 
+      if (!mounted) return;
+ 
+      // Now set available
+      setState(() {
+        _available = true;
+        _gettingLocation = false;
+      });
+ 
+    } catch (e) {
+      debugPrint('Error updating location when becoming available: $e');
+      
+      if (!mounted) return;
+ 
+      setState(() => _gettingLocation = false);
+ 
+      // Still allow becoming available, but warn user
+      final l10n = AppLocalizations.of(context)!;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(l10n.errorGettingLocation(e.toString())),
+          backgroundColor: Colors.orange,
+        ),
+      );
+ 
+      // Set available anyway - they can manually update location
+      setState(() => _available = true);
     }
   }
 

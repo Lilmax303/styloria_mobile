@@ -90,6 +90,7 @@ class _BookingFormScreenState extends State<BookingFormScreen> {
     _selectedDate = DateTime(now.year, now.month, now.day);
     _loadUserInfo();
     _initDeepLinks();
+    _autoFetchLocation();
   }
 
   @override
@@ -99,6 +100,86 @@ class _BookingFormScreenState extends State<BookingFormScreen> {
     _notesController.dispose();
     _linkSubscription?.cancel();
     super.dispose();
+  }
+
+  /// Automatically fetch user's GPS location when screen opens
+  Future<void> _autoFetchLocation() async {
+    try {
+      // Check if location services are enabled
+      final serviceEnabled = await Geolocator.isLocationServiceEnabled();
+      if (!serviceEnabled) {
+        debugPrint('Location services disabled - skipping auto-fetch');
+        return;
+      }
+ 
+      // Check permission without requesting (don't interrupt user)
+      var permission = await Geolocator.checkPermission();
+      
+      // If denied, request permission
+      if (permission == LocationPermission.denied) {
+        permission = await Geolocator.requestPermission();
+        if (permission == LocationPermission.denied ||
+            permission == LocationPermission.deniedForever) {
+          debugPrint('Location permission denied - skipping auto-fetch');
+          return;
+        }
+      }
+ 
+      if (permission == LocationPermission.deniedForever) {
+        debugPrint('Location permission permanently denied - skipping auto-fetch');
+        return;
+      }
+ 
+      // Get current position
+      final position = await Geolocator.getCurrentPosition(
+        desiredAccuracy: LocationAccuracy.high,
+        timeLimit: const Duration(seconds: 15),
+      );
+ 
+      if (!mounted) return;
+ 
+      // Reverse geocode to get address
+      String? address;
+      try {
+        final placemarks = await placemarkFromCoordinates(
+          position.latitude,
+          position.longitude,
+        );
+        if (placemarks.isNotEmpty) {
+          final p = placemarks.first;
+          final parts = <String>[
+            if (p.street != null && p.street!.isNotEmpty) p.street!,
+            if (p.subLocality != null && p.subLocality!.isNotEmpty) p.subLocality!,
+            if (p.locality != null && p.locality!.isNotEmpty) p.locality!,
+            if (p.administrativeArea != null && p.administrativeArea!.isNotEmpty) p.administrativeArea!,
+            if (p.country != null && p.country!.isNotEmpty) p.country!,
+          ];
+          address = parts.join(', ');
+        }
+      } catch (e) {
+        debugPrint('Geocoding failed during auto-fetch: $e');
+      }
+ 
+      // Update backend with user's location
+      await ApiClient.updateMyLocation(
+        latitude: position.latitude,
+        longitude: position.longitude,
+      );
+ 
+      if (!mounted) return;
+ 
+      // Update UI
+      setState(() {
+        _latController.text = position.latitude.toStringAsFixed(6);
+        _lngController.text = position.longitude.toStringAsFixed(6);
+        _locationAddress = address;
+      });
+ 
+      debugPrint('Auto-fetched location: ${position.latitude}, ${position.longitude}');
+    } catch (e) {
+      debugPrint('Auto-fetch location failed: $e');
+      // Silent failure - user can still manually set location
+    }
   }
 
   void _initDeepLinks() {
@@ -440,6 +521,11 @@ class _BookingFormScreenState extends State<BookingFormScreen> {
         // Geocoding failed, continue without address
       }
  
+      // Update backend with user's location
+      await ApiClient.updateMyLocation(
+        latitude: position.latitude,
+        longitude: position.longitude,
+      );
 
       setState(() {
         _latController.text = position.latitude.toStringAsFixed(6);
