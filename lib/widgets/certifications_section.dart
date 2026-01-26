@@ -198,17 +198,41 @@ class _CertificationsSectionState extends State<CertificationsSection> {
                               : Colors.orange.shade600,
                         ),
                       ),
+                      const SizedBox(height: 4),
+                      Text(
+                        'Allowed: PNG, JPG, JPEG (max 5MB) or PDF (max 10MB)',
+                        style: TextStyle(
+                          fontSize: 10,
+                          color: Colors.grey.shade600,
+                          fontStyle: FontStyle.italic,
+                        ),
+                      ),
                       const SizedBox(height: 12),
                       OutlinedButton.icon(
                         onPressed: () async {
                           final result = await FilePicker.platform.pickFiles(
                             type: FileType.custom,
-                            allowedExtensions: ['pdf', 'jpg', 'jpeg', 'png', 'doc', 'docx'],
+                            allowedExtensions: ['pdf', 'jpg', 'jpeg', 'png'],
                             withData: true,
                           );
                           if (result != null && result.files.isNotEmpty) {
+                            final file = result.files.first;
+
+                            // Check file size
+                            final maxSizeImage = 5 * 1024 * 1024; // 5 MB
+                            final maxSizePdf = 10 * 1024 * 1024;  // 10 MB
+                            final ext = file.extension?.toLowerCase() ?? '';
+                            final maxSize = ext == 'pdf' ? maxSizePdf : maxSizeImage;
+                            final maxSizeDisplay = ext == 'pdf' ? '10 MB' : '5 MB';
+
+                            if (file.size > maxSize) {
+                              setDialogState(() {
+                                fileError = 'File too large. Max size for ${ext.toUpperCase()} is $maxSizeDisplay';
+                              });
+                              return;
+                            }
                             setDialogState(() {
-                              selectedFile = result.files.first;
+                              selectedFile = file;
                               fileError = null;
                             });
                           }
