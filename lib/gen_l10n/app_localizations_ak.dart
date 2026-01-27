@@ -240,6 +240,31 @@ class AppLocalizationsAk extends AppLocalizations {
   String get requestEmailVerificationCode => 'Bisa email verification code';
 
   @override
+  String get serviceLocationHint =>
+      'Enter where you want the service performed. This can be different from your current location.';
+
+  @override
+  String get serviceAddressLabel => 'Service Address';
+
+  @override
+  String get serviceAddressHint => 'e.g., 123 Main St, Accra, Ghana';
+
+  @override
+  String get searchAddressTooltip => 'Find this address';
+
+  @override
+  String get serviceLocationSet => 'Service location set';
+
+  @override
+  String get coordinatesLabel => 'Coordinates';
+
+  @override
+  String get pleaseEnterAddress => 'Mesrɛ wo, kyerɛw address bi';
+
+  @override
+  String get locationUpdatedFromAddress => 'Wɔde address no asesa beaeɛ no';
+
+  @override
   String get createAccountTitle => 'Bɔ Akaunt';
 
   @override
@@ -1659,12 +1684,6 @@ class AppLocalizationsAk extends AppLocalizations {
   String errorGettingLocation(Object error) {
     return 'Mfomso bere a yɛre nya beaeɛ: $error';
   }
-
-  @override
-  String get pleaseEnterAddress => 'Mesrɛ wo, kyerɛw address bi';
-
-  @override
-  String get locationUpdatedFromAddress => 'Wɔde address no asesa beaeɛ no';
 
   @override
   String get couldNotFindLocationForAddress =>

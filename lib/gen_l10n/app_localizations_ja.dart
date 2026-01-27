@@ -231,6 +231,31 @@ class AppLocalizationsJa extends AppLocalizations {
   String get requestEmailVerificationCode => 'メール確認コードをリクエスト';
 
   @override
+  String get serviceLocationHint =>
+      'Enter where you want the service performed. This can be different from your current location.';
+
+  @override
+  String get serviceAddressLabel => 'Service Address';
+
+  @override
+  String get serviceAddressHint => 'e.g., 123 Main St, Accra, Ghana';
+
+  @override
+  String get searchAddressTooltip => 'Find this address';
+
+  @override
+  String get serviceLocationSet => 'Service location set';
+
+  @override
+  String get coordinatesLabel => 'Coordinates';
+
+  @override
+  String get pleaseEnterAddress => '住所を入力してください';
+
+  @override
+  String get locationUpdatedFromAddress => '住所から位置情報を更新しました';
+
+  @override
   String get createAccountTitle => 'アカウント作成';
 
   @override
@@ -1612,12 +1637,6 @@ class AppLocalizationsJa extends AppLocalizations {
   String errorGettingLocation(Object error) {
     return '位置情報の取得エラー: $error';
   }
-
-  @override
-  String get pleaseEnterAddress => '住所を入力してください';
-
-  @override
-  String get locationUpdatedFromAddress => '住所から位置情報を更新しました';
 
   @override
   String get couldNotFindLocationForAddress => 'この住所の位置情報が見つかりませんでした';

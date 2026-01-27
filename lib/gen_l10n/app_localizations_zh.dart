@@ -231,6 +231,31 @@ class AppLocalizationsZh extends AppLocalizations {
   String get requestEmailVerificationCode => '请求邮箱验证码';
 
   @override
+  String get serviceLocationHint =>
+      'Enter where you want the service performed. This can be different from your current location.';
+
+  @override
+  String get serviceAddressLabel => 'Service Address';
+
+  @override
+  String get serviceAddressHint => 'e.g., 123 Main St, Accra, Ghana';
+
+  @override
+  String get searchAddressTooltip => 'Find this address';
+
+  @override
+  String get serviceLocationSet => 'Service location set';
+
+  @override
+  String get coordinatesLabel => 'Coordinates';
+
+  @override
+  String get pleaseEnterAddress => '请输入地址';
+
+  @override
+  String get locationUpdatedFromAddress => '已根据地址更新位置';
+
+  @override
   String get createAccountTitle => '创建账户';
 
   @override
@@ -1599,12 +1624,6 @@ class AppLocalizationsZh extends AppLocalizations {
   String errorGettingLocation(Object error) {
     return '获取位置出错：$error';
   }
-
-  @override
-  String get pleaseEnterAddress => '请输入地址';
-
-  @override
-  String get locationUpdatedFromAddress => '已根据地址更新位置';
 
   @override
   String get couldNotFindLocationForAddress => '无法找到该地址的位置';

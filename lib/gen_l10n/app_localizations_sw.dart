@@ -242,6 +242,31 @@ class AppLocalizationsSw extends AppLocalizations {
       'Omba msimbo wa uthibitishaji wa barua pepe';
 
   @override
+  String get serviceLocationHint =>
+      'Enter where you want the service performed. This can be different from your current location.';
+
+  @override
+  String get serviceAddressLabel => 'Service Address';
+
+  @override
+  String get serviceAddressHint => 'e.g., 123 Main St, Accra, Ghana';
+
+  @override
+  String get searchAddressTooltip => 'Find this address';
+
+  @override
+  String get serviceLocationSet => 'Service location set';
+
+  @override
+  String get coordinatesLabel => 'Coordinates';
+
+  @override
+  String get pleaseEnterAddress => 'Tafadhali weka anwani';
+
+  @override
+  String get locationUpdatedFromAddress => 'Eneo limesasishwa kutoka anwani';
+
+  @override
   String get createAccountTitle => 'Unda akaunti';
 
   @override
@@ -1669,12 +1694,6 @@ class AppLocalizationsSw extends AppLocalizations {
   String errorGettingLocation(Object error) {
     return 'Hitilafu kupata eneo: $error';
   }
-
-  @override
-  String get pleaseEnterAddress => 'Tafadhali weka anwani';
-
-  @override
-  String get locationUpdatedFromAddress => 'Eneo limesasishwa kutoka anwani';
 
   @override
   String get couldNotFindLocationForAddress =>

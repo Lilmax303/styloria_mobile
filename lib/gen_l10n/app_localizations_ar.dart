@@ -236,6 +236,31 @@ class AppLocalizationsAr extends AppLocalizations {
       'طلب رمز التحقق من البريد الإلكتروني';
 
   @override
+  String get serviceLocationHint =>
+      'Enter where you want the service performed. This can be different from your current location.';
+
+  @override
+  String get serviceAddressLabel => 'Service Address';
+
+  @override
+  String get serviceAddressHint => 'e.g., 123 Main St, Accra, Ghana';
+
+  @override
+  String get searchAddressTooltip => 'Find this address';
+
+  @override
+  String get serviceLocationSet => 'Service location set';
+
+  @override
+  String get coordinatesLabel => 'Coordinates';
+
+  @override
+  String get pleaseEnterAddress => 'يرجى إدخال عنوان';
+
+  @override
+  String get locationUpdatedFromAddress => 'تم تحديث الموقع من العنوان';
+
+  @override
   String get createAccountTitle => 'إنشاء حساب';
 
   @override
@@ -1644,12 +1669,6 @@ class AppLocalizationsAr extends AppLocalizations {
   String errorGettingLocation(Object error) {
     return 'خطأ في الحصول على الموقع: $error';
   }
-
-  @override
-  String get pleaseEnterAddress => 'يرجى إدخال عنوان';
-
-  @override
-  String get locationUpdatedFromAddress => 'تم تحديث الموقع من العنوان';
 
   @override
   String get couldNotFindLocationForAddress =>

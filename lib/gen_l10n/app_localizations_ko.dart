@@ -231,6 +231,31 @@ class AppLocalizationsKo extends AppLocalizations {
   String get requestEmailVerificationCode => '이메일 인증 코드 요청';
 
   @override
+  String get serviceLocationHint =>
+      'Enter where you want the service performed. This can be different from your current location.';
+
+  @override
+  String get serviceAddressLabel => 'Service Address';
+
+  @override
+  String get serviceAddressHint => 'e.g., 123 Main St, Accra, Ghana';
+
+  @override
+  String get searchAddressTooltip => 'Find this address';
+
+  @override
+  String get serviceLocationSet => 'Service location set';
+
+  @override
+  String get coordinatesLabel => 'Coordinates';
+
+  @override
+  String get pleaseEnterAddress => '주소를 입력해 주세요';
+
+  @override
+  String get locationUpdatedFromAddress => '주소로 위치가 업데이트되었습니다';
+
+  @override
   String get createAccountTitle => '계정 만들기';
 
   @override
@@ -1612,12 +1637,6 @@ class AppLocalizationsKo extends AppLocalizations {
   String errorGettingLocation(Object error) {
     return '위치를 가져오는 중 오류: $error';
   }
-
-  @override
-  String get pleaseEnterAddress => '주소를 입력해 주세요';
-
-  @override
-  String get locationUpdatedFromAddress => '주소로 위치가 업데이트되었습니다';
 
   @override
   String get couldNotFindLocationForAddress => '이 주소의 위치를 찾을 수 없습니다';

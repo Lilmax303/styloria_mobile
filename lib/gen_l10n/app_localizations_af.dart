@@ -242,6 +242,31 @@ class AppLocalizationsAf extends AppLocalizations {
   String get requestEmailVerificationCode => 'Vra e-posverifikasiekode aan';
 
   @override
+  String get serviceLocationHint =>
+      'Enter where you want the service performed. This can be different from your current location.';
+
+  @override
+  String get serviceAddressLabel => 'Service Address';
+
+  @override
+  String get serviceAddressHint => 'e.g., 123 Main St, Accra, Ghana';
+
+  @override
+  String get searchAddressTooltip => 'Find this address';
+
+  @override
+  String get serviceLocationSet => 'Service location set';
+
+  @override
+  String get coordinatesLabel => 'Coordinates';
+
+  @override
+  String get pleaseEnterAddress => 'Voer asseblief \'n adres in';
+
+  @override
+  String get locationUpdatedFromAddress => 'Ligging vanaf adres opgedateer';
+
+  @override
   String get createAccountTitle => 'Skep rekening';
 
   @override
@@ -1666,12 +1691,6 @@ class AppLocalizationsAf extends AppLocalizations {
   String errorGettingLocation(Object error) {
     return 'Fout met die verkryging van ligging: $error';
   }
-
-  @override
-  String get pleaseEnterAddress => 'Voer asseblief \'n adres in';
-
-  @override
-  String get locationUpdatedFromAddress => 'Ligging vanaf adres opgedateer';
 
   @override
   String get couldNotFindLocationForAddress =>

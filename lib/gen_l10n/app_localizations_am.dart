@@ -232,6 +232,31 @@ class AppLocalizationsAm extends AppLocalizations {
   String get requestEmailVerificationCode => 'የኢሜይል ማረጋገጫ ኮድ ጠይቅ';
 
   @override
+  String get serviceLocationHint =>
+      'Enter where you want the service performed. This can be different from your current location.';
+
+  @override
+  String get serviceAddressLabel => 'Service Address';
+
+  @override
+  String get serviceAddressHint => 'e.g., 123 Main St, Accra, Ghana';
+
+  @override
+  String get searchAddressTooltip => 'Find this address';
+
+  @override
+  String get serviceLocationSet => 'Service location set';
+
+  @override
+  String get coordinatesLabel => 'Coordinates';
+
+  @override
+  String get pleaseEnterAddress => 'እባክዎ አድራሻ ያስገቡ';
+
+  @override
+  String get locationUpdatedFromAddress => 'ቦታ ከአድራሻ ተዘምኗል';
+
+  @override
   String get createAccountTitle => 'መለያ ፍጠር';
 
   @override
@@ -1629,12 +1654,6 @@ class AppLocalizationsAm extends AppLocalizations {
   String errorGettingLocation(Object error) {
     return 'ቦታ ሲያገኝ ስህተት፦ $error';
   }
-
-  @override
-  String get pleaseEnterAddress => 'እባክዎ አድራሻ ያስገቡ';
-
-  @override
-  String get locationUpdatedFromAddress => 'ቦታ ከአድራሻ ተዘምኗል';
 
   @override
   String get couldNotFindLocationForAddress => 'ለዚህ አድራሻ ቦታ ማግኘት አልተቻለም';

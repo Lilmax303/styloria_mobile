@@ -560,6 +560,54 @@ abstract class AppLocalizations {
   /// **'Request email verification code'**
   String get requestEmailVerificationCode;
 
+  /// No description provided for @serviceLocationHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter where you want the service performed. This can be different from your current location.'**
+  String get serviceLocationHint;
+
+  /// No description provided for @serviceAddressLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Service Address'**
+  String get serviceAddressLabel;
+
+  /// No description provided for @serviceAddressHint.
+  ///
+  /// In en, this message translates to:
+  /// **'e.g., 123 Main St, Accra, Ghana'**
+  String get serviceAddressHint;
+
+  /// No description provided for @searchAddressTooltip.
+  ///
+  /// In en, this message translates to:
+  /// **'Find this address'**
+  String get searchAddressTooltip;
+
+  /// No description provided for @serviceLocationSet.
+  ///
+  /// In en, this message translates to:
+  /// **'Service location set'**
+  String get serviceLocationSet;
+
+  /// No description provided for @coordinatesLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Coordinates'**
+  String get coordinatesLabel;
+
+  /// No description provided for @pleaseEnterAddress.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter an address'**
+  String get pleaseEnterAddress;
+
+  /// No description provided for @locationUpdatedFromAddress.
+  ///
+  /// In en, this message translates to:
+  /// **'Location updated from address'**
+  String get locationUpdatedFromAddress;
+
   /// No description provided for @createAccountTitle.
   ///
   /// In en, this message translates to:
@@ -2971,18 +3019,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Error getting location: {error}'**
   String errorGettingLocation(Object error);
-
-  /// No description provided for @pleaseEnterAddress.
-  ///
-  /// In en, this message translates to:
-  /// **'Please enter an address'**
-  String get pleaseEnterAddress;
-
-  /// No description provided for @locationUpdatedFromAddress.
-  ///
-  /// In en, this message translates to:
-  /// **'Location updated from address'**
-  String get locationUpdatedFromAddress;
 
   /// No description provided for @couldNotFindLocationForAddress.
   ///

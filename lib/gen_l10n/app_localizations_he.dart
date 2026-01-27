@@ -232,6 +232,31 @@ class AppLocalizationsHe extends AppLocalizations {
   String get requestEmailVerificationCode => 'בקשת קוד אימות לאימייל';
 
   @override
+  String get serviceLocationHint =>
+      'Enter where you want the service performed. This can be different from your current location.';
+
+  @override
+  String get serviceAddressLabel => 'Service Address';
+
+  @override
+  String get serviceAddressHint => 'e.g., 123 Main St, Accra, Ghana';
+
+  @override
+  String get searchAddressTooltip => 'Find this address';
+
+  @override
+  String get serviceLocationSet => 'Service location set';
+
+  @override
+  String get coordinatesLabel => 'Coordinates';
+
+  @override
+  String get pleaseEnterAddress => 'אנא הזן כתובת';
+
+  @override
+  String get locationUpdatedFromAddress => 'המיקום עודכן מהכתובת';
+
+  @override
   String get createAccountTitle => 'יצירת חשבון';
 
   @override
@@ -1632,12 +1657,6 @@ class AppLocalizationsHe extends AppLocalizations {
   String errorGettingLocation(Object error) {
     return 'שגיאה בקבלת מיקום: $error';
   }
-
-  @override
-  String get pleaseEnterAddress => 'אנא הזן כתובת';
-
-  @override
-  String get locationUpdatedFromAddress => 'המיקום עודכן מהכתובת';
 
   @override
   String get couldNotFindLocationForAddress =>

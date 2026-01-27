@@ -237,6 +237,31 @@ class AppLocalizationsHi extends AppLocalizations {
   String get requestEmailVerificationCode => 'ईमेल सत्यापन कोड माँगें';
 
   @override
+  String get serviceLocationHint =>
+      'Enter where you want the service performed. This can be different from your current location.';
+
+  @override
+  String get serviceAddressLabel => 'Service Address';
+
+  @override
+  String get serviceAddressHint => 'e.g., 123 Main St, Accra, Ghana';
+
+  @override
+  String get searchAddressTooltip => 'Find this address';
+
+  @override
+  String get serviceLocationSet => 'Service location set';
+
+  @override
+  String get coordinatesLabel => 'Coordinates';
+
+  @override
+  String get pleaseEnterAddress => 'कृपया एक पता दर्ज करें';
+
+  @override
+  String get locationUpdatedFromAddress => 'पते से लोकेशन अपडेट हो गई';
+
+  @override
   String get createAccountTitle => 'अकाउंट बनाएं';
 
   @override
@@ -1654,12 +1679,6 @@ class AppLocalizationsHi extends AppLocalizations {
   String errorGettingLocation(Object error) {
     return 'लोकेशन प्राप्त करने में त्रुटि: $error';
   }
-
-  @override
-  String get pleaseEnterAddress => 'कृपया एक पता दर्ज करें';
-
-  @override
-  String get locationUpdatedFromAddress => 'पते से लोकेशन अपडेट हो गई';
 
   @override
   String get couldNotFindLocationForAddress =>

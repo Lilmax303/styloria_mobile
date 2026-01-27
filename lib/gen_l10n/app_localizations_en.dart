@@ -239,6 +239,31 @@ class AppLocalizationsEn extends AppLocalizations {
   String get requestEmailVerificationCode => 'Request email verification code';
 
   @override
+  String get serviceLocationHint =>
+      'Enter where you want the service performed. This can be different from your current location.';
+
+  @override
+  String get serviceAddressLabel => 'Service Address';
+
+  @override
+  String get serviceAddressHint => 'e.g., 123 Main St, Accra, Ghana';
+
+  @override
+  String get searchAddressTooltip => 'Find this address';
+
+  @override
+  String get serviceLocationSet => 'Service location set';
+
+  @override
+  String get coordinatesLabel => 'Coordinates';
+
+  @override
+  String get pleaseEnterAddress => 'Please enter an address';
+
+  @override
+  String get locationUpdatedFromAddress => 'Location updated from address';
+
+  @override
   String get createAccountTitle => 'Create Account';
 
   @override
@@ -1655,12 +1680,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String errorGettingLocation(Object error) {
     return 'Error getting location: $error';
   }
-
-  @override
-  String get pleaseEnterAddress => 'Please enter an address';
-
-  @override
-  String get locationUpdatedFromAddress => 'Location updated from address';
 
   @override
   String get couldNotFindLocationForAddress =>
