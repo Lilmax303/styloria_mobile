@@ -14,6 +14,7 @@ import 'package:app_links/app_links.dart';
 import 'africa_countries.dart';
 import 'app_tab_state.dart';
 import 'package:geocoding/geocoding.dart';
+import 'services/location_service.dart';
 
 import 'api_client.dart';
 import 'currency_helper.dart';
@@ -109,83 +110,38 @@ class _BookingFormScreenState extends State<BookingFormScreen> {
   /// Automatically fetch user's GPS location when screen opens
   Future<void> _autoFetchLocation() async {
     try {
-      // Check if location services are enabled
-      final serviceEnabled = await Geolocator.isLocationServiceEnabled();
-      if (!serviceEnabled) {
-        debugPrint('Location services disabled - skipping auto-fetch');
+      // Use the centralized service
+      final result = await LocationService.getCurrentPositionWithAddress();
+    
+      if (result == null) {
+        debugPrint('Could not get position - skipping auto-fetch');
         return;
       }
- 
-      // Check permission without requesting (don't interrupt user)
-      var permission = await Geolocator.checkPermission();
-      
-      // If denied, request permission
-      if (permission == LocationPermission.denied) {
-        permission = await Geolocator.requestPermission();
-        if (permission == LocationPermission.denied ||
-            permission == LocationPermission.deniedForever) {
-          debugPrint('Location permission denied - skipping auto-fetch');
-          return;
-        }
-      }
- 
-      if (permission == LocationPermission.deniedForever) {
-        debugPrint('Location permission permanently denied - skipping auto-fetch');
-        return;
-      }
- 
-      // Get current position
-      final position = await Geolocator.getCurrentPosition(
-        desiredAccuracy: LocationAccuracy.high,
-        timeLimit: const Duration(seconds: 15),
-      );
- 
+
       if (!mounted) return;
- 
-      // Reverse geocode to get address
-      String? address;
-      try {
-        final placemarks = await placemarkFromCoordinates(
-          position.latitude,
-          position.longitude,
-        );
-        if (placemarks.isNotEmpty) {
-          final p = placemarks.first;
-          final parts = <String>[
-            if (p.street != null && p.street!.isNotEmpty) p.street!,
-            if (p.subLocality != null && p.subLocality!.isNotEmpty) p.subLocality!,
-            if (p.locality != null && p.locality!.isNotEmpty) p.locality!,
-            if (p.administrativeArea != null && p.administrativeArea!.isNotEmpty) p.administrativeArea!,
-            if (p.country != null && p.country!.isNotEmpty) p.country!,
-          ];
-          address = parts.join(', ');
-        }
-      } catch (e) {
-        debugPrint('Geocoding failed during auto-fetch: $e');
-      }
- 
+
       // Update backend with user's location
       await ApiClient.updateMyLocation(
-        latitude: position.latitude,
-        longitude: position.longitude,
+        latitude: result.latitude,
+        longitude: result.longitude,
       );
- 
+
       if (!mounted) return;
- 
+
       // Only update service location if user hasn't entered a custom address
       if (!_usingCustomAddress) {
         setState(() {
-          _latController.text = position.latitude.toStringAsFixed(6);
-          _lngController.text = position.longitude.toStringAsFixed(6);
-          _locationAddress = address;
-          _addressController.text = address ?? '';
+          _latController.text = result.latitude.toStringAsFixed(6);
+          _lngController.text = result.longitude.toStringAsFixed(6);
+          _locationAddress = result.address;
+          _addressController.text = result.address ?? '';
         });
       }
- 
-      debugPrint('Auto-fetched location: ${position.latitude}, ${position.longitude}');
+
+      debugPrint('Auto-fetched location: ${result.latitude}, ${result.longitude}');
+      debugPrint('Address: ${result.address ?? "Could not resolve"}');
     } catch (e) {
       debugPrint('Auto-fetch location failed: $e');
-      // Silent failure - user can still manually set location
     }
   }
 
@@ -462,95 +418,70 @@ class _BookingFormScreenState extends State<BookingFormScreen> {
       _resultMessage = null;
     });
 
-    final serviceEnabled = await Geolocator.isLocationServiceEnabled();
+    // Use the centralized service for permission handling
+    final permResult = await LocationService.requestLocationPermission();
+  
     if (!mounted) return;
 
-    if (!serviceEnabled) {
-      setState(() {
-        _resultIsSuccess = false;
-        _resultMessage = AppLocalizations.of(context)!.locationServicesDisabled;
-      });
-      return;
-    }
-
-    var permission = await Geolocator.checkPermission();
-    if (!mounted) return;
-
-    if (permission == LocationPermission.denied) {
-      permission = await Geolocator.requestPermission();
-      if (!mounted) return;
-
-      if (permission == LocationPermission.denied) {
-        setState(() {
-          _resultIsSuccess = false;
-          _resultMessage =
-              AppLocalizations.of(context)!.locationPermissionDenied;
-        });
-        return;
+    if (!permResult.granted) {
+      String message;
+      switch (permResult.status) {
+        case LocationPermissionStatus.serviceDisabled:
+          message = AppLocalizations.of(context)!.locationServicesDisabled;
+          break;
+        case LocationPermissionStatus.permanentlyDenied:
+          message = AppLocalizations.of(context)!.locationPermissionPermanentlyDenied;
+          break;
+        case LocationPermissionStatus.denied:
+          message = AppLocalizations.of(context)!.locationPermissionDenied;
+          break;
+        default:
+          message = permResult.errorMessage ?? 'Location error';
       }
-    }
-
-    if (permission == LocationPermission.deniedForever) {
+    
       setState(() {
         _resultIsSuccess = false;
-        _resultMessage =
-            AppLocalizations.of(context)!.locationPermissionPermanentlyDenied;
+        _resultMessage = message;
       });
       return;
     }
 
     try {
-      final position = await Geolocator.getCurrentPosition(
-        desiredAccuracy: LocationAccuracy.high,
-      );
+      // ✅ Use the service with address resolution
+      final result = await LocationService.getCurrentPositionWithAddress();
 
       if (!mounted) return;
 
-      // Reverse geocode to get address
-      String? address;
-      try {
-        final placemarks = await placemarkFromCoordinates(
-          position.latitude,
-          position.longitude,
-        );
-        if (placemarks.isNotEmpty) {
-          final p = placemarks.first;
-          final parts = <String>[
-            if (p.street != null && p.street!.isNotEmpty) p.street!,
-            if (p.subLocality != null && p.subLocality!.isNotEmpty) p.subLocality!,
-            if (p.locality != null && p.locality!.isNotEmpty) p.locality!,
-            if (p.administrativeArea != null && p.administrativeArea!.isNotEmpty) p.administrativeArea!,
-            if (p.country != null && p.country!.isNotEmpty) p.country!,
-          ];
-          address = parts.join(', ');
-        }
-      } catch (_) {
-        // Geocoding failed, continue without address
+      if (result == null) {
+        setState(() {
+          _resultIsSuccess = false;
+          _resultMessage = AppLocalizations.of(context)!.failedToGetLocation('Unknown error');
+        });
+        return;
       }
- 
+
       // Update backend with user's location
       await ApiClient.updateMyLocation(
-        latitude: position.latitude,
-        longitude: position.longitude,
+        latitude: result.latitude,
+        longitude: result.longitude,
       );
 
       setState(() {
-        _latController.text = position.latitude.toStringAsFixed(6);
-        _lngController.text = position.longitude.toStringAsFixed(6);
-        _locationAddress = address;
-        _addressController.text = address ?? '';
-        _usingCustomAddress = false; // Reset since using current location
+        _latController.text = result.latitude.toStringAsFixed(6);
+        _lngController.text = result.longitude.toStringAsFixed(6);
+        _locationAddress = result.address;
+        _addressController.text = result.address ?? '';
+        _usingCustomAddress = false;
         _resultIsSuccess = true;
-        _resultMessage = address != null
-            ? '${AppLocalizations.of(context)!.locationUpdatedFromGps}\n$address'
+        _resultMessage = result.address != null
+            ? '${AppLocalizations.of(context)!.locationUpdatedFromGps}\n${result.address}'
             : AppLocalizations.of(context)!.locationUpdatedFromGps;
       });
     } catch (e) {
       if (!mounted) return;
       setState(() {
         _resultIsSuccess = false;
-        _resultMessage =
-            AppLocalizations.of(context)!.failedToGetLocation(e.toString());
+        _resultMessage = AppLocalizations.of(context)!.failedToGetLocation(e.toString());
       });
     }
   }
@@ -579,23 +510,22 @@ class _BookingFormScreenState extends State<BookingFormScreen> {
       });
       return;
     }
- 
+
     setState(() {
       _isSearchingAddress = true;
       _resultMessage = null;
     });
- 
+
     try {
-      final locations = await locationFromAddress(address);
- 
+      // ✅ Use the service with fallback
+      final result = await LocationService.getCoordinatesFromAddress(address);
+
       if (!mounted) return;
- 
-      if (locations.isNotEmpty) {
-        final location = locations.first;
-       
+
+      if (result != null) {
         setState(() {
-          _latController.text = location.latitude.toStringAsFixed(6);
-          _lngController.text = location.longitude.toStringAsFixed(6);
+          _latController.text = result.latitude.toStringAsFixed(6);
+          _lngController.text = result.longitude.toStringAsFixed(6);
           _locationAddress = address;
           _usingCustomAddress = true;
           _isSearchingAddress = false;

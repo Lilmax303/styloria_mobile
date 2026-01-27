@@ -1,6 +1,6 @@
 // android/app/src/main/kotlin/com/example/styloria_mobile/MainActivity.kt
 
-package com.example.styloria_mobile
+package com.styloria.app
 
 import io.flutter.embedding.android.FlutterFragmentActivity
 

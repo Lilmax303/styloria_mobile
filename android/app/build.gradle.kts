@@ -27,7 +27,7 @@ val googleMapsApiKey: String = localProperties.getProperty("GOOGLE_MAPS_API_KEY"
     ?: ""
 
 android {
-    namespace = "com.example.styloria_mobile"
+    namespace = "com.styloria.app"
     compileSdk = 36
     ndkVersion = flutter.ndkVersion
 
@@ -50,7 +50,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.example.styloria_mobile"
+        applicationId = "com.styloria.app"
         minSdk = flutter.minSdkVersion
         targetSdk = 36
         versionCode = flutter.versionCode
