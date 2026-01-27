@@ -36,7 +36,7 @@ class _ProfilePictureScreenState extends State<ProfilePictureScreen> {
       _success = null;
     });
 
-    final result = await FilePicker.pickFiles(
+    final result = await FilePicker.platform.pickFiles(
       type: FileType.image,
       withData: true,
     );

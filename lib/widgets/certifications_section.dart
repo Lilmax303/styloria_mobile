@@ -210,7 +210,7 @@ class _CertificationsSectionState extends State<CertificationsSection> {
                       const SizedBox(height: 12),
                       OutlinedButton.icon(
                         onPressed: () async {
-                          final result = await FilePicker.pickFiles(
+                          final result = await FilePicker.platform.pickFiles(
                             type: FileType.custom,
                             allowedExtensions: ['pdf', 'jpg', 'jpeg', 'png'],
                             withData: true,
