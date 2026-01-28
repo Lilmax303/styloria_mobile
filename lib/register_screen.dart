@@ -176,7 +176,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
         if (country != null && country.isNotEmpty) {
           setState(() {
             _detectedCountry = country;
-            _detectedCity = city;
+            _detectedCity = city;  // Keep for reference/logging, but don't auto-fill
             _detectingLocation = false;
             _locationDetectionAttempted = true;
           });
@@ -186,10 +186,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
           // We need to set it programmatically
           _countryController.text = country;
           
-          // Try to auto-fill city too if available
-          if (city != null && city.isNotEmpty) {
-            _cityController.text = city;
-          }
 
           // Sync phone country code
           _syncPhoneCountryWithSelectedCountry();
@@ -505,6 +501,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             ],
                           ),
                           const SizedBox(height: 12),
+
+                          // Date of Birth Label
+                          Text(
+                            l10n.dateOfBirth,
+                            style: const TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                          const SizedBox(height: 4),
 
                           OutlinedButton(
                             onPressed: _pickDate,

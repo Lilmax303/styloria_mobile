@@ -59,6 +59,7 @@
   "resetPassword": "Reset Password",
   "newPassword": "New Password",
   "confirmPassword": "Confirm Password",
+  "dateOfBirth": "Date of Birth",
   "verificationCode": "Verification Code",
   "invalidEmail": "Please enter a valid email",
   "invalidCode": "Please enter a valid code",
