@@ -150,6 +150,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get confirmPassword => '비밀번호 확인';
 
   @override
+  String get dateOfBirth => 'Date of Birth';
+
+  @override
   String get verificationCode => 'Verification Code';
 
   @override

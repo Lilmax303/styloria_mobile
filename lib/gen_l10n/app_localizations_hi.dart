@@ -154,6 +154,9 @@ class AppLocalizationsHi extends AppLocalizations {
   String get confirmPassword => 'पासवर्ड की पुष्टि करें';
 
   @override
+  String get dateOfBirth => 'Date of Birth';
+
+  @override
   String get verificationCode => 'Verification Code';
 
   @override

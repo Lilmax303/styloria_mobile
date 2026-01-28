@@ -150,6 +150,9 @@ class AppLocalizationsJa extends AppLocalizations {
   String get confirmPassword => 'パスワード確認';
 
   @override
+  String get dateOfBirth => 'Date of Birth';
+
+  @override
   String get verificationCode => 'Verification Code';
 
   @override

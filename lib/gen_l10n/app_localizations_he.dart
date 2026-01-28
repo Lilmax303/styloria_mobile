@@ -150,6 +150,9 @@ class AppLocalizationsHe extends AppLocalizations {
   String get confirmPassword => 'אימות סיסמה';
 
   @override
+  String get dateOfBirth => 'Date of Birth';
+
+  @override
   String get verificationCode => 'Verification Code';
 
   @override

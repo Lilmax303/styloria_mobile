@@ -155,6 +155,9 @@ class AppLocalizationsRu extends AppLocalizations {
   String get confirmPassword => 'Подтвердите пароль';
 
   @override
+  String get dateOfBirth => 'Date of Birth';
+
+  @override
   String get verificationCode => 'Verification Code';
 
   @override

@@ -153,6 +153,9 @@ class AppLocalizationsUr extends AppLocalizations {
   String get confirmPassword => 'پاس ورڈ کی تصدیق';
 
   @override
+  String get dateOfBirth => 'Date of Birth';
+
+  @override
   String get verificationCode => 'Verification Code';
 
   @override

@@ -155,6 +155,9 @@ class AppLocalizationsSw extends AppLocalizations {
   String get confirmPassword => 'Thibitisha nenosiri';
 
   @override
+  String get dateOfBirth => 'Date of Birth';
+
+  @override
   String get verificationCode => 'Verification Code';
 
   @override

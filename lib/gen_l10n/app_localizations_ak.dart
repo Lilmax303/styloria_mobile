@@ -155,6 +155,9 @@ class AppLocalizationsAk extends AppLocalizations {
   String get confirmPassword => 'San kyerɛ password';
 
   @override
+  String get dateOfBirth => 'Date of Birth';
+
+  @override
   String get verificationCode => 'Verification Code';
 
   @override

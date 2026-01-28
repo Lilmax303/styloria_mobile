@@ -512,13 +512,24 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           OutlinedButton(
                             onPressed: _pickDate,
                             style: OutlinedButton.styleFrom(
-                              padding: const EdgeInsets.symmetric(vertical: 16),
+                              padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 12),
                             ),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Text(dateText),
-                                const Icon(Icons.calendar_today),
+                                Row(
+                                  children: [
+                                    Icon(Icons.cake_outlined, size: 20, color: cs.onSurfaceVariant),
+                                    const SizedBox(width: 8),
+                                    Text(
+                                      dateText,
+                                      style: TextStyle(
+                                        color: _selectedDate == null ? cs.onSurfaceVariant : cs.onSurface,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                Icon(Icons.calendar_today, size: 20, color: cs.primary),
                               ],
                             ),
                           ),
