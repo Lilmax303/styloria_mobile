@@ -1677,12 +1677,16 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
 
   Widget _buildEnhancedJobDetailsCard(BuildContext context) {
     final l10n = AppLocalizations.of(context);
-    
+  
     // Only show for providers with accepted+ jobs
     if (widget.role != 'provider') return const SizedBox.shrink();
-    
+  
     final status = _booking['status']?.toString() ?? '';
-    if (status != 'accepted' && status != 'in_progress' && status != 'completed') {
+  
+    // ✅ PRIVACY: Hide customer details after completion
+    if (status == 'completed') return const SizedBox.shrink();
+  
+    if (status != 'accepted' && status != 'in_progress') {
       return const SizedBox.shrink();
     }
     
@@ -2133,6 +2137,152 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
   }
 
 
+  /// Build location card with privacy protection for completed bookings
+  Widget _buildLocationCard(
+    BuildContext context,
+    String latStr,
+    String lngStr,
+    String locationAddress,
+    String status,
+  ) {
+    final l10n = AppLocalizations.of(context);
+    final cs = Theme.of(context).colorScheme;
+    final isCompleted = status == 'completed';
+    
+    return Card(
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Icon(
+                  isCompleted ? Icons.location_city : Icons.location_on,
+                  size: 20,
+                  color: cs.primary,
+                ),
+                const SizedBox(width: 8),
+                Text(
+                  l10n.location,
+                  style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                        fontWeight: FontWeight.w900,
+                      ),
+                ),
+                if (isCompleted) ...[
+                  const SizedBox(width: 8),
+                  Icon(Icons.lock, size: 14, color: Colors.grey.shade600),
+                ],
+              ],
+            ),
+            const SizedBox(height: 10),
+            
+            // ✅ PRIVACY: For completed bookings, show general area only
+            if (isCompleted) ...[
+              Container(
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  color: Colors.amber.shade50,
+                  borderRadius: BorderRadius.circular(8),
+                  border: Border.all(color: Colors.amber.shade200),
+                ),
+                child: Row(
+                  children: [
+                    Icon(Icons.info_outline, size: 18, color: Colors.amber.shade700),
+                    const SizedBox(width: 10),
+                    Expanded(
+                      child: Text(
+                        'For your safety, exact location details are hidden after service completion. Only general area is shown.',
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: Colors.amber.shade900,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 12),
+              
+              // Show only general area (city/region)
+              if (locationAddress.isNotEmpty)
+                _kv(context, 'General Area', _getGeneralArea(locationAddress))
+              else
+                _kv(context, 'General Area', 'Service completed'),
+              
+            ] else ...[
+              // ✅ ACTIVE SERVICE: Show full location details
+              _kv(context, l10n.latitude, latStr),
+              _kv(context, l10n.longitude, lngStr),
+              
+              const SizedBox(height: 12),
+              
+              if (_position != null)
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(14),
+                  child: SizedBox(
+                    height: 260,
+                    child: GoogleMap(
+                      initialCameraPosition: CameraPosition(
+                        target: _position!,
+                        zoom: 14,
+                      ),
+                      markers: {
+                        Marker(
+                          markerId: const MarkerId('booking'),
+                          position: _position!,
+                          infoWindow: InfoWindow(title: l10n.bookingLocation),
+                        ),
+                        if (_myPosition != null)
+                          Marker(
+                            markerId: const MarkerId('me'),
+                            position: _myPosition!,
+                            infoWindow: const InfoWindow(title: 'Me'),
+                          ),
+                        if (_otherPosition != null)
+                          Marker(
+                            markerId: const MarkerId('other'),
+                            position: _otherPosition!,
+                            infoWindow: const InfoWindow(title: 'Other'),
+                          ),
+                      },
+                      myLocationEnabled: false,
+                      zoomControlsEnabled: true,
+                    ),
+                  ),
+                )
+              else
+                Text(
+                  l10n.mapWillAppearWhenCoordinatesValid,
+                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                        color: cs.onSurfaceVariant,
+                      ),
+                ),
+            ],
+          ],
+        ),
+      ),
+    );
+  }
+  
+  /// Extract general area from full address (city/region only)
+  String _getGeneralArea(String fullAddress) {
+    if (fullAddress.isEmpty) return 'Completed service area';
+    
+    // Split by comma and take last 1-2 parts (city, country)
+    final parts = fullAddress.split(',').map((s) => s.trim()).toList();
+    
+    if (parts.length >= 2) {
+      // Return city and country only (e.g., "Accra, Ghana")
+      return '${parts[parts.length - 2]}, ${parts[parts.length - 1]}';
+    } else if (parts.length == 1) {
+      return parts[0];
+    }
+    
+    return 'Service area';
+  }
+
+
   Widget _portfolioGridCard(BuildContext context, List<dynamic> posts) {
     final l10n = AppLocalizations.of(context);
     return Card(
@@ -2532,11 +2682,18 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
                         l10n.distanceMiles(_distanceMilesValue!.toStringAsFixed(1)),
                         strong: true,
                       ),
-                    if (locationAddress.isNotEmpty)
+                    // ✅ PRIVACY: Hide full address after completion
+                    if (locationAddress.isNotEmpty && status != 'completed')
                       _kv(
                         context,
-                        'Location',  // or use l10n.locationLabel if you have it
+                        'Location',
                         locationAddress,
+                      )
+                    else if (locationAddress.isNotEmpty && status == 'completed')
+                      _kv(
+                        context,
+                        'Service Area',
+                        _getGeneralArea(locationAddress),
                       ),
                     // ✅ METADATA: Show when booking was requested
                     if (_booking['created_at'] != null && _booking['created_at'].toString().isNotEmpty)
@@ -2882,69 +3039,9 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
               ),
             ),
 
-            // Location card
+            // ✅ PRIVACY: Location card with completion protection
             if (latStr.isNotEmpty && lngStr.isNotEmpty)
-              Card(
-                child: Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        l10n.location,
-                        style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                              fontWeight: FontWeight.w900,
-                            ),
-                      ),
-                      const SizedBox(height: 10),
-                      _kv(context, l10n.latitude, latStr),
-                      _kv(context, l10n.longitude, lngStr),
-                      const SizedBox(height: 12),
-                      if (_position != null)
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(14),
-                          child: SizedBox(
-                            height: 260,
-                            child: GoogleMap(
-                              initialCameraPosition: CameraPosition(
-                                target: _position!,
-                                zoom: 14,
-                              ),
-                              markers: {
-                                Marker(
-                                  markerId: const MarkerId('booking'),
-                                  position: _position!,
-                                  infoWindow: InfoWindow(title: l10n.bookingLocation),
-                                ),
-                                if (_myPosition != null)
-                                  Marker(
-                                    markerId: const MarkerId('me'),
-                                    position: _myPosition!,
-                                    infoWindow: const InfoWindow(title: 'Me'),
-                                  ),
-                                if (_otherPosition != null)
-                                  Marker(
-                                    markerId: const MarkerId('other'),
-                                    position: _otherPosition!,
-                                    infoWindow: const InfoWindow(title: 'Other'),
-                                  ),
-                              },
-                              myLocationEnabled: false,
-                              zoomControlsEnabled: true,
-                            ),
-                          ),
-                        )
-                      else
-                        Text(
-                          l10n.mapWillAppearWhenCoordinatesValid,
-                          style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                                color: cs.onSurfaceVariant,
-                              ),
-                        ),
-                    ],
-                  ),
-                ),
-              ),
+              _buildLocationCard(context, latStr, lngStr, locationAddress, status),
           ],
         ),
       ),
