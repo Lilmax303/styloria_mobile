@@ -29,6 +29,8 @@ import 'bookings_screen.dart';
 import 'booking_form_screen.dart';
 import 'notifications_screen.dart';
 import 'my_reviews_screen.dart';
+import 'widgets/profile_card.dart';
+import 'utils/datetime_helper.dart';
 import 'account_screen.dart';
 import 'provider_kyc_screen.dart';
 import 'provider_check_service.dart';
@@ -1032,16 +1034,72 @@ class _HomeScreenState extends State<HomeScreen> {
   String? _profilePictureUrl;
   String? _userAddress;
   String? _firstName;
+  String? _tier; // Provider tier (Bronze, Silver, Gold, Platinum)
+  int? _completionPercent; // Profile completion percentage
 
   @override
   void initState() {
     super.initState();
-    _loadProfilePicture();
+    _loadUserData();
     _loadUnreadCount();
-    _loadUserAddress();
-    _loadFirstName();
     _checkAndSurfaceImportantNotifications();
+  }
 
+  // Combined data loading
+  Future<void> _loadUserData() async {
+    try {
+      final userData = await ApiClient.getCurrentUser();
+      if (!mounted || userData == null) return;
+
+      setState(() {
+        _firstName = (userData['first_name'] ?? '').toString().trim();
+        _profilePictureUrl = _resolveUrl(userData['profile_picture_url']?.toString());
+        _userAddress = userData['address']?.toString();
+      });
+
+      // Load provider-specific data if user is a provider
+      if (widget.role == 'provider') {
+        await _loadProviderData();
+      }
+    } catch (_) {}
+  }
+
+  Future<void> _loadProviderData() async {
+    try {
+      final provider = await ApiClient.getMyProviderProfile();
+      if (!mounted || provider == null) return;
+
+      setState(() {
+        _tier = provider['tier']?.toString();
+        _completionPercent = _calculateProfileCompletion(provider);
+      });
+    } catch (_) {}
+  }
+
+  int _calculateProfileCompletion(Map<String, dynamic> provider) {
+    int completed = 0;
+    int total = 8;
+
+    if ((provider['bio'] ?? '').toString().trim().isNotEmpty) completed++;
+    if ((provider['phone_number'] ?? '').toString().trim().isNotEmpty) completed++;
+    if ((provider['services'] as List?)?.isNotEmpty == true) completed++;
+    if ((provider['portfolio_posts'] as List?)?.isNotEmpty == true) completed++;
+    if ((provider['certifications'] as List?)?.isNotEmpty == true) completed++;
+
+    final hourlyRate = provider['hourly_rate'] as num?;
+    if (hourlyRate != null && hourlyRate > 0) completed++;
+
+    if (provider['profile_picture_url'] != null) completed++;
+    if (provider['verification_status'] == 'approved') completed++;
+
+    return ((completed / total) * 100).round();
+  }
+
+  String _resolveUrl(String? raw) {
+    if (raw == null || raw.isEmpty) return '';
+    if (raw.startsWith('http://') || raw.startsWith('https://')) return raw;
+    if (raw.startsWith('/')) return '${ApiClient.baseUrl}$raw';
+    return raw;
   }
 
   Future<void> _checkAndSurfaceImportantNotifications() async {
@@ -1090,35 +1148,7 @@ class _HomeScreenState extends State<HomeScreen> {
     } catch (_) {}
   }
 
-  Future<void> _loadUserAddress() async {
-    try {
-      final userData = await ApiClient.getCurrentUser();
-      if (!mounted || userData == null) return;
-      setState(() {
-        _userAddress = userData['address']?.toString();
-      });
-    } catch (_) {}
-  }
 
-  Future<void> _loadProfilePicture() async {
-    try {
-      final userData = await ApiClient.getCurrentUser();
-      if (!mounted || userData == null) return;
-      setState(() {
-        _profilePictureUrl = userData['profile_picture_url']?.toString();
-      });
-    } catch (_) {}
-  }
-
-  Future<void> _loadFirstName() async {
-    try {
-      final userData = await ApiClient.getCurrentUser();
-      if (!mounted || userData == null) return;
-
-      final first = (userData['first_name'] ?? '').toString().trim();
-      setState(() => _firstName = first);
-    } catch (_) {}
-  }
 
   Future<void> _loadUnreadCount() async {
     try {
@@ -1151,7 +1181,7 @@ class _HomeScreenState extends State<HomeScreen> {
               Container(
                 width: double.infinity,
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 24, vertical: 28),
+                    const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
                 decoration: const BoxDecoration(
                   gradient: LinearGradient(
                     colors: [kGradientStart, kGradientEnd],
@@ -1159,241 +1189,304 @@ class _HomeScreenState extends State<HomeScreen> {
                     end: Alignment.centerRight,
                   ),
                 ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          (_firstName != null && _firstName!.isNotEmpty)
-                              ? l10n.welcomeName(_firstName!)
-                              : l10n.welcome,
-                          style: const TextStyle(
-                            color: Colors.white,
-                            fontSize: 24,
-                            fontWeight: FontWeight.bold,
+                    // Welcome text (left side)
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            (_firstName != null && _firstName!.isNotEmpty)
+                                ? l10n.welcomeName(_firstName!)
+                                : l10n.welcome,
+                            style: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 24,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
+                          const SizedBox(height: 4),
+                          Text(
+                            l10n.loggedInAs(roleLabel),
+                            style: const TextStyle(
+                              color: Colors.white70,
+                              fontSize: 14,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+
+                    // Actions (right side) - ONLY dark mode + menu + logout
+                    Row(
+                      children: [
+                        IconButton(
+                          icon: Icon(
+                            isDark ? Icons.dark_mode : Icons.light_mode,
+                            color: Colors.white,
+                          ),
+                          tooltip: l10n.toggleThemeTooltip,
+                          onPressed: () => appState?.toggleTheme(),
                         ),
-                        Row(
-                          children: [
-                            GestureDetector(
-                              onTap: () {
-                                Navigator.of(context)
-                                    .push(
-                                      MaterialPageRoute(
-                                        builder: (_) =>
-                                            const ProfilePictureScreen(),
-                                      ),
-                                    )
-                                    .then((_) => _loadProfilePicture());
-                              },
-                              child: CircleAvatar(
-                                radius: 20,
-                                backgroundImage: _profilePictureUrl != null
-                                    ? NetworkImage(_profilePictureUrl!)
-                                    : null,
-                                child: _profilePictureUrl == null
-                                    ? const Icon(Icons.person,
-                                        size: 20, color: Colors.white)
-                                    : null,
-                              ),
-                            ),
-                            const SizedBox(width: 8),
-                            IconButton(
-                              icon: Icon(
-                                isDark ? Icons.dark_mode : Icons.light_mode,
-                                color: Colors.white,
-                              ),
-                              tooltip: l10n.toggleThemeTooltip,
-                              onPressed: () => appState?.toggleTheme(),
-                            ),
-                            PopupMenuButton<String>(
-                              iconColor: Colors.white,
-                              onSelected: (v) async {
-                                if (v == 'bookings') mainTabIndex.value = 1;
-                                if (v == 'notifications') mainTabIndex.value = (widget.role == 'provider' ? 3 : 2);
-                                if (v == 'referral') {
-                                  await Navigator.of(context).push(MaterialPageRoute(builder: (_) => const ReferralScreen()));
-                                }
-                                if (v == 'settings') {
-                                  await Navigator.of(context).push(MaterialPageRoute(builder: (_) => const AccountSettingsScreen()));
-                                }
-                                if (v == 'help') {
-                                  final uri = Uri.parse('mailto:support@styloria.app?subject=Styloria%20Help');
-                                  await launchUrl(uri, mode: LaunchMode.externalApplication);
-                                }
-                                if (v == 'wallet') {
-                                  await Navigator.of(context).push(MaterialPageRoute(builder: (_) => const ProviderWalletScreen()));
-                                }
-                                if (v == 'earnings') {
-                                  await Navigator.of(context).push(MaterialPageRoute(builder: (_) => const ProviderEarningsScreen()));
-                                }
-                                if (v == 'open_jobs') {
-                                  await Navigator.of(context).push(MaterialPageRoute(builder: (_) => const OpenJobsScreen()));
-                                }
-                              },
-                              itemBuilder: (_) => [
-                                const PopupMenuItem(value: 'bookings', child: Text('Bookings')),
-                                const PopupMenuItem(value: 'notifications', child: Text('Notifications')),
-                                const PopupMenuItem(value: 'referral', child: Text('Referral')),
-                                const PopupMenuItem(value: 'settings', child: Text('Settings')),
-                                const PopupMenuItem(value: 'help', child: Text('Help')),
-                                if (widget.role == 'provider') ...[
-                                  const PopupMenuDivider(),
-                                  const PopupMenuItem(value: 'wallet', child: Text('Wallet')),
-                                  const PopupMenuItem(value: 'earnings', child: Text('Earnings')),
-                                  const PopupMenuItem(value: 'open_jobs', child: Text('Open Jobs')),
-                                ],
-                              ],
-                            ),
-                            IconButton(
-                              icon:
-                                  const Icon(Icons.logout, color: Colors.white),
-                              onPressed: () async {
-                                await ApiClient.logout();
-                                if (!context.mounted) return;
-                                Navigator.of(context).pushAndRemoveUntil(
-                                  MaterialPageRoute(
-                                      builder: (_) => const LoginScreen()),
-                                  (route) => false,
-                                );
-                              },
-                            ),
+                        PopupMenuButton<String>(
+                          iconColor: Colors.white,
+                          onSelected: (v) async {
+                            if (v == 'bookings') mainTabIndex.value = 1;
+                            if (v == 'notifications') {
+                              mainTabIndex.value = (widget.role == 'provider' ? 3 : 2);
+                            }
+                            if (v == 'referral') {
+                              await Navigator.of(context).push(
+                                MaterialPageRoute(builder: (_) => const ReferralScreen()),
+                              );
+                            }
+                            if (v == 'settings') {
+                              await Navigator.of(context).push(
+                                MaterialPageRoute(builder: (_) => const AccountSettingsScreen()),
+                              );
+                            }
+                            if (v == 'help') {
+                              final uri = Uri.parse('mailto:support@styloria.app?subject=Styloria%20Help');
+                              await launchUrl(uri, mode: LaunchMode.externalApplication);
+                            }
+                            if (v == 'wallet') {
+                              await Navigator.of(context).push(
+                                MaterialPageRoute(builder: (_) => const ProviderWalletScreen()),
+                              );
+                            }
+                            if (v == 'earnings') {
+                              await Navigator.of(context).push(
+                                MaterialPageRoute(builder: (_) => const ProviderEarningsScreen()),
+                              );
+                            }
+                            if (v == 'open_jobs') {
+                              await Navigator.of(context).push(
+                                MaterialPageRoute(builder: (_) => const OpenJobsScreen()),
+                              );
+                            }
+                          },
+                          itemBuilder: (_) => [
+                            const PopupMenuItem(value: 'bookings', child: Text('Bookings')),
+                            const PopupMenuItem(value: 'notifications', child: Text('Notifications')),
+                            const PopupMenuItem(value: 'referral', child: Text('Referral')),
+                            const PopupMenuItem(value: 'settings', child: Text('Settings')),
+                            const PopupMenuItem(value: 'help', child: Text('Help')),
+                            if (widget.role == 'provider') ...[
+                              const PopupMenuDivider(),
+                              const PopupMenuItem(value: 'wallet', child: Text('Wallet')),
+                              const PopupMenuItem(value: 'earnings', child: Text('Earnings')),
+                              const PopupMenuItem(value: 'open_jobs', child: Text('Open Jobs')),
+                            ],
                           ],
+                        ),
+                        IconButton(
+                          icon: const Icon(Icons.logout, color: Colors.white),
+                          onPressed: () async {
+                            await ApiClient.logout();
+                            if (!context.mounted) return;
+                            Navigator.of(context).pushAndRemoveUntil(
+                              MaterialPageRoute(builder: (_) => const LoginScreen()),
+                              (route) => false,
+                            );
+                          },
                         ),
                       ],
                     ),
-                    const SizedBox(height: 6),
-                    Text(
-                      l10n.loggedInAs(roleLabel),
-                      style:
-                          const TextStyle(color: Colors.white70, fontSize: 14),
-                    ),
-                    const SizedBox(height: 8),
-                    if (_userAddress != null && _userAddress!.isNotEmpty)
-                      Text(
-                        l10n.locationWithValue(_userAddress!),
-                        style: const TextStyle(
-                            color: Colors.white70, fontSize: 13),
-                      )
-                    else
-                      Text(
-                        l10n.homeTagline,
-                        style: const TextStyle(color: Colors.white70, fontSize: 13),
-                      ),
                   ],
                 ),
               ),
+
+              // ==========================================
+              // SCROLLABLE CONTENT
+              // ==========================================
               Expanded(
                 child: SingleChildScrollView(
-                  padding: const EdgeInsets.all(16.0),
+                  padding: const EdgeInsets.only(top: 8, bottom: 16),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
+                      // ==========================================
+                      // PROFILE CARD HERO (NEW!)
+                      // ==========================================
+                      ProfileCard(
+                        profilePictureUrl: _profilePictureUrl,
+                        userName: _firstName ?? 'User',
+                        userRole: widget.role == 'provider' ? 'Provider' : 'Customer',
+                        tier: _tier,
+                        completionPercent: _completionPercent,
+                        onViewProfile: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(builder: (_) => const ProfileScreen()),
+                          );
+                        },
+                      ),
+
+                      // Location info (if available)
+                      if (_userAddress != null && _userAddress!.isNotEmpty)
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+                          child: Container(
+                            padding: const EdgeInsets.all(12),
+                            decoration: BoxDecoration(
+                              color: Theme.of(context).colorScheme.surfaceContainerHighest,
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                            child: Row(
+                              children: [
+                                Icon(
+                                  Icons.location_on,
+                                  size: 16,
+                                  color: Theme.of(context).colorScheme.primary,
+                                ),
+                                const SizedBox(width: 8),
+                                Expanded(
+                                  child: Text(
+                                    _userAddress!,
+                                    style: Theme.of(context).textTheme.bodySmall,
+                                    maxLines: 1,
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+
+                      const SizedBox(height: 16),
+
+                      // Provider-specific actions
                       if (widget.role == 'provider') ...[
-                        ElevatedButton(
-                          onPressed: () {
-                            Navigator.of(context).push(
-                              MaterialPageRoute(
-                                builder: (_) => const ProviderProfileScreen(),
-                              ),
-                            );
-                          },
-                          child: Text(l10n.manageProviderProfile),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 16),
+                          child: ElevatedButton(
+                            onPressed: () {
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                  builder: (_) => const ProviderProfileScreen(),
+                                ),
+                              );
+                            },
+                            child: Text(l10n.manageProviderProfile),
+                          ),
                         ),
                         const SizedBox(height: 12),
-                        ElevatedButton(
-                          onPressed: () {
-                            Navigator.of(context).push(
-                              MaterialPageRoute(
-                                builder: (_) => const OpenJobsScreen(),
-                              ),
-                            );
-                          },
-                          child: Text(l10n.browseOpenJobs),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 16),
+                          child: ElevatedButton(
+                            onPressed: () {
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                  builder: (_) => const OpenJobsScreen(),
+                                ),
+                              );
+                            },
+                            child: Text(l10n.browseOpenJobs),
+                          ),
                         ),
                         const SizedBox(height: 12),
-                        ElevatedButton(
-                          onPressed: () {
-                            Navigator.of(context).push(
-                              MaterialPageRoute(
-                                builder: (_) => const ProviderWalletScreen(),
-                              ),
-                            );
-                          },
-                          child: Text(l10n.walletTitle),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 16),
+                          child: ElevatedButton(
+                            onPressed: () {
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                  builder: (_) => const ProviderWalletScreen(),
+                                ),
+                              );
+                            },
+                            child: Text(l10n.walletTitle),
+                          ),
                         ),
                         const SizedBox(height: 12),
                       ],
-                      Center(
-                        child: Text(
-                          l10n.quickActions,
-                          style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.blue.shade700,
+
+                      // Quick Actions Section
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 16),
+                        child: Center(
+                          child: Text(
+                            l10n.quickActions,
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.blue.shade700,
+                            ),
+                            textAlign: TextAlign.center,
                           ),
-                          textAlign: TextAlign.center,
                         ),
                       ),
                       const SizedBox(height: 12),
-                      ElevatedButton(
-                        onPressed: () {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (_) => const BookingFormScreen(),
-                            ),
-                          );
-                        },
-                        child: Text(l10n.newBooking),
-                      ),
-                      const SizedBox(height: 12),
-                      ElevatedButton(
-                        onPressed: () {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (_) => const MyReviewsScreen(),
-                            ),
-                          );
-                        },
-                        child: Text(l10n.myReviewsTitle),
+
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 16),
+                        child: ElevatedButton(
+                          onPressed: () {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (_) => const BookingFormScreen(),
+                              ),
+                            );
+                          },
+                          child: Text(l10n.newBooking),
+                        ),
                       ),
                       const SizedBox(height: 12),
 
-                      // ✅ NEW: "My Reputation" button - only for user/customer accounts
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 16),
+                        child: ElevatedButton(
+                          onPressed: () {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (_) => const MyReviewsScreen(),
+                              ),
+                            );
+                          },
+                          child: Text(l10n.myReviewsTitle),
+                        ),
+                      ),
+                      const SizedBox(height: 12),
+
+                      // My Reputation (users only)
                       if (widget.role != 'provider') ...[
-                        ElevatedButton.icon(
-                          onPressed: () {
-                            Navigator.of(context).push(
-                              MaterialPageRoute(
-                                builder: (_) => const MyReputationScreen(),
-                              ),
-                            );
-                          },
-                          icon: const Icon(Icons.star_outline),
-                          label: const Text('My Reputation'),
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.blue.shade600,
-                            foregroundColor: Colors.white,
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 16),
+                          child: ElevatedButton.icon(
+                            onPressed: () {
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                  builder: (_) => const MyReputationScreen(),
+                                ),
+                              );
+                            },
+                            icon: const Icon(Icons.star_outline),
+                            label: const Text('My Reputation'),
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.blue.shade600,
+                              foregroundColor: Colors.white,
+                            ),
                           ),
                         ),
                         const SizedBox(height: 12),
                       ],
 
-                      ElevatedButton(
-                        onPressed: () async {
-                          await Navigator.of(context).push(
-                            MaterialPageRoute(
-                                builder: (_) => const NotificationsScreen()),
-                          );
-                          if (!mounted) return;
-                          _loadUnreadCount();
-                        },
-                        child: Text(
-                          _unreadCount > 0
-                              ? l10n.notificationsWithUnread(_unreadCount)
-                              : l10n.navNotifications,
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 16),
+                        child: ElevatedButton(
+                          onPressed: () async {
+                            await Navigator.of(context).push(
+                              MaterialPageRoute(builder: (_) => const NotificationsScreen()),
+                            );
+                            if (!mounted) return;
+                            _loadUnreadCount();
+                          },
+                          child: Text(
+                            _unreadCount > 0
+                                ? l10n.notificationsWithUnread(_unreadCount)
+                                : l10n.navNotifications,
+                          ),
                         ),
                       ),
                     ],

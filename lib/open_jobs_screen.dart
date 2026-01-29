@@ -8,6 +8,7 @@ import 'package:styloria_mobile/gen_l10n/app_localizations.dart';
 
 import 'api_client.dart';
 import 'currency_helper.dart';
+import 'utils/datetime_helper.dart';
 
 class OpenJobsScreen extends StatefulWidget {
   const OpenJobsScreen({super.key});
@@ -830,18 +831,10 @@ Widget _buildUnavailablePrompt() {
                                 final requesterName = job['requester_first_name']?.toString() ?? '';
                                 final requesterAddress = job['requester_address']?.toString() ?? '';
 
-                                // Simple ISO date/time parsing
-                                String dateStr = '';
-                                String timeStr = '';
-                                if (appointmentTime.isNotEmpty) {
-                                  try {
-                                    final dateTime = DateTime.parse(appointmentTime).toLocal();
-                                    dateStr = "${dateTime.month}/${dateTime.day}/${dateTime.year}";
-                                    timeStr = "${dateTime.hour.toString().padLeft(2, '0')}:${dateTime.minute.toString().padLeft(2, '0')}";
-                                  } catch (e) {
-                                    dateStr = appointmentTime;
-                                  }
-                                }
+                                // ✅ IMPROVED: Use DateTimeHelper for timezone-aware display
+                                final dateStr = DateTimeHelper.formatDateOnly(appointmentTime);
+                                final timeStr = DateTimeHelper.formatTimeOnly(appointmentTime);
+                                final isToday = DateTimeHelper.isToday(appointmentTime);
 
                                 return Card(
                                   margin: const EdgeInsets.symmetric(
@@ -960,11 +953,31 @@ Widget _buildUnavailablePrompt() {
                                             style: const TextStyle(color: Colors.grey),
                                           ),
 
-                                        if (dateStr.isNotEmpty || timeStr.isNotEmpty)
-                                          Text(() {
-                                            final timePart = timeStr.isNotEmpty ? l10n.atTime(timeStr) : '';
-                                            return l10n.whenLine(dateStr, timePart);
-                                          }()),
+                                        // ✅ IMPROVED: Better time display with TODAY indicator
+                                        if (dateStr.isNotEmpty || timeStr.isNotEmpty) ...[
+                                          Row(
+                                            children: [
+                                              Icon(
+                                                isToday ? Icons.today : Icons.calendar_today,
+                                                size: 14,
+                                                color: isToday ? Colors.orange : Colors.grey[600],
+                                              ),
+                                              const SizedBox(width: 6),
+                                              Text(
+                                                timeStr.isNotEmpty
+                                                    ? (isToday 
+                                                        ? 'Today at $timeStr' 
+                                                        : '$dateStr at $timeStr')
+                                                    : dateStr,
+                                                style: TextStyle(
+                                                  fontWeight: isToday ? FontWeight.w600 : FontWeight.normal,
+                                                  color: isToday ? Colors.orange : null,
+                                                  fontSize: 13,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ],
                                         Text(l10n.priceLine(_formatPrice(offeredPrice))),
                                         const SizedBox(height: 12),
                                         Align(

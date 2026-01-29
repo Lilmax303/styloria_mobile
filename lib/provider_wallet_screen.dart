@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'api_client.dart';
 import 'provider_payout_settings_screen.dart';
 import 'package:styloria_mobile/gen_l10n/app_localizations.dart';
+import 'utils/datetime_helper.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'africa_countries.dart';
 
@@ -813,12 +814,10 @@ class _ProviderWalletScreenState extends State<ProviderWalletScreen> {
         statusColor = Colors.grey;
     }
 
-    // Format date
-    String formattedDate = when;
-    try {
-      final dt = DateTime.parse(when);
-      formattedDate = '${dt.day}/${dt.month}/${dt.year} ${dt.hour}:${dt.minute.toString().padLeft(2, '0')}';
-    } catch (_) {}
+    // ✅ IMPROVED: Format date with timezone awareness
+    String formattedDate = when.isNotEmpty
+        ? DateTimeHelper.formatMetadataTime(when)
+        : '';
 
     return Card(
       margin: const EdgeInsets.symmetric(vertical: 4),
@@ -867,6 +866,13 @@ class _ProviderWalletScreenState extends State<ProviderWalletScreen> {
             const SizedBox(height: 2),
             Row(
               children: [
+                // ✅ IMPROVED: Add clock icon
+                Icon(
+                  Icons.access_time,
+                  size: 11,
+                  color: Colors.grey.shade600,
+                ),
+                const SizedBox(width: 4),
                 Text(
                   formattedDate,
                   style: TextStyle(fontSize: 11, color: Colors.grey.shade600),

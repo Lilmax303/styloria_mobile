@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'api_client.dart';
 import 'package:styloria_mobile/gen_l10n/app_localizations.dart';
+import 'utils/datetime_helper.dart';
 import 'africa_countries.dart';
 import 'currency_helper.dart';
 import 'package:country_picker/country_picker.dart';
@@ -1052,6 +1053,57 @@ class _ProviderPayoutSettingsScreenState extends State<ProviderPayoutSettingsScr
             value: _instantEnabled,
             onChanged: (v) => setState(() => _instantEnabled = v),
           ),
+
+          // ✅ NEW: Next Scheduled Payout Display
+          if (_nextScheduledPayout != null && _nextScheduledPayout!.isNotEmpty) ...[
+            const SizedBox(height: 12),
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.blue.shade50,
+                borderRadius: BorderRadius.circular(8),
+                border: Border.all(color: Colors.blue.shade200),
+              ),
+              child: Row(
+                children: [
+                  Icon(Icons.schedule, color: Colors.blue.shade700, size: 20),
+                  const SizedBox(width: 10),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Next Scheduled Payout',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w600,
+                            color: Colors.blue.shade800,
+                            fontSize: 12,
+                          ),
+                        ),
+                        const SizedBox(height: 4),
+                        Text(
+                          DateTimeHelper.formatDetailedDateTime(_nextScheduledPayout!),
+                          style: TextStyle(
+                            color: Colors.blue.shade700,
+                            fontSize: 13,
+                          ),
+                        ),
+                        const SizedBox(height: 2),
+                        Text(
+                          'Your local time (${DateTimeHelper.getTimezoneAbbreviation()})',
+                          style: TextStyle(
+                            fontSize: 10,
+                            color: Colors.blue.shade600,
+                            fontStyle: FontStyle.italic,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
 
           if (_instantEnabled) ...[
             const SizedBox(height: 8),

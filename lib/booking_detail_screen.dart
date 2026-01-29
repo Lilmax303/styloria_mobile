@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_stripe/flutter_stripe.dart' as stripe;
 import 'package:flutterwave_standard/flutterwave.dart';
 import 'package:styloria_mobile/gen_l10n/app_localizations.dart';
+import 'utils/datetime_helper.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -2226,7 +2227,11 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
     final serviceType = booking['service_type']?.toString() ?? na;
     final estimatedPrice = booking['estimated_price']?.toString() ?? na;
     final offeredPrice = booking['offered_price']?.toString() ?? na;
+
     final appointmentTime = booking['appointment_time']?.toString() ?? '';
+    final appointmentDisplay = DateTimeHelper.formatAppointmentTime(appointmentTime);
+    final isToday = DateTimeHelper.isToday(appointmentTime);
+    final isPast = DateTimeHelper.isPast(appointmentTime);
 
     final acceptedAt = booking['accepted_at']?.toString();
     final cancelledAt = booking['cancelled_at']?.toString();
@@ -2414,12 +2419,108 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
                       ),
                     ],
                     const SizedBox(height: 14),
-                    if (dateStr.isNotEmpty || timeStr.isNotEmpty)
-                      _kv(
-                        context,
-                        l10n.whenLabel,
-                        '$dateStr ${timeStr.isNotEmpty ? l10n.atTime(timeStr) : ''}',
+                    // ✅ IMPROVED: Appointment time with timezone awareness
+                    if (appointmentTime.isNotEmpty) ...[
+                      Container(
+                        padding: const EdgeInsets.all(12),
+                        decoration: BoxDecoration(
+                          color: DateTimeHelper.isToday(appointmentTime)
+                              ? Colors.orange.withOpacity(0.1)
+                              : (DateTimeHelper.isPast(appointmentTime) 
+                                  ? Colors.grey.withOpacity(0.1) 
+                                  : cs.primaryContainer.withOpacity(0.2)),
+                          borderRadius: BorderRadius.circular(12),
+                          border: Border.all(
+                            color: DateTimeHelper.isToday(appointmentTime)
+                                ? Colors.orange
+                                : (DateTimeHelper.isPast(appointmentTime) 
+                                    ? Colors.grey 
+                                    : cs.primary),
+                            width: 2,
+                          ),
+                        ),
+                        child: Row(
+                          children: [
+                            Icon(
+                              DateTimeHelper.isToday(appointmentTime) 
+                                  ? Icons.today 
+                                  : Icons.calendar_today,
+                              color: DateTimeHelper.isToday(appointmentTime)
+                                  ? Colors.orange
+                                  : (DateTimeHelper.isPast(appointmentTime) 
+                                      ? Colors.grey 
+                                      : cs.primary),
+                              size: 20,
+                            ),
+                            const SizedBox(width: 12),
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    'Service Appointment',
+                                    style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                                      color: cs.onSurfaceVariant,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                  ),
+                                  const SizedBox(height: 4),
+                                  Text(
+                                    DateTimeHelper.formatAppointmentTime(appointmentTime),
+                                    style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                                      fontWeight: FontWeight.w900,
+                                      color: DateTimeHelper.isToday(appointmentTime) 
+                                          ? Colors.orange 
+                                          : cs.onSurface,
+                                    ),
+                                  ),
+                                  const SizedBox(height: 2),
+                                  Row(
+                                    children: [
+                                      Icon(
+                                        Icons.access_time,
+                                        size: 12,
+                                        color: cs.onSurfaceVariant.withOpacity(0.6),
+                                      ),
+                                      const SizedBox(width: 4),
+                                      Text(
+                                        'Your local time (${DateTimeHelper.getTimezoneAbbreviation()})',
+                                        style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                                          fontSize: 10,
+                                          color: cs.onSurfaceVariant.withOpacity(0.6),
+                                          fontStyle: FontStyle.italic,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  if (DateTimeHelper.isToday(appointmentTime))
+                                    Padding(
+                                      padding: const EdgeInsets.only(top: 4),
+                                      child: Container(
+                                        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                                        decoration: BoxDecoration(
+                                          color: Colors.orange,
+                                          borderRadius: BorderRadius.circular(12),
+                                        ),
+                                        child: const Text(
+                                          'TODAY',
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 10,
+                                            fontWeight: FontWeight.w900,
+                                            letterSpacing: 0.5,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
+                      const SizedBox(height: 14),
+                    ],
                     if (userName.isNotEmpty) _kv(context, l10n.userLabel, userName),
                     if (providerName.isNotEmpty) _kv(context, l10n.providerLabel, providerName),
                     _kv(context, l10n.estimatedPriceLabel, estimatedPrice),
@@ -2437,8 +2538,29 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
                         'Location',  // or use l10n.locationLabel if you have it
                         locationAddress,
                       ),
-                    if (acceptedAt != null) _kv(context, l10n.acceptedAtLabel, acceptedAt),
-                    if (cancelledAt != null) _kv(context, l10n.cancelledAtLabel, cancelledAt),
+                    // ✅ METADATA: Show when booking was requested
+                    if (_booking['created_at'] != null && _booking['created_at'].toString().isNotEmpty)
+                      _kv(
+                        context,
+                        'Requested',
+                        DateTimeHelper.formatMetadataTime(_booking['created_at'].toString()),
+                      ),
+                    
+                    // ✅ METADATA: Accepted at
+                    if (acceptedAt != null)
+                      _kv(
+                        context,
+                        l10n.acceptedAtLabel,
+                        DateTimeHelper.formatMetadataTime(acceptedAt),
+                      ),
+
+                    // ✅ METADATA: Cancelled at
+                    if (cancelledAt != null)
+                      _kv(
+                        context,
+                        l10n.cancelledAtLabel,
+                        DateTimeHelper.formatMetadataTime(cancelledAt),
+                      ),
                     if (cancelledBy != null) _kv(context, l10n.cancelledByLabel, cancelledBy),
                     if (penaltyApplied && penaltyAmount != null)
                       Padding(
@@ -2455,6 +2577,30 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
                     _kv(context, l10n.providerConfirmedLabel, providerConfirmed ? l10n.yesLower : l10n.noLower),
                     _kv(context, l10n.payoutReleasedLabel, payoutReleased ? l10n.yesLower : l10n.noLower),
                     const SizedBox(height: 8),
+                    // ✅ TIMEZONE EXPLANATION
+                    Container(
+                      padding: const EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        color: cs.surfaceContainerHighest,
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: Row(
+                        children: [
+                          Icon(Icons.info_outline, size: 14, color: cs.primary),
+                          const SizedBox(width: 8),
+                          Expanded(
+                            child: Text(
+                              'All times shown in your local timezone (${DateTimeHelper.getTimezoneAbbreviation()})',
+                              style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                                fontSize: 11,
+                                color: cs.onSurfaceVariant,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(height: 12),
                     Row(
                       children: [
                         Expanded(

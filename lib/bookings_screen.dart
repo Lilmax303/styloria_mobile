@@ -11,6 +11,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'api_client.dart';
 import 'app_tab_state.dart';
 import 'booking_detail_screen.dart';
+import 'utils/datetime_helper.dart';
 import 'open_jobs_screen.dart';
 import 'provider_profile_screen.dart';
 import 'currency_helper.dart';
@@ -753,7 +754,12 @@ class _BookingsScreenState extends State<BookingsScreen> {
             final estimatedPriceRaw = booking['estimated_price'];
             final estimatedPriceText = estimatedPriceRaw?.toString() ?? '';
 
+            // ✅ USE TIMEZONE HELPER FOR APPOINTMENT TIME
             final appointmentTime = booking['appointment_time']?.toString() ?? '';
+            final dateStr = DateTimeHelper.formatDateOnly(appointmentTime);
+            final timeStr = DateTimeHelper.formatTimeOnly(appointmentTime);
+            final isToday = DateTimeHelper.isToday(appointmentTime);
+
             final serviceType = booking['service_type']?.toString() ?? 'N/A';
 
             final provider = booking['service_provider'] as Map<String, dynamic>?;
@@ -776,16 +782,6 @@ class _BookingsScreenState extends State<BookingsScreen> {
               }
             }
 
-            String dateStr = '';
-            String timeStr = '';
-            if (appointmentTime.isNotEmpty) {
-              final parts = appointmentTime.split('T');
-              if (parts.length >= 2) {
-                dateStr = parts[0];
-                final tPart = parts[1].split('Z')[0];
-                timeStr = tPart.length >= 5 ? tPart.substring(0, 5) : tPart;
-              }
-            }
 
             final isPaid = paymentStatus == 'paid';
             final isCancelled = status == 'cancelled';
@@ -867,11 +863,30 @@ class _BookingsScreenState extends State<BookingsScreen> {
                       ),
                       const SizedBox(height: 4),
                       Text(l10n.serviceLine(serviceType), style: const TextStyle(fontSize: 14)),
-                      if (dateStr.isNotEmpty || timeStr.isNotEmpty)
-                        Text(
-                          timeStr.isNotEmpty ? l10n.whenAt(dateStr, timeStr) : l10n.whenOn(dateStr),
-                          style: const TextStyle(fontSize: 13),
+
+                      // ✅ IMPROVED TIME DISPLAY WITH TIMEZONE
+                      if (dateStr.isNotEmpty || timeStr.isNotEmpty) ...[
+                        Row(
+                          children: [
+                            Icon(
+                              isToday ? Icons.today : Icons.calendar_today,
+                              size: 14,
+                              color: isToday ? Colors.orange : Colors.grey[600],
+                            ),
+                            const SizedBox(width: 6),
+                            Text(
+                              timeStr.isNotEmpty 
+                                  ? (isToday ? 'Today at $timeStr' : '$dateStr at $timeStr')
+                                  : dateStr,
+                              style: TextStyle(
+                                fontSize: 13,
+                                fontWeight: isToday ? FontWeight.w600 : FontWeight.normal,
+                                color: isToday ? Colors.orange : null,
+                              ),
+                            ),
+                          ],
                         ),
+                      ],
                       if (counterpart.isNotEmpty)
                         Text(
                           widget.role == 'user' ? l10n.providerLine(counterpart) : l10n.userLine(counterpart),

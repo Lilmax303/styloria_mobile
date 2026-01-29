@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'api_client.dart';
 import 'package:styloria_mobile/gen_l10n/app_localizations.dart';
+import 'utils/datetime_helper.dart';
 
 class ChatScreen extends StatefulWidget {
   final int serviceRequestId;
@@ -173,7 +174,6 @@ class _ChatScreenState extends State<ChatScreen> {
                                   const SizedBox(height: 2),
                                   Container(
                                     decoration: BoxDecoration(
-                                      // 0.08 * 255 ≈ 20
                                       color: Theme.of(context)
                                           .colorScheme
                                           .primary
@@ -184,8 +184,11 @@ class _ChatScreenState extends State<ChatScreen> {
                                     child: Text(content),
                                   ),
                                   const SizedBox(height: 2),
+                                  // ✅ IMPROVED: Timezone-aware timestamp
                                   Text(
-                                    createdAt,
+                                    createdAt.isNotEmpty
+                                        ? DateTimeHelper.formatMetadataTime(createdAt)
+                                        : '',
                                     style: TextStyle(
                                       fontSize: 10,
                                       color: timeColor,
