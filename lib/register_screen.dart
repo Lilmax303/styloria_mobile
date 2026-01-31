@@ -186,6 +186,16 @@ class _RegisterScreenState extends State<RegisterScreen> {
           // We need to set it programmatically
           _countryController.text = country;
           
+          // ✅ ULTRA HACK: Force CountryStateCityPicker to rebuild
+          // The widget needs a frame to process the controller change
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            if (mounted) {
+              setState(() {
+                // This empty setState forces the CountryStateCityPicker 
+                // to rebuild and recognize the new country value
+              });
+            }
+          });
 
           // Sync phone country code
           _syncPhoneCountryWithSelectedCountry();
@@ -635,15 +645,127 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               ),
                             ),
 
-                          CountryStateCityPicker(
-                            country: _countryController,
-                            state: _stateController,
-                            city: _cityController,
-                            dialogColor: cs.surface,
-                            textFieldDecoration: const InputDecoration(
-                              border: OutlineInputBorder(),
-                              suffixIcon: Icon(Icons.arrow_drop_down),
-                            ),
+                          // ✅ COUNTRY PICKER with "Other" support
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
+                            children: [
+                              CountryStateCityPicker(
+                                country: _countryController,
+                                state: _stateController,
+                                city: _cityController,
+                                dialogColor: cs.surface,
+                                textFieldDecoration: const InputDecoration(
+                                  border: OutlineInputBorder(),
+                                  suffixIcon: Icon(Icons.arrow_drop_down),
+                                ),
+                              ),
+                              
+                              // ✅ ULTRA HACK: "Other" helper buttons
+                              const SizedBox(height: 8),
+                              Row(
+                                children: [
+                                  // State "Other" button
+                                  Expanded(
+                                    child: OutlinedButton.icon(
+                                      onPressed: _countryController.text.isEmpty
+                                          ? null
+                                          : () {
+                                              setState(() {
+                                                _stateController.text = 'Other';
+                                              });
+                                            },
+                                      icon: const Icon(Icons.location_city, size: 16),
+                                      label: Text(
+                                        _stateController.text == 'Other'
+                                            ? '✓ State: Other'
+                                            : 'State not listed?',
+                                        style: TextStyle(fontSize: 11),
+                                      ),
+                                      style: OutlinedButton.styleFrom(
+                                        padding: const EdgeInsets.symmetric(
+                                          horizontal: 8,
+                                          vertical: 8,
+                                        ),
+                                        side: BorderSide(
+                                          color: _stateController.text == 'Other'
+                                              ? Colors.green
+                                              : cs.outline,
+                                        ),
+                                        foregroundColor: _stateController.text == 'Other'
+                                            ? Colors.green
+                                            : cs.onSurface,
+                                      ),
+                                    ),
+                                  ),
+                                  const SizedBox(width: 8),
+                                  // City "Other" button
+                                  Expanded(
+                                    child: OutlinedButton.icon(
+                                      onPressed: _countryController.text.isEmpty
+                                          ? null
+                                          : () {
+                                              setState(() {
+                                                _cityController.text = 'Other';
+                                              });
+                                            },
+                                      icon: const Icon(Icons.more_horiz, size: 16),
+                                      label: Text(
+                                        _cityController.text == 'Other'
+                                            ? '✓ City: Other'
+                                            : 'City not listed?',
+                                        style: TextStyle(fontSize: 11),
+                                      ),
+                                      style: OutlinedButton.styleFrom(
+                                        padding: const EdgeInsets.symmetric(
+                                          horizontal: 8,
+                                          vertical: 8,
+                                        ),
+                                        side: BorderSide(
+                                          color: _cityController.text == 'Other'
+                                              ? Colors.green
+                                              : cs.outline,
+                                        ),
+                                        foregroundColor: _cityController.text == 'Other'
+                                            ? Colors.green
+                                            : cs.onSurface,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              
+                              // Helper text
+                              if (_stateController.text == 'Other' || _cityController.text == 'Other')
+                                Padding(
+                                  padding: const EdgeInsets.only(top: 8),
+                                  child: Container(
+                                    padding: const EdgeInsets.all(8),
+                                    decoration: BoxDecoration(
+                                      color: Colors.green.shade50,
+                                      borderRadius: BorderRadius.circular(8),
+                                      border: Border.all(color: Colors.green.shade200),
+                                    ),
+                                    child: Row(
+                                      children: [
+                                        Icon(Icons.check_circle, 
+                                          color: Colors.green.shade700, 
+                                          size: 16,
+                                        ),
+                                        const SizedBox(width: 8),
+                                        Expanded(
+                                          child: Text(
+                                            'Location marked as "Other" - you can proceed with registration',
+                                            style: TextStyle(
+                                              color: Colors.green.shade700,
+                                              fontSize: 11,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                            ],
                           ),
                           const SizedBox(height: 12),
 
