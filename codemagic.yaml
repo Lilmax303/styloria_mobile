@@ -19,7 +19,7 @@ workflows:
       cocoapods: default
       vars:
         BUNDLE_ID: "com.styloria.app"
-        APP_STORE_APP_ID: "YOUR_APP_ID_HERE"  # Get from App Store Connect
+        APP_STORE_APP_ID: "6758583968"  # Get from App Store Connect
         STRIPE_PUBLISHABLE_KEY: ${STRIPE_PUBLISHABLE_KEY}
         GOOGLE_MAPS_API_KEY: ${GOOGLE_MAPS_API_KEY}
     
