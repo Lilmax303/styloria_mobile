@@ -36,7 +36,9 @@ workflows:
       
       - name: Set up iOS Google Maps API Key
         script: |
-          sed -i '' "s/GOOGLE_MAPS_API_KEY_PLACEHOLDER/$GOOGLE_MAPS_API_KEY/g" ios/Runner/AppDelegate.swift
+          if [ -f "ios/Runner/AppDelegate.swift" ]; then
+            sed -i '' "s/GOOGLE_MAPS_API_KEY_PLACEHOLDER/$GOOGLE_MAPS_API_KEY/g" ios/Runner/AppDelegate.swift || true
+          fi
       
       - name: Get Flutter packages
         script: |
@@ -46,26 +48,17 @@ workflows:
         script: |
           cd ios && pod install
       
-      - name: Set iOS build version
-        script: |
-          #!/bin/sh
-          set -e
-          LATEST_BUILD_NUMBER=$(app-store-connect get-latest-testflight-build-number "$APP_STORE_APP_ID" || echo "0")
-          NEW_BUILD_NUMBER=$((LATEST_BUILD_NUMBER + 1))
-          echo "Building version 1.0.0 with build number $NEW_BUILD_NUMBER"
-          echo "BUILD_NUMBER=$NEW_BUILD_NUMBER" >> $CM_ENV
       
       - name: Build iOS IPA
         script: |
           flutter build ipa --release \
             --build-name=1.0.0 \
-            --build-number=$BUILD_NUMBER \
+            --build-number=$PROJECT_BUILD_NUMBER \
             --export-options-plist=/Users/builder/export_options.plist
     
     artifacts:
       - build/ios/ipa/*.ipa
       - /tmp/xcodebuild_logs/*.log
-      - build/ios/ipa/ExportOptions.plist
     
     publishing:
       app_store_connect:
