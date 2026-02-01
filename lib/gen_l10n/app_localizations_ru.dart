@@ -2356,509 +2356,515 @@ class AppLocalizationsRu extends AppLocalizations {
       'Location access denied. You cannot be available for bookings without location enabled.';
 
   @override
-  String get signOut => 'Sign out';
+  String get signOut => 'Выйти';
 
   @override
-  String get kycIdFrontPhoto => 'ID Front Photo';
+  String get kycIdFrontPhoto => 'Фото лицевой стороны ID';
 
   @override
-  String get kycIdFrontMessage => 'Take a photo of the front of your ID card';
+  String get kycIdFrontMessage =>
+      'Сфотографируйте лицевую сторону вашего удостоверения личности';
 
   @override
-  String get kycIdBackPhoto => 'ID Back Photo';
+  String get kycIdBackPhoto => 'Фото обратной стороны ID';
 
   @override
-  String get kycIdBackMessage => 'Take a photo of the back of your ID card';
+  String get kycIdBackMessage =>
+      'Сфотографируйте обратную сторону вашего удостоверения личности';
 
   @override
-  String get kycCamera => 'Camera';
+  String get kycCamera => 'Камера';
 
   @override
-  String get kycGallery => 'Gallery';
+  String get kycGallery => 'Галерея';
 
   @override
-  String get kycChooseSource => 'Choose source:';
+  String get kycChooseSource => 'Выберите источник:';
 
   @override
-  String get kycFailedCaptureImage => 'Failed to capture image';
+  String get kycFailedCaptureImage => 'Не удалось сделать фото';
 
   @override
-  String get kycFailedCaptureSelfie => 'Failed to capture selfie';
+  String get kycFailedCaptureSelfie => 'Не удалось сделать селфи';
 
   @override
-  String get kycCameraNotAvailable => 'Camera not available';
+  String get kycCameraNotAvailable => 'Камера недоступна';
 
   @override
   String get kycCameraNotAvailableMessage =>
-      'Camera is not available. Would you like to select an image from your gallery instead?';
+      'Камера недоступна. Хотите выбрать изображение из галереи?';
 
   @override
-  String get kycUseGallery => 'Use Gallery';
+  String get kycUseGallery => 'Использовать галерею';
 
   @override
   String get kycDocumentsLocked =>
-      'Documents are locked while pending review. You cannot make changes until verification is complete.';
+      'Документы заблокированы на время проверки. Вы не можете вносить изменения до завершения верификации.';
 
   @override
   String get kycVerificationSubmittedSuccessfully =>
-      'Verification submitted successfully';
+      'Верификация успешно отправлена';
 
   @override
-  String get kycVerificationSubmitted => 'Verification Submitted';
+  String get kycVerificationSubmitted => 'Верификация отправлена';
 
   @override
   String get kycThankYouSubmitting =>
-      'Thank you for submitting your verification documents!';
+      'Спасибо за отправку документов для верификации!';
 
   @override
-  String get kycWhatHappensNext => 'What happens next:';
+  String get kycWhatHappensNext => 'Что дальше:';
 
   @override
   String get kycReviewTime =>
-      'Our team will review your documents within 24-48 hours';
+      'Наша команда проверит ваши документы в течение 24-48 часов';
 
   @override
   String get kycEmailNotification =>
-      'You\'ll receive an email once your verification is complete';
+      'Вы получите электронное письмо после завершения верификации';
 
   @override
   String get kycCheckEmail =>
-      'Check your email for updates on your verification status';
+      'Проверьте электронную почту для получения обновлений о статусе верификации';
 
   @override
   String get kycLocked =>
-      'Your documents are now locked and cannot be changed during review';
+      'Ваши документы заблокированы и не могут быть изменены во время проверки';
 
   @override
   String get kycRecommendSignOut =>
-      'We recommend signing out and checking back later for your verification result.';
+      'Мы рекомендуем выйти и проверить результат верификации позже.';
 
   @override
-  String get kycStaySignedIn => 'Stay Signed In';
+  String get kycStaySignedIn => 'Остаться в системе';
 
   @override
-  String get kycVerificationPending => 'Verification Pending';
+  String get kycVerificationPending => 'Верификация ожидает проверки';
 
   @override
-  String get kycVerificationPendingSubtitle =>
-      'Your documents are being reviewed';
+  String get kycVerificationPendingSubtitle => 'Ваши документы проверяются';
 
   @override
-  String get kycVerificationApproved => 'Verification Approved';
+  String get kycVerificationApproved => 'Верификация одобрена';
 
   @override
   String get kycVerificationApprovedSubtitle =>
-      'You can now access all provider features';
+      'Теперь вы можете получить доступ ко всем функциям поставщика';
 
   @override
-  String get kycVerificationRejected => 'Verification Rejected';
+  String get kycVerificationRejected => 'Верификация отклонена';
 
   @override
   String get kycVerificationRejectedSubtitle =>
-      'Please review the notes below and resubmit';
+      'Пожалуйста, ознакомьтесь с примечаниями ниже и отправьте снова';
 
   @override
-  String get kycVerificationRequired => 'Verification Required';
+  String get kycVerificationRequired => 'Требуется верификация';
 
   @override
   String get kycVerificationRequiredSubtitle =>
-      'Complete verification to access provider features';
+      'Завершите верификацию для доступа к функциям поставщика';
 
   @override
-  String get kycReviewNotes => 'Review Notes';
+  String get kycReviewNotes => 'Примечания к проверке';
 
   @override
-  String get kycIdCardFront => 'ID Card (Front)';
+  String get kycIdCardFront => 'Удостоверение личности (лицевая)';
 
   @override
-  String get kycIdCardBack => 'ID Card (Back)';
+  String get kycIdCardBack => 'Удостоверение личности (обратная)';
 
   @override
-  String get kycVerificationSelfie => 'Verification Selfie';
+  String get kycVerificationSelfie => 'Селфи для верификации';
 
   @override
-  String get kycButtonLocked => 'Locked';
+  String get kycButtonLocked => 'Заблокировано';
 
   @override
-  String get kycCaptureIdFront => 'Capture ID Front';
+  String get kycCaptureIdFront => 'Сфотографировать лицевую сторону ID';
 
   @override
-  String get kycCaptureIdBack => 'Capture ID Back';
+  String get kycCaptureIdBack => 'Сфотографировать обратную сторону ID';
 
   @override
-  String get kycDocumentsLockedButton => 'Documents Locked';
+  String get kycDocumentsLockedButton => 'Документы заблокированы';
 
   @override
-  String get kycTipsTitle => '📸 Tips for good photos:';
+  String get kycTipsTitle => '📸 Советы для хороших фотографий:';
 
   @override
-  String get kycTipGoodLighting => '• Use good lighting';
+  String get kycTipGoodLighting => '• Используйте хорошее освещение';
 
   @override
-  String get kycTipFlatCard => '• Place ID card on a flat surface';
+  String get kycTipFlatCard => '• Положите удостоверение на ровную поверхность';
 
   @override
-  String get kycTipReadableText => '• Make sure all text is readable';
+  String get kycTipReadableText => '• Убедитесь, что весь текст читаем';
 
   @override
-  String get kycTipFaceCamera => '• Face the camera directly for selfie';
+  String get kycTipFaceCamera => '• Смотрите прямо в камеру для селфи';
 
   @override
-  String get kycTipAvoidGlare => '• Avoid glare or shadows';
+  String get kycTipAvoidGlare => '• Избегайте бликов или теней';
 
   @override
-  String get kycFailedSubmitVerification => 'Failed to submit verification';
+  String get kycFailedSubmitVerification => 'Не удалось отправить верификацию';
 
   @override
-  String get paystackSetupTitle => 'Setup Payout Account';
+  String get paystackSetupTitle => 'Настройка счета для выплат';
 
   @override
-  String get paystackVerifying => 'Verifying...';
+  String get paystackVerifying => 'Проверка...';
 
   @override
   String get paystackVerificationSuccess =>
-      'Payout settings saved successfully!';
+      'Настройки выплат успешно сохранены!';
 
   @override
-  String get paystackVerificationFailed => 'Failed to save payout settings';
+  String get paystackVerificationFailed =>
+      'Не удалось сохранить настройки выплат';
 
   @override
-  String get paystackSelectBank => 'Select Your Bank';
+  String get paystackSelectBank => 'Выберите ваш банк';
 
   @override
-  String get paystackAccountNumber => 'Account Number';
+  String get paystackAccountNumber => 'Номер счета';
 
   @override
-  String get paystackVerifyAccount => 'Verify Account';
+  String get paystackVerifyAccount => 'Проверить счет';
 
   @override
-  String get paystackAccountVerified => 'Account Verified';
+  String get paystackAccountVerified => 'Счет подтвержден';
 
   @override
-  String get paystackSavePayoutAccount => 'Save Payout Account';
+  String get paystackSavePayoutAccount => 'Сохранить счет для выплат';
 
   @override
   String paystackNoBanksAvailable(Object country) {
-    return 'No banks available for $country';
+    return 'Нет доступных банков для $country';
   }
 
   @override
-  String get paystackRetry => 'Retry';
+  String get paystackRetry => 'Повторить';
 
   @override
   String get paystackPayoutsInfo =>
-      'Your earnings will be sent to this account. Payouts are processed within 24 hours.';
+      'Ваш заработок будет отправлен на этот счет. Выплаты обрабатываются в течение 24 часов.';
 
   @override
-  String get paystackConnected => 'Account: connected';
+  String get paystackConnected => 'Счет: подключен';
 
   @override
-  String get paystackNotConnected => 'Account: not connected';
+  String get paystackNotConnected => 'Счет: не подключен';
 
   @override
-  String get paystackDetailsSubmitted => 'Details submitted:';
+  String get paystackDetailsSubmitted => 'Отправлены данные:';
 
   @override
-  String get paystackPayoutsEnabled => 'Payouts enabled:';
+  String get paystackPayoutsEnabled => 'Выплаты включены:';
 
   @override
-  String get paystackYes => 'yes';
+  String get paystackYes => 'да';
 
   @override
-  String get paystackNo => 'no';
+  String get paystackNo => 'нет';
 
   @override
-  String get paystackFinishSetup => 'Finish Stripe Setup';
+  String get paystackFinishSetup => 'Завершить настройку Stripe';
 
   @override
-  String get paystackConnectStripe => 'Connect Stripe';
+  String get paystackConnectStripe => 'Подключить Stripe';
 
   @override
-  String get paystackOpenDashboard => 'Open Stripe Dashboard';
+  String get paystackOpenDashboard => 'Открыть панель Stripe';
 
   @override
   String get paystackMustFinishSetup =>
-      'You must finish Stripe setup before you can cash out.';
+      'Вы должны завершить настройку Stripe, прежде чем сможете вывести средства.';
 
   @override
-  String get paystackPayouts => 'Paystack Payouts';
+  String get paystackPayouts => 'Выплаты Paystack';
 
   @override
   String get paystackAddBankDetails =>
-      'Add your bank account details in Payout Settings to receive payouts via Paystack.';
+      'Добавьте данные вашего банковского счета в настройках выплат для получения выплат через Paystack.';
 
   @override
-  String get paystackOpenSettings => 'Open Payout Settings';
+  String get paystackOpenSettings => 'Открыть настройки выплат';
 
   @override
   String payoutPaystackForCountry(Object country) {
-    return 'Payouts via Paystack for $country';
+    return 'Выплаты через Paystack для $country';
   }
 
   @override
   String payoutFlutterwaveForCountry(Object country) {
-    return 'Payouts are processed via Flutterwave for $country';
+    return 'Выплаты обрабатываются через Flutterwave для $country';
   }
 
   @override
   String get payoutStripeConnect => 'Stripe Connect';
 
   @override
-  String get payoutBankAccountDetails => 'Bank Account Details';
+  String get payoutBankAccountDetails => 'Реквизиты банковского счета';
 
   @override
-  String get payoutAccountHolderName => 'Account Holder Name';
+  String get payoutAccountHolderName => 'Имя владельца счета';
 
   @override
   String get payoutAccountHolderNameHint =>
-      'Enter name as it appears on your bank account';
+      'Введите имя, как оно указано в вашем банковском счете';
 
   @override
-  String get payoutSelectBank => 'Select Bank *';
+  String get payoutSelectBank => 'Выбрать банк *';
 
   @override
-  String get payoutBankName => 'Bank Name *';
+  String get payoutBankName => 'Название банка *';
 
   @override
-  String get payoutBankNameManual => 'Bank Name (manual)';
+  String get payoutBankNameManual => 'Название банка (вручную)';
 
   @override
-  String get payoutBankNameHint => 'e.g., GCB Bank, Ecobank';
+  String get payoutBankNameHint => 'напр., GCB Bank, Ecobank';
 
   @override
-  String get payoutBankCode => 'Bank Code *';
+  String get payoutBankCode => 'Код банка *';
 
   @override
-  String get payoutBankCodeManual => 'Bank Code (manual)';
+  String get payoutBankCodeManual => 'Код банка (вручную)';
 
   @override
-  String get payoutBankCodeHint => 'Flutterwave bank code';
+  String get payoutBankCodeHint => 'Код банка Flutterwave';
 
   @override
-  String get payoutBankCodeHelper => 'Contact support if unsure of bank code';
+  String get payoutBankCodeHelper =>
+      'Свяжитесь со службой поддержки, если не уверены в коде банка';
 
   @override
-  String get payoutAccountNumber => 'Account Number *';
+  String get payoutAccountNumber => 'Номер счета *';
 
   @override
-  String get payoutAccountNumberHint => 'Enter your bank account number';
+  String get payoutAccountNumberHint =>
+      'Введите номер вашего банковского счета';
 
   @override
-  String get payoutMobileMoney => 'Mobile Money';
+  String get payoutMobileMoney => 'Мобильные деньги';
 
   @override
-  String get payoutFullName => 'Full Name (as registered) *';
+  String get payoutFullName => 'Полное имя (как зарегистрировано) *';
 
   @override
   String get payoutFullNameHint =>
-      'Name registered on your mobile money account';
+      'Имя, зарегистрированное в вашем аккаунте мобильных денег';
 
   @override
-  String get payoutMobileNetwork => 'Mobile Network *';
+  String get payoutMobileNetwork => 'Мобильная сеть *';
 
   @override
-  String get payoutSelectNetwork => 'Select your mobile network';
+  String get payoutSelectNetwork => 'Выберите вашу мобильную сеть';
 
   @override
-  String get payoutMobileNetworkHint => 'e.g., MTN, Vodafone, Airtel';
+  String get payoutMobileNetworkHint => 'напр., MTN, Vodafone, Airtel';
 
   @override
-  String get payoutCountryCode => 'Country Code';
+  String get payoutCountryCode => 'Код страны';
 
   @override
-  String get payoutMobileMoneyNumber => 'Mobile Money Number *';
+  String get payoutMobileMoneyNumber => 'Номер мобильных денег *';
 
   @override
-  String get payoutMobileMoneyNumberHint => 'e.g., 0541234567';
+  String get payoutMobileMoneyNumberHint => 'напр., 0541234567';
 
   @override
-  String get payoutZipCode => 'ZIP/Postal Code';
+  String get payoutZipCode => 'Почтовый индекс';
 
   @override
-  String get payoutZipCodeHint => 'If required by your network';
+  String get payoutZipCodeHint => 'Если требуется вашей сетью';
 
   @override
-  String get payoutMethod => 'Payout Method';
+  String get payoutMethod => 'Способ выплаты';
 
   @override
-  String get payoutBankTransfer => 'Bank Transfer';
+  String get payoutBankTransfer => 'Банковский перевод';
 
   @override
-  String get payoutCurrency => 'Currency';
+  String get payoutCurrency => 'Валюта';
 
   @override
   String payoutCurrencyLocked(Object country) {
-    return 'Locked to $country currency';
+    return 'Заблокировано на валюту $country';
   }
 
   @override
-  String get payoutBeneficiaryId => 'Beneficiary ID';
+  String get payoutBeneficiaryId => 'ID получателя';
 
   @override
-  String get payoutBeneficiaryIdHint => 'Optional - for recurring transfers';
+  String get payoutBeneficiaryIdHint =>
+      'Необязательно - для повторяющихся переводов';
 
   @override
-  String get payoutSchedule => 'Payout Schedule';
+  String get payoutSchedule => 'График выплат';
 
   @override
-  String get payoutFrequency => 'Payout Frequency';
+  String get payoutFrequency => 'Частота выплат';
 
   @override
-  String get payoutFrequencyWeekly => 'Weekly';
+  String get payoutFrequencyWeekly => 'Еженедельно';
 
   @override
-  String get payoutFrequencyMonthly => 'Monthly (1st of each month)';
+  String get payoutFrequencyMonthly => 'Ежемесячно (1-го числа каждого месяца)';
 
   @override
-  String get payoutDayHelper => 'Available: Tuesday, Thursday, Friday';
+  String get payoutDayHelper => 'Доступно: вторник, четверг, пятница';
 
   @override
   String get payoutMonthlyInfo =>
-      'Monthly payouts are processed on the 1st of each month.';
+      'Ежемесячные выплаты обрабатываются 1-го числа каждого месяца.';
 
   @override
-  String get payoutInstantCashout => 'Instant Cashout';
+  String get payoutInstantCashout => 'Мгновенный вывод';
 
   @override
   String get payoutInstantCashoutInfo =>
-      '• Unlimited instant cashouts available\n• 5% fee applies to instant cashouts\n• Scheduled payouts have no fees';
+      '• Доступны неограниченные мгновенные выводы\n• К мгновенным выводам применяется комиссия 5%\n• Запланированные выплаты без комиссии';
 
   @override
-  String get payoutNextScheduled => 'Next Scheduled Payout';
+  String get payoutNextScheduled => 'Следующая запланированная выплата';
 
   @override
   String payoutYourLocalTime(Object timezone) {
-    return 'Your local time ($timezone)';
+    return 'Ваше местное время ($timezone)';
   }
 
   @override
-  String get payoutAmountToCashOut => 'Amount to cash out';
+  String get payoutAmountToCashOut => 'Сумма для вывода';
 
   @override
   String payoutMinMaxRange(Object min, Object max) {
-    return 'Min: $min - Max: $max';
+    return 'Мин: $min - Макс: $max';
   }
 
   @override
-  String get payoutMaxButton => 'MAX';
+  String get payoutMaxButton => 'МАКС';
 
   @override
-  String get payoutCashOutNow => 'Cash Out (Instant)';
+  String get payoutCashOutNow => 'Вывести (Мгновенно)';
 
   @override
-  String get payoutAvailableBalance => 'Available Balance';
+  String get payoutAvailableBalance => 'Доступный баланс';
 
   @override
-  String get payoutPendingFunds => 'Pending';
+  String get payoutPendingFunds => 'Ожидает';
 
   @override
   String get payoutPendingInfo =>
-      'Pending funds will be available after the hold period';
+      'Ожидающие средства станут доступны после периода удержания';
 
   @override
-  String get payoutLifetimeEarnings => 'Lifetime Earnings';
+  String get payoutLifetimeEarnings => 'Общий заработок';
 
   @override
-  String get payoutTotalCashedOut => 'Total Cashed Out';
+  String get payoutTotalCashedOut => 'Всего выведено';
 
   @override
-  String get payoutUnlimitedCashouts => 'Unlimited';
+  String get payoutUnlimitedCashouts => 'Неограниченно';
 
   @override
-  String get mainHello => 'Hello';
+  String get mainHello => 'Здравствуйте';
 
   @override
-  String get mainViewProfile => 'View Profile';
+  String get mainViewProfile => 'Посмотреть профиль';
 
   @override
-  String get mainBookings => 'Bookings';
+  String get mainBookings => 'Бронирования';
 
   @override
-  String get mainNotifications => 'Notifications';
+  String get mainNotifications => 'Уведомления';
 
   @override
-  String get mainReferral => 'Referral';
+  String get mainReferral => 'Реферальная программа';
 
   @override
-  String get mainSettings => 'Settings';
+  String get mainSettings => 'Настройки';
 
   @override
-  String get mainHelp => 'Help';
+  String get mainHelp => 'Помощь';
 
   @override
-  String get mainWallet => 'Wallet';
+  String get mainWallet => 'Кошелек';
 
   @override
-  String get mainEarnings => 'Earnings';
+  String get mainEarnings => 'Заработок';
 
   @override
-  String get mainOpenJobs => 'Open Jobs';
+  String get mainOpenJobs => 'Открытые задания';
 
   @override
-  String get mainAssignedJobs => 'Assigned Jobs';
+  String get mainAssignedJobs => 'Назначенные задания';
 
   @override
-  String get mainMyReputation => 'My Reputation';
+  String get mainMyReputation => 'Моя репутация';
 
   @override
-  String get reputationTitle => 'My Reputation';
+  String get reputationTitle => 'Моя репутация';
 
   @override
-  String get reputationYourCustomerRating => 'Your Customer Rating';
+  String get reputationYourCustomerRating => 'Ваш рейтинг клиента';
 
   @override
   String reputationBasedOnReviews(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'reviews',
-      one: 'review',
+      other: 'отзывов',
+      few: 'отзывов',
+      one: 'отзыва',
     );
-    return 'Based on $count $_temp0';
+    return 'На основе $count $_temp0';
   }
 
   @override
-  String get reputationExcellentCustomer => '⭐ Excellent Customer';
+  String get reputationExcellentCustomer => '⭐ Отличный клиент';
 
   @override
-  String get reputationGreatCustomer => '👍 Great Customer';
+  String get reputationGreatCustomer => '👍 Прекрасный клиент';
 
   @override
-  String get reputationGoodCustomer => '✓ Good Customer';
+  String get reputationGoodCustomer => '✓ Хороший клиент';
 
   @override
-  String get reputationAverage => 'Average';
+  String get reputationAverage => 'Средний';
 
   @override
-  String get reputationNeedsImprovement => 'Needs Improvement';
+  String get reputationNeedsImprovement => 'Требует улучшения';
 
   @override
-  String get reputationNoRatingYet => 'No Rating Yet';
+  String get reputationNoRatingYet => 'Пока нет рейтинга';
 
   @override
-  String get reputationWhatProvidersSay => 'What Providers Say About You';
+  String get reputationWhatProvidersSay => 'Что поставщики говорят о вас';
 
   @override
-  String get reputationNoReviews => 'No Reviews Yet';
+  String get reputationNoReviews => 'Пока нет отзывов';
 
   @override
   String get reputationNoReviewsHelp =>
-      'Complete bookings to build your reputation!\nProviders will rate you after completing services.';
+      'Завершайте бронирования, чтобы построить свою репутацию!\nПоставщики будут оценивать вас после выполнения услуг.';
 
   @override
   String reputationShowMore(int count) {
-    return 'Show More ($count more)';
+    return 'Показать больше (еще $count)';
   }
 
   @override
-  String get reputationShowLess => 'Show Less';
+  String get reputationShowLess => 'Показать меньше';
 
   @override
-  String get reputationJustNow => 'Just now';
+  String get reputationJustNow => 'Только что';
 
   @override
   String reputationMinutesAgo(int minutes) {
-    return '$minutes min ago';
+    return '$minutes мин назад';
   }
 
   @override
@@ -2866,10 +2872,11 @@ class AppLocalizationsRu extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       hours,
       locale: localeName,
-      other: 'hours',
-      one: 'hour',
+      other: 'часов',
+      few: 'часа',
+      one: 'час',
     );
-    return '$hours $_temp0 ago';
+    return '$hours $_temp0 назад';
   }
 
   @override
@@ -2877,10 +2884,11 @@ class AppLocalizationsRu extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       days,
       locale: localeName,
-      other: 'days',
-      one: 'day',
+      other: 'дней',
+      few: 'дня',
+      one: 'день',
     );
-    return '$days $_temp0 ago';
+    return '$days $_temp0 назад';
   }
 
   @override
@@ -2888,10 +2896,11 @@ class AppLocalizationsRu extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       weeks,
       locale: localeName,
-      other: 'weeks',
-      one: 'week',
+      other: 'недель',
+      few: 'недели',
+      one: 'неделю',
     );
-    return '$weeks $_temp0 ago';
+    return '$weeks $_temp0 назад';
   }
 
   @override
@@ -2899,10 +2908,11 @@ class AppLocalizationsRu extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       months,
       locale: localeName,
-      other: 'months',
-      one: 'month',
+      other: 'месяцев',
+      few: 'месяца',
+      one: 'месяц',
     );
-    return '$months $_temp0 ago';
+    return '$months $_temp0 назад';
   }
 
   @override
@@ -2910,15 +2920,16 @@ class AppLocalizationsRu extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       years,
       locale: localeName,
-      other: 'years',
-      one: 'year',
+      other: 'лет',
+      few: 'года',
+      one: 'год',
     );
-    return '$years $_temp0 ago';
+    return '$years $_temp0 назад';
   }
 
   @override
-  String get notificationsTitle => 'Notifications';
+  String get notificationsTitle => 'Уведомления';
 
   @override
-  String get notificationsNoNotifications => 'No notifications yet.';
+  String get notificationsNoNotifications => 'Пока нет уведомлений.';
 }

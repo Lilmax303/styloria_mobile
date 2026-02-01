@@ -3,10 +3,10 @@
 import 'dart:io' show Platform;
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:styloria_mobile/gen_l10n/app_localizations.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_stripe/flutter_stripe.dart' as stripe;
-import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'app_theme.dart';
@@ -390,7 +390,7 @@ class StyloriaAppState extends State<StyloriaApp> {
       // Locale support
       locale: _locale,
       supportedLocales: AppLocalizations.supportedLocales,
-      localizationsDelegates: const [
+      localizationsDelegates: [
         // Your app's localizations
         AppLocalizations.delegate,
         
@@ -803,6 +803,8 @@ class _MainShellState extends State<MainShell> {
   String? _firstName;
   String? _profilePictureUrl;
   late final VoidCallback _tabListener;
+
+  AppLocalizations get l10n => AppLocalizations.of(context);
 
   @override
   void initState() {

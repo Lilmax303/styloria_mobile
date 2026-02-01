@@ -2265,569 +2265,511 @@ class AppLocalizationsZh extends AppLocalizations {
       'Location access denied. You cannot be available for bookings without location enabled.';
 
   @override
-  String get signOut => 'Sign out';
+  String get signOut => '退出登录';
 
   @override
-  String get kycIdFrontPhoto => 'ID Front Photo';
+  String get kycIdFrontPhoto => '身份证正面照片';
 
   @override
-  String get kycIdFrontMessage => 'Take a photo of the front of your ID card';
+  String get kycIdFrontMessage => '拍摄您身份证的正面照片';
 
   @override
-  String get kycIdBackPhoto => 'ID Back Photo';
+  String get kycIdBackPhoto => '身份证背面照片';
 
   @override
-  String get kycIdBackMessage => 'Take a photo of the back of your ID card';
+  String get kycIdBackMessage => '拍摄您身份证的背面照片';
 
   @override
-  String get kycCamera => 'Camera';
+  String get kycCamera => '相机';
 
   @override
-  String get kycGallery => 'Gallery';
+  String get kycGallery => '相册';
 
   @override
-  String get kycChooseSource => 'Choose source:';
+  String get kycChooseSource => '选择来源：';
 
   @override
-  String get kycFailedCaptureImage => 'Failed to capture image';
+  String get kycFailedCaptureImage => '拍摄图片失败';
 
   @override
-  String get kycFailedCaptureSelfie => 'Failed to capture selfie';
+  String get kycFailedCaptureSelfie => '拍摄自拍失败';
 
   @override
-  String get kycCameraNotAvailable => 'Camera not available';
+  String get kycCameraNotAvailable => '相机不可用';
 
   @override
-  String get kycCameraNotAvailableMessage =>
-      'Camera is not available. Would you like to select an image from your gallery instead?';
+  String get kycCameraNotAvailableMessage => '相机不可用。您想从相册中选择一张图片吗？';
 
   @override
-  String get kycUseGallery => 'Use Gallery';
+  String get kycUseGallery => '使用相册';
 
   @override
-  String get kycDocumentsLocked =>
-      'Documents are locked while pending review. You cannot make changes until verification is complete.';
+  String get kycDocumentsLocked => '文件在审核期间已锁定。在验证完成之前，您无法进行更改。';
 
   @override
-  String get kycVerificationSubmittedSuccessfully =>
-      'Verification submitted successfully';
+  String get kycVerificationSubmittedSuccessfully => '验证已成功提交';
 
   @override
-  String get kycVerificationSubmitted => 'Verification Submitted';
+  String get kycVerificationSubmitted => '验证已提交';
 
   @override
-  String get kycThankYouSubmitting =>
-      'Thank you for submitting your verification documents!';
+  String get kycThankYouSubmitting => '感谢您提交验证文件！';
 
   @override
-  String get kycWhatHappensNext => 'What happens next:';
+  String get kycWhatHappensNext => '接下来会发生什么：';
 
   @override
-  String get kycReviewTime =>
-      'Our team will review your documents within 24-48 hours';
+  String get kycReviewTime => '我们的团队将在24-48小时内审核您的文件';
 
   @override
-  String get kycEmailNotification =>
-      'You\'ll receive an email once your verification is complete';
+  String get kycEmailNotification => '验证完成后，您将收到电子邮件';
 
   @override
-  String get kycCheckEmail =>
-      'Check your email for updates on your verification status';
+  String get kycCheckEmail => '请查看您的电子邮件以获取验证状态更新';
 
   @override
-  String get kycLocked =>
-      'Your documents are now locked and cannot be changed during review';
+  String get kycLocked => '您的文件现已锁定，在审核期间无法更改';
 
   @override
-  String get kycRecommendSignOut =>
-      'We recommend signing out and checking back later for your verification result.';
+  String get kycRecommendSignOut => '我们建议您退出登录，稍后回来查看验证结果。';
 
   @override
-  String get kycStaySignedIn => 'Stay Signed In';
+  String get kycStaySignedIn => '保持登录';
 
   @override
-  String get kycVerificationPending => 'Verification Pending';
+  String get kycVerificationPending => '验证待审核';
 
   @override
-  String get kycVerificationPendingSubtitle =>
-      'Your documents are being reviewed';
+  String get kycVerificationPendingSubtitle => '您的文件正在审核中';
 
   @override
-  String get kycVerificationApproved => 'Verification Approved';
+  String get kycVerificationApproved => '验证已批准';
 
   @override
-  String get kycVerificationApprovedSubtitle =>
-      'You can now access all provider features';
+  String get kycVerificationApprovedSubtitle => '您现在可以访问所有服务提供者功能';
 
   @override
-  String get kycVerificationRejected => 'Verification Rejected';
+  String get kycVerificationRejected => '验证被拒绝';
 
   @override
-  String get kycVerificationRejectedSubtitle =>
-      'Please review the notes below and resubmit';
+  String get kycVerificationRejectedSubtitle => '请查看下面的备注并重新提交';
 
   @override
-  String get kycVerificationRequired => 'Verification Required';
+  String get kycVerificationRequired => '需要验证';
 
   @override
-  String get kycVerificationRequiredSubtitle =>
-      'Complete verification to access provider features';
+  String get kycVerificationRequiredSubtitle => '完成验证以访问服务提供者功能';
 
   @override
-  String get kycReviewNotes => 'Review Notes';
+  String get kycReviewNotes => '审核备注';
 
   @override
-  String get kycIdCardFront => 'ID Card (Front)';
+  String get kycIdCardFront => '身份证（正面）';
 
   @override
-  String get kycIdCardBack => 'ID Card (Back)';
+  String get kycIdCardBack => '身份证（背面）';
 
   @override
-  String get kycVerificationSelfie => 'Verification Selfie';
+  String get kycVerificationSelfie => '验证自拍';
 
   @override
-  String get kycButtonLocked => 'Locked';
+  String get kycButtonLocked => '已锁定';
 
   @override
-  String get kycCaptureIdFront => 'Capture ID Front';
+  String get kycCaptureIdFront => '拍摄身份证正面';
 
   @override
-  String get kycCaptureIdBack => 'Capture ID Back';
+  String get kycCaptureIdBack => '拍摄身份证背面';
 
   @override
-  String get kycDocumentsLockedButton => 'Documents Locked';
+  String get kycDocumentsLockedButton => '文件已锁定';
 
   @override
-  String get kycTipsTitle => '📸 Tips for good photos:';
+  String get kycTipsTitle => '📸 拍摄好照片的提示：';
 
   @override
-  String get kycTipGoodLighting => '• Use good lighting';
+  String get kycTipGoodLighting => '• 使用良好的照明';
 
   @override
-  String get kycTipFlatCard => '• Place ID card on a flat surface';
+  String get kycTipFlatCard => '• 将身份证放在平坦的表面上';
 
   @override
-  String get kycTipReadableText => '• Make sure all text is readable';
+  String get kycTipReadableText => '• 确保所有文字清晰可读';
 
   @override
-  String get kycTipFaceCamera => '• Face the camera directly for selfie';
+  String get kycTipFaceCamera => '• 自拍时直视相机';
 
   @override
-  String get kycTipAvoidGlare => '• Avoid glare or shadows';
+  String get kycTipAvoidGlare => '• 避免眩光或阴影';
 
   @override
-  String get kycFailedSubmitVerification => 'Failed to submit verification';
+  String get kycFailedSubmitVerification => '提交验证失败';
 
   @override
-  String get paystackSetupTitle => 'Setup Payout Account';
+  String get paystackSetupTitle => '设置付款账户';
 
   @override
-  String get paystackVerifying => 'Verifying...';
+  String get paystackVerifying => '验证中...';
 
   @override
-  String get paystackVerificationSuccess =>
-      'Payout settings saved successfully!';
+  String get paystackVerificationSuccess => '付款设置已成功保存！';
 
   @override
-  String get paystackVerificationFailed => 'Failed to save payout settings';
+  String get paystackVerificationFailed => '保存付款设置失败';
 
   @override
-  String get paystackSelectBank => 'Select Your Bank';
+  String get paystackSelectBank => '选择您的银行';
 
   @override
-  String get paystackAccountNumber => 'Account Number';
+  String get paystackAccountNumber => '账号';
 
   @override
-  String get paystackVerifyAccount => 'Verify Account';
+  String get paystackVerifyAccount => '验证账户';
 
   @override
-  String get paystackAccountVerified => 'Account Verified';
+  String get paystackAccountVerified => '账户已验证';
 
   @override
-  String get paystackSavePayoutAccount => 'Save Payout Account';
+  String get paystackSavePayoutAccount => '保存付款账户';
 
   @override
   String paystackNoBanksAvailable(Object country) {
-    return 'No banks available for $country';
+    return '$country没有可用的银行';
   }
 
   @override
-  String get paystackRetry => 'Retry';
+  String get paystackRetry => '重试';
 
   @override
-  String get paystackPayoutsInfo =>
-      'Your earnings will be sent to this account. Payouts are processed within 24 hours.';
+  String get paystackPayoutsInfo => '您的收入将发送到此账户。付款将在24小时内处理。';
 
   @override
-  String get paystackConnected => 'Account: connected';
+  String get paystackConnected => '账户：已连接';
 
   @override
-  String get paystackNotConnected => 'Account: not connected';
+  String get paystackNotConnected => '账户：未连接';
 
   @override
-  String get paystackDetailsSubmitted => 'Details submitted:';
+  String get paystackDetailsSubmitted => '已提交详细信息：';
 
   @override
-  String get paystackPayoutsEnabled => 'Payouts enabled:';
+  String get paystackPayoutsEnabled => '付款已启用：';
 
   @override
-  String get paystackYes => 'yes';
+  String get paystackYes => '是';
 
   @override
-  String get paystackNo => 'no';
+  String get paystackNo => '否';
 
   @override
-  String get paystackFinishSetup => 'Finish Stripe Setup';
+  String get paystackFinishSetup => '完成Stripe设置';
 
   @override
-  String get paystackConnectStripe => 'Connect Stripe';
+  String get paystackConnectStripe => '连接Stripe';
 
   @override
-  String get paystackOpenDashboard => 'Open Stripe Dashboard';
+  String get paystackOpenDashboard => '打开Stripe仪表板';
 
   @override
-  String get paystackMustFinishSetup =>
-      'You must finish Stripe setup before you can cash out.';
+  String get paystackMustFinishSetup => '您必须先完成Stripe设置才能提现。';
 
   @override
-  String get paystackPayouts => 'Paystack Payouts';
+  String get paystackPayouts => 'Paystack付款';
 
   @override
-  String get paystackAddBankDetails =>
-      'Add your bank account details in Payout Settings to receive payouts via Paystack.';
+  String get paystackAddBankDetails => '在付款设置中添加您的银行账户详细信息以通过Paystack接收付款。';
 
   @override
-  String get paystackOpenSettings => 'Open Payout Settings';
+  String get paystackOpenSettings => '打开付款设置';
 
   @override
   String payoutPaystackForCountry(Object country) {
-    return 'Payouts via Paystack for $country';
+    return '$country通过Paystack付款';
   }
 
   @override
   String payoutFlutterwaveForCountry(Object country) {
-    return 'Payouts are processed via Flutterwave for $country';
+    return '$country的付款通过Flutterwave处理';
   }
 
   @override
   String get payoutStripeConnect => 'Stripe Connect';
 
   @override
-  String get payoutBankAccountDetails => 'Bank Account Details';
+  String get payoutBankAccountDetails => '银行账户详细信息';
 
   @override
-  String get payoutAccountHolderName => 'Account Holder Name';
+  String get payoutAccountHolderName => '账户持有人姓名';
 
   @override
-  String get payoutAccountHolderNameHint =>
-      'Enter name as it appears on your bank account';
+  String get payoutAccountHolderNameHint => '输入您银行账户上显示的姓名';
 
   @override
-  String get payoutSelectBank => 'Select Bank *';
+  String get payoutSelectBank => '选择银行 *';
 
   @override
-  String get payoutBankName => 'Bank Name *';
+  String get payoutBankName => '银行名称 *';
 
   @override
-  String get payoutBankNameManual => 'Bank Name (manual)';
+  String get payoutBankNameManual => '银行名称（手动）';
 
   @override
-  String get payoutBankNameHint => 'e.g., GCB Bank, Ecobank';
+  String get payoutBankNameHint => '例如：GCB Bank、Ecobank';
 
   @override
-  String get payoutBankCode => 'Bank Code *';
+  String get payoutBankCode => '银行代码 *';
 
   @override
-  String get payoutBankCodeManual => 'Bank Code (manual)';
+  String get payoutBankCodeManual => '银行代码（手动）';
 
   @override
-  String get payoutBankCodeHint => 'Flutterwave bank code';
+  String get payoutBankCodeHint => 'Flutterwave银行代码';
 
   @override
-  String get payoutBankCodeHelper => 'Contact support if unsure of bank code';
+  String get payoutBankCodeHelper => '如果不确定银行代码，请联系客服';
 
   @override
-  String get payoutAccountNumber => 'Account Number *';
+  String get payoutAccountNumber => '账号 *';
 
   @override
-  String get payoutAccountNumberHint => 'Enter your bank account number';
+  String get payoutAccountNumberHint => '输入您的银行账号';
 
   @override
-  String get payoutMobileMoney => 'Mobile Money';
+  String get payoutMobileMoney => '移动支付';
 
   @override
-  String get payoutFullName => 'Full Name (as registered) *';
+  String get payoutFullName => '全名（已注册）*';
 
   @override
-  String get payoutFullNameHint =>
-      'Name registered on your mobile money account';
+  String get payoutFullNameHint => '在您的移动支付账户上注册的姓名';
 
   @override
-  String get payoutMobileNetwork => 'Mobile Network *';
+  String get payoutMobileNetwork => '移动网络 *';
 
   @override
-  String get payoutSelectNetwork => 'Select your mobile network';
+  String get payoutSelectNetwork => '选择您的移动网络';
 
   @override
-  String get payoutMobileNetworkHint => 'e.g., MTN, Vodafone, Airtel';
+  String get payoutMobileNetworkHint => '例如：MTN、Vodafone、Airtel';
 
   @override
-  String get payoutCountryCode => 'Country Code';
+  String get payoutCountryCode => '国家代码';
 
   @override
-  String get payoutMobileMoneyNumber => 'Mobile Money Number *';
+  String get payoutMobileMoneyNumber => '移动支付号码 *';
 
   @override
-  String get payoutMobileMoneyNumberHint => 'e.g., 0541234567';
+  String get payoutMobileMoneyNumberHint => '例如：0541234567';
 
   @override
-  String get payoutZipCode => 'ZIP/Postal Code';
+  String get payoutZipCode => '邮政编码';
 
   @override
-  String get payoutZipCodeHint => 'If required by your network';
+  String get payoutZipCodeHint => '如果您的网络需要';
 
   @override
-  String get payoutMethod => 'Payout Method';
+  String get payoutMethod => '付款方式';
 
   @override
-  String get payoutBankTransfer => 'Bank Transfer';
+  String get payoutBankTransfer => '银行转账';
 
   @override
-  String get payoutCurrency => 'Currency';
+  String get payoutCurrency => '货币';
 
   @override
   String payoutCurrencyLocked(Object country) {
-    return 'Locked to $country currency';
+    return '锁定为$country货币';
   }
 
   @override
-  String get payoutBeneficiaryId => 'Beneficiary ID';
+  String get payoutBeneficiaryId => '受益人ID';
 
   @override
-  String get payoutBeneficiaryIdHint => 'Optional - for recurring transfers';
+  String get payoutBeneficiaryIdHint => '可选 - 用于定期转账';
 
   @override
-  String get payoutSchedule => 'Payout Schedule';
+  String get payoutSchedule => '付款计划';
 
   @override
-  String get payoutFrequency => 'Payout Frequency';
+  String get payoutFrequency => '付款频率';
 
   @override
-  String get payoutFrequencyWeekly => 'Weekly';
+  String get payoutFrequencyWeekly => '每周';
 
   @override
-  String get payoutFrequencyMonthly => 'Monthly (1st of each month)';
+  String get payoutFrequencyMonthly => '每月（每月1日）';
 
   @override
-  String get payoutDayHelper => 'Available: Tuesday, Thursday, Friday';
+  String get payoutDayHelper => '可用：星期二、星期四、星期五';
 
   @override
-  String get payoutMonthlyInfo =>
-      'Monthly payouts are processed on the 1st of each month.';
+  String get payoutMonthlyInfo => '每月付款在每月1日处理。';
 
   @override
-  String get payoutInstantCashout => 'Instant Cashout';
+  String get payoutInstantCashout => '即时提现';
 
   @override
   String get payoutInstantCashoutInfo =>
-      '• Unlimited instant cashouts available\n• 5% fee applies to instant cashouts\n• Scheduled payouts have no fees';
+      '• 可无限次即时提现\n• 即时提现收取5%手续费\n• 计划付款无手续费';
 
   @override
-  String get payoutNextScheduled => 'Next Scheduled Payout';
+  String get payoutNextScheduled => '下次计划付款';
 
   @override
   String payoutYourLocalTime(Object timezone) {
-    return 'Your local time ($timezone)';
+    return '您的本地时间（$timezone）';
   }
 
   @override
-  String get payoutAmountToCashOut => 'Amount to cash out';
+  String get payoutAmountToCashOut => '提现金额';
 
   @override
   String payoutMinMaxRange(Object min, Object max) {
-    return 'Min: $min - Max: $max';
+    return '最小：$min - 最大：$max';
   }
 
   @override
-  String get payoutMaxButton => 'MAX';
+  String get payoutMaxButton => '最大';
 
   @override
-  String get payoutCashOutNow => 'Cash Out (Instant)';
+  String get payoutCashOutNow => '提现（即时）';
 
   @override
-  String get payoutAvailableBalance => 'Available Balance';
+  String get payoutAvailableBalance => '可用余额';
 
   @override
-  String get payoutPendingFunds => 'Pending';
+  String get payoutPendingFunds => '待处理';
 
   @override
-  String get payoutPendingInfo =>
-      'Pending funds will be available after the hold period';
+  String get payoutPendingInfo => '待处理资金将在保留期后可用';
 
   @override
-  String get payoutLifetimeEarnings => 'Lifetime Earnings';
+  String get payoutLifetimeEarnings => '总收入';
 
   @override
-  String get payoutTotalCashedOut => 'Total Cashed Out';
+  String get payoutTotalCashedOut => '总提现';
 
   @override
-  String get payoutUnlimitedCashouts => 'Unlimited';
+  String get payoutUnlimitedCashouts => '无限制';
 
   @override
-  String get mainHello => 'Hello';
+  String get mainHello => '您好';
 
   @override
-  String get mainViewProfile => 'View Profile';
+  String get mainViewProfile => '查看个人资料';
 
   @override
-  String get mainBookings => 'Bookings';
+  String get mainBookings => '预订';
 
   @override
-  String get mainNotifications => 'Notifications';
+  String get mainNotifications => '通知';
 
   @override
-  String get mainReferral => 'Referral';
+  String get mainReferral => '推荐';
 
   @override
-  String get mainSettings => 'Settings';
+  String get mainSettings => '设置';
 
   @override
-  String get mainHelp => 'Help';
+  String get mainHelp => '帮助';
 
   @override
-  String get mainWallet => 'Wallet';
+  String get mainWallet => '钱包';
 
   @override
-  String get mainEarnings => 'Earnings';
+  String get mainEarnings => '收入';
 
   @override
-  String get mainOpenJobs => 'Open Jobs';
+  String get mainOpenJobs => '开放工作';
 
   @override
-  String get mainAssignedJobs => 'Assigned Jobs';
+  String get mainAssignedJobs => '分配的工作';
 
   @override
-  String get mainMyReputation => 'My Reputation';
+  String get mainMyReputation => '我的信誉';
 
   @override
-  String get reputationTitle => 'My Reputation';
+  String get reputationTitle => '我的信誉';
 
   @override
-  String get reputationYourCustomerRating => 'Your Customer Rating';
+  String get reputationYourCustomerRating => '您的客户评分';
 
   @override
   String reputationBasedOnReviews(int count) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: 'reviews',
-      one: 'review',
-    );
-    return 'Based on $count $_temp0';
+    return '基于$count条评价';
   }
 
   @override
-  String get reputationExcellentCustomer => '⭐ Excellent Customer';
+  String get reputationExcellentCustomer => '⭐ 优秀客户';
 
   @override
-  String get reputationGreatCustomer => '👍 Great Customer';
+  String get reputationGreatCustomer => '👍 很好的客户';
 
   @override
-  String get reputationGoodCustomer => '✓ Good Customer';
+  String get reputationGoodCustomer => '✓ 好客户';
 
   @override
-  String get reputationAverage => 'Average';
+  String get reputationAverage => '一般';
 
   @override
-  String get reputationNeedsImprovement => 'Needs Improvement';
+  String get reputationNeedsImprovement => '需要改进';
 
   @override
-  String get reputationNoRatingYet => 'No Rating Yet';
+  String get reputationNoRatingYet => '暂无评分';
 
   @override
-  String get reputationWhatProvidersSay => 'What Providers Say About You';
+  String get reputationWhatProvidersSay => '服务提供者对您的评价';
 
   @override
-  String get reputationNoReviews => 'No Reviews Yet';
+  String get reputationNoReviews => '暂无评价';
 
   @override
-  String get reputationNoReviewsHelp =>
-      'Complete bookings to build your reputation!\nProviders will rate you after completing services.';
+  String get reputationNoReviewsHelp => '完成预订以建立您的信誉！\n完成服务后，服务提供者会给您评分。';
 
   @override
   String reputationShowMore(int count) {
-    return 'Show More ($count more)';
+    return '显示更多（还有$count条）';
   }
 
   @override
-  String get reputationShowLess => 'Show Less';
+  String get reputationShowLess => '显示更少';
 
   @override
-  String get reputationJustNow => 'Just now';
+  String get reputationJustNow => '刚刚';
 
   @override
   String reputationMinutesAgo(int minutes) {
-    return '$minutes min ago';
+    return '$minutes分钟前';
   }
 
   @override
   String reputationHoursAgo(int hours) {
-    String _temp0 = intl.Intl.pluralLogic(
-      hours,
-      locale: localeName,
-      other: 'hours',
-      one: 'hour',
-    );
-    return '$hours $_temp0 ago';
+    return '$hours小时前';
   }
 
   @override
   String reputationDaysAgo(int days) {
-    String _temp0 = intl.Intl.pluralLogic(
-      days,
-      locale: localeName,
-      other: 'days',
-      one: 'day',
-    );
-    return '$days $_temp0 ago';
+    return '$days天前';
   }
 
   @override
   String reputationWeeksAgo(int weeks) {
-    String _temp0 = intl.Intl.pluralLogic(
-      weeks,
-      locale: localeName,
-      other: 'weeks',
-      one: 'week',
-    );
-    return '$weeks $_temp0 ago';
+    return '$weeks周前';
   }
 
   @override
   String reputationMonthsAgo(int months) {
-    String _temp0 = intl.Intl.pluralLogic(
-      months,
-      locale: localeName,
-      other: 'months',
-      one: 'month',
-    );
-    return '$months $_temp0 ago';
+    return '$months个月前';
   }
 
   @override
   String reputationYearsAgo(int years) {
-    String _temp0 = intl.Intl.pluralLogic(
-      years,
-      locale: localeName,
-      other: 'years',
-      one: 'year',
-    );
-    return '$years $_temp0 ago';
+    return '$years年前';
   }
 
   @override
-  String get notificationsTitle => 'Notifications';
+  String get notificationsTitle => '通知';
 
   @override
-  String get notificationsNoNotifications => 'No notifications yet.';
+  String get notificationsNoNotifications => '暂无通知。';
 }

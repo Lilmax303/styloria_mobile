@@ -2354,509 +2354,513 @@ class AppLocalizationsSw extends AppLocalizations {
       'Location access denied. You cannot be available for bookings without location enabled.';
 
   @override
-  String get signOut => 'Sign out';
+  String get signOut => 'Toka';
 
   @override
-  String get kycIdFrontPhoto => 'ID Front Photo';
+  String get kycIdFrontPhoto => 'Picha ya Mbele ya Kitambulisho';
 
   @override
-  String get kycIdFrontMessage => 'Take a photo of the front of your ID card';
+  String get kycIdFrontMessage => 'Piga picha ya mbele ya kitambulisho chako';
 
   @override
-  String get kycIdBackPhoto => 'ID Back Photo';
+  String get kycIdBackPhoto => 'Picha ya Nyuma ya Kitambulisho';
 
   @override
-  String get kycIdBackMessage => 'Take a photo of the back of your ID card';
+  String get kycIdBackMessage => 'Piga picha ya nyuma ya kitambulisho chako';
 
   @override
-  String get kycCamera => 'Camera';
+  String get kycCamera => 'Kamera';
 
   @override
-  String get kycGallery => 'Gallery';
+  String get kycGallery => 'Galari';
 
   @override
-  String get kycChooseSource => 'Choose source:';
+  String get kycChooseSource => 'Chagua chanzo:';
 
   @override
-  String get kycFailedCaptureImage => 'Failed to capture image';
+  String get kycFailedCaptureImage => 'Imeshindwa kupiga picha';
 
   @override
-  String get kycFailedCaptureSelfie => 'Failed to capture selfie';
+  String get kycFailedCaptureSelfie => 'Imeshindwa kupiga selfie';
 
   @override
-  String get kycCameraNotAvailable => 'Camera not available';
+  String get kycCameraNotAvailable => 'Kamera haipatikani';
 
   @override
   String get kycCameraNotAvailableMessage =>
-      'Camera is not available. Would you like to select an image from your gallery instead?';
+      'Kamera haipatikani. Je, ungependa kuchagua picha kutoka kwenye galari yako?';
 
   @override
-  String get kycUseGallery => 'Use Gallery';
+  String get kycUseGallery => 'Tumia Galari';
 
   @override
   String get kycDocumentsLocked =>
-      'Documents are locked while pending review. You cannot make changes until verification is complete.';
+      'Hati zimefungwa wakati ukaguzi unasubiri. Huwezi kufanya mabadiliko hadi uthibitishaji ukamilike.';
 
   @override
   String get kycVerificationSubmittedSuccessfully =>
-      'Verification submitted successfully';
+      'Uthibitishaji umewasilishwa kwa mafanikio';
 
   @override
-  String get kycVerificationSubmitted => 'Verification Submitted';
+  String get kycVerificationSubmitted => 'Uthibitishaji Umewasilishwa';
 
   @override
   String get kycThankYouSubmitting =>
-      'Thank you for submitting your verification documents!';
+      'Asante kwa kuwasilisha hati zako za uthibitishaji!';
 
   @override
-  String get kycWhatHappensNext => 'What happens next:';
+  String get kycWhatHappensNext => 'Kinachofuata:';
 
   @override
   String get kycReviewTime =>
-      'Our team will review your documents within 24-48 hours';
+      'Timu yetu itakagua hati zako ndani ya masaa 24-48';
 
   @override
   String get kycEmailNotification =>
-      'You\'ll receive an email once your verification is complete';
+      'Utapokea barua pepe mara uthibitishaji wako utakapokamilika';
 
   @override
   String get kycCheckEmail =>
-      'Check your email for updates on your verification status';
+      'Angalia barua pepe yako kwa masasisho ya hali ya uthibitishaji wako';
 
   @override
   String get kycLocked =>
-      'Your documents are now locked and cannot be changed during review';
+      'Hati zako sasa zimefungwa na haziwezi kubadilishwa wakati wa ukaguzi';
 
   @override
   String get kycRecommendSignOut =>
-      'We recommend signing out and checking back later for your verification result.';
+      'Tunapendekeza utoke na kurudi baadaye kuangalia matokeo ya uthibitishaji wako.';
 
   @override
-  String get kycStaySignedIn => 'Stay Signed In';
+  String get kycStaySignedIn => 'Endelea Kuwa Umeingia';
 
   @override
-  String get kycVerificationPending => 'Verification Pending';
+  String get kycVerificationPending => 'Uthibitishaji Unasubiri';
 
   @override
-  String get kycVerificationPendingSubtitle =>
-      'Your documents are being reviewed';
+  String get kycVerificationPendingSubtitle => 'Hati zako zinakaguliwa';
 
   @override
-  String get kycVerificationApproved => 'Verification Approved';
+  String get kycVerificationApproved => 'Uthibitishaji Umeidhinishwa';
 
   @override
   String get kycVerificationApprovedSubtitle =>
-      'You can now access all provider features';
+      'Sasa unaweza kufikia vipengele vyote vya mtoa huduma';
 
   @override
-  String get kycVerificationRejected => 'Verification Rejected';
+  String get kycVerificationRejected => 'Uthibitishaji Umekataliwa';
 
   @override
   String get kycVerificationRejectedSubtitle =>
-      'Please review the notes below and resubmit';
+      'Tafadhali pitia maelezo hapa chini na uwasilishe tena';
 
   @override
-  String get kycVerificationRequired => 'Verification Required';
+  String get kycVerificationRequired => 'Uthibitishaji Unahitajika';
 
   @override
   String get kycVerificationRequiredSubtitle =>
-      'Complete verification to access provider features';
+      'Kamilisha uthibitishaji ili kufikia vipengele vya mtoa huduma';
 
   @override
-  String get kycReviewNotes => 'Review Notes';
+  String get kycReviewNotes => 'Maelezo ya Ukaguzi';
 
   @override
-  String get kycIdCardFront => 'ID Card (Front)';
+  String get kycIdCardFront => 'Kitambulisho (Mbele)';
 
   @override
-  String get kycIdCardBack => 'ID Card (Back)';
+  String get kycIdCardBack => 'Kitambulisho (Nyuma)';
 
   @override
-  String get kycVerificationSelfie => 'Verification Selfie';
+  String get kycVerificationSelfie => 'Selfie ya Uthibitishaji';
 
   @override
-  String get kycButtonLocked => 'Locked';
+  String get kycButtonLocked => 'Imefungwa';
 
   @override
-  String get kycCaptureIdFront => 'Capture ID Front';
+  String get kycCaptureIdFront => 'Piga Mbele ya Kitambulisho';
 
   @override
-  String get kycCaptureIdBack => 'Capture ID Back';
+  String get kycCaptureIdBack => 'Piga Nyuma ya Kitambulisho';
 
   @override
-  String get kycDocumentsLockedButton => 'Documents Locked';
+  String get kycDocumentsLockedButton => 'Hati Zimefungwa';
 
   @override
-  String get kycTipsTitle => '📸 Tips for good photos:';
+  String get kycTipsTitle => '📸 Vidokezo vya picha nzuri:';
 
   @override
-  String get kycTipGoodLighting => '• Use good lighting';
+  String get kycTipGoodLighting => '• Tumia mwangaza mzuri';
 
   @override
-  String get kycTipFlatCard => '• Place ID card on a flat surface';
+  String get kycTipFlatCard => '• Weka kitambulisho kwenye uso laini';
 
   @override
-  String get kycTipReadableText => '• Make sure all text is readable';
+  String get kycTipReadableText => '• Hakikisha maandishi yote yanasomeka';
 
   @override
-  String get kycTipFaceCamera => '• Face the camera directly for selfie';
+  String get kycTipFaceCamera => '• Tazama kamera moja kwa moja kwa selfie';
 
   @override
-  String get kycTipAvoidGlare => '• Avoid glare or shadows';
+  String get kycTipAvoidGlare => '• Epuka mwangaza au vivuli';
 
   @override
-  String get kycFailedSubmitVerification => 'Failed to submit verification';
+  String get kycFailedSubmitVerification =>
+      'Imeshindwa kuwasilisha uthibitishaji';
 
   @override
-  String get paystackSetupTitle => 'Setup Payout Account';
+  String get paystackSetupTitle => 'Sanidi Akaunti ya Malipo';
 
   @override
-  String get paystackVerifying => 'Verifying...';
+  String get paystackVerifying => 'Inathibitisha...';
 
   @override
   String get paystackVerificationSuccess =>
-      'Payout settings saved successfully!';
+      'Mipangilio ya malipo imehifadhiwa kwa mafanikio!';
 
   @override
-  String get paystackVerificationFailed => 'Failed to save payout settings';
+  String get paystackVerificationFailed =>
+      'Imeshindwa kuhifadhi mipangilio ya malipo';
 
   @override
-  String get paystackSelectBank => 'Select Your Bank';
+  String get paystackSelectBank => 'Chagua Benki Yako';
 
   @override
-  String get paystackAccountNumber => 'Account Number';
+  String get paystackAccountNumber => 'Nambari ya Akaunti';
 
   @override
-  String get paystackVerifyAccount => 'Verify Account';
+  String get paystackVerifyAccount => 'Thibitisha Akaunti';
 
   @override
-  String get paystackAccountVerified => 'Account Verified';
+  String get paystackAccountVerified => 'Akaunti Imethibitishwa';
 
   @override
-  String get paystackSavePayoutAccount => 'Save Payout Account';
+  String get paystackSavePayoutAccount => 'Hifadhi Akaunti ya Malipo';
 
   @override
   String paystackNoBanksAvailable(Object country) {
-    return 'No banks available for $country';
+    return 'Hakuna benki zinazopatikana kwa $country';
   }
 
   @override
-  String get paystackRetry => 'Retry';
+  String get paystackRetry => 'Jaribu Tena';
 
   @override
   String get paystackPayoutsInfo =>
-      'Your earnings will be sent to this account. Payouts are processed within 24 hours.';
+      'Mapato yako yatatumwa kwenye akaunti hii. Malipo yanachakatwa ndani ya masaa 24.';
 
   @override
-  String get paystackConnected => 'Account: connected';
+  String get paystackConnected => 'Akaunti: imeunganishwa';
 
   @override
-  String get paystackNotConnected => 'Account: not connected';
+  String get paystackNotConnected => 'Akaunti: haijaunganishwa';
 
   @override
-  String get paystackDetailsSubmitted => 'Details submitted:';
+  String get paystackDetailsSubmitted => 'Maelezo yamewasilishwa:';
 
   @override
-  String get paystackPayoutsEnabled => 'Payouts enabled:';
+  String get paystackPayoutsEnabled => 'Malipo yameamilishwa:';
 
   @override
-  String get paystackYes => 'yes';
+  String get paystackYes => 'ndio';
 
   @override
-  String get paystackNo => 'no';
+  String get paystackNo => 'hapana';
 
   @override
-  String get paystackFinishSetup => 'Finish Stripe Setup';
+  String get paystackFinishSetup => 'Kamilisha Usanidi wa Stripe';
 
   @override
-  String get paystackConnectStripe => 'Connect Stripe';
+  String get paystackConnectStripe => 'Unganisha Stripe';
 
   @override
-  String get paystackOpenDashboard => 'Open Stripe Dashboard';
+  String get paystackOpenDashboard => 'Fungua Dashibodi ya Stripe';
 
   @override
   String get paystackMustFinishSetup =>
-      'You must finish Stripe setup before you can cash out.';
+      'Lazima ukamilishe usanidi wa Stripe kabla ya kutoa pesa.';
 
   @override
-  String get paystackPayouts => 'Paystack Payouts';
+  String get paystackPayouts => 'Malipo ya Paystack';
 
   @override
   String get paystackAddBankDetails =>
-      'Add your bank account details in Payout Settings to receive payouts via Paystack.';
+      'Ongeza maelezo ya akaunti yako ya benki kwenye Mipangilio ya Malipo kupokea malipo kupitia Paystack.';
 
   @override
-  String get paystackOpenSettings => 'Open Payout Settings';
+  String get paystackOpenSettings => 'Fungua Mipangilio ya Malipo';
 
   @override
   String payoutPaystackForCountry(Object country) {
-    return 'Payouts via Paystack for $country';
+    return 'Malipo kupitia Paystack kwa $country';
   }
 
   @override
   String payoutFlutterwaveForCountry(Object country) {
-    return 'Payouts are processed via Flutterwave for $country';
+    return 'Malipo yanachakatwa kupitia Flutterwave kwa $country';
   }
 
   @override
   String get payoutStripeConnect => 'Stripe Connect';
 
   @override
-  String get payoutBankAccountDetails => 'Bank Account Details';
+  String get payoutBankAccountDetails => 'Maelezo ya Akaunti ya Benki';
 
   @override
-  String get payoutAccountHolderName => 'Account Holder Name';
+  String get payoutAccountHolderName => 'Jina la Mmiliki wa Akaunti';
 
   @override
   String get payoutAccountHolderNameHint =>
-      'Enter name as it appears on your bank account';
+      'Ingiza jina kama linavyoonekana kwenye akaunti yako ya benki';
 
   @override
-  String get payoutSelectBank => 'Select Bank *';
+  String get payoutSelectBank => 'Chagua Benki *';
 
   @override
-  String get payoutBankName => 'Bank Name *';
+  String get payoutBankName => 'Jina la Benki *';
 
   @override
-  String get payoutBankNameManual => 'Bank Name (manual)';
+  String get payoutBankNameManual => 'Jina la Benki (kwa mkono)';
 
   @override
-  String get payoutBankNameHint => 'e.g., GCB Bank, Ecobank';
+  String get payoutBankNameHint => 'mfano, GCB Bank, Ecobank';
 
   @override
-  String get payoutBankCode => 'Bank Code *';
+  String get payoutBankCode => 'Nambari ya Benki *';
 
   @override
-  String get payoutBankCodeManual => 'Bank Code (manual)';
+  String get payoutBankCodeManual => 'Nambari ya Benki (kwa mkono)';
 
   @override
-  String get payoutBankCodeHint => 'Flutterwave bank code';
+  String get payoutBankCodeHint => 'Nambari ya benki ya Flutterwave';
 
   @override
-  String get payoutBankCodeHelper => 'Contact support if unsure of bank code';
+  String get payoutBankCodeHelper =>
+      'Wasiliana na msaada ikiwa huna uhakika wa nambari ya benki';
 
   @override
-  String get payoutAccountNumber => 'Account Number *';
+  String get payoutAccountNumber => 'Nambari ya Akaunti *';
 
   @override
-  String get payoutAccountNumberHint => 'Enter your bank account number';
+  String get payoutAccountNumberHint =>
+      'Ingiza nambari ya akaunti yako ya benki';
 
   @override
-  String get payoutMobileMoney => 'Mobile Money';
+  String get payoutMobileMoney => 'Pesa za Simu';
 
   @override
-  String get payoutFullName => 'Full Name (as registered) *';
+  String get payoutFullName => 'Jina Kamili (kama ilivyosajiliwa) *';
 
   @override
   String get payoutFullNameHint =>
-      'Name registered on your mobile money account';
+      'Jina lililосajiliwa kwenye akaunti yako ya pesa za simu';
 
   @override
-  String get payoutMobileNetwork => 'Mobile Network *';
+  String get payoutMobileNetwork => 'Mtandao wa Simu *';
 
   @override
-  String get payoutSelectNetwork => 'Select your mobile network';
+  String get payoutSelectNetwork => 'Chagua mtandao wako wa simu';
 
   @override
-  String get payoutMobileNetworkHint => 'e.g., MTN, Vodafone, Airtel';
+  String get payoutMobileNetworkHint => 'mfano, MTN, Vodafone, Airtel';
 
   @override
-  String get payoutCountryCode => 'Country Code';
+  String get payoutCountryCode => 'Nambari ya Nchi';
 
   @override
-  String get payoutMobileMoneyNumber => 'Mobile Money Number *';
+  String get payoutMobileMoneyNumber => 'Nambari ya Pesa za Simu *';
 
   @override
-  String get payoutMobileMoneyNumberHint => 'e.g., 0541234567';
+  String get payoutMobileMoneyNumberHint => 'mfano, 0541234567';
 
   @override
-  String get payoutZipCode => 'ZIP/Postal Code';
+  String get payoutZipCode => 'Nambari ya Posta';
 
   @override
-  String get payoutZipCodeHint => 'If required by your network';
+  String get payoutZipCodeHint => 'Ikiwa inahitajika na mtandao wako';
 
   @override
-  String get payoutMethod => 'Payout Method';
+  String get payoutMethod => 'Njia ya Malipo';
 
   @override
-  String get payoutBankTransfer => 'Bank Transfer';
+  String get payoutBankTransfer => 'Uhamisho wa Benki';
 
   @override
-  String get payoutCurrency => 'Currency';
+  String get payoutCurrency => 'Sarafu';
 
   @override
   String payoutCurrencyLocked(Object country) {
-    return 'Locked to $country currency';
+    return 'Imefungwa kwa sarafu ya $country';
   }
 
   @override
-  String get payoutBeneficiaryId => 'Beneficiary ID';
+  String get payoutBeneficiaryId => 'Kitambulisho cha Mpokeaji';
 
   @override
-  String get payoutBeneficiaryIdHint => 'Optional - for recurring transfers';
+  String get payoutBeneficiaryIdHint => 'Si lazima - kwa uhamisho unarudiwa';
 
   @override
-  String get payoutSchedule => 'Payout Schedule';
+  String get payoutSchedule => 'Ratiba ya Malipo';
 
   @override
-  String get payoutFrequency => 'Payout Frequency';
+  String get payoutFrequency => 'Mzunguko wa Malipo';
 
   @override
-  String get payoutFrequencyWeekly => 'Weekly';
+  String get payoutFrequencyWeekly => 'Kila Wiki';
 
   @override
-  String get payoutFrequencyMonthly => 'Monthly (1st of each month)';
+  String get payoutFrequencyMonthly => 'Kila Mwezi (tarehe 1 ya kila mwezi)';
 
   @override
-  String get payoutDayHelper => 'Available: Tuesday, Thursday, Friday';
+  String get payoutDayHelper => 'Inapatikana: Jumanne, Alhamisi, Ijumaa';
 
   @override
   String get payoutMonthlyInfo =>
-      'Monthly payouts are processed on the 1st of each month.';
+      'Malipo ya kila mwezi yanachakatwa tarehe 1 ya kila mwezi.';
 
   @override
-  String get payoutInstantCashout => 'Instant Cashout';
+  String get payoutInstantCashout => 'Kutoa Pesa Papo Hapo';
 
   @override
   String get payoutInstantCashoutInfo =>
-      '• Unlimited instant cashouts available\n• 5% fee applies to instant cashouts\n• Scheduled payouts have no fees';
+      '• Kutoa pesa papo hapo bila kikomo kunapatikana\n• Ada ya 5% inatumika kwa kutoa pesa papo hapo\n• Malipo yaliyoratibiwa hayana ada';
 
   @override
-  String get payoutNextScheduled => 'Next Scheduled Payout';
+  String get payoutNextScheduled => 'Malipo Yajayo Yaliyoratibiwa';
 
   @override
   String payoutYourLocalTime(Object timezone) {
-    return 'Your local time ($timezone)';
+    return 'Muda wako wa eneo ($timezone)';
   }
 
   @override
-  String get payoutAmountToCashOut => 'Amount to cash out';
+  String get payoutAmountToCashOut => 'Kiasi cha kutoa';
 
   @override
   String payoutMinMaxRange(Object min, Object max) {
-    return 'Min: $min - Max: $max';
+    return 'Kiwango cha Chini: $min - Kiwango cha Juu: $max';
   }
 
   @override
-  String get payoutMaxButton => 'MAX';
+  String get payoutMaxButton => 'UPEO';
 
   @override
-  String get payoutCashOutNow => 'Cash Out (Instant)';
+  String get payoutCashOutNow => 'Toa Pesa (Papo Hapo)';
 
   @override
-  String get payoutAvailableBalance => 'Available Balance';
+  String get payoutAvailableBalance => 'Salio Linalоpatikana';
 
   @override
-  String get payoutPendingFunds => 'Pending';
+  String get payoutPendingFunds => 'Zinasubiri';
 
   @override
   String get payoutPendingInfo =>
-      'Pending funds will be available after the hold period';
+      'Pesa zinazosubiri zitapatikana baada ya kipindi cha kushikiliwa';
 
   @override
-  String get payoutLifetimeEarnings => 'Lifetime Earnings';
+  String get payoutLifetimeEarnings => 'Mapato ya Jumla';
 
   @override
-  String get payoutTotalCashedOut => 'Total Cashed Out';
+  String get payoutTotalCashedOut => 'Jumla Iliyotolewa';
 
   @override
-  String get payoutUnlimitedCashouts => 'Unlimited';
+  String get payoutUnlimitedCashouts => 'Bila kikomo';
 
   @override
-  String get mainHello => 'Hello';
+  String get mainHello => 'Habari';
 
   @override
-  String get mainViewProfile => 'View Profile';
+  String get mainViewProfile => 'Tazama Wasifu';
 
   @override
-  String get mainBookings => 'Bookings';
+  String get mainBookings => 'Uhifadhi';
 
   @override
-  String get mainNotifications => 'Notifications';
+  String get mainNotifications => 'Arifa';
 
   @override
-  String get mainReferral => 'Referral';
+  String get mainReferral => 'Rufaa';
 
   @override
-  String get mainSettings => 'Settings';
+  String get mainSettings => 'Mipangilio';
 
   @override
-  String get mainHelp => 'Help';
+  String get mainHelp => 'Msaada';
 
   @override
-  String get mainWallet => 'Wallet';
+  String get mainWallet => 'Pochi';
 
   @override
-  String get mainEarnings => 'Earnings';
+  String get mainEarnings => 'Mapato';
 
   @override
-  String get mainOpenJobs => 'Open Jobs';
+  String get mainOpenJobs => 'Kazi Wazi';
 
   @override
-  String get mainAssignedJobs => 'Assigned Jobs';
+  String get mainAssignedJobs => 'Kazi Zilizopewa';
 
   @override
-  String get mainMyReputation => 'My Reputation';
+  String get mainMyReputation => 'Sifa Yangu';
 
   @override
-  String get reputationTitle => 'My Reputation';
+  String get reputationTitle => 'Sifa Yangu';
 
   @override
-  String get reputationYourCustomerRating => 'Your Customer Rating';
+  String get reputationYourCustomerRating => 'Ukadiriaji Wako wa Mteja';
 
   @override
   String reputationBasedOnReviews(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'reviews',
-      one: 'review',
+      other: 'tathmini $count',
+      one: 'tathmini $count',
     );
-    return 'Based on $count $_temp0';
+    return 'Kulingana na $_temp0';
   }
 
   @override
-  String get reputationExcellentCustomer => '⭐ Excellent Customer';
+  String get reputationExcellentCustomer => '⭐ Mteja Bora Kabisa';
 
   @override
-  String get reputationGreatCustomer => '👍 Great Customer';
+  String get reputationGreatCustomer => '👍 Mteja Mzuri Sana';
 
   @override
-  String get reputationGoodCustomer => '✓ Good Customer';
+  String get reputationGoodCustomer => '✓ Mteja Mzuri';
 
   @override
-  String get reputationAverage => 'Average';
+  String get reputationAverage => 'Wastani';
 
   @override
-  String get reputationNeedsImprovement => 'Needs Improvement';
+  String get reputationNeedsImprovement => 'Inahitaji Kuboresha';
 
   @override
-  String get reputationNoRatingYet => 'No Rating Yet';
+  String get reputationNoRatingYet => 'Hakuna Ukadiriaji Bado';
 
   @override
-  String get reputationWhatProvidersSay => 'What Providers Say About You';
+  String get reputationWhatProvidersSay =>
+      'Watoa Huduma Wanasema Nini Kukuhusu';
 
   @override
-  String get reputationNoReviews => 'No Reviews Yet';
+  String get reputationNoReviews => 'Hakuna Tathmini Bado';
 
   @override
   String get reputationNoReviewsHelp =>
-      'Complete bookings to build your reputation!\nProviders will rate you after completing services.';
+      'Kamilisha uhifadhi ili kujenga sifa yako!\nWatoa huduma watakukadiri baada ya kukamilisha huduma.';
 
   @override
   String reputationShowMore(int count) {
-    return 'Show More ($count more)';
+    return 'Onyesha Zaidi ($count zaidi)';
   }
 
   @override
-  String get reputationShowLess => 'Show Less';
+  String get reputationShowLess => 'Onyesha Kidogo';
 
   @override
-  String get reputationJustNow => 'Just now';
+  String get reputationJustNow => 'Sasa hivi';
 
   @override
   String reputationMinutesAgo(int minutes) {
-    return '$minutes min ago';
+    return 'dakika $minutes zilizopita';
   }
 
   @override
@@ -2864,10 +2868,10 @@ class AppLocalizationsSw extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       hours,
       locale: localeName,
-      other: 'hours',
-      one: 'hour',
+      other: 'masaa $hours',
+      one: 'saa $hours',
     );
-    return '$hours $_temp0 ago';
+    return '$_temp0 zilizopita';
   }
 
   @override
@@ -2875,10 +2879,10 @@ class AppLocalizationsSw extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       days,
       locale: localeName,
-      other: 'days',
-      one: 'day',
+      other: 'siku $days',
+      one: 'siku $days',
     );
-    return '$days $_temp0 ago';
+    return '$_temp0 zilizopita';
   }
 
   @override
@@ -2886,10 +2890,10 @@ class AppLocalizationsSw extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       weeks,
       locale: localeName,
-      other: 'weeks',
-      one: 'week',
+      other: 'wiki $weeks',
+      one: 'wiki $weeks',
     );
-    return '$weeks $_temp0 ago';
+    return '$_temp0 zilizopita';
   }
 
   @override
@@ -2897,10 +2901,10 @@ class AppLocalizationsSw extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       months,
       locale: localeName,
-      other: 'months',
-      one: 'month',
+      other: 'miezi $months',
+      one: 'mwezi $months',
     );
-    return '$months $_temp0 ago';
+    return '$_temp0 iliyopita';
   }
 
   @override
@@ -2908,15 +2912,15 @@ class AppLocalizationsSw extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       years,
       locale: localeName,
-      other: 'years',
-      one: 'year',
+      other: 'miaka $years',
+      one: 'mwaka $years',
     );
-    return '$years $_temp0 ago';
+    return '$_temp0 iliyopita';
   }
 
   @override
-  String get notificationsTitle => 'Notifications';
+  String get notificationsTitle => 'Arifa';
 
   @override
-  String get notificationsNoNotifications => 'No notifications yet.';
+  String get notificationsNoNotifications => 'Hakuna arifa bado.';
 }

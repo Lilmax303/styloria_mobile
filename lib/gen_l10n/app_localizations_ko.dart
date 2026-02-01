@@ -1986,7 +1986,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get tipLeaveButton => '팁 남기기';
 
   @override
-  String get walletTitle => 'Wallet';
+  String get walletTitle => '지갑';
 
   @override
   String get walletTooltip => 'Wallet';
@@ -2017,7 +2017,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get walletCashOutInstant => 'Cash Out (Instant)';
 
   @override
-  String get walletCashOutFailed => 'Cash out failed.';
+  String get walletCashOutFailed => '현금 인출 실패.';
 
   @override
   String walletCashOutSentTransfer(Object transferId) {
@@ -2284,569 +2284,515 @@ class AppLocalizationsKo extends AppLocalizations {
       'Location access denied. You cannot be available for bookings without location enabled.';
 
   @override
-  String get signOut => 'Sign out';
+  String get signOut => '로그아웃';
 
   @override
-  String get kycIdFrontPhoto => 'ID Front Photo';
+  String get kycIdFrontPhoto => '신분증 앞면 사진';
 
   @override
-  String get kycIdFrontMessage => 'Take a photo of the front of your ID card';
+  String get kycIdFrontMessage => '신분증 앞면 사진을 촬영하세요';
 
   @override
-  String get kycIdBackPhoto => 'ID Back Photo';
+  String get kycIdBackPhoto => '신분증 뒷면 사진';
 
   @override
-  String get kycIdBackMessage => 'Take a photo of the back of your ID card';
+  String get kycIdBackMessage => '신분증 뒷면 사진을 촬영하세요';
 
   @override
-  String get kycCamera => 'Camera';
+  String get kycCamera => '카메라';
 
   @override
-  String get kycGallery => 'Gallery';
+  String get kycGallery => '갤러리';
 
   @override
-  String get kycChooseSource => 'Choose source:';
+  String get kycChooseSource => '소스 선택:';
 
   @override
-  String get kycFailedCaptureImage => 'Failed to capture image';
+  String get kycFailedCaptureImage => '이미지 캡처 실패';
 
   @override
-  String get kycFailedCaptureSelfie => 'Failed to capture selfie';
+  String get kycFailedCaptureSelfie => '셀카 촬영 실패';
 
   @override
-  String get kycCameraNotAvailable => 'Camera not available';
+  String get kycCameraNotAvailable => '카메라를 사용할 수 없습니다';
 
   @override
   String get kycCameraNotAvailableMessage =>
-      'Camera is not available. Would you like to select an image from your gallery instead?';
+      '카메라를 사용할 수 없습니다. 대신 갤러리에서 이미지를 선택하시겠습니까?';
 
   @override
-  String get kycUseGallery => 'Use Gallery';
+  String get kycUseGallery => '갤러리 사용';
 
   @override
   String get kycDocumentsLocked =>
-      'Documents are locked while pending review. You cannot make changes until verification is complete.';
+      '검토 대기 중인 문서는 잠겨 있습니다. 인증이 완료될 때까지 변경할 수 없습니다.';
 
   @override
-  String get kycVerificationSubmittedSuccessfully =>
-      'Verification submitted successfully';
+  String get kycVerificationSubmittedSuccessfully => '인증이 성공적으로 제출되었습니다';
 
   @override
-  String get kycVerificationSubmitted => 'Verification Submitted';
+  String get kycVerificationSubmitted => '인증 제출됨';
 
   @override
-  String get kycThankYouSubmitting =>
-      'Thank you for submitting your verification documents!';
+  String get kycThankYouSubmitting => '인증 서류를 제출해 주셔서 감사합니다!';
 
   @override
-  String get kycWhatHappensNext => 'What happens next:';
+  String get kycWhatHappensNext => '다음 단계:';
 
   @override
-  String get kycReviewTime =>
-      'Our team will review your documents within 24-48 hours';
+  String get kycReviewTime => '저희 팀이 24~48시간 이내에 문서를 검토합니다';
 
   @override
-  String get kycEmailNotification =>
-      'You\'ll receive an email once your verification is complete';
+  String get kycEmailNotification => '인증이 완료되면 이메일을 받게 됩니다';
 
   @override
-  String get kycCheckEmail =>
-      'Check your email for updates on your verification status';
+  String get kycCheckEmail => '인증 상태 업데이트를 위해 이메일을 확인하세요';
 
   @override
-  String get kycLocked =>
-      'Your documents are now locked and cannot be changed during review';
+  String get kycLocked => '문서가 잠겨 있으며 검토 중에는 변경할 수 없습니다';
 
   @override
-  String get kycRecommendSignOut =>
-      'We recommend signing out and checking back later for your verification result.';
+  String get kycRecommendSignOut => '로그아웃 후 나중에 인증 결과를 확인하시는 것을 권장합니다.';
 
   @override
-  String get kycStaySignedIn => 'Stay Signed In';
+  String get kycStaySignedIn => '로그인 유지';
 
   @override
-  String get kycVerificationPending => 'Verification Pending';
+  String get kycVerificationPending => '인증 대기 중';
 
   @override
-  String get kycVerificationPendingSubtitle =>
-      'Your documents are being reviewed';
+  String get kycVerificationPendingSubtitle => '문서를 검토 중입니다';
 
   @override
-  String get kycVerificationApproved => 'Verification Approved';
+  String get kycVerificationApproved => '인증 승인됨';
 
   @override
-  String get kycVerificationApprovedSubtitle =>
-      'You can now access all provider features';
+  String get kycVerificationApprovedSubtitle => '이제 모든 제공자 기능에 액세스할 수 있습니다';
 
   @override
-  String get kycVerificationRejected => 'Verification Rejected';
+  String get kycVerificationRejected => '인증 거부됨';
 
   @override
-  String get kycVerificationRejectedSubtitle =>
-      'Please review the notes below and resubmit';
+  String get kycVerificationRejectedSubtitle => '아래 메모를 검토하고 다시 제출하세요';
 
   @override
-  String get kycVerificationRequired => 'Verification Required';
+  String get kycVerificationRequired => '인증 필요';
 
   @override
-  String get kycVerificationRequiredSubtitle =>
-      'Complete verification to access provider features';
+  String get kycVerificationRequiredSubtitle => '제공자 기능에 액세스하려면 인증을 완료하세요';
 
   @override
-  String get kycReviewNotes => 'Review Notes';
+  String get kycReviewNotes => '검토 메모';
 
   @override
-  String get kycIdCardFront => 'ID Card (Front)';
+  String get kycIdCardFront => '신분증 (앞면)';
 
   @override
-  String get kycIdCardBack => 'ID Card (Back)';
+  String get kycIdCardBack => '신분증 (뒷면)';
 
   @override
-  String get kycVerificationSelfie => 'Verification Selfie';
+  String get kycVerificationSelfie => '인증 셀카';
 
   @override
-  String get kycButtonLocked => 'Locked';
+  String get kycButtonLocked => '잠김';
 
   @override
-  String get kycCaptureIdFront => 'Capture ID Front';
+  String get kycCaptureIdFront => '신분증 앞면 촬영';
 
   @override
-  String get kycCaptureIdBack => 'Capture ID Back';
+  String get kycCaptureIdBack => '신분증 뒷면 촬영';
 
   @override
-  String get kycDocumentsLockedButton => 'Documents Locked';
+  String get kycDocumentsLockedButton => '문서 잠김';
 
   @override
-  String get kycTipsTitle => '📸 Tips for good photos:';
+  String get kycTipsTitle => '📸 좋은 사진을 위한 팁:';
 
   @override
-  String get kycTipGoodLighting => '• Use good lighting';
+  String get kycTipGoodLighting => '• 좋은 조명을 사용하세요';
 
   @override
-  String get kycTipFlatCard => '• Place ID card on a flat surface';
+  String get kycTipFlatCard => '• 신분증을 평평한 곳에 놓으세요';
 
   @override
-  String get kycTipReadableText => '• Make sure all text is readable';
+  String get kycTipReadableText => '• 모든 텍스트가 읽을 수 있는지 확인하세요';
 
   @override
-  String get kycTipFaceCamera => '• Face the camera directly for selfie';
+  String get kycTipFaceCamera => '• 셀카는 카메라를 정면으로 보세요';
 
   @override
-  String get kycTipAvoidGlare => '• Avoid glare or shadows';
+  String get kycTipAvoidGlare => '• 빛 반사나 그림자를 피하세요';
 
   @override
-  String get kycFailedSubmitVerification => 'Failed to submit verification';
+  String get kycFailedSubmitVerification => '인증 제출 실패';
 
   @override
-  String get paystackSetupTitle => 'Setup Payout Account';
+  String get paystackSetupTitle => '지급 계정 설정';
 
   @override
-  String get paystackVerifying => 'Verifying...';
+  String get paystackVerifying => '확인 중...';
 
   @override
-  String get paystackVerificationSuccess =>
-      'Payout settings saved successfully!';
+  String get paystackVerificationSuccess => '지급 설정이 성공적으로 저장되었습니다!';
 
   @override
-  String get paystackVerificationFailed => 'Failed to save payout settings';
+  String get paystackVerificationFailed => '지급 설정 저장 실패';
 
   @override
-  String get paystackSelectBank => 'Select Your Bank';
+  String get paystackSelectBank => '은행 선택';
 
   @override
-  String get paystackAccountNumber => 'Account Number';
+  String get paystackAccountNumber => '계좌번호';
 
   @override
-  String get paystackVerifyAccount => 'Verify Account';
+  String get paystackVerifyAccount => '계정 확인';
 
   @override
-  String get paystackAccountVerified => 'Account Verified';
+  String get paystackAccountVerified => '계정 확인됨';
 
   @override
-  String get paystackSavePayoutAccount => 'Save Payout Account';
+  String get paystackSavePayoutAccount => '지급 계정 저장';
 
   @override
   String paystackNoBanksAvailable(Object country) {
-    return 'No banks available for $country';
+    return '$country에 사용 가능한 은행이 없습니다';
   }
 
   @override
-  String get paystackRetry => 'Retry';
+  String get paystackRetry => '재시도';
 
   @override
-  String get paystackPayoutsInfo =>
-      'Your earnings will be sent to this account. Payouts are processed within 24 hours.';
+  String get paystackPayoutsInfo => '수익은 이 계정으로 전송됩니다. 지급은 24시간 이내에 처리됩니다.';
 
   @override
-  String get paystackConnected => 'Account: connected';
+  String get paystackConnected => '계정: 연결됨';
 
   @override
-  String get paystackNotConnected => 'Account: not connected';
+  String get paystackNotConnected => '계정: 연결되지 않음';
 
   @override
-  String get paystackDetailsSubmitted => 'Details submitted:';
+  String get paystackDetailsSubmitted => '제출된 세부정보:';
 
   @override
-  String get paystackPayoutsEnabled => 'Payouts enabled:';
+  String get paystackPayoutsEnabled => '지급 활성화:';
 
   @override
-  String get paystackYes => 'yes';
+  String get paystackYes => '예';
 
   @override
-  String get paystackNo => 'no';
+  String get paystackNo => '아니오';
 
   @override
-  String get paystackFinishSetup => 'Finish Stripe Setup';
+  String get paystackFinishSetup => 'Stripe 설정 완료';
 
   @override
-  String get paystackConnectStripe => 'Connect Stripe';
+  String get paystackConnectStripe => 'Stripe 연결';
 
   @override
-  String get paystackOpenDashboard => 'Open Stripe Dashboard';
+  String get paystackOpenDashboard => 'Stripe 대시보드 열기';
 
   @override
-  String get paystackMustFinishSetup =>
-      'You must finish Stripe setup before you can cash out.';
+  String get paystackMustFinishSetup => '현금 인출 전에 Stripe 설정을 완료해야 합니다.';
 
   @override
-  String get paystackPayouts => 'Paystack Payouts';
+  String get paystackPayouts => 'Paystack 지급';
 
   @override
   String get paystackAddBankDetails =>
-      'Add your bank account details in Payout Settings to receive payouts via Paystack.';
+      'Paystack을 통해 지급을 받으려면 지급 설정에서 은행 계좌 정보를 추가하세요.';
 
   @override
-  String get paystackOpenSettings => 'Open Payout Settings';
+  String get paystackOpenSettings => '지급 설정 열기';
 
   @override
   String payoutPaystackForCountry(Object country) {
-    return 'Payouts via Paystack for $country';
+    return '$country의 Paystack을 통한 지급';
   }
 
   @override
   String payoutFlutterwaveForCountry(Object country) {
-    return 'Payouts are processed via Flutterwave for $country';
+    return '$country의 지급은 Flutterwave를 통해 처리됩니다';
   }
 
   @override
   String get payoutStripeConnect => 'Stripe Connect';
 
   @override
-  String get payoutBankAccountDetails => 'Bank Account Details';
+  String get payoutBankAccountDetails => '은행 계좌 세부정보';
 
   @override
-  String get payoutAccountHolderName => 'Account Holder Name';
+  String get payoutAccountHolderName => '예금주명';
 
   @override
-  String get payoutAccountHolderNameHint =>
-      'Enter name as it appears on your bank account';
+  String get payoutAccountHolderNameHint => '은행 계좌에 표시된 이름을 입력하세요';
 
   @override
-  String get payoutSelectBank => 'Select Bank *';
+  String get payoutSelectBank => '은행 선택 *';
 
   @override
-  String get payoutBankName => 'Bank Name *';
+  String get payoutBankName => '은행명 *';
 
   @override
-  String get payoutBankNameManual => 'Bank Name (manual)';
+  String get payoutBankNameManual => '은행명 (수동)';
 
   @override
-  String get payoutBankNameHint => 'e.g., GCB Bank, Ecobank';
+  String get payoutBankNameHint => '예: GCB Bank, Ecobank';
 
   @override
-  String get payoutBankCode => 'Bank Code *';
+  String get payoutBankCode => '은행 코드 *';
 
   @override
-  String get payoutBankCodeManual => 'Bank Code (manual)';
+  String get payoutBankCodeManual => '은행 코드 (수동)';
 
   @override
-  String get payoutBankCodeHint => 'Flutterwave bank code';
+  String get payoutBankCodeHint => 'Flutterwave 은행 코드';
 
   @override
-  String get payoutBankCodeHelper => 'Contact support if unsure of bank code';
+  String get payoutBankCodeHelper => '은행 코드를 모르는 경우 지원팀에 문의하세요';
 
   @override
-  String get payoutAccountNumber => 'Account Number *';
+  String get payoutAccountNumber => '계좌번호 *';
 
   @override
-  String get payoutAccountNumberHint => 'Enter your bank account number';
+  String get payoutAccountNumberHint => '은행 계좌번호를 입력하세요';
 
   @override
-  String get payoutMobileMoney => 'Mobile Money';
+  String get payoutMobileMoney => '모바일 머니';
 
   @override
-  String get payoutFullName => 'Full Name (as registered) *';
+  String get payoutFullName => '전체 이름 (등록된 대로) *';
 
   @override
-  String get payoutFullNameHint =>
-      'Name registered on your mobile money account';
+  String get payoutFullNameHint => '모바일 머니 계정에 등록된 이름';
 
   @override
-  String get payoutMobileNetwork => 'Mobile Network *';
+  String get payoutMobileNetwork => '모바일 네트워크 *';
 
   @override
-  String get payoutSelectNetwork => 'Select your mobile network';
+  String get payoutSelectNetwork => '모바일 네트워크 선택';
 
   @override
-  String get payoutMobileNetworkHint => 'e.g., MTN, Vodafone, Airtel';
+  String get payoutMobileNetworkHint => '예: MTN, Vodafone, Airtel';
 
   @override
-  String get payoutCountryCode => 'Country Code';
+  String get payoutCountryCode => '국가 코드';
 
   @override
-  String get payoutMobileMoneyNumber => 'Mobile Money Number *';
+  String get payoutMobileMoneyNumber => '모바일 머니 번호 *';
 
   @override
-  String get payoutMobileMoneyNumberHint => 'e.g., 0541234567';
+  String get payoutMobileMoneyNumberHint => '예: 0541234567';
 
   @override
-  String get payoutZipCode => 'ZIP/Postal Code';
+  String get payoutZipCode => '우편번호';
 
   @override
-  String get payoutZipCodeHint => 'If required by your network';
+  String get payoutZipCodeHint => '네트워크에서 필요한 경우';
 
   @override
-  String get payoutMethod => 'Payout Method';
+  String get payoutMethod => '지급 방법';
 
   @override
-  String get payoutBankTransfer => 'Bank Transfer';
+  String get payoutBankTransfer => '은행 송금';
 
   @override
-  String get payoutCurrency => 'Currency';
+  String get payoutCurrency => '통화';
 
   @override
   String payoutCurrencyLocked(Object country) {
-    return 'Locked to $country currency';
+    return '$country 통화로 잠김';
   }
 
   @override
-  String get payoutBeneficiaryId => 'Beneficiary ID';
+  String get payoutBeneficiaryId => '수취인 ID';
 
   @override
-  String get payoutBeneficiaryIdHint => 'Optional - for recurring transfers';
+  String get payoutBeneficiaryIdHint => '선택사항 - 반복 송금용';
 
   @override
-  String get payoutSchedule => 'Payout Schedule';
+  String get payoutSchedule => '지급 일정';
 
   @override
-  String get payoutFrequency => 'Payout Frequency';
+  String get payoutFrequency => '지급 빈도';
 
   @override
-  String get payoutFrequencyWeekly => 'Weekly';
+  String get payoutFrequencyWeekly => '주간';
 
   @override
-  String get payoutFrequencyMonthly => 'Monthly (1st of each month)';
+  String get payoutFrequencyMonthly => '월간 (매월 1일)';
 
   @override
-  String get payoutDayHelper => 'Available: Tuesday, Thursday, Friday';
+  String get payoutDayHelper => '사용 가능: 화요일, 목요일, 금요일';
 
   @override
-  String get payoutMonthlyInfo =>
-      'Monthly payouts are processed on the 1st of each month.';
+  String get payoutMonthlyInfo => '월간 지급은 매월 1일에 처리됩니다.';
 
   @override
-  String get payoutInstantCashout => 'Instant Cashout';
+  String get payoutInstantCashout => '즉시 현금 인출';
 
   @override
   String get payoutInstantCashoutInfo =>
-      '• Unlimited instant cashouts available\n• 5% fee applies to instant cashouts\n• Scheduled payouts have no fees';
+      '• 무제한 즉시 현금 인출 가능\n• 즉시 현금 인출에 5% 수수료 적용\n• 예약된 지급은 수수료 없음';
 
   @override
-  String get payoutNextScheduled => 'Next Scheduled Payout';
+  String get payoutNextScheduled => '다음 예정된 지급';
 
   @override
   String payoutYourLocalTime(Object timezone) {
-    return 'Your local time ($timezone)';
+    return '현지 시간 ($timezone)';
   }
 
   @override
-  String get payoutAmountToCashOut => 'Amount to cash out';
+  String get payoutAmountToCashOut => '인출 금액';
 
   @override
   String payoutMinMaxRange(Object min, Object max) {
-    return 'Min: $min - Max: $max';
+    return '최소: $min - 최대: $max';
   }
 
   @override
-  String get payoutMaxButton => 'MAX';
+  String get payoutMaxButton => '최대';
 
   @override
-  String get payoutCashOutNow => 'Cash Out (Instant)';
+  String get payoutCashOutNow => '현금 인출 (즉시)';
 
   @override
-  String get payoutAvailableBalance => 'Available Balance';
+  String get payoutAvailableBalance => '사용 가능 잔액';
 
   @override
-  String get payoutPendingFunds => 'Pending';
+  String get payoutPendingFunds => '보류 중';
 
   @override
-  String get payoutPendingInfo =>
-      'Pending funds will be available after the hold period';
+  String get payoutPendingInfo => '보류 중인 자금은 보류 기간 후에 사용 가능합니다';
 
   @override
-  String get payoutLifetimeEarnings => 'Lifetime Earnings';
+  String get payoutLifetimeEarnings => '총 수익';
 
   @override
-  String get payoutTotalCashedOut => 'Total Cashed Out';
+  String get payoutTotalCashedOut => '총 인출액';
 
   @override
-  String get payoutUnlimitedCashouts => 'Unlimited';
+  String get payoutUnlimitedCashouts => '무제한';
 
   @override
-  String get mainHello => 'Hello';
+  String get mainHello => '안녕하세요';
 
   @override
-  String get mainViewProfile => 'View Profile';
+  String get mainViewProfile => '프로필 보기';
 
   @override
-  String get mainBookings => 'Bookings';
+  String get mainBookings => '예약';
 
   @override
-  String get mainNotifications => 'Notifications';
+  String get mainNotifications => '알림';
 
   @override
-  String get mainReferral => 'Referral';
+  String get mainReferral => '추천';
 
   @override
-  String get mainSettings => 'Settings';
+  String get mainSettings => '설정';
 
   @override
-  String get mainHelp => 'Help';
+  String get mainHelp => '도움말';
 
   @override
-  String get mainWallet => 'Wallet';
+  String get mainWallet => '지갑';
 
   @override
-  String get mainEarnings => 'Earnings';
+  String get mainEarnings => '수익';
 
   @override
-  String get mainOpenJobs => 'Open Jobs';
+  String get mainOpenJobs => '진행 중인 작업';
 
   @override
-  String get mainAssignedJobs => 'Assigned Jobs';
+  String get mainAssignedJobs => '할당된 작업';
 
   @override
-  String get mainMyReputation => 'My Reputation';
+  String get mainMyReputation => '내 평판';
 
   @override
-  String get reputationTitle => 'My Reputation';
+  String get reputationTitle => '내 평판';
 
   @override
-  String get reputationYourCustomerRating => 'Your Customer Rating';
+  String get reputationYourCustomerRating => '고객 평가';
 
   @override
   String reputationBasedOnReviews(int count) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: 'reviews',
-      one: 'review',
-    );
-    return 'Based on $count $_temp0';
+    return '$count개의 리뷰 기반';
   }
 
   @override
-  String get reputationExcellentCustomer => '⭐ Excellent Customer';
+  String get reputationExcellentCustomer => '⭐ 우수 고객';
 
   @override
-  String get reputationGreatCustomer => '👍 Great Customer';
+  String get reputationGreatCustomer => '👍 훌륭한 고객';
 
   @override
-  String get reputationGoodCustomer => '✓ Good Customer';
+  String get reputationGoodCustomer => '✓ 좋은 고객';
 
   @override
-  String get reputationAverage => 'Average';
+  String get reputationAverage => '평균';
 
   @override
-  String get reputationNeedsImprovement => 'Needs Improvement';
+  String get reputationNeedsImprovement => '개선 필요';
 
   @override
-  String get reputationNoRatingYet => 'No Rating Yet';
+  String get reputationNoRatingYet => '아직 평가 없음';
 
   @override
-  String get reputationWhatProvidersSay => 'What Providers Say About You';
+  String get reputationWhatProvidersSay => '제공자의 평가';
 
   @override
-  String get reputationNoReviews => 'No Reviews Yet';
+  String get reputationNoReviews => '아직 리뷰 없음';
 
   @override
   String get reputationNoReviewsHelp =>
-      'Complete bookings to build your reputation!\nProviders will rate you after completing services.';
+      '예약을 완료하여 평판을 쌓으세요!\n서비스 완료 후 제공자가 평가합니다.';
 
   @override
   String reputationShowMore(int count) {
-    return 'Show More ($count more)';
+    return '더 보기 ($count개 더)';
   }
 
   @override
-  String get reputationShowLess => 'Show Less';
+  String get reputationShowLess => '간략히 보기';
 
   @override
-  String get reputationJustNow => 'Just now';
+  String get reputationJustNow => '방금';
 
   @override
   String reputationMinutesAgo(int minutes) {
-    return '$minutes min ago';
+    return '$minutes분 전';
   }
 
   @override
   String reputationHoursAgo(int hours) {
-    String _temp0 = intl.Intl.pluralLogic(
-      hours,
-      locale: localeName,
-      other: 'hours',
-      one: 'hour',
-    );
-    return '$hours $_temp0 ago';
+    return '$hours시간 전';
   }
 
   @override
   String reputationDaysAgo(int days) {
-    String _temp0 = intl.Intl.pluralLogic(
-      days,
-      locale: localeName,
-      other: 'days',
-      one: 'day',
-    );
-    return '$days $_temp0 ago';
+    return '$days일 전';
   }
 
   @override
   String reputationWeeksAgo(int weeks) {
-    String _temp0 = intl.Intl.pluralLogic(
-      weeks,
-      locale: localeName,
-      other: 'weeks',
-      one: 'week',
-    );
-    return '$weeks $_temp0 ago';
+    return '$weeks주 전';
   }
 
   @override
   String reputationMonthsAgo(int months) {
-    String _temp0 = intl.Intl.pluralLogic(
-      months,
-      locale: localeName,
-      other: 'months',
-      one: 'month',
-    );
-    return '$months $_temp0 ago';
+    return '$months개월 전';
   }
 
   @override
   String reputationYearsAgo(int years) {
-    String _temp0 = intl.Intl.pluralLogic(
-      years,
-      locale: localeName,
-      other: 'years',
-      one: 'year',
-    );
-    return '$years $_temp0 ago';
+    return '$years년 전';
   }
 
   @override
-  String get notificationsTitle => 'Notifications';
+  String get notificationsTitle => '알림';
 
   @override
-  String get notificationsNoNotifications => 'No notifications yet.';
+  String get notificationsNoNotifications => '아직 알림이 없습니다.';
 }

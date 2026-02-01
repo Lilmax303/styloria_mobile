@@ -22,6 +22,8 @@ class _ProviderPayoutSettingsScreenState extends State<ProviderPayoutSettingsScr
   bool _loading = true;
   bool _saving = false;
 
+  AppLocalizations get l10n => AppLocalizations.of(context);
+
   bool _autoEnabled = true;
   bool _instantEnabled = true;
   String _payoutFrequency = 'weekly';
@@ -298,7 +300,6 @@ class _ProviderPayoutSettingsScreenState extends State<ProviderPayoutSettingsScr
   }
 
   Future<void> _save() async {
-    final l10n = AppLocalizations.of(context);
     
     // Validation
     if (_isPaystackProvider) {
@@ -837,7 +838,6 @@ class _ProviderPayoutSettingsScreenState extends State<ProviderPayoutSettingsScr
 
   @override
   Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context);
     if (_loading) {
       return const Scaffold(
         body: Center(child: CircularProgressIndicator()),
@@ -884,16 +884,16 @@ class _ProviderPayoutSettingsScreenState extends State<ProviderPayoutSettingsScr
             const SizedBox(height: 8),
             
             SegmentedButton<String>(
-              segments: const [
+              segments: [
                 ButtonSegment(
                   value: 'bank',
                   label: Text(l10n.payoutBankTransfer),
-                  icon: const Icon(Icons.account_balance),
+                  icon: Icon(Icons.account_balance),
                 ),
                 ButtonSegment(
                   value: 'mobile_money',
                   label: Text(l10n.payoutMobileMoney),
-                  icon: const Icon(Icons.phone_android),
+                  icon: Icon(Icons.phone_android),
                 ),
               ],
               selected: {_fwMethod},

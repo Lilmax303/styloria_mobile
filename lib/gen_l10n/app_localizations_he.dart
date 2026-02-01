@@ -2308,509 +2308,499 @@ class AppLocalizationsHe extends AppLocalizations {
       'Location access denied. You cannot be available for bookings without location enabled.';
 
   @override
-  String get signOut => 'Sign out';
+  String get signOut => 'התנתק';
 
   @override
-  String get kycIdFrontPhoto => 'ID Front Photo';
+  String get kycIdFrontPhoto => 'תמונת חזית תעודת זהות';
 
   @override
-  String get kycIdFrontMessage => 'Take a photo of the front of your ID card';
+  String get kycIdFrontMessage => 'צלם תמונה של החלק הקדמי של תעודת הזהות שלך';
 
   @override
-  String get kycIdBackPhoto => 'ID Back Photo';
+  String get kycIdBackPhoto => 'תמונת גב תעודת זהות';
 
   @override
-  String get kycIdBackMessage => 'Take a photo of the back of your ID card';
+  String get kycIdBackMessage => 'צלם תמונה של החלק האחורי של תעודת הזהות שלך';
 
   @override
-  String get kycCamera => 'Camera';
+  String get kycCamera => 'מצלמה';
 
   @override
-  String get kycGallery => 'Gallery';
+  String get kycGallery => 'גלריה';
 
   @override
-  String get kycChooseSource => 'Choose source:';
+  String get kycChooseSource => 'בחר מקור:';
 
   @override
-  String get kycFailedCaptureImage => 'Failed to capture image';
+  String get kycFailedCaptureImage => 'כשל בצילום התמונה';
 
   @override
-  String get kycFailedCaptureSelfie => 'Failed to capture selfie';
+  String get kycFailedCaptureSelfie => 'כשל בצילום סלפי';
 
   @override
-  String get kycCameraNotAvailable => 'Camera not available';
+  String get kycCameraNotAvailable => 'המצלמה אינה זמינה';
 
   @override
   String get kycCameraNotAvailableMessage =>
-      'Camera is not available. Would you like to select an image from your gallery instead?';
+      'המצלמה אינה זמינה. האם תרצה לבחור תמונה מהגלריה שלך במקום?';
 
   @override
-  String get kycUseGallery => 'Use Gallery';
+  String get kycUseGallery => 'השתמש בגלריה';
 
   @override
   String get kycDocumentsLocked =>
-      'Documents are locked while pending review. You cannot make changes until verification is complete.';
+      'המסמכים נעולים בזמן הבדיקה. לא ניתן לבצע שינויים עד להשלמת האימות.';
 
   @override
-  String get kycVerificationSubmittedSuccessfully =>
-      'Verification submitted successfully';
+  String get kycVerificationSubmittedSuccessfully => 'האימות הוגש בהצלחה';
 
   @override
-  String get kycVerificationSubmitted => 'Verification Submitted';
+  String get kycVerificationSubmitted => 'האימות הוגש';
 
   @override
-  String get kycThankYouSubmitting =>
-      'Thank you for submitting your verification documents!';
+  String get kycThankYouSubmitting => 'תודה על הגשת מסמכי האימות שלך!';
 
   @override
-  String get kycWhatHappensNext => 'What happens next:';
+  String get kycWhatHappensNext => 'מה קורה הלאה:';
 
   @override
-  String get kycReviewTime =>
-      'Our team will review your documents within 24-48 hours';
+  String get kycReviewTime => 'הצוות שלנו יבדוק את המסמכים שלך תוך 24-48 שעות';
 
   @override
-  String get kycEmailNotification =>
-      'You\'ll receive an email once your verification is complete';
+  String get kycEmailNotification => 'תקבל דוא\"ל ברגע שהאימות שלך יושלם';
 
   @override
   String get kycCheckEmail =>
-      'Check your email for updates on your verification status';
+      'בדוק את הדוא\"ל שלך לקבלת עדכונים על סטטוס האימות';
 
   @override
-  String get kycLocked =>
-      'Your documents are now locked and cannot be changed during review';
+  String get kycLocked => 'המסמכים שלך כעת נעולים ולא ניתן לשנותם במהלך הבדיקה';
 
   @override
   String get kycRecommendSignOut =>
-      'We recommend signing out and checking back later for your verification result.';
+      'אנו ממליצים להתנתק ולחזור מאוחר יותר לתוצאת האימות שלך.';
 
   @override
-  String get kycStaySignedIn => 'Stay Signed In';
+  String get kycStaySignedIn => 'הישאר מחובר';
 
   @override
-  String get kycVerificationPending => 'Verification Pending';
+  String get kycVerificationPending => 'אימות ממתין';
 
   @override
-  String get kycVerificationPendingSubtitle =>
-      'Your documents are being reviewed';
+  String get kycVerificationPendingSubtitle => 'המסמכים שלך נבדקים';
 
   @override
-  String get kycVerificationApproved => 'Verification Approved';
+  String get kycVerificationApproved => 'אימות אושר';
 
   @override
   String get kycVerificationApprovedSubtitle =>
-      'You can now access all provider features';
+      'כעת תוכל לגשת לכל התכונות של הספק';
 
   @override
-  String get kycVerificationRejected => 'Verification Rejected';
+  String get kycVerificationRejected => 'אימות נדחה';
 
   @override
-  String get kycVerificationRejectedSubtitle =>
-      'Please review the notes below and resubmit';
+  String get kycVerificationRejectedSubtitle => 'אנא עיין בהערות למטה והגש שוב';
 
   @override
-  String get kycVerificationRequired => 'Verification Required';
+  String get kycVerificationRequired => 'נדרש אימות';
 
   @override
   String get kycVerificationRequiredSubtitle =>
-      'Complete verification to access provider features';
+      'השלם אימות כדי לגשת לתכונות ספק';
 
   @override
-  String get kycReviewNotes => 'Review Notes';
+  String get kycReviewNotes => 'הערות בדיקה';
 
   @override
-  String get kycIdCardFront => 'ID Card (Front)';
+  String get kycIdCardFront => 'תעודת זהות (קדמית)';
 
   @override
-  String get kycIdCardBack => 'ID Card (Back)';
+  String get kycIdCardBack => 'תעודת זהות (אחורית)';
 
   @override
-  String get kycVerificationSelfie => 'Verification Selfie';
+  String get kycVerificationSelfie => 'סלפי אימות';
 
   @override
-  String get kycButtonLocked => 'Locked';
+  String get kycButtonLocked => 'נעול';
 
   @override
-  String get kycCaptureIdFront => 'Capture ID Front';
+  String get kycCaptureIdFront => 'צלם חזית תעודת זהות';
 
   @override
-  String get kycCaptureIdBack => 'Capture ID Back';
+  String get kycCaptureIdBack => 'צלם גב תעודת זהות';
 
   @override
-  String get kycDocumentsLockedButton => 'Documents Locked';
+  String get kycDocumentsLockedButton => 'מסמכים נעולים';
 
   @override
-  String get kycTipsTitle => '📸 Tips for good photos:';
+  String get kycTipsTitle => '📸 טיפים לתמונות טובות:';
 
   @override
-  String get kycTipGoodLighting => '• Use good lighting';
+  String get kycTipGoodLighting => '• השתמש בתאורה טובה';
 
   @override
-  String get kycTipFlatCard => '• Place ID card on a flat surface';
+  String get kycTipFlatCard => '• הנח את תעודת הזהות על משטח שטוח';
 
   @override
-  String get kycTipReadableText => '• Make sure all text is readable';
+  String get kycTipReadableText => '• וודא שכל הטקסט קריא';
 
   @override
-  String get kycTipFaceCamera => '• Face the camera directly for selfie';
+  String get kycTipFaceCamera => '• פנה ישירות למצלמה לסלפי';
 
   @override
-  String get kycTipAvoidGlare => '• Avoid glare or shadows';
+  String get kycTipAvoidGlare => '• הימנע מבהירות או צללים';
 
   @override
-  String get kycFailedSubmitVerification => 'Failed to submit verification';
+  String get kycFailedSubmitVerification => 'הגשת האימות נכשלה';
 
   @override
-  String get paystackSetupTitle => 'Setup Payout Account';
+  String get paystackSetupTitle => 'הגדר חשבון תשלום';
 
   @override
-  String get paystackVerifying => 'Verifying...';
+  String get paystackVerifying => 'מאמת...';
 
   @override
-  String get paystackVerificationSuccess =>
-      'Payout settings saved successfully!';
+  String get paystackVerificationSuccess => 'הגדרות התשלום נשמרו בהצלחה!';
 
   @override
-  String get paystackVerificationFailed => 'Failed to save payout settings';
+  String get paystackVerificationFailed => 'שמירת הגדרות התשלום נכשלה';
 
   @override
-  String get paystackSelectBank => 'Select Your Bank';
+  String get paystackSelectBank => 'בחר את הבנק שלך';
 
   @override
-  String get paystackAccountNumber => 'Account Number';
+  String get paystackAccountNumber => 'מספר חשבון';
 
   @override
-  String get paystackVerifyAccount => 'Verify Account';
+  String get paystackVerifyAccount => 'אמת חשבון';
 
   @override
-  String get paystackAccountVerified => 'Account Verified';
+  String get paystackAccountVerified => 'החשבון אומת';
 
   @override
-  String get paystackSavePayoutAccount => 'Save Payout Account';
+  String get paystackSavePayoutAccount => 'שמור חשבון תשלום';
 
   @override
   String paystackNoBanksAvailable(Object country) {
-    return 'No banks available for $country';
+    return 'אין בנקים זמינים עבור $country';
   }
 
   @override
-  String get paystackRetry => 'Retry';
+  String get paystackRetry => 'נסה שוב';
 
   @override
   String get paystackPayoutsInfo =>
-      'Your earnings will be sent to this account. Payouts are processed within 24 hours.';
+      'הרווחים שלך יישלחו לחשבון זה. תשלומים מעובדים תוך 24 שעות.';
 
   @override
-  String get paystackConnected => 'Account: connected';
+  String get paystackConnected => 'חשבון: מחובר';
 
   @override
-  String get paystackNotConnected => 'Account: not connected';
+  String get paystackNotConnected => 'חשבון: לא מחובר';
 
   @override
-  String get paystackDetailsSubmitted => 'Details submitted:';
+  String get paystackDetailsSubmitted => 'פרטים הוגשו:';
 
   @override
-  String get paystackPayoutsEnabled => 'Payouts enabled:';
+  String get paystackPayoutsEnabled => 'תשלומים מופעלים:';
 
   @override
-  String get paystackYes => 'yes';
+  String get paystackYes => 'כן';
 
   @override
-  String get paystackNo => 'no';
+  String get paystackNo => 'לא';
 
   @override
-  String get paystackFinishSetup => 'Finish Stripe Setup';
+  String get paystackFinishSetup => 'השלם הגדרת Stripe';
 
   @override
-  String get paystackConnectStripe => 'Connect Stripe';
+  String get paystackConnectStripe => 'חבר Stripe';
 
   @override
-  String get paystackOpenDashboard => 'Open Stripe Dashboard';
+  String get paystackOpenDashboard => 'פתח לוח בקרה של Stripe';
 
   @override
   String get paystackMustFinishSetup =>
-      'You must finish Stripe setup before you can cash out.';
+      'עליך להשלים את הגדרת Stripe לפני שתוכל למשוך כסף.';
 
   @override
-  String get paystackPayouts => 'Paystack Payouts';
+  String get paystackPayouts => 'תשלומי Paystack';
 
   @override
   String get paystackAddBankDetails =>
-      'Add your bank account details in Payout Settings to receive payouts via Paystack.';
+      'הוסף את פרטי חשבון הבנק שלך בהגדרות תשלום כדי לקבל תשלומים דרך Paystack.';
 
   @override
-  String get paystackOpenSettings => 'Open Payout Settings';
+  String get paystackOpenSettings => 'פתח הגדרות תשלום';
 
   @override
   String payoutPaystackForCountry(Object country) {
-    return 'Payouts via Paystack for $country';
+    return 'תשלומים דרך Paystack עבור $country';
   }
 
   @override
   String payoutFlutterwaveForCountry(Object country) {
-    return 'Payouts are processed via Flutterwave for $country';
+    return 'תשלומים מעובדים דרך Flutterwave עבור $country';
   }
 
   @override
   String get payoutStripeConnect => 'Stripe Connect';
 
   @override
-  String get payoutBankAccountDetails => 'Bank Account Details';
+  String get payoutBankAccountDetails => 'פרטי חשבון בנק';
 
   @override
-  String get payoutAccountHolderName => 'Account Holder Name';
+  String get payoutAccountHolderName => 'שם בעל החשבון';
 
   @override
   String get payoutAccountHolderNameHint =>
-      'Enter name as it appears on your bank account';
+      'הזן שם כפי שהוא מופיע בחשבון הבנק שלך';
 
   @override
-  String get payoutSelectBank => 'Select Bank *';
+  String get payoutSelectBank => 'בחר בנק *';
 
   @override
-  String get payoutBankName => 'Bank Name *';
+  String get payoutBankName => 'שם בנק *';
 
   @override
-  String get payoutBankNameManual => 'Bank Name (manual)';
+  String get payoutBankNameManual => 'שם בנק (ידני)';
 
   @override
-  String get payoutBankNameHint => 'e.g., GCB Bank, Ecobank';
+  String get payoutBankNameHint => 'למשל GCB Bank, Ecobank';
 
   @override
-  String get payoutBankCode => 'Bank Code *';
+  String get payoutBankCode => 'קוד בנק *';
 
   @override
-  String get payoutBankCodeManual => 'Bank Code (manual)';
+  String get payoutBankCodeManual => 'קוד בנק (ידני)';
 
   @override
-  String get payoutBankCodeHint => 'Flutterwave bank code';
+  String get payoutBankCodeHint => 'קוד בנק Flutterwave';
 
   @override
-  String get payoutBankCodeHelper => 'Contact support if unsure of bank code';
+  String get payoutBankCodeHelper =>
+      'צור קשר עם תמיכה אם אינך בטוח לגבי קוד הבנק';
 
   @override
-  String get payoutAccountNumber => 'Account Number *';
+  String get payoutAccountNumber => 'מספר חשבון *';
 
   @override
-  String get payoutAccountNumberHint => 'Enter your bank account number';
+  String get payoutAccountNumberHint => 'הזן את מספר חשבון הבנק שלך';
 
   @override
-  String get payoutMobileMoney => 'Mobile Money';
+  String get payoutMobileMoney => 'כסף נייד';
 
   @override
-  String get payoutFullName => 'Full Name (as registered) *';
+  String get payoutFullName => 'שם מלא (כפי שרשום) *';
 
   @override
-  String get payoutFullNameHint =>
-      'Name registered on your mobile money account';
+  String get payoutFullNameHint => 'שם רשום בחשבון הכסף הנייד שלך';
 
   @override
-  String get payoutMobileNetwork => 'Mobile Network *';
+  String get payoutMobileNetwork => 'רשת סלולרית *';
 
   @override
-  String get payoutSelectNetwork => 'Select your mobile network';
+  String get payoutSelectNetwork => 'בחר את הרשת הסלולרית שלך';
 
   @override
-  String get payoutMobileNetworkHint => 'e.g., MTN, Vodafone, Airtel';
+  String get payoutMobileNetworkHint => 'למשל MTN, Vodafone, Airtel';
 
   @override
-  String get payoutCountryCode => 'Country Code';
+  String get payoutCountryCode => 'קוד מדינה';
 
   @override
-  String get payoutMobileMoneyNumber => 'Mobile Money Number *';
+  String get payoutMobileMoneyNumber => 'מספר כסף נייד *';
 
   @override
-  String get payoutMobileMoneyNumberHint => 'e.g., 0541234567';
+  String get payoutMobileMoneyNumberHint => 'למשל 0541234567';
 
   @override
-  String get payoutZipCode => 'ZIP/Postal Code';
+  String get payoutZipCode => 'מיקוד';
 
   @override
-  String get payoutZipCodeHint => 'If required by your network';
+  String get payoutZipCodeHint => 'אם נדרש על ידי הרשת שלך';
 
   @override
-  String get payoutMethod => 'Payout Method';
+  String get payoutMethod => 'שיטת תשלום';
 
   @override
-  String get payoutBankTransfer => 'Bank Transfer';
+  String get payoutBankTransfer => 'העברה בנקאית';
 
   @override
-  String get payoutCurrency => 'Currency';
+  String get payoutCurrency => 'מטבע';
 
   @override
   String payoutCurrencyLocked(Object country) {
-    return 'Locked to $country currency';
+    return 'נעול למטבע $country';
   }
 
   @override
-  String get payoutBeneficiaryId => 'Beneficiary ID';
+  String get payoutBeneficiaryId => 'מזהה מוטב';
 
   @override
-  String get payoutBeneficiaryIdHint => 'Optional - for recurring transfers';
+  String get payoutBeneficiaryIdHint => 'אופציונלי - להעברות חוזרות';
 
   @override
-  String get payoutSchedule => 'Payout Schedule';
+  String get payoutSchedule => 'לוח זמנים לתשלום';
 
   @override
-  String get payoutFrequency => 'Payout Frequency';
+  String get payoutFrequency => 'תדירות תשלום';
 
   @override
-  String get payoutFrequencyWeekly => 'Weekly';
+  String get payoutFrequencyWeekly => 'שבועי';
 
   @override
-  String get payoutFrequencyMonthly => 'Monthly (1st of each month)';
+  String get payoutFrequencyMonthly => 'חודשי (ה-1 בכל חודש)';
 
   @override
-  String get payoutDayHelper => 'Available: Tuesday, Thursday, Friday';
+  String get payoutDayHelper => 'זמין: שלישי, חמישי, שישי';
 
   @override
-  String get payoutMonthlyInfo =>
-      'Monthly payouts are processed on the 1st of each month.';
+  String get payoutMonthlyInfo => 'תשלומים חודשיים מעובדים ב-1 בכל חודש.';
 
   @override
-  String get payoutInstantCashout => 'Instant Cashout';
+  String get payoutInstantCashout => 'משיכה מיידית';
 
   @override
   String get payoutInstantCashoutInfo =>
-      '• Unlimited instant cashouts available\n• 5% fee applies to instant cashouts\n• Scheduled payouts have no fees';
+      '• משיכות מיידיות ללא הגבלה זמינות\n• חיוב של 5% חל על משיכות מיידיות\n• לתשלומים מתוזמנים אין חיובים';
 
   @override
-  String get payoutNextScheduled => 'Next Scheduled Payout';
+  String get payoutNextScheduled => 'תשלום מתוזמן הבא';
 
   @override
   String payoutYourLocalTime(Object timezone) {
-    return 'Your local time ($timezone)';
+    return 'השעה המקומית שלך ($timezone)';
   }
 
   @override
-  String get payoutAmountToCashOut => 'Amount to cash out';
+  String get payoutAmountToCashOut => 'סכום למשיכה';
 
   @override
   String payoutMinMaxRange(Object min, Object max) {
-    return 'Min: $min - Max: $max';
+    return 'מינימום: $min - מקסימום: $max';
   }
 
   @override
-  String get payoutMaxButton => 'MAX';
+  String get payoutMaxButton => 'מקסימום';
 
   @override
-  String get payoutCashOutNow => 'Cash Out (Instant)';
+  String get payoutCashOutNow => 'משוך כסף (מיידי)';
 
   @override
-  String get payoutAvailableBalance => 'Available Balance';
+  String get payoutAvailableBalance => 'יתרה זמינה';
 
   @override
-  String get payoutPendingFunds => 'Pending';
+  String get payoutPendingFunds => 'ממתין';
 
   @override
-  String get payoutPendingInfo =>
-      'Pending funds will be available after the hold period';
+  String get payoutPendingInfo => 'כספים ממתינים יהיו זמינים לאחר תקופת ההמתנה';
 
   @override
-  String get payoutLifetimeEarnings => 'Lifetime Earnings';
+  String get payoutLifetimeEarnings => 'רווחים כוללים';
 
   @override
-  String get payoutTotalCashedOut => 'Total Cashed Out';
+  String get payoutTotalCashedOut => 'סה\"כ נמשך';
 
   @override
-  String get payoutUnlimitedCashouts => 'Unlimited';
+  String get payoutUnlimitedCashouts => 'ללא הגבלה';
 
   @override
-  String get mainHello => 'Hello';
+  String get mainHello => 'שלום';
 
   @override
-  String get mainViewProfile => 'View Profile';
+  String get mainViewProfile => 'צפה בפרופיל';
 
   @override
-  String get mainBookings => 'Bookings';
+  String get mainBookings => 'הזמנות';
 
   @override
-  String get mainNotifications => 'Notifications';
+  String get mainNotifications => 'התראות';
 
   @override
-  String get mainReferral => 'Referral';
+  String get mainReferral => 'הפניה';
 
   @override
-  String get mainSettings => 'Settings';
+  String get mainSettings => 'הגדרות';
 
   @override
-  String get mainHelp => 'Help';
+  String get mainHelp => 'עזרה';
 
   @override
-  String get mainWallet => 'Wallet';
+  String get mainWallet => 'ארנק';
 
   @override
-  String get mainEarnings => 'Earnings';
+  String get mainEarnings => 'רווחים';
 
   @override
-  String get mainOpenJobs => 'Open Jobs';
+  String get mainOpenJobs => 'משרות פתוחות';
 
   @override
-  String get mainAssignedJobs => 'Assigned Jobs';
+  String get mainAssignedJobs => 'משרות שהוקצו';
 
   @override
-  String get mainMyReputation => 'My Reputation';
+  String get mainMyReputation => 'המוניטין שלי';
 
   @override
-  String get reputationTitle => 'My Reputation';
+  String get reputationTitle => 'המוניטין שלי';
 
   @override
-  String get reputationYourCustomerRating => 'Your Customer Rating';
+  String get reputationYourCustomerRating => 'דירוג הלקוח שלך';
 
   @override
   String reputationBasedOnReviews(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'reviews',
-      one: 'review',
+      other: 'ביקורות',
+      one: 'ביקורת',
     );
-    return 'Based on $count $_temp0';
+    return 'מבוסס על $count $_temp0';
   }
 
   @override
-  String get reputationExcellentCustomer => '⭐ Excellent Customer';
+  String get reputationExcellentCustomer => '⭐ לקוח מצוין';
 
   @override
-  String get reputationGreatCustomer => '👍 Great Customer';
+  String get reputationGreatCustomer => '👍 לקוח נהדר';
 
   @override
-  String get reputationGoodCustomer => '✓ Good Customer';
+  String get reputationGoodCustomer => '✓ לקוח טוב';
 
   @override
-  String get reputationAverage => 'Average';
+  String get reputationAverage => 'ממוצע';
 
   @override
-  String get reputationNeedsImprovement => 'Needs Improvement';
+  String get reputationNeedsImprovement => 'דורש שיפור';
 
   @override
-  String get reputationNoRatingYet => 'No Rating Yet';
+  String get reputationNoRatingYet => 'אין דירוג עדיין';
 
   @override
-  String get reputationWhatProvidersSay => 'What Providers Say About You';
+  String get reputationWhatProvidersSay => 'מה ספקים אומרים עליך';
 
   @override
-  String get reputationNoReviews => 'No Reviews Yet';
+  String get reputationNoReviews => 'אין ביקורות עדיין';
 
   @override
   String get reputationNoReviewsHelp =>
-      'Complete bookings to build your reputation!\nProviders will rate you after completing services.';
+      'השלם הזמנות כדי לבנות את המוניטין שלך!\nספקים ידרגו אותך לאחר השלמת השירותים.';
 
   @override
   String reputationShowMore(int count) {
-    return 'Show More ($count more)';
+    return 'הצג עוד ($count נוספות)';
   }
 
   @override
-  String get reputationShowLess => 'Show Less';
+  String get reputationShowLess => 'הצג פחות';
 
   @override
-  String get reputationJustNow => 'Just now';
+  String get reputationJustNow => 'ממש עכשיו';
 
   @override
   String reputationMinutesAgo(int minutes) {
-    return '$minutes min ago';
+    return 'לפני $minutes דקות';
   }
 
   @override
@@ -2818,10 +2808,10 @@ class AppLocalizationsHe extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       hours,
       locale: localeName,
-      other: 'hours',
-      one: 'hour',
+      other: 'שעות',
+      one: 'שעה',
     );
-    return '$hours $_temp0 ago';
+    return 'לפני $hours $_temp0';
   }
 
   @override
@@ -2829,10 +2819,10 @@ class AppLocalizationsHe extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       days,
       locale: localeName,
-      other: 'days',
-      one: 'day',
+      other: 'ימים',
+      one: 'יום',
     );
-    return '$days $_temp0 ago';
+    return 'לפני $days $_temp0';
   }
 
   @override
@@ -2840,10 +2830,10 @@ class AppLocalizationsHe extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       weeks,
       locale: localeName,
-      other: 'weeks',
-      one: 'week',
+      other: 'שבועות',
+      one: 'שבוע',
     );
-    return '$weeks $_temp0 ago';
+    return 'לפני $weeks $_temp0';
   }
 
   @override
@@ -2851,10 +2841,10 @@ class AppLocalizationsHe extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       months,
       locale: localeName,
-      other: 'months',
-      one: 'month',
+      other: 'חודשים',
+      one: 'חודש',
     );
-    return '$months $_temp0 ago';
+    return 'לפני $months $_temp0';
   }
 
   @override
@@ -2862,15 +2852,15 @@ class AppLocalizationsHe extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       years,
       locale: localeName,
-      other: 'years',
-      one: 'year',
+      other: 'שנים',
+      one: 'שנה',
     );
-    return '$years $_temp0 ago';
+    return 'לפני $years $_temp0';
   }
 
   @override
-  String get notificationsTitle => 'Notifications';
+  String get notificationsTitle => 'התראות';
 
   @override
-  String get notificationsNoNotifications => 'No notifications yet.';
+  String get notificationsNoNotifications => 'אין התראות עדיין.';
 }

@@ -2381,509 +2381,520 @@ class AppLocalizationsFr extends AppLocalizations {
       'Location access denied. You cannot be available for bookings without location enabled.';
 
   @override
-  String get signOut => 'Sign out';
+  String get signOut => 'Se déconnecter';
 
   @override
-  String get kycIdFrontPhoto => 'ID Front Photo';
+  String get kycIdFrontPhoto => 'Photo recto de la pièce d\'identité';
 
   @override
-  String get kycIdFrontMessage => 'Take a photo of the front of your ID card';
+  String get kycIdFrontMessage =>
+      'Prenez une photo du recto de votre carte d\'identité';
 
   @override
-  String get kycIdBackPhoto => 'ID Back Photo';
+  String get kycIdBackPhoto => 'Photo verso de la pièce d\'identité';
 
   @override
-  String get kycIdBackMessage => 'Take a photo of the back of your ID card';
+  String get kycIdBackMessage =>
+      'Prenez une photo du verso de votre carte d\'identité';
 
   @override
-  String get kycCamera => 'Camera';
+  String get kycCamera => 'Caméra';
 
   @override
-  String get kycGallery => 'Gallery';
+  String get kycGallery => 'Galerie';
 
   @override
-  String get kycChooseSource => 'Choose source:';
+  String get kycChooseSource => 'Choisir la source :';
 
   @override
-  String get kycFailedCaptureImage => 'Failed to capture image';
+  String get kycFailedCaptureImage => 'Échec de la capture de l\'image';
 
   @override
-  String get kycFailedCaptureSelfie => 'Failed to capture selfie';
+  String get kycFailedCaptureSelfie => 'Échec de la capture du selfie';
 
   @override
-  String get kycCameraNotAvailable => 'Camera not available';
+  String get kycCameraNotAvailable => 'Caméra non disponible';
 
   @override
   String get kycCameraNotAvailableMessage =>
-      'Camera is not available. Would you like to select an image from your gallery instead?';
+      'La caméra n\'est pas disponible. Souhaitez-vous sélectionner une image de votre galerie à la place ?';
 
   @override
-  String get kycUseGallery => 'Use Gallery';
+  String get kycUseGallery => 'Utiliser la galerie';
 
   @override
   String get kycDocumentsLocked =>
-      'Documents are locked while pending review. You cannot make changes until verification is complete.';
+      'Les documents sont verrouillés en attente d\'examen. Vous ne pouvez pas effectuer de modifications tant que la vérification n\'est pas terminée.';
 
   @override
   String get kycVerificationSubmittedSuccessfully =>
-      'Verification submitted successfully';
+      'Vérification soumise avec succès';
 
   @override
-  String get kycVerificationSubmitted => 'Verification Submitted';
+  String get kycVerificationSubmitted => 'Vérification soumise';
 
   @override
   String get kycThankYouSubmitting =>
-      'Thank you for submitting your verification documents!';
+      'Merci d\'avoir soumis vos documents de vérification !';
 
   @override
-  String get kycWhatHappensNext => 'What happens next:';
+  String get kycWhatHappensNext => 'Que se passe-t-il ensuite :';
 
   @override
   String get kycReviewTime =>
-      'Our team will review your documents within 24-48 hours';
+      'Notre équipe examinera vos documents dans les 24 à 48 heures';
 
   @override
   String get kycEmailNotification =>
-      'You\'ll receive an email once your verification is complete';
+      'Vous recevrez un e-mail une fois votre vérification terminée';
 
   @override
   String get kycCheckEmail =>
-      'Check your email for updates on your verification status';
+      'Consultez votre e-mail pour les mises à jour sur l\'état de votre vérification';
 
   @override
   String get kycLocked =>
-      'Your documents are now locked and cannot be changed during review';
+      'Vos documents sont maintenant verrouillés et ne peuvent pas être modifiés pendant l\'examen';
 
   @override
   String get kycRecommendSignOut =>
-      'We recommend signing out and checking back later for your verification result.';
+      'Nous vous recommandons de vous déconnecter et de revenir plus tard pour votre résultat de vérification.';
 
   @override
-  String get kycStaySignedIn => 'Stay Signed In';
+  String get kycStaySignedIn => 'Rester connecté';
 
   @override
-  String get kycVerificationPending => 'Verification Pending';
+  String get kycVerificationPending => 'Vérification en attente';
 
   @override
   String get kycVerificationPendingSubtitle =>
-      'Your documents are being reviewed';
+      'Vos documents sont en cours d\'examen';
 
   @override
-  String get kycVerificationApproved => 'Verification Approved';
+  String get kycVerificationApproved => 'Vérification approuvée';
 
   @override
   String get kycVerificationApprovedSubtitle =>
-      'You can now access all provider features';
+      'Vous pouvez maintenant accéder à toutes les fonctionnalités du fournisseur';
 
   @override
-  String get kycVerificationRejected => 'Verification Rejected';
+  String get kycVerificationRejected => 'Vérification rejetée';
 
   @override
   String get kycVerificationRejectedSubtitle =>
-      'Please review the notes below and resubmit';
+      'Veuillez consulter les notes ci-dessous et soumettre à nouveau';
 
   @override
-  String get kycVerificationRequired => 'Verification Required';
+  String get kycVerificationRequired => 'Vérification requise';
 
   @override
   String get kycVerificationRequiredSubtitle =>
-      'Complete verification to access provider features';
+      'Complétez la vérification pour accéder aux fonctionnalités du fournisseur';
 
   @override
-  String get kycReviewNotes => 'Review Notes';
+  String get kycReviewNotes => 'Notes d\'examen';
 
   @override
-  String get kycIdCardFront => 'ID Card (Front)';
+  String get kycIdCardFront => 'Carte d\'identité (Recto)';
 
   @override
-  String get kycIdCardBack => 'ID Card (Back)';
+  String get kycIdCardBack => 'Carte d\'identité (Verso)';
 
   @override
-  String get kycVerificationSelfie => 'Verification Selfie';
+  String get kycVerificationSelfie => 'Selfie de vérification';
 
   @override
-  String get kycButtonLocked => 'Locked';
+  String get kycButtonLocked => 'Verrouillé';
 
   @override
-  String get kycCaptureIdFront => 'Capture ID Front';
+  String get kycCaptureIdFront => 'Capturer le recto de la pièce d\'identité';
 
   @override
-  String get kycCaptureIdBack => 'Capture ID Back';
+  String get kycCaptureIdBack => 'Capturer le verso de la pièce d\'identité';
 
   @override
-  String get kycDocumentsLockedButton => 'Documents Locked';
+  String get kycDocumentsLockedButton => 'Documents verrouillés';
 
   @override
-  String get kycTipsTitle => '📸 Tips for good photos:';
+  String get kycTipsTitle => '📸 Conseils pour de bonnes photos :';
 
   @override
-  String get kycTipGoodLighting => '• Use good lighting';
+  String get kycTipGoodLighting => '• Utilisez un bon éclairage';
 
   @override
-  String get kycTipFlatCard => '• Place ID card on a flat surface';
+  String get kycTipFlatCard =>
+      '• Placez la carte d\'identité sur une surface plane';
 
   @override
-  String get kycTipReadableText => '• Make sure all text is readable';
+  String get kycTipReadableText =>
+      '• Assurez-vous que tout le texte est lisible';
 
   @override
-  String get kycTipFaceCamera => '• Face the camera directly for selfie';
+  String get kycTipFaceCamera =>
+      '• Regardez directement la caméra pour le selfie';
 
   @override
-  String get kycTipAvoidGlare => '• Avoid glare or shadows';
+  String get kycTipAvoidGlare => '• Évitez les reflets ou les ombres';
 
   @override
-  String get kycFailedSubmitVerification => 'Failed to submit verification';
+  String get kycFailedSubmitVerification =>
+      'Échec de la soumission de la vérification';
 
   @override
-  String get paystackSetupTitle => 'Setup Payout Account';
+  String get paystackSetupTitle => 'Configurer le compte de paiement';
 
   @override
-  String get paystackVerifying => 'Verifying...';
+  String get paystackVerifying => 'Vérification en cours...';
 
   @override
   String get paystackVerificationSuccess =>
-      'Payout settings saved successfully!';
+      'Paramètres de paiement enregistrés avec succès !';
 
   @override
-  String get paystackVerificationFailed => 'Failed to save payout settings';
+  String get paystackVerificationFailed =>
+      'Échec de l\'enregistrement des paramètres de paiement';
 
   @override
-  String get paystackSelectBank => 'Select Your Bank';
+  String get paystackSelectBank => 'Sélectionnez votre banque';
 
   @override
-  String get paystackAccountNumber => 'Account Number';
+  String get paystackAccountNumber => 'Numéro de compte';
 
   @override
-  String get paystackVerifyAccount => 'Verify Account';
+  String get paystackVerifyAccount => 'Vérifier le compte';
 
   @override
-  String get paystackAccountVerified => 'Account Verified';
+  String get paystackAccountVerified => 'Compte vérifié';
 
   @override
-  String get paystackSavePayoutAccount => 'Save Payout Account';
+  String get paystackSavePayoutAccount => 'Enregistrer le compte de paiement';
 
   @override
   String paystackNoBanksAvailable(Object country) {
-    return 'No banks available for $country';
+    return 'Aucune banque disponible pour $country';
   }
 
   @override
-  String get paystackRetry => 'Retry';
+  String get paystackRetry => 'Réessayer';
 
   @override
   String get paystackPayoutsInfo =>
-      'Your earnings will be sent to this account. Payouts are processed within 24 hours.';
+      'Vos gains seront envoyés sur ce compte. Les paiements sont traités dans les 24 heures.';
 
   @override
-  String get paystackConnected => 'Account: connected';
+  String get paystackConnected => 'Compte : connecté';
 
   @override
-  String get paystackNotConnected => 'Account: not connected';
+  String get paystackNotConnected => 'Compte : non connecté';
 
   @override
-  String get paystackDetailsSubmitted => 'Details submitted:';
+  String get paystackDetailsSubmitted => 'Détails soumis :';
 
   @override
-  String get paystackPayoutsEnabled => 'Payouts enabled:';
+  String get paystackPayoutsEnabled => 'Paiements activés :';
 
   @override
-  String get paystackYes => 'yes';
+  String get paystackYes => 'oui';
 
   @override
-  String get paystackNo => 'no';
+  String get paystackNo => 'non';
 
   @override
-  String get paystackFinishSetup => 'Finish Stripe Setup';
+  String get paystackFinishSetup => 'Terminer la configuration Stripe';
 
   @override
-  String get paystackConnectStripe => 'Connect Stripe';
+  String get paystackConnectStripe => 'Connecter Stripe';
 
   @override
-  String get paystackOpenDashboard => 'Open Stripe Dashboard';
+  String get paystackOpenDashboard => 'Ouvrir le tableau de bord Stripe';
 
   @override
   String get paystackMustFinishSetup =>
-      'You must finish Stripe setup before you can cash out.';
+      'Vous devez terminer la configuration Stripe avant de pouvoir retirer des fonds.';
 
   @override
-  String get paystackPayouts => 'Paystack Payouts';
+  String get paystackPayouts => 'Paiements Paystack';
 
   @override
   String get paystackAddBankDetails =>
-      'Add your bank account details in Payout Settings to receive payouts via Paystack.';
+      'Ajoutez vos coordonnées bancaires dans les paramètres de paiement pour recevoir des paiements via Paystack.';
 
   @override
-  String get paystackOpenSettings => 'Open Payout Settings';
+  String get paystackOpenSettings => 'Ouvrir les paramètres de paiement';
 
   @override
   String payoutPaystackForCountry(Object country) {
-    return 'Payouts via Paystack for $country';
+    return 'Paiements via Paystack pour $country';
   }
 
   @override
   String payoutFlutterwaveForCountry(Object country) {
-    return 'Payouts are processed via Flutterwave for $country';
+    return 'Les paiements sont traités via Flutterwave pour $country';
   }
 
   @override
   String get payoutStripeConnect => 'Stripe Connect';
 
   @override
-  String get payoutBankAccountDetails => 'Bank Account Details';
+  String get payoutBankAccountDetails => 'Coordonnées bancaires';
 
   @override
-  String get payoutAccountHolderName => 'Account Holder Name';
+  String get payoutAccountHolderName => 'Nom du titulaire du compte';
 
   @override
   String get payoutAccountHolderNameHint =>
-      'Enter name as it appears on your bank account';
+      'Entrez le nom tel qu\'il apparaît sur votre compte bancaire';
 
   @override
-  String get payoutSelectBank => 'Select Bank *';
+  String get payoutSelectBank => 'Sélectionner la banque *';
 
   @override
-  String get payoutBankName => 'Bank Name *';
+  String get payoutBankName => 'Nom de la banque *';
 
   @override
-  String get payoutBankNameManual => 'Bank Name (manual)';
+  String get payoutBankNameManual => 'Nom de la banque (manuel)';
 
   @override
-  String get payoutBankNameHint => 'e.g., GCB Bank, Ecobank';
+  String get payoutBankNameHint => 'ex. GCB Bank, Ecobank';
 
   @override
-  String get payoutBankCode => 'Bank Code *';
+  String get payoutBankCode => 'Code bancaire *';
 
   @override
-  String get payoutBankCodeManual => 'Bank Code (manual)';
+  String get payoutBankCodeManual => 'Code bancaire (manuel)';
 
   @override
-  String get payoutBankCodeHint => 'Flutterwave bank code';
+  String get payoutBankCodeHint => 'Code bancaire Flutterwave';
 
   @override
-  String get payoutBankCodeHelper => 'Contact support if unsure of bank code';
+  String get payoutBankCodeHelper =>
+      'Contactez le support si vous n\'êtes pas sûr du code bancaire';
 
   @override
-  String get payoutAccountNumber => 'Account Number *';
+  String get payoutAccountNumber => 'Numéro de compte *';
 
   @override
-  String get payoutAccountNumberHint => 'Enter your bank account number';
+  String get payoutAccountNumberHint =>
+      'Entrez votre numéro de compte bancaire';
 
   @override
   String get payoutMobileMoney => 'Mobile Money';
 
   @override
-  String get payoutFullName => 'Full Name (as registered) *';
+  String get payoutFullName => 'Nom complet (tel qu\'enregistré) *';
 
   @override
   String get payoutFullNameHint =>
-      'Name registered on your mobile money account';
+      'Nom enregistré sur votre compte mobile money';
 
   @override
-  String get payoutMobileNetwork => 'Mobile Network *';
+  String get payoutMobileNetwork => 'Réseau mobile *';
 
   @override
-  String get payoutSelectNetwork => 'Select your mobile network';
+  String get payoutSelectNetwork => 'Sélectionnez votre réseau mobile';
 
   @override
-  String get payoutMobileNetworkHint => 'e.g., MTN, Vodafone, Airtel';
+  String get payoutMobileNetworkHint => 'ex. MTN, Vodafone, Airtel';
 
   @override
-  String get payoutCountryCode => 'Country Code';
+  String get payoutCountryCode => 'Code pays';
 
   @override
-  String get payoutMobileMoneyNumber => 'Mobile Money Number *';
+  String get payoutMobileMoneyNumber => 'Numéro mobile money *';
 
   @override
-  String get payoutMobileMoneyNumberHint => 'e.g., 0541234567';
+  String get payoutMobileMoneyNumberHint => 'ex. 0541234567';
 
   @override
-  String get payoutZipCode => 'ZIP/Postal Code';
+  String get payoutZipCode => 'Code postal';
 
   @override
-  String get payoutZipCodeHint => 'If required by your network';
+  String get payoutZipCodeHint => 'Si requis par votre réseau';
 
   @override
-  String get payoutMethod => 'Payout Method';
+  String get payoutMethod => 'Méthode de paiement';
 
   @override
-  String get payoutBankTransfer => 'Bank Transfer';
+  String get payoutBankTransfer => 'Virement bancaire';
 
   @override
-  String get payoutCurrency => 'Currency';
+  String get payoutCurrency => 'Devise';
 
   @override
   String payoutCurrencyLocked(Object country) {
-    return 'Locked to $country currency';
+    return 'Verrouillé à la devise de $country';
   }
 
   @override
-  String get payoutBeneficiaryId => 'Beneficiary ID';
+  String get payoutBeneficiaryId => 'ID du bénéficiaire';
 
   @override
-  String get payoutBeneficiaryIdHint => 'Optional - for recurring transfers';
+  String get payoutBeneficiaryIdHint =>
+      'Facultatif - pour les virements récurrents';
 
   @override
-  String get payoutSchedule => 'Payout Schedule';
+  String get payoutSchedule => 'Calendrier de paiement';
 
   @override
-  String get payoutFrequency => 'Payout Frequency';
+  String get payoutFrequency => 'Fréquence de paiement';
 
   @override
-  String get payoutFrequencyWeekly => 'Weekly';
+  String get payoutFrequencyWeekly => 'Hebdomadaire';
 
   @override
-  String get payoutFrequencyMonthly => 'Monthly (1st of each month)';
+  String get payoutFrequencyMonthly => 'Mensuel (le 1er de chaque mois)';
 
   @override
-  String get payoutDayHelper => 'Available: Tuesday, Thursday, Friday';
+  String get payoutDayHelper => 'Disponible : Mardi, Jeudi, Vendredi';
 
   @override
   String get payoutMonthlyInfo =>
-      'Monthly payouts are processed on the 1st of each month.';
+      'Les paiements mensuels sont traités le 1er de chaque mois.';
 
   @override
-  String get payoutInstantCashout => 'Instant Cashout';
+  String get payoutInstantCashout => 'Retrait instantané';
 
   @override
   String get payoutInstantCashoutInfo =>
-      '• Unlimited instant cashouts available\n• 5% fee applies to instant cashouts\n• Scheduled payouts have no fees';
+      '• Retraits instantanés illimités disponibles\n• Frais de 5 % appliqués aux retraits instantanés\n• Les paiements programmés n\'ont pas de frais';
 
   @override
-  String get payoutNextScheduled => 'Next Scheduled Payout';
+  String get payoutNextScheduled => 'Prochain paiement programmé';
 
   @override
   String payoutYourLocalTime(Object timezone) {
-    return 'Your local time ($timezone)';
+    return 'Votre heure locale ($timezone)';
   }
 
   @override
-  String get payoutAmountToCashOut => 'Amount to cash out';
+  String get payoutAmountToCashOut => 'Montant à retirer';
 
   @override
   String payoutMinMaxRange(Object min, Object max) {
-    return 'Min: $min - Max: $max';
+    return 'Min : $min - Max : $max';
   }
 
   @override
   String get payoutMaxButton => 'MAX';
 
   @override
-  String get payoutCashOutNow => 'Cash Out (Instant)';
+  String get payoutCashOutNow => 'Retirer (Instantané)';
 
   @override
-  String get payoutAvailableBalance => 'Available Balance';
+  String get payoutAvailableBalance => 'Solde disponible';
 
   @override
-  String get payoutPendingFunds => 'Pending';
+  String get payoutPendingFunds => 'En attente';
 
   @override
   String get payoutPendingInfo =>
-      'Pending funds will be available after the hold period';
+      'Les fonds en attente seront disponibles après la période de retenue';
 
   @override
-  String get payoutLifetimeEarnings => 'Lifetime Earnings';
+  String get payoutLifetimeEarnings => 'Gains totaux';
 
   @override
-  String get payoutTotalCashedOut => 'Total Cashed Out';
+  String get payoutTotalCashedOut => 'Total retiré';
 
   @override
-  String get payoutUnlimitedCashouts => 'Unlimited';
+  String get payoutUnlimitedCashouts => 'Illimité';
 
   @override
-  String get mainHello => 'Hello';
+  String get mainHello => 'Bonjour';
 
   @override
-  String get mainViewProfile => 'View Profile';
+  String get mainViewProfile => 'Voir le profil';
 
   @override
-  String get mainBookings => 'Bookings';
+  String get mainBookings => 'Réservations';
 
   @override
   String get mainNotifications => 'Notifications';
 
   @override
-  String get mainReferral => 'Referral';
+  String get mainReferral => 'Parrainage';
 
   @override
-  String get mainSettings => 'Settings';
+  String get mainSettings => 'Paramètres';
 
   @override
-  String get mainHelp => 'Help';
+  String get mainHelp => 'Aide';
 
   @override
-  String get mainWallet => 'Wallet';
+  String get mainWallet => 'Portefeuille';
 
   @override
-  String get mainEarnings => 'Earnings';
+  String get mainEarnings => 'Gains';
 
   @override
-  String get mainOpenJobs => 'Open Jobs';
+  String get mainOpenJobs => 'Emplois ouverts';
 
   @override
-  String get mainAssignedJobs => 'Assigned Jobs';
+  String get mainAssignedJobs => 'Emplois assignés';
 
   @override
-  String get mainMyReputation => 'My Reputation';
+  String get mainMyReputation => 'Ma réputation';
 
   @override
-  String get reputationTitle => 'My Reputation';
+  String get reputationTitle => 'Ma réputation';
 
   @override
-  String get reputationYourCustomerRating => 'Your Customer Rating';
+  String get reputationYourCustomerRating => 'Votre évaluation client';
 
   @override
   String reputationBasedOnReviews(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'reviews',
-      one: 'review',
+      other: 'avis',
+      one: 'avis',
     );
-    return 'Based on $count $_temp0';
+    return 'Basé sur $count $_temp0';
   }
 
   @override
-  String get reputationExcellentCustomer => '⭐ Excellent Customer';
+  String get reputationExcellentCustomer => '⭐ Client excellent';
 
   @override
-  String get reputationGreatCustomer => '👍 Great Customer';
+  String get reputationGreatCustomer => '👍 Excellent client';
 
   @override
-  String get reputationGoodCustomer => '✓ Good Customer';
+  String get reputationGoodCustomer => '✓ Bon client';
 
   @override
-  String get reputationAverage => 'Average';
+  String get reputationAverage => 'Moyen';
 
   @override
-  String get reputationNeedsImprovement => 'Needs Improvement';
+  String get reputationNeedsImprovement => 'À améliorer';
 
   @override
-  String get reputationNoRatingYet => 'No Rating Yet';
+  String get reputationNoRatingYet => 'Pas encore d\'évaluation';
 
   @override
-  String get reputationWhatProvidersSay => 'What Providers Say About You';
+  String get reputationWhatProvidersSay =>
+      'Ce que les fournisseurs disent de vous';
 
   @override
-  String get reputationNoReviews => 'No Reviews Yet';
+  String get reputationNoReviews => 'Pas encore d\'avis';
 
   @override
   String get reputationNoReviewsHelp =>
-      'Complete bookings to build your reputation!\nProviders will rate you after completing services.';
+      'Terminez des réservations pour bâtir votre réputation !\nLes fournisseurs vous évalueront après avoir terminé les services.';
 
   @override
   String reputationShowMore(int count) {
-    return 'Show More ($count more)';
+    return 'Afficher plus ($count de plus)';
   }
 
   @override
-  String get reputationShowLess => 'Show Less';
+  String get reputationShowLess => 'Afficher moins';
 
   @override
-  String get reputationJustNow => 'Just now';
+  String get reputationJustNow => 'À l\'instant';
 
   @override
   String reputationMinutesAgo(int minutes) {
-    return '$minutes min ago';
+    return 'Il y a $minutes min';
   }
 
   @override
@@ -2891,10 +2902,10 @@ class AppLocalizationsFr extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       hours,
       locale: localeName,
-      other: 'hours',
-      one: 'hour',
+      other: 'heures',
+      one: 'heure',
     );
-    return '$hours $_temp0 ago';
+    return 'Il y a $hours $_temp0';
   }
 
   @override
@@ -2902,10 +2913,10 @@ class AppLocalizationsFr extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       days,
       locale: localeName,
-      other: 'days',
-      one: 'day',
+      other: 'jours',
+      one: 'jour',
     );
-    return '$days $_temp0 ago';
+    return 'Il y a $days $_temp0';
   }
 
   @override
@@ -2913,21 +2924,15 @@ class AppLocalizationsFr extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       weeks,
       locale: localeName,
-      other: 'weeks',
-      one: 'week',
+      other: 'semaines',
+      one: 'semaine',
     );
-    return '$weeks $_temp0 ago';
+    return 'Il y a $weeks $_temp0';
   }
 
   @override
   String reputationMonthsAgo(int months) {
-    String _temp0 = intl.Intl.pluralLogic(
-      months,
-      locale: localeName,
-      other: 'months',
-      one: 'month',
-    );
-    return '$months $_temp0 ago';
+    return 'Il y a $months mois';
   }
 
   @override
@@ -2935,15 +2940,15 @@ class AppLocalizationsFr extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       years,
       locale: localeName,
-      other: 'years',
-      one: 'year',
+      other: 'ans',
+      one: 'an',
     );
-    return '$years $_temp0 ago';
+    return 'Il y a $years $_temp0';
   }
 
   @override
   String get notificationsTitle => 'Notifications';
 
   @override
-  String get notificationsNoNotifications => 'No notifications yet.';
+  String get notificationsNoNotifications => 'Pas encore de notifications.';
 }

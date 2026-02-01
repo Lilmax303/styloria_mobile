@@ -2321,509 +2321,506 @@ class AppLocalizationsAr extends AppLocalizations {
       'Location access denied. You cannot be available for bookings without location enabled.';
 
   @override
-  String get signOut => 'Sign out';
+  String get signOut => 'تسجيل الخروج';
 
   @override
-  String get kycIdFrontPhoto => 'ID Front Photo';
+  String get kycIdFrontPhoto => 'صورة الوجه الأمامي للهوية';
 
   @override
-  String get kycIdFrontMessage => 'Take a photo of the front of your ID card';
+  String get kycIdFrontMessage =>
+      'التقط صورة للوجه الأمامي لبطاقة الهوية الخاصة بك';
 
   @override
-  String get kycIdBackPhoto => 'ID Back Photo';
+  String get kycIdBackPhoto => 'صورة الوجه الخلفي للهوية';
 
   @override
-  String get kycIdBackMessage => 'Take a photo of the back of your ID card';
+  String get kycIdBackMessage =>
+      'التقط صورة للوجه الخلفي لبطاقة الهوية الخاصة بك';
 
   @override
-  String get kycCamera => 'Camera';
+  String get kycCamera => 'الكاميرا';
 
   @override
-  String get kycGallery => 'Gallery';
+  String get kycGallery => 'المعرض';
 
   @override
-  String get kycChooseSource => 'Choose source:';
+  String get kycChooseSource => 'اختر المصدر:';
 
   @override
-  String get kycFailedCaptureImage => 'Failed to capture image';
+  String get kycFailedCaptureImage => 'فشل التقاط الصورة';
 
   @override
-  String get kycFailedCaptureSelfie => 'Failed to capture selfie';
+  String get kycFailedCaptureSelfie => 'فشل التقاط السيلفي';
 
   @override
-  String get kycCameraNotAvailable => 'Camera not available';
+  String get kycCameraNotAvailable => 'الكاميرا غير متوفرة';
 
   @override
   String get kycCameraNotAvailableMessage =>
-      'Camera is not available. Would you like to select an image from your gallery instead?';
+      'الكاميرا غير متوفرة. هل ترغب في تحديد صورة من معرضك بدلاً من ذلك؟';
 
   @override
-  String get kycUseGallery => 'Use Gallery';
+  String get kycUseGallery => 'استخدام المعرض';
 
   @override
   String get kycDocumentsLocked =>
-      'Documents are locked while pending review. You cannot make changes until verification is complete.';
+      'المستندات مقفلة أثناء المراجعة. لا يمكنك إجراء تغييرات حتى يتم التحقق.';
 
   @override
-  String get kycVerificationSubmittedSuccessfully =>
-      'Verification submitted successfully';
+  String get kycVerificationSubmittedSuccessfully => 'تم تقديم التحقق بنجاح';
 
   @override
-  String get kycVerificationSubmitted => 'Verification Submitted';
+  String get kycVerificationSubmitted => 'تم تقديم التحقق';
 
   @override
-  String get kycThankYouSubmitting =>
-      'Thank you for submitting your verification documents!';
+  String get kycThankYouSubmitting => 'شكراً لك على تقديم مستندات التحقق!';
 
   @override
-  String get kycWhatHappensNext => 'What happens next:';
+  String get kycWhatHappensNext => 'ما سيحدث بعد ذلك:';
 
   @override
-  String get kycReviewTime =>
-      'Our team will review your documents within 24-48 hours';
+  String get kycReviewTime => 'سيقوم فريقنا بمراجعة مستنداتك خلال 24-48 ساعة';
 
   @override
   String get kycEmailNotification =>
-      'You\'ll receive an email once your verification is complete';
+      'ستتلقى بريداً إلكترونياً بمجرد اكتمال التحقق';
 
   @override
   String get kycCheckEmail =>
-      'Check your email for updates on your verification status';
+      'تحقق من بريدك الإلكتروني للحصول على تحديثات حول حالة التحقق';
 
   @override
-  String get kycLocked =>
-      'Your documents are now locked and cannot be changed during review';
+  String get kycLocked => 'مستنداتك الآن مقفلة ولا يمكن تغييرها أثناء المراجعة';
 
   @override
   String get kycRecommendSignOut =>
-      'We recommend signing out and checking back later for your verification result.';
+      'نوصي بتسجيل الخروج والعودة لاحقاً للحصول على نتيجة التحقق.';
 
   @override
-  String get kycStaySignedIn => 'Stay Signed In';
+  String get kycStaySignedIn => 'البقاء مسجلاً الدخول';
 
   @override
-  String get kycVerificationPending => 'Verification Pending';
+  String get kycVerificationPending => 'التحقق قيد الانتظار';
 
   @override
-  String get kycVerificationPendingSubtitle =>
-      'Your documents are being reviewed';
+  String get kycVerificationPendingSubtitle => 'يتم مراجعة مستنداتك';
 
   @override
-  String get kycVerificationApproved => 'Verification Approved';
+  String get kycVerificationApproved => 'تمت الموافقة على التحقق';
 
   @override
   String get kycVerificationApprovedSubtitle =>
-      'You can now access all provider features';
+      'يمكنك الآن الوصول إلى جميع ميزات مقدم الخدمة';
 
   @override
-  String get kycVerificationRejected => 'Verification Rejected';
+  String get kycVerificationRejected => 'تم رفض التحقق';
 
   @override
   String get kycVerificationRejectedSubtitle =>
-      'Please review the notes below and resubmit';
+      'يرجى مراجعة الملاحظات أدناه وإعادة التقديم';
 
   @override
-  String get kycVerificationRequired => 'Verification Required';
+  String get kycVerificationRequired => 'التحقق مطلوب';
 
   @override
   String get kycVerificationRequiredSubtitle =>
-      'Complete verification to access provider features';
+      'أكمل التحقق للوصول إلى ميزات مقدم الخدمة';
 
   @override
-  String get kycReviewNotes => 'Review Notes';
+  String get kycReviewNotes => 'ملاحظات المراجعة';
 
   @override
-  String get kycIdCardFront => 'ID Card (Front)';
+  String get kycIdCardFront => 'بطاقة الهوية (الأمامية)';
 
   @override
-  String get kycIdCardBack => 'ID Card (Back)';
+  String get kycIdCardBack => 'بطاقة الهوية (الخلفية)';
 
   @override
-  String get kycVerificationSelfie => 'Verification Selfie';
+  String get kycVerificationSelfie => 'سيلفي التحقق';
 
   @override
-  String get kycButtonLocked => 'Locked';
+  String get kycButtonLocked => 'مقفل';
 
   @override
-  String get kycCaptureIdFront => 'Capture ID Front';
+  String get kycCaptureIdFront => 'التقاط الوجه الأمامي للهوية';
 
   @override
-  String get kycCaptureIdBack => 'Capture ID Back';
+  String get kycCaptureIdBack => 'التقاط الوجه الخلفي للهوية';
 
   @override
-  String get kycDocumentsLockedButton => 'Documents Locked';
+  String get kycDocumentsLockedButton => 'المستندات مقفلة';
 
   @override
-  String get kycTipsTitle => '📸 Tips for good photos:';
+  String get kycTipsTitle => '📸 نصائح للحصول على صور جيدة:';
 
   @override
-  String get kycTipGoodLighting => '• Use good lighting';
+  String get kycTipGoodLighting => '• استخدم إضاءة جيدة';
 
   @override
-  String get kycTipFlatCard => '• Place ID card on a flat surface';
+  String get kycTipFlatCard => '• ضع بطاقة الهوية على سطح مستوٍ';
 
   @override
-  String get kycTipReadableText => '• Make sure all text is readable';
+  String get kycTipReadableText => '• تأكد من أن جميع النصوص قابلة للقراءة';
 
   @override
-  String get kycTipFaceCamera => '• Face the camera directly for selfie';
+  String get kycTipFaceCamera => '• واجه الكاميرا مباشرة للسيلفي';
 
   @override
-  String get kycTipAvoidGlare => '• Avoid glare or shadows';
+  String get kycTipAvoidGlare => '• تجنب الوهج أو الظلال';
 
   @override
-  String get kycFailedSubmitVerification => 'Failed to submit verification';
+  String get kycFailedSubmitVerification => 'فشل تقديم التحقق';
 
   @override
-  String get paystackSetupTitle => 'Setup Payout Account';
+  String get paystackSetupTitle => 'إعداد حساب الدفع';
 
   @override
-  String get paystackVerifying => 'Verifying...';
+  String get paystackVerifying => 'جارٍ التحقق...';
 
   @override
-  String get paystackVerificationSuccess =>
-      'Payout settings saved successfully!';
+  String get paystackVerificationSuccess => 'تم حفظ إعدادات الدفع بنجاح!';
 
   @override
-  String get paystackVerificationFailed => 'Failed to save payout settings';
+  String get paystackVerificationFailed => 'فشل حفظ إعدادات الدفع';
 
   @override
-  String get paystackSelectBank => 'Select Your Bank';
+  String get paystackSelectBank => 'اختر البنك الخاص بك';
 
   @override
-  String get paystackAccountNumber => 'Account Number';
+  String get paystackAccountNumber => 'رقم الحساب';
 
   @override
-  String get paystackVerifyAccount => 'Verify Account';
+  String get paystackVerifyAccount => 'التحقق من الحساب';
 
   @override
-  String get paystackAccountVerified => 'Account Verified';
+  String get paystackAccountVerified => 'تم التحقق من الحساب';
 
   @override
-  String get paystackSavePayoutAccount => 'Save Payout Account';
+  String get paystackSavePayoutAccount => 'حفظ حساب الدفع';
 
   @override
   String paystackNoBanksAvailable(Object country) {
-    return 'No banks available for $country';
+    return 'لا توجد بنوك متاحة لـ $country';
   }
 
   @override
-  String get paystackRetry => 'Retry';
+  String get paystackRetry => 'إعادة المحاولة';
 
   @override
   String get paystackPayoutsInfo =>
-      'Your earnings will be sent to this account. Payouts are processed within 24 hours.';
+      'سيتم إرسال أرباحك إلى هذا الحساب. تتم معالجة المدفوعات خلال 24 ساعة.';
 
   @override
-  String get paystackConnected => 'Account: connected';
+  String get paystackConnected => 'الحساب: متصل';
 
   @override
-  String get paystackNotConnected => 'Account: not connected';
+  String get paystackNotConnected => 'الحساب: غير متصل';
 
   @override
-  String get paystackDetailsSubmitted => 'Details submitted:';
+  String get paystackDetailsSubmitted => 'التفاصيل المقدمة:';
 
   @override
-  String get paystackPayoutsEnabled => 'Payouts enabled:';
+  String get paystackPayoutsEnabled => 'المدفوعات مفعلة:';
 
   @override
-  String get paystackYes => 'yes';
+  String get paystackYes => 'نعم';
 
   @override
-  String get paystackNo => 'no';
+  String get paystackNo => 'لا';
 
   @override
-  String get paystackFinishSetup => 'Finish Stripe Setup';
+  String get paystackFinishSetup => 'إنهاء إعداد Stripe';
 
   @override
-  String get paystackConnectStripe => 'Connect Stripe';
+  String get paystackConnectStripe => 'ربط Stripe';
 
   @override
-  String get paystackOpenDashboard => 'Open Stripe Dashboard';
+  String get paystackOpenDashboard => 'فتح لوحة تحكم Stripe';
 
   @override
   String get paystackMustFinishSetup =>
-      'You must finish Stripe setup before you can cash out.';
+      'يجب عليك إنهاء إعداد Stripe قبل أن تتمكن من السحب النقدي.';
 
   @override
-  String get paystackPayouts => 'Paystack Payouts';
+  String get paystackPayouts => 'مدفوعات Paystack';
 
   @override
   String get paystackAddBankDetails =>
-      'Add your bank account details in Payout Settings to receive payouts via Paystack.';
+      'أضف تفاصيل حسابك البنكي في إعدادات الدفع لتلقي المدفوعات عبر Paystack.';
 
   @override
-  String get paystackOpenSettings => 'Open Payout Settings';
+  String get paystackOpenSettings => 'فتح إعدادات الدفع';
 
   @override
   String payoutPaystackForCountry(Object country) {
-    return 'Payouts via Paystack for $country';
+    return 'المدفوعات عبر Paystack لـ $country';
   }
 
   @override
   String payoutFlutterwaveForCountry(Object country) {
-    return 'Payouts are processed via Flutterwave for $country';
+    return 'تتم معالجة المدفوعات عبر Flutterwave لـ $country';
   }
 
   @override
   String get payoutStripeConnect => 'Stripe Connect';
 
   @override
-  String get payoutBankAccountDetails => 'Bank Account Details';
+  String get payoutBankAccountDetails => 'تفاصيل الحساب البنكي';
 
   @override
-  String get payoutAccountHolderName => 'Account Holder Name';
+  String get payoutAccountHolderName => 'اسم صاحب الحساب';
 
   @override
   String get payoutAccountHolderNameHint =>
-      'Enter name as it appears on your bank account';
+      'أدخل الاسم كما يظهر في حسابك البنكي';
 
   @override
-  String get payoutSelectBank => 'Select Bank *';
+  String get payoutSelectBank => 'اختر البنك *';
 
   @override
-  String get payoutBankName => 'Bank Name *';
+  String get payoutBankName => 'اسم البنك *';
 
   @override
-  String get payoutBankNameManual => 'Bank Name (manual)';
+  String get payoutBankNameManual => 'اسم البنك (يدوي)';
 
   @override
-  String get payoutBankNameHint => 'e.g., GCB Bank, Ecobank';
+  String get payoutBankNameHint => 'على سبيل المثال، GCB Bank، Ecobank';
 
   @override
-  String get payoutBankCode => 'Bank Code *';
+  String get payoutBankCode => 'رمز البنك *';
 
   @override
-  String get payoutBankCodeManual => 'Bank Code (manual)';
+  String get payoutBankCodeManual => 'رمز البنك (يدوي)';
 
   @override
-  String get payoutBankCodeHint => 'Flutterwave bank code';
+  String get payoutBankCodeHint => 'رمز بنك Flutterwave';
 
   @override
-  String get payoutBankCodeHelper => 'Contact support if unsure of bank code';
+  String get payoutBankCodeHelper =>
+      'اتصل بالدعم إذا لم تكن متأكداً من رمز البنك';
 
   @override
-  String get payoutAccountNumber => 'Account Number *';
+  String get payoutAccountNumber => 'رقم الحساب *';
 
   @override
-  String get payoutAccountNumberHint => 'Enter your bank account number';
+  String get payoutAccountNumberHint => 'أدخل رقم حسابك البنكي';
 
   @override
-  String get payoutMobileMoney => 'Mobile Money';
+  String get payoutMobileMoney => 'الأموال عبر الجوال';
 
   @override
-  String get payoutFullName => 'Full Name (as registered) *';
+  String get payoutFullName => 'الاسم الكامل (كما هو مسجل) *';
 
   @override
-  String get payoutFullNameHint =>
-      'Name registered on your mobile money account';
+  String get payoutFullNameHint => 'الاسم المسجل في حساب الأموال عبر الجوال';
 
   @override
-  String get payoutMobileNetwork => 'Mobile Network *';
+  String get payoutMobileNetwork => 'شبكة الجوال *';
 
   @override
-  String get payoutSelectNetwork => 'Select your mobile network';
+  String get payoutSelectNetwork => 'اختر شبكة الجوال الخاصة بك';
 
   @override
-  String get payoutMobileNetworkHint => 'e.g., MTN, Vodafone, Airtel';
+  String get payoutMobileNetworkHint =>
+      'على سبيل المثال، MTN، Vodafone، Airtel';
 
   @override
-  String get payoutCountryCode => 'Country Code';
+  String get payoutCountryCode => 'رمز البلد';
 
   @override
-  String get payoutMobileMoneyNumber => 'Mobile Money Number *';
+  String get payoutMobileMoneyNumber => 'رقم الأموال عبر الجوال *';
 
   @override
-  String get payoutMobileMoneyNumberHint => 'e.g., 0541234567';
+  String get payoutMobileMoneyNumberHint => 'على سبيل المثال، 0541234567';
 
   @override
-  String get payoutZipCode => 'ZIP/Postal Code';
+  String get payoutZipCode => 'الرمز البريدي';
 
   @override
-  String get payoutZipCodeHint => 'If required by your network';
+  String get payoutZipCodeHint => 'إذا كان مطلوباً من شبكتك';
 
   @override
-  String get payoutMethod => 'Payout Method';
+  String get payoutMethod => 'طريقة الدفع';
 
   @override
-  String get payoutBankTransfer => 'Bank Transfer';
+  String get payoutBankTransfer => 'التحويل البنكي';
 
   @override
-  String get payoutCurrency => 'Currency';
+  String get payoutCurrency => 'العملة';
 
   @override
   String payoutCurrencyLocked(Object country) {
-    return 'Locked to $country currency';
+    return 'مقفل لعملة $country';
   }
 
   @override
-  String get payoutBeneficiaryId => 'Beneficiary ID';
+  String get payoutBeneficiaryId => 'معرف المستفيد';
 
   @override
-  String get payoutBeneficiaryIdHint => 'Optional - for recurring transfers';
+  String get payoutBeneficiaryIdHint => 'اختياري - للتحويلات المتكررة';
 
   @override
-  String get payoutSchedule => 'Payout Schedule';
+  String get payoutSchedule => 'جدول الدفع';
 
   @override
-  String get payoutFrequency => 'Payout Frequency';
+  String get payoutFrequency => 'تكرار الدفع';
 
   @override
-  String get payoutFrequencyWeekly => 'Weekly';
+  String get payoutFrequencyWeekly => 'أسبوعياً';
 
   @override
-  String get payoutFrequencyMonthly => 'Monthly (1st of each month)';
+  String get payoutFrequencyMonthly => 'شهرياً (الأول من كل شهر)';
 
   @override
-  String get payoutDayHelper => 'Available: Tuesday, Thursday, Friday';
+  String get payoutDayHelper => 'المتاح: الثلاثاء، الخميس، الجمعة';
 
   @override
   String get payoutMonthlyInfo =>
-      'Monthly payouts are processed on the 1st of each month.';
+      'تتم معالجة المدفوعات الشهرية في الأول من كل شهر.';
 
   @override
-  String get payoutInstantCashout => 'Instant Cashout';
+  String get payoutInstantCashout => 'السحب النقدي الفوري';
 
   @override
   String get payoutInstantCashoutInfo =>
-      '• Unlimited instant cashouts available\n• 5% fee applies to instant cashouts\n• Scheduled payouts have no fees';
+      '• عمليات سحب نقدي فورية غير محدودة متاحة\n• تطبق رسوم 5٪ على عمليات السحب النقدي الفورية\n• لا توجد رسوم على المدفوعات المجدولة';
 
   @override
-  String get payoutNextScheduled => 'Next Scheduled Payout';
+  String get payoutNextScheduled => 'الدفع المجدول التالي';
 
   @override
   String payoutYourLocalTime(Object timezone) {
-    return 'Your local time ($timezone)';
+    return 'توقيتك المحلي ($timezone)';
   }
 
   @override
-  String get payoutAmountToCashOut => 'Amount to cash out';
+  String get payoutAmountToCashOut => 'المبلغ المراد سحبه';
 
   @override
   String payoutMinMaxRange(Object min, Object max) {
-    return 'Min: $min - Max: $max';
+    return 'الحد الأدنى: $min - الحد الأقصى: $max';
   }
 
   @override
-  String get payoutMaxButton => 'MAX';
+  String get payoutMaxButton => 'الحد الأقصى';
 
   @override
-  String get payoutCashOutNow => 'Cash Out (Instant)';
+  String get payoutCashOutNow => 'السحب النقدي (فوري)';
 
   @override
-  String get payoutAvailableBalance => 'Available Balance';
+  String get payoutAvailableBalance => 'الرصيد المتاح';
 
   @override
-  String get payoutPendingFunds => 'Pending';
+  String get payoutPendingFunds => 'قيد الانتظار';
 
   @override
   String get payoutPendingInfo =>
-      'Pending funds will be available after the hold period';
+      'ستكون الأموال المعلقة متاحة بعد فترة الانتظار';
 
   @override
-  String get payoutLifetimeEarnings => 'Lifetime Earnings';
+  String get payoutLifetimeEarnings => 'الأرباح الإجمالية';
 
   @override
-  String get payoutTotalCashedOut => 'Total Cashed Out';
+  String get payoutTotalCashedOut => 'إجمالي المبالغ المسحوبة';
 
   @override
-  String get payoutUnlimitedCashouts => 'Unlimited';
+  String get payoutUnlimitedCashouts => 'غير محدود';
 
   @override
-  String get mainHello => 'Hello';
+  String get mainHello => 'مرحباً';
 
   @override
-  String get mainViewProfile => 'View Profile';
+  String get mainViewProfile => 'عرض الملف الشخصي';
 
   @override
-  String get mainBookings => 'Bookings';
+  String get mainBookings => 'الحجوزات';
 
   @override
-  String get mainNotifications => 'Notifications';
+  String get mainNotifications => 'الإشعارات';
 
   @override
-  String get mainReferral => 'Referral';
+  String get mainReferral => 'الإحالة';
 
   @override
-  String get mainSettings => 'Settings';
+  String get mainSettings => 'الإعدادات';
 
   @override
-  String get mainHelp => 'Help';
+  String get mainHelp => 'المساعدة';
 
   @override
-  String get mainWallet => 'Wallet';
+  String get mainWallet => 'المحفظة';
 
   @override
-  String get mainEarnings => 'Earnings';
+  String get mainEarnings => 'الأرباح';
 
   @override
-  String get mainOpenJobs => 'Open Jobs';
+  String get mainOpenJobs => 'الوظائف المفتوحة';
 
   @override
-  String get mainAssignedJobs => 'Assigned Jobs';
+  String get mainAssignedJobs => 'الوظائف المعينة';
 
   @override
-  String get mainMyReputation => 'My Reputation';
+  String get mainMyReputation => 'سمعتي';
 
   @override
-  String get reputationTitle => 'My Reputation';
+  String get reputationTitle => 'سمعتي';
 
   @override
-  String get reputationYourCustomerRating => 'Your Customer Rating';
+  String get reputationYourCustomerRating => 'تقييمك كعميل';
 
   @override
   String reputationBasedOnReviews(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'reviews',
-      one: 'review',
+      other: 'مراجعات',
+      one: 'مراجعة',
     );
-    return 'Based on $count $_temp0';
+    return 'بناءً على $count $_temp0';
   }
 
   @override
-  String get reputationExcellentCustomer => '⭐ Excellent Customer';
+  String get reputationExcellentCustomer => '⭐ عميل ممتاز';
 
   @override
-  String get reputationGreatCustomer => '👍 Great Customer';
+  String get reputationGreatCustomer => '👍 عميل رائع';
 
   @override
-  String get reputationGoodCustomer => '✓ Good Customer';
+  String get reputationGoodCustomer => '✓ عميل جيد';
 
   @override
-  String get reputationAverage => 'Average';
+  String get reputationAverage => 'متوسط';
 
   @override
-  String get reputationNeedsImprovement => 'Needs Improvement';
+  String get reputationNeedsImprovement => 'يحتاج إلى تحسين';
 
   @override
-  String get reputationNoRatingYet => 'No Rating Yet';
+  String get reputationNoRatingYet => 'لا يوجد تقييم بعد';
 
   @override
-  String get reputationWhatProvidersSay => 'What Providers Say About You';
+  String get reputationWhatProvidersSay => 'ما يقوله مقدمو الخدمات عنك';
 
   @override
-  String get reputationNoReviews => 'No Reviews Yet';
+  String get reputationNoReviews => 'لا توجد مراجعات بعد';
 
   @override
   String get reputationNoReviewsHelp =>
-      'Complete bookings to build your reputation!\nProviders will rate you after completing services.';
+      'أكمل الحجوزات لبناء سمعتك!\nسيقوم مقدمو الخدمات بتقييمك بعد إكمال الخدمات.';
 
   @override
   String reputationShowMore(int count) {
-    return 'Show More ($count more)';
+    return 'عرض المزيد ($count أكثر)';
   }
 
   @override
-  String get reputationShowLess => 'Show Less';
+  String get reputationShowLess => 'عرض أقل';
 
   @override
-  String get reputationJustNow => 'Just now';
+  String get reputationJustNow => 'الآن';
 
   @override
   String reputationMinutesAgo(int minutes) {
-    return '$minutes min ago';
+    return 'منذ $minutes دقيقة';
   }
 
   @override
@@ -2831,10 +2828,10 @@ class AppLocalizationsAr extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       hours,
       locale: localeName,
-      other: 'hours',
-      one: 'hour',
+      other: 'ساعات',
+      one: 'ساعة',
     );
-    return '$hours $_temp0 ago';
+    return 'منذ $hours $_temp0';
   }
 
   @override
@@ -2842,10 +2839,10 @@ class AppLocalizationsAr extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       days,
       locale: localeName,
-      other: 'days',
-      one: 'day',
+      other: 'أيام',
+      one: 'يوم',
     );
-    return '$days $_temp0 ago';
+    return 'منذ $days $_temp0';
   }
 
   @override
@@ -2853,10 +2850,10 @@ class AppLocalizationsAr extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       weeks,
       locale: localeName,
-      other: 'weeks',
-      one: 'week',
+      other: 'أسابيع',
+      one: 'أسبوع',
     );
-    return '$weeks $_temp0 ago';
+    return 'منذ $weeks $_temp0';
   }
 
   @override
@@ -2864,10 +2861,10 @@ class AppLocalizationsAr extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       months,
       locale: localeName,
-      other: 'months',
-      one: 'month',
+      other: 'أشهر',
+      one: 'شهر',
     );
-    return '$months $_temp0 ago';
+    return 'منذ $months $_temp0';
   }
 
   @override
@@ -2875,15 +2872,15 @@ class AppLocalizationsAr extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       years,
       locale: localeName,
-      other: 'years',
-      one: 'year',
+      other: 'أعوام',
+      one: 'عام',
     );
-    return '$years $_temp0 ago';
+    return 'منذ $years $_temp0';
   }
 
   @override
-  String get notificationsTitle => 'Notifications';
+  String get notificationsTitle => 'الإشعارات';
 
   @override
-  String get notificationsNoNotifications => 'No notifications yet.';
+  String get notificationsNoNotifications => 'لا توجد إشعارات بعد.';
 }

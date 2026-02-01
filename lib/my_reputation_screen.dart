@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'api_client.dart';
+import 'package:styloria_mobile/gen_l10n/app_localizations.dart';
+
 
 class MyReputationScreen extends StatefulWidget {
   const MyReputationScreen({super.key});
@@ -14,6 +16,8 @@ class _MyReputationScreenState extends State<MyReputationScreen> {
   Map<String, dynamic>? _reputation;
   bool _isLoading = true;
   String? _error;
+
+  AppLocalizations get l10n => AppLocalizations.of(context);
 
   @override
   void initState() {
@@ -290,6 +294,8 @@ class _ReputationReviewsListState extends State<_ReputationReviewsList> {
   static const int _initialDisplayCount = 3;
   static const int _maxLinesPerComment = 2;
 
+  AppLocalizations get l10n => AppLocalizations.of(context);
+
   @override
   Widget build(BuildContext context) {  
     final totalReviews = widget.reviews.length;
@@ -297,7 +303,6 @@ class _ReputationReviewsListState extends State<_ReputationReviewsList> {
         ? totalReviews 
         : totalReviews.clamp(0, _initialDisplayCount);
     final hasMore = totalReviews > _initialDisplayCount;
-    final l10n = AppLocalizations.of(context);
 
     return Column(
       children: [
@@ -378,7 +383,6 @@ class _ReputationReviewsListState extends State<_ReputationReviewsList> {
       try {
         final date = DateTime.parse(createdAt.toString());
         final diff = DateTime.now().difference(date);
-        final l10n = AppLocalizations.of(context);
         if (diff.inDays > 365) {
           final years = (diff.inDays / 365).floor();
           timeAgo = l10n.reputationYearsAgo(years);

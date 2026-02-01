@@ -2351,509 +2351,512 @@ class AppLocalizationsAf extends AppLocalizations {
       'Location access denied. You cannot be available for bookings without location enabled.';
 
   @override
-  String get signOut => 'Sign out';
+  String get signOut => 'Teken uit';
 
   @override
-  String get kycIdFrontPhoto => 'ID Front Photo';
+  String get kycIdFrontPhoto => 'ID Voorkant Foto';
 
   @override
-  String get kycIdFrontMessage => 'Take a photo of the front of your ID card';
+  String get kycIdFrontMessage =>
+      'Neem \'n foto van die voorkant van jou ID-kaart';
 
   @override
-  String get kycIdBackPhoto => 'ID Back Photo';
+  String get kycIdBackPhoto => 'ID Agterkant Foto';
 
   @override
-  String get kycIdBackMessage => 'Take a photo of the back of your ID card';
+  String get kycIdBackMessage =>
+      'Neem \'n foto van die agterkant van jou ID-kaart';
 
   @override
-  String get kycCamera => 'Camera';
+  String get kycCamera => 'Kamera';
 
   @override
-  String get kycGallery => 'Gallery';
+  String get kycGallery => 'Galery';
 
   @override
-  String get kycChooseSource => 'Choose source:';
+  String get kycChooseSource => 'Kies bron:';
 
   @override
-  String get kycFailedCaptureImage => 'Failed to capture image';
+  String get kycFailedCaptureImage => 'Kon nie prent vasvang nie';
 
   @override
-  String get kycFailedCaptureSelfie => 'Failed to capture selfie';
+  String get kycFailedCaptureSelfie => 'Kon nie selfie vasvang nie';
 
   @override
-  String get kycCameraNotAvailable => 'Camera not available';
+  String get kycCameraNotAvailable => 'Kamera nie beskikbaar nie';
 
   @override
   String get kycCameraNotAvailableMessage =>
-      'Camera is not available. Would you like to select an image from your gallery instead?';
+      'Kamera is nie beskikbaar nie. Wil jy eerder \'n prent uit jou galery kies?';
 
   @override
-  String get kycUseGallery => 'Use Gallery';
+  String get kycUseGallery => 'Gebruik Galery';
 
   @override
   String get kycDocumentsLocked =>
-      'Documents are locked while pending review. You cannot make changes until verification is complete.';
+      'Dokumente is gesluit tydens hersiening. Jy kan geen veranderinge maak totdat verifikasie voltooi is nie.';
 
   @override
   String get kycVerificationSubmittedSuccessfully =>
-      'Verification submitted successfully';
+      'Verifikasie suksesvol ingedien';
 
   @override
-  String get kycVerificationSubmitted => 'Verification Submitted';
+  String get kycVerificationSubmitted => 'Verifikasie Ingedien';
 
   @override
   String get kycThankYouSubmitting =>
-      'Thank you for submitting your verification documents!';
+      'Dankie dat jy jou verifikasiedokumente ingedien het!';
 
   @override
-  String get kycWhatHappensNext => 'What happens next:';
+  String get kycWhatHappensNext => 'Wat gebeur volgende:';
 
   @override
   String get kycReviewTime =>
-      'Our team will review your documents within 24-48 hours';
+      'Ons span sal jou dokumente binne 24-48 uur hersien';
 
   @override
   String get kycEmailNotification =>
-      'You\'ll receive an email once your verification is complete';
+      'Jy sal \'n e-pos ontvang sodra jou verifikasie voltooi is';
 
   @override
   String get kycCheckEmail =>
-      'Check your email for updates on your verification status';
+      'Kontroleer jou e-pos vir opdaterings oor jou verifikasie status';
 
   @override
   String get kycLocked =>
-      'Your documents are now locked and cannot be changed during review';
+      'Jou dokumente is nou gesluit en kan nie tydens hersiening verander word nie';
 
   @override
   String get kycRecommendSignOut =>
-      'We recommend signing out and checking back later for your verification result.';
+      'Ons beveel aan dat jy uitteken en later terugkom vir jou verifikasie resultaat.';
 
   @override
-  String get kycStaySignedIn => 'Stay Signed In';
+  String get kycStaySignedIn => 'Bly Ingeteken';
 
   @override
-  String get kycVerificationPending => 'Verification Pending';
+  String get kycVerificationPending => 'Verifikasie Hangende';
 
   @override
-  String get kycVerificationPendingSubtitle =>
-      'Your documents are being reviewed';
+  String get kycVerificationPendingSubtitle => 'Jou dokumente word hersien';
 
   @override
-  String get kycVerificationApproved => 'Verification Approved';
+  String get kycVerificationApproved => 'Verifikasie Goedgekeur';
 
   @override
   String get kycVerificationApprovedSubtitle =>
-      'You can now access all provider features';
+      'Jy kan nou toegang tot alle verskaffer kenmerke kry';
 
   @override
-  String get kycVerificationRejected => 'Verification Rejected';
+  String get kycVerificationRejected => 'Verifikasie Verwerp';
 
   @override
   String get kycVerificationRejectedSubtitle =>
-      'Please review the notes below and resubmit';
+      'Hersien asseblief die notas hieronder en dien weer in';
 
   @override
-  String get kycVerificationRequired => 'Verification Required';
+  String get kycVerificationRequired => 'Verifikasie Vereis';
 
   @override
   String get kycVerificationRequiredSubtitle =>
-      'Complete verification to access provider features';
+      'Voltooi verifikasie om toegang tot verskaffer kenmerke te kry';
 
   @override
-  String get kycReviewNotes => 'Review Notes';
+  String get kycReviewNotes => 'Hersieningsnotas';
 
   @override
-  String get kycIdCardFront => 'ID Card (Front)';
+  String get kycIdCardFront => 'ID-kaart (Voorkant)';
 
   @override
-  String get kycIdCardBack => 'ID Card (Back)';
+  String get kycIdCardBack => 'ID-kaart (Agterkant)';
 
   @override
-  String get kycVerificationSelfie => 'Verification Selfie';
+  String get kycVerificationSelfie => 'Verifikasie Selfie';
 
   @override
-  String get kycButtonLocked => 'Locked';
+  String get kycButtonLocked => 'Gesluit';
 
   @override
-  String get kycCaptureIdFront => 'Capture ID Front';
+  String get kycCaptureIdFront => 'Vang ID Voorkant Vas';
 
   @override
-  String get kycCaptureIdBack => 'Capture ID Back';
+  String get kycCaptureIdBack => 'Vang ID Agterkant Vas';
 
   @override
-  String get kycDocumentsLockedButton => 'Documents Locked';
+  String get kycDocumentsLockedButton => 'Dokumente Gesluit';
 
   @override
-  String get kycTipsTitle => '📸 Tips for good photos:';
+  String get kycTipsTitle => '📸 Wenke vir goeie foto\'s:';
 
   @override
-  String get kycTipGoodLighting => '• Use good lighting';
+  String get kycTipGoodLighting => '• Gebruik goeie beligting';
 
   @override
-  String get kycTipFlatCard => '• Place ID card on a flat surface';
+  String get kycTipFlatCard => '• Plaas ID-kaart op \'n plat oppervlak';
 
   @override
-  String get kycTipReadableText => '• Make sure all text is readable';
+  String get kycTipReadableText => '• Maak seker alle teks is leesbaar';
 
   @override
-  String get kycTipFaceCamera => '• Face the camera directly for selfie';
+  String get kycTipFaceCamera => '• Kyk direk na die kamera vir selfie';
 
   @override
-  String get kycTipAvoidGlare => '• Avoid glare or shadows';
+  String get kycTipAvoidGlare => '• Vermy weerkaatsing of skaduwees';
 
   @override
-  String get kycFailedSubmitVerification => 'Failed to submit verification';
+  String get kycFailedSubmitVerification => 'Kon nie verifikasie indien nie';
 
   @override
-  String get paystackSetupTitle => 'Setup Payout Account';
+  String get paystackSetupTitle => 'Stel Uitbetalingsrekening Op';
 
   @override
-  String get paystackVerifying => 'Verifying...';
+  String get paystackVerifying => 'Verifieer...';
 
   @override
   String get paystackVerificationSuccess =>
-      'Payout settings saved successfully!';
+      'Uitbetalingsinstellings suksesvol gestoor!';
 
   @override
-  String get paystackVerificationFailed => 'Failed to save payout settings';
+  String get paystackVerificationFailed =>
+      'Kon nie uitbetalingsinstellings stoor nie';
 
   @override
-  String get paystackSelectBank => 'Select Your Bank';
+  String get paystackSelectBank => 'Kies Jou Bank';
 
   @override
-  String get paystackAccountNumber => 'Account Number';
+  String get paystackAccountNumber => 'Rekeningnommer';
 
   @override
-  String get paystackVerifyAccount => 'Verify Account';
+  String get paystackVerifyAccount => 'Verifieer Rekening';
 
   @override
-  String get paystackAccountVerified => 'Account Verified';
+  String get paystackAccountVerified => 'Rekening Geverifieer';
 
   @override
-  String get paystackSavePayoutAccount => 'Save Payout Account';
+  String get paystackSavePayoutAccount => 'Stoor Uitbetalingsrekening';
 
   @override
   String paystackNoBanksAvailable(Object country) {
-    return 'No banks available for $country';
+    return 'Geen banke beskikbaar vir $country';
   }
 
   @override
-  String get paystackRetry => 'Retry';
+  String get paystackRetry => 'Probeer Weer';
 
   @override
   String get paystackPayoutsInfo =>
-      'Your earnings will be sent to this account. Payouts are processed within 24 hours.';
+      'Jou verdienste sal na hierdie rekening gestuur word. Uitbetalings word binne 24 uur verwerk.';
 
   @override
-  String get paystackConnected => 'Account: connected';
+  String get paystackConnected => 'Rekening: gekoppel';
 
   @override
-  String get paystackNotConnected => 'Account: not connected';
+  String get paystackNotConnected => 'Rekening: nie gekoppel nie';
 
   @override
-  String get paystackDetailsSubmitted => 'Details submitted:';
+  String get paystackDetailsSubmitted => 'Besonderhede ingedien:';
 
   @override
-  String get paystackPayoutsEnabled => 'Payouts enabled:';
+  String get paystackPayoutsEnabled => 'Uitbetalings geaktiveer:';
 
   @override
-  String get paystackYes => 'yes';
+  String get paystackYes => 'ja';
 
   @override
-  String get paystackNo => 'no';
+  String get paystackNo => 'nee';
 
   @override
-  String get paystackFinishSetup => 'Finish Stripe Setup';
+  String get paystackFinishSetup => 'Voltooi Stripe Opstelling';
 
   @override
-  String get paystackConnectStripe => 'Connect Stripe';
+  String get paystackConnectStripe => 'Koppel Stripe';
 
   @override
   String get paystackOpenDashboard => 'Open Stripe Dashboard';
 
   @override
   String get paystackMustFinishSetup =>
-      'You must finish Stripe setup before you can cash out.';
+      'Jy moet Stripe opstelling voltooi voordat jy kan uitbetaal.';
 
   @override
-  String get paystackPayouts => 'Paystack Payouts';
+  String get paystackPayouts => 'Paystack Uitbetalings';
 
   @override
   String get paystackAddBankDetails =>
-      'Add your bank account details in Payout Settings to receive payouts via Paystack.';
+      'Voeg jou bankrekeningbesonderhede by in Uitbetalingsinstellings om uitbetalings via Paystack te ontvang.';
 
   @override
-  String get paystackOpenSettings => 'Open Payout Settings';
+  String get paystackOpenSettings => 'Open Uitbetalingsinstellings';
 
   @override
   String payoutPaystackForCountry(Object country) {
-    return 'Payouts via Paystack for $country';
+    return 'Uitbetalings via Paystack vir $country';
   }
 
   @override
   String payoutFlutterwaveForCountry(Object country) {
-    return 'Payouts are processed via Flutterwave for $country';
+    return 'Uitbetalings word verwerk via Flutterwave vir $country';
   }
 
   @override
   String get payoutStripeConnect => 'Stripe Connect';
 
   @override
-  String get payoutBankAccountDetails => 'Bank Account Details';
+  String get payoutBankAccountDetails => 'Bankrekeningbesonderhede';
 
   @override
-  String get payoutAccountHolderName => 'Account Holder Name';
+  String get payoutAccountHolderName => 'Rekeninghouernaam';
 
   @override
   String get payoutAccountHolderNameHint =>
-      'Enter name as it appears on your bank account';
+      'Voer naam in soos dit op jou bankrekening verskyn';
 
   @override
-  String get payoutSelectBank => 'Select Bank *';
+  String get payoutSelectBank => 'Kies Bank *';
 
   @override
-  String get payoutBankName => 'Bank Name *';
+  String get payoutBankName => 'Banknaam *';
 
   @override
-  String get payoutBankNameManual => 'Bank Name (manual)';
+  String get payoutBankNameManual => 'Banknaam (handmatig)';
 
   @override
-  String get payoutBankNameHint => 'e.g., GCB Bank, Ecobank';
+  String get payoutBankNameHint => 'bv. GCB Bank, Ecobank';
 
   @override
-  String get payoutBankCode => 'Bank Code *';
+  String get payoutBankCode => 'Bankkode *';
 
   @override
-  String get payoutBankCodeManual => 'Bank Code (manual)';
+  String get payoutBankCodeManual => 'Bankkode (handmatig)';
 
   @override
-  String get payoutBankCodeHint => 'Flutterwave bank code';
+  String get payoutBankCodeHint => 'Flutterwave bankkode';
 
   @override
-  String get payoutBankCodeHelper => 'Contact support if unsure of bank code';
+  String get payoutBankCodeHelper =>
+      'Kontak ondersteuning as jy onseker is oor bankkode';
 
   @override
-  String get payoutAccountNumber => 'Account Number *';
+  String get payoutAccountNumber => 'Rekeningnommer *';
 
   @override
-  String get payoutAccountNumberHint => 'Enter your bank account number';
+  String get payoutAccountNumberHint => 'Voer jou bankrekeningnommer in';
 
   @override
-  String get payoutMobileMoney => 'Mobile Money';
+  String get payoutMobileMoney => 'Mobiele Geld';
 
   @override
-  String get payoutFullName => 'Full Name (as registered) *';
+  String get payoutFullName => 'Volle Naam (soos geregistreer) *';
 
   @override
   String get payoutFullNameHint =>
-      'Name registered on your mobile money account';
+      'Naam geregistreer op jou mobiele geldrekening';
 
   @override
-  String get payoutMobileNetwork => 'Mobile Network *';
+  String get payoutMobileNetwork => 'Mobiele Netwerk *';
 
   @override
-  String get payoutSelectNetwork => 'Select your mobile network';
+  String get payoutSelectNetwork => 'Kies jou mobiele netwerk';
 
   @override
-  String get payoutMobileNetworkHint => 'e.g., MTN, Vodafone, Airtel';
+  String get payoutMobileNetworkHint => 'bv. MTN, Vodafone, Airtel';
 
   @override
-  String get payoutCountryCode => 'Country Code';
+  String get payoutCountryCode => 'Landkode';
 
   @override
-  String get payoutMobileMoneyNumber => 'Mobile Money Number *';
+  String get payoutMobileMoneyNumber => 'Mobiele Geldnommer *';
 
   @override
-  String get payoutMobileMoneyNumberHint => 'e.g., 0541234567';
+  String get payoutMobileMoneyNumberHint => 'bv. 0541234567';
 
   @override
-  String get payoutZipCode => 'ZIP/Postal Code';
+  String get payoutZipCode => 'Poskode';
 
   @override
-  String get payoutZipCodeHint => 'If required by your network';
+  String get payoutZipCodeHint => 'Indien vereis deur jou netwerk';
 
   @override
-  String get payoutMethod => 'Payout Method';
+  String get payoutMethod => 'Uitbetalingsmetode';
 
   @override
-  String get payoutBankTransfer => 'Bank Transfer';
+  String get payoutBankTransfer => 'Bankoordrag';
 
   @override
-  String get payoutCurrency => 'Currency';
+  String get payoutCurrency => 'Geldeenheid';
 
   @override
   String payoutCurrencyLocked(Object country) {
-    return 'Locked to $country currency';
+    return 'Gesluit tot $country geldeenheid';
   }
 
   @override
-  String get payoutBeneficiaryId => 'Beneficiary ID';
+  String get payoutBeneficiaryId => 'Begunstigde ID';
 
   @override
-  String get payoutBeneficiaryIdHint => 'Optional - for recurring transfers';
+  String get payoutBeneficiaryIdHint => 'Opsioneel - vir herhalende oordragte';
 
   @override
-  String get payoutSchedule => 'Payout Schedule';
+  String get payoutSchedule => 'Uitbetalingskedule';
 
   @override
-  String get payoutFrequency => 'Payout Frequency';
+  String get payoutFrequency => 'Uitbetalingsfrekwensie';
 
   @override
-  String get payoutFrequencyWeekly => 'Weekly';
+  String get payoutFrequencyWeekly => 'Weekliks';
 
   @override
-  String get payoutFrequencyMonthly => 'Monthly (1st of each month)';
+  String get payoutFrequencyMonthly => 'Maandeliks (1ste van elke maand)';
 
   @override
-  String get payoutDayHelper => 'Available: Tuesday, Thursday, Friday';
+  String get payoutDayHelper => 'Beskikbaar: Dinsdag, Donderdag, Vrydag';
 
   @override
   String get payoutMonthlyInfo =>
-      'Monthly payouts are processed on the 1st of each month.';
+      'Maandelikse uitbetalings word op die 1ste van elke maand verwerk.';
 
   @override
-  String get payoutInstantCashout => 'Instant Cashout';
+  String get payoutInstantCashout => 'Onmiddellike Uitbetaling';
 
   @override
   String get payoutInstantCashoutInfo =>
-      '• Unlimited instant cashouts available\n• 5% fee applies to instant cashouts\n• Scheduled payouts have no fees';
+      '• Onbeperkte onmiddellike uitbetalings beskikbaar\n• 5% fooi van toepassing op onmiddellike uitbetalings\n• Geskeduleerde uitbetalings het geen fooie nie';
 
   @override
-  String get payoutNextScheduled => 'Next Scheduled Payout';
+  String get payoutNextScheduled => 'Volgende Geskeduleerde Uitbetaling';
 
   @override
   String payoutYourLocalTime(Object timezone) {
-    return 'Your local time ($timezone)';
+    return 'Jou plaaslike tyd ($timezone)';
   }
 
   @override
-  String get payoutAmountToCashOut => 'Amount to cash out';
+  String get payoutAmountToCashOut => 'Bedrag om uit te betaal';
 
   @override
   String payoutMinMaxRange(Object min, Object max) {
-    return 'Min: $min - Max: $max';
+    return 'Min: $min - Maks: $max';
   }
 
   @override
-  String get payoutMaxButton => 'MAX';
+  String get payoutMaxButton => 'MAKS';
 
   @override
-  String get payoutCashOutNow => 'Cash Out (Instant)';
+  String get payoutCashOutNow => 'Betaal Uit (Onmiddellik)';
 
   @override
-  String get payoutAvailableBalance => 'Available Balance';
+  String get payoutAvailableBalance => 'Beskikbare Balans';
 
   @override
-  String get payoutPendingFunds => 'Pending';
+  String get payoutPendingFunds => 'Hangende';
 
   @override
   String get payoutPendingInfo =>
-      'Pending funds will be available after the hold period';
+      'Hangende fondse sal beskikbaar wees na die wag periode';
 
   @override
-  String get payoutLifetimeEarnings => 'Lifetime Earnings';
+  String get payoutLifetimeEarnings => 'Lewenslange Verdienste';
 
   @override
-  String get payoutTotalCashedOut => 'Total Cashed Out';
+  String get payoutTotalCashedOut => 'Totaal Uitbetaal';
 
   @override
-  String get payoutUnlimitedCashouts => 'Unlimited';
+  String get payoutUnlimitedCashouts => 'Onbeperk';
 
   @override
-  String get mainHello => 'Hello';
+  String get mainHello => 'Hallo';
 
   @override
-  String get mainViewProfile => 'View Profile';
+  String get mainViewProfile => 'Bekyk Profiel';
 
   @override
-  String get mainBookings => 'Bookings';
+  String get mainBookings => 'Besprekings';
 
   @override
-  String get mainNotifications => 'Notifications';
+  String get mainNotifications => 'Kennisgewings';
 
   @override
-  String get mainReferral => 'Referral';
+  String get mainReferral => 'Verwysing';
 
   @override
-  String get mainSettings => 'Settings';
+  String get mainSettings => 'Instellings';
 
   @override
-  String get mainHelp => 'Help';
+  String get mainHelp => 'Hulp';
 
   @override
-  String get mainWallet => 'Wallet';
+  String get mainWallet => 'Beursie';
 
   @override
-  String get mainEarnings => 'Earnings';
+  String get mainEarnings => 'Verdienste';
 
   @override
-  String get mainOpenJobs => 'Open Jobs';
+  String get mainOpenJobs => 'Oop Werk';
 
   @override
-  String get mainAssignedJobs => 'Assigned Jobs';
+  String get mainAssignedJobs => 'Toegewysde Werk';
 
   @override
-  String get mainMyReputation => 'My Reputation';
+  String get mainMyReputation => 'My Reputasie';
 
   @override
-  String get reputationTitle => 'My Reputation';
+  String get reputationTitle => 'My Reputasie';
 
   @override
-  String get reputationYourCustomerRating => 'Your Customer Rating';
+  String get reputationYourCustomerRating => 'Jou Kliëntgradering';
 
   @override
   String reputationBasedOnReviews(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'reviews',
-      one: 'review',
+      other: 'resensies',
+      one: 'resensie',
     );
-    return 'Based on $count $_temp0';
+    return 'Gebaseer op $count $_temp0';
   }
 
   @override
-  String get reputationExcellentCustomer => '⭐ Excellent Customer';
+  String get reputationExcellentCustomer => '⭐ Uitstekende Kliënt';
 
   @override
-  String get reputationGreatCustomer => '👍 Great Customer';
+  String get reputationGreatCustomer => '👍 Groot Kliënt';
 
   @override
-  String get reputationGoodCustomer => '✓ Good Customer';
+  String get reputationGoodCustomer => '✓ Goeie Kliënt';
 
   @override
-  String get reputationAverage => 'Average';
+  String get reputationAverage => 'Gemiddeld';
 
   @override
-  String get reputationNeedsImprovement => 'Needs Improvement';
+  String get reputationNeedsImprovement => 'Benodig Verbetering';
 
   @override
-  String get reputationNoRatingYet => 'No Rating Yet';
+  String get reputationNoRatingYet => 'Nog Geen Gradering';
 
   @override
-  String get reputationWhatProvidersSay => 'What Providers Say About You';
+  String get reputationWhatProvidersSay => 'Wat Verskaffers van Jou Sê';
 
   @override
-  String get reputationNoReviews => 'No Reviews Yet';
+  String get reputationNoReviews => 'Nog Geen Resensies';
 
   @override
   String get reputationNoReviewsHelp =>
-      'Complete bookings to build your reputation!\nProviders will rate you after completing services.';
+      'Voltooi besprekings om jou reputasie te bou!\nVerskaffers sal jou gradeer nadat dienste voltooi is.';
 
   @override
   String reputationShowMore(int count) {
-    return 'Show More ($count more)';
+    return 'Wys Meer ($count meer)';
   }
 
   @override
-  String get reputationShowLess => 'Show Less';
+  String get reputationShowLess => 'Wys Minder';
 
   @override
-  String get reputationJustNow => 'Just now';
+  String get reputationJustNow => 'Sopas';
 
   @override
   String reputationMinutesAgo(int minutes) {
-    return '$minutes min ago';
+    return '$minutes min gelede';
   }
 
   @override
@@ -2861,10 +2864,10 @@ class AppLocalizationsAf extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       hours,
       locale: localeName,
-      other: 'hours',
-      one: 'hour',
+      other: 'ure',
+      one: 'uur',
     );
-    return '$hours $_temp0 ago';
+    return '$hours $_temp0 gelede';
   }
 
   @override
@@ -2872,10 +2875,10 @@ class AppLocalizationsAf extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       days,
       locale: localeName,
-      other: 'days',
-      one: 'day',
+      other: 'dae',
+      one: 'dag',
     );
-    return '$days $_temp0 ago';
+    return '$days $_temp0 gelede';
   }
 
   @override
@@ -2883,10 +2886,10 @@ class AppLocalizationsAf extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       weeks,
       locale: localeName,
-      other: 'weeks',
+      other: 'weke',
       one: 'week',
     );
-    return '$weeks $_temp0 ago';
+    return '$weeks $_temp0 gelede';
   }
 
   @override
@@ -2894,10 +2897,10 @@ class AppLocalizationsAf extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       months,
       locale: localeName,
-      other: 'months',
-      one: 'month',
+      other: 'maande',
+      one: 'maand',
     );
-    return '$months $_temp0 ago';
+    return '$months $_temp0 gelede';
   }
 
   @override
@@ -2905,15 +2908,15 @@ class AppLocalizationsAf extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       years,
       locale: localeName,
-      other: 'years',
-      one: 'year',
+      other: 'jaar',
+      one: 'jaar',
     );
-    return '$years $_temp0 ago';
+    return '$years $_temp0 gelede';
   }
 
   @override
-  String get notificationsTitle => 'Notifications';
+  String get notificationsTitle => 'Kennisgewings';
 
   @override
-  String get notificationsNoNotifications => 'No notifications yet.';
+  String get notificationsNoNotifications => 'Nog geen kennisgewings nie.';
 }
