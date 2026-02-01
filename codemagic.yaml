@@ -80,7 +80,7 @@ workflows:
         
       email:
         recipients:
-          - your-email@example.com  # Change to your email
+          - styloria_mdk303@outlook.com  # Change to your email
         notify:
           success: true
           failure: true
@@ -126,7 +126,7 @@ workflows:
     publishing:
       email:
         recipients:
-          - your-email@example.com
+          - styloria_mdk303@outlook.com
         notify:
           success: true
           failure: true
