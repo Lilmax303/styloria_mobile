@@ -4,28 +4,39 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+
 	<key>CFBundleDisplayName</key>
-	<string>Styloria Mobile</string>
+	<string>Styloria</string>
+
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
+
 	<key>CFBundleIdentifier</key>
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
+
 	<key>CFBundleName</key>
-	<string>styloria_mobile</string>
+	<string>Styloria</string>
+
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
+
 	<key>CFBundleShortVersionString</key>
 	<string>$(FLUTTER_BUILD_NAME)</string>
+
 	<key>CFBundleSignature</key>
 	<string>????</string>
+
 	<key>CFBundleVersion</key>
 	<string>$(FLUTTER_BUILD_NUMBER)</string>
+
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
+
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 
@@ -72,16 +83,20 @@
 	<!-- Location Permissions -->
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>This app needs access to location to match you with nearby clients</string>
+
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>This app needs access to location to update your availability for jobs</string>
 
 	<!-- Camera & Photo Permissions - NEW -->
 	<key>NSCameraUsageDescription</key>
 	<string>We need camera access to take your verification selfie and ID photos</string>
+
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>We need photo library access to upload your ID documents</string>
+
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>We need permission to save photos to your library</string>
+
 	<key>NSMicrophoneUsageDescription</key>
 	<string>We need microphone access for video recording</string>
 </dict>
