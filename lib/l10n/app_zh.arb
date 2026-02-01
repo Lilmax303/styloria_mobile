@@ -231,6 +231,264 @@
       "time": {}
     }
   },
+
+  "signOut": "退出登录",
+
+  "kycIdFrontPhoto": "身份证正面照片",
+  "kycIdFrontMessage": "拍摄您身份证的正面照片",
+  "kycIdBackPhoto": "身份证背面照片",
+  "kycIdBackMessage": "拍摄您身份证的背面照片",
+  "kycCamera": "相机",
+  "kycGallery": "相册",
+  "kycChooseSource": "选择来源：",
+  "kycFailedCaptureImage": "拍摄图片失败",
+  "kycFailedCaptureSelfie": "拍摄自拍失败",
+  "kycCameraNotAvailable": "相机不可用",
+  "kycCameraNotAvailableMessage": "相机不可用。您想从相册中选择一张图片吗？",
+  "kycUseGallery": "使用相册",
+  "kycDocumentsLocked": "文件在审核期间已锁定。在验证完成之前，您无法进行更改。",
+  "kycVerificationSubmittedSuccessfully": "验证已成功提交",
+  "kycVerificationSubmitted": "验证已提交",
+  "kycThankYouSubmitting": "感谢您提交验证文件！",
+  "kycWhatHappensNext": "接下来会发生什么：",
+  "kycReviewTime": "我们的团队将在24-48小时内审核您的文件",
+  "kycEmailNotification": "验证完成后，您将收到电子邮件",
+  "kycCheckEmail": "请查看您的电子邮件以获取验证状态更新",
+  "kycLocked": "您的文件现已锁定，在审核期间无法更改",
+  "kycRecommendSignOut": "我们建议您退出登录，稍后回来查看验证结果。",
+  "kycStaySignedIn": "保持登录",
+  "kycVerificationPending": "验证待审核",
+  "kycVerificationPendingSubtitle": "您的文件正在审核中",
+  "kycVerificationApproved": "验证已批准",
+  "kycVerificationApprovedSubtitle": "您现在可以访问所有服务提供者功能",
+  "kycVerificationRejected": "验证被拒绝",
+  "kycVerificationRejectedSubtitle": "请查看下面的备注并重新提交",
+  "kycVerificationRequired": "需要验证",
+  "kycVerificationRequiredSubtitle": "完成验证以访问服务提供者功能",
+  "kycReviewNotes": "审核备注",
+  "kycIdCardFront": "身份证（正面）",
+  "kycIdCardBack": "身份证（背面）",
+  "kycVerificationSelfie": "验证自拍",
+  "kycButtonLocked": "已锁定",
+  "kycCaptureIdFront": "拍摄身份证正面",
+  "kycCaptureIdBack": "拍摄身份证背面",
+  "kycDocumentsLockedButton": "文件已锁定",
+  "kycTipsTitle": "📸 拍摄好照片的提示：",
+  "kycTipGoodLighting": "• 使用良好的照明",
+  "kycTipFlatCard": "• 将身份证放在平坦的表面上",
+  "kycTipReadableText": "• 确保所有文字清晰可读",
+  "kycTipFaceCamera": "• 自拍时直视相机",
+  "kycTipAvoidGlare": "• 避免眩光或阴影",
+  "kycFailedSubmitVerification": "提交验证失败",
+
+  "paystackSetupTitle": "设置付款账户",
+  "paystackVerifying": "验证中...",
+  "paystackVerificationSuccess": "付款设置已成功保存！",
+  "paystackVerificationFailed": "保存付款设置失败",
+  "paystackSelectBank": "选择您的银行",
+  "paystackAccountNumber": "账号",
+  "paystackVerifyAccount": "验证账户",
+  "paystackAccountVerified": "账户已验证",
+  "paystackSavePayoutAccount": "保存付款账户",
+  "paystackNoBanksAvailable": "{country}没有可用的银行",
+  "@paystackNoBanksAvailable": {
+    "placeholders": {
+      "country": {}
+    }
+  },
+  "paystackRetry": "重试",
+  "paystackPayoutsInfo": "您的收入将发送到此账户。付款将在24小时内处理。",
+  "paystackConnected": "账户：已连接",
+  "paystackNotConnected": "账户：未连接",
+  "paystackDetailsSubmitted": "已提交详细信息：",
+  "paystackPayoutsEnabled": "付款已启用：",
+  "paystackYes": "是",
+  "paystackNo": "否",
+  "paystackFinishSetup": "完成Stripe设置",
+  "paystackConnectStripe": "连接Stripe",
+  "paystackOpenDashboard": "打开Stripe仪表板",
+  "paystackMustFinishSetup": "您必须先完成Stripe设置才能提现。",
+  "paystackPayouts": "Paystack付款",
+  "paystackAddBankDetails": "在付款设置中添加您的银行账户详细信息以通过Paystack接收付款。",
+  "paystackOpenSettings": "打开付款设置",
+
+  "payoutPaystackForCountry": "{country}通过Paystack付款",
+  "@payoutPaystackForCountry": {
+    "placeholders": {
+      "country": {}
+    }
+  },
+  "payoutFlutterwaveForCountry": "{country}的付款通过Flutterwave处理",
+  "@payoutFlutterwaveForCountry": {
+    "placeholders": {
+      "country": {}
+    }
+  },
+  "payoutStripeConnect": "Stripe Connect",
+  "payoutBankAccountDetails": "银行账户详细信息",
+  "payoutAccountHolderName": "账户持有人姓名",
+  "payoutAccountHolderNameHint": "输入您银行账户上显示的姓名",
+  "payoutSelectBank": "选择银行 *",
+  "payoutBankName": "银行名称 *",
+  "payoutBankNameManual": "银行名称（手动）",
+  "payoutBankNameHint": "例如：GCB Bank、Ecobank",
+  "payoutBankCode": "银行代码 *",
+  "payoutBankCodeManual": "银行代码（手动）",
+  "payoutBankCodeHint": "Flutterwave银行代码",
+  "payoutBankCodeHelper": "如果不确定银行代码，请联系客服",
+  "payoutAccountNumber": "账号 *",
+  "payoutAccountNumberHint": "输入您的银行账号",
+  "payoutMobileMoney": "移动支付",
+  "payoutFullName": "全名（已注册）*",
+  "payoutFullNameHint": "在您的移动支付账户上注册的姓名",
+  "payoutMobileNetwork": "移动网络 *",
+  "payoutSelectNetwork": "选择您的移动网络",
+  "payoutMobileNetworkHint": "例如：MTN、Vodafone、Airtel",
+  "payoutCountryCode": "国家代码",
+  "payoutMobileMoneyNumber": "移动支付号码 *",
+  "payoutMobileMoneyNumberHint": "例如：0541234567",
+  "payoutZipCode": "邮政编码",
+  "payoutZipCodeHint": "如果您的网络需要",
+  "payoutMethod": "付款方式",
+  "payoutBankTransfer": "银行转账",
+  "payoutCurrency": "货币",
+  "payoutCurrencyLocked": "锁定为{country}货币",
+  "@payoutCurrencyLocked": {
+    "placeholders": {
+      "country": {}
+    }
+  },
+  "payoutBeneficiaryId": "受益人ID",
+  "payoutBeneficiaryIdHint": "可选 - 用于定期转账",
+  "payoutSchedule": "付款计划",
+  "payoutFrequency": "付款频率",
+  "payoutFrequencyWeekly": "每周",
+  "payoutFrequencyMonthly": "每月（每月1日）",
+  "payoutDayHelper": "可用：星期二、星期四、星期五",
+  "payoutMonthlyInfo": "每月付款在每月1日处理。",
+  "payoutInstantCashout": "即时提现",
+  "payoutInstantCashoutInfo": "• 可无限次即时提现\n• 即时提现收取5%手续费\n• 计划付款无手续费",
+  "payoutNextScheduled": "下次计划付款",
+  "payoutYourLocalTime": "您的本地时间（{timezone}）",
+  "@payoutYourLocalTime": {
+    "placeholders": {
+      "timezone": {}
+    }
+  },
+  "payoutAmountToCashOut": "提现金额",
+  "payoutMinMaxRange": "最小：{min} - 最大：{max}",
+  "@payoutMinMaxRange": {
+    "placeholders": {
+      "min": {},
+      "max": {}
+    }
+  },
+  "payoutMaxButton": "最大",
+  "payoutCashOutNow": "提现（即时）",
+  "payoutAvailableBalance": "可用余额",
+  "payoutPendingFunds": "待处理",
+  "payoutPendingInfo": "待处理资金将在保留期后可用",
+  "payoutLifetimeEarnings": "总收入",
+  "payoutTotalCashedOut": "总提现",
+  "payoutUnlimitedCashouts": "无限制",
+
+  "mainHello": "您好",
+  "mainViewProfile": "查看个人资料",
+  "mainBookings": "预订",
+  "mainNotifications": "通知",
+  "mainReferral": "推荐",
+  "mainSettings": "设置",
+  "mainHelp": "帮助",
+  "mainWallet": "钱包",
+  "mainEarnings": "收入",
+  "mainOpenJobs": "开放工作",
+  "mainAssignedJobs": "分配的工作",
+  "mainMyReputation": "我的信誉",
+
+  "reputationTitle": "我的信誉",
+  "reputationYourCustomerRating": "您的客户评分",
+  "reputationBasedOnReviews": "基于{count}条评价",
+  "@reputationBasedOnReviews": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationExcellentCustomer": "⭐ 优秀客户",
+  "reputationGreatCustomer": "👍 很好的客户",
+  "reputationGoodCustomer": "✓ 好客户",
+  "reputationAverage": "一般",
+  "reputationNeedsImprovement": "需要改进",
+  "reputationNoRatingYet": "暂无评分",
+  "reputationWhatProvidersSay": "服务提供者对您的评价",
+  "reputationNoReviews": "暂无评价",
+  "reputationNoReviewsHelp": "完成预订以建立您的信誉！\n完成服务后，服务提供者会给您评分。",
+  "reputationShowMore": "显示更多（还有{count}条）",
+  "@reputationShowMore": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationShowLess": "显示更少",
+  "reputationJustNow": "刚刚",
+  "reputationMinutesAgo": "{minutes}分钟前",
+  "@reputationMinutesAgo": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationHoursAgo": "{hours}小时前",
+  "@reputationHoursAgo": {
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationDaysAgo": "{days}天前",
+  "@reputationDaysAgo": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationWeeksAgo": "{weeks}周前",
+  "@reputationWeeksAgo": {
+    "placeholders": {
+      "weeks": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationMonthsAgo": "{months}个月前",
+  "@reputationMonthsAgo": {
+    "placeholders": {
+      "months": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationYearsAgo": "{years}年前",
+  "@reputationYearsAgo": {
+    "placeholders": {
+      "years": {
+        "type": "int"
+      }
+    }
+  },
+
+  "walletTitle": "钱包",
+  "walletCashOutFailed": "提现失败。",
+  
+  "notificationsTitle": "通知",
+  "notificationsNoNotifications": "暂无通知。",
+
   "earlyFreeCancellationEndedWarning": "早期免费取消已结束。在接受后约 40 分钟内，晚取消可能会产生罚金。",
   "cancelBooking": "取消预约",
   "cancelBookingNoPenalty": "取消预约（无罚金）",

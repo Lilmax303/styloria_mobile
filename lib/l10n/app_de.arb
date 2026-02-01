@@ -436,6 +436,264 @@
       "error": {}
     }
   },
+
+  "signOut": "Abmelden",
+
+  "kycIdFrontPhoto": "Ausweis Vorderseite Foto",
+  "kycIdFrontMessage": "Machen Sie ein Foto von der Vorderseite Ihres Ausweises",
+  "kycIdBackPhoto": "Ausweis Rückseite Foto",
+  "kycIdBackMessage": "Machen Sie ein Foto von der Rückseite Ihres Ausweises",
+  "kycCamera": "Kamera",
+  "kycGallery": "Galerie",
+  "kycChooseSource": "Quelle wählen:",
+  "kycFailedCaptureImage": "Foto konnte nicht aufgenommen werden",
+  "kycFailedCaptureSelfie": "Selfie konnte nicht aufgenommen werden",
+  "kycCameraNotAvailable": "Kamera nicht verfügbar",
+  "kycCameraNotAvailableMessage": "Kamera ist nicht verfügbar. Möchten Sie stattdessen ein Bild aus Ihrer Galerie auswählen?",
+  "kycUseGallery": "Galerie verwenden",
+  "kycDocumentsLocked": "Dokumente sind während der Überprüfung gesperrt. Sie können keine Änderungen vornehmen, bis die Verifizierung abgeschlossen ist.",
+  "kycVerificationSubmittedSuccessfully": "Verifizierung erfolgreich eingereicht",
+  "kycVerificationSubmitted": "Verifizierung eingereicht",
+  "kycThankYouSubmitting": "Vielen Dank für die Einreichung Ihrer Verifizierungsdokumente!",
+  "kycWhatHappensNext": "Was passiert als Nächstes:",
+  "kycReviewTime": "Unser Team wird Ihre Dokumente innerhalb von 24-48 Stunden prüfen",
+  "kycEmailNotification": "Sie erhalten eine E-Mail, sobald Ihre Verifizierung abgeschlossen ist",
+  "kycCheckEmail": "Überprüfen Sie Ihre E-Mails für Updates zu Ihrem Verifizierungsstatus",
+  "kycLocked": "Ihre Dokumente sind jetzt gesperrt und können während der Überprüfung nicht geändert werden",
+  "kycRecommendSignOut": "Wir empfehlen, sich abzumelden und später für Ihr Verifizierungsergebnis zurückzukehren.",
+  "kycStaySignedIn": "Angemeldet bleiben",
+  "kycVerificationPending": "Verifizierung ausstehend",
+  "kycVerificationPendingSubtitle": "Ihre Dokumente werden überprüft",
+  "kycVerificationApproved": "Verifizierung genehmigt",
+  "kycVerificationApprovedSubtitle": "Sie können jetzt auf alle Anbieter-Funktionen zugreifen",
+  "kycVerificationRejected": "Verifizierung abgelehnt",
+  "kycVerificationRejectedSubtitle": "Bitte überprüfen Sie die folgenden Hinweise und reichen Sie erneut ein",
+  "kycVerificationRequired": "Verifizierung erforderlich",
+  "kycVerificationRequiredSubtitle": "Schließen Sie die Verifizierung ab, um auf Anbieter-Funktionen zuzugreifen",
+  "kycReviewNotes": "Überprüfungshinweise",
+  "kycIdCardFront": "Ausweiskarte (Vorderseite)",
+  "kycIdCardBack": "Ausweiskarte (Rückseite)",
+  "kycVerificationSelfie": "Verifizierungs-Selfie",
+  "kycButtonLocked": "Gesperrt",
+  "kycCaptureIdFront": "Ausweis Vorderseite aufnehmen",
+  "kycCaptureIdBack": "Ausweis Rückseite aufnehmen",
+  "kycDocumentsLockedButton": "Dokumente gesperrt",
+  "kycTipsTitle": "📸 Tipps für gute Fotos:",
+  "kycTipGoodLighting": "• Verwenden Sie gute Beleuchtung",
+  "kycTipFlatCard": "• Legen Sie die Ausweiskarte auf eine flache Oberfläche",
+  "kycTipReadableText": "• Stellen Sie sicher, dass der gesamte Text lesbar ist",
+  "kycTipFaceCamera": "• Schauen Sie direkt in die Kamera für das Selfie",
+  "kycTipAvoidGlare": "• Vermeiden Sie Blendung oder Schatten",
+  "kycFailedSubmitVerification": "Verifizierung konnte nicht eingereicht werden",
+
+  "paystackSetupTitle": "Auszahlungskonto einrichten",
+  "paystackVerifying": "Überprüfung läuft...",
+  "paystackVerificationSuccess": "Auszahlungseinstellungen erfolgreich gespeichert!",
+  "paystackVerificationFailed": "Auszahlungseinstellungen konnten nicht gespeichert werden",
+  "paystackSelectBank": "Wählen Sie Ihre Bank",
+  "paystackAccountNumber": "Kontonummer",
+  "paystackVerifyAccount": "Konto verifizieren",
+  "paystackAccountVerified": "Konto verifiziert",
+  "paystackSavePayoutAccount": "Auszahlungskonto speichern",
+  "paystackNoBanksAvailable": "Keine Banken verfügbar für {country}",
+  "@paystackNoBanksAvailable": {
+    "placeholders": {
+      "country": {}
+    }
+  },
+  "paystackRetry": "Erneut versuchen",
+  "paystackPayoutsInfo": "Ihre Einnahmen werden auf dieses Konto überwiesen. Auszahlungen werden innerhalb von 24 Stunden verarbeitet.",
+  "paystackConnected": "Konto: verbunden",
+  "paystackNotConnected": "Konto: nicht verbunden",
+  "paystackDetailsSubmitted": "Details eingereicht:",
+  "paystackPayoutsEnabled": "Auszahlungen aktiviert:",
+  "paystackYes": "ja",
+  "paystackNo": "nein",
+  "paystackFinishSetup": "Stripe-Einrichtung abschließen",
+  "paystackConnectStripe": "Stripe verbinden",
+  "paystackOpenDashboard": "Stripe-Dashboard öffnen",
+  "paystackMustFinishSetup": "Sie müssen die Stripe-Einrichtung abschließen, bevor Sie auszahlen können.",
+  "paystackPayouts": "Paystack-Auszahlungen",
+  "paystackAddBankDetails": "Fügen Sie Ihre Bankkontodaten in den Auszahlungseinstellungen hinzu, um Auszahlungen über Paystack zu erhalten.",
+  "paystackOpenSettings": "Auszahlungseinstellungen öffnen",
+
+  "payoutPaystackForCountry": "Auszahlungen über Paystack für {country}",
+  "@payoutPaystackForCountry": {
+    "placeholders": {
+      "country": {}
+    }
+  },
+  "payoutFlutterwaveForCountry": "Auszahlungen werden über Flutterwave für {country} verarbeitet",
+  "@payoutFlutterwaveForCountry": {
+    "placeholders": {
+      "country": {}
+    }
+  },
+  "payoutStripeConnect": "Stripe Connect",
+  "payoutBankAccountDetails": "Bankkonto-Details",
+  "payoutAccountHolderName": "Name des Kontoinhabers",
+  "payoutAccountHolderNameHint": "Geben Sie den Namen so ein, wie er auf Ihrem Bankkonto erscheint",
+  "payoutSelectBank": "Bank auswählen *",
+  "payoutBankName": "Bankname *",
+  "payoutBankNameManual": "Bankname (manuell)",
+  "payoutBankNameHint": "z.B. GCB Bank, Ecobank",
+  "payoutBankCode": "Bankleitzahl *",
+  "payoutBankCodeManual": "Bankleitzahl (manuell)",
+  "payoutBankCodeHint": "Flutterwave-Bankcode",
+  "payoutBankCodeHelper": "Kontaktieren Sie den Support, wenn Sie unsicher über den Bankcode sind",
+  "payoutAccountNumber": "Kontonummer *",
+  "payoutAccountNumberHint": "Geben Sie Ihre Bankkontonummer ein",
+  "payoutMobileMoney": "Mobile Money",
+  "payoutFullName": "Vollständiger Name (wie registriert) *",
+  "payoutFullNameHint": "Name, der auf Ihrem Mobile-Money-Konto registriert ist",
+  "payoutMobileNetwork": "Mobilfunknetz *",
+  "payoutSelectNetwork": "Wählen Sie Ihr Mobilfunknetz",
+  "payoutMobileNetworkHint": "z.B. MTN, Vodafone, Airtel",
+  "payoutCountryCode": "Ländervorwahl",
+  "payoutMobileMoneyNumber": "Mobile-Money-Nummer *",
+  "payoutMobileMoneyNumberHint": "z.B. 0541234567",
+  "payoutZipCode": "Postleitzahl",
+  "payoutZipCodeHint": "Falls von Ihrem Netzwerk erforderlich",
+  "payoutMethod": "Auszahlungsmethode",
+  "payoutBankTransfer": "Banküberweisung",
+  "payoutCurrency": "Währung",
+  "payoutCurrencyLocked": "Auf {country}-Währung festgelegt",
+  "@payoutCurrencyLocked": {
+    "placeholders": {
+      "country": {}
+    }
+  },
+  "payoutBeneficiaryId": "Begünstigten-ID",
+  "payoutBeneficiaryIdHint": "Optional - für wiederkehrende Überweisungen",
+  "payoutSchedule": "Auszahlungsplan",
+  "payoutFrequency": "Auszahlungshäufigkeit",
+  "payoutFrequencyWeekly": "Wöchentlich",
+  "payoutFrequencyMonthly": "Monatlich (am 1. jeden Monats)",
+  "payoutDayHelper": "Verfügbar: Dienstag, Donnerstag, Freitag",
+  "payoutMonthlyInfo": "Monatliche Auszahlungen werden am 1. jedes Monats verarbeitet.",
+  "payoutInstantCashout": "Sofortige Auszahlung",
+  "payoutInstantCashoutInfo": "• Unbegrenzte sofortige Auszahlungen verfügbar\n• 5% Gebühr gilt für sofortige Auszahlungen\n• Geplante Auszahlungen haben keine Gebühren",
+  "payoutNextScheduled": "Nächste geplante Auszahlung",
+  "payoutYourLocalTime": "Ihre Ortszeit ({timezone})",
+  "@payoutYourLocalTime": {
+    "placeholders": {
+      "timezone": {}
+    }
+  },
+  "payoutAmountToCashOut": "Auszuzahlender Betrag",
+  "payoutMinMaxRange": "Min: {min} - Max: {max}",
+  "@payoutMinMaxRange": {
+    "placeholders": {
+      "min": {},
+      "max": {}
+    }
+  },
+  "payoutMaxButton": "MAX",
+  "payoutCashOutNow": "Jetzt auszahlen (Sofort)",
+  "payoutAvailableBalance": "Verfügbares Guthaben",
+  "payoutPendingFunds": "Ausstehend",
+  "payoutPendingInfo": "Ausstehende Beträge werden nach der Wartezeit verfügbar sein",
+  "payoutLifetimeEarnings": "Gesamteinnahmen",
+  "payoutTotalCashedOut": "Gesamt ausgezahlt",
+  "payoutUnlimitedCashouts": "Unbegrenzt",
+
+  "mainHello": "Hallo",
+  "mainViewProfile": "Profil anzeigen",
+  "mainBookings": "Buchungen",
+  "mainNotifications": "Benachrichtigungen",
+  "mainReferral": "Empfehlung",
+  "mainSettings": "Einstellungen",
+  "mainHelp": "Hilfe",
+  "mainWallet": "Geldbörse",
+  "mainEarnings": "Einnahmen",
+  "mainOpenJobs": "Offene Jobs",
+  "mainAssignedJobs": "Zugewiesene Jobs",
+  "mainMyReputation": "Meine Reputation",
+
+  "reputationTitle": "Meine Reputation",
+  "reputationYourCustomerRating": "Ihre Kundenbewertung",
+  "reputationBasedOnReviews": "Basierend auf {count} {count, plural, =1{Bewertung} other{Bewertungen}}",
+  "@reputationBasedOnReviews": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationExcellentCustomer": "⭐ Ausgezeichneter Kunde",
+  "reputationGreatCustomer": "👍 Großartiger Kunde",
+  "reputationGoodCustomer": "✓ Guter Kunde",
+  "reputationAverage": "Durchschnittlich",
+  "reputationNeedsImprovement": "Verbesserungsbedarf",
+  "reputationNoRatingYet": "Noch keine Bewertung",
+  "reputationWhatProvidersSay": "Was Anbieter über Sie sagen",
+  "reputationNoReviews": "Noch keine Bewertungen",
+  "reputationNoReviewsHelp": "Schließen Sie Buchungen ab, um Ihre Reputation aufzubauen!\nAnbieter werden Sie nach Abschluss der Dienstleistungen bewerten.",
+  "reputationShowMore": "Mehr anzeigen ({count} weitere)",
+  "@reputationShowMore": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationShowLess": "Weniger anzeigen",
+  "reputationJustNow": "Gerade eben",
+  "reputationMinutesAgo": "Vor {minutes} Min.",
+  "@reputationMinutesAgo": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationHoursAgo": "Vor {hours} {hours, plural, =1{Stunde} other{Stunden}}",
+  "@reputationHoursAgo": {
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationDaysAgo": "Vor {days} {days, plural, =1{Tag} other{Tagen}}",
+  "@reputationDaysAgo": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationWeeksAgo": "Vor {weeks} {weeks, plural, =1{Woche} other{Wochen}}",
+  "@reputationWeeksAgo": {
+    "placeholders": {
+      "weeks": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationMonthsAgo": "Vor {months} {months, plural, =1{Monat} other{Monaten}}",
+  "@reputationMonthsAgo": {
+    "placeholders": {
+      "months": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationYearsAgo": "Vor {years} {years, plural, =1{Jahr} other{Jahren}}",
+  "@reputationYearsAgo": {
+    "placeholders": {
+      "years": {
+        "type": "int"
+      }
+    }
+  },
+
+  "walletTitle": "Geldbörse",
+  "walletCashOutFailed": "Auszahlung fehlgeschlagen.",
+  
+  "notificationsTitle": "Benachrichtigungen",
+  "notificationsNoNotifications": "Noch keine Benachrichtigungen.",
+
   "youProvider": "Du (Anbieter)",
   "youCustomer": "Du (Kunde)",
   "customer": "Kunde",

@@ -2349,4 +2349,571 @@ class AppLocalizationsAf extends AppLocalizations {
   @override
   String get providerLocationDeniedCannotBeAvailable =>
       'Location access denied. You cannot be available for bookings without location enabled.';
+
+  @override
+  String get signOut => 'Sign out';
+
+  @override
+  String get kycIdFrontPhoto => 'ID Front Photo';
+
+  @override
+  String get kycIdFrontMessage => 'Take a photo of the front of your ID card';
+
+  @override
+  String get kycIdBackPhoto => 'ID Back Photo';
+
+  @override
+  String get kycIdBackMessage => 'Take a photo of the back of your ID card';
+
+  @override
+  String get kycCamera => 'Camera';
+
+  @override
+  String get kycGallery => 'Gallery';
+
+  @override
+  String get kycChooseSource => 'Choose source:';
+
+  @override
+  String get kycFailedCaptureImage => 'Failed to capture image';
+
+  @override
+  String get kycFailedCaptureSelfie => 'Failed to capture selfie';
+
+  @override
+  String get kycCameraNotAvailable => 'Camera not available';
+
+  @override
+  String get kycCameraNotAvailableMessage =>
+      'Camera is not available. Would you like to select an image from your gallery instead?';
+
+  @override
+  String get kycUseGallery => 'Use Gallery';
+
+  @override
+  String get kycDocumentsLocked =>
+      'Documents are locked while pending review. You cannot make changes until verification is complete.';
+
+  @override
+  String get kycVerificationSubmittedSuccessfully =>
+      'Verification submitted successfully';
+
+  @override
+  String get kycVerificationSubmitted => 'Verification Submitted';
+
+  @override
+  String get kycThankYouSubmitting =>
+      'Thank you for submitting your verification documents!';
+
+  @override
+  String get kycWhatHappensNext => 'What happens next:';
+
+  @override
+  String get kycReviewTime =>
+      'Our team will review your documents within 24-48 hours';
+
+  @override
+  String get kycEmailNotification =>
+      'You\'ll receive an email once your verification is complete';
+
+  @override
+  String get kycCheckEmail =>
+      'Check your email for updates on your verification status';
+
+  @override
+  String get kycLocked =>
+      'Your documents are now locked and cannot be changed during review';
+
+  @override
+  String get kycRecommendSignOut =>
+      'We recommend signing out and checking back later for your verification result.';
+
+  @override
+  String get kycStaySignedIn => 'Stay Signed In';
+
+  @override
+  String get kycVerificationPending => 'Verification Pending';
+
+  @override
+  String get kycVerificationPendingSubtitle =>
+      'Your documents are being reviewed';
+
+  @override
+  String get kycVerificationApproved => 'Verification Approved';
+
+  @override
+  String get kycVerificationApprovedSubtitle =>
+      'You can now access all provider features';
+
+  @override
+  String get kycVerificationRejected => 'Verification Rejected';
+
+  @override
+  String get kycVerificationRejectedSubtitle =>
+      'Please review the notes below and resubmit';
+
+  @override
+  String get kycVerificationRequired => 'Verification Required';
+
+  @override
+  String get kycVerificationRequiredSubtitle =>
+      'Complete verification to access provider features';
+
+  @override
+  String get kycReviewNotes => 'Review Notes';
+
+  @override
+  String get kycIdCardFront => 'ID Card (Front)';
+
+  @override
+  String get kycIdCardBack => 'ID Card (Back)';
+
+  @override
+  String get kycVerificationSelfie => 'Verification Selfie';
+
+  @override
+  String get kycButtonLocked => 'Locked';
+
+  @override
+  String get kycCaptureIdFront => 'Capture ID Front';
+
+  @override
+  String get kycCaptureIdBack => 'Capture ID Back';
+
+  @override
+  String get kycDocumentsLockedButton => 'Documents Locked';
+
+  @override
+  String get kycTipsTitle => '📸 Tips for good photos:';
+
+  @override
+  String get kycTipGoodLighting => '• Use good lighting';
+
+  @override
+  String get kycTipFlatCard => '• Place ID card on a flat surface';
+
+  @override
+  String get kycTipReadableText => '• Make sure all text is readable';
+
+  @override
+  String get kycTipFaceCamera => '• Face the camera directly for selfie';
+
+  @override
+  String get kycTipAvoidGlare => '• Avoid glare or shadows';
+
+  @override
+  String get kycFailedSubmitVerification => 'Failed to submit verification';
+
+  @override
+  String get paystackSetupTitle => 'Setup Payout Account';
+
+  @override
+  String get paystackVerifying => 'Verifying...';
+
+  @override
+  String get paystackVerificationSuccess =>
+      'Payout settings saved successfully!';
+
+  @override
+  String get paystackVerificationFailed => 'Failed to save payout settings';
+
+  @override
+  String get paystackSelectBank => 'Select Your Bank';
+
+  @override
+  String get paystackAccountNumber => 'Account Number';
+
+  @override
+  String get paystackVerifyAccount => 'Verify Account';
+
+  @override
+  String get paystackAccountVerified => 'Account Verified';
+
+  @override
+  String get paystackSavePayoutAccount => 'Save Payout Account';
+
+  @override
+  String paystackNoBanksAvailable(Object country) {
+    return 'No banks available for $country';
+  }
+
+  @override
+  String get paystackRetry => 'Retry';
+
+  @override
+  String get paystackPayoutsInfo =>
+      'Your earnings will be sent to this account. Payouts are processed within 24 hours.';
+
+  @override
+  String get paystackConnected => 'Account: connected';
+
+  @override
+  String get paystackNotConnected => 'Account: not connected';
+
+  @override
+  String get paystackDetailsSubmitted => 'Details submitted:';
+
+  @override
+  String get paystackPayoutsEnabled => 'Payouts enabled:';
+
+  @override
+  String get paystackYes => 'yes';
+
+  @override
+  String get paystackNo => 'no';
+
+  @override
+  String get paystackFinishSetup => 'Finish Stripe Setup';
+
+  @override
+  String get paystackConnectStripe => 'Connect Stripe';
+
+  @override
+  String get paystackOpenDashboard => 'Open Stripe Dashboard';
+
+  @override
+  String get paystackMustFinishSetup =>
+      'You must finish Stripe setup before you can cash out.';
+
+  @override
+  String get paystackPayouts => 'Paystack Payouts';
+
+  @override
+  String get paystackAddBankDetails =>
+      'Add your bank account details in Payout Settings to receive payouts via Paystack.';
+
+  @override
+  String get paystackOpenSettings => 'Open Payout Settings';
+
+  @override
+  String payoutPaystackForCountry(Object country) {
+    return 'Payouts via Paystack for $country';
+  }
+
+  @override
+  String payoutFlutterwaveForCountry(Object country) {
+    return 'Payouts are processed via Flutterwave for $country';
+  }
+
+  @override
+  String get payoutStripeConnect => 'Stripe Connect';
+
+  @override
+  String get payoutBankAccountDetails => 'Bank Account Details';
+
+  @override
+  String get payoutAccountHolderName => 'Account Holder Name';
+
+  @override
+  String get payoutAccountHolderNameHint =>
+      'Enter name as it appears on your bank account';
+
+  @override
+  String get payoutSelectBank => 'Select Bank *';
+
+  @override
+  String get payoutBankName => 'Bank Name *';
+
+  @override
+  String get payoutBankNameManual => 'Bank Name (manual)';
+
+  @override
+  String get payoutBankNameHint => 'e.g., GCB Bank, Ecobank';
+
+  @override
+  String get payoutBankCode => 'Bank Code *';
+
+  @override
+  String get payoutBankCodeManual => 'Bank Code (manual)';
+
+  @override
+  String get payoutBankCodeHint => 'Flutterwave bank code';
+
+  @override
+  String get payoutBankCodeHelper => 'Contact support if unsure of bank code';
+
+  @override
+  String get payoutAccountNumber => 'Account Number *';
+
+  @override
+  String get payoutAccountNumberHint => 'Enter your bank account number';
+
+  @override
+  String get payoutMobileMoney => 'Mobile Money';
+
+  @override
+  String get payoutFullName => 'Full Name (as registered) *';
+
+  @override
+  String get payoutFullNameHint =>
+      'Name registered on your mobile money account';
+
+  @override
+  String get payoutMobileNetwork => 'Mobile Network *';
+
+  @override
+  String get payoutSelectNetwork => 'Select your mobile network';
+
+  @override
+  String get payoutMobileNetworkHint => 'e.g., MTN, Vodafone, Airtel';
+
+  @override
+  String get payoutCountryCode => 'Country Code';
+
+  @override
+  String get payoutMobileMoneyNumber => 'Mobile Money Number *';
+
+  @override
+  String get payoutMobileMoneyNumberHint => 'e.g., 0541234567';
+
+  @override
+  String get payoutZipCode => 'ZIP/Postal Code';
+
+  @override
+  String get payoutZipCodeHint => 'If required by your network';
+
+  @override
+  String get payoutMethod => 'Payout Method';
+
+  @override
+  String get payoutBankTransfer => 'Bank Transfer';
+
+  @override
+  String get payoutCurrency => 'Currency';
+
+  @override
+  String payoutCurrencyLocked(Object country) {
+    return 'Locked to $country currency';
+  }
+
+  @override
+  String get payoutBeneficiaryId => 'Beneficiary ID';
+
+  @override
+  String get payoutBeneficiaryIdHint => 'Optional - for recurring transfers';
+
+  @override
+  String get payoutSchedule => 'Payout Schedule';
+
+  @override
+  String get payoutFrequency => 'Payout Frequency';
+
+  @override
+  String get payoutFrequencyWeekly => 'Weekly';
+
+  @override
+  String get payoutFrequencyMonthly => 'Monthly (1st of each month)';
+
+  @override
+  String get payoutDayHelper => 'Available: Tuesday, Thursday, Friday';
+
+  @override
+  String get payoutMonthlyInfo =>
+      'Monthly payouts are processed on the 1st of each month.';
+
+  @override
+  String get payoutInstantCashout => 'Instant Cashout';
+
+  @override
+  String get payoutInstantCashoutInfo =>
+      '• Unlimited instant cashouts available\n• 5% fee applies to instant cashouts\n• Scheduled payouts have no fees';
+
+  @override
+  String get payoutNextScheduled => 'Next Scheduled Payout';
+
+  @override
+  String payoutYourLocalTime(Object timezone) {
+    return 'Your local time ($timezone)';
+  }
+
+  @override
+  String get payoutAmountToCashOut => 'Amount to cash out';
+
+  @override
+  String payoutMinMaxRange(Object min, Object max) {
+    return 'Min: $min - Max: $max';
+  }
+
+  @override
+  String get payoutMaxButton => 'MAX';
+
+  @override
+  String get payoutCashOutNow => 'Cash Out (Instant)';
+
+  @override
+  String get payoutAvailableBalance => 'Available Balance';
+
+  @override
+  String get payoutPendingFunds => 'Pending';
+
+  @override
+  String get payoutPendingInfo =>
+      'Pending funds will be available after the hold period';
+
+  @override
+  String get payoutLifetimeEarnings => 'Lifetime Earnings';
+
+  @override
+  String get payoutTotalCashedOut => 'Total Cashed Out';
+
+  @override
+  String get payoutUnlimitedCashouts => 'Unlimited';
+
+  @override
+  String get mainHello => 'Hello';
+
+  @override
+  String get mainViewProfile => 'View Profile';
+
+  @override
+  String get mainBookings => 'Bookings';
+
+  @override
+  String get mainNotifications => 'Notifications';
+
+  @override
+  String get mainReferral => 'Referral';
+
+  @override
+  String get mainSettings => 'Settings';
+
+  @override
+  String get mainHelp => 'Help';
+
+  @override
+  String get mainWallet => 'Wallet';
+
+  @override
+  String get mainEarnings => 'Earnings';
+
+  @override
+  String get mainOpenJobs => 'Open Jobs';
+
+  @override
+  String get mainAssignedJobs => 'Assigned Jobs';
+
+  @override
+  String get mainMyReputation => 'My Reputation';
+
+  @override
+  String get reputationTitle => 'My Reputation';
+
+  @override
+  String get reputationYourCustomerRating => 'Your Customer Rating';
+
+  @override
+  String reputationBasedOnReviews(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'reviews',
+      one: 'review',
+    );
+    return 'Based on $count $_temp0';
+  }
+
+  @override
+  String get reputationExcellentCustomer => '⭐ Excellent Customer';
+
+  @override
+  String get reputationGreatCustomer => '👍 Great Customer';
+
+  @override
+  String get reputationGoodCustomer => '✓ Good Customer';
+
+  @override
+  String get reputationAverage => 'Average';
+
+  @override
+  String get reputationNeedsImprovement => 'Needs Improvement';
+
+  @override
+  String get reputationNoRatingYet => 'No Rating Yet';
+
+  @override
+  String get reputationWhatProvidersSay => 'What Providers Say About You';
+
+  @override
+  String get reputationNoReviews => 'No Reviews Yet';
+
+  @override
+  String get reputationNoReviewsHelp =>
+      'Complete bookings to build your reputation!\nProviders will rate you after completing services.';
+
+  @override
+  String reputationShowMore(int count) {
+    return 'Show More ($count more)';
+  }
+
+  @override
+  String get reputationShowLess => 'Show Less';
+
+  @override
+  String get reputationJustNow => 'Just now';
+
+  @override
+  String reputationMinutesAgo(int minutes) {
+    return '$minutes min ago';
+  }
+
+  @override
+  String reputationHoursAgo(int hours) {
+    String _temp0 = intl.Intl.pluralLogic(
+      hours,
+      locale: localeName,
+      other: 'hours',
+      one: 'hour',
+    );
+    return '$hours $_temp0 ago';
+  }
+
+  @override
+  String reputationDaysAgo(int days) {
+    String _temp0 = intl.Intl.pluralLogic(
+      days,
+      locale: localeName,
+      other: 'days',
+      one: 'day',
+    );
+    return '$days $_temp0 ago';
+  }
+
+  @override
+  String reputationWeeksAgo(int weeks) {
+    String _temp0 = intl.Intl.pluralLogic(
+      weeks,
+      locale: localeName,
+      other: 'weeks',
+      one: 'week',
+    );
+    return '$weeks $_temp0 ago';
+  }
+
+  @override
+  String reputationMonthsAgo(int months) {
+    String _temp0 = intl.Intl.pluralLogic(
+      months,
+      locale: localeName,
+      other: 'months',
+      one: 'month',
+    );
+    return '$months $_temp0 ago';
+  }
+
+  @override
+  String reputationYearsAgo(int years) {
+    String _temp0 = intl.Intl.pluralLogic(
+      years,
+      locale: localeName,
+      other: 'years',
+      one: 'year',
+    );
+    return '$years $_temp0 ago';
+  }
+
+  @override
+  String get notificationsTitle => 'Notifications';
+
+  @override
+  String get notificationsNoNotifications => 'No notifications yet.';
 }

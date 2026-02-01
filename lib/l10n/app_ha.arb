@@ -436,6 +436,264 @@
       "error": {}
     }
   },
+
+  "signOut": "Fita",
+
+  "kycIdFrontPhoto": "Hoton Gaban ID",
+  "kycIdFrontMessage": "Dauki hoton gaban katin ID ɗinka",
+  "kycIdBackPhoto": "Hoton Bayan ID",
+  "kycIdBackMessage": "Dauki hoton bayan katin ID ɗinka",
+  "kycCamera": "Kyamara",
+  "kycGallery": "Gallery",
+  "kycChooseSource": "Zaɓi tushe:",
+  "kycFailedCaptureImage": "An kasa daukar hoto",
+  "kycFailedCaptureSelfie": "An kasa daukar selfie",
+  "kycCameraNotAvailable": "Kyamara ba ta samuwa",
+  "kycCameraNotAvailableMessage": "Kyamara ba ta samuwa. Kana son zaɓar hoto daga gallery ɗinka maimakon?",
+  "kycUseGallery": "Yi amfani da Gallery",
+  "kycDocumentsLocked": "An kulle takaddun yayin bincike. Ba za ka iya yin canje-canje har sai an kammala tantancewa ba.",
+  "kycVerificationSubmittedSuccessfully": "An ƙaddamar da tantancewa cikin nasara",
+  "kycVerificationSubmitted": "An Ƙaddamar da Tantancewa",
+  "kycThankYouSubmitting": "Na gode da ƙaddamar da takaddun tantancewa!",
+  "kycWhatHappensNext": "Abin da zai faru na gaba:",
+  "kycReviewTime": "Ƙungiyarmu za ta duba takaddunka a cikin sa'o'i 24-48",
+  "kycEmailNotification": "Za ka sami imel da zarar aka kammala tantancewarka",
+  "kycCheckEmail": "Duba imel ɗinka don samun sabuntawa akan matsayin tantancewarka",
+  "kycLocked": "Takardunka yanzu an kulle su kuma ba za a iya canza su yayin bincike ba",
+  "kycRecommendSignOut": "Muna ba da shawarar fita kuma komowa daga baya don sakamakon tantancewarka.",
+  "kycStaySignedIn": "Ci gaba da Shiga",
+  "kycVerificationPending": "Tantancewa Yana Jiran Aiki",
+  "kycVerificationPendingSubtitle": "Ana duba takaddunka",
+  "kycVerificationApproved": "An Amince da Tantancewa",
+  "kycVerificationApprovedSubtitle": "Yanzu zaka iya samun duk fasalolin mai bayarwa",
+  "kycVerificationRejected": "An Ƙi Tantancewa",
+  "kycVerificationRejectedSubtitle": "Don Allah duba bayanan da ke ƙasa kuma ka sake ƙaddamarwa",
+  "kycVerificationRequired": "Ana Buƙatar Tantancewa",
+  "kycVerificationRequiredSubtitle": "Kammala tantancewa don samun fasalolin mai bayarwa",
+  "kycReviewNotes": "Bayanan Bincike",
+  "kycIdCardFront": "Katin ID (Gaba)",
+  "kycIdCardBack": "Katin ID (Baya)",
+  "kycVerificationSelfie": "Selfie na Tantancewa",
+  "kycButtonLocked": "An Kulle",
+  "kycCaptureIdFront": "Dauki Gaban ID",
+  "kycCaptureIdBack": "Dauki Bayan ID",
+  "kycDocumentsLockedButton": "An Kulle Takaddu",
+  "kycTipsTitle": "📸 Shawarwari don hotuna masu kyau:",
+  "kycTipGoodLighting": "• Yi amfani da haske mai kyau",
+  "kycTipFlatCard": "• Sanya katin ID akan wuri mai daidai",
+  "kycTipReadableText": "• Tabbatar cewa ana iya karanta duk rubutu",
+  "kycTipFaceCamera": "• Fuskanci kyamara kai tsaye don selfie",
+  "kycTipAvoidGlare": "• Guje wa haske ko inuwa",
+  "kycFailedSubmitVerification": "An kasa ƙaddamar da tantancewa",
+
+  "paystackSetupTitle": "Saita Asusun Biyan Kuɗi",
+  "paystackVerifying": "Ana tantancewa...",
+  "paystackVerificationSuccess": "An adana saitunan biyan kuɗi cikin nasara!",
+  "paystackVerificationFailed": "An kasa adana saitunan biyan kuɗi",
+  "paystackSelectBank": "Zaɓi Banki ɗinka",
+  "paystackAccountNumber": "Lambar Asusun",
+  "paystackVerifyAccount": "Tantance Asusu",
+  "paystackAccountVerified": "An Tantance Asusu",
+  "paystackSavePayoutAccount": "Ajiye Asusun Biyan Kuɗi",
+  "paystackNoBanksAvailable": "Babu bankuna masu samuwa ga {country}",
+  "@paystackNoBanksAvailable": {
+    "placeholders": {
+      "country": {}
+    }
+  },
+  "paystackRetry": "Sake Gwadawa",
+  "paystackPayoutsInfo": "Za a aika abin da ka samu zuwa wannan asusu. Ana sarrafa biyan kuɗi a cikin sa'o'i 24.",
+  "paystackConnected": "Asusu: an haɗa",
+  "paystackNotConnected": "Asusu: ba a haɗa ba",
+  "paystackDetailsSubmitted": "An ƙaddamar da cikakkun bayanai:",
+  "paystackPayoutsEnabled": "An kunna biyan kuɗi:",
+  "paystackYes": "i",
+  "paystackNo": "a'a",
+  "paystackFinishSetup": "Kammala Saitin Stripe",
+  "paystackConnectStripe": "Haɗa Stripe",
+  "paystackOpenDashboard": "Buɗe Dashboard na Stripe",
+  "paystackMustFinishSetup": "Dole ne ka kammala saitin Stripe kafin ka iya fitar da kuɗi.",
+  "paystackPayouts": "Biyan Kuɗi na Paystack",
+  "paystackAddBankDetails": "Ƙara cikakkun bayanan asusun banki ɗinka a cikin Saitunan Biyan Kuɗi don karɓar biyan kuɗi ta Paystack.",
+  "paystackOpenSettings": "Buɗe Saitunan Biyan Kuɗi",
+
+  "payoutPaystackForCountry": "Biyan kuɗi ta Paystack ga {country}",
+  "@payoutPaystackForCountry": {
+    "placeholders": {
+      "country": {}
+    }
+  },
+  "payoutFlutterwaveForCountry": "Ana sarrafa biyan kuɗi ta Flutterwave ga {country}",
+  "@payoutFlutterwaveForCountry": {
+    "placeholders": {
+      "country": {}
+    }
+  },
+  "payoutStripeConnect": "Stripe Connect",
+  "payoutBankAccountDetails": "Cikakkun Bayanan Asusun Banki",
+  "payoutAccountHolderName": "Sunan Mai Riƙe Asusu",
+  "payoutAccountHolderNameHint": "Shigar da suna kamar yadda yake bayyana akan asusun banki ɗinka",
+  "payoutSelectBank": "Zaɓi Banki *",
+  "payoutBankName": "Sunan Banki *",
+  "payoutBankNameManual": "Sunan Banki (da hannu)",
+  "payoutBankNameHint": "misali, GCB Bank, Ecobank",
+  "payoutBankCode": "Lambar Banki *",
+  "payoutBankCodeManual": "Lambar Banki (da hannu)",
+  "payoutBankCodeHint": "Lambar bankin Flutterwave",
+  "payoutBankCodeHelper": "Tuntuɓi tallafi idan ba ka da tabbacin lambar banki",
+  "payoutAccountNumber": "Lambar Asusun *",
+  "payoutAccountNumberHint": "Shigar da lambar asusun banki ɗinka",
+  "payoutMobileMoney": "Kuɗin Wayar Hannu",
+  "payoutFullName": "Cikakken Suna (kamar yadda aka yi rajista) *",
+  "payoutFullNameHint": "Sunan da aka yi rajista akan asusun kuɗin wayar hannu ɗinka",
+  "payoutMobileNetwork": "Hanyar Sadarwa ta Wayar Hannu *",
+  "payoutSelectNetwork": "Zaɓi hanyar sadarwa ta wayar hannu ɗinka",
+  "payoutMobileNetworkHint": "misali, MTN, Vodafone, Airtel",
+  "payoutCountryCode": "Lambar Ƙasa",
+  "payoutMobileMoneyNumber": "Lambar Kuɗin Wayar Hannu *",
+  "payoutMobileMoneyNumberHint": "misali, 0541234567",
+  "payoutZipCode": "Lambar Waya",
+  "payoutZipCodeHint": "Idan hanyar sadarwar ɗinka tana buƙata",
+  "payoutMethod": "Hanyar Biyan Kuɗi",
+  "payoutBankTransfer": "Canja Wurin Banki",
+  "payoutCurrency": "Kuɗi",
+  "payoutCurrencyLocked": "An kulle zuwa kuɗin {country}",
+  "@payoutCurrencyLocked": {
+    "placeholders": {
+      "country": {}
+    }
+  },
+  "payoutBeneficiaryId": "ID na Mai Cin Moriyar",
+  "payoutBeneficiaryIdHint": "Na zaɓi - don canja wuraren akai-akai",
+  "payoutSchedule": "Jadawalin Biyan Kuɗi",
+  "payoutFrequency": "Yawan Biyan Kuɗi",
+  "payoutFrequencyWeekly": "Mako-mako",
+  "payoutFrequencyMonthly": "Wata-wata (na 1 na kowane wata)",
+  "payoutDayHelper": "Akwai: Talata, Alhamis, Juma'a",
+  "payoutMonthlyInfo": "Ana sarrafa biyan kuɗi na wata-wata a ranar 1 ga kowane wata.",
+  "payoutInstantCashout": "Fitar da Kuɗi Nan Take",
+  "payoutInstantCashoutInfo": "• Ana samun fitar da kuɗi nan take mara iyaka\n• Ana aiwatar da kuɗin 5% akan fitar da kuɗi nan take\n• Biyan kuɗin da aka shirya ba su da kuɗi",
+  "payoutNextScheduled": "Biyan Kuɗin Da Aka Shirya Na Gaba",
+  "payoutYourLocalTime": "Lokacin gida ɗinka ({timezone})",
+  "@payoutYourLocalTime": {
+    "placeholders": {
+      "timezone": {}
+    }
+  },
+  "payoutAmountToCashOut": "Adadin da za a fitar",
+  "payoutMinMaxRange": "Mafi ƙanƙanta: {min} - Mafi girma: {max}",
+  "@payoutMinMaxRange": {
+    "placeholders": {
+      "min": {},
+      "max": {}
+    }
+  },
+  "payoutMaxButton": "MAFI GIRMA",
+  "payoutCashOutNow": "Fitar da Kuɗi (Nan Take)",
+  "payoutAvailableBalance": "Ma'auni Mai Samuwa",
+  "payoutPendingFunds": "Yana Jiran Aiki",
+  "payoutPendingInfo": "Kudaden da ke jiran aiki za su kasance bayan lokacin riƙewa",
+  "payoutLifetimeEarnings": "Duk Abin Da Ka Samu",
+  "payoutTotalCashedOut": "Jimlar Da Aka Fitar",
+  "payoutUnlimitedCashouts": "Mara Iyaka",
+
+  "mainHello": "Sannu",
+  "mainViewProfile": "Duba Bayanan",
+  "mainBookings": "Tanadi",
+  "mainNotifications": "Sanarwa",
+  "mainReferral": "Turawa",
+  "mainSettings": "Saitunan",
+  "mainHelp": "Taimako",
+  "mainWallet": "Wallet",
+  "mainEarnings": "Abin Da Ka Samu",
+  "mainOpenJobs": "Ayyukan Da Suka Buɗe",
+  "mainAssignedJobs": "Ayyukan Da Aka Sanya",
+  "mainMyReputation": "Mutuncina",
+
+  "reputationTitle": "Mutuncina",
+  "reputationYourCustomerRating": "Matsayin Abokin Ciniki ɗinka",
+  "reputationBasedOnReviews": "Bisa {count} {count, plural, =1{bita} other{bita-bita}}",
+  "@reputationBasedOnReviews": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationExcellentCustomer": "⭐ Abokin Ciniki Mai Kyau Sosai",
+  "reputationGreatCustomer": "👍 Babban Abokin Ciniki",
+  "reputationGoodCustomer": "✓ Abokin Ciniki Mai Kyau",
+  "reputationAverage": "Matsakaici",
+  "reputationNeedsImprovement": "Yana Buƙatar Ingantawa",
+  "reputationNoRatingYet": "Babu Matsayi Har Yanzu",
+  "reputationWhatProvidersSay": "Abin Da Masu Bayarwa Suke Cewa Game Da Kai",
+  "reputationNoReviews": "Babu Bita-bita Har Yanzu",
+  "reputationNoReviewsHelp": "Kammala tanadi don gina mutuncinka!\nMasu bayarwa za su yi maka matsayi bayan kammala ayyuka.",
+  "reputationShowMore": "Nuna Ƙari ({count} ƙari)",
+  "@reputationShowMore": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationShowLess": "Nuna Kaɗan",
+  "reputationJustNow": "Yanzu haka",
+  "reputationMinutesAgo": "{minutes} minti da suka wuce",
+  "@reputationMinutesAgo": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationHoursAgo": "{hours} {hours, plural, =1{awa} other{sa'o'i}} da suka wuce",
+  "@reputationHoursAgo": {
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationDaysAgo": "{days} {days, plural, =1{rana} other{kwanaki}} da suka wuce",
+  "@reputationDaysAgo": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationWeeksAgo": "{weeks} {weeks, plural, =1{mako} other{makonni}} da suka wuce",
+  "@reputationWeeksAgo": {
+    "placeholders": {
+      "weeks": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationMonthsAgo": "{months} {months, plural, =1{wata} other{watanni}} da suka wuce",
+  "@reputationMonthsAgo": {
+    "placeholders": {
+      "months": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationYearsAgo": "{years} {years, plural, =1{shekara} other{shekaru}} da suka wuce",
+  "@reputationYearsAgo": {
+    "placeholders": {
+      "years": {
+        "type": "int"
+      }
+    }
+  },
+
+  "walletTitle": "Wallet",
+  "walletCashOutFailed": "Fitar da kuɗi ya kasa.",
+  
+  "notificationsTitle": "Sanarwa",
+  "notificationsNoNotifications": "Babu sanarwa har yanzu.",
+
   "youProvider": "Kai (Provider)",
   "youCustomer": "Kai (Customer)",
   "customer": "Customer",

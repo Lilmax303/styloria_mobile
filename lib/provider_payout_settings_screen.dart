@@ -444,7 +444,7 @@ class _ProviderPayoutSettingsScreenState extends State<ProviderPayoutSettingsScr
                 const SizedBox(width: 12),
                 Expanded(
                   child: Text(
-                    'Payouts via Paystack for $_providerCountry',
+                    l10n.payoutPaystackForCountry(_providerCountry),
                     style: TextStyle(color: Colors.green.shade700),
                   ),
                 ),
@@ -455,7 +455,7 @@ class _ProviderPayoutSettingsScreenState extends State<ProviderPayoutSettingsScr
         const SizedBox(height: 16),
         
         Text(
-          'Bank Account Details',
+          l10n.payoutBankAccountDetails,
           style: Theme.of(context).textTheme.titleMedium?.copyWith(
             fontWeight: FontWeight.bold,
           ),
@@ -489,10 +489,10 @@ class _ProviderPayoutSettingsScreenState extends State<ProviderPayoutSettingsScr
         else
           DropdownButtonFormField<String>(
             value: _getValidPaystackBankCode(),
-            decoration: const InputDecoration(
-              border: OutlineInputBorder(),
-              labelText: 'Select Bank *',
-              prefixIcon: Icon(Icons.account_balance),
+            decoration: InputDecoration(
+              border: const OutlineInputBorder(),
+              labelText: l10n.payoutSelectBank,
+              prefixIcon: const Icon(Icons.account_balance),
             ),
             items: _paystackBanks.map((bank) {
               final bankMap = Map<String, dynamic>.from(bank as Map);
@@ -518,11 +518,11 @@ class _ProviderPayoutSettingsScreenState extends State<ProviderPayoutSettingsScr
         TextField(
           controller: _paystackAccountNumberCtrl,
           keyboardType: TextInputType.number,
-          decoration: const InputDecoration(
-            border: OutlineInputBorder(),
-            labelText: 'Account Number *',
-            hintText: 'Enter your bank account number',
-            prefixIcon: Icon(Icons.numbers),
+          decoration: InputDecoration(
+            border: const OutlineInputBorder(),
+            labelText: l10n.payoutAccountNumber,
+            hintText: l10n.payoutAccountNumberHint,
+            prefixIcon: const Icon(Icons.numbers),
           ),
           onChanged: (_) {
             setState(() {
@@ -548,7 +548,7 @@ class _ProviderPayoutSettingsScreenState extends State<ProviderPayoutSettingsScr
                     child: CircularProgressIndicator(strokeWidth: 2),
                   )
                 : const Icon(Icons.verified_user),
-            label: Text(_resolvingAccount ? 'Verifying...' : 'Verify Account'),
+            label: Text(_resolvingAccount ? l10n.paystackVerifying : l10n.paystackVerifyAccount),
           ),
         ),
         const SizedBox(height: 12),
@@ -593,7 +593,7 @@ class _ProviderPayoutSettingsScreenState extends State<ProviderPayoutSettingsScr
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Account Verified',
+                        l10n.paystackAccountVerified,
                         style: TextStyle(
                           color: Colors.green.shade700,
                           fontWeight: FontWeight.bold,
@@ -630,11 +630,11 @@ class _ProviderPayoutSettingsScreenState extends State<ProviderPayoutSettingsScr
         // Full Name
         TextField(
           controller: _fwFullNameCtrl,
-          decoration: const InputDecoration(
-            border: OutlineInputBorder(),
-            labelText: 'Account Holder Name *',
-            hintText: 'Enter name as it appears on your bank account',
-            prefixIcon: Icon(Icons.person),
+          decoration: InputDecoration(
+            border: const OutlineInputBorder(),
+            labelText: l10n.payoutAccountHolderName,
+            hintText: l10n.payoutAccountHolderNameHint,
+            prefixIcon: const Icon(Icons.person),
           ),
         ),
         const SizedBox(height: 16),
@@ -643,10 +643,10 @@ class _ProviderPayoutSettingsScreenState extends State<ProviderPayoutSettingsScr
         if (hasAvailableBanks) ...[
           DropdownButtonFormField<AfricanBank>(
             value: _selectedBank,
-            decoration: const InputDecoration(
-              border: OutlineInputBorder(),
-              labelText: 'Select Bank *',
-              prefixIcon: Icon(Icons.account_balance),
+            decoration: InputDecoration(
+              border: const OutlineInputBorder(),
+              labelText: l10n.payoutSelectBank,
+              prefixIcon: const Icon(Icons.account_balance),
             ),
             items: _availableBanks.map((bank) {
               return DropdownMenuItem(
@@ -666,7 +666,7 @@ class _ProviderPayoutSettingsScreenState extends State<ProviderPayoutSettingsScr
           ),
           const SizedBox(height: 8),
           Text(
-            'Or enter manually if your bank is not listed:',
+            l10n.payoutBankNameManual,
             style: TextStyle(color: Colors.grey.shade600, fontSize: 12),
           ),
           const SizedBox(height: 8),
@@ -677,8 +677,8 @@ class _ProviderPayoutSettingsScreenState extends State<ProviderPayoutSettingsScr
           controller: _fwBankNameCtrl,
           decoration: InputDecoration(
             border: const OutlineInputBorder(),
-            labelText: hasAvailableBanks ? 'Bank Name (manual)' : 'Bank Name *',
-            hintText: 'e.g., GCB Bank, Ecobank',
+            labelText: hasAvailableBanks ? l10n.payoutBankNameManual : l10n.payoutBankName,
+            hintText: l10n.payoutBankNameHint,
             prefixIcon: const Icon(Icons.account_balance),
           ),
           onChanged: (_) {
@@ -694,9 +694,9 @@ class _ProviderPayoutSettingsScreenState extends State<ProviderPayoutSettingsScr
           controller: _fwBankCodeCtrl,
           decoration: InputDecoration(
             border: const OutlineInputBorder(),
-            labelText: hasAvailableBanks ? 'Bank Code (manual)' : 'Bank Code *',
-            hintText: 'Flutterwave bank code',
-            helperText: 'Contact support if unsure of bank code',
+            labelText: hasAvailableBanks ? l10n.payoutBankCodeManual : l10n.payoutBankCode,
+            hintText: l10n.payoutBankCodeHint,
+            helperText: l10n.payoutBankCodeHelper,
             prefixIcon: const Icon(Icons.code),
           ),
           onChanged: (_) {
@@ -731,11 +731,11 @@ class _ProviderPayoutSettingsScreenState extends State<ProviderPayoutSettingsScr
         // Full Name
         TextField(
           controller: _fwFullNameCtrl,
-          decoration: const InputDecoration(
-            border: OutlineInputBorder(),
-            labelText: 'Full Name (as registered) *',
-            hintText: 'Name registered on your mobile money account',
-            prefixIcon: Icon(Icons.person),
+          decoration: InputDecoration(
+            border: const OutlineInputBorder(),
+            labelText: l10n.payoutFullName,
+            hintText: l10n.payoutFullNameHint,
+            prefixIcon: const Icon(Icons.person),
           ),
         ),
         const SizedBox(height: 16),
@@ -747,12 +747,12 @@ class _ProviderPayoutSettingsScreenState extends State<ProviderPayoutSettingsScr
                    _availableMobileNetworks.any((n) => n.code == _selectedMobileNetwork)
                 ? _selectedMobileNetwork 
                 : null,
-            decoration: const InputDecoration(
-              border: OutlineInputBorder(),
-              labelText: 'Mobile Network *',
-              prefixIcon: Icon(Icons.phone_android),
+            decoration: InputDecoration(
+              border: const OutlineInputBorder(),
+              labelText: l10n.payoutMobileNetwork,
+              prefixIcon: const Icon(Icons.phone_android),
             ),
-            hint: const Text('Select your mobile network'),
+            hint: Text(l10n.payoutSelectNetwork),
             items: _availableMobileNetworks.map((network) {
               return DropdownMenuItem(
                 value: network.code,
@@ -765,11 +765,11 @@ class _ProviderPayoutSettingsScreenState extends State<ProviderPayoutSettingsScr
           ),
         ] else ...[
           TextField(
-            decoration: const InputDecoration(
-              border: OutlineInputBorder(),
-              labelText: 'Mobile Network *',
-              hintText: 'e.g., MTN, Vodafone, Airtel',
-              prefixIcon: Icon(Icons.phone_android),
+            decoration: InputDecoration(
+              border: const OutlineInputBorder(),
+              labelText: l10n.payoutMobileNetwork,
+              hintText: l10n.payoutMobileNetworkHint,
+              prefixIcon: const Icon(Icons.phone_android),
             ),
             onChanged: (value) {
               setState(() => _selectedMobileNetwork = value.toLowerCase());
@@ -787,7 +787,7 @@ class _ProviderPayoutSettingsScreenState extends State<ProviderPayoutSettingsScr
           child: ListTile(
             contentPadding: const EdgeInsets.symmetric(horizontal: 12),
             leading: const Icon(Icons.flag),
-            title: const Text('Country Code'),
+            title: Text(l10n.payoutCountryCode),
             subtitle: Text('$_momoFlag  $_momoDialCode'),
             trailing: const Icon(Icons.arrow_drop_down),
             onTap: () {
@@ -813,8 +813,8 @@ class _ProviderPayoutSettingsScreenState extends State<ProviderPayoutSettingsScr
           keyboardType: TextInputType.phone,
           decoration: InputDecoration(
             border: const OutlineInputBorder(),
-            labelText: 'Mobile Money Number *',
-            hintText: 'e.g., 0541234567',
+            labelText: l10n.payoutMobileMoneyNumber,
+            hintText: l10n.payoutMobileMoneyNumberHint,
             prefixIcon: const Icon(Icons.phone),
             prefixText: '$_momoDialCode ',
           ),
@@ -824,11 +824,11 @@ class _ProviderPayoutSettingsScreenState extends State<ProviderPayoutSettingsScr
         // ZIP Code (optional for some countries)
         TextField(
           controller: _fwZipCtrl,
-          decoration: const InputDecoration(
-            border: OutlineInputBorder(),
-            labelText: 'ZIP/Postal Code',
-            hintText: 'If required by your network',
-            prefixIcon: Icon(Icons.location_on),
+          decoration: InputDecoration(
+            border: const OutlineInputBorder(),
+            labelText: l10n.payoutZipCode,
+            hintText: l10n.payoutZipCodeHint,
+            prefixIcon: const Icon(Icons.location_on),
           ),
         ),
       ],
@@ -876,7 +876,7 @@ class _ProviderPayoutSettingsScreenState extends State<ProviderPayoutSettingsScr
             
             // Method Selection
             Text(
-              'Payout Method',
+              l10n.payoutMethod,
               style: Theme.of(context).textTheme.titleMedium?.copyWith(
                 fontWeight: FontWeight.bold,
               ),
@@ -887,13 +887,13 @@ class _ProviderPayoutSettingsScreenState extends State<ProviderPayoutSettingsScr
               segments: const [
                 ButtonSegment(
                   value: 'bank',
-                  label: Text('Bank Transfer'),
-                  icon: Icon(Icons.account_balance),
+                  label: Text(l10n.payoutBankTransfer),
+                  icon: const Icon(Icons.account_balance),
                 ),
                 ButtonSegment(
                   value: 'mobile_money',
-                  label: Text('Mobile Money'),
-                  icon: Icon(Icons.phone_android),
+                  label: Text(l10n.payoutMobileMoney),
+                  icon: const Icon(Icons.phone_android),
                 ),
               ],
               selected: {_fwMethod},
@@ -909,8 +909,8 @@ class _ProviderPayoutSettingsScreenState extends State<ProviderPayoutSettingsScr
               enabled: false,
               decoration: InputDecoration(
                 border: const OutlineInputBorder(),
-                labelText: 'Currency',
-                helperText: 'Locked to $_providerCountry currency',
+                labelText: l10n.payoutCurrency,
+                helperText: l10n.payoutCurrencyLocked(_providerCountry),
                 prefixIcon: const Icon(Icons.attach_money),
                 filled: true,
                 fillColor: Colors.grey.shade100,
@@ -929,11 +929,11 @@ class _ProviderPayoutSettingsScreenState extends State<ProviderPayoutSettingsScr
             // Beneficiary ID (optional)
             TextField(
               controller: _fwBeneficiaryCtrl,
-              decoration: const InputDecoration(
-                border: OutlineInputBorder(),
-                labelText: 'Beneficiary ID',
-                hintText: 'Optional - for recurring transfers',
-                prefixIcon: Icon(Icons.badge),
+              decoration: InputDecoration(
+                border: const OutlineInputBorder(),
+                labelText: l10n.payoutBeneficiaryId,
+                hintText: l10n.payoutBeneficiaryIdHint,
+                prefixIcon: const Icon(Icons.badge),
               ),
             ),
             
@@ -942,7 +942,7 @@ class _ProviderPayoutSettingsScreenState extends State<ProviderPayoutSettingsScr
           
           // Auto Payout Settings
           Text(
-            'Payout Schedule',
+            l10n.payoutSchedule,
             style: Theme.of(context).textTheme.titleMedium?.copyWith(
               fontWeight: FontWeight.bold,
             ),
@@ -960,14 +960,14 @@ class _ProviderPayoutSettingsScreenState extends State<ProviderPayoutSettingsScr
           // Payout frequency
           DropdownButtonFormField<String>(
             value: _payoutFrequency,
-            decoration: const InputDecoration(
-              border: OutlineInputBorder(),
-              labelText: 'Payout Frequency',
-              helperText: 'How often automatic payouts are processed',
+            decoration: InputDecoration(
+              border: const OutlineInputBorder(),
+              labelText: l10n.payoutFrequency,
+              helperText: l10n.payoutAutoPayoutsSubtitle,
             ),
-            items: const [
-              DropdownMenuItem(value: 'weekly', child: Text('Weekly')),
-              DropdownMenuItem(value: 'monthly', child: Text('Monthly (1st of each month)')),
+            items: [
+              DropdownMenuItem(value: 'weekly', child: Text(l10n.payoutFrequencyWeekly)),
+              DropdownMenuItem(value: 'monthly', child: Text(l10n.payoutFrequencyMonthly)),
             ],
             onChanged: _autoEnabled ? (v) => setState(() => _payoutFrequency = v ?? 'weekly') : null,
           ),
@@ -980,7 +980,7 @@ class _ProviderPayoutSettingsScreenState extends State<ProviderPayoutSettingsScr
               decoration: InputDecoration(
                 border: const OutlineInputBorder(),
                 labelText: l10n.payoutDayUtcLabel,
-                helperText: 'Available: Tuesday, Thursday, Friday',
+                helperText: l10n.payoutDayHelper,
               ),
               items: _allowedPayoutDays
                   .map((opt) => DropdownMenuItem(value: opt.value, child: Text(opt.label)))
@@ -1002,7 +1002,7 @@ class _ProviderPayoutSettingsScreenState extends State<ProviderPayoutSettingsScr
                   const SizedBox(width: 10),
                   Expanded(
                     child: Text(
-                      'Monthly payouts are processed on the 1st of each month.',
+                      l10n.payoutMonthlyInfo,
                       style: TextStyle(color: Colors.blue.shade700, fontSize: 13),
                     ),
                   ),
@@ -1040,7 +1040,7 @@ class _ProviderPayoutSettingsScreenState extends State<ProviderPayoutSettingsScr
 
           // Instant Cashout
           Text(
-            'Instant Cashout',
+            l10n.payoutInstantCashout,
             style: Theme.of(context).textTheme.titleMedium?.copyWith(
               fontWeight: FontWeight.bold,
             ),
@@ -1073,7 +1073,7 @@ class _ProviderPayoutSettingsScreenState extends State<ProviderPayoutSettingsScr
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Next Scheduled Payout',
+                          l10n.payoutNextScheduled,
                           style: TextStyle(
                             fontWeight: FontWeight.w600,
                             color: Colors.blue.shade800,
@@ -1090,7 +1090,7 @@ class _ProviderPayoutSettingsScreenState extends State<ProviderPayoutSettingsScr
                         ),
                         const SizedBox(height: 2),
                         Text(
-                          'Your local time (${DateTimeHelper.getTimezoneAbbreviation()})',
+                          l10n.payoutYourLocalTime(DateTimeHelper.getTimezoneAbbreviation()),
                           style: TextStyle(
                             fontSize: 10,
                             color: Colors.blue.shade600,
@@ -1122,7 +1122,7 @@ class _ProviderPayoutSettingsScreenState extends State<ProviderPayoutSettingsScr
                       Icon(Icons.bolt, color: Colors.amber.shade700, size: 20),
                       const SizedBox(width: 8),
                       Text(
-                        'Instant Cashout Info',
+                        l10n.payoutInstantCashout,
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: Colors.amber.shade800,
@@ -1132,17 +1132,7 @@ class _ProviderPayoutSettingsScreenState extends State<ProviderPayoutSettingsScr
                   ),
                   const SizedBox(height: 8),
                   Text(
-                    '• Unlimited instant cashouts available',
-                    style: TextStyle(color: Colors.amber.shade900, fontSize: 13),
-                  ),
-                  const SizedBox(height: 4),
-                  Text(
-                    '• 5% fee applies to instant cashouts',
-                    style: TextStyle(color: Colors.amber.shade900, fontSize: 13),
-                  ),
-                  const SizedBox(height: 4),
-                  Text(
-                    '• Scheduled payouts have no fees',
+                    l10n.payoutInstantCashoutInfo,
                     style: TextStyle(color: Colors.amber.shade900, fontSize: 13),
                   ),
                 ],

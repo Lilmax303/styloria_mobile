@@ -161,7 +161,7 @@ class _PaystackPayoutSetupScreenState extends State<PaystackPayoutSetupScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Setup Payout Account'),
+        title: Text(l10n.paystackSetupTitle),
         backgroundColor: Colors.green.shade600,
         foregroundColor: Colors.white,
       ),
@@ -183,7 +183,7 @@ class _PaystackPayoutSetupScreenState extends State<PaystackPayoutSetupScreen> {
             Icon(Icons.error_outline, size: 64, color: Colors.grey.shade400),
             const SizedBox(height: 16),
             Text(
-              'No banks available for $_userCountry',
+              l10n.paystackNoBanksAvailable(_userCountry ?? 'your country'),
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 16,
@@ -191,15 +191,15 @@ class _PaystackPayoutSetupScreenState extends State<PaystackPayoutSetupScreen> {
               ),
             ),
             const SizedBox(height: 8),
-            Text(
+            const Text(
               'Paystack supports: Ghana, Nigeria, South Africa, Kenya, Côte d\'Ivoire',
               textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 12, color: Colors.grey.shade500),
+              style: TextStyle(fontSize: 12, color: Colors.grey),
             ),
             const SizedBox(height: 24),
             ElevatedButton(
               onPressed: _loadUserCountryAndBanks,
-              child: const Text('Retry'),
+              child: Text(l10n.paystackRetry),
             ),
           ],
         ),
@@ -272,7 +272,7 @@ class _PaystackPayoutSetupScreenState extends State<PaystackPayoutSetupScreen> {
 
             // Bank Selection
             Text(
-              'Select Your Bank',
+              l10n.paystackSelectBank,
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 color: Colors.grey.shade800,
@@ -283,7 +283,7 @@ class _PaystackPayoutSetupScreenState extends State<PaystackPayoutSetupScreen> {
               decoration: InputDecoration(
                 border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
                 prefixIcon: const Icon(Icons.account_balance),
-                hintText: 'Choose a bank',
+                hintText: l10n.payoutSelectBank,
               ),
               value: _selectedBank,
               isExpanded: true,
@@ -309,7 +309,7 @@ class _PaystackPayoutSetupScreenState extends State<PaystackPayoutSetupScreen> {
 
             // Account Number
             Text(
-              'Account Number',
+              l10n.paystackAccountNumber,
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 color: Colors.grey.shade800,
@@ -321,7 +321,7 @@ class _PaystackPayoutSetupScreenState extends State<PaystackPayoutSetupScreen> {
               decoration: InputDecoration(
                 border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
                 prefixIcon: const Icon(Icons.numbers),
-                hintText: 'Enter account number',
+                hintText: l10n.payoutAccountNumberHint,
                 suffixIcon: _resolvingAccount
                     ? const Padding(
                         padding: EdgeInsets.all(12),
@@ -334,7 +334,7 @@ class _PaystackPayoutSetupScreenState extends State<PaystackPayoutSetupScreen> {
                     : IconButton(
                         icon: Icon(Icons.verified, color: Colors.green.shade600),
                         onPressed: _selectedBank != null ? _resolveAccount : null,
-                        tooltip: 'Verify Account',
+                        tooltip: l10n.paystackVerifyAccount,
                       ),
               ),
               keyboardType: TextInputType.number,
@@ -381,7 +381,7 @@ class _PaystackPayoutSetupScreenState extends State<PaystackPayoutSetupScreen> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Account Verified',
+                            l10n.paystackAccountVerified,
                             style: TextStyle(
                               fontSize: 12,
                               color: Colors.green.shade600,
@@ -442,9 +442,9 @@ class _PaystackPayoutSetupScreenState extends State<PaystackPayoutSetupScreen> {
                       width: 20,
                       child: CircularProgressIndicator(strokeWidth: 2, color: Colors.white),
                     )
-                  : const Text(
-                      'Save Payout Account',
-                      style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                  : Text(
+                      l10n.paystackSavePayoutAccount,
+                      style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                     ),
             ),
 
@@ -464,7 +464,7 @@ class _PaystackPayoutSetupScreenState extends State<PaystackPayoutSetupScreen> {
                   const SizedBox(width: 12),
                   Expanded(
                     child: Text(
-                      'Your earnings will be sent to this account. Payouts are processed within 24 hours.',
+                      l10n.paystackPayoutsInfo,
                       style: TextStyle(
                         fontSize: 13,
                         color: Colors.blue.shade700,

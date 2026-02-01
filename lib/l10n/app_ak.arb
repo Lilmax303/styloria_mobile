@@ -504,6 +504,263 @@
     }
   },
 
+  "signOut": "Fi adi",
+
+  "kycIdFrontPhoto": "ID Anim Mfonini",
+  "kycIdFrontMessage": "Fa w'ID kaad no anim mfonini",
+  "kycIdBackPhoto": "ID Akyi Mfonini",
+  "kycIdBackMessage": "Fa w'ID kaad no akyi mfonini",
+  "kycCamera": "Mfonini Afiri",
+  "kycGallery": "Mfonini Kuruwa",
+  "kycChooseSource": "Paw fibea:",
+  "kycFailedCaptureImage": "Wantumi anfa mfonini no",
+  "kycFailedCaptureSelfie": "Wantumi anfa selfie no",
+  "kycCameraNotAvailable": "Mfonini afiri nni hɔ",
+  "kycCameraNotAvailableMessage": "Mfonini afiri nni hɔ. Wopɛ sɛ wofa mfonini fi w'afidie kuruwa mu mmom?",
+  "kycUseGallery": "Fa Mfonini Kuruwa",
+  "kycDocumentsLocked": "Nkrataa no ato mu bere a wɔrehwɛ mu no. Wontumi nyɛ nsakrae kosi sɛ wɔbɛhwɛ ahu wie.",
+  "kycVerificationSubmittedSuccessfully": "Wɔde nhwɛsoɔ no mae yiye",
+  "kycVerificationSubmitted": "Wɔde Nhwɛsoɔ No Amae",
+  "kycThankYouSubmitting": "Yɛda w'ase sɛ wode w'nhwɛsoɔ nkrataa no amae!",
+  "kycWhatHappensNext": "Deɛ ɛbɛdi so akyire:",
+  "kycReviewTime": "Yɛn akuo bɛhwɛ wo nkrataa no mu wɔ nnɔnhwerew 24-48 mu",
+  "kycEmailNotification": "Wobɛnya email bere a wɔawie wo nhwɛsoɔ no",
+  "kycCheckEmail": "Hwɛ w'email mu ma nsɛm a aba foforo fa wo nhwɛsoɔ tebea ho",
+  "kycLocked": "Wo nkrataa no ato mu mprempren na wontumi nsakra bere a wɔrehwɛ mu no",
+  "kycRecommendSignOut": "Yɛkamfo sɛ wobɛfi adi na woasan aba akyire ma wo nhwɛsoɔ no nkɔso.",
+  "kycStaySignedIn": "Tena Mu",
+  "kycVerificationPending": "Nhwɛsoɔ Retwɛn",
+  "kycVerificationPendingSubtitle": "Wɔrehwɛ wo nkrataa no mu",
+  "kycVerificationApproved": "Wɔagye Nhwɛsoɔ No Atom",
+  "kycVerificationApprovedSubtitle": "Mprempren wotumi fa provider nneɛma nyinaa di dwuma",
+  "kycVerificationRejected": "Wɔapo Nhwɛsoɔ No",
+  "kycVerificationRejectedSubtitle": "Yɛsrɛ wo hwɛ nsɛm a ɛwɔ ase hɔ no mu na san fa kɔma",
+  "kycVerificationRequired": "Nhwɛsoɔ Ho Hia",
+  "kycVerificationRequiredSubtitle": "Wie nhwɛsoɔ no na ama woatumi afa provider nneɛma adi dwuma",
+  "kycReviewNotes": "Nhwɛsoɔ Nsɛm",
+  "kycIdCardFront": "ID Kaad (Anim)",
+  "kycIdCardBack": "ID Kaad (Akyi)",
+  "kycVerificationSelfie": "Nhwɛsoɔ Selfie",
+  "kycButtonLocked": "Wɔato Mu",
+  "kycCaptureIdFront": "Fa ID Anim",
+  "kycCaptureIdBack": "Fa ID Akyi",
+  "kycDocumentsLockedButton": "Wɔato Nkrataa No Mu",
+  "kycTipsTitle": "📸 Mfonini pa ho nyansa:",
+  "kycTipGoodLighting": "• Fa hann pa di dwuma",
+  "kycTipFlatCard": "• Fa ID kaad no si beae tamaa so",
+  "kycTipReadableText": "• Hwɛ hu sɛ wotumi kenkan nsɛm no nyinaa",
+  "kycTipFaceCamera": "• Hwɛ mfonini afiri no tee tee ma selfie no",
+  "kycTipAvoidGlare": "• Kwati hann a ɛbɔ anaa sunsuma",
+  "kycFailedSubmitVerification": "Wantumi amma nhwɛsoɔ no",
+
+  "paystackSetupTitle": "Hyehyɛ Sika a Wubenya Akaunti",
+  "paystackVerifying": "Yɛrehwɛ mu...",
+  "paystackVerificationSuccess": "Wɔakora sika a wubenya nhyehyeɛ no so yiye!",
+  "paystackVerificationFailed": "Wantumi ankora sika a wubenya nhyehyeɛ no so",
+  "paystackSelectBank": "Paw Wo Bank",
+  "paystackAccountNumber": "Akaunti Nɔma",
+  "paystackVerifyAccount": "Hwɛ Akaunti No Mu",
+  "paystackAccountVerified": "Wɔahwɛ Akaunti No Mu Ahu",
+  "paystackSavePayoutAccount": "Kora Sika a Wubenya Akaunti No So",
+  "paystackNoBanksAvailable": "Banks biara nni hɔ ma {country}",
+  "@paystackNoBanksAvailable": {
+    "placeholders": {
+      "country": {}
+    }
+  },
+  "paystackRetry": "San Yɛ Bio",
+  "paystackPayoutsInfo": "Wɔbɛma w'akatua akɔ saa akaunti yi mu. Wɔyɛ sika a wubenya no wɔ nnɔnhwerew 24 mu.",
+  "paystackConnected": "Akaunti: wɔaka abom",
+  "paystackNotConnected": "Akaunti: wɔnka abom",
+  "paystackDetailsSubmitted": "Nsɛm a wɔde amae:",
+  "paystackPayoutsEnabled": "Sika a wubenya ayɛ adwuma:",
+  "paystackYes": "aane",
+  "paystackNo": "daabi",
+  "paystackFinishSetup": "Wie Stripe Nhyehyeɛ",
+  "paystackConnectStripe": "Ka Stripe Ho",
+  "paystackOpenDashboard": "Bue Stripe Dashboard",
+  "paystackMustFinishSetup": "Ɛsɛ sɛ wowie Stripe nhyehyeɛ ansa na woatumi ayi sika.",
+  "paystackPayouts": "Paystack Sika a Wubenya",
+  "paystackAddBankDetails": "Fa wo bank akaunti nsɛm ka ho wɔ Sika a Wubenya Nhyehyeɛ mu na ama woanya sika denam Paystack so.",
+  "paystackOpenSettings": "Bue Sika a Wubenya Nhyehyeɛ",
+
+  "payoutPaystackForCountry": "Sika a wubenya denam Paystack so ma {country}",
+  "@payoutPaystackForCountry": {
+    "placeholders": {
+      "country": {}
+    }
+  },
+  "payoutFlutterwaveForCountry": "Wɔyɛ sika a wubenya denam Flutterwave so ma {country}",
+  "@payoutFlutterwaveForCountry": {
+    "placeholders": {
+      "country": {}
+    }
+  },
+  "payoutStripeConnect": "Stripe Connect",
+  "payoutBankAccountDetails": "Bank Akaunti Nsɛm",
+  "payoutAccountHolderName": "Akaunti Kurani Din",
+  "payoutAccountHolderNameHint": "Kyerɛw din no sɛnea ɛda adi wɔ wo bank akaunti so",
+  "payoutSelectBank": "Paw Bank *",
+  "payoutBankName": "Bank Din *",
+  "payoutBankNameManual": "Bank Din (nsa)",
+  "payoutBankNameHint": "sɛ ebi ne, GCB Bank, Ecobank",
+  "payoutBankCode": "Bank Koodu *",
+  "payoutBankCodeManual": "Bank Koodu (nsa)",
+  "payoutBankCodeHint": "Flutterwave bank koodu",
+  "payoutBankCodeHelper": "Frɛ mmoa sɛ wonnim bank koodu no",
+  "payoutAccountNumber": "Akaunti Nɔma *",
+  "payoutAccountNumberHint": "Kyerɛw wo bank akaunti nɔma",
+  "payoutMobileMoney": "Mobile Money",
+  "payoutFullName": "Din Mũ (sɛnea wɔakyerɛw) *",
+  "payoutFullNameHint": "Din a wɔakyerɛw wɔ wo mobile money akaunti so",
+  "payoutMobileNetwork": "Mobile Network *",
+  "payoutSelectNetwork": "Paw wo mobile network",
+  "payoutMobileNetworkHint": "sɛ ebi ne, MTN, Vodafone, Airtel",
+  "payoutCountryCode": "Ɔman Koodu",
+  "payoutMobileMoneyNumber": "Mobile Money Nɔma *",
+  "payoutMobileMoneyNumberHint": "sɛ ebi ne, 0541234567",
+  "payoutZipCode": "ZIP/Postal Koodu",
+  "payoutZipCodeHint": "Sɛ wo network hwehwɛ a",
+  "payoutMethod": "Sika a Wubenya Kwan",
+  "payoutBankTransfer": "Bank Mane Dane",
+  "payoutCurrency": "Sika",
+  "payoutCurrencyLocked": "Wɔato mu kɔ {country} sika",
+  "@payoutCurrencyLocked": {
+    "placeholders": {
+      "country": {}
+    }
+  },
+  "payoutBeneficiaryId": "Nea Obenya ID",
+  "payoutBeneficiaryIdHint": "Ɛnyɛ ho hia - ma mane dane a wɔsan yɛ",
+  "payoutSchedule": "Sika a Wubenya Nhyehyeɛ",
+  "payoutFrequency": "Sika a Wubenya Mpɛn Dodow",
+  "payoutFrequencyWeekly": "Dapɛn Biara",
+  "payoutFrequencyMonthly": "Bosome Biara (bosome biara da a ɛdi kan)",
+  "payoutDayHelper": "Ɛwɔ hɔ: Benada, Yawoada, Fiada",
+  "payoutMonthlyInfo": "Wɔyɛ bosome biara sika a wubenya wɔ bosome biara da a ɛdi kan no.",
+  "payoutInstantCashout": "Ntɛm Sika a Wobɛyi",
+  "payoutInstantCashoutInfo": "• Ntɛm sika a wobɛyi a ɛnni ano wɔ hɔ\n• 5% ka ka ntɛm sika a wobɛyi so\n• Sika a wɔahyehyɛ a wubenya nni ka biara",
+  "payoutNextScheduled": "Sika a Wɔahyehyɛ a Ɛdi So",
+  "payoutYourLocalTime": "Wo mpɔtam bere ({timezone})",
+  "@payoutYourLocalTime": {
+    "placeholders": {
+      "timezone": {}
+    }
+  },
+  "payoutAmountToCashOut": "Sika dodow a wobɛyi",
+  "payoutMinMaxRange": "Kakra: {min} - Pii: {max}",
+  "@payoutMinMaxRange": {
+    "placeholders": {
+      "min": {},
+      "max": {}
+    }
+  },
+  "payoutMaxButton": "PII",
+  "payoutCashOutNow": "Yi Sika (Ntɛm)",
+  "payoutAvailableBalance": "Sika a Ɛwɔ Hɔ",
+  "payoutPendingFunds": "Eretwɛn",
+  "payoutPendingInfo": "Sika a ɛretwɛn no bɛba bere a ɛtwɛn bere no awie akyi",
+  "payoutLifetimeEarnings": "Asetena Nyinaa Akatua",
+  "payoutTotalCashedOut": "Sika Dodow a Wɔayi Nyinaa",
+  "payoutUnlimitedCashouts": "Enni Ano",
+
+  "mainHello": "Wo ho te sɛn",
+  "mainViewProfile": "Hwɛ Profile",
+  "mainBookings": "Ahyɛdeɛ",
+  "mainNotifications": "Nkrataasɛm",
+  "mainReferral": "Referral",
+  "mainSettings": "Nhyehyeɛ",
+  "mainHelp": "Mmoa",
+  "mainWallet": "Wallet",
+  "mainEarnings": "Akatua",
+  "mainOpenJobs": "Adwuma a Abue",
+  "mainAssignedJobs": "Adwuma a Wɔde Amae",
+  "mainMyReputation": "Me Din Pa",
+
+  "reputationTitle": "Me Din Pa",
+  "reputationYourCustomerRating": "Wo Adetɔni Beae",
+  "reputationBasedOnReviews": "Egyina {count} {count, plural, =1{nhwɛsoɔ} other{nhwɛsoɔ}} so",
+  "@reputationBasedOnReviews": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationExcellentCustomer": "⭐ Adetɔni Papa",
+  "reputationGreatCustomer": "👍 Adetɔni Kɛseɛ",
+  "reputationGoodCustomer": "✓ Adetɔni Ɛyɛ",
+  "reputationAverage": "Mfimfini",
+  "reputationNeedsImprovement": "Ɛhwehwɛ Nkɔso",
+  "reputationNoRatingYet": "Beae Biara Nni Hɔ",
+  "reputationWhatProvidersSay": "Nea Providers Ka Fa Wo Ho",
+  "reputationNoReviews": "Nhwɛsoɔ Biara Nni Hɔ",
+  "reputationNoReviewsHelp": "Wie ahyɛdeɛ na ama woanya din pa!\nProviders bɛma wo beae bere a wɔawie nnwuma no.",
+  "reputationShowMore": "Kyerɛ Pii ({count} pii)",
+  "@reputationShowMore": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationShowLess": "Kyerɛ Kakra",
+  "reputationJustNow": "Seesei ara",
+  "reputationMinutesAgo": "Simma {minutes} a atwam",
+  "@reputationMinutesAgo": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationHoursAgo": "{hours} {hours, plural, =1{dɔnhwerew} other{nnɔnhwerew}} a atwam",
+  "@reputationHoursAgo": {
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationDaysAgo": "{days} {days, plural, =1{da} other{nna}} a atwam",
+  "@reputationDaysAgo": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationWeeksAgo": "{weeks} {weeks, plural, =1{dapɛn} other{nnapɛn}} a atwam",
+  "@reputationWeeksAgo": {
+    "placeholders": {
+      "weeks": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationMonthsAgo": "{months} {months, plural, =1{bosome} other{abosome}} a atwam",
+  "@reputationMonthsAgo": {
+    "placeholders": {
+      "months": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationYearsAgo": "{years} {years, plural, =1{afe} other{mfe}} a atwam",
+  "@reputationYearsAgo": {
+    "placeholders": {
+      "years": {
+        "type": "int"
+      }
+    }
+  },
+
+  "walletTitle": "Wallet",
+  "walletCashOutFailed": "Sika a wɔayi no ansi yie.",
+  
+  "notificationsTitle": "Nkrataasɛm",
+  "notificationsNoNotifications": "Nkrataasɛm biara nni hɔ.",
+
   "reviewSelectRatingPrompt": "Paw nkyerɛkyerɛmu (1 kosi 5).",
   "reviewCommentOptionalLabel": "Adwene (ɛnyɛ ahyɛde)",
   "genericCancel": "Gyae",

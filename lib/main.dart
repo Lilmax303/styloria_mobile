@@ -839,7 +839,7 @@ class _MainShellState extends State<MainShell> {
       _items = [
         BottomNavigationBarItem(icon: Icon(Icons.home), label: AppLocalizations.of(context).navHome),
         BottomNavigationBarItem(icon: Icon(Icons.book_online), label: AppLocalizations.of(context).navBookings),
-        const BottomNavigationBarItem(icon: Icon(Icons.work), label: 'Assigned Jobs'),
+        BottomNavigationBarItem(icon: const Icon(Icons.work), label: l10n.mainAssignedJobs),
         BottomNavigationBarItem(icon: Icon(Icons.notifications), label: AppLocalizations.of(context).navNotifications),
         BottomNavigationBarItem(icon: Icon(Icons.person), label: AppLocalizations.of(context).navAccount),
       ];
@@ -923,7 +923,7 @@ class _MainShellState extends State<MainShell> {
                     onPressed: () => Navigator.of(context).push(
                       MaterialPageRoute(builder: (_) => const ProfileScreen()),
                     ),
-                    child: const Text('View Profile'),
+                    child: Text(l10n.mainViewProfile),
                   ),
                 ],
               ),
@@ -934,27 +934,27 @@ class _MainShellState extends State<MainShell> {
                   children: [
                     TextButton(
                       onPressed: () => mainTabIndex.value = _bookingsTabIndex,
-                      child: const Text('Bookings'),
+                      child: Text(l10n.mainBookings),
                     ),
                     TextButton(
                       onPressed: () => mainTabIndex.value = _notificationsTabIndex,
-                      child: const Text('Notifications'),
+                      child: Text(l10n.mainNotifications),
                     ),
                     TextButton(
                       onPressed: () => Navigator.of(context).push(
                         MaterialPageRoute(builder: (_) => const ReferralScreen()),
                       ),
-                      child: const Text('Referral'),
+                      child: Text(l10n.mainReferral),
                     ),
                     TextButton(
                       onPressed: () => Navigator.of(context).push(
                         MaterialPageRoute(builder: (_) => const AccountSettingsScreen()),
                       ),
-                      child: const Text('Settings'),
+                      child: Text(l10n.mainSettings),
                     ),
                     TextButton(
                       onPressed: _openHelp,
-                      child: const Text('Help'),
+                      child: Text(l10n.mainHelp),
                     ),
                     if (isProvider) ...[
                       const SizedBox(width: 8),
@@ -962,19 +962,19 @@ class _MainShellState extends State<MainShell> {
                         onPressed: () => Navigator.of(context).push(
                           MaterialPageRoute(builder: (_) => const ProviderWalletScreen()),
                         ),
-                        child: const Text('Wallet'),
+                        child: Text(l10n.mainWallet),
                       ),
                       TextButton(
                         onPressed: () => Navigator.of(context).push(
                           MaterialPageRoute(builder: (_) => const ProviderEarningsScreen()),
                         ),
-                        child: const Text('Earnings'),
+                        child: Text(l10n.mainEarnings),
                       ),
                       TextButton(
                         onPressed: () => Navigator.of(context).push(
                           MaterialPageRoute(builder: (_) => const OpenJobsScreen()),
                         ),
-                        child: const Text('Open Jobs'),
+                        child: Text(l10n.mainOpenJobs),
                       ),
                     ],
                   ],
@@ -1268,16 +1268,16 @@ class _HomeScreenState extends State<HomeScreen> {
                             }
                           },
                           itemBuilder: (_) => [
-                            const PopupMenuItem(value: 'bookings', child: Text('Bookings')),
-                            const PopupMenuItem(value: 'notifications', child: Text('Notifications')),
-                            const PopupMenuItem(value: 'referral', child: Text('Referral')),
-                            const PopupMenuItem(value: 'settings', child: Text('Settings')),
-                            const PopupMenuItem(value: 'help', child: Text('Help')),
+                            PopupMenuItem(value: 'bookings', child: Text(l10n.mainBookings)),
+                            PopupMenuItem(value: 'notifications', child: Text(l10n.mainNotifications)),
+                            PopupMenuItem(value: 'referral', child: Text(l10n.mainReferral)),
+                            PopupMenuItem(value: 'settings', child: Text(l10n.mainSettings)),
+                            PopupMenuItem(value: 'help', child: Text(l10n.mainHelp)),
                             if (widget.role == 'provider') ...[
                               const PopupMenuDivider(),
-                              const PopupMenuItem(value: 'wallet', child: Text('Wallet')),
-                              const PopupMenuItem(value: 'earnings', child: Text('Earnings')),
-                              const PopupMenuItem(value: 'open_jobs', child: Text('Open Jobs')),
+                              PopupMenuItem(value: 'wallet', child: Text(l10n.mainWallet)),
+                              PopupMenuItem(value: 'earnings', child: Text(l10n.mainEarnings)),
+                              PopupMenuItem(value: 'open_jobs', child: Text(l10n.mainOpenJobs)),
                             ],
                           ],
                         ),
@@ -1462,7 +1462,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               );
                             },
                             icon: const Icon(Icons.star_outline),
-                            label: const Text('My Reputation'),
+                            label: Text(l10n.mainMyReputation),
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.blue.shade600,
                               foregroundColor: Colors.white,

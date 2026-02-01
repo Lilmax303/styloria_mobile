@@ -406,6 +406,264 @@
       "role": {}
     }
   },
+
+  "signOut": "Toka",
+
+  "kycIdFrontPhoto": "Picha ya Mbele ya Kitambulisho",
+  "kycIdFrontMessage": "Piga picha ya mbele ya kitambulisho chako",
+  "kycIdBackPhoto": "Picha ya Nyuma ya Kitambulisho",
+  "kycIdBackMessage": "Piga picha ya nyuma ya kitambulisho chako",
+  "kycCamera": "Kamera",
+  "kycGallery": "Galari",
+  "kycChooseSource": "Chagua chanzo:",
+  "kycFailedCaptureImage": "Imeshindwa kupiga picha",
+  "kycFailedCaptureSelfie": "Imeshindwa kupiga selfie",
+  "kycCameraNotAvailable": "Kamera haipatikani",
+  "kycCameraNotAvailableMessage": "Kamera haipatikani. Je, ungependa kuchagua picha kutoka kwenye galari yako?",
+  "kycUseGallery": "Tumia Galari",
+  "kycDocumentsLocked": "Hati zimefungwa wakati ukaguzi unasubiri. Huwezi kufanya mabadiliko hadi uthibitishaji ukamilike.",
+  "kycVerificationSubmittedSuccessfully": "Uthibitishaji umewasilishwa kwa mafanikio",
+  "kycVerificationSubmitted": "Uthibitishaji Umewasilishwa",
+  "kycThankYouSubmitting": "Asante kwa kuwasilisha hati zako za uthibitishaji!",
+  "kycWhatHappensNext": "Kinachofuata:",
+  "kycReviewTime": "Timu yetu itakagua hati zako ndani ya masaa 24-48",
+  "kycEmailNotification": "Utapokea barua pepe mara uthibitishaji wako utakapokamilika",
+  "kycCheckEmail": "Angalia barua pepe yako kwa masasisho ya hali ya uthibitishaji wako",
+  "kycLocked": "Hati zako sasa zimefungwa na haziwezi kubadilishwa wakati wa ukaguzi",
+  "kycRecommendSignOut": "Tunapendekeza utoke na kurudi baadaye kuangalia matokeo ya uthibitishaji wako.",
+  "kycStaySignedIn": "Endelea Kuwa Umeingia",
+  "kycVerificationPending": "Uthibitishaji Unasubiri",
+  "kycVerificationPendingSubtitle": "Hati zako zinakaguliwa",
+  "kycVerificationApproved": "Uthibitishaji Umeidhinishwa",
+  "kycVerificationApprovedSubtitle": "Sasa unaweza kufikia vipengele vyote vya mtoa huduma",
+  "kycVerificationRejected": "Uthibitishaji Umekataliwa",
+  "kycVerificationRejectedSubtitle": "Tafadhali pitia maelezo hapa chini na uwasilishe tena",
+  "kycVerificationRequired": "Uthibitishaji Unahitajika",
+  "kycVerificationRequiredSubtitle": "Kamilisha uthibitishaji ili kufikia vipengele vya mtoa huduma",
+  "kycReviewNotes": "Maelezo ya Ukaguzi",
+  "kycIdCardFront": "Kitambulisho (Mbele)",
+  "kycIdCardBack": "Kitambulisho (Nyuma)",
+  "kycVerificationSelfie": "Selfie ya Uthibitishaji",
+  "kycButtonLocked": "Imefungwa",
+  "kycCaptureIdFront": "Piga Mbele ya Kitambulisho",
+  "kycCaptureIdBack": "Piga Nyuma ya Kitambulisho",
+  "kycDocumentsLockedButton": "Hati Zimefungwa",
+  "kycTipsTitle": "📸 Vidokezo vya picha nzuri:",
+  "kycTipGoodLighting": "• Tumia mwangaza mzuri",
+  "kycTipFlatCard": "• Weka kitambulisho kwenye uso laini",
+  "kycTipReadableText": "• Hakikisha maandishi yote yanasomeka",
+  "kycTipFaceCamera": "• Tazama kamera moja kwa moja kwa selfie",
+  "kycTipAvoidGlare": "• Epuka mwangaza au vivuli",
+  "kycFailedSubmitVerification": "Imeshindwa kuwasilisha uthibitishaji",
+
+  "paystackSetupTitle": "Sanidi Akaunti ya Malipo",
+  "paystackVerifying": "Inathibitisha...",
+  "paystackVerificationSuccess": "Mipangilio ya malipo imehifadhiwa kwa mafanikio!",
+  "paystackVerificationFailed": "Imeshindwa kuhifadhi mipangilio ya malipo",
+  "paystackSelectBank": "Chagua Benki Yako",
+  "paystackAccountNumber": "Nambari ya Akaunti",
+  "paystackVerifyAccount": "Thibitisha Akaunti",
+  "paystackAccountVerified": "Akaunti Imethibitishwa",
+  "paystackSavePayoutAccount": "Hifadhi Akaunti ya Malipo",
+  "paystackNoBanksAvailable": "Hakuna benki zinazopatikana kwa {country}",
+  "@paystackNoBanksAvailable": {
+    "placeholders": {
+      "country": {}
+    }
+  },
+  "paystackRetry": "Jaribu Tena",
+  "paystackPayoutsInfo": "Mapato yako yatatumwa kwenye akaunti hii. Malipo yanachakatwa ndani ya masaa 24.",
+  "paystackConnected": "Akaunti: imeunganishwa",
+  "paystackNotConnected": "Akaunti: haijaunganishwa",
+  "paystackDetailsSubmitted": "Maelezo yamewasilishwa:",
+  "paystackPayoutsEnabled": "Malipo yameamilishwa:",
+  "paystackYes": "ndio",
+  "paystackNo": "hapana",
+  "paystackFinishSetup": "Kamilisha Usanidi wa Stripe",
+  "paystackConnectStripe": "Unganisha Stripe",
+  "paystackOpenDashboard": "Fungua Dashibodi ya Stripe",
+  "paystackMustFinishSetup": "Lazima ukamilishe usanidi wa Stripe kabla ya kutoa pesa.",
+  "paystackPayouts": "Malipo ya Paystack",
+  "paystackAddBankDetails": "Ongeza maelezo ya akaunti yako ya benki kwenye Mipangilio ya Malipo kupokea malipo kupitia Paystack.",
+  "paystackOpenSettings": "Fungua Mipangilio ya Malipo",
+
+  "payoutPaystackForCountry": "Malipo kupitia Paystack kwa {country}",
+  "@payoutPaystackForCountry": {
+    "placeholders": {
+      "country": {}
+    }
+  },
+  "payoutFlutterwaveForCountry": "Malipo yanachakatwa kupitia Flutterwave kwa {country}",
+  "@payoutFlutterwaveForCountry": {
+    "placeholders": {
+      "country": {}
+    }
+  },
+  "payoutStripeConnect": "Stripe Connect",
+  "payoutBankAccountDetails": "Maelezo ya Akaunti ya Benki",
+  "payoutAccountHolderName": "Jina la Mmiliki wa Akaunti",
+  "payoutAccountHolderNameHint": "Ingiza jina kama linavyoonekana kwenye akaunti yako ya benki",
+  "payoutSelectBank": "Chagua Benki *",
+  "payoutBankName": "Jina la Benki *",
+  "payoutBankNameManual": "Jina la Benki (kwa mkono)",
+  "payoutBankNameHint": "mfano, GCB Bank, Ecobank",
+  "payoutBankCode": "Nambari ya Benki *",
+  "payoutBankCodeManual": "Nambari ya Benki (kwa mkono)",
+  "payoutBankCodeHint": "Nambari ya benki ya Flutterwave",
+  "payoutBankCodeHelper": "Wasiliana na msaada ikiwa huna uhakika wa nambari ya benki",
+  "payoutAccountNumber": "Nambari ya Akaunti *",
+  "payoutAccountNumberHint": "Ingiza nambari ya akaunti yako ya benki",
+  "payoutMobileMoney": "Pesa za Simu",
+  "payoutFullName": "Jina Kamili (kama ilivyosajiliwa) *",
+  "payoutFullNameHint": "Jina lililосajiliwa kwenye akaunti yako ya pesa za simu",
+  "payoutMobileNetwork": "Mtandao wa Simu *",
+  "payoutSelectNetwork": "Chagua mtandao wako wa simu",
+  "payoutMobileNetworkHint": "mfano, MTN, Vodafone, Airtel",
+  "payoutCountryCode": "Nambari ya Nchi",
+  "payoutMobileMoneyNumber": "Nambari ya Pesa za Simu *",
+  "payoutMobileMoneyNumberHint": "mfano, 0541234567",
+  "payoutZipCode": "Nambari ya Posta",
+  "payoutZipCodeHint": "Ikiwa inahitajika na mtandao wako",
+  "payoutMethod": "Njia ya Malipo",
+  "payoutBankTransfer": "Uhamisho wa Benki",
+  "payoutCurrency": "Sarafu",
+  "payoutCurrencyLocked": "Imefungwa kwa sarafu ya {country}",
+  "@payoutCurrencyLocked": {
+    "placeholders": {
+      "country": {}
+    }
+  },
+  "payoutBeneficiaryId": "Kitambulisho cha Mpokeaji",
+  "payoutBeneficiaryIdHint": "Si lazima - kwa uhamisho unarudiwa",
+  "payoutSchedule": "Ratiba ya Malipo",
+  "payoutFrequency": "Mzunguko wa Malipo",
+  "payoutFrequencyWeekly": "Kila Wiki",
+  "payoutFrequencyMonthly": "Kila Mwezi (tarehe 1 ya kila mwezi)",
+  "payoutDayHelper": "Inapatikana: Jumanne, Alhamisi, Ijumaa",
+  "payoutMonthlyInfo": "Malipo ya kila mwezi yanachakatwa tarehe 1 ya kila mwezi.",
+  "payoutInstantCashout": "Kutoa Pesa Papo Hapo",
+  "payoutInstantCashoutInfo": "• Kutoa pesa papo hapo bila kikomo kunapatikana\n• Ada ya 5% inatumika kwa kutoa pesa papo hapo\n• Malipo yaliyoratibiwa hayana ada",
+  "payoutNextScheduled": "Malipo Yajayo Yaliyoratibiwa",
+  "payoutYourLocalTime": "Muda wako wa eneo ({timezone})",
+  "@payoutYourLocalTime": {
+    "placeholders": {
+      "timezone": {}
+    }
+  },
+  "payoutAmountToCashOut": "Kiasi cha kutoa",
+  "payoutMinMaxRange": "Kiwango cha Chini: {min} - Kiwango cha Juu: {max}",
+  "@payoutMinMaxRange": {
+    "placeholders": {
+      "min": {},
+      "max": {}
+    }
+  },
+  "payoutMaxButton": "UPEO",
+  "payoutCashOutNow": "Toa Pesa (Papo Hapo)",
+  "payoutAvailableBalance": "Salio Linalоpatikana",
+  "payoutPendingFunds": "Zinasubiri",
+  "payoutPendingInfo": "Pesa zinazosubiri zitapatikana baada ya kipindi cha kushikiliwa",
+  "payoutLifetimeEarnings": "Mapato ya Jumla",
+  "payoutTotalCashedOut": "Jumla Iliyotolewa",
+  "payoutUnlimitedCashouts": "Bila kikomo",
+
+  "mainHello": "Habari",
+  "mainViewProfile": "Tazama Wasifu",
+  "mainBookings": "Uhifadhi",
+  "mainNotifications": "Arifa",
+  "mainReferral": "Rufaa",
+  "mainSettings": "Mipangilio",
+  "mainHelp": "Msaada",
+  "mainWallet": "Pochi",
+  "mainEarnings": "Mapato",
+  "mainOpenJobs": "Kazi Wazi",
+  "mainAssignedJobs": "Kazi Zilizopewa",
+  "mainMyReputation": "Sifa Yangu",
+
+  "reputationTitle": "Sifa Yangu",
+  "reputationYourCustomerRating": "Ukadiriaji Wako wa Mteja",
+  "reputationBasedOnReviews": "Kulingana na {count, plural, =1{tathmini {count}} other{tathmini {count}}}",
+  "@reputationBasedOnReviews": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationExcellentCustomer": "⭐ Mteja Bora Kabisa",
+  "reputationGreatCustomer": "👍 Mteja Mzuri Sana",
+  "reputationGoodCustomer": "✓ Mteja Mzuri",
+  "reputationAverage": "Wastani",
+  "reputationNeedsImprovement": "Inahitaji Kuboresha",
+  "reputationNoRatingYet": "Hakuna Ukadiriaji Bado",
+  "reputationWhatProvidersSay": "Watoa Huduma Wanasema Nini Kukuhusu",
+  "reputationNoReviews": "Hakuna Tathmini Bado",
+  "reputationNoReviewsHelp": "Kamilisha uhifadhi ili kujenga sifa yako!\nWatoa huduma watakukadiri baada ya kukamilisha huduma.",
+  "reputationShowMore": "Onyesha Zaidi ({count} zaidi)",
+  "@reputationShowMore": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationShowLess": "Onyesha Kidogo",
+  "reputationJustNow": "Sasa hivi",
+  "reputationMinutesAgo": "dakika {minutes} zilizopita",
+  "@reputationMinutesAgo": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationHoursAgo": "{hours, plural, =1{saa {hours}} other{masaa {hours}}} zilizopita",
+  "@reputationHoursAgo": {
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationDaysAgo": "{days, plural, =1{siku {days}} other{siku {days}}} zilizopita",
+  "@reputationDaysAgo": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationWeeksAgo": "{weeks, plural, =1{wiki {weeks}} other{wiki {weeks}}} zilizopita",
+  "@reputationWeeksAgo": {
+    "placeholders": {
+      "weeks": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationMonthsAgo": "{months, plural, =1{mwezi {months}} other{miezi {months}}} iliyopita",
+  "@reputationMonthsAgo": {
+    "placeholders": {
+      "months": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationYearsAgo": "{years, plural, =1{mwaka {years}} other{miaka {years}}} iliyopita",
+  "@reputationYearsAgo": {
+    "placeholders": {
+      "years": {
+        "type": "int"
+      }
+    }
+  },
+
+  "walletTitle": "Pochi",
+  "walletCashOutFailed": "Kutoa pesa kumeshindwa.",
+  
+  "notificationsTitle": "Arifa",
+  "notificationsNoNotifications": "Hakuna arifa bado.",
+
   "locationWithValue": "Eneo: {value}",
   "@locationWithValue": {
     "placeholders": {

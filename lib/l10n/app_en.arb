@@ -1024,5 +1024,261 @@
 
   "providerLocationServicesDisabled": "Location services are disabled on your device.",
   "providerEnableLocationServices": "Enable",
-  "providerLocationDeniedCannotBeAvailable": "Location access denied. You cannot be available for bookings without location enabled."
+  "providerLocationDeniedCannotBeAvailable": "Location access denied. You cannot be available for bookings without location enabled.",
+  "signOut": "Sign out",
+
+  "kycIdFrontPhoto": "ID Front Photo",
+  "kycIdFrontMessage": "Take a photo of the front of your ID card",
+  "kycIdBackPhoto": "ID Back Photo",
+  "kycIdBackMessage": "Take a photo of the back of your ID card",
+  "kycCamera": "Camera",
+  "kycGallery": "Gallery",
+  "kycChooseSource": "Choose source:",
+  "kycFailedCaptureImage": "Failed to capture image",
+  "kycFailedCaptureSelfie": "Failed to capture selfie",
+  "kycCameraNotAvailable": "Camera not available",
+  "kycCameraNotAvailableMessage": "Camera is not available. Would you like to select an image from your gallery instead?",
+  "kycUseGallery": "Use Gallery",
+  "kycDocumentsLocked": "Documents are locked while pending review. You cannot make changes until verification is complete.",
+  "kycVerificationSubmittedSuccessfully": "Verification submitted successfully",
+  "kycVerificationSubmitted": "Verification Submitted",
+  "kycThankYouSubmitting": "Thank you for submitting your verification documents!",
+  "kycWhatHappensNext": "What happens next:",
+  "kycReviewTime": "Our team will review your documents within 24-48 hours",
+  "kycEmailNotification": "You'll receive an email once your verification is complete",
+  "kycCheckEmail": "Check your email for updates on your verification status",
+  "kycLocked": "Your documents are now locked and cannot be changed during review",
+  "kycRecommendSignOut": "We recommend signing out and checking back later for your verification result.",
+  "kycStaySignedIn": "Stay Signed In",
+  "kycVerificationPending": "Verification Pending",
+  "kycVerificationPendingSubtitle": "Your documents are being reviewed",
+  "kycVerificationApproved": "Verification Approved",
+  "kycVerificationApprovedSubtitle": "You can now access all provider features",
+  "kycVerificationRejected": "Verification Rejected",
+  "kycVerificationRejectedSubtitle": "Please review the notes below and resubmit",
+  "kycVerificationRequired": "Verification Required",
+  "kycVerificationRequiredSubtitle": "Complete verification to access provider features",
+  "kycReviewNotes": "Review Notes",
+  "kycIdCardFront": "ID Card (Front)",
+  "kycIdCardBack": "ID Card (Back)",
+  "kycVerificationSelfie": "Verification Selfie",
+  "kycButtonLocked": "Locked",
+  "kycCaptureIdFront": "Capture ID Front",
+  "kycCaptureIdBack": "Capture ID Back",
+  "kycDocumentsLockedButton": "Documents Locked",
+  "kycTipsTitle": "📸 Tips for good photos:",
+  "kycTipGoodLighting": "• Use good lighting",
+  "kycTipFlatCard": "• Place ID card on a flat surface",
+  "kycTipReadableText": "• Make sure all text is readable",
+  "kycTipFaceCamera": "• Face the camera directly for selfie",
+  "kycTipAvoidGlare": "• Avoid glare or shadows",
+  "kycFailedSubmitVerification": "Failed to submit verification",
+
+  "paystackSetupTitle": "Setup Payout Account",
+  "paystackVerifying": "Verifying...",
+  "paystackVerificationSuccess": "Payout settings saved successfully!",
+  "paystackVerificationFailed": "Failed to save payout settings",
+  "paystackSelectBank": "Select Your Bank",
+  "paystackAccountNumber": "Account Number",
+  "paystackVerifyAccount": "Verify Account",
+  "paystackAccountVerified": "Account Verified",
+  "paystackSavePayoutAccount": "Save Payout Account",
+  "paystackNoBanksAvailable": "No banks available for {country}",
+  "@paystackNoBanksAvailable": {
+    "placeholders": {
+      "country": {}
+    }
+  },
+  "paystackRetry": "Retry",
+  "paystackPayoutsInfo": "Your earnings will be sent to this account. Payouts are processed within 24 hours.",
+  "paystackConnected": "Account: connected",
+  "paystackNotConnected": "Account: not connected",
+  "paystackDetailsSubmitted": "Details submitted:",
+  "paystackPayoutsEnabled": "Payouts enabled:",
+  "paystackYes": "yes",
+  "paystackNo": "no",
+  "paystackFinishSetup": "Finish Stripe Setup",
+  "paystackConnectStripe": "Connect Stripe",
+  "paystackOpenDashboard": "Open Stripe Dashboard",
+  "paystackMustFinishSetup": "You must finish Stripe setup before you can cash out.",
+  "paystackPayouts": "Paystack Payouts",
+  "paystackAddBankDetails": "Add your bank account details in Payout Settings to receive payouts via Paystack.",
+  "paystackOpenSettings": "Open Payout Settings",
+
+  "payoutPaystackForCountry": "Payouts via Paystack for {country}",
+  "@payoutPaystackForCountry": {
+    "placeholders": {
+      "country": {}
+    }
+  },
+  "payoutFlutterwaveForCountry": "Payouts are processed via Flutterwave for {country}",
+  "@payoutFlutterwaveForCountry": {
+    "placeholders": {
+      "country": {}
+    }
+  },
+  "payoutStripeConnect": "Stripe Connect",
+  "payoutBankAccountDetails": "Bank Account Details",
+  "payoutAccountHolderName": "Account Holder Name",
+  "payoutAccountHolderNameHint": "Enter name as it appears on your bank account",
+  "payoutSelectBank": "Select Bank *",
+  "payoutBankName": "Bank Name *",
+  "payoutBankNameManual": "Bank Name (manual)",
+  "payoutBankNameHint": "e.g., GCB Bank, Ecobank",
+  "payoutBankCode": "Bank Code *",
+  "payoutBankCodeManual": "Bank Code (manual)",
+  "payoutBankCodeHint": "Flutterwave bank code",
+  "payoutBankCodeHelper": "Contact support if unsure of bank code",
+  "payoutAccountNumber": "Account Number *",
+  "payoutAccountNumberHint": "Enter your bank account number",
+  "payoutMobileMoney": "Mobile Money",
+  "payoutFullName": "Full Name (as registered) *",
+  "payoutFullNameHint": "Name registered on your mobile money account",
+  "payoutMobileNetwork": "Mobile Network *",
+  "payoutSelectNetwork": "Select your mobile network",
+  "payoutMobileNetworkHint": "e.g., MTN, Vodafone, Airtel",
+  "payoutCountryCode": "Country Code",
+  "payoutMobileMoneyNumber": "Mobile Money Number *",
+  "payoutMobileMoneyNumberHint": "e.g., 0541234567",
+  "payoutZipCode": "ZIP/Postal Code",
+  "payoutZipCodeHint": "If required by your network",
+  "payoutMethod": "Payout Method",
+  "payoutBankTransfer": "Bank Transfer",
+  "payoutCurrency": "Currency",
+  "payoutCurrencyLocked": "Locked to {country} currency",
+  "@payoutCurrencyLocked": {
+    "placeholders": {
+      "country": {}
+    }
+  },
+  "payoutBeneficiaryId": "Beneficiary ID",
+  "payoutBeneficiaryIdHint": "Optional - for recurring transfers",
+  "payoutSchedule": "Payout Schedule",
+  "payoutFrequency": "Payout Frequency",
+  "payoutFrequencyWeekly": "Weekly",
+  "payoutFrequencyMonthly": "Monthly (1st of each month)",
+  "payoutDayHelper": "Available: Tuesday, Thursday, Friday",
+  "payoutMonthlyInfo": "Monthly payouts are processed on the 1st of each month.",
+  "payoutInstantCashout": "Instant Cashout",
+  "payoutInstantCashoutInfo": "• Unlimited instant cashouts available\n• 5% fee applies to instant cashouts\n• Scheduled payouts have no fees",
+  "payoutNextScheduled": "Next Scheduled Payout",
+  "payoutYourLocalTime": "Your local time ({timezone})",
+  "@payoutYourLocalTime": {
+    "placeholders": {
+      "timezone": {}
+    }
+  },
+  "payoutAmountToCashOut": "Amount to cash out",
+  "payoutMinMaxRange": "Min: {min} - Max: {max}",
+  "@payoutMinMaxRange": {
+    "placeholders": {
+      "min": {},
+      "max": {}
+    }
+  },
+  "payoutMaxButton": "MAX",
+  "payoutCashOutNow": "Cash Out (Instant)",
+  "payoutAvailableBalance": "Available Balance",
+  "payoutPendingFunds": "Pending",
+  "payoutPendingInfo": "Pending funds will be available after the hold period",
+  "payoutLifetimeEarnings": "Lifetime Earnings",
+  "payoutTotalCashedOut": "Total Cashed Out",
+  "payoutUnlimitedCashouts": "Unlimited",
+
+  "mainHello": "Hello",
+  "mainViewProfile": "View Profile",
+  "mainBookings": "Bookings",
+  "mainNotifications": "Notifications",
+  "mainReferral": "Referral",
+  "mainSettings": "Settings",
+  "mainHelp": "Help",
+  "mainWallet": "Wallet",
+  "mainEarnings": "Earnings",
+  "mainOpenJobs": "Open Jobs",
+  "mainAssignedJobs": "Assigned Jobs",
+  "mainMyReputation": "My Reputation",
+
+  "reputationTitle": "My Reputation",
+  "reputationYourCustomerRating": "Your Customer Rating",
+  "reputationBasedOnReviews": "Based on {count} {count, plural, =1{review} other{reviews}}",
+  "@reputationBasedOnReviews": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationExcellentCustomer": "⭐ Excellent Customer",
+  "reputationGreatCustomer": "👍 Great Customer",
+  "reputationGoodCustomer": "✓ Good Customer",
+  "reputationAverage": "Average",
+  "reputationNeedsImprovement": "Needs Improvement",
+  "reputationNoRatingYet": "No Rating Yet",
+  "reputationWhatProvidersSay": "What Providers Say About You",
+  "reputationNoReviews": "No Reviews Yet",
+  "reputationNoReviewsHelp": "Complete bookings to build your reputation!\nProviders will rate you after completing services.",
+  "reputationShowMore": "Show More ({count} more)",
+  "@reputationShowMore": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationShowLess": "Show Less",
+  "reputationJustNow": "Just now",
+  "reputationMinutesAgo": "{minutes} min ago",
+  "@reputationMinutesAgo": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationHoursAgo": "{hours} {hours, plural, =1{hour} other{hours}} ago",
+  "@reputationHoursAgo": {
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationDaysAgo": "{days} {days, plural, =1{day} other{days}} ago",
+  "@reputationDaysAgo": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationWeeksAgo": "{weeks} {weeks, plural, =1{week} other{weeks}} ago",
+  "@reputationWeeksAgo": {
+    "placeholders": {
+      "weeks": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationMonthsAgo": "{months} {months, plural, =1{month} other{months}} ago",
+  "@reputationMonthsAgo": {
+    "placeholders": {
+      "months": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationYearsAgo": "{years} {years, plural, =1{year} other{years}} ago",
+  "@reputationYearsAgo": {
+    "placeholders": {
+      "years": {
+        "type": "int"
+      }
+    }
+  },
+
+  "walletTitle": "Wallet",
+  "walletCashOutFailed": "Cash out failed.",
+  
+  "notificationsTitle": "Notifications",
+  "notificationsNoNotifications": "No notifications yet."
 }

@@ -685,6 +685,264 @@
       "country": {}
     }
   },
+
+  "signOut": "Teken uit",
+
+  "kycIdFrontPhoto": "ID Voorkant Foto",
+  "kycIdFrontMessage": "Neem 'n foto van die voorkant van jou ID-kaart",
+  "kycIdBackPhoto": "ID Agterkant Foto",
+  "kycIdBackMessage": "Neem 'n foto van die agterkant van jou ID-kaart",
+  "kycCamera": "Kamera",
+  "kycGallery": "Galery",
+  "kycChooseSource": "Kies bron:",
+  "kycFailedCaptureImage": "Kon nie prent vasvang nie",
+  "kycFailedCaptureSelfie": "Kon nie selfie vasvang nie",
+  "kycCameraNotAvailable": "Kamera nie beskikbaar nie",
+  "kycCameraNotAvailableMessage": "Kamera is nie beskikbaar nie. Wil jy eerder 'n prent uit jou galery kies?",
+  "kycUseGallery": "Gebruik Galery",
+  "kycDocumentsLocked": "Dokumente is gesluit tydens hersiening. Jy kan geen veranderinge maak totdat verifikasie voltooi is nie.",
+  "kycVerificationSubmittedSuccessfully": "Verifikasie suksesvol ingedien",
+  "kycVerificationSubmitted": "Verifikasie Ingedien",
+  "kycThankYouSubmitting": "Dankie dat jy jou verifikasiedokumente ingedien het!",
+  "kycWhatHappensNext": "Wat gebeur volgende:",
+  "kycReviewTime": "Ons span sal jou dokumente binne 24-48 uur hersien",
+  "kycEmailNotification": "Jy sal 'n e-pos ontvang sodra jou verifikasie voltooi is",
+  "kycCheckEmail": "Kontroleer jou e-pos vir opdaterings oor jou verifikasie status",
+  "kycLocked": "Jou dokumente is nou gesluit en kan nie tydens hersiening verander word nie",
+  "kycRecommendSignOut": "Ons beveel aan dat jy uitteken en later terugkom vir jou verifikasie resultaat.",
+  "kycStaySignedIn": "Bly Ingeteken",
+  "kycVerificationPending": "Verifikasie Hangende",
+  "kycVerificationPendingSubtitle": "Jou dokumente word hersien",
+  "kycVerificationApproved": "Verifikasie Goedgekeur",
+  "kycVerificationApprovedSubtitle": "Jy kan nou toegang tot alle verskaffer kenmerke kry",
+  "kycVerificationRejected": "Verifikasie Verwerp",
+  "kycVerificationRejectedSubtitle": "Hersien asseblief die notas hieronder en dien weer in",
+  "kycVerificationRequired": "Verifikasie Vereis",
+  "kycVerificationRequiredSubtitle": "Voltooi verifikasie om toegang tot verskaffer kenmerke te kry",
+  "kycReviewNotes": "Hersieningsnotas",
+  "kycIdCardFront": "ID-kaart (Voorkant)",
+  "kycIdCardBack": "ID-kaart (Agterkant)",
+  "kycVerificationSelfie": "Verifikasie Selfie",
+  "kycButtonLocked": "Gesluit",
+  "kycCaptureIdFront": "Vang ID Voorkant Vas",
+  "kycCaptureIdBack": "Vang ID Agterkant Vas",
+  "kycDocumentsLockedButton": "Dokumente Gesluit",
+  "kycTipsTitle": "📸 Wenke vir goeie foto's:",
+  "kycTipGoodLighting": "• Gebruik goeie beligting",
+  "kycTipFlatCard": "• Plaas ID-kaart op 'n plat oppervlak",
+  "kycTipReadableText": "• Maak seker alle teks is leesbaar",
+  "kycTipFaceCamera": "• Kyk direk na die kamera vir selfie",
+  "kycTipAvoidGlare": "• Vermy weerkaatsing of skaduwees",
+  "kycFailedSubmitVerification": "Kon nie verifikasie indien nie",
+
+  "paystackSetupTitle": "Stel Uitbetalingsrekening Op",
+  "paystackVerifying": "Verifieer...",
+  "paystackVerificationSuccess": "Uitbetalingsinstellings suksesvol gestoor!",
+  "paystackVerificationFailed": "Kon nie uitbetalingsinstellings stoor nie",
+  "paystackSelectBank": "Kies Jou Bank",
+  "paystackAccountNumber": "Rekeningnommer",
+  "paystackVerifyAccount": "Verifieer Rekening",
+  "paystackAccountVerified": "Rekening Geverifieer",
+  "paystackSavePayoutAccount": "Stoor Uitbetalingsrekening",
+  "paystackNoBanksAvailable": "Geen banke beskikbaar vir {country}",
+  "@paystackNoBanksAvailable": {
+    "placeholders": {
+      "country": {}
+    }
+  },
+  "paystackRetry": "Probeer Weer",
+  "paystackPayoutsInfo": "Jou verdienste sal na hierdie rekening gestuur word. Uitbetalings word binne 24 uur verwerk.",
+  "paystackConnected": "Rekening: gekoppel",
+  "paystackNotConnected": "Rekening: nie gekoppel nie",
+  "paystackDetailsSubmitted": "Besonderhede ingedien:",
+  "paystackPayoutsEnabled": "Uitbetalings geaktiveer:",
+  "paystackYes": "ja",
+  "paystackNo": "nee",
+  "paystackFinishSetup": "Voltooi Stripe Opstelling",
+  "paystackConnectStripe": "Koppel Stripe",
+  "paystackOpenDashboard": "Open Stripe Dashboard",
+  "paystackMustFinishSetup": "Jy moet Stripe opstelling voltooi voordat jy kan uitbetaal.",
+  "paystackPayouts": "Paystack Uitbetalings",
+  "paystackAddBankDetails": "Voeg jou bankrekeningbesonderhede by in Uitbetalingsinstellings om uitbetalings via Paystack te ontvang.",
+  "paystackOpenSettings": "Open Uitbetalingsinstellings",
+
+  "payoutPaystackForCountry": "Uitbetalings via Paystack vir {country}",
+  "@payoutPaystackForCountry": {
+    "placeholders": {
+      "country": {}
+    }
+  },
+  "payoutFlutterwaveForCountry": "Uitbetalings word verwerk via Flutterwave vir {country}",
+  "@payoutFlutterwaveForCountry": {
+    "placeholders": {
+      "country": {}
+    }
+  },
+  "payoutStripeConnect": "Stripe Connect",
+  "payoutBankAccountDetails": "Bankrekeningbesonderhede",
+  "payoutAccountHolderName": "Rekeninghouernaam",
+  "payoutAccountHolderNameHint": "Voer naam in soos dit op jou bankrekening verskyn",
+  "payoutSelectBank": "Kies Bank *",
+  "payoutBankName": "Banknaam *",
+  "payoutBankNameManual": "Banknaam (handmatig)",
+  "payoutBankNameHint": "bv. GCB Bank, Ecobank",
+  "payoutBankCode": "Bankkode *",
+  "payoutBankCodeManual": "Bankkode (handmatig)",
+  "payoutBankCodeHint": "Flutterwave bankkode",
+  "payoutBankCodeHelper": "Kontak ondersteuning as jy onseker is oor bankkode",
+  "payoutAccountNumber": "Rekeningnommer *",
+  "payoutAccountNumberHint": "Voer jou bankrekeningnommer in",
+  "payoutMobileMoney": "Mobiele Geld",
+  "payoutFullName": "Volle Naam (soos geregistreer) *",
+  "payoutFullNameHint": "Naam geregistreer op jou mobiele geldrekening",
+  "payoutMobileNetwork": "Mobiele Netwerk *",
+  "payoutSelectNetwork": "Kies jou mobiele netwerk",
+  "payoutMobileNetworkHint": "bv. MTN, Vodafone, Airtel",
+  "payoutCountryCode": "Landkode",
+  "payoutMobileMoneyNumber": "Mobiele Geldnommer *",
+  "payoutMobileMoneyNumberHint": "bv. 0541234567",
+  "payoutZipCode": "Poskode",
+  "payoutZipCodeHint": "Indien vereis deur jou netwerk",
+  "payoutMethod": "Uitbetalingsmetode",
+  "payoutBankTransfer": "Bankoordrag",
+  "payoutCurrency": "Geldeenheid",
+  "payoutCurrencyLocked": "Gesluit tot {country} geldeenheid",
+  "@payoutCurrencyLocked": {
+    "placeholders": {
+      "country": {}
+    }
+  },
+  "payoutBeneficiaryId": "Begunstigde ID",
+  "payoutBeneficiaryIdHint": "Opsioneel - vir herhalende oordragte",
+  "payoutSchedule": "Uitbetalingskedule",
+  "payoutFrequency": "Uitbetalingsfrekwensie",
+  "payoutFrequencyWeekly": "Weekliks",
+  "payoutFrequencyMonthly": "Maandeliks (1ste van elke maand)",
+  "payoutDayHelper": "Beskikbaar: Dinsdag, Donderdag, Vrydag",
+  "payoutMonthlyInfo": "Maandelikse uitbetalings word op die 1ste van elke maand verwerk.",
+  "payoutInstantCashout": "Onmiddellike Uitbetaling",
+  "payoutInstantCashoutInfo": "• Onbeperkte onmiddellike uitbetalings beskikbaar\n• 5% fooi van toepassing op onmiddellike uitbetalings\n• Geskeduleerde uitbetalings het geen fooie nie",
+  "payoutNextScheduled": "Volgende Geskeduleerde Uitbetaling",
+  "payoutYourLocalTime": "Jou plaaslike tyd ({timezone})",
+  "@payoutYourLocalTime": {
+    "placeholders": {
+      "timezone": {}
+    }
+  },
+  "payoutAmountToCashOut": "Bedrag om uit te betaal",
+  "payoutMinMaxRange": "Min: {min} - Maks: {max}",
+  "@payoutMinMaxRange": {
+    "placeholders": {
+      "min": {},
+      "max": {}
+    }
+  },
+  "payoutMaxButton": "MAKS",
+  "payoutCashOutNow": "Betaal Uit (Onmiddellik)",
+  "payoutAvailableBalance": "Beskikbare Balans",
+  "payoutPendingFunds": "Hangende",
+  "payoutPendingInfo": "Hangende fondse sal beskikbaar wees na die wag periode",
+  "payoutLifetimeEarnings": "Lewenslange Verdienste",
+  "payoutTotalCashedOut": "Totaal Uitbetaal",
+  "payoutUnlimitedCashouts": "Onbeperk",
+
+  "mainHello": "Hallo",
+  "mainViewProfile": "Bekyk Profiel",
+  "mainBookings": "Besprekings",
+  "mainNotifications": "Kennisgewings",
+  "mainReferral": "Verwysing",
+  "mainSettings": "Instellings",
+  "mainHelp": "Hulp",
+  "mainWallet": "Beursie",
+  "mainEarnings": "Verdienste",
+  "mainOpenJobs": "Oop Werk",
+  "mainAssignedJobs": "Toegewysde Werk",
+  "mainMyReputation": "My Reputasie",
+
+  "reputationTitle": "My Reputasie",
+  "reputationYourCustomerRating": "Jou Kliëntgradering",
+  "reputationBasedOnReviews": "Gebaseer op {count} {count, plural, =1{resensie} other{resensies}}",
+  "@reputationBasedOnReviews": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationExcellentCustomer": "⭐ Uitstekende Kliënt",
+  "reputationGreatCustomer": "👍 Groot Kliënt",
+  "reputationGoodCustomer": "✓ Goeie Kliënt",
+  "reputationAverage": "Gemiddeld",
+  "reputationNeedsImprovement": "Benodig Verbetering",
+  "reputationNoRatingYet": "Nog Geen Gradering",
+  "reputationWhatProvidersSay": "Wat Verskaffers van Jou Sê",
+  "reputationNoReviews": "Nog Geen Resensies",
+  "reputationNoReviewsHelp": "Voltooi besprekings om jou reputasie te bou!\nVerskaffers sal jou gradeer nadat dienste voltooi is.",
+  "reputationShowMore": "Wys Meer ({count} meer)",
+  "@reputationShowMore": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationShowLess": "Wys Minder",
+  "reputationJustNow": "Sopas",
+  "reputationMinutesAgo": "{minutes} min gelede",
+  "@reputationMinutesAgo": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationHoursAgo": "{hours} {hours, plural, =1{uur} other{ure}} gelede",
+  "@reputationHoursAgo": {
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationDaysAgo": "{days} {days, plural, =1{dag} other{dae}} gelede",
+  "@reputationDaysAgo": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationWeeksAgo": "{weeks} {weeks, plural, =1{week} other{weke}} gelede",
+  "@reputationWeeksAgo": {
+    "placeholders": {
+      "weeks": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationMonthsAgo": "{months} {months, plural, =1{maand} other{maande}} gelede",
+  "@reputationMonthsAgo": {
+    "placeholders": {
+      "months": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationYearsAgo": "{years} {years, plural, =1{jaar} other{jaar}} gelede",
+  "@reputationYearsAgo": {
+    "placeholders": {
+      "years": {
+        "type": "int"
+      }
+    }
+  },
+
+  "walletTitle": "Beursie",
+  "walletCashOutFailed": "Uitbetaling het misluk.",
+  
+  "notificationsTitle": "Kennisgewings",
+  "notificationsNoNotifications": "Nog geen kennisgewings nie.",
+
   "chooseTimeLaterThanCurrent": "Please choose a time later than the current time.",
   "pleasePickDateAndTime": "Please pick date and time.",
   "locationUpdatedFromGps": "Location updated from GPS.",

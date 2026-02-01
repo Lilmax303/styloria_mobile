@@ -436,6 +436,264 @@
       "error": {}
     }
   },
+
+  "signOut": "ውጣ",
+
+  "kycIdFrontPhoto": "የመታወቂያ ፊት ፎቶ",
+  "kycIdFrontMessage": "የመታወቂያ ካርድዎን የፊት ፎቶ ያንሱ",
+  "kycIdBackPhoto": "የመታወቂያ ጀርባ ፎቶ",
+  "kycIdBackMessage": "የመታወቂያ ካርድዎን የጀርባ ፎቶ ያንሱ",
+  "kycCamera": "ካሜራ",
+  "kycGallery": "ጋለሪ",
+  "kycChooseSource": "ምንጭ ይምረጡ፡",
+  "kycFailedCaptureImage": "ምስል መቅረጽ አልተሳካም",
+  "kycFailedCaptureSelfie": "ሴልፊ መቅረጽ አልተሳካም",
+  "kycCameraNotAvailable": "ካሜራ አይገኝም",
+  "kycCameraNotAvailableMessage": "ካሜራ አይገኝም። በምትኩ ከጋለሪዎ ምስል መምረጥ ይፈልጋሉ?",
+  "kycUseGallery": "ጋለሪ ይጠቀሙ",
+  "kycDocumentsLocked": "ሰነዶች በመገምገም ላይ እያሉ ተቆልፈዋል። ማረጋገጫ እስኪጠናቀቅ ድረስ ለውጦችን ማድረግ አይችሉም።",
+  "kycVerificationSubmittedSuccessfully": "ማረጋገጫ በተሳካ ሁኔታ ገብቷል",
+  "kycVerificationSubmitted": "ማረጋገጫ ገብቷል",
+  "kycThankYouSubmitting": "የማረጋገጫ ሰነዶችዎን ስለገቡ እናመሰግናለን!",
+  "kycWhatHappensNext": "ቀጥሎ ምን ይከሰታል፡",
+  "kycReviewTime": "ቡድናችን ሰነዶችዎን በ24-48 ሰዓታት ውስጥ ይገመግማል",
+  "kycEmailNotification": "ማረጋገጫዎ ሲጠናቀቅ ኢሜል ይደርስዎታል",
+  "kycCheckEmail": "ስለማረጋገጫ ሁኔታዎ ዝማኔዎችን ኢሜልዎን ይመልከቱ",
+  "kycLocked": "ሰነዶችዎ አሁን ተቆልፈው በግምገማ ጊዜ መቀየር አይችሉም",
+  "kycRecommendSignOut": "ወጥተው ለማረጋገጫ ውጤትዎ በኋላ መመለስዎን እንመክራለን።",
+  "kycStaySignedIn": "ገብተው ይቆዩ",
+  "kycVerificationPending": "ማረጋገጫ በመጠባበቅ ላይ",
+  "kycVerificationPendingSubtitle": "ሰነዶችዎ በመገምገም ላይ ናቸው",
+  "kycVerificationApproved": "ማረጋገጫ ጸድቋል",
+  "kycVerificationApprovedSubtitle": "አሁን ሁሉንም የአቅራቢ ባህሪያትን ማግኘት ይችላሉ",
+  "kycVerificationRejected": "ማረጋገጫ ተቀባይነት አላገኘም",
+  "kycVerificationRejectedSubtitle": "እባክዎ ከታች ያሉትን ማስታወሻዎች ይገምግሙ እና እንደገና ያስገቡ",
+  "kycVerificationRequired": "ማረጋገጫ ያስፈልጋል",
+  "kycVerificationRequiredSubtitle": "የአቅራቢ ባህሪያትን ለማግኘት ማረጋገጫ ያጠናቅቁ",
+  "kycReviewNotes": "የግምገማ ማስታወሻዎች",
+  "kycIdCardFront": "የመታወቂያ ካርድ (ፊት)",
+  "kycIdCardBack": "የመታወቂያ ካርድ (ጀርባ)",
+  "kycVerificationSelfie": "የማረጋገጫ ሴልፊ",
+  "kycButtonLocked": "ተቆልፏል",
+  "kycCaptureIdFront": "የመታወቂያ ፊትን ይቅረጹ",
+  "kycCaptureIdBack": "የመታወቂያ ጀርባን ይቅረጹ",
+  "kycDocumentsLockedButton": "ሰነዶች ተቆልፈዋል",
+  "kycTipsTitle": "📸 ለጥሩ ፎቶዎች ምክሮች፡",
+  "kycTipGoodLighting": "• ጥሩ መብራት ይጠቀሙ",
+  "kycTipFlatCard": "• የመታወቂያ ካርድን በጠፍጣፋ ወለል ላይ ያድርጉ",
+  "kycTipReadableText": "• ሁሉም ጽሑፍ ሊነበብ እንደሚችል ያረጋግጡ",
+  "kycTipFaceCamera": "• ለሴልፊ በቀጥታ ካሜራውን ይጋፈጡ",
+  "kycTipAvoidGlare": "• ብርሃን ወይም ጥላ ያስወግዱ",
+  "kycFailedSubmitVerification": "ማረጋገጫ ማስገባት አልተሳካም",
+
+  "paystackSetupTitle": "የክፍያ መለያ ያዘጋጁ",
+  "paystackVerifying": "በማረጋገጥ ላይ...",
+  "paystackVerificationSuccess": "የክፍያ ቅንብሮች በተሳካ ሁኔታ ተቀምጠዋል!",
+  "paystackVerificationFailed": "የክፍያ ቅንብሮችን ማስቀመጥ አልተሳካም",
+  "paystackSelectBank": "ባንክዎን ይምረጡ",
+  "paystackAccountNumber": "የመለያ ቁጥር",
+  "paystackVerifyAccount": "መለያ ያረጋግጡ",
+  "paystackAccountVerified": "መለያ ተረጋግጧል",
+  "paystackSavePayoutAccount": "የክፍያ መለያ ያስቀምጡ",
+  "paystackNoBanksAvailable": "ለ{country} ምንም ባንኮች አይገኙም",
+  "@paystackNoBanksAvailable": {
+    "placeholders": {
+      "country": {}
+    }
+  },
+  "paystackRetry": "እንደገና ይሞክሩ",
+  "paystackPayoutsInfo": "ገቢዎ ወደዚህ መለያ ይላካል። ክፍያዎች በ24 ሰዓታት ውስጥ ይሰራሉ።",
+  "paystackConnected": "መለያ፡ ተገናኝቷል",
+  "paystackNotConnected": "መለያ፡ አልተገናኘም",
+  "paystackDetailsSubmitted": "ዝርዝሮች ገብተዋል፡",
+  "paystackPayoutsEnabled": "ክፍያዎች ነቅተዋል፡",
+  "paystackYes": "አዎ",
+  "paystackNo": "አይደለም",
+  "paystackFinishSetup": "የStripe ማዘጋጃን ያጠናቅቁ",
+  "paystackConnectStripe": "Stripe ያገናኙ",
+  "paystackOpenDashboard": "የStripe ዳሽቦርድ ይክፈቱ",
+  "paystackMustFinishSetup": "ገንዘብ ከማውጣትዎ በፊት የStripe ማዘጋጃን ማጠናቀቅ አለብዎት።",
+  "paystackPayouts": "የPaystack ክፍያዎች",
+  "paystackAddBankDetails": "በPaystack ክፍያዎችን ለመቀበል በክፍያ ቅንብሮች ውስጥ የባንክ መለያ ዝርዝሮችዎን ይጨምሩ።",
+  "paystackOpenSettings": "የክፍያ ቅንብሮችን ይክፈቱ",
+
+  "payoutPaystackForCountry": "ለ{country} በPaystack ክፍያዎች",
+  "@payoutPaystackForCountry": {
+    "placeholders": {
+      "country": {}
+    }
+  },
+  "payoutFlutterwaveForCountry": "ክፍያዎች ለ{country} በFlutterwave ይሰራሉ",
+  "@payoutFlutterwaveForCountry": {
+    "placeholders": {
+      "country": {}
+    }
+  },
+  "payoutStripeConnect": "Stripe Connect",
+  "payoutBankAccountDetails": "የባንክ መለያ ዝርዝሮች",
+  "payoutAccountHolderName": "የመለያ ባለቤት ስም",
+  "payoutAccountHolderNameHint": "በባንክ መለያዎ ላይ እንደሚታየው ስም ያስገቡ",
+  "payoutSelectBank": "ባንክ ይምረጡ *",
+  "payoutBankName": "የባንክ ስም *",
+  "payoutBankNameManual": "የባንክ ስም (በእጅ)",
+  "payoutBankNameHint": "ለምሳሌ GCB Bank, Ecobank",
+  "payoutBankCode": "የባንክ ኮድ *",
+  "payoutBankCodeManual": "የባንክ ኮድ (በእጅ)",
+  "payoutBankCodeHint": "የFlutterwave ባንክ ኮድ",
+  "payoutBankCodeHelper": "ስለባንክ ኮድ እርግጠኛ ካልሆኑ ድጋፍን ያነጋግሩ",
+  "payoutAccountNumber": "የመለያ ቁጥር *",
+  "payoutAccountNumberHint": "የባንክ መለያ ቁጥርዎን ያስገቡ",
+  "payoutMobileMoney": "የሞባይል ገንዘብ",
+  "payoutFullName": "ሙሉ ስም (እንደተመዘገበ) *",
+  "payoutFullNameHint": "በሞባይል ገንዘብ መለያዎ ላይ የተመዘገበ ስም",
+  "payoutMobileNetwork": "የሞባይል አውታረ መረብ *",
+  "payoutSelectNetwork": "የሞባይል አውታረ መረብዎን ይምረጡ",
+  "payoutMobileNetworkHint": "ለምሳሌ MTN, Vodafone, Airtel",
+  "payoutCountryCode": "የአገር ኮድ",
+  "payoutMobileMoneyNumber": "የሞባይል ገንዘብ ቁጥር *",
+  "payoutMobileMoneyNumberHint": "ለምሳሌ 0541234567",
+  "payoutZipCode": "ዚፕ/ፖስታ ኮድ",
+  "payoutZipCodeHint": "በአውታረ መረብዎ የሚፈለግ ከሆነ",
+  "payoutMethod": "የክፍያ ዘዴ",
+  "payoutBankTransfer": "የባንክ ማስተላለፍ",
+  "payoutCurrency": "ምንዛሬ",
+  "payoutCurrencyLocked": "ወደ {country} ምንዛሬ ተቆልፏል",
+  "@payoutCurrencyLocked": {
+    "placeholders": {
+      "country": {}
+    }
+  },
+  "payoutBeneficiaryId": "የተጠቃሚ መታወቂያ",
+  "payoutBeneficiaryIdHint": "አማራጭ - ለተደጋጋሚ ማስተላለፎች",
+  "payoutSchedule": "የክፍያ መርሐግብር",
+  "payoutFrequency": "የክፍያ ድግግሞሽ",
+  "payoutFrequencyWeekly": "በየሳምንቱ",
+  "payoutFrequencyMonthly": "በየወሩ (በእያንዳንዱ ወር 1ኛ)",
+  "payoutDayHelper": "የሚገኙ፡ ማክሰኞ፣ ሐሙስ፣ አርብ",
+  "payoutMonthlyInfo": "ወርሃዊ ክፍያዎች በእያንዳንዱ ወር 1ኛ ይሰራሉ።",
+  "payoutInstantCashout": "ፈጣን ገንዘብ መውጣት",
+  "payoutInstantCashoutInfo": "• ያልተገደበ ፈጣን ገንዘብ መውጣት ይገኛል\n• 5% ክፍያ በፈጣን ገንዘብ መውጣት ላይ ይተገበራል\n• በተያዘ ክፍያዎች ላይ ምንም ክፍያ የለም",
+  "payoutNextScheduled": "ቀጣይ የተያዘ ክፍያ",
+  "payoutYourLocalTime": "የእርስዎ የአካባቢ ጊዜ ({timezone})",
+  "@payoutYourLocalTime": {
+    "placeholders": {
+      "timezone": {}
+    }
+  },
+  "payoutAmountToCashOut": "ለማውጣት መጠን",
+  "payoutMinMaxRange": "ዝቅተኛ፡ {min} - ከፍተኛ፡ {max}",
+  "@payoutMinMaxRange": {
+    "placeholders": {
+      "min": {},
+      "max": {}
+    }
+  },
+  "payoutMaxButton": "ከፍተኛ",
+  "payoutCashOutNow": "ገንዘብ አውጣ (ፈጣን)",
+  "payoutAvailableBalance": "ተገኝቷል ቀሪ ሂሳብ",
+  "payoutPendingFunds": "በመጠባበቅ ላይ",
+  "payoutPendingInfo": "በመጠባበቅ ላይ ያሉ ገንዘቦች ከመያዣ ጊዜው በኋላ ይገኛሉ",
+  "payoutLifetimeEarnings": "የህይወት ዘመን ገቢ",
+  "payoutTotalCashedOut": "ጠቅላላ የወጣ ገንዘብ",
+  "payoutUnlimitedCashouts": "ያልተገደበ",
+
+  "mainHello": "ሰላም",
+  "mainViewProfile": "መገለጫ ይመልከቱ",
+  "mainBookings": "ቦታ ማስያዝ",
+  "mainNotifications": "ማሳወቂያዎች",
+  "mainReferral": "ማጣቀሻ",
+  "mainSettings": "ቅንብሮች",
+  "mainHelp": "እገዛ",
+  "mainWallet": "ኪስ",
+  "mainEarnings": "ገቢዎች",
+  "mainOpenJobs": "ክፍት ስራዎች",
+  "mainAssignedJobs": "የተመደቡ ስራዎች",
+  "mainMyReputation": "የእኔ ስም",
+
+  "reputationTitle": "የእኔ ስም",
+  "reputationYourCustomerRating": "የእርስዎ የደንበኛ ደረጃ",
+  "reputationBasedOnReviews": "በ{count} {count, plural, =1{ግምገማ} other{ግምገማዎች}} ላይ የተመሰረተ",
+  "@reputationBasedOnReviews": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationExcellentCustomer": "⭐ እጅግ በጣም ጥሩ ደንበኛ",
+  "reputationGreatCustomer": "👍 ታላቅ ደንበኛ",
+  "reputationGoodCustomer": "✓ ጥሩ ደንበኛ",
+  "reputationAverage": "አማካይ",
+  "reputationNeedsImprovement": "መሻሻል ያስፈልጋል",
+  "reputationNoRatingYet": "እስካሁን ምንም ደረጃ የለም",
+  "reputationWhatProvidersSay": "አቅራቢዎች ስለእርስዎ የሚሉት",
+  "reputationNoReviews": "እስካሁን ምንም ግምገማዎች የሉም",
+  "reputationNoReviewsHelp": "ስምዎን ለመገንባት ቦታዎችን ያጠናቅቁ!\nአቅራቢዎች አገልግሎቶችን ካጠናቀቁ በኋላ ደረጃ ይሰጡዎታል።",
+  "reputationShowMore": "ተጨማሪ አሳይ ({count} ተጨማሪ)",
+  "@reputationShowMore": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationShowLess": "ያነሰ አሳይ",
+  "reputationJustNow": "አሁን ብቻ",
+  "reputationMinutesAgo": "ከ{minutes} ደቂቃዎች በፊት",
+  "@reputationMinutesAgo": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationHoursAgo": "ከ{hours} {hours, plural, =1{ሰዓት} other{ሰዓታት}} በፊት",
+  "@reputationHoursAgo": {
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationDaysAgo": "ከ{days} {days, plural, =1{ቀን} other{ቀናት}} በፊት",
+  "@reputationDaysAgo": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationWeeksAgo": "ከ{weeks} {weeks, plural, =1{ሳምንት} other{ሳምንታት}} በፊት",
+  "@reputationWeeksAgo": {
+    "placeholders": {
+      "weeks": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationMonthsAgo": "ከ{months} {months, plural, =1{ወር} other{ወራት}} በፊት",
+  "@reputationMonthsAgo": {
+    "placeholders": {
+      "months": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationYearsAgo": "ከ{years} {years, plural, =1{ዓመት} other{ዓመታት}} በፊት",
+  "@reputationYearsAgo": {
+    "placeholders": {
+      "years": {
+        "type": "int"
+      }
+    }
+  },
+
+  "walletTitle": "ኪስ",
+  "walletCashOutFailed": "ገንዘብ ማውጣት አልተሳካም።",
+  
+  "notificationsTitle": "ማሳወቂያዎች",
+  "notificationsNoNotifications": "እስካሁን ምንም ማሳወቂያዎች የሉም።",
+
   "youProvider": "እርስዎ (አቅራቢ)",
   "youCustomer": "እርስዎ (ደንበኛ)",
   "customer": "ደንበኛ",

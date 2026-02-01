@@ -307,6 +307,263 @@
     }
   },
 
+  "signOut": "Disconnetti",
+
+  "kycIdFrontPhoto": "Foto fronte documento",
+  "kycIdFrontMessage": "Scatta una foto del fronte della tua carta d'identità",
+  "kycIdBackPhoto": "Foto retro documento",
+  "kycIdBackMessage": "Scatta una foto del retro della tua carta d'identità",
+  "kycCamera": "Fotocamera",
+  "kycGallery": "Galleria",
+  "kycChooseSource": "Scegli sorgente:",
+  "kycFailedCaptureImage": "Impossibile acquisire l'immagine",
+  "kycFailedCaptureSelfie": "Impossibile acquisire il selfie",
+  "kycCameraNotAvailable": "Fotocamera non disponibile",
+  "kycCameraNotAvailableMessage": "La fotocamera non è disponibile. Vuoi selezionare un'immagine dalla galleria?",
+  "kycUseGallery": "Usa galleria",
+  "kycDocumentsLocked": "I documenti sono bloccati in attesa di revisione. Non puoi apportare modifiche fino al completamento della verifica.",
+  "kycVerificationSubmittedSuccessfully": "Verifica inviata con successo",
+  "kycVerificationSubmitted": "Verifica inviata",
+  "kycThankYouSubmitting": "Grazie per aver inviato i tuoi documenti di verifica!",
+  "kycWhatHappensNext": "Cosa succede dopo:",
+  "kycReviewTime": "Il nostro team esaminerà i tuoi documenti entro 24-48 ore",
+  "kycEmailNotification": "Riceverai un'email una volta completata la verifica",
+  "kycCheckEmail": "Controlla la tua email per aggiornamenti sullo stato della verifica",
+  "kycLocked": "I tuoi documenti sono ora bloccati e non possono essere modificati durante la revisione",
+  "kycRecommendSignOut": "Ti consigliamo di disconnetterti e controllare più tardi per il risultato della verifica.",
+  "kycStaySignedIn": "Rimani connesso",
+  "kycVerificationPending": "Verifica in corso",
+  "kycVerificationPendingSubtitle": "I tuoi documenti sono in fase di revisione",
+  "kycVerificationApproved": "Verifica approvata",
+  "kycVerificationApprovedSubtitle": "Ora puoi accedere a tutte le funzionalità del fornitore",
+  "kycVerificationRejected": "Verifica rifiutata",
+  "kycVerificationRejectedSubtitle": "Esamina le note qui sotto e reinvia",
+  "kycVerificationRequired": "Verifica richiesta",
+  "kycVerificationRequiredSubtitle": "Completa la verifica per accedere alle funzionalità del fornitore",
+  "kycReviewNotes": "Note di revisione",
+  "kycIdCardFront": "Carta d'identità (fronte)",
+  "kycIdCardBack": "Carta d'identità (retro)",
+  "kycVerificationSelfie": "Selfie di verifica",
+  "kycButtonLocked": "Bloccato",
+  "kycCaptureIdFront": "Acquisisci fronte documento",
+  "kycCaptureIdBack": "Acquisisci retro documento",
+  "kycDocumentsLockedButton": "Documenti bloccati",
+  "kycTipsTitle": "📸 Consigli per foto di qualità:",
+  "kycTipGoodLighting": "• Usa una buona illuminazione",
+  "kycTipFlatCard": "• Posiziona la carta d'identità su una superficie piana",
+  "kycTipReadableText": "• Assicurati che tutto il testo sia leggibile",
+  "kycTipFaceCamera": "• Guarda direttamente la fotocamera per il selfie",
+  "kycTipAvoidGlare": "• Evita riflessi o ombre",
+  "kycFailedSubmitVerification": "Impossibile inviare la verifica",
+
+  "paystackSetupTitle": "Configura account pagamenti",
+  "paystackVerifying": "Verifica in corso...",
+  "paystackVerificationSuccess": "Impostazioni di pagamento salvate con successo!",
+  "paystackVerificationFailed": "Impossibile salvare le impostazioni di pagamento",
+  "paystackSelectBank": "Seleziona la tua banca",
+  "paystackAccountNumber": "Numero di conto",
+  "paystackVerifyAccount": "Verifica account",
+  "paystackAccountVerified": "Account verificato",
+  "paystackSavePayoutAccount": "Salva account pagamenti",
+  "paystackNoBanksAvailable": "Nessuna banca disponibile per {country}",
+  "@paystackNoBanksAvailable": {
+    "placeholders": {
+      "country": {}
+    }
+  },
+  "paystackRetry": "Riprova",
+  "paystackPayoutsInfo": "I tuoi guadagni saranno inviati a questo account. I pagamenti vengono elaborati entro 24 ore.",
+  "paystackConnected": "Account: connesso",
+  "paystackNotConnected": "Account: non connesso",
+  "paystackDetailsSubmitted": "Dettagli inviati:",
+  "paystackPayoutsEnabled": "Pagamenti abilitati:",
+  "paystackYes": "sì",
+  "paystackNo": "no",
+  "paystackFinishSetup": "Completa configurazione Stripe",
+  "paystackConnectStripe": "Connetti Stripe",
+  "paystackOpenDashboard": "Apri dashboard Stripe",
+  "paystackMustFinishSetup": "Devi completare la configurazione di Stripe prima di poter prelevare.",
+  "paystackPayouts": "Pagamenti Paystack",
+  "paystackAddBankDetails": "Aggiungi i dettagli del tuo conto bancario nelle Impostazioni di pagamento per ricevere pagamenti tramite Paystack.",
+  "paystackOpenSettings": "Apri impostazioni pagamenti",
+
+  "payoutPaystackForCountry": "Pagamenti tramite Paystack per {country}",
+  "@payoutPaystackForCountry": {
+    "placeholders": {
+      "country": {}
+    }
+  },
+  "payoutFlutterwaveForCountry": "I pagamenti sono elaborati tramite Flutterwave per {country}",
+  "@payoutFlutterwaveForCountry": {
+    "placeholders": {
+      "country": {}
+    }
+  },
+  "payoutStripeConnect": "Stripe Connect",
+  "payoutBankAccountDetails": "Dettagli conto bancario",
+  "payoutAccountHolderName": "Nome titolare del conto",
+  "payoutAccountHolderNameHint": "Inserisci il nome come appare sul tuo conto bancario",
+  "payoutSelectBank": "Seleziona banca *",
+  "payoutBankName": "Nome banca *",
+  "payoutBankNameManual": "Nome banca (manuale)",
+  "payoutBankNameHint": "es., GCB Bank, Ecobank",
+  "payoutBankCode": "Codice banca *",
+  "payoutBankCodeManual": "Codice banca (manuale)",
+  "payoutBankCodeHint": "Codice banca Flutterwave",
+  "payoutBankCodeHelper": "Contatta l'assistenza se non sei sicuro del codice banca",
+  "payoutAccountNumber": "Numero di conto *",
+  "payoutAccountNumberHint": "Inserisci il numero del tuo conto bancario",
+  "payoutMobileMoney": "Mobile Money",
+  "payoutFullName": "Nome completo (come registrato) *",
+  "payoutFullNameHint": "Nome registrato sul tuo account mobile money",
+  "payoutMobileNetwork": "Rete mobile *",
+  "payoutSelectNetwork": "Seleziona la tua rete mobile",
+  "payoutMobileNetworkHint": "es., MTN, Vodafone, Airtel",
+  "payoutCountryCode": "Prefisso nazionale",
+  "payoutMobileMoneyNumber": "Numero Mobile Money *",
+  "payoutMobileMoneyNumberHint": "es., 0541234567",
+  "payoutZipCode": "CAP/Codice postale",
+  "payoutZipCodeHint": "Se richiesto dalla tua rete",
+  "payoutMethod": "Metodo di pagamento",
+  "payoutBankTransfer": "Bonifico bancario",
+  "payoutCurrency": "Valuta",
+  "payoutCurrencyLocked": "Bloccato sulla valuta di {country}",
+  "@payoutCurrencyLocked": {
+    "placeholders": {
+      "country": {}
+    }
+  },
+  "payoutBeneficiaryId": "ID beneficiario",
+  "payoutBeneficiaryIdHint": "Facoltativo - per trasferimenti ricorrenti",
+  "payoutSchedule": "Pianificazione pagamenti",
+  "payoutFrequency": "Frequenza pagamenti",
+  "payoutFrequencyWeekly": "Settimanale",
+  "payoutFrequencyMonthly": "Mensile (1° di ogni mese)",
+  "payoutDayHelper": "Disponibile: martedì, giovedì, venerdì",
+  "payoutMonthlyInfo": "I pagamenti mensili vengono elaborati il 1° di ogni mese.",
+  "payoutInstantCashout": "Prelievo istantaneo",
+  "payoutInstantCashoutInfo": "• Prelievi istantanei illimitati disponibili\n• Si applica una commissione del 5% ai prelievi istantanei\n• Nessuna commissione per i pagamenti programmati",
+  "payoutNextScheduled": "Prossimo pagamento programmato",
+  "payoutYourLocalTime": "Tuo orario locale ({timezone})",
+  "@payoutYourLocalTime": {
+    "placeholders": {
+      "timezone": {}
+    }
+  },
+  "payoutAmountToCashOut": "Importo da prelevare",
+  "payoutMinMaxRange": "Min: {min} - Max: {max}",
+  "@payoutMinMaxRange": {
+    "placeholders": {
+      "min": {},
+      "max": {}
+    }
+  },
+  "payoutMaxButton": "MAX",
+  "payoutCashOutNow": "Preleva (Istantaneo)",
+  "payoutAvailableBalance": "Saldo disponibile",
+  "payoutPendingFunds": "In sospeso",
+  "payoutPendingInfo": "I fondi in sospeso saranno disponibili dopo il periodo di blocco",
+  "payoutLifetimeEarnings": "Guadagni totali",
+  "payoutTotalCashedOut": "Totale prelevato",
+  "payoutUnlimitedCashouts": "Illimitato",
+
+  "mainHello": "Ciao",
+  "mainViewProfile": "Visualizza profilo",
+  "mainBookings": "Prenotazioni",
+  "mainNotifications": "Notifiche",
+  "mainReferral": "Referral",
+  "mainSettings": "Impostazioni",
+  "mainHelp": "Aiuto",
+  "mainWallet": "Portafoglio",
+  "mainEarnings": "Guadagni",
+  "mainOpenJobs": "Lavori aperti",
+  "mainAssignedJobs": "Lavori assegnati",
+  "mainMyReputation": "La mia reputazione",
+
+  "reputationTitle": "La mia reputazione",
+  "reputationYourCustomerRating": "La tua valutazione cliente",
+  "reputationBasedOnReviews": "Basato su {count} {count, plural, =1{recensione} other{recensioni}}",
+  "@reputationBasedOnReviews": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationExcellentCustomer": "⭐ Cliente eccellente",
+  "reputationGreatCustomer": "👍 Ottimo cliente",
+  "reputationGoodCustomer": "✓ Buon cliente",
+  "reputationAverage": "Nella media",
+  "reputationNeedsImprovement": "Da migliorare",
+  "reputationNoRatingYet": "Nessuna valutazione ancora",
+  "reputationWhatProvidersSay": "Cosa dicono i fornitori di te",
+  "reputationNoReviews": "Nessuna recensione ancora",
+  "reputationNoReviewsHelp": "Completa le prenotazioni per costruire la tua reputazione!\nI fornitori ti valuteranno dopo aver completato i servizi.",
+  "reputationShowMore": "Mostra altro ({count} in più)",
+  "@reputationShowMore": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationShowLess": "Mostra meno",
+  "reputationJustNow": "Proprio ora",
+  "reputationMinutesAgo": "{minutes} min fa",
+  "@reputationMinutesAgo": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationHoursAgo": "{hours} {hours, plural, =1{ora} other{ore}} fa",
+  "@reputationHoursAgo": {
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationDaysAgo": "{days} {days, plural, =1{giorno} other{giorni}} fa",
+  "@reputationDaysAgo": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationWeeksAgo": "{weeks} {weeks, plural, =1{settimana} other{settimane}} fa",
+  "@reputationWeeksAgo": {
+    "placeholders": {
+      "weeks": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationMonthsAgo": "{months} {months, plural, =1{mese} other{mesi}} fa",
+  "@reputationMonthsAgo": {
+    "placeholders": {
+      "months": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationYearsAgo": "{years} {years, plural, =1{anno} other{anni}} fa",
+  "@reputationYearsAgo": {
+    "placeholders": {
+      "years": {
+        "type": "int"
+      }
+    }
+  },
+
+  "walletTitle": "Portafoglio",
+  "walletCashOutFailed": "Prelievo non riuscito.",
+  
+  "notificationsTitle": "Notifiche",
+  "notificationsNoNotifications": "Nessuna notifica ancora.",
+
   "bookingTimerCancellingNowPenalty": "Annullare ora comporterà una penale del 10%.",
   "bookingTimerCancelNoPenalty": "Puoi annullare senza penale.",
   "myReviewsTitle": "Le mie recensioni",

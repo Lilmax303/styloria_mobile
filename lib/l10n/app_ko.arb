@@ -425,6 +425,264 @@
       }
     }
   },
+
+  "signOut": "로그아웃",
+
+  "kycIdFrontPhoto": "신분증 앞면 사진",
+  "kycIdFrontMessage": "신분증 앞면 사진을 촬영하세요",
+  "kycIdBackPhoto": "신분증 뒷면 사진",
+  "kycIdBackMessage": "신분증 뒷면 사진을 촬영하세요",
+  "kycCamera": "카메라",
+  "kycGallery": "갤러리",
+  "kycChooseSource": "소스 선택:",
+  "kycFailedCaptureImage": "이미지 캡처 실패",
+  "kycFailedCaptureSelfie": "셀카 촬영 실패",
+  "kycCameraNotAvailable": "카메라를 사용할 수 없습니다",
+  "kycCameraNotAvailableMessage": "카메라를 사용할 수 없습니다. 대신 갤러리에서 이미지를 선택하시겠습니까?",
+  "kycUseGallery": "갤러리 사용",
+  "kycDocumentsLocked": "검토 대기 중인 문서는 잠겨 있습니다. 인증이 완료될 때까지 변경할 수 없습니다.",
+  "kycVerificationSubmittedSuccessfully": "인증이 성공적으로 제출되었습니다",
+  "kycVerificationSubmitted": "인증 제출됨",
+  "kycThankYouSubmitting": "인증 서류를 제출해 주셔서 감사합니다!",
+  "kycWhatHappensNext": "다음 단계:",
+  "kycReviewTime": "저희 팀이 24~48시간 이내에 문서를 검토합니다",
+  "kycEmailNotification": "인증이 완료되면 이메일을 받게 됩니다",
+  "kycCheckEmail": "인증 상태 업데이트를 위해 이메일을 확인하세요",
+  "kycLocked": "문서가 잠겨 있으며 검토 중에는 변경할 수 없습니다",
+  "kycRecommendSignOut": "로그아웃 후 나중에 인증 결과를 확인하시는 것을 권장합니다.",
+  "kycStaySignedIn": "로그인 유지",
+  "kycVerificationPending": "인증 대기 중",
+  "kycVerificationPendingSubtitle": "문서를 검토 중입니다",
+  "kycVerificationApproved": "인증 승인됨",
+  "kycVerificationApprovedSubtitle": "이제 모든 제공자 기능에 액세스할 수 있습니다",
+  "kycVerificationRejected": "인증 거부됨",
+  "kycVerificationRejectedSubtitle": "아래 메모를 검토하고 다시 제출하세요",
+  "kycVerificationRequired": "인증 필요",
+  "kycVerificationRequiredSubtitle": "제공자 기능에 액세스하려면 인증을 완료하세요",
+  "kycReviewNotes": "검토 메모",
+  "kycIdCardFront": "신분증 (앞면)",
+  "kycIdCardBack": "신분증 (뒷면)",
+  "kycVerificationSelfie": "인증 셀카",
+  "kycButtonLocked": "잠김",
+  "kycCaptureIdFront": "신분증 앞면 촬영",
+  "kycCaptureIdBack": "신분증 뒷면 촬영",
+  "kycDocumentsLockedButton": "문서 잠김",
+  "kycTipsTitle": "📸 좋은 사진을 위한 팁:",
+  "kycTipGoodLighting": "• 좋은 조명을 사용하세요",
+  "kycTipFlatCard": "• 신분증을 평평한 곳에 놓으세요",
+  "kycTipReadableText": "• 모든 텍스트가 읽을 수 있는지 확인하세요",
+  "kycTipFaceCamera": "• 셀카는 카메라를 정면으로 보세요",
+  "kycTipAvoidGlare": "• 빛 반사나 그림자를 피하세요",
+  "kycFailedSubmitVerification": "인증 제출 실패",
+
+  "paystackSetupTitle": "지급 계정 설정",
+  "paystackVerifying": "확인 중...",
+  "paystackVerificationSuccess": "지급 설정이 성공적으로 저장되었습니다!",
+  "paystackVerificationFailed": "지급 설정 저장 실패",
+  "paystackSelectBank": "은행 선택",
+  "paystackAccountNumber": "계좌번호",
+  "paystackVerifyAccount": "계정 확인",
+  "paystackAccountVerified": "계정 확인됨",
+  "paystackSavePayoutAccount": "지급 계정 저장",
+  "paystackNoBanksAvailable": "{country}에 사용 가능한 은행이 없습니다",
+  "@paystackNoBanksAvailable": {
+    "placeholders": {
+      "country": {}
+    }
+  },
+  "paystackRetry": "재시도",
+  "paystackPayoutsInfo": "수익은 이 계정으로 전송됩니다. 지급은 24시간 이내에 처리됩니다.",
+  "paystackConnected": "계정: 연결됨",
+  "paystackNotConnected": "계정: 연결되지 않음",
+  "paystackDetailsSubmitted": "제출된 세부정보:",
+  "paystackPayoutsEnabled": "지급 활성화:",
+  "paystackYes": "예",
+  "paystackNo": "아니오",
+  "paystackFinishSetup": "Stripe 설정 완료",
+  "paystackConnectStripe": "Stripe 연결",
+  "paystackOpenDashboard": "Stripe 대시보드 열기",
+  "paystackMustFinishSetup": "현금 인출 전에 Stripe 설정을 완료해야 합니다.",
+  "paystackPayouts": "Paystack 지급",
+  "paystackAddBankDetails": "Paystack을 통해 지급을 받으려면 지급 설정에서 은행 계좌 정보를 추가하세요.",
+  "paystackOpenSettings": "지급 설정 열기",
+
+  "payoutPaystackForCountry": "{country}의 Paystack을 통한 지급",
+  "@payoutPaystackForCountry": {
+    "placeholders": {
+      "country": {}
+    }
+  },
+  "payoutFlutterwaveForCountry": "{country}의 지급은 Flutterwave를 통해 처리됩니다",
+  "@payoutFlutterwaveForCountry": {
+    "placeholders": {
+      "country": {}
+    }
+  },
+  "payoutStripeConnect": "Stripe Connect",
+  "payoutBankAccountDetails": "은행 계좌 세부정보",
+  "payoutAccountHolderName": "예금주명",
+  "payoutAccountHolderNameHint": "은행 계좌에 표시된 이름을 입력하세요",
+  "payoutSelectBank": "은행 선택 *",
+  "payoutBankName": "은행명 *",
+  "payoutBankNameManual": "은행명 (수동)",
+  "payoutBankNameHint": "예: GCB Bank, Ecobank",
+  "payoutBankCode": "은행 코드 *",
+  "payoutBankCodeManual": "은행 코드 (수동)",
+  "payoutBankCodeHint": "Flutterwave 은행 코드",
+  "payoutBankCodeHelper": "은행 코드를 모르는 경우 지원팀에 문의하세요",
+  "payoutAccountNumber": "계좌번호 *",
+  "payoutAccountNumberHint": "은행 계좌번호를 입력하세요",
+  "payoutMobileMoney": "모바일 머니",
+  "payoutFullName": "전체 이름 (등록된 대로) *",
+  "payoutFullNameHint": "모바일 머니 계정에 등록된 이름",
+  "payoutMobileNetwork": "모바일 네트워크 *",
+  "payoutSelectNetwork": "모바일 네트워크 선택",
+  "payoutMobileNetworkHint": "예: MTN, Vodafone, Airtel",
+  "payoutCountryCode": "국가 코드",
+  "payoutMobileMoneyNumber": "모바일 머니 번호 *",
+  "payoutMobileMoneyNumberHint": "예: 0541234567",
+  "payoutZipCode": "우편번호",
+  "payoutZipCodeHint": "네트워크에서 필요한 경우",
+  "payoutMethod": "지급 방법",
+  "payoutBankTransfer": "은행 송금",
+  "payoutCurrency": "통화",
+  "payoutCurrencyLocked": "{country} 통화로 잠김",
+  "@payoutCurrencyLocked": {
+    "placeholders": {
+      "country": {}
+    }
+  },
+  "payoutBeneficiaryId": "수취인 ID",
+  "payoutBeneficiaryIdHint": "선택사항 - 반복 송금용",
+  "payoutSchedule": "지급 일정",
+  "payoutFrequency": "지급 빈도",
+  "payoutFrequencyWeekly": "주간",
+  "payoutFrequencyMonthly": "월간 (매월 1일)",
+  "payoutDayHelper": "사용 가능: 화요일, 목요일, 금요일",
+  "payoutMonthlyInfo": "월간 지급은 매월 1일에 처리됩니다.",
+  "payoutInstantCashout": "즉시 현금 인출",
+  "payoutInstantCashoutInfo": "• 무제한 즉시 현금 인출 가능\n• 즉시 현금 인출에 5% 수수료 적용\n• 예약된 지급은 수수료 없음",
+  "payoutNextScheduled": "다음 예정된 지급",
+  "payoutYourLocalTime": "현지 시간 ({timezone})",
+  "@payoutYourLocalTime": {
+    "placeholders": {
+      "timezone": {}
+    }
+  },
+  "payoutAmountToCashOut": "인출 금액",
+  "payoutMinMaxRange": "최소: {min} - 최대: {max}",
+  "@payoutMinMaxRange": {
+    "placeholders": {
+      "min": {},
+      "max": {}
+    }
+  },
+  "payoutMaxButton": "최대",
+  "payoutCashOutNow": "현금 인출 (즉시)",
+  "payoutAvailableBalance": "사용 가능 잔액",
+  "payoutPendingFunds": "보류 중",
+  "payoutPendingInfo": "보류 중인 자금은 보류 기간 후에 사용 가능합니다",
+  "payoutLifetimeEarnings": "총 수익",
+  "payoutTotalCashedOut": "총 인출액",
+  "payoutUnlimitedCashouts": "무제한",
+
+  "mainHello": "안녕하세요",
+  "mainViewProfile": "프로필 보기",
+  "mainBookings": "예약",
+  "mainNotifications": "알림",
+  "mainReferral": "추천",
+  "mainSettings": "설정",
+  "mainHelp": "도움말",
+  "mainWallet": "지갑",
+  "mainEarnings": "수익",
+  "mainOpenJobs": "진행 중인 작업",
+  "mainAssignedJobs": "할당된 작업",
+  "mainMyReputation": "내 평판",
+
+  "reputationTitle": "내 평판",
+  "reputationYourCustomerRating": "고객 평가",
+  "reputationBasedOnReviews": "{count}개의 리뷰 기반",
+  "@reputationBasedOnReviews": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationExcellentCustomer": "⭐ 우수 고객",
+  "reputationGreatCustomer": "👍 훌륭한 고객",
+  "reputationGoodCustomer": "✓ 좋은 고객",
+  "reputationAverage": "평균",
+  "reputationNeedsImprovement": "개선 필요",
+  "reputationNoRatingYet": "아직 평가 없음",
+  "reputationWhatProvidersSay": "제공자의 평가",
+  "reputationNoReviews": "아직 리뷰 없음",
+  "reputationNoReviewsHelp": "예약을 완료하여 평판을 쌓으세요!\n서비스 완료 후 제공자가 평가합니다.",
+  "reputationShowMore": "더 보기 ({count}개 더)",
+  "@reputationShowMore": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationShowLess": "간략히 보기",
+  "reputationJustNow": "방금",
+  "reputationMinutesAgo": "{minutes}분 전",
+  "@reputationMinutesAgo": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationHoursAgo": "{hours}시간 전",
+  "@reputationHoursAgo": {
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationDaysAgo": "{days}일 전",
+  "@reputationDaysAgo": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationWeeksAgo": "{weeks}주 전",
+  "@reputationWeeksAgo": {
+    "placeholders": {
+      "weeks": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationMonthsAgo": "{months}개월 전",
+  "@reputationMonthsAgo": {
+    "placeholders": {
+      "months": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationYearsAgo": "{years}년 전",
+  "@reputationYearsAgo": {
+    "placeholders": {
+      "years": {
+        "type": "int"
+      }
+    }
+  },
+
+  "walletTitle": "지갑",
+  "walletCashOutFailed": "현금 인출 실패.",
+  
+  "notificationsTitle": "알림",
+  "notificationsNoNotifications": "아직 알림이 없습니다.",
+
   "liveLocationTrackingTitle": "실시간 위치 추적",
   "live": "실시간",
   "locationServicesDisabled": "위치 서비스가 비활성화되어 있습니다.",

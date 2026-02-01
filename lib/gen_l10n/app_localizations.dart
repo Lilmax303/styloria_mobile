@@ -4153,6 +4153,966 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Location access denied. You cannot be available for bookings without location enabled.'**
   String get providerLocationDeniedCannotBeAvailable;
+
+  /// No description provided for @signOut.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign out'**
+  String get signOut;
+
+  /// No description provided for @kycIdFrontPhoto.
+  ///
+  /// In en, this message translates to:
+  /// **'ID Front Photo'**
+  String get kycIdFrontPhoto;
+
+  /// No description provided for @kycIdFrontMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Take a photo of the front of your ID card'**
+  String get kycIdFrontMessage;
+
+  /// No description provided for @kycIdBackPhoto.
+  ///
+  /// In en, this message translates to:
+  /// **'ID Back Photo'**
+  String get kycIdBackPhoto;
+
+  /// No description provided for @kycIdBackMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Take a photo of the back of your ID card'**
+  String get kycIdBackMessage;
+
+  /// No description provided for @kycCamera.
+  ///
+  /// In en, this message translates to:
+  /// **'Camera'**
+  String get kycCamera;
+
+  /// No description provided for @kycGallery.
+  ///
+  /// In en, this message translates to:
+  /// **'Gallery'**
+  String get kycGallery;
+
+  /// No description provided for @kycChooseSource.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose source:'**
+  String get kycChooseSource;
+
+  /// No description provided for @kycFailedCaptureImage.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to capture image'**
+  String get kycFailedCaptureImage;
+
+  /// No description provided for @kycFailedCaptureSelfie.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to capture selfie'**
+  String get kycFailedCaptureSelfie;
+
+  /// No description provided for @kycCameraNotAvailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Camera not available'**
+  String get kycCameraNotAvailable;
+
+  /// No description provided for @kycCameraNotAvailableMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Camera is not available. Would you like to select an image from your gallery instead?'**
+  String get kycCameraNotAvailableMessage;
+
+  /// No description provided for @kycUseGallery.
+  ///
+  /// In en, this message translates to:
+  /// **'Use Gallery'**
+  String get kycUseGallery;
+
+  /// No description provided for @kycDocumentsLocked.
+  ///
+  /// In en, this message translates to:
+  /// **'Documents are locked while pending review. You cannot make changes until verification is complete.'**
+  String get kycDocumentsLocked;
+
+  /// No description provided for @kycVerificationSubmittedSuccessfully.
+  ///
+  /// In en, this message translates to:
+  /// **'Verification submitted successfully'**
+  String get kycVerificationSubmittedSuccessfully;
+
+  /// No description provided for @kycVerificationSubmitted.
+  ///
+  /// In en, this message translates to:
+  /// **'Verification Submitted'**
+  String get kycVerificationSubmitted;
+
+  /// No description provided for @kycThankYouSubmitting.
+  ///
+  /// In en, this message translates to:
+  /// **'Thank you for submitting your verification documents!'**
+  String get kycThankYouSubmitting;
+
+  /// No description provided for @kycWhatHappensNext.
+  ///
+  /// In en, this message translates to:
+  /// **'What happens next:'**
+  String get kycWhatHappensNext;
+
+  /// No description provided for @kycReviewTime.
+  ///
+  /// In en, this message translates to:
+  /// **'Our team will review your documents within 24-48 hours'**
+  String get kycReviewTime;
+
+  /// No description provided for @kycEmailNotification.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'ll receive an email once your verification is complete'**
+  String get kycEmailNotification;
+
+  /// No description provided for @kycCheckEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Check your email for updates on your verification status'**
+  String get kycCheckEmail;
+
+  /// No description provided for @kycLocked.
+  ///
+  /// In en, this message translates to:
+  /// **'Your documents are now locked and cannot be changed during review'**
+  String get kycLocked;
+
+  /// No description provided for @kycRecommendSignOut.
+  ///
+  /// In en, this message translates to:
+  /// **'We recommend signing out and checking back later for your verification result.'**
+  String get kycRecommendSignOut;
+
+  /// No description provided for @kycStaySignedIn.
+  ///
+  /// In en, this message translates to:
+  /// **'Stay Signed In'**
+  String get kycStaySignedIn;
+
+  /// No description provided for @kycVerificationPending.
+  ///
+  /// In en, this message translates to:
+  /// **'Verification Pending'**
+  String get kycVerificationPending;
+
+  /// No description provided for @kycVerificationPendingSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Your documents are being reviewed'**
+  String get kycVerificationPendingSubtitle;
+
+  /// No description provided for @kycVerificationApproved.
+  ///
+  /// In en, this message translates to:
+  /// **'Verification Approved'**
+  String get kycVerificationApproved;
+
+  /// No description provided for @kycVerificationApprovedSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'You can now access all provider features'**
+  String get kycVerificationApprovedSubtitle;
+
+  /// No description provided for @kycVerificationRejected.
+  ///
+  /// In en, this message translates to:
+  /// **'Verification Rejected'**
+  String get kycVerificationRejected;
+
+  /// No description provided for @kycVerificationRejectedSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Please review the notes below and resubmit'**
+  String get kycVerificationRejectedSubtitle;
+
+  /// No description provided for @kycVerificationRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Verification Required'**
+  String get kycVerificationRequired;
+
+  /// No description provided for @kycVerificationRequiredSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Complete verification to access provider features'**
+  String get kycVerificationRequiredSubtitle;
+
+  /// No description provided for @kycReviewNotes.
+  ///
+  /// In en, this message translates to:
+  /// **'Review Notes'**
+  String get kycReviewNotes;
+
+  /// No description provided for @kycIdCardFront.
+  ///
+  /// In en, this message translates to:
+  /// **'ID Card (Front)'**
+  String get kycIdCardFront;
+
+  /// No description provided for @kycIdCardBack.
+  ///
+  /// In en, this message translates to:
+  /// **'ID Card (Back)'**
+  String get kycIdCardBack;
+
+  /// No description provided for @kycVerificationSelfie.
+  ///
+  /// In en, this message translates to:
+  /// **'Verification Selfie'**
+  String get kycVerificationSelfie;
+
+  /// No description provided for @kycButtonLocked.
+  ///
+  /// In en, this message translates to:
+  /// **'Locked'**
+  String get kycButtonLocked;
+
+  /// No description provided for @kycCaptureIdFront.
+  ///
+  /// In en, this message translates to:
+  /// **'Capture ID Front'**
+  String get kycCaptureIdFront;
+
+  /// No description provided for @kycCaptureIdBack.
+  ///
+  /// In en, this message translates to:
+  /// **'Capture ID Back'**
+  String get kycCaptureIdBack;
+
+  /// No description provided for @kycDocumentsLockedButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Documents Locked'**
+  String get kycDocumentsLockedButton;
+
+  /// No description provided for @kycTipsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'📸 Tips for good photos:'**
+  String get kycTipsTitle;
+
+  /// No description provided for @kycTipGoodLighting.
+  ///
+  /// In en, this message translates to:
+  /// **'• Use good lighting'**
+  String get kycTipGoodLighting;
+
+  /// No description provided for @kycTipFlatCard.
+  ///
+  /// In en, this message translates to:
+  /// **'• Place ID card on a flat surface'**
+  String get kycTipFlatCard;
+
+  /// No description provided for @kycTipReadableText.
+  ///
+  /// In en, this message translates to:
+  /// **'• Make sure all text is readable'**
+  String get kycTipReadableText;
+
+  /// No description provided for @kycTipFaceCamera.
+  ///
+  /// In en, this message translates to:
+  /// **'• Face the camera directly for selfie'**
+  String get kycTipFaceCamera;
+
+  /// No description provided for @kycTipAvoidGlare.
+  ///
+  /// In en, this message translates to:
+  /// **'• Avoid glare or shadows'**
+  String get kycTipAvoidGlare;
+
+  /// No description provided for @kycFailedSubmitVerification.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to submit verification'**
+  String get kycFailedSubmitVerification;
+
+  /// No description provided for @paystackSetupTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Setup Payout Account'**
+  String get paystackSetupTitle;
+
+  /// No description provided for @paystackVerifying.
+  ///
+  /// In en, this message translates to:
+  /// **'Verifying...'**
+  String get paystackVerifying;
+
+  /// No description provided for @paystackVerificationSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Payout settings saved successfully!'**
+  String get paystackVerificationSuccess;
+
+  /// No description provided for @paystackVerificationFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to save payout settings'**
+  String get paystackVerificationFailed;
+
+  /// No description provided for @paystackSelectBank.
+  ///
+  /// In en, this message translates to:
+  /// **'Select Your Bank'**
+  String get paystackSelectBank;
+
+  /// No description provided for @paystackAccountNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Account Number'**
+  String get paystackAccountNumber;
+
+  /// No description provided for @paystackVerifyAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Verify Account'**
+  String get paystackVerifyAccount;
+
+  /// No description provided for @paystackAccountVerified.
+  ///
+  /// In en, this message translates to:
+  /// **'Account Verified'**
+  String get paystackAccountVerified;
+
+  /// No description provided for @paystackSavePayoutAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Save Payout Account'**
+  String get paystackSavePayoutAccount;
+
+  /// No description provided for @paystackNoBanksAvailable.
+  ///
+  /// In en, this message translates to:
+  /// **'No banks available for {country}'**
+  String paystackNoBanksAvailable(Object country);
+
+  /// No description provided for @paystackRetry.
+  ///
+  /// In en, this message translates to:
+  /// **'Retry'**
+  String get paystackRetry;
+
+  /// No description provided for @paystackPayoutsInfo.
+  ///
+  /// In en, this message translates to:
+  /// **'Your earnings will be sent to this account. Payouts are processed within 24 hours.'**
+  String get paystackPayoutsInfo;
+
+  /// No description provided for @paystackConnected.
+  ///
+  /// In en, this message translates to:
+  /// **'Account: connected'**
+  String get paystackConnected;
+
+  /// No description provided for @paystackNotConnected.
+  ///
+  /// In en, this message translates to:
+  /// **'Account: not connected'**
+  String get paystackNotConnected;
+
+  /// No description provided for @paystackDetailsSubmitted.
+  ///
+  /// In en, this message translates to:
+  /// **'Details submitted:'**
+  String get paystackDetailsSubmitted;
+
+  /// No description provided for @paystackPayoutsEnabled.
+  ///
+  /// In en, this message translates to:
+  /// **'Payouts enabled:'**
+  String get paystackPayoutsEnabled;
+
+  /// No description provided for @paystackYes.
+  ///
+  /// In en, this message translates to:
+  /// **'yes'**
+  String get paystackYes;
+
+  /// No description provided for @paystackNo.
+  ///
+  /// In en, this message translates to:
+  /// **'no'**
+  String get paystackNo;
+
+  /// No description provided for @paystackFinishSetup.
+  ///
+  /// In en, this message translates to:
+  /// **'Finish Stripe Setup'**
+  String get paystackFinishSetup;
+
+  /// No description provided for @paystackConnectStripe.
+  ///
+  /// In en, this message translates to:
+  /// **'Connect Stripe'**
+  String get paystackConnectStripe;
+
+  /// No description provided for @paystackOpenDashboard.
+  ///
+  /// In en, this message translates to:
+  /// **'Open Stripe Dashboard'**
+  String get paystackOpenDashboard;
+
+  /// No description provided for @paystackMustFinishSetup.
+  ///
+  /// In en, this message translates to:
+  /// **'You must finish Stripe setup before you can cash out.'**
+  String get paystackMustFinishSetup;
+
+  /// No description provided for @paystackPayouts.
+  ///
+  /// In en, this message translates to:
+  /// **'Paystack Payouts'**
+  String get paystackPayouts;
+
+  /// No description provided for @paystackAddBankDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Add your bank account details in Payout Settings to receive payouts via Paystack.'**
+  String get paystackAddBankDetails;
+
+  /// No description provided for @paystackOpenSettings.
+  ///
+  /// In en, this message translates to:
+  /// **'Open Payout Settings'**
+  String get paystackOpenSettings;
+
+  /// No description provided for @payoutPaystackForCountry.
+  ///
+  /// In en, this message translates to:
+  /// **'Payouts via Paystack for {country}'**
+  String payoutPaystackForCountry(Object country);
+
+  /// No description provided for @payoutFlutterwaveForCountry.
+  ///
+  /// In en, this message translates to:
+  /// **'Payouts are processed via Flutterwave for {country}'**
+  String payoutFlutterwaveForCountry(Object country);
+
+  /// No description provided for @payoutStripeConnect.
+  ///
+  /// In en, this message translates to:
+  /// **'Stripe Connect'**
+  String get payoutStripeConnect;
+
+  /// No description provided for @payoutBankAccountDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Bank Account Details'**
+  String get payoutBankAccountDetails;
+
+  /// No description provided for @payoutAccountHolderName.
+  ///
+  /// In en, this message translates to:
+  /// **'Account Holder Name'**
+  String get payoutAccountHolderName;
+
+  /// No description provided for @payoutAccountHolderNameHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter name as it appears on your bank account'**
+  String get payoutAccountHolderNameHint;
+
+  /// No description provided for @payoutSelectBank.
+  ///
+  /// In en, this message translates to:
+  /// **'Select Bank *'**
+  String get payoutSelectBank;
+
+  /// No description provided for @payoutBankName.
+  ///
+  /// In en, this message translates to:
+  /// **'Bank Name *'**
+  String get payoutBankName;
+
+  /// No description provided for @payoutBankNameManual.
+  ///
+  /// In en, this message translates to:
+  /// **'Bank Name (manual)'**
+  String get payoutBankNameManual;
+
+  /// No description provided for @payoutBankNameHint.
+  ///
+  /// In en, this message translates to:
+  /// **'e.g., GCB Bank, Ecobank'**
+  String get payoutBankNameHint;
+
+  /// No description provided for @payoutBankCode.
+  ///
+  /// In en, this message translates to:
+  /// **'Bank Code *'**
+  String get payoutBankCode;
+
+  /// No description provided for @payoutBankCodeManual.
+  ///
+  /// In en, this message translates to:
+  /// **'Bank Code (manual)'**
+  String get payoutBankCodeManual;
+
+  /// No description provided for @payoutBankCodeHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Flutterwave bank code'**
+  String get payoutBankCodeHint;
+
+  /// No description provided for @payoutBankCodeHelper.
+  ///
+  /// In en, this message translates to:
+  /// **'Contact support if unsure of bank code'**
+  String get payoutBankCodeHelper;
+
+  /// No description provided for @payoutAccountNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Account Number *'**
+  String get payoutAccountNumber;
+
+  /// No description provided for @payoutAccountNumberHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your bank account number'**
+  String get payoutAccountNumberHint;
+
+  /// No description provided for @payoutMobileMoney.
+  ///
+  /// In en, this message translates to:
+  /// **'Mobile Money'**
+  String get payoutMobileMoney;
+
+  /// No description provided for @payoutFullName.
+  ///
+  /// In en, this message translates to:
+  /// **'Full Name (as registered) *'**
+  String get payoutFullName;
+
+  /// No description provided for @payoutFullNameHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Name registered on your mobile money account'**
+  String get payoutFullNameHint;
+
+  /// No description provided for @payoutMobileNetwork.
+  ///
+  /// In en, this message translates to:
+  /// **'Mobile Network *'**
+  String get payoutMobileNetwork;
+
+  /// No description provided for @payoutSelectNetwork.
+  ///
+  /// In en, this message translates to:
+  /// **'Select your mobile network'**
+  String get payoutSelectNetwork;
+
+  /// No description provided for @payoutMobileNetworkHint.
+  ///
+  /// In en, this message translates to:
+  /// **'e.g., MTN, Vodafone, Airtel'**
+  String get payoutMobileNetworkHint;
+
+  /// No description provided for @payoutCountryCode.
+  ///
+  /// In en, this message translates to:
+  /// **'Country Code'**
+  String get payoutCountryCode;
+
+  /// No description provided for @payoutMobileMoneyNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Mobile Money Number *'**
+  String get payoutMobileMoneyNumber;
+
+  /// No description provided for @payoutMobileMoneyNumberHint.
+  ///
+  /// In en, this message translates to:
+  /// **'e.g., 0541234567'**
+  String get payoutMobileMoneyNumberHint;
+
+  /// No description provided for @payoutZipCode.
+  ///
+  /// In en, this message translates to:
+  /// **'ZIP/Postal Code'**
+  String get payoutZipCode;
+
+  /// No description provided for @payoutZipCodeHint.
+  ///
+  /// In en, this message translates to:
+  /// **'If required by your network'**
+  String get payoutZipCodeHint;
+
+  /// No description provided for @payoutMethod.
+  ///
+  /// In en, this message translates to:
+  /// **'Payout Method'**
+  String get payoutMethod;
+
+  /// No description provided for @payoutBankTransfer.
+  ///
+  /// In en, this message translates to:
+  /// **'Bank Transfer'**
+  String get payoutBankTransfer;
+
+  /// No description provided for @payoutCurrency.
+  ///
+  /// In en, this message translates to:
+  /// **'Currency'**
+  String get payoutCurrency;
+
+  /// No description provided for @payoutCurrencyLocked.
+  ///
+  /// In en, this message translates to:
+  /// **'Locked to {country} currency'**
+  String payoutCurrencyLocked(Object country);
+
+  /// No description provided for @payoutBeneficiaryId.
+  ///
+  /// In en, this message translates to:
+  /// **'Beneficiary ID'**
+  String get payoutBeneficiaryId;
+
+  /// No description provided for @payoutBeneficiaryIdHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Optional - for recurring transfers'**
+  String get payoutBeneficiaryIdHint;
+
+  /// No description provided for @payoutSchedule.
+  ///
+  /// In en, this message translates to:
+  /// **'Payout Schedule'**
+  String get payoutSchedule;
+
+  /// No description provided for @payoutFrequency.
+  ///
+  /// In en, this message translates to:
+  /// **'Payout Frequency'**
+  String get payoutFrequency;
+
+  /// No description provided for @payoutFrequencyWeekly.
+  ///
+  /// In en, this message translates to:
+  /// **'Weekly'**
+  String get payoutFrequencyWeekly;
+
+  /// No description provided for @payoutFrequencyMonthly.
+  ///
+  /// In en, this message translates to:
+  /// **'Monthly (1st of each month)'**
+  String get payoutFrequencyMonthly;
+
+  /// No description provided for @payoutDayHelper.
+  ///
+  /// In en, this message translates to:
+  /// **'Available: Tuesday, Thursday, Friday'**
+  String get payoutDayHelper;
+
+  /// No description provided for @payoutMonthlyInfo.
+  ///
+  /// In en, this message translates to:
+  /// **'Monthly payouts are processed on the 1st of each month.'**
+  String get payoutMonthlyInfo;
+
+  /// No description provided for @payoutInstantCashout.
+  ///
+  /// In en, this message translates to:
+  /// **'Instant Cashout'**
+  String get payoutInstantCashout;
+
+  /// No description provided for @payoutInstantCashoutInfo.
+  ///
+  /// In en, this message translates to:
+  /// **'• Unlimited instant cashouts available\n• 5% fee applies to instant cashouts\n• Scheduled payouts have no fees'**
+  String get payoutInstantCashoutInfo;
+
+  /// No description provided for @payoutNextScheduled.
+  ///
+  /// In en, this message translates to:
+  /// **'Next Scheduled Payout'**
+  String get payoutNextScheduled;
+
+  /// No description provided for @payoutYourLocalTime.
+  ///
+  /// In en, this message translates to:
+  /// **'Your local time ({timezone})'**
+  String payoutYourLocalTime(Object timezone);
+
+  /// No description provided for @payoutAmountToCashOut.
+  ///
+  /// In en, this message translates to:
+  /// **'Amount to cash out'**
+  String get payoutAmountToCashOut;
+
+  /// No description provided for @payoutMinMaxRange.
+  ///
+  /// In en, this message translates to:
+  /// **'Min: {min} - Max: {max}'**
+  String payoutMinMaxRange(Object min, Object max);
+
+  /// No description provided for @payoutMaxButton.
+  ///
+  /// In en, this message translates to:
+  /// **'MAX'**
+  String get payoutMaxButton;
+
+  /// No description provided for @payoutCashOutNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Cash Out (Instant)'**
+  String get payoutCashOutNow;
+
+  /// No description provided for @payoutAvailableBalance.
+  ///
+  /// In en, this message translates to:
+  /// **'Available Balance'**
+  String get payoutAvailableBalance;
+
+  /// No description provided for @payoutPendingFunds.
+  ///
+  /// In en, this message translates to:
+  /// **'Pending'**
+  String get payoutPendingFunds;
+
+  /// No description provided for @payoutPendingInfo.
+  ///
+  /// In en, this message translates to:
+  /// **'Pending funds will be available after the hold period'**
+  String get payoutPendingInfo;
+
+  /// No description provided for @payoutLifetimeEarnings.
+  ///
+  /// In en, this message translates to:
+  /// **'Lifetime Earnings'**
+  String get payoutLifetimeEarnings;
+
+  /// No description provided for @payoutTotalCashedOut.
+  ///
+  /// In en, this message translates to:
+  /// **'Total Cashed Out'**
+  String get payoutTotalCashedOut;
+
+  /// No description provided for @payoutUnlimitedCashouts.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlimited'**
+  String get payoutUnlimitedCashouts;
+
+  /// No description provided for @mainHello.
+  ///
+  /// In en, this message translates to:
+  /// **'Hello'**
+  String get mainHello;
+
+  /// No description provided for @mainViewProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'View Profile'**
+  String get mainViewProfile;
+
+  /// No description provided for @mainBookings.
+  ///
+  /// In en, this message translates to:
+  /// **'Bookings'**
+  String get mainBookings;
+
+  /// No description provided for @mainNotifications.
+  ///
+  /// In en, this message translates to:
+  /// **'Notifications'**
+  String get mainNotifications;
+
+  /// No description provided for @mainReferral.
+  ///
+  /// In en, this message translates to:
+  /// **'Referral'**
+  String get mainReferral;
+
+  /// No description provided for @mainSettings.
+  ///
+  /// In en, this message translates to:
+  /// **'Settings'**
+  String get mainSettings;
+
+  /// No description provided for @mainHelp.
+  ///
+  /// In en, this message translates to:
+  /// **'Help'**
+  String get mainHelp;
+
+  /// No description provided for @mainWallet.
+  ///
+  /// In en, this message translates to:
+  /// **'Wallet'**
+  String get mainWallet;
+
+  /// No description provided for @mainEarnings.
+  ///
+  /// In en, this message translates to:
+  /// **'Earnings'**
+  String get mainEarnings;
+
+  /// No description provided for @mainOpenJobs.
+  ///
+  /// In en, this message translates to:
+  /// **'Open Jobs'**
+  String get mainOpenJobs;
+
+  /// No description provided for @mainAssignedJobs.
+  ///
+  /// In en, this message translates to:
+  /// **'Assigned Jobs'**
+  String get mainAssignedJobs;
+
+  /// No description provided for @mainMyReputation.
+  ///
+  /// In en, this message translates to:
+  /// **'My Reputation'**
+  String get mainMyReputation;
+
+  /// No description provided for @reputationTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'My Reputation'**
+  String get reputationTitle;
+
+  /// No description provided for @reputationYourCustomerRating.
+  ///
+  /// In en, this message translates to:
+  /// **'Your Customer Rating'**
+  String get reputationYourCustomerRating;
+
+  /// No description provided for @reputationBasedOnReviews.
+  ///
+  /// In en, this message translates to:
+  /// **'Based on {count} {count, plural, =1{review} other{reviews}}'**
+  String reputationBasedOnReviews(int count);
+
+  /// No description provided for @reputationExcellentCustomer.
+  ///
+  /// In en, this message translates to:
+  /// **'⭐ Excellent Customer'**
+  String get reputationExcellentCustomer;
+
+  /// No description provided for @reputationGreatCustomer.
+  ///
+  /// In en, this message translates to:
+  /// **'👍 Great Customer'**
+  String get reputationGreatCustomer;
+
+  /// No description provided for @reputationGoodCustomer.
+  ///
+  /// In en, this message translates to:
+  /// **'✓ Good Customer'**
+  String get reputationGoodCustomer;
+
+  /// No description provided for @reputationAverage.
+  ///
+  /// In en, this message translates to:
+  /// **'Average'**
+  String get reputationAverage;
+
+  /// No description provided for @reputationNeedsImprovement.
+  ///
+  /// In en, this message translates to:
+  /// **'Needs Improvement'**
+  String get reputationNeedsImprovement;
+
+  /// No description provided for @reputationNoRatingYet.
+  ///
+  /// In en, this message translates to:
+  /// **'No Rating Yet'**
+  String get reputationNoRatingYet;
+
+  /// No description provided for @reputationWhatProvidersSay.
+  ///
+  /// In en, this message translates to:
+  /// **'What Providers Say About You'**
+  String get reputationWhatProvidersSay;
+
+  /// No description provided for @reputationNoReviews.
+  ///
+  /// In en, this message translates to:
+  /// **'No Reviews Yet'**
+  String get reputationNoReviews;
+
+  /// No description provided for @reputationNoReviewsHelp.
+  ///
+  /// In en, this message translates to:
+  /// **'Complete bookings to build your reputation!\nProviders will rate you after completing services.'**
+  String get reputationNoReviewsHelp;
+
+  /// No description provided for @reputationShowMore.
+  ///
+  /// In en, this message translates to:
+  /// **'Show More ({count} more)'**
+  String reputationShowMore(int count);
+
+  /// No description provided for @reputationShowLess.
+  ///
+  /// In en, this message translates to:
+  /// **'Show Less'**
+  String get reputationShowLess;
+
+  /// No description provided for @reputationJustNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Just now'**
+  String get reputationJustNow;
+
+  /// No description provided for @reputationMinutesAgo.
+  ///
+  /// In en, this message translates to:
+  /// **'{minutes} min ago'**
+  String reputationMinutesAgo(int minutes);
+
+  /// No description provided for @reputationHoursAgo.
+  ///
+  /// In en, this message translates to:
+  /// **'{hours} {hours, plural, =1{hour} other{hours}} ago'**
+  String reputationHoursAgo(int hours);
+
+  /// No description provided for @reputationDaysAgo.
+  ///
+  /// In en, this message translates to:
+  /// **'{days} {days, plural, =1{day} other{days}} ago'**
+  String reputationDaysAgo(int days);
+
+  /// No description provided for @reputationWeeksAgo.
+  ///
+  /// In en, this message translates to:
+  /// **'{weeks} {weeks, plural, =1{week} other{weeks}} ago'**
+  String reputationWeeksAgo(int weeks);
+
+  /// No description provided for @reputationMonthsAgo.
+  ///
+  /// In en, this message translates to:
+  /// **'{months} {months, plural, =1{month} other{months}} ago'**
+  String reputationMonthsAgo(int months);
+
+  /// No description provided for @reputationYearsAgo.
+  ///
+  /// In en, this message translates to:
+  /// **'{years} {years, plural, =1{year} other{years}} ago'**
+  String reputationYearsAgo(int years);
+
+  /// No description provided for @notificationsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Notifications'**
+  String get notificationsTitle;
+
+  /// No description provided for @notificationsNoNotifications.
+  ///
+  /// In en, this message translates to:
+  /// **'No notifications yet.'**
+  String get notificationsNoNotifications;
 }
 
 class _AppLocalizationsDelegate

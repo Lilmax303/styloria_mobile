@@ -6,6 +6,7 @@ import 'api_client.dart';
 import 'provider_payout_settings_screen.dart';
 import 'package:styloria_mobile/gen_l10n/app_localizations.dart';
 import 'utils/datetime_helper.dart';
+import 'package:intl/intl.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'africa_countries.dart';
 
@@ -384,11 +385,11 @@ class _ProviderWalletScreenState extends State<ProviderWalletScreen> {
                         children: [
                           Icon(Icons.verified, color: Colors.green.shade700, size: 20),
                           const SizedBox(width: 8),
-                          const Text('Paystack Payouts', style: TextStyle(fontWeight: FontWeight.bold)),
+                          Text(l10n.paystackPayouts, style: const TextStyle(fontWeight: FontWeight.bold)),
                         ],
                       ),
                       const SizedBox(height: 6),
-                      const Text('Add your bank account details in Payout Settings to receive payouts via Paystack.'),
+                      Text(l10n.paystackAddBankDetails),
                       const SizedBox(height: 10),
                       SizedBox(
                         width: double.infinity,
@@ -401,7 +402,7 @@ class _ProviderWalletScreenState extends State<ProviderWalletScreen> {
                             await _loadWallets();
                             await _loadInstantCashoutInfo();
                           },
-                          child: const Text('Open Payout Settings'),
+                          child: Text(l10n.paystackOpenSettings),
                         ),
                       ),
                     ],
@@ -416,9 +417,9 @@ class _ProviderWalletScreenState extends State<ProviderWalletScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text('Flutterwave Payouts', style: TextStyle(fontWeight: FontWeight.bold)),
+                      Text(l10n.payoutMethod, style: const TextStyle(fontWeight: FontWeight.bold)),
                       const SizedBox(height: 6),
-                      const Text('Add your bank/mobile money details in Payout Settings to receive payouts.'),
+                      Text(l10n.paystackAddBankDetails),
                       const SizedBox(height: 10),
                       SizedBox(
                         width: double.infinity,
@@ -446,12 +447,12 @@ class _ProviderWalletScreenState extends State<ProviderWalletScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text('Stripe Connect', style: TextStyle(fontWeight: FontWeight.bold)),
+                      Text(l10n.payoutStripeConnect, style: const TextStyle(fontWeight: FontWeight.bold)),
                       const SizedBox(height: 6),
                       if (_stripeLoading) const LinearProgressIndicator() else ...[
-                        Text(hasAcct ? 'Account: connected' : 'Account: not connected'),
-                        Text('Details submitted: ${detailsSubmitted ? "yes" : "no"}'),
-                        Text('Payouts enabled: ${payoutsEnabled ? "yes" : "no"}'),
+                        Text(hasAcct ? l10n.paystackConnected : l10n.paystackNotConnected),
+                        Text('${l10n.paystackDetailsSubmitted} ${detailsSubmitted ? l10n.paystackYes : l10n.paystackNo}'),
+                        Text('${l10n.paystackPayoutsEnabled} ${payoutsEnabled ? l10n.paystackYes : l10n.paystackNo}'),
                       ],
                       const SizedBox(height: 10),
                       Wrap(
@@ -461,16 +462,16 @@ class _ProviderWalletScreenState extends State<ProviderWalletScreen> {
                           if (!payoutsEnabled)
                             ElevatedButton(
                               onPressed: _stripeLoading ? null : _openStripeOnboarding,
-                              child: Text(hasAcct ? 'Finish Stripe Setup' : 'Connect Stripe'),
+                              child: Text(hasAcct ? l10n.paystackFinishSetup : l10n.paystackConnectStripe),
                             ),
                           OutlinedButton(
                             onPressed: (!hasAcct || _stripeLoading) ? null : _openStripeDashboard,
-                            child: const Text('Open Stripe Dashboard'),
+                            child: Text(l10n.paystackOpenDashboard),
                           ),
                         ],
                       ),
                       const SizedBox(height: 6),
-                      Text('You must finish Stripe setup before you can cash out.', style: Theme.of(context).textTheme.bodySmall),
+                      Text(l10n.paystackMustFinishSetup, style: Theme.of(context).textTheme.bodySmall),
                     ],
                   ),
                 ),
@@ -553,9 +554,9 @@ class _ProviderWalletScreenState extends State<ProviderWalletScreen> {
           children: [
             Row(
               children: [
-                const Text(
-                  'Instant Cashout',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                Text(
+                  l10n.payoutInstantCashout,
+                  style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
                 ),
                 const Spacer(),
                 if (isEnabled)
@@ -566,7 +567,7 @@ class _ProviderWalletScreenState extends State<ProviderWalletScreen> {
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: Text(
-                      'Unlimited',
+                      l10n.payoutUnlimitedCashouts,
                       style: TextStyle(
                         fontSize: 12,
                         fontWeight: FontWeight.w600,
@@ -587,16 +588,16 @@ class _ProviderWalletScreenState extends State<ProviderWalletScreen> {
                 FilteringTextInputFormatter.allow(RegExp(r'^\d*\.?\d{0,2}')),
               ],
               decoration: InputDecoration(
-                labelText: 'Amount to cash out',
+                labelText: l10n.payoutAmountToCashOut,
                 prefixText: '$currency ',
                 border: const OutlineInputBorder(),
-                helperText: isEnabled ? 'Min: $minAmount - Max: $maxAmount' : null,
+                helperText: isEnabled ? l10n.payoutMinMaxRange(minAmount, maxAmount) : null,
                 suffixIcon: isEnabled
                     ? TextButton(
                         onPressed: () {
                           _cashoutAmountCtrl.text = maxAmount;
                         },
-                        child: const Text('MAX'),
+                        child: Text(l10n.payoutMaxButton),
                       )
                     : null,
               ),
@@ -680,9 +681,9 @@ class _ProviderWalletScreenState extends State<ProviderWalletScreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Text(
-                  'Available Balance',
-                  style: TextStyle(fontSize: 14, color: Colors.grey),
+                Text(
+                  l10n.payoutAvailableBalance,
+                  style: const TextStyle(fontSize: 14, color: Colors.grey),
                 ),
                 IconButton(
                   icon: const Icon(Icons.refresh, size: 20),
@@ -707,7 +708,7 @@ class _ProviderWalletScreenState extends State<ProviderWalletScreen> {
                 Icon(Icons.schedule, size: 16, color: Colors.orange.shade700),
                 const SizedBox(width: 8),
                 Text(
-                  'Pending: ${pending.toStringAsFixed(2)} $currency',
+                  '${l10n.payoutPendingFunds}: ${pending.toStringAsFixed(2)} $currency',
                   style: TextStyle(
                     fontSize: 14,
                     color: Colors.orange.shade700,
@@ -718,8 +719,8 @@ class _ProviderWalletScreenState extends State<ProviderWalletScreen> {
             if (pending > 0) ...[
               const SizedBox(height: 4),
               Text(
-                'Pending funds will be available after the hold period',
-                style: TextStyle(fontSize: 11, color: Colors.grey.shade600),
+                l10n.payoutPendingInfo,
+                style: const TextStyle(fontSize: 11, color: Colors.grey),
               ),
             ],
 
@@ -732,9 +733,9 @@ class _ProviderWalletScreenState extends State<ProviderWalletScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text(
-                        'Lifetime Earnings',
-                        style: TextStyle(fontSize: 12, color: Colors.grey),
+                      Text(
+                        l10n.payoutLifetimeEarnings,
+                        style: const TextStyle(fontSize: 12, color: Colors.grey),
                       ),
                       Text(
                         '${lifetimeEarnings.toStringAsFixed(2)} $currency',
@@ -750,9 +751,9 @@ class _ProviderWalletScreenState extends State<ProviderWalletScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text(
-                        'Total Cashed Out',
-                        style: TextStyle(fontSize: 12, color: Colors.grey),
+                      Text(
+                        l10n.payoutTotalCashedOut,
+                        style: const TextStyle(fontSize: 12, color: Colors.grey),
                       ),
                       Text(
                         '${lifetimePayouts.toStringAsFixed(2)} $currency',

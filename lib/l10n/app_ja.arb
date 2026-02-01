@@ -399,6 +399,264 @@
       "name": {}
     }
   },
+
+  "signOut": "サインアウト",
+
+  "kycIdFrontPhoto": "身分証明書（表面）の写真",
+  "kycIdFrontMessage": "身分証明書の表面を撮影してください",
+  "kycIdBackPhoto": "身分証明書（裏面）の写真",
+  "kycIdBackMessage": "身分証明書の裏面を撮影してください",
+  "kycCamera": "カメラ",
+  "kycGallery": "ギャラリー",
+  "kycChooseSource": "ソースを選択:",
+  "kycFailedCaptureImage": "画像の撮影に失敗しました",
+  "kycFailedCaptureSelfie": "セルフィーの撮影に失敗しました",
+  "kycCameraNotAvailable": "カメラが利用できません",
+  "kycCameraNotAvailableMessage": "カメラが利用できません。代わりにギャラリーから画像を選択しますか？",
+  "kycUseGallery": "ギャラリーを使用",
+  "kycDocumentsLocked": "審査中のため書類はロックされています。確認が完了するまで変更できません。",
+  "kycVerificationSubmittedSuccessfully": "確認が正常に送信されました",
+  "kycVerificationSubmitted": "確認が送信されました",
+  "kycThankYouSubmitting": "確認書類をご提出いただきありがとうございます！",
+  "kycWhatHappensNext": "次のステップ:",
+  "kycReviewTime": "当チームが24〜48時間以内に書類を審査します",
+  "kycEmailNotification": "確認が完了次第、メールでお知らせします",
+  "kycCheckEmail": "確認状況の更新についてメールをご確認ください",
+  "kycLocked": "書類は現在ロックされており、審査中は変更できません",
+  "kycRecommendSignOut": "サインアウトして、後ほど確認結果をご確認いただくことをお勧めします。",
+  "kycStaySignedIn": "サインインしたままにする",
+  "kycVerificationPending": "確認保留中",
+  "kycVerificationPendingSubtitle": "書類を審査中です",
+  "kycVerificationApproved": "確認が承認されました",
+  "kycVerificationApprovedSubtitle": "すべてのプロバイダー機能にアクセスできるようになりました",
+  "kycVerificationRejected": "確認が拒否されました",
+  "kycVerificationRejectedSubtitle": "以下のメモを確認して再送信してください",
+  "kycVerificationRequired": "確認が必要です",
+  "kycVerificationRequiredSubtitle": "プロバイダー機能にアクセスするには確認を完了してください",
+  "kycReviewNotes": "審査メモ",
+  "kycIdCardFront": "身分証明書（表面）",
+  "kycIdCardBack": "身分証明書（裏面）",
+  "kycVerificationSelfie": "確認用セルフィー",
+  "kycButtonLocked": "ロック済み",
+  "kycCaptureIdFront": "身分証明書の表面を撮影",
+  "kycCaptureIdBack": "身分証明書の裏面を撮影",
+  "kycDocumentsLockedButton": "書類ロック済み",
+  "kycTipsTitle": "📸 良い写真を撮るためのヒント:",
+  "kycTipGoodLighting": "• 良い照明を使用する",
+  "kycTipFlatCard": "• 身分証明書を平らな場所に置く",
+  "kycTipReadableText": "• すべてのテキストが読めることを確認する",
+  "kycTipFaceCamera": "• セルフィーではカメラを直接見る",
+  "kycTipAvoidGlare": "• 反射や影を避ける",
+  "kycFailedSubmitVerification": "確認の送信に失敗しました",
+
+  "paystackSetupTitle": "支払いアカウントの設定",
+  "paystackVerifying": "確認中...",
+  "paystackVerificationSuccess": "支払い設定が正常に保存されました！",
+  "paystackVerificationFailed": "支払い設定の保存に失敗しました",
+  "paystackSelectBank": "銀行を選択",
+  "paystackAccountNumber": "口座番号",
+  "paystackVerifyAccount": "アカウントを確認",
+  "paystackAccountVerified": "アカウント確認済み",
+  "paystackSavePayoutAccount": "支払いアカウントを保存",
+  "paystackNoBanksAvailable": "{country}で利用可能な銀行がありません",
+  "@paystackNoBanksAvailable": {
+    "placeholders": {
+      "country": {}
+    }
+  },
+  "paystackRetry": "再試行",
+  "paystackPayoutsInfo": "収益はこのアカウントに送金されます。支払いは24時間以内に処理されます。",
+  "paystackConnected": "アカウント: 接続済み",
+  "paystackNotConnected": "アカウント: 未接続",
+  "paystackDetailsSubmitted": "詳細が送信されました:",
+  "paystackPayoutsEnabled": "支払いが有効:",
+  "paystackYes": "はい",
+  "paystackNo": "いいえ",
+  "paystackFinishSetup": "Stripe設定を完了",
+  "paystackConnectStripe": "Stripeに接続",
+  "paystackOpenDashboard": "Stripeダッシュボードを開く",
+  "paystackMustFinishSetup": "キャッシュアウトする前にStripe設定を完了する必要があります。",
+  "paystackPayouts": "Paystack支払い",
+  "paystackAddBankDetails": "Paystack経由で支払いを受け取るには、支払い設定で銀行口座の詳細を追加してください。",
+  "paystackOpenSettings": "支払い設定を開く",
+
+  "payoutPaystackForCountry": "{country}向けPaystack経由の支払い",
+  "@payoutPaystackForCountry": {
+    "placeholders": {
+      "country": {}
+    }
+  },
+  "payoutFlutterwaveForCountry": "{country}の支払いはFlutterwave経由で処理されます",
+  "@payoutFlutterwaveForCountry": {
+    "placeholders": {
+      "country": {}
+    }
+  },
+  "payoutStripeConnect": "Stripe Connect",
+  "payoutBankAccountDetails": "銀行口座の詳細",
+  "payoutAccountHolderName": "口座名義人",
+  "payoutAccountHolderNameHint": "銀行口座に表示される名前を入力してください",
+  "payoutSelectBank": "銀行を選択 *",
+  "payoutBankName": "銀行名 *",
+  "payoutBankNameManual": "銀行名（手動入力）",
+  "payoutBankNameHint": "例: GCB Bank、Ecobank",
+  "payoutBankCode": "銀行コード *",
+  "payoutBankCodeManual": "銀行コード（手動入力）",
+  "payoutBankCodeHint": "Flutterwave銀行コード",
+  "payoutBankCodeHelper": "銀行コードが不明な場合はサポートにお問い合わせください",
+  "payoutAccountNumber": "口座番号 *",
+  "payoutAccountNumberHint": "銀行口座番号を入力してください",
+  "payoutMobileMoney": "モバイルマネー",
+  "payoutFullName": "氏名（登録名）*",
+  "payoutFullNameHint": "モバイルマネーアカウントに登録されている名前",
+  "payoutMobileNetwork": "モバイルネットワーク *",
+  "payoutSelectNetwork": "モバイルネットワークを選択",
+  "payoutMobileNetworkHint": "例: MTN、Vodafone、Airtel",
+  "payoutCountryCode": "国コード",
+  "payoutMobileMoneyNumber": "モバイルマネー番号 *",
+  "payoutMobileMoneyNumberHint": "例: 0541234567",
+  "payoutZipCode": "郵便番号",
+  "payoutZipCodeHint": "ネットワークで必要な場合",
+  "payoutMethod": "支払い方法",
+  "payoutBankTransfer": "銀行振込",
+  "payoutCurrency": "通貨",
+  "payoutCurrencyLocked": "{country}の通貨にロック",
+  "@payoutCurrencyLocked": {
+    "placeholders": {
+      "country": {}
+    }
+  },
+  "payoutBeneficiaryId": "受取人ID",
+  "payoutBeneficiaryIdHint": "任意 - 定期送金用",
+  "payoutSchedule": "支払いスケジュール",
+  "payoutFrequency": "支払い頻度",
+  "payoutFrequencyWeekly": "週次",
+  "payoutFrequencyMonthly": "月次（毎月1日）",
+  "payoutDayHelper": "利用可能: 火曜日、木曜日、金曜日",
+  "payoutMonthlyInfo": "月次支払いは毎月1日に処理されます。",
+  "payoutInstantCashout": "即時キャッシュアウト",
+  "payoutInstantCashoutInfo": "• 無制限の即時キャッシュアウトが利用可能\n• 即時キャッシュアウトには5%の手数料がかかります\n• スケジュール支払いには手数料がかかりません",
+  "payoutNextScheduled": "次回スケジュール支払い",
+  "payoutYourLocalTime": "現地時間 ({timezone})",
+  "@payoutYourLocalTime": {
+    "placeholders": {
+      "timezone": {}
+    }
+  },
+  "payoutAmountToCashOut": "キャッシュアウト金額",
+  "payoutMinMaxRange": "最小: {min} - 最大: {max}",
+  "@payoutMinMaxRange": {
+    "placeholders": {
+      "min": {},
+      "max": {}
+    }
+  },
+  "payoutMaxButton": "最大",
+  "payoutCashOutNow": "キャッシュアウト（即時）",
+  "payoutAvailableBalance": "利用可能残高",
+  "payoutPendingFunds": "保留中",
+  "payoutPendingInfo": "保留中の資金は保留期間後に利用可能になります",
+  "payoutLifetimeEarnings": "累計収益",
+  "payoutTotalCashedOut": "累計キャッシュアウト",
+  "payoutUnlimitedCashouts": "無制限",
+
+  "mainHello": "こんにちは",
+  "mainViewProfile": "プロフィールを表示",
+  "mainBookings": "予約",
+  "mainNotifications": "通知",
+  "mainReferral": "紹介",
+  "mainSettings": "設定",
+  "mainHelp": "ヘルプ",
+  "mainWallet": "ウォレット",
+  "mainEarnings": "収益",
+  "mainOpenJobs": "募集中の仕事",
+  "mainAssignedJobs": "割り当てられた仕事",
+  "mainMyReputation": "評価",
+
+  "reputationTitle": "評価",
+  "reputationYourCustomerRating": "顧客評価",
+  "reputationBasedOnReviews": "{count}件のレビューに基づく",
+  "@reputationBasedOnReviews": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationExcellentCustomer": "⭐ 優良顧客",
+  "reputationGreatCustomer": "👍 素晴らしい顧客",
+  "reputationGoodCustomer": "✓ 良い顧客",
+  "reputationAverage": "平均",
+  "reputationNeedsImprovement": "改善が必要",
+  "reputationNoRatingYet": "まだ評価がありません",
+  "reputationWhatProvidersSay": "プロバイダーからの評価",
+  "reputationNoReviews": "まだレビューがありません",
+  "reputationNoReviewsHelp": "予約を完了して評価を築きましょう！\nサービス完了後、プロバイダーが評価します。",
+  "reputationShowMore": "さらに表示（{count}件）",
+  "@reputationShowMore": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationShowLess": "表示を減らす",
+  "reputationJustNow": "たった今",
+  "reputationMinutesAgo": "{minutes}分前",
+  "@reputationMinutesAgo": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationHoursAgo": "{hours}時間前",
+  "@reputationHoursAgo": {
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationDaysAgo": "{days}日前",
+  "@reputationDaysAgo": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationWeeksAgo": "{weeks}週間前",
+  "@reputationWeeksAgo": {
+    "placeholders": {
+      "weeks": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationMonthsAgo": "{months}か月前",
+  "@reputationMonthsAgo": {
+    "placeholders": {
+      "months": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationYearsAgo": "{years}年前",
+  "@reputationYearsAgo": {
+    "placeholders": {
+      "years": {
+        "type": "int"
+      }
+    }
+  },
+
+  "walletTitle": "ウォレット",
+  "walletCashOutFailed": "キャッシュアウトに失敗しました。",
+  
+  "notificationsTitle": "通知",
+  "notificationsNoNotifications": "まだ通知がありません。",
+
   "toggleThemeTooltip": "ライト/ダークモード切替",
   "loggedInAs": "ログイン中: {role}",
   "@loggedInAs": {

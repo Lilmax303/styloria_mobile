@@ -57,7 +57,7 @@ class _MyReputationScreenState extends State<MyReputationScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('My Reputation'),
+        title: Text(l10n.reputationTitle),
       ),
       body: _isLoading
           ? const Center(child: CircularProgressIndicator())
@@ -119,7 +119,7 @@ class _MyReputationScreenState extends State<MyReputationScreen> {
                 ),
                 const SizedBox(width: 8),
                 Text(
-                  'What Providers Say About You',
+                  l10n.reputationWhatProvidersSay,
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
@@ -166,9 +166,9 @@ class _MyReputationScreenState extends State<MyReputationScreen> {
       ),
       child: Column(
         children: [
-          const Text(
-            'Your Customer Rating',
-            style: TextStyle(
+          Text(
+            l10n.reputationYourCustomerRating,
+            style: const TextStyle(
               color: Colors.white70,
               fontSize: 14,
             ),
@@ -194,7 +194,7 @@ class _MyReputationScreenState extends State<MyReputationScreen> {
           ),
           const SizedBox(height: 8),
           Text(
-            'Based on $totalReviews ${totalReviews == 1 ? 'review' : 'reviews'}',
+            l10n.reputationBasedOnReviews(totalReviews),
             style: const TextStyle(
               color: Colors.white70,
               fontSize: 13,
@@ -208,7 +208,7 @@ class _MyReputationScreenState extends State<MyReputationScreen> {
               borderRadius: BorderRadius.circular(20),
             ),
             child: Text(
-              _getRatingBadge(avgRating),
+              _getRatingBadge(avgRating, l10n),
               style: const TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.w600,
@@ -221,13 +221,13 @@ class _MyReputationScreenState extends State<MyReputationScreen> {
     );
   }
 
-  String _getRatingBadge(double rating) {
-    if (rating >= 4.5) return '⭐ Excellent Customer';
-    if (rating >= 4.0) return '👍 Great Customer';
-    if (rating >= 3.0) return '✓ Good Customer';
-    if (rating >= 2.0) return 'Average';
-    if (rating > 0) return 'Needs Improvement';
-    return 'No Rating Yet';
+  String _getRatingBadge(double rating, AppLocalizations l10n) {
+    if (rating >= 4.5) return l10n.reputationExcellentCustomer;
+    if (rating >= 4.0) return l10n.reputationGreatCustomer;
+    if (rating >= 3.0) return l10n.reputationGoodCustomer;
+    if (rating >= 2.0) return l10n.reputationAverage;
+    if (rating > 0) return l10n.reputationNeedsImprovement;
+    return l10n.reputationNoRatingYet;
   }
 
   Widget _buildEmptyState(bool isDark) {
@@ -246,7 +246,7 @@ class _MyReputationScreenState extends State<MyReputationScreen> {
           ),
           const SizedBox(height: 16),
           Text(
-            'No Reviews Yet',
+            l10n.reputationNoReviews,
             style: TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.bold,
@@ -255,7 +255,7 @@ class _MyReputationScreenState extends State<MyReputationScreen> {
           ),
           const SizedBox(height: 8),
           Text(
-            'Complete bookings to build your reputation!\nProviders will rate you after completing services.',
+            l10n.reputationNoReviewsHelp,
             textAlign: TextAlign.center,
             style: TextStyle(
               color: isDark ? Colors.grey.shade500 : Colors.grey.shade600,
@@ -291,12 +291,13 @@ class _ReputationReviewsListState extends State<_ReputationReviewsList> {
   static const int _maxLinesPerComment = 2;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) {  
     final totalReviews = widget.reviews.length;
     final displayCount = _isExpanded 
         ? totalReviews 
         : totalReviews.clamp(0, _initialDisplayCount);
     final hasMore = totalReviews > _initialDisplayCount;
+    final l10n = AppLocalizations.of(context);
 
     return Column(
       children: [
@@ -341,8 +342,8 @@ class _ReputationReviewsListState extends State<_ReputationReviewsList> {
                 children: [
                   Text(
                     _isExpanded 
-                        ? 'Show Less' 
-                        : 'Show More (${totalReviews - _initialDisplayCount} more)',
+                        ? l10n.reputationShowLess 
+                        : l10n.reputationShowMore(totalReviews - _initialDisplayCount),
                     style: TextStyle(
                       color: Colors.blue.shade700,
                       fontWeight: FontWeight.w600,
@@ -377,18 +378,24 @@ class _ReputationReviewsListState extends State<_ReputationReviewsList> {
       try {
         final date = DateTime.parse(createdAt.toString());
         final diff = DateTime.now().difference(date);
+        final l10n = AppLocalizations.of(context);
         if (diff.inDays > 365) {
-          timeAgo = '${(diff.inDays / 365).floor()} year${(diff.inDays / 365).floor() > 1 ? 's' : ''} ago';
+          final years = (diff.inDays / 365).floor();
+          timeAgo = l10n.reputationYearsAgo(years);
         } else if (diff.inDays > 30) {
-          timeAgo = '${(diff.inDays / 30).floor()} month${(diff.inDays / 30).floor() > 1 ? 's' : ''} ago';
+          final months = (diff.inDays / 30).floor();
+          timeAgo = l10n.reputationMonthsAgo(months);
+        } else if (diff.inDays > 6) {
+          final weeks = (diff.inDays / 7).floor();
+          timeAgo = l10n.reputationWeeksAgo(weeks);
         } else if (diff.inDays > 0) {
-          timeAgo = '${diff.inDays} day${diff.inDays > 1 ? 's' : ''} ago';
+          timeAgo = l10n.reputationDaysAgo(diff.inDays);
         } else if (diff.inHours > 0) {
-          timeAgo = '${diff.inHours} hour${diff.inHours > 1 ? 's' : ''} ago';
+          timeAgo = l10n.reputationHoursAgo(diff.inHours);
         } else if (diff.inMinutes > 0) {
-          timeAgo = '${diff.inMinutes} min ago';
+          timeAgo = l10n.reputationMinutesAgo(diff.inMinutes);
         } else {
-          timeAgo = 'Just now';
+          timeAgo = l10n.reputationJustNow;
         }
       } catch (_) {}
     }
