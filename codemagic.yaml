@@ -1,25 +1,20 @@
 workflows:
-  # =============================================
-  # iOS App Store Release Build
-  # =============================================
   ios-release:
     name: iOS App Store Release
     max_build_duration: 60
     instance_type: mac_mini_m1
     
     integrations:
-      app_store_connect: Styloria ASC  # Name this in Codemagic UI
+      app_store_connect: Styloria ASC
     
     environment:
       ios_signing:
         distribution_type: app_store
-        bundle_identifier: com.styloria.app  # Your bundle ID
+        bundle_identifier: com.styloria.app
       flutter: stable
       xcode: latest
       cocoapods: default
       vars:
-        BUNDLE_ID: "com.styloria.app"
-        APP_STORE_APP_ID: "6758583968"  # Get from App Store Connect
         STRIPE_PUBLISHABLE_KEY: ${STRIPE_PUBLISHABLE_KEY}
         GOOGLE_MAPS_API_KEY: ${GOOGLE_MAPS_API_KEY}
     
@@ -32,7 +27,6 @@ workflows:
         script: |
           echo "STRIPE_PUBLISHABLE_KEY=$STRIPE_PUBLISHABLE_KEY" > .env
           echo "GOOGLE_MAPS_API_KEY=$GOOGLE_MAPS_API_KEY" >> .env
-          echo "Created .env file"
       
       - name: Set up iOS Google Maps API Key
         script: |
@@ -47,7 +41,6 @@ workflows:
       - name: Install CocoaPods dependencies
         script: |
           cd ios && pod install
-      
       
       - name: Build iOS IPA
         script: |
@@ -64,50 +57,10 @@ workflows:
       app_store_connect:
         auth: integration
         submit_to_testflight: true
-        submit_to_app_store: false  # Change to true for production release
-        
-        # Optional: Auto-submit to App Review
-        # submit_to_app_store: true
-        # cancel_previous_submissions: true
-        # release_type: MANUAL  # or SCHEDULED, AFTER_APPROVAL
-        
+        submit_to_app_store: false
       email:
         recipients:
-          - styloria_mdk303@outlook.com  # Change to your email
+          - your-email@example.com
         notify:
           success: true
           failure: true
-
-
-  # =============================================
-  # Debug/Development Build (for testing)
-  # =============================================
-  debug-build:
-    name: Debug Build (Testing)
-    max_build_duration: 60
-    instance_type: mac_mini_m1
-    
-    environment:
-      flutter: stable
-      xcode: latest
-      cocoapods: default
-      vars:
-        STRIPE_PUBLISHABLE_KEY: ${STRIPE_PUBLISHABLE_KEY}
-        GOOGLE_MAPS_API_KEY: ${GOOGLE_MAPS_API_KEY}
-    
-    scripts:
-      - name: Create .env file
-        script: |
-          echo "STRIPE_PUBLISHABLE_KEY=$STRIPE_PUBLISHABLE_KEY" > .env
-          echo "GOOGLE_MAPS_API_KEY=$GOOGLE_MAPS_API_KEY" >> .env
-
-      - name: Get Flutter packages
-        script: |
-          flutter pub get
-            
-      - name: Build Android Debug APK
-        script: |
-          flutter build apk --debug
-      
-    artifacts:
-      - build/**/outputs/**/*.apk
