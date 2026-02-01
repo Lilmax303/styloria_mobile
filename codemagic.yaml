@@ -1,6 +1,141 @@
 workflows:
-  default-workflow:
-    name: Styloria Mobile Build
+  # =============================================
+  # iOS App Store Release Build
+  # =============================================
+  ios-release:
+    name: iOS App Store Release
+    max_build_duration: 60
+    instance_type: mac_mini_m1
+    
+    integrations:
+      app_store_connect: Styloria ASC  # Name this in Codemagic UI
+    
+    environment:
+      ios_signing:
+        distribution_type: app_store
+        bundle_identifier: com.styloria.app  # Your bundle ID
+      flutter: stable
+      xcode: latest
+      cocoapods: default
+      vars:
+        BUNDLE_ID: "com.styloria.app"
+        APP_STORE_APP_ID: "YOUR_APP_ID_HERE"  # Get from App Store Connect
+        STRIPE_PUBLISHABLE_KEY: ${STRIPE_PUBLISHABLE_KEY}
+        GOOGLE_MAPS_API_KEY: ${GOOGLE_MAPS_API_KEY}
+    
+    scripts:
+      - name: Set up code signing
+        script: |
+          xcode-project use-profiles
+      
+      - name: Create .env file
+        script: |
+          echo "STRIPE_PUBLISHABLE_KEY=$STRIPE_PUBLISHABLE_KEY" > .env
+          echo "GOOGLE_MAPS_API_KEY=$GOOGLE_MAPS_API_KEY" >> .env
+          echo "Created .env file"
+      
+      - name: Set up iOS Google Maps API Key
+        script: |
+          sed -i '' "s/GOOGLE_MAPS_API_KEY_PLACEHOLDER/$GOOGLE_MAPS_API_KEY/g" ios/Runner/AppDelegate.swift
+      
+      - name: Get Flutter packages
+        script: |
+          flutter pub get
+      
+      - name: Install CocoaPods dependencies
+        script: |
+          cd ios && pod install
+      
+      - name: Set iOS build version
+        script: |
+          #!/bin/sh
+          set -e
+          LATEST_BUILD_NUMBER=$(app-store-connect get-latest-testflight-build-number "$APP_STORE_APP_ID" || echo "0")
+          NEW_BUILD_NUMBER=$((LATEST_BUILD_NUMBER + 1))
+          echo "Building version 1.0.0 with build number $NEW_BUILD_NUMBER"
+          echo "BUILD_NUMBER=$NEW_BUILD_NUMBER" >> $CM_ENV
+      
+      - name: Build iOS IPA
+        script: |
+          flutter build ipa --release \
+            --build-name=1.0.0 \
+            --build-number=$BUILD_NUMBER \
+            --export-options-plist=/Users/builder/export_options.plist
+    
+    artifacts:
+      - build/ios/ipa/*.ipa
+      - /tmp/xcodebuild_logs/*.log
+      - build/ios/ipa/ExportOptions.plist
+    
+    publishing:
+      app_store_connect:
+        auth: integration
+        submit_to_testflight: true
+        submit_to_app_store: false  # Change to true for production release
+        
+        # Optional: Auto-submit to App Review
+        # submit_to_app_store: true
+        # cancel_previous_submissions: true
+        # release_type: MANUAL  # or SCHEDULED, AFTER_APPROVAL
+        
+      email:
+        recipients:
+          - your-email@example.com  # Change to your email
+        notify:
+          success: true
+          failure: true
+
+  # =============================================
+  # Android Release Build (Play Store)
+  # =============================================
+  android-release:
+    name: Android Play Store Release
+    max_build_duration: 60
+    instance_type: mac_mini_m1
+    
+    environment:
+      flutter: stable
+      android_signing:
+        - styloria_keystore  # Configure in Codemagic UI
+      vars:
+        STRIPE_PUBLISHABLE_KEY: ${STRIPE_PUBLISHABLE_KEY}
+        GOOGLE_MAPS_API_KEY: ${GOOGLE_MAPS_API_KEY}
+    
+    scripts:
+      - name: Create .env file
+        script: |
+          echo "STRIPE_PUBLISHABLE_KEY=$STRIPE_PUBLISHABLE_KEY" > .env
+          echo "GOOGLE_MAPS_API_KEY=$GOOGLE_MAPS_API_KEY" >> .env
+      
+      - name: Set up Android Google Maps API Key
+        script: |
+          sed -i '' "s/GOOGLE_MAPS_API_KEY_PLACEHOLDER/$GOOGLE_MAPS_API_KEY/g" android/app/src/main/AndroidManifest.xml
+      
+      - name: Get Flutter packages
+        script: |
+          flutter pub get
+      
+      - name: Build Android App Bundle
+        script: |
+          flutter build appbundle --release
+    
+    artifacts:
+      - build/**/outputs/**/*.aab
+      - build/**/outputs/**/*.apk
+    
+    publishing:
+      email:
+        recipients:
+          - your-email@example.com
+        notify:
+          success: true
+          failure: true
+
+  # =============================================
+  # Debug/Development Build (for testing)
+  # =============================================
+  debug-build:
+    name: Debug Build (Testing)
     max_build_duration: 60
     instance_type: mac_mini_m1
     
@@ -17,24 +152,26 @@ workflows:
         script: |
           echo "STRIPE_PUBLISHABLE_KEY=$STRIPE_PUBLISHABLE_KEY" > .env
           echo "GOOGLE_MAPS_API_KEY=$GOOGLE_MAPS_API_KEY" >> .env
-          echo "Created .env file:"
-          cat .env
 
       - name: Set up iOS Google Maps API Key
         script: |
           sed -i '' "s/GOOGLE_MAPS_API_KEY_PLACEHOLDER/$GOOGLE_MAPS_API_KEY/g" ios/Runner/AppDelegate.swift
       
       - name: Get Flutter packages
-        script: flutter pub get
+        script: |
+          flutter pub get
       
       - name: Install CocoaPods
-        script: cd ios && pod install
+        script: |
+          cd ios && pod install
       
       - name: Build Android Debug APK
-        script: flutter build apk --debug
+        script: |
+          flutter build apk --debug
       
       - name: Build iOS Simulator
-        script: flutter build ios --debug --simulator
+        script: |
+          flutter build ios --debug --simulator
     
     artifacts:
       - build/**/outputs/**/*.apk
