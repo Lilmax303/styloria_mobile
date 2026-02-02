@@ -957,6 +957,14 @@ class _BookingFormScreenState extends State<BookingFormScreen> {
       }
 
       // NON-AFRICA -> Stripe (existing flow)
+      if (stripe.Stripe.publishableKey.isEmpty) {
+        setState(() {
+          _paying = false;
+          _resultIsSuccess = false;
+          _resultMessage = 'Payment system is not configured. Please contact support or try again later.';
+        });
+        return;
+      }
 
       final pi = await ApiClient.createPaymentIntentDetailed(
         _createdRequestId!,
@@ -1035,6 +1043,15 @@ class _BookingFormScreenState extends State<BookingFormScreen> {
         mainTabIndex.value = 1;
         if (mounted) navigator.pop();
       }
+
+    } on stripe.StripeConfigException catch (e) {
+      // ✅ ADD THIS SPECIFIC CATCH
+      if (!mounted) return;
+      setState(() {
+        _paying = false;
+        _resultIsSuccess = false;
+        _resultMessage = 'Stripe is not configured. Please ensure the app is properly set up.';
+      });
     } on stripe.StripeException catch (e) {
       if (!mounted) return;
       setState(() {
