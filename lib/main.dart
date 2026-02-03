@@ -8,6 +8,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_stripe/flutter_stripe.dart' as stripe;
 import 'package:url_launcher/url_launcher.dart';
+import 'services/notification_service.dart';
 
 import 'app_theme.dart';
 import 'widgets/background_layer.dart';
@@ -1042,12 +1043,88 @@ class _HomeScreenState extends State<HomeScreen> {
   String? _tier; // Provider tier (Bronze, Silver, Gold, Platinum)
   int? _completionPercent; // Profile completion percentage
 
+  StreamSubscription? _notificationSubscription;
+
   @override
   void initState() {
     super.initState();
     _loadUserData();
     _loadUnreadCount();
     _checkAndSurfaceImportantNotifications();
+  }
+
+  @override
+  void dispose() {
+    _notificationSubscription?.cancel();
+    super.dispose();
+  }
+
+  Future<void> _initNotificationService() async {
+    // Connect to WebSocket
+    await NotificationService.instance.connect();
+    
+    // Listen for notifications
+    _notificationSubscription = NotificationService.instance.notifications.listen((notification) {
+      _handleNotification(notification);
+    });
+  }
+
+  void _handleNotification(Map<String, dynamic> notification) {
+    if (!mounted) return;
+    
+    final type = notification['type']?.toString();
+    final text = notification['text']?.toString();
+
+    // Update unread count
+    _loadUnreadCount();
+    
+    // Show snackbar for important notifications
+    if (type == 'chat_message') {
+      final senderName = notification['sender_name'] ?? 'Someone';
+      final preview = notification['content_preview'] ?? 'sent you a message';
+      
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Row(
+            children: [
+              const Icon(Icons.chat_bubble, color: Colors.white, size: 20),
+              const SizedBox(width: 8),
+              Expanded(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      senderName,
+                      style: const TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    Text(
+                      preview,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+          duration: const Duration(seconds: 4),
+          behavior: SnackBarBehavior.floating,
+          action: SnackBarAction(
+            label: 'View',
+            textColor: Colors.white,
+            onPressed: () {
+              // Navigate to chat or bookings
+              // You can access notification['service_request_id'] to open the right chat
+            },
+          ),
+        ),
+      );
+    } else if (text != null && text.isNotEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(text)),
+      );
+    }
   }
 
   // Combined data loading

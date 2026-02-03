@@ -1,9 +1,11 @@
 // lib/chat_screen.dart
 
 import 'package:flutter/material.dart';
+import 'dart:async';
 import 'api_client.dart';
 import 'package:styloria_mobile/gen_l10n/app_localizations.dart';
 import 'utils/datetime_helper.dart';
+import 'services/notification_service.dart';
 
 class ChatScreen extends StatefulWidget {
   final int serviceRequestId;
@@ -32,18 +34,51 @@ class _ChatScreenState extends State<ChatScreen> {
   int? _currentUserId;
   String? _currentUsername;
 
+  // Subscription to chat message notifications
+  StreamSubscription? _chatSubscription;
+
   @override
   void initState() {
     super.initState();
     _loadCurrentUser();
     _loadThreadAndMessages();
+    _subscribeToMessages();
   }
 
   @override
   void dispose() {
     _inputController.dispose();
     _scrollController.dispose();
+    _chatSubscription?.cancel();
     super.dispose();
+  }
+
+  void _subscribeToMessages() {
+    _chatSubscription = NotificationService.instance.chatMessages.listen((notification) {
+      // Check if this message is for our current thread
+      final threadId = notification['thread_id'];
+      final senderId = notification['sender_id'];
+
+      // Only refresh if:
+      // 1. It's for this thread
+      // 2. It's not from us (we already added our own messages)
+      if (threadId == _threadId && senderId != _currentUserId) {
+        _refreshMessages();
+      }
+    });
+  }
+
+  Future<void> _refreshMessages() async {
+    if (_threadId == null) return;
+
+    final messages = await ApiClient.getChatMessages(_threadId!);
+    if (!mounted) return;
+
+    setState(() {
+      _messages = messages ?? [];
+    });
+
+    _scrollToBottom();
   }
 
   Future<void> _loadCurrentUser() async {

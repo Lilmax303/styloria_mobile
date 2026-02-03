@@ -1744,13 +1744,13 @@ class ApiClient {
   // ---------- NOTIFICATIONS ----------
 
   static Future<List<dynamic>?> getNotifications() async {
-    final response = await _authorizedRequest('GET', '/notifications/');
+    final response = await _authorizedRequest('GET', '/api/notifications/');
     if (response.statusCode == 200) return jsonDecode(response.body) as List<dynamic>;
     return null;
   }
 
   static Future<int> getUnreadNotificationCount() async {
-    final response = await _authorizedRequest('GET', '/notifications/unread/count/');
+    final response = await _authorizedRequest('GET', '/api/notifications/unread/count/');
     if (response.statusCode == 200) {
       final data = jsonDecode(response.body) as Map<String, dynamic>;
       return (data['unread_count'] as int?) ?? 0;
@@ -1759,7 +1759,25 @@ class ApiClient {
   }
 
   static Future<bool> markNotificationRead(int id) async {
-    final response = await _authorizedRequest('POST', '/notifications/read/$id/');
+    final response = await _authorizedRequest('POST', '/api/notifications/read/$id/');
+    return response.statusCode == 200;
+  }
+
+  /// Delete a notification
+  static Future<bool> deleteNotification(int id) async {
+    final response = await _authorizedRequest('DELETE', '/api/notifications/$id/delete/');
+    return response.statusCode == 200;
+  }
+
+  /// Mark all notifications as read
+  static Future<bool> markAllNotificationsRead() async {
+    final response = await _authorizedRequest('POST', '/api/notifications/mark_all_read/');
+    return response.statusCode == 200;
+  }
+
+  /// Clear all notifications
+  static Future<bool> clearAllNotifications() async {
+    final response = await _authorizedRequest('DELETE', '/api/notifications/clear_all/');
     return response.statusCode == 200;
   }
 
