@@ -308,6 +308,176 @@ class _BookingsScreenState extends State<BookingsScreen> {
     }
   }
 
+  /// Shows dialog to reset appointment time for unpaid booking
+  Future<bool> _showAppointmentResetDialog(int bookingId) async {
+    final l10n = AppLocalizations.of(context)!;
+    final messenger = ScaffoldMessenger.of(context);
+    
+    TimeOfDay? selectedTime;
+    
+    final result = await showDialog<bool>(
+      context: context,
+      barrierDismissible: false,
+      builder: (dialogContext) {
+        return StatefulBuilder(
+          builder: (context, setDialogState) {
+            return AlertDialog(
+              title: Row(
+                children: [
+                  Icon(Icons.schedule, color: Colors.orange),
+                  const SizedBox(width: 8),
+                  const Expanded(child: Text('Reschedule Required')),
+                ],
+              ),
+              content: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    padding: const EdgeInsets.all(12),
+                    decoration: BoxDecoration(
+                      color: Colors.orange.shade50,
+                      borderRadius: BorderRadius.circular(8),
+                      border: Border.all(color: Colors.orange.shade200),
+                    ),
+                    child: Row(
+                      children: [
+                        Icon(Icons.info_outline, color: Colors.orange.shade700, size: 20),
+                        const SizedBox(width: 8),
+                        Expanded(
+                          child: Text(
+                            'Your booking was left unpaid. Please select a new time for TODAY to continue with payment.',
+                            style: TextStyle(
+                              fontSize: 13,
+                              color: Colors.orange.shade900,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(height: 16),
+                  Text(
+                    'Select new appointment time:',
+                    style: const TextStyle(fontWeight: FontWeight.w600),
+                  ),
+                  const SizedBox(height: 8),
+                  SizedBox(
+                    width: double.infinity,
+                    child: OutlinedButton.icon(
+                      onPressed: () async {
+                        final now = TimeOfDay.now();
+                        // Start from at least 30 minutes from now
+                        final minHour = now.hour + (now.minute >= 30 ? 1 : 0);
+                        final minMinute = now.minute >= 30 ? 0 : 30;
+                        
+                        final picked = await showTimePicker(
+                          context: context,
+                          initialTime: TimeOfDay(
+                            hour: minHour < 24 ? minHour : 23,
+                            minute: minMinute,
+                          ),
+                          helpText: 'Select time for TODAY',
+                        );
+                        
+                        if (picked != null) {
+                          // Validate: must be at least 30 minutes from now
+                          final nowDateTime = DateTime.now();
+                          final pickedDateTime = DateTime(
+                            nowDateTime.year,
+                            nowDateTime.month,
+                            nowDateTime.day,
+                            picked.hour,
+                            picked.minute,
+                          );
+                          final minDateTime = nowDateTime.add(const Duration(minutes: 30));
+                          
+                          if (pickedDateTime.isBefore(minDateTime)) {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(
+                                content: Text('Please select a time at least 30 minutes from now.'),
+                                backgroundColor: Colors.red,
+                              ),
+                            );
+                            return;
+                          }
+                          
+                          setDialogState(() {
+                            selectedTime = picked;
+                          });
+                        }
+                      },
+                      icon: const Icon(Icons.access_time),
+                      label: Text(
+                        selectedTime != null
+                            ? 'Today at ${selectedTime!.format(context)}'
+                            : 'Tap to select time',
+                        style: TextStyle(
+                          fontWeight: selectedTime != null ? FontWeight.bold : FontWeight.normal,
+                        ),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 8),
+                  Text(
+                    '* Must be at least 30 minutes from now',
+                    style: TextStyle(
+                      fontSize: 11,
+                      color: Colors.grey[600],
+                      fontStyle: FontStyle.italic,
+                    ),
+                  ),
+                ],
+              ),
+              actions: [
+                TextButton(
+                  onPressed: () => Navigator.of(dialogContext).pop(false),
+                  child: Text(l10n.cancel),
+                ),
+                ElevatedButton(
+                  onPressed: selectedTime == null
+                      ? null
+                      : () async {
+                          // Build ISO datetime string for today
+                          final now = DateTime.now();
+                          final appointmentDateTime = DateTime(
+                            now.year,
+                            now.month,
+                            now.day,
+                            selectedTime!.hour,
+                            selectedTime!.minute,
+                          );
+                          final isoString = appointmentDateTime.toUtc().toIso8601String();
+
+                          // Call API to reset appointment time
+                          final result = await ApiClient.resetAppointmentTime(
+                            serviceRequestId: bookingId,
+                            appointmentTime: isoString,
+                          );
+
+                          if (result['success'] == true) {
+                            Navigator.of(dialogContext).pop(true);
+                          } else {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(
+                                content: Text(result['detail'] ?? 'Failed to update time'),
+                                backgroundColor: Colors.red,
+                              ),
+                            );
+                          }
+                        },
+                  child: const Text('Continue to Payment'),
+                ),
+              ],
+            );
+          },
+        );
+      },
+    );
+
+    return result == true;
+  }
+
   Future<void> _payForBooking({
     required int bookingId,
     double? amount,
@@ -315,6 +485,50 @@ class _BookingsScreenState extends State<BookingsScreen> {
     final l10n = AppLocalizations.of(context)!;
     final messenger = ScaffoldMessenger.of(context);
     final navigator = Navigator.of(context);
+
+    // Check if this is an unpaid booking that needs time reset
+    final booking = await ApiClient.getServiceRequest(bookingId);
+    if (!mounted) return;
+    
+    if (booking != null) {
+      final paymentStatus = booking['payment_status']?.toString() ?? '';
+      final status = booking['status']?.toString() ?? '';
+
+      // If booking is unpaid and pending, check if appointment time needs reset
+      if (paymentStatus == 'unpaid' && status == 'pending') {
+        final appointmentTimeStr = booking['appointment_time']?.toString() ?? '';
+        if (appointmentTimeStr.isNotEmpty) {
+          try {
+            final appointmentTime = DateTime.parse(appointmentTimeStr);
+            final now = DateTime.now();
+            final today = DateTime(now.year, now.month, now.day);
+            final appointmentDay = DateTime(
+              appointmentTime.year,
+              appointmentTime.month,
+              appointmentTime.day,
+            );
+
+            // If appointment is not today OR is in the past, require reset
+            final isNotToday = appointmentDay != today;
+            final isInPast = appointmentTime.isBefore(now);
+
+            if (isNotToday || isInPast) {
+              final resetSuccess = await _showAppointmentResetDialog(bookingId);
+              if (!mounted) return;
+              if (!resetSuccess) {
+                // User cancelled the reset dialog
+                return;
+              }
+            }
+          } catch (e) {
+            // If we can't parse the date, require reset to be safe
+            final resetSuccess = await _showAppointmentResetDialog(bookingId);
+            if (!mounted) return;
+            if (!resetSuccess) return;
+          }
+        }
+      }
+    }
 
     // Determine the correct payment gateway
     final paymentGateway = ApiClient.getPaymentGateway(_userCountry);
@@ -863,6 +1077,11 @@ class _BookingsScreenState extends State<BookingsScreen> {
                       ),
                       const SizedBox(height: 4),
                       Text(l10n.serviceLine(serviceType), style: const TextStyle(fontSize: 14)),
+                      // Auto-cancel warning for unpaid bookings
+                      if (_buildAutoCancelWarning(booking) != null) ...[
+                        const SizedBox(height: 6),
+                        _buildAutoCancelWarning(booking)!,
+                      ],
 
                       // ✅ IMPROVED TIME DISPLAY WITH TIMEZONE
                       if (dateStr.isNotEmpty || timeStr.isNotEmpty) ...[
@@ -890,12 +1109,6 @@ class _BookingsScreenState extends State<BookingsScreen> {
                       if (counterpart.isNotEmpty)
                         Text(
                           widget.role == 'user' ? l10n.providerLine(counterpart) : l10n.userLine(counterpart),
-                          style: const TextStyle(fontSize: 13),
-                        ),
-
-                      if (estimatedPriceText.isNotEmpty)
-                        Text(
-                          l10n.estimatedPriceLine(_formatMoney(estimatedPriceRaw)),
                           style: const TextStyle(fontSize: 13),
                         ),
 
@@ -945,6 +1158,68 @@ class _BookingsScreenState extends State<BookingsScreen> {
     return Scaffold(
       appBar: AppBar(title: Text(title)),
       body: bodyContent,
+    );
+  }
+  
+  /// Builds auto-cancel warning widget if booking is approaching deadline
+  Widget? _buildAutoCancelWarning(Map<String, dynamic> booking) {
+    final warning = booking['auto_cancel_warning'] as Map<String, dynamic>?;
+    if (warning == null) return null;
+
+    final level = warning['level']?.toString() ?? 'info';
+    final message = warning['message']?.toString() ?? '';
+    final hoursRemaining = (warning['hours_remaining'] as num?)?.toDouble() ?? 0;
+
+    if (message.isEmpty) return null;
+
+    Color bgColor;
+    Color borderColor;
+    Color textColor;
+    IconData icon;
+    
+    switch (level) {
+      case 'critical':
+        bgColor = Colors.red.shade50;
+        borderColor = Colors.red.shade300;
+        textColor = Colors.red.shade900;
+        icon = Icons.error;
+        break;
+      case 'warning':
+        bgColor = Colors.orange.shade50;
+        borderColor = Colors.orange.shade300;
+        textColor = Colors.orange.shade900;
+        icon = Icons.warning;
+        break;
+      default:
+        bgColor = Colors.blue.shade50;
+        borderColor = Colors.blue.shade200;
+        textColor = Colors.blue.shade900;
+        icon = Icons.info_outline;
+    }
+
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
+      decoration: BoxDecoration(
+        color: bgColor,
+        borderRadius: BorderRadius.circular(6),
+        border: Border.all(color: borderColor),
+      ),
+      child: Row(
+        children: [
+          Icon(icon, size: 14, color: textColor),
+          const SizedBox(width: 6),
+          Expanded(
+            child: Text(
+              message,
+              style: TextStyle(
+                fontSize: 11,
+                color: textColor,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

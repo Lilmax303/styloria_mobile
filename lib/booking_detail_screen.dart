@@ -57,6 +57,10 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
   bool _providerReviewsExpanded = false;
   static const int _initialProviderReviewsToShow = 2;
 
+  // Portfolio expansion state
+  bool _portfolioExpanded = false;
+  static const int _initialPortfolioItemsToShow = 6;
+
   bool _calling = false;
   bool _processingCancel = false;
   bool _processingComplete = false;
@@ -2285,46 +2289,135 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
 
   Widget _portfolioGridCard(BuildContext context, List<dynamic> posts) {
     final l10n = AppLocalizations.of(context);
+    final cs = Theme.of(context).colorScheme;
+
+    // Flatten posts: extract individual media items from nested structure
+    final List<Map<String, dynamic>> flattenedMedia = [];
+    for (final post in posts) {
+      final postMap = post as Map<String, dynamic>;
+      final caption = postMap['caption']?.toString() ?? '';
+      
+      // Check if post has nested media array
+      final mediaList = postMap['media'] as List<dynamic>?;
+      if (mediaList != null && mediaList.isNotEmpty) {
+        for (final media in mediaList) {
+          final mediaMap = media as Map<String, dynamic>;
+          flattenedMedia.add({
+            'media_url': mediaMap['file_url'] ?? '',
+            'media_type': mediaMap['media_type'] ?? 'image',
+            'thumbnail_url': mediaMap['thumbnail_url'],
+            'caption': caption,
+            'post_id': postMap['id'],
+          });
+        }
+      } else {
+        // Fallback: use cover_media_url if no nested media
+        final coverUrl = postMap['cover_media_url']?.toString() ?? '';
+        final coverType = postMap['cover_media_type']?.toString() ?? 'image';
+        if (coverUrl.isNotEmpty) {
+          flattenedMedia.add({
+            'media_url': coverUrl,
+            'media_type': coverType,
+            'caption': caption,
+            'post_id': postMap['id'],
+          });
+        }
+      }
+    }
+    
+    // Determine how many items to show
+    final totalItems = flattenedMedia.length;
+    final itemsToShow = _portfolioExpanded
+        ? flattenedMedia
+        : flattenedMedia.take(_initialPortfolioItemsToShow).toList();
+    final hasMoreItems = totalItems > _initialPortfolioItemsToShow;
+    
     return Card(
       child: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(l10n.proofOfSkillsPortfolio, style: const TextStyle(fontWeight: FontWeight.w900)),
+            Row(
+              children: [
+                const Icon(Icons.photo_library, size: 20),
+                const SizedBox(width: 8),
+                Expanded(
+                  child: Text(
+                    l10n.proofOfSkillsPortfolio,
+                    style: const TextStyle(fontWeight: FontWeight.w900),
+                  ),
+                ),
+                if (totalItems > 0)
+                  Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                    decoration: BoxDecoration(
+                      color: cs.primaryContainer,
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Text(
+                      '$totalItems',
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold,
+                        color: cs.onPrimaryContainer,
+                      ),
+                    ),
+                  ),
+              ],
+            ),
             const SizedBox(height: 10),
-            if (posts.isEmpty)
-              Text(
-                l10n.noPortfolioPostsAvailable,
-                style: TextStyle(color: Colors.grey[700]),
+            if (flattenedMedia.isEmpty)
+              Container(
+                padding: const EdgeInsets.all(20),
+                decoration: BoxDecoration(
+                  color: Colors.grey[100],
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Center(
+                  child: Column(
+                    children: [
+                      Icon(Icons.photo_library_outlined, size: 40, color: Colors.grey[400]),
+                      const SizedBox(height: 8),
+                      Text(
+                        l10n.noPortfolioPostsAvailable,
+                        style: TextStyle(color: Colors.grey[600]),
+                        textAlign: TextAlign.center,
+                      ),
+                    ],
+                  ),
+                ),
               )
-            else
+            else ...[
               GridView.builder(
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
-                itemCount: posts.length,
+                itemCount: itemsToShow.length,
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 3,
                   crossAxisSpacing: 8,
                   mainAxisSpacing: 8,
                 ),
                 itemBuilder: (context, index) {
-                  final post = posts[index] as Map<String, dynamic>;
-                  final mediaType = (post['media_type'] ?? 'image').toString();
-                  final mediaUrl = _resolveUrl((post['media_url'] ?? '').toString());
-
+                  final item = itemsToShow[index];
+                  final mediaType = (item['media_type'] ?? 'image').toString();
+                  final mediaUrl = _resolveUrl((item['media_url'] ?? '').toString());
+ 
                   return InkWell(
                     onTap: () {
-                      final fixedPosts = posts.map((p) {
-                        final m = Map<String, dynamic>.from(p as Map);
-                        m['media_url'] = _resolveUrl(m['media_url']?.toString());
-                        return m;
+                      // Prepare all media items for the viewer
+                      final viewerPosts = flattenedMedia.map((m) {
+                        return {
+                          'media_url': _resolveUrl(m['media_url']?.toString()),
+                          'media_type': m['media_type'] ?? 'image',
+                          'caption': m['caption'] ?? '',
+                        };
                       }).toList();
-
+ 
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (_) => PortfolioViewerScreen(posts: fixedPosts, initialIndex: index),
+                          builder: (_) => PortfolioViewerScreen(posts: viewerPosts, initialIndex: index),
                         ),
                       );
                     },
@@ -2357,6 +2450,133 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
                   );
                 },
               ),
+              
+              // View More / View Less button
+              if (hasMoreItems) ...[
+                const SizedBox(height: 12),
+                Center(
+                  child: TextButton.icon(
+                    onPressed: () {
+                      setState(() {
+                        _portfolioExpanded = !_portfolioExpanded;
+                      });
+                    },
+                    icon: Icon(
+                      _portfolioExpanded
+                          ? Icons.keyboard_arrow_up
+                          : Icons.keyboard_arrow_down,
+                      size: 20,
+                    ),
+                    label: Text(
+                      _portfolioExpanded
+                          ? 'View Less'
+                          : 'View More (${totalItems - _initialPortfolioItemsToShow} more)',
+                      style: const TextStyle(fontWeight: FontWeight.w600),
+                    ),
+                  ),
+                ),
+              ],
+            ],
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildAutoCancelWarningCard(BuildContext context, Map<String, dynamic> warning) {
+    final level = warning['level']?.toString() ?? 'info';
+    final message = warning['message']?.toString() ?? '';
+    final hoursRemaining = (warning['hours_remaining'] as num?)?.toDouble() ?? 0;
+
+    if (message.isEmpty) return const SizedBox.shrink();
+
+    Color bgColor;
+    Color borderColor;
+    Color textColor;
+    IconData icon;
+    
+    switch (level) {
+      case 'critical':
+        bgColor = Colors.red.shade50;
+        borderColor = Colors.red.shade400;
+        textColor = Colors.red.shade900;
+        icon = Icons.error;
+        break;
+      case 'warning':
+        bgColor = Colors.orange.shade50;
+        borderColor = Colors.orange.shade400;
+        textColor = Colors.orange.shade900;
+        icon = Icons.warning_amber;
+        break;
+      default:
+        bgColor = Colors.blue.shade50;
+        borderColor = Colors.blue.shade300;
+        textColor = Colors.blue.shade900;
+        icon = Icons.info_outline;
+    }
+    
+    return Card(
+      color: bgColor,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12),
+        side: BorderSide(color: borderColor, width: 1.5),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Row(
+          children: [
+            Container(
+              padding: const EdgeInsets.all(8),
+              decoration: BoxDecoration(
+                color: borderColor.withOpacity(0.2),
+                shape: BoxShape.circle,
+              ),
+              child: Icon(icon, color: textColor, size: 24),
+            ),
+            const SizedBox(width: 12),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    level == 'critical' 
+                        ? 'Payment Required Immediately!'
+                        : 'Payment Reminder',
+                    style: TextStyle(
+                      fontWeight: FontWeight.w900,
+                      color: textColor,
+                      fontSize: 14,
+                    ),
+                  ),
+                  const SizedBox(height: 4),
+                  Text(
+                    message,
+                    style: TextStyle(
+                      color: textColor,
+                      fontSize: 13,
+                    ),
+                  ),
+                  if (hoursRemaining > 0 && hoursRemaining <= 24) ...[
+                    const SizedBox(height: 8),
+                    Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                      decoration: BoxDecoration(
+                        color: borderColor.withOpacity(0.3),
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      child: Text(
+                        '⏱ ${hoursRemaining.toStringAsFixed(0)}h remaining',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: textColor,
+                          fontSize: 12,
+                        ),
+                      ),
+                    ),
+                  ],
+                ],
+              ),
+            ),
           ],
         ),
       ),
@@ -2375,8 +2595,10 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
     final status = booking['status']?.toString() ?? '';
     final paymentStatus = booking['payment_status']?.toString() ?? '';
     final serviceType = booking['service_type']?.toString() ?? na;
-    final estimatedPrice = booking['estimated_price']?.toString() ?? na;
     final offeredPrice = booking['offered_price']?.toString() ?? na;
+
+    // Auto-cancel warning
+    final autoCancelWarning = booking['auto_cancel_warning'] as Map<String, dynamic>?;
 
     final appointmentTime = booking['appointment_time']?.toString() ?? '';
     final appointmentDisplay = DateTimeHelper.formatAppointmentTime(appointmentTime);
@@ -2395,9 +2617,9 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
     final provider = booking['service_provider'] as Map<String, dynamic>?;
     final user = booking['user'] as Map<String, dynamic>?;
 
-    // Portfolio posts: prefer booking-level (best for "allowed-only" logic),
-    // fallback to provider-level if that's how your API returns it.
-    final rawPosts = booking['portfolio_posts'] ?? provider?['portfolio_posts'];
+    // Portfolio posts: get from booking-level 'provider_portfolio_posts'
+    // This is populated by backend only when status is 'accepted' or 'in_progress'
+    final rawPosts = booking['provider_portfolio_posts'];
     final portfolioPosts = (rawPosts is List) ? rawPosts : <dynamic>[];
 
     final tipPaymentStatus = booking['tip_payment_status']?.toString() ?? 'unpaid';
@@ -2539,6 +2761,12 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
         padding: const EdgeInsets.all(16.0),
         child: ListView(
           children: [
+            // Auto-cancel warning banner at top
+            if (autoCancelWarning != null) ...[
+              _buildAutoCancelWarningCard(context, autoCancelWarning),
+              const SizedBox(height: 8),
+            ],
+
             // Summary card
             Card(
               child: Padding(
@@ -2673,7 +2901,6 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
                     ],
                     if (userName.isNotEmpty) _kv(context, l10n.userLabel, userName),
                     if (providerName.isNotEmpty) _kv(context, l10n.providerLabel, providerName),
-                    _kv(context, l10n.estimatedPriceLabel, estimatedPrice),
                     if (offeredPrice != na) _kv(context, l10n.offeredPaidLabel, offeredPrice, strong: true),
                     if (_distanceMilesValue != null)
                       _kv(

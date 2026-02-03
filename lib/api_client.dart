@@ -164,8 +164,6 @@ class ApiClient {
     }
   }
 
-
-
   
   // ---------- PROVIDER PAYOUT SETTINGS ----------
 
@@ -1700,6 +1698,45 @@ class ApiClient {
       if (decoded is Map) return Map<String, dynamic>.from(decoded);
     }
     return null;
+  }
+
+
+  // ------------- RESET APPOINTMENTS -----------
+
+  /// Reset appointment time for unpaid booking (must be today, future time only)
+  /// POST /api/service_requests/<id>/reset_appointment_time/
+  static Future<Map<String, dynamic>> resetAppointmentTime({
+    required int serviceRequestId,
+    required String appointmentTime,
+  }) async {
+    final response = await _authorizedRequest(
+      'POST',
+      '/api/service_requests/$serviceRequestId/reset_appointment_time/',
+      headers: {'Content-Type': 'application/json'},
+      body: jsonEncode({'appointment_time': appointmentTime}),
+    );
+    
+    Map<String, dynamic> decoded = {};
+    try {
+      final d = jsonDecode(response.body);
+      if (d is Map<String, dynamic>) decoded = d;
+      if (d is Map) decoded = Map<String, dynamic>.from(d);
+    } catch (_) {}
+    
+    if (response.statusCode == 200) {
+      return {
+        'success': true,
+        'booking': decoded['booking'],
+        'detail': decoded['detail'],
+      };
+    }
+    
+    return {
+      'success': false,
+      'status_code': response.statusCode,
+      'detail': decoded['detail'] ?? 'Failed to reset appointment time',
+      'error_code': decoded['error_code'],
+    };
   }
 
 
