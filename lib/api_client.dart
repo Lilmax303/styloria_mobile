@@ -1781,6 +1781,19 @@ class ApiClient {
     return response.statusCode == 200;
   }
 
+  /// Delete multiple notifications by IDs
+  static Future<Map<String, dynamic>> deleteSelectedNotifications(List<int> ids) async {
+    final response = await _authorizedRequest(
+      'POST',
+      '/api/notifications/delete_selected/',
+      body: {'ids': ids},
+    );
+    if (response.statusCode == 200) {
+      return jsonDecode(response.body) as Map<String, dynamic>;
+    }
+    return {'success': false, 'deleted_count': 0};
+  }
+
   // ---------- CHAT ----------
 
   static Future<Map<String, dynamic>?> getOrCreateChatThreadForRequest(int requestId) async {
