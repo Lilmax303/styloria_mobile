@@ -21,6 +21,10 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
   bool _expanded = false;
   static const int _initialItemsToShow = 10;
 
+  // Multi-select state
+  bool _isSelectionMode = false;
+  final Set<int> _selectedIds = {};
+
   @override
   void initState() {
     super.initState();
@@ -44,13 +48,145 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
       } else {
         _notifications = data;
       }
+      // Exit selection mode on refresh
+      _isSelectionMode = false;
+      _selectedIds.clear();
     });
   }
+
+  // ==================== SELECTION MODE METHODS ====================
+
+  void _enterSelectionMode(int initialId) {
+    setState(() {
+      _isSelectionMode = true;
+      _selectedIds.add(initialId);
+    });
+  }
+
+  void _exitSelectionMode() {
+    setState(() {
+      _isSelectionMode = false;
+      _selectedIds.clear();
+    });
+  }
+
+  void _toggleSelection(int id) {
+    setState(() {
+      if (_selectedIds.contains(id)) {
+        _selectedIds.remove(id);
+        // Exit selection mode if no items selected
+        if (_selectedIds.isEmpty) {
+          _isSelectionMode = false;
+        }
+      } else {
+        _selectedIds.add(id);
+      }
+    });
+  }
+
+  void _selectAll() {
+    if (_notifications == null) return;
+    setState(() {
+      _selectedIds.clear();
+      for (final n in _notifications!) {
+        final id = n['id'] as int?;
+        if (id != null) {
+          _selectedIds.add(id);
+        }
+      }
+    });
+  }
+
+  void _deselectAll() {
+    setState(() {
+      _selectedIds.clear();
+    });
+  }
+
+  Future<void> _deleteSelected() async {
+    if (_selectedIds.isEmpty) return;
+
+    final count = _selectedIds.length;
+    final confirm = await showDialog<bool>(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: const Text('Delete Selected'),
+        content: Text('Are you sure you want to delete $count notification(s)? This cannot be undone.'),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx, false),
+            child: const Text('Cancel'),
+          ),
+          ElevatedButton(
+            onPressed: () => Navigator.pop(ctx, true),
+            style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
+            child: const Text('Delete'),
+          ),
+        ],
+      ),
+    );
+
+    if (confirm != true) return;
+
+    // Store for potential restoration
+    final idsToDelete = _selectedIds.toList();
+    final removedItems = <int, Map<String, dynamic>>{};
+    
+    for (final id in idsToDelete) {
+      final index = _notifications?.indexWhere((n) => n['id'] == id) ?? -1;
+      if (index >= 0) {
+        removedItems[id] = Map<String, dynamic>.from(_notifications![index]);
+      }
+    }
+
+    // Optimistically remove from UI
+    setState(() {
+      _notifications?.removeWhere((n) => idsToDelete.contains(n['id']));
+      _selectedIds.clear();
+      _isSelectionMode = false;
+    });
+
+    // Call API
+    final result = await ApiClient.deleteSelectedNotifications(idsToDelete);
+    
+    if (!mounted) return;
+
+    final deletedCount = result['deleted_count'] ?? 0;
+    
+    if (deletedCount > 0) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('Deleted $deletedCount notification(s)'),
+          duration: const Duration(seconds: 2),
+        ),
+      );
+    } else {
+      // Restore on failure
+      setState(() {
+        for (final entry in removedItems.entries) {
+          _notifications?.add(entry.value);
+        }
+        // Re-sort by timestamp/id
+        _notifications?.sort((a, b) {
+          final aTime = a['timestamp'] ?? a['created_at'] ?? '';
+          final bTime = b['timestamp'] ?? b['created_at'] ?? '';
+          return bTime.compareTo(aTime);
+        });
+      });
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Failed to delete notifications'),
+          backgroundColor: Colors.red,
+        ),
+      );
+    }
+  }
+
+  // ==================== EXISTING METHODS ====================
 
   Future<void> _markRead(int id) async {
     final ok = await ApiClient.markNotificationRead(id);
     if (ok) {
-      // Update locally without full reload
       setState(() {
         final index = _notifications?.indexWhere((n) => n['id'] == id);
         if (index != null && index >= 0) {
@@ -87,20 +223,16 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
     }
   }
 
-  /// Handles swipe-to-delete with optimistic update and rollback on failure
   void _handleSwipeDelete(int id) {
-    // Find and store the item for potential restoration
     final removedIndex = _notifications?.indexWhere((n) => n['id'] == id) ?? -1;
     if (removedIndex < 0) return;
     
     final removedItem = Map<String, dynamic>.from(_notifications![removedIndex]);
     
-    // IMMEDIATELY remove from data source (Dismissible already animated out)
     setState(() {
       _notifications!.removeAt(removedIndex);
     });
     
-    // Call API and handle result
     ApiClient.deleteNotification(id).then((ok) {
       if (!mounted) return;
       
@@ -112,7 +244,6 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
           ),
         );
       } else {
-        // Restore on failure
         setState(() {
           final insertAt = removedIndex.clamp(0, _notifications?.length ?? 0);
           _notifications?.insert(insertAt, removedItem);
@@ -126,7 +257,6 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
       }
     }).catchError((e) {
       if (!mounted) return;
-      // Restore on error
       setState(() {
         final insertAt = removedIndex.clamp(0, _notifications?.length ?? 0);
         _notifications?.insert(insertAt, removedItem);
@@ -177,20 +307,26 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
     if (ok) {
       setState(() {
         _notifications = [];
+        _isSelectionMode = false;
+        _selectedIds.clear();
       });
     }
   }
 
   void _openNotificationDetail(Map<String, dynamic> notification) {
+    // Don't open detail in selection mode - toggle selection instead
+    if (_isSelectionMode) {
+      _toggleSelection(notification['id'] as int);
+      return;
+    }
+
     final id = notification['id'] as int;
     final read = notification['read'] as bool? ?? false;
 
-    // Mark as read if not already
     if (!read) {
       _markRead(id);
     }
 
-    // Show detail bottom sheet
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,
@@ -205,7 +341,6 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
     );
   }
 
-  // Get notification icon and color based on content
   _NotificationStyle _getNotificationStyle(String message) {
     if (message.contains('Good news') || message.contains('available')) {
       return _NotificationStyle(Icons.celebration, Colors.green, 'Good News');
@@ -223,11 +358,12 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
       return _NotificationStyle(Icons.chat_bubble, Colors.purple, 'Message');
     } else if (message.contains('review') || message.contains('rating')) {
       return _NotificationStyle(Icons.star, Colors.amber, 'Review');
+    } else if (message.contains('New Job') || message.contains('🆕')) {
+      return _NotificationStyle(Icons.work, Colors.indigo, 'New Job');
     }
     return _NotificationStyle(Icons.notifications, Colors.blueGrey, 'Notification');
   }
 
-  // Group notifications by date
   Map<String, List<Map<String, dynamic>>> _groupNotificationsByDate() {
     final Map<String, List<Map<String, dynamic>>> grouped = {
       'Today': [],
@@ -277,6 +413,8 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
     return grouped;
   }
 
+  // ==================== BUILD METHODS ====================
+
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
@@ -285,73 +423,121 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
     final l10n = AppLocalizations.of(context);
 
     final unreadCount = _notifications?.where((n) => n['read'] != true).length ?? 0;
+    final totalCount = _notifications?.length ?? 0;
+    final allSelected = _selectedIds.length == totalCount && totalCount > 0;
 
     return Scaffold(
-      appBar: AppBar(
-        title: Row(
-          children: [
-            Text(l10n.navNotifications),
-            if (unreadCount > 0) ...[
-              const SizedBox(width: 8),
-              Container(
-                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
-                decoration: BoxDecoration(
-                  color: cs.primary,
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                child: Text(
-                  '$unreadCount',
-                  style: TextStyle(
-                    color: cs.onPrimary,
-                    fontSize: 12,
-                    fontWeight: FontWeight.bold,
-                  ),
+      appBar: _isSelectionMode 
+          ? _buildSelectionAppBar(cs, allSelected)
+          : _buildNormalAppBar(cs, l10n, unreadCount),
+      body: _buildBody(theme, cs, isDark, l10n),
+    );
+  }
+
+  PreferredSizeWidget _buildNormalAppBar(ColorScheme cs, AppLocalizations l10n, int unreadCount) {
+    return AppBar(
+      title: Row(
+        children: [
+          Text(l10n.navNotifications),
+          if (unreadCount > 0) ...[
+            const SizedBox(width: 8),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+              decoration: BoxDecoration(
+                color: cs.primary,
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: Text(
+                '$unreadCount',
+                style: TextStyle(
+                  color: cs.onPrimary,
+                  fontSize: 12,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
-            ],
-          ],
-        ),
-        actions: [
-          if (_notifications != null && _notifications!.isNotEmpty) ...[
-            PopupMenuButton<String>(
-              icon: const Icon(Icons.more_vert),
-              onSelected: (value) {
-                switch (value) {
-                  case 'mark_all':
-                    _markAllRead();
-                    break;
-                  case 'clear_all':
-                    _clearAll();
-                    break;
-                }
-              },
-              itemBuilder: (ctx) => [
-                PopupMenuItem(
-                  value: 'mark_all',
-                  child: Row(
-                    children: [
-                      Icon(Icons.done_all, color: cs.primary, size: 20),
-                      const SizedBox(width: 12),
-                      const Text('Mark all as read'),
-                    ],
-                  ),
-                ),
-                const PopupMenuItem(
-                  value: 'clear_all',
-                  child: Row(
-                    children: [
-                      Icon(Icons.delete_sweep, color: Colors.red, size: 20),
-                      SizedBox(width: 12),
-                      Text('Clear all', style: TextStyle(color: Colors.red)),
-                    ],
-                  ),
-                ),
-              ],
             ),
           ],
         ],
       ),
-      body: _buildBody(theme, cs, isDark, l10n),
+      actions: [
+        if (_notifications != null && _notifications!.isNotEmpty) ...[
+          // Select mode button
+          IconButton(
+            icon: const Icon(Icons.checklist),
+            tooltip: 'Select notifications',
+            onPressed: () {
+              setState(() {
+                _isSelectionMode = true;
+              });
+            },
+          ),
+          PopupMenuButton<String>(
+            icon: const Icon(Icons.more_vert),
+            onSelected: (value) {
+              switch (value) {
+                case 'mark_all':
+                  _markAllRead();
+                  break;
+                case 'clear_all':
+                  _clearAll();
+                  break;
+              }
+            },
+            itemBuilder: (ctx) => [
+              PopupMenuItem(
+                value: 'mark_all',
+                child: Row(
+                  children: [
+                    Icon(Icons.done_all, color: cs.primary, size: 20),
+                    const SizedBox(width: 12),
+                    const Text('Mark all as read'),
+                  ],
+                ),
+              ),
+              const PopupMenuItem(
+                value: 'clear_all',
+                child: Row(
+                  children: [
+                    Icon(Icons.delete_sweep, color: Colors.red, size: 20),
+                    SizedBox(width: 12),
+                    Text('Clear all', style: TextStyle(color: Colors.red)),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ],
+      ],
+    );
+  }
+
+  PreferredSizeWidget _buildSelectionAppBar(ColorScheme cs, bool allSelected) {
+    return AppBar(
+      leading: IconButton(
+        icon: const Icon(Icons.close),
+        onPressed: _exitSelectionMode,
+      ),
+      title: Text(
+        '${_selectedIds.length} selected',
+        style: const TextStyle(fontWeight: FontWeight.w600),
+      ),
+      backgroundColor: cs.primaryContainer,
+      foregroundColor: cs.onPrimaryContainer,
+      actions: [
+        // Select/Deselect All
+        IconButton(
+          icon: Icon(allSelected ? Icons.deselect : Icons.select_all),
+          tooltip: allSelected ? 'Deselect all' : 'Select all',
+          onPressed: allSelected ? _deselectAll : _selectAll,
+        ),
+        // Delete selected
+        if (_selectedIds.isNotEmpty)
+          IconButton(
+            icon: const Icon(Icons.delete),
+            tooltip: 'Delete selected',
+            onPressed: _deleteSelected,
+          ),
+      ],
     );
   }
 
@@ -383,10 +569,8 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
       return _buildEmptyState(cs);
     }
 
-    // Group notifications
     final grouped = _groupNotificationsByDate();
     
-    // Flatten for display with section headers
     final List<dynamic> displayItems = [];
     int totalAdded = 0;
     
@@ -408,29 +592,49 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
     final totalNotifications = _notifications!.length;
     final hasMore = totalNotifications > _initialItemsToShow;
 
-    return RefreshIndicator(
-      onRefresh: _loadNotifications,
-      child: ListView.builder(
-        padding: const EdgeInsets.symmetric(vertical: 8),
-        itemCount: displayItems.length + (hasMore ? 1 : 0),
-        itemBuilder: (context, index) {
-          // View More/Less button at the end
-          if (index == displayItems.length) {
-            return _buildViewMoreButton(totalNotifications);
-          }
+    return Column(
+      children: [
+        // Selection mode hint
+        if (_isSelectionMode)
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            color: Colors.blue.shade50,
+            child: Row(
+              children: [
+                Icon(Icons.info_outline, size: 16, color: Colors.blue.shade700),
+                const SizedBox(width: 8),
+                Text(
+                  'Tap notifications to select. Long press to exit.',
+                  style: TextStyle(fontSize: 12, color: Colors.blue.shade700),
+                ),
+              ],
+            ),
+          ),
+        Expanded(
+          child: RefreshIndicator(
+            onRefresh: _loadNotifications,
+            child: ListView.builder(
+              padding: const EdgeInsets.symmetric(vertical: 8),
+              itemCount: displayItems.length + (hasMore ? 1 : 0),
+              itemBuilder: (context, index) {
+                if (index == displayItems.length) {
+                  return _buildViewMoreButton(totalNotifications);
+                }
 
-          final item = displayItems[index];
+                final item = displayItems[index];
 
-          // Section header
-          if (item is Map && item['_isHeader'] == true) {
-            return _buildSectionHeader(item['title'], item['count'], cs);
-          }
+                if (item is Map && item['_isHeader'] == true) {
+                  return _buildSectionHeader(item['title'], item['count'], cs);
+                }
 
-          // Notification item
-          final notification = item as Map<String, dynamic>;
-          return _buildNotificationCard(notification, theme, cs, isDark);
-        },
-      ),
+                final notification = item as Map<String, dynamic>;
+                return _buildNotificationCard(notification, theme, cs, isDark);
+              },
+            ),
+          ),
+        ),
+      ],
     );
   }
 
@@ -527,15 +731,116 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
         ? DateTimeHelper.formatMetadataTime(createdAt)
         : '';
 
+    final isSelected = _selectedIds.contains(id);
+
     // Card colors
-    final cardColor = read
-        ? (isDark ? cs.surface : Colors.white)
-        : (isDark ? cs.primary.withOpacity(0.15) : cs.primary.withOpacity(0.08));
+    Color cardColor;
+    if (isSelected) {
+      cardColor = cs.primaryContainer;
+    } else if (read) {
+      cardColor = isDark ? cs.surface : Colors.white;
+    } else {
+      cardColor = isDark ? cs.primary.withOpacity(0.15) : cs.primary.withOpacity(0.08);
+    }
 
-    final borderColor = read
-        ? Colors.transparent
-        : cs.primary.withOpacity(0.3);
+    final borderColor = isSelected
+        ? cs.primary
+        : read
+            ? Colors.transparent
+            : cs.primary.withOpacity(0.3);
 
+    // In selection mode, don't use Dismissible
+    if (_isSelectionMode) {
+      return Card(
+        color: cardColor,
+        elevation: isSelected ? 2 : (read ? 0 : 2),
+        margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(12),
+          side: BorderSide(color: borderColor, width: isSelected ? 2 : 1),
+        ),
+        child: InkWell(
+          onTap: () => _toggleSelection(id),
+          onLongPress: _exitSelectionMode,
+          borderRadius: BorderRadius.circular(12),
+          child: Padding(
+            padding: const EdgeInsets.all(12),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                // Checkbox
+                Checkbox(
+                  value: isSelected,
+                  onChanged: (_) => _toggleSelection(id),
+                  activeColor: cs.primary,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(4),
+                  ),
+                ),
+                const SizedBox(width: 8),
+                // Icon
+                Container(
+                  padding: const EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    color: style.color.withOpacity(0.1),
+                    shape: BoxShape.circle,
+                  ),
+                  child: Icon(style.icon, color: style.color, size: 22),
+                ),
+                const SizedBox(width: 12),
+                // Content
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                        decoration: BoxDecoration(
+                          color: style.color.withOpacity(0.1),
+                          borderRadius: BorderRadius.circular(4),
+                        ),
+                        child: Text(
+                          style.label,
+                          style: TextStyle(
+                            fontSize: 10,
+                            fontWeight: FontWeight.w600,
+                            color: style.color,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 6),
+                      Text(
+                        message,
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: read ? FontWeight.normal : FontWeight.w600,
+                          color: isDark ? Colors.white : Colors.black87,
+                        ),
+                      ),
+                      const SizedBox(height: 6),
+                      Row(
+                        children: [
+                          Icon(Icons.access_time, size: 12, color: Colors.grey[500]),
+                          const SizedBox(width: 4),
+                          Text(
+                            timeDisplay,
+                            style: TextStyle(fontSize: 11, color: Colors.grey[500]),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      );
+    }
+
+    // Normal mode with Dismissible
     return Dismissible(
       key: Key('notification_$id'),
       direction: DismissDirection.endToStart,
@@ -568,7 +873,6 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
             ],
           ),
         );
-        // Return false if dialog was dismissed without selection
         return result ?? false;
       },
       onDismissed: (direction) => _handleSwipeDelete(id),
@@ -582,6 +886,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
         ),
         child: InkWell(
           onTap: () => _openNotificationDetail(notification),
+          onLongPress: () => _enterSelectionMode(id),
           borderRadius: BorderRadius.circular(12),
           child: Padding(
             padding: const EdgeInsets.all(12),
@@ -598,13 +903,11 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
                   child: Icon(style.icon, color: style.color, size: 22),
                 ),
                 const SizedBox(width: 12),
-                
                 // Content
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      // Category label
                       Container(
                         padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
                         decoration: BoxDecoration(
@@ -621,8 +924,6 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
                         ),
                       ),
                       const SizedBox(height: 6),
-                      
-                      // Message preview (truncated)
                       Text(
                         message,
                         maxLines: 2,
@@ -633,24 +934,14 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
                           color: isDark ? Colors.white : Colors.black87,
                         ),
                       ),
-                      
                       const SizedBox(height: 6),
-                      
-                      // Time and read status
                       Row(
                         children: [
-                          Icon(
-                            Icons.access_time,
-                            size: 12,
-                            color: Colors.grey[500],
-                          ),
+                          Icon(Icons.access_time, size: 12, color: Colors.grey[500]),
                           const SizedBox(width: 4),
                           Text(
                             timeDisplay,
-                            style: TextStyle(
-                              fontSize: 11,
-                              color: Colors.grey[500],
-                            ),
+                            style: TextStyle(fontSize: 11, color: Colors.grey[500]),
                           ),
                           const Spacer(),
                           if (!read)
@@ -667,13 +958,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
                     ],
                   ),
                 ),
-                
-                // Arrow indicator
-                Icon(
-                  Icons.chevron_right,
-                  color: Colors.grey[400],
-                  size: 20,
-                ),
+                Icon(Icons.chevron_right, color: Colors.grey[400], size: 20),
               ],
             ),
           ),
@@ -698,9 +983,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
             _expanded ? Icons.keyboard_arrow_up : Icons.keyboard_arrow_down,
           ),
           label: Text(
-            _expanded
-                ? 'View Less'
-                : 'View More ($remaining more)',
+            _expanded ? 'View Less' : 'View More ($remaining more)',
             style: const TextStyle(fontWeight: FontWeight.w600),
           ),
         ),
@@ -743,7 +1026,6 @@ class _NotificationDetailSheet extends StatelessWidget {
         ? DateTimeHelper.formatMetadataTime(createdAt)
         : '';
 
-    // Determine icon and color
     IconData icon = Icons.notifications;
     Color iconColor = cs.primary;
     String category = 'Notification';
@@ -780,6 +1062,10 @@ class _NotificationDetailSheet extends StatelessWidget {
       icon = Icons.star;
       iconColor = Colors.amber;
       category = 'Review';
+    } else if (message.contains('New Job') || message.contains('🆕')) {
+      icon = Icons.work;
+      iconColor = Colors.indigo;
+      category = 'New Job';
     }
 
     return Container(
@@ -790,7 +1076,6 @@ class _NotificationDetailSheet extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          // Handle bar
           Container(
             margin: const EdgeInsets.only(top: 12),
             width: 40,
@@ -800,13 +1085,11 @@ class _NotificationDetailSheet extends StatelessWidget {
               borderRadius: BorderRadius.circular(2),
             ),
           ),
-
           Padding(
             padding: const EdgeInsets.all(20),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // Header with icon
                 Row(
                   children: [
                     Container(
@@ -823,10 +1106,7 @@ class _NotificationDetailSheet extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Container(
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 8,
-                              vertical: 4,
-                            ),
+                            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                             decoration: BoxDecoration(
                               color: iconColor.withOpacity(0.1),
                               borderRadius: BorderRadius.circular(6),
@@ -848,10 +1128,7 @@ class _NotificationDetailSheet extends StatelessWidget {
                                 const SizedBox(width: 4),
                                 Text(
                                   timeDisplay,
-                                  style: TextStyle(
-                                    fontSize: 12,
-                                    color: Colors.grey[500],
-                                  ),
+                                  style: TextStyle(fontSize: 12, color: Colors.grey[500]),
                                 ),
                               ],
                             ),
@@ -860,12 +1137,9 @@ class _NotificationDetailSheet extends StatelessWidget {
                     ),
                   ],
                 ),
-
                 const SizedBox(height: 20),
                 const Divider(),
                 const SizedBox(height: 16),
-
-                // Full message content
                 Text(
                   message,
                   style: TextStyle(
@@ -874,20 +1148,14 @@ class _NotificationDetailSheet extends StatelessWidget {
                     color: isDark ? Colors.white : Colors.black87,
                   ),
                 ),
-
                 const SizedBox(height: 24),
-
-                // Action buttons
                 Row(
                   children: [
                     Expanded(
                       child: OutlinedButton.icon(
                         onPressed: onDelete,
                         icon: const Icon(Icons.delete_outline, color: Colors.red),
-                        label: const Text(
-                          'Delete',
-                          style: TextStyle(color: Colors.red),
-                        ),
+                        label: const Text('Delete', style: TextStyle(color: Colors.red)),
                         style: OutlinedButton.styleFrom(
                           side: const BorderSide(color: Colors.red),
                           padding: const EdgeInsets.symmetric(vertical: 12),
@@ -906,8 +1174,6 @@ class _NotificationDetailSheet extends StatelessWidget {
                     ),
                   ],
                 ),
-
-                // Bottom padding for safe area
                 SizedBox(height: MediaQuery.of(context).padding.bottom + 8),
               ],
             ),
