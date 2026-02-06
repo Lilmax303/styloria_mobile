@@ -1786,8 +1786,10 @@ class ApiClient {
     final response = await _authorizedRequest(
       'POST',
       '/api/notifications/delete_selected/',
-      body: {'ids': ids},
+      headers: {'Content-Type': 'application/json'},
+      body: jsonEncode({'ids': ids}),  // ✅ CORRECT - encode to JSON string
     );
+  
     if (response.statusCode == 200) {
       return jsonDecode(response.body) as Map<String, dynamic>;
     }
