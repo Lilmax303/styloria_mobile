@@ -8,19 +8,38 @@ import 'package:geocoding/geocoding.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:styloria_mobile/gen_l10n/app_localizations.dart';
 import 'widgets/certifications_section.dart';
+import 'widgets/portfolio_section_widget.dart';
+import 'widgets/service_pricing_widget.dart';
 
 import 'api_client.dart';
 import 'portfolio_viewer_screen.dart';
 import 'services/location_service.dart';
 
+// Tab enum for navigation
+enum ProviderProfileTab {
+  basicInfo,
+  portfolio,
+  pricing,
+  reviews,
+}
+
 class ProviderProfileScreen extends StatefulWidget {
-  const ProviderProfileScreen({super.key});
+  final ProviderProfileTab initialTab;
+  
+  const ProviderProfileScreen({
+    super.key,
+    this.initialTab = ProviderProfileTab.basicInfo,
+  });
 
   @override
   State<ProviderProfileScreen> createState() => _ProviderProfileScreenState();
 }
 
-class _ProviderProfileScreenState extends State<ProviderProfileScreen> {
+class _ProviderProfileScreenState extends State<ProviderProfileScreen>
+    with SingleTickerProviderStateMixin {
+  
+  late TabController _tabController;
+  
   String _serviceLabel(String id, AppLocalizations l10n) {
     switch (id) {
       case 'haircut':
@@ -221,13 +240,35 @@ class _ProviderProfileScreenState extends State<ProviderProfileScreen> {
   @override
   void initState() {
     super.initState();
+  
+    // Initialize tab controller
+    _tabController = TabController(
+      length: 4, // basicInfo, portfolio, pricing, reviews
+      vsync: this,
+      initialIndex: _getInitialTabIndex(),
+    );
+  
     _loadProfile();
     _loadPortfolio();
     _loadReviews();
   }
 
+  int _getInitialTabIndex() {
+    switch (widget.initialTab) {
+      case ProviderProfileTab.basicInfo:
+        return 0;
+      case ProviderProfileTab.portfolio:
+        return 1;
+      case ProviderProfileTab.pricing:
+        return 2;
+      case ProviderProfileTab.reviews:
+        return 3;
+    }
+  }
+
   @override
   void dispose() {
+    _tabController.dispose();
     _bioController.dispose();
     _priceController.dispose();
     _latController.dispose();
@@ -901,6 +942,666 @@ class _ProviderProfileScreenState extends State<ProviderProfileScreen> {
     );
   }
 
+  // ========================================
+  // TAB BUILDERS
+  // ========================================
+
+  Widget _buildBasicInfoTab(AppLocalizations l10n) {
+    return SingleChildScrollView(
+      padding: const EdgeInsets.all(16.0),
+      child: Center(
+        child: SizedBox(
+          width: 450,
+          child: Form(
+            key: _formKey,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                // Rating display (if exists)
+                if (_reviewCount > 0) ...[
+                  Card(
+                    child: Padding(
+                      padding: const EdgeInsets.all(12.0),
+                      child: Row(
+                        children: [
+                          const Icon(Icons.star, color: Colors.amber, size: 30),
+                          const SizedBox(width: 12),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                _averageRating.toStringAsFixed(1),
+                                style: const TextStyle(
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              Text(
+                                l10n.reviewCountLabel(_reviewCount),
+                                style: const TextStyle(color: Colors.grey),
+                              ),
+                            ],
+                          ),
+                          const Spacer(),
+                          if (_averageRating >= 4.0)
+                            Chip(
+                              label: Text(l10n.topRatedChip),
+                              backgroundColor: Colors.green,
+                              labelStyle: const TextStyle(color: Colors.white),
+                            ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 16),
+                ],
+
+                // Bio field
+                TextFormField(
+                  controller: _bioController,
+                  decoration: InputDecoration(
+                    labelText: l10n.bioLabel,
+                    hintText: l10n.bioHint,
+                    border: const OutlineInputBorder(),
+                    prefixIcon: const Icon(Icons.description),
+                  ),
+                  maxLines: 4,
+                  maxLength: 500,
+                  validator: (value) {
+                    if (value == null || value.trim().isEmpty)
+                      return l10n.pleaseEnterBio;
+                    if (value.trim().length < 20)
+                      return l10n.bioMinLength(20);
+                    return null;
+                  },
+                ),
+                const SizedBox(height: 16),
+
+                // Certifications section
+                CertificationsSection(
+                  onCertificationsChanged: () {
+                    _loadProfile();
+                  },
+                ),
+                const SizedBox(height: 16),
+
+                // Location section (keep existing location UI)
+                _buildLocationSection(l10n),
+                const SizedBox(height: 16),
+
+                // Availability toggle
+                Card(
+                  child: Padding(
+                    padding: const EdgeInsets.all(12.0),
+                    child: Row(
+                      children: [
+                        Switch(
+                          value: _available,
+                          onChanged: (value) => _handleAvailabilityToggle(value),
+                        ),
+                        const SizedBox(width: 8),
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                l10n.availableForBookingsTitle,
+                                style: const TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16,
+                                ),
+                              ),
+                              const SizedBox(height: 4),
+                              Text(
+                                _available ? l10n.availableOnHelp : l10n.availableOffHelp,
+                                style: TextStyle(
+                                  color: _available ? Colors.green : Colors.orange,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 24),
+
+                // Error/Success messages
+                if (_error != null)
+                  Container(
+                    padding: const EdgeInsets.all(12),
+                    decoration: BoxDecoration(
+                      color: Colors.red[50],
+                      borderRadius: BorderRadius.circular(8),
+                      border: Border.all(color: Colors.red),
+                    ),
+                    child: Row(
+                      children: [
+                        const Icon(Icons.error, color: Colors.red),
+                        const SizedBox(width: 12),
+                        Expanded(
+                          child: Text(_error!, style: const TextStyle(color: Colors.red)),
+                        ),
+                      ],
+                    ),
+                  ),
+                if (_success != null) ...[
+                  const SizedBox(height: 12),
+                  Container(
+                    padding: const EdgeInsets.all(12),
+                    decoration: BoxDecoration(
+                      color: Colors.green[50],
+                      borderRadius: BorderRadius.circular(8),
+                      border: Border.all(color: Colors.green),
+                    ),
+                    child: Row(
+                      children: [
+                        const Icon(Icons.check_circle, color: Colors.green),
+                        const SizedBox(width: 12),
+                        Expanded(
+                          child: Text(_success!, style: const TextStyle(color: Colors.green)),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+                const SizedBox(height: 24),
+
+                // Save button
+                SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    onPressed: _loading ? null : _saveProfile,
+                    style: ElevatedButton.styleFrom(
+                      padding: const EdgeInsets.symmetric(vertical: 16),
+                    ),
+                    child: _loading
+                        ? const SizedBox(
+                            height: 24,
+                            width: 24,
+                            child: CircularProgressIndicator(
+                              strokeWidth: 2,
+                              color: Colors.white,
+                            ),
+                          )
+                        : Text(
+                            l10n.updateProfile,
+                            style: const TextStyle(fontSize: 16),
+                          ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildPortfolioTab(AppLocalizations l10n) {
+    return SingleChildScrollView(
+      padding: const EdgeInsets.all(16.0),
+      child: Center(
+        child: SizedBox(
+          width: 500,
+          child: PortfolioSectionWidget(
+            portfolioPosts: _portfolioPosts,
+            isLoading: _portfolioLoading,
+            isUploading: _portfolioUploading,
+            error: _portfolioError,
+            onRefresh: _loadPortfolio,
+            onAddPost: _showAddPortfolioSheet,
+            onDeletePost: _deletePortfolioPost,
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildPricingTab(AppLocalizations l10n) {
+    return SingleChildScrollView(
+      padding: const EdgeInsets.all(16.0),
+      child: Center(
+        child: SizedBox(
+          width: 500,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              ServicePricingWidget(
+                serviceTypes: _serviceTypes,
+                certificationStatus: _certificationStatus,
+                currencySymbol: _currencySymbol,
+                onToggleService: (index, offered) {
+                  setState(() {
+                    _serviceTypes[index]['offered'] = offered;
+                    if (!offered) {
+                      _serviceTypes[index]['price'] = 0.0;
+                    }
+                  });
+                },
+                onUpdatePrice: (index, price) {
+                  setState(() {
+                    _serviceTypes[index]['price'] = price;
+                  });
+                },
+                onSave: _saveProfile,
+                isLoading: _loading,
+                getServiceLabel: (serviceId) => _serviceLabel(serviceId, l10n),
+              ),
+
+              const SizedBox(height: 24),
+
+              // Error message
+              if (_error != null)
+                Container(
+                  padding: const EdgeInsets.all(12),
+                  margin: const EdgeInsets.only(bottom: 16),
+                  decoration: BoxDecoration(
+                    color: Colors.red.shade50,
+                    borderRadius: BorderRadius.circular(12),
+                    border: Border.all(color: Colors.red.shade200),
+                  ),
+                  child: Row(
+                    children: [
+                      Icon(Icons.error, color: Colors.red.shade700),
+                      const SizedBox(width: 12),
+                      Expanded(
+                        child: Text(
+                          _error!,
+                          style: TextStyle(color: Colors.red.shade700),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+
+              // Success message
+              if (_success != null)
+                Container(
+                  padding: const EdgeInsets.all(12),
+                  decoration: BoxDecoration(
+                    color: Colors.green.shade50,
+                    borderRadius: BorderRadius.circular(12),
+                    border: Border.all(color: Colors.green.shade200),
+                  ),
+                  child: Row(
+                    children: [
+                      Icon(Icons.check_circle, color: Colors.green.shade700),
+                      const SizedBox(width: 12),
+                      Expanded(
+                        child: Text(
+                          _success!,
+                          style: TextStyle(color: Colors.green.shade700),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildReviewsTab(AppLocalizations l10n) {
+    return SingleChildScrollView(
+      padding: const EdgeInsets.all(16.0),
+      child: Center(
+        child: SizedBox(
+          width: 450,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              _buildReviewsSection(),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildLocationSection(AppLocalizations l10n) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          l10n.yourLocationTitle,
+          style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+        ),
+        const SizedBox(height: 8),
+        Text(
+          l10n.locationHelpUpdateToFindJobs,
+          style: TextStyle(color: Colors.grey[700]),
+        ),
+        const SizedBox(height: 12),
+      
+        // GPS button
+        Card(
+          child: Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: Column(
+              children: [
+                ListTile(
+                  leading: Icon(
+                    Icons.gps_fixed,
+                    color: Theme.of(context).primaryColor,
+                  ),
+                  title: Text(
+                    l10n.useMyCurrentLocationTitle,
+                    style: const TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  subtitle: Text(l10n.gpsSubtitle),
+                  trailing: _gettingLocation
+                      ? const CircularProgressIndicator()
+                      : IconButton(
+                          icon: const Icon(Icons.refresh),
+                          onPressed: _getCurrentLocation,
+                        ),
+                ),
+                if (_currentAddress.isNotEmpty)
+                  Padding(
+                    padding: const EdgeInsets.only(left: 72, right: 8, bottom: 8),
+                    child: Text(
+                      _currentAddress,
+                      style: const TextStyle(fontSize: 12, color: Colors.green),
+                    ),
+                  ),
+                if (_locationError != null)
+                  Padding(
+                    padding: const EdgeInsets.only(left: 16, right: 16, bottom: 8),
+                    child: Text(
+                      _locationError!,
+                      style: const TextStyle(fontSize: 12, color: Colors.red),
+                    ),
+                  ),
+              ],
+            ),
+          ),
+        ),
+        const SizedBox(height: 12),
+      
+        Center(child: Text(l10n.orLabel, style: const TextStyle(color: Colors.grey))),
+        const SizedBox(height: 12),
+      
+        // Address input
+        Card(
+          child: Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  l10n.enterYourAddressTitle,
+                  style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
+                ),
+                const SizedBox(height: 8),
+                Row(
+                  children: [
+                    Expanded(
+                      child: TextFormField(
+                        controller: _addressController,
+                        decoration: InputDecoration(
+                          labelText: l10n.fullAddressLabel,
+                          hintText: l10n.fullAddressHint,
+                          border: const OutlineInputBorder(),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(width: 8),
+                    ElevatedButton(
+                      onPressed: _gettingLocation ? null : _convertAddressToCoordinates,
+                      child: Text(l10n.find),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  l10n.addressHelpText,
+                  style: TextStyle(fontSize: 11, color: Colors.grey[600]),
+                ),
+              ],
+            ),
+          ),
+        ),
+        const SizedBox(height: 16),
+      
+        // Coordinates display
+        Card(
+          color: Colors.grey[50],
+          child: Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  l10n.coordinatesAutoFilledTitle,
+                  style: const TextStyle(fontSize: 12, color: Colors.grey),
+                ),
+                const SizedBox(height: 8),
+                Row(
+                  children: [
+                    Expanded(
+                      child: TextFormField(
+                        controller: _latController,
+                        decoration: InputDecoration(
+                          labelText: l10n.latitudeLabel,
+                          border: const OutlineInputBorder(),
+                          filled: true,
+                        ),
+                        readOnly: true,
+                      ),
+                    ),
+                    const SizedBox(width: 16),
+                    Expanded(
+                      child: TextFormField(
+                        controller: _lngController,
+                        decoration: InputDecoration(
+                          labelText: l10n.longitudeLabel,
+                          border: const OutlineInputBorder(),
+                          filled: true,
+                        ),
+                        readOnly: true,
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildBasicInfoSection(AppLocalizations l10n) {
+    // This is for first-time setup (when _isCreatingProfile == true)
+    // Contains all the existing form fields
+    return Form(
+      key: _formKey,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Card(
+            color: Colors.blue[50],
+            child: Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      Icon(Icons.info, color: Colors.blue[700]),
+                      const SizedBox(width: 8),
+                      Text(
+                        l10n.welcomeToStyloriaTitle,
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.blue[700],
+                          fontSize: 16,
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 8),
+                  Text(
+                    l10n.completeProviderProfileToStartEarning,
+                    style: TextStyle(color: Colors.blue[800]),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          const SizedBox(height: 16),
+
+          // Bio
+          TextFormField(
+            controller: _bioController,
+            decoration: InputDecoration(
+              labelText: l10n.bioLabel,
+              hintText: l10n.bioHint,
+              border: const OutlineInputBorder(),
+              prefixIcon: const Icon(Icons.description),
+              filled: true,
+              fillColor: Colors.yellow[50],
+            ),
+            maxLines: 4,
+            maxLength: 500,
+            validator: (value) {
+              if (value == null || value.trim().isEmpty)
+                return l10n.pleaseEnterBio;
+              if (value.trim().length < 20)
+                return l10n.bioMinLength(20);
+              return null;
+            },
+          ),
+          const SizedBox(height: 16),
+
+          // Location
+          _buildLocationSection(l10n),
+          const SizedBox(height: 16),
+
+          // Service pricing wizard
+          _buildServicePricingWizard(l10n),
+          const SizedBox(height: 16),
+
+          // Availability
+          Card(
+            child: Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: Row(
+                children: [
+                  Switch(
+                    value: _available,
+                    onChanged: (value) => _handleAvailabilityToggle(value),
+                  ),
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          l10n.availableForBookingsTitle,
+                          style: const TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                          ),
+                        ),
+                        const SizedBox(height: 4),
+                        Text(
+                          _available ? l10n.availableOnHelp : l10n.availableOffHelp,
+                          style: TextStyle(
+                            color: _available ? Colors.green : Colors.orange,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          const SizedBox(height: 24),
+
+          // Error/Success
+          if (_error != null)
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.red[50],
+                borderRadius: BorderRadius.circular(8),
+                border: Border.all(color: Colors.red),
+              ),
+              child: Row(
+                children: [
+                  const Icon(Icons.error, color: Colors.red),
+                  const SizedBox(width: 12),
+                  Expanded(
+                    child: Text(_error!, style: const TextStyle(color: Colors.red)),
+                  ),
+                ],
+              ),
+            ),
+          if (_success != null) ...[
+            const SizedBox(height: 12),
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.green[50],
+                borderRadius: BorderRadius.circular(8),
+                border: Border.all(color: Colors.green),
+              ),
+              child: Row(
+                children: [
+                  const Icon(Icons.check_circle, color: Colors.green),
+                  const SizedBox(width: 12),
+                  Expanded(
+                    child: Text(_success!, style: const TextStyle(color: Colors.green)),
+                  ),
+                ],
+              ),
+            ),
+          ],
+          const SizedBox(height: 24),
+
+          // Buttons
+          SizedBox(
+            width: double.infinity,
+            child: ElevatedButton(
+              onPressed: _loading ? null : _saveProfile,
+              style: ElevatedButton.styleFrom(
+                padding: const EdgeInsets.symmetric(vertical: 16),
+                backgroundColor: Colors.blue,
+              ),
+              child: _loading
+                  ? const SizedBox(
+                      height: 24,
+                      width: 24,
+                      child: CircularProgressIndicator(
+                        strokeWidth: 2,
+                        color: Colors.white,
+                      ),
+                    )
+                  : Text(
+                      l10n.completeSetupStartEarning,
+                      style: const TextStyle(fontSize: 16),
+                    ),
+            ),
+          ),
+          const SizedBox(height: 12),
+          SizedBox(
+            width: double.infinity,
+            child: TextButton(
+              onPressed: () => Navigator.of(context).pop(),
+              child: Text(l10n.skipForNow),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
   // -------------------------
   // Portfolio logic
   // -------------------------
@@ -1231,6 +1932,27 @@ class _ProviderProfileScreenState extends State<ProviderProfileScreen> {
                               child: const Center(
                                 child: Icon(Icons.play_circle_fill,
                                     color: Colors.white, size: 36),
+                              ),
+                            ),
+                          // Delete button (top-right corner)
+                          if (postId is int)
+                            Positioned(
+                              top: 4,
+                              right: 4,
+                              child: GestureDetector(
+                                onTap: () => _deletePortfolioPost(postId),
+                                child: Container(
+                                  padding: const EdgeInsets.all(4),
+                                  decoration: BoxDecoration(
+                                    color: Colors.black.withOpacity(0.6),
+                                    shape: BoxShape.circle,
+                                  ),
+                                  child: const Icon(
+                                    Icons.close,
+                                    color: Colors.white,
+                                    size: 16,
+                                  ),
+                                ),
                               ),
                             ),
                           if (caption.isNotEmpty)
@@ -2044,432 +2766,60 @@ class _ProviderProfileScreenState extends State<ProviderProfileScreen> {
             : [
                 IconButton(
                   icon: const Icon(Icons.refresh),
-                  onPressed: _loadProfile,
+                  onPressed: () {
+                    _loadProfile();
+                    _loadPortfolio();
+                    _loadReviews();
+                  },
                 ),
               ],
+        bottom: _isCreatingProfile
+            ? null
+            : TabBar(
+                controller: _tabController,
+                isScrollable: true,
+                tabs: const [
+                  Tab(icon: Icon(Icons.person), text: 'Basic Info'),
+                  Tab(icon: Icon(Icons.photo_library), text: 'Portfolio'),
+                  Tab(icon: Icon(Icons.attach_money), text: 'Pricing'),
+                  Tab(icon: Icon(Icons.star), text: 'Reviews'),
+                ],
+              ),
       ),
       body: _loading
           ? const Center(child: CircularProgressIndicator())
-          : SingleChildScrollView(
-              padding: const EdgeInsets.all(16.0),
-              child: Center(
-                child: SizedBox(
-                  width: 450,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      if (_isCreatingProfile) ...[
-                        Card(
-                          color: Colors.blue[50],
-                          child: Padding(
-                            padding: const EdgeInsets.all(12.0),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Row(
-                                  children: [
-                                    Icon(Icons.info, color: Colors.blue[700]),
-                                    const SizedBox(width: 8),
-                                    Text(
-                                      l10n.welcomeToStyloriaTitle,
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.blue[700],
-                                        fontSize: 16,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                const SizedBox(height: 8),
-                                Text(
-                                  l10n.completeProviderProfileToStartEarning,
-                                  style: TextStyle(color: Colors.blue[800]),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                        const SizedBox(height: 16),
-                      ],
-                      if (!_isCreatingProfile && _reviewCount > 0) ...[
-                        Card(
-                          child: Padding(
-                            padding: const EdgeInsets.all(12.0),
-                            child: Row(
-                              children: [
-                                const Icon(Icons.star,
-                                    color: Colors.amber, size: 30),
-                                const SizedBox(width: 12),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      _averageRating.toStringAsFixed(1),
-                                      style: const TextStyle(
-                                        fontSize: 24,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                    Text(
-                                      l10n.reviewCountLabel(_reviewCount),
-                                      style:
-                                          const TextStyle(color: Colors.grey),
-                                    ),
-                                  ],
-                                ),
-                                const Spacer(),
-                                if (_averageRating >= 4.0)
-                                  Chip(
-                                    label: Text(l10n.topRatedChip),
-                                    backgroundColor: Colors.green,
-                                    labelStyle:
-                                        const TextStyle(color: Colors.white),
-                                  ),
-                              ],
-                            ),
-                          ),
-                        ),
-                        const SizedBox(height: 16),
-                      ],
-                      Form(
-                        key: _formKey,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            TextFormField(
-                              controller: _bioController,
-                              decoration: InputDecoration(
-                                labelText: l10n.bioLabel,
-                                hintText: l10n.bioHint,
-                                border: const OutlineInputBorder(),
-                                prefixIcon: const Icon(Icons.description),
-                                filled: _isCreatingProfile,
-                                fillColor: _isCreatingProfile
-                                    ? Colors.yellow[50]
-                                    : null,
-                              ),
-                              maxLines: 4,
-                              maxLength: 500,
-                              validator: (value) {
-                                if (value == null || value.trim().isEmpty)
-                                  return l10n.pleaseEnterBio;
-                                if (value.trim().length < 20)
-                                  return l10n.bioMinLength(20);
-                                return null;
-                              },
-                            ),
-                            const SizedBox(height: 16),
-
-                            // Portfolio section
-                            if (!_isCreatingProfile) ...[
-                              _buildPortfolioSection(),
-                              const SizedBox(height: 16),
-                              _buildReviewsSection(),
-                              const SizedBox(height: 16),
-                              // Certifications section
-                              CertificationsSection(
-                                onCertificationsChanged: () {
-                                  // Optionally reload profile to update any trust score display
-                                  _loadProfile();
-                                },
-                              ),
-                              const SizedBox(height: 16),
-                            ],
-
-                            Text(
-                              l10n.yourLocationTitle,
-                              style: TextStyle(
-                                  fontSize: 16, fontWeight: FontWeight.bold),
-                            ),
-                            const SizedBox(height: 8),
-                            Text(
-                              _isCreatingProfile
-                                  ? l10n.locationHelpMatchNearbyClients
-                                  : l10n.locationHelpUpdateToFindJobs,
-                              style: TextStyle(color: Colors.grey[700]),
-                            ),
-                            const SizedBox(height: 12),
-                            Card(
-                              child: Padding(
-                                padding: const EdgeInsets.all(12.0),
-                                child: Column(
-                                  children: [
-                                    ListTile(
-                                      leading: Icon(
-                                        Icons.gps_fixed,
-                                        color: Theme.of(context).primaryColor,
-                                      ),
-                                      title: Text(
-                                        l10n.useMyCurrentLocationTitle,
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                      subtitle: Text(l10n.gpsSubtitle),
-                                      trailing: _gettingLocation
-                                          ? const CircularProgressIndicator()
-                                          : IconButton(
-                                              icon: const Icon(Icons.refresh),
-                                              onPressed: _getCurrentLocation,
-                                            ),
-                                    ),
-                                    if (_currentAddress.isNotEmpty)
-                                      Padding(
-                                        padding: const EdgeInsets.only(
-                                            left: 72, right: 8, bottom: 8),
-                                        child: Text(
-                                          _currentAddress,
-                                          style: const TextStyle(
-                                              fontSize: 12,
-                                              color: Colors.green),
-                                        ),
-                                      ),
-                                    if (_locationError != null)
-                                      Padding(
-                                        padding: const EdgeInsets.only(
-                                            left: 16, right: 16, bottom: 8),
-                                        child: Text(
-                                          _locationError!,
-                                          style: const TextStyle(
-                                              fontSize: 12, color: Colors.red),
-                                        ),
-                                      ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                            const SizedBox(height: 12),
-                            Center(
-                                child: Text(l10n.orLabel,
-                                    style:
-                                        const TextStyle(color: Colors.grey))),
-                            const SizedBox(height: 12),
-                            Card(
-                              child: Padding(
-                                padding: const EdgeInsets.all(12.0),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      l10n.enterYourAddressTitle,
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 14),
-                                    ),
-                                    const SizedBox(height: 8),
-                                    Row(
-                                      children: [
-                                        Expanded(
-                                          child: TextFormField(
-                                            controller: _addressController,
-                                            decoration: InputDecoration(
-                                              labelText: l10n.fullAddressLabel,
-                                              hintText: l10n.fullAddressHint,
-                                              border:
-                                                  const OutlineInputBorder(),
-                                            ),
-                                          ),
-                                        ),
-                                        const SizedBox(width: 8),
-                                        ElevatedButton(
-                                          onPressed: _gettingLocation
-                                              ? null
-                                              : _convertAddressToCoordinates,
-                                          child: Text(l10n.find),
-                                        ),
-                                      ],
-                                    ),
-                                    const SizedBox(height: 4),
-                                    Text(
-                                      l10n.addressHelpText,
-                                      style: TextStyle(
-                                          fontSize: 11,
-                                          color: Colors.grey[600]),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                            const SizedBox(height: 16),
-                            Card(
-                              color: Colors.grey[50],
-                              child: Padding(
-                                padding: const EdgeInsets.all(12.0),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      l10n.coordinatesAutoFilledTitle,
-                                      style: const TextStyle(
-                                          fontSize: 12, color: Colors.grey),
-                                    ),
-                                    const SizedBox(height: 8),
-                                    Row(
-                                      children: [
-                                        Expanded(
-                                          child: TextFormField(
-                                            controller: _latController,
-                                            decoration: InputDecoration(
-                                              labelText: l10n.latitudeLabel,
-                                              border:
-                                                  const OutlineInputBorder(),
-                                              filled: true,
-                                            ),
-                                            readOnly: true,
-                                          ),
-                                        ),
-                                        const SizedBox(width: 16),
-                                        Expanded(
-                                          child: TextFormField(
-                                            controller: _lngController,
-                                            decoration: InputDecoration(
-                                              labelText: l10n.longitudeLabel,
-                                              border:
-                                                  const OutlineInputBorder(),
-                                              filled: true,
-                                            ),
-                                            readOnly: true,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                            const SizedBox(height: 16),
-
-                            _buildServicePricingWizard(l10n),
-
-                            const SizedBox(height: 16),
-                            Card(
-                              child: Padding(
-                                padding: const EdgeInsets.all(12.0),
-                                child: Row(
-                                  children: [
-                                    Switch(
-                                      value: _available,
-                                      onChanged: (value) =>
-                                          _handleAvailabilityToggle(value),
-                                    ),
-                                    const SizedBox(width: 8),
-                                    Expanded(
-                                      child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Text(
-                                            l10n.availableForBookingsTitle,
-                                            style: const TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                fontSize: 16),
-                                          ),
-                                          const SizedBox(height: 4),
-                                          Text(
-                                            _available
-                                                ? l10n.availableOnHelp
-                                                : l10n.availableOffHelp,
-                                            style: TextStyle(
-                                              color: _available
-                                                  ? Colors.green
-                                                  : Colors.orange,
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                            const SizedBox(height: 24),
-                            if (_error != null)
-                              Container(
-                                padding: const EdgeInsets.all(12),
-                                decoration: BoxDecoration(
-                                  color: Colors.red[50],
-                                  borderRadius: BorderRadius.circular(8),
-                                  border: Border.all(color: Colors.red),
-                                ),
-                                child: Row(
-                                  children: [
-                                    const Icon(Icons.error, color: Colors.red),
-                                    const SizedBox(width: 12),
-                                    Expanded(
-                                      child: Text(_error!,
-                                          style: const TextStyle(
-                                              color: Colors.red)),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            if (_success != null) ...[
-                              const SizedBox(height: 12),
-                              Container(
-                                padding: const EdgeInsets.all(12),
-                                decoration: BoxDecoration(
-                                  color: Colors.green[50],
-                                  borderRadius: BorderRadius.circular(8),
-                                  border: Border.all(color: Colors.green),
-                                ),
-                                child: Row(
-                                  children: [
-                                    const Icon(Icons.check_circle,
-                                        color: Colors.green),
-                                    const SizedBox(width: 12),
-                                    Expanded(
-                                      child: Text(_success!,
-                                          style: const TextStyle(
-                                              color: Colors.green)),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
-                            const SizedBox(height: 24),
-                            SizedBox(
-                              width: double.infinity,
-                              child: ElevatedButton(
-                                onPressed: _loading ? null : _saveProfile,
-                                style: ElevatedButton.styleFrom(
-                                  padding:
-                                      const EdgeInsets.symmetric(vertical: 16),
-                                  backgroundColor:
-                                      _isCreatingProfile ? Colors.blue : null,
-                                ),
-                                child: _loading
-                                    ? const SizedBox(
-                                        height: 24,
-                                        width: 24,
-                                        child: CircularProgressIndicator(
-                                            strokeWidth: 2,
-                                            color: Colors.white),
-                                      )
-                                    : Text(
-                                        _isCreatingProfile
-                                            ? l10n.completeSetupStartEarning
-                                            : l10n.updateProfile,
-                                        style: const TextStyle(fontSize: 16),
-                                      ),
-                              ),
-                            ),
-                            if (_isCreatingProfile) ...[
-                              const SizedBox(height: 12),
-                              SizedBox(
-                                width: double.infinity,
-                                child: TextButton(
-                                  onPressed: () => Navigator.of(context).pop(),
-                                  child: Text(l10n.skipForNow),
-                                ),
-                              ),
-                            ],
-                          ],
-                        ),
+          : _isCreatingProfile
+              ? SingleChildScrollView(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Center(
+                    child: SizedBox(
+                      width: 450,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          // Keep existing first-time setup content
+                          _buildBasicInfoSection(l10n),
+                        ],
                       ),
-                    ],
+                    ),
                   ),
+                )
+              : TabBarView(
+                  controller: _tabController,
+                  children: [
+                    // Tab 1: Basic Info
+                    _buildBasicInfoTab(l10n),
+              
+                    // Tab 2: Portfolio
+                    _buildPortfolioTab(l10n),
+              
+                    // Tab 3: Pricing
+                    _buildPricingTab(l10n),
+              
+                    // Tab 4: Reviews
+                    _buildReviewsTab(l10n),
+                  ],
                 ),
-              ),
-            ),
     );
   }
 }

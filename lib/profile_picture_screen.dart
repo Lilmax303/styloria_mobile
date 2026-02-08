@@ -3,6 +3,7 @@
 import 'dart:io';
 import 'dart:typed_data';
 
+import 'profile_picture_state.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
@@ -19,15 +20,27 @@ class ProfilePictureScreen extends StatefulWidget {
 
 class _ProfilePictureScreenState extends State<ProfilePictureScreen> {
   bool _uploading = false;
+  bool _deleting = false;
   String? _error;
   String? _success;
 
   Uint8List? _previewBytes;
   File? _selectedFile;
+  String? _currentProfilePictureUrl;
 
   @override
   void initState() {
     super.initState();
+    _loadCurrentProfilePicture();
+  }
+
+  Future<void> _loadCurrentProfilePicture() async {
+    final userData = await ApiClient.getCurrentUser();
+    if (mounted && userData != null) {
+      setState(() {
+        _currentProfilePictureUrl = userData['profile_picture_url']?.toString();
+      });
+    }
   }
 
   Future<void> _pickImage() async {
@@ -101,8 +114,16 @@ class _ProfilePictureScreenState extends State<ProfilePictureScreen> {
         return;
       }
 
+      final newUrl = updated?['profile_picture_url']?.toString();
+
+      // Update global state immediately
+      profilePictureState.updateProfilePicture(newUrl);
+
       setState(() {
         _success = AppLocalizations.of(context).profilePictureUploadedSuccessfully;
+        _currentProfilePictureUrl = newUrl;
+        _previewBytes = null;
+        _selectedFile = null;
       });
 
       // Return to previous screen and let it refresh
@@ -113,6 +134,71 @@ class _ProfilePictureScreenState extends State<ProfilePictureScreen> {
       if (!mounted) return;
       setState(() {
         _uploading = false;
+        _error = AppLocalizations.of(context).errorWithValue(e.toString());
+      });
+    }
+  }
+
+  Future<void> _deleteProfilePicture() async {
+    final confirmed = await showDialog<bool>(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: Text(AppLocalizations.of(context).deleteProfilePictureTitle),
+        content: Text(AppLocalizations.of(context).deleteProfilePictureConfirmation),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx, false),
+            child: Text(AppLocalizations.of(context).cancel),
+          ),
+          ElevatedButton(
+            onPressed: () => Navigator.pop(ctx, true),
+            style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
+            child: Text(AppLocalizations.of(context).delete),
+          ),
+        ],
+      ),
+    );
+
+    if (confirmed != true) return;
+
+    setState(() {
+      _deleting = true;
+      _error = null;
+      _success = null;
+    });
+
+    try {
+      final deleted = await ApiClient.deleteProfilePicture();
+
+      if (!mounted) return;
+
+      setState(() {
+        _deleting = false;
+      });
+
+      if (deleted) {
+        // Update global state immediately
+        profilePictureState.updateProfilePicture(null);
+
+        setState(() {
+          _success = AppLocalizations.of(context).profilePictureDeletedSuccessfully;
+          _currentProfilePictureUrl = null;
+          _previewBytes = null;
+          _selectedFile = null;
+        });
+
+        Future.delayed(const Duration(milliseconds: 700), () {
+          if (mounted) Navigator.of(context).pop(true);
+        });
+      } else {
+        setState(() {
+          _error = AppLocalizations.of(context).failedToDeleteProfilePicture;
+        });
+      }
+    } catch (e) {
+      if (!mounted) return;
+      setState(() {
+        _deleting = false;
         _error = AppLocalizations.of(context).errorWithValue(e.toString());
       });
     }
@@ -137,21 +223,34 @@ class _ProfilePictureScreenState extends State<ProfilePictureScreen> {
               style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 8),
-            FutureBuilder<Map<String, dynamic>?>(
-              future: ApiClient.getCurrentUser(),
-              builder: (context, snapshot) {
-                final url = snapshot.data?['profile_picture_url']?.toString();
-                if (url != null && url.isNotEmpty) {
-                  return CircleAvatar(
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                if (_currentProfilePictureUrl != null && _currentProfilePictureUrl!.isNotEmpty)
+                  CircleAvatar(
                     radius: 50,
-                    backgroundImage: NetworkImage(url),
-                  );
-                }
-                return const CircleAvatar(
-                  radius: 50,
-                  child: Icon(Icons.person, size: 40),
-                );
-              },
+                    backgroundImage: NetworkImage(_currentProfilePictureUrl!),
+                  )
+                else
+                  const CircleAvatar(
+                    radius: 50,
+                    child: Icon(Icons.person, size: 40),
+                  ),
+                if (_currentProfilePictureUrl != null && _currentProfilePictureUrl!.isNotEmpty) ...[
+                  const SizedBox(width: 16),
+                  IconButton(
+                    onPressed: (_deleting || _uploading) ? null : _deleteProfilePicture,
+                    icon: _deleting
+                        ? const SizedBox(
+                            height: 20,
+                            width: 20,
+                            child: CircularProgressIndicator(strokeWidth: 2),
+                          )
+                        : const Icon(Icons.delete, color: Colors.red),
+                    tooltip: l10n.deleteProfilePicture,
+                  ),
+                ],
+              ],
             ),
             const SizedBox(height: 20),
 
@@ -175,7 +274,7 @@ class _ProfilePictureScreenState extends State<ProfilePictureScreen> {
             const SizedBox(height: 16),
 
             ElevatedButton.icon(
-              onPressed: _uploading ? null : _pickImage,
+              onPressed: (_uploading || _deleting) ? null : _pickImage,
               icon: const Icon(Icons.photo_library),
               label: Text(l10n.chooseImage),
             ),
@@ -183,7 +282,7 @@ class _ProfilePictureScreenState extends State<ProfilePictureScreen> {
             const SizedBox(height: 12),
 
             ElevatedButton(
-              onPressed: _uploading ? null : _upload,
+              onPressed: (_uploading || _deleting) ? null : _upload,
               child: _uploading
                   ? const SizedBox(
                       height: 18,

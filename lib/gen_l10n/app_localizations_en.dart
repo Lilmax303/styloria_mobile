@@ -664,6 +664,24 @@ class AppLocalizationsEn extends AppLocalizations {
   String get noPortfolioPostsAvailable => 'No portfolio posts available.';
 
   @override
+  String get deleteProfilePicture => 'Delete Profile Picture';
+
+  @override
+  String get deleteProfilePictureTitle => 'Delete Profile Picture';
+
+  @override
+  String get deleteProfilePictureConfirmation =>
+      'Are you sure you want to delete your profile picture?';
+
+  @override
+  String get profilePictureDeletedSuccessfully =>
+      'Profile picture deleted successfully.';
+
+  @override
+  String get failedToDeleteProfilePicture =>
+      'Failed to delete profile picture.';
+
+  @override
   String get bookingLocation => 'Booking location';
 
   @override

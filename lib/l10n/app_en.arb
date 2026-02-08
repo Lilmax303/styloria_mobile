@@ -282,6 +282,11 @@
 
   "proofOfSkillsPortfolio": "Proof of skills (Portfolio)",
   "noPortfolioPostsAvailable": "No portfolio posts available.",
+  "deleteProfilePicture": "Delete Profile Picture",
+  "deleteProfilePictureTitle": "Delete Profile Picture",
+  "deleteProfilePictureConfirmation": "Are you sure you want to delete your profile picture?",
+  "profilePictureDeletedSuccessfully": "Profile picture deleted successfully.",
+  "failedToDeleteProfilePicture": "Failed to delete profile picture.",
 
   "bookingLocation": "Booking location",
 

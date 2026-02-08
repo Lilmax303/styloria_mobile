@@ -146,4 +146,71 @@ class DateTimeHelper {
       return isoString;
     }
   }
+
+  static String formatCreationTimestamp(String? isoString) {
+    if (isoString == null || isoString.isEmpty) return 'Unknown';
+    
+    try {
+      final utc = DateTime.parse(isoString);
+      final local = utc.toLocal();
+      final formatter = DateFormat('EEEE, MMMM d, y \'at\' h:mm:ss a');
+      return formatter.format(local);
+    } catch (e) {
+      return isoString;
+    }
+  }
+
+  /// Format creation timestamp - short version for compact displays
+  /// Shows: "Wed, Jan 29, 10:45:32 AM"
+  static String formatCreationTimestampShort(String? isoString) {
+    if (isoString == null || isoString.isEmpty) return 'Unknown';
+    
+    try {
+      final utc = DateTime.parse(isoString);
+      final local = utc.toLocal();
+      final formatter = DateFormat('EEE, MMM d, h:mm:ss a');
+      return formatter.format(local);
+    } catch (e) {
+      return isoString;
+    }
+  }
+
+  /// Get time elapsed between two ISO timestamps
+  /// Returns human-readable duration like "17 minutes" or "2 hours 30 minutes"
+  static String getElapsedTime(String? fromIso, String? toIso) {
+    if (fromIso == null || toIso == null) return '';
+    
+    try {
+      final from = DateTime.parse(fromIso);
+      final to = DateTime.parse(toIso);
+      final diff = to.difference(from);
+      
+      if (diff.inDays > 0) {
+        final hours = diff.inHours % 24;
+        return '${diff.inDays}d ${hours}h later';
+      } else if (diff.inHours > 0) {
+        final minutes = diff.inMinutes % 60;
+        if (minutes > 0) {
+          return '${diff.inHours}h ${minutes}m later';
+        }
+        return '${diff.inHours} hour${diff.inHours > 1 ? 's' : ''} later';
+      } else if (diff.inMinutes > 0) {
+        return '${diff.inMinutes} minute${diff.inMinutes > 1 ? 's' : ''} later';
+      } else {
+        return 'moments later';
+      }
+    } catch (e) {
+      return '';
+    }
+  }
+
+  /// Parse ISO string to DateTime (local)
+  static DateTime? parseToLocal(String? isoString) {
+    if (isoString == null || isoString.isEmpty) return null;
+    try {
+      return DateTime.parse(isoString).toLocal();
+    } catch (e) {
+      return null;
+    }
+  }
 }

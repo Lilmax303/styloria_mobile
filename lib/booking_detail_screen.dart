@@ -123,8 +123,10 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
     }
 
     // Load requester reputation for providers
+    // ✅ PRIVACY: Don't load for cancelled bookings
     if (widget.role == 'provider' && 
-        (status == 'accepted' || status == 'in_progress' || status == 'completed')) {
+        (status == 'accepted' || status == 'in_progress' || status == 'completed') &&
+        status != 'cancelled') {
       _loadRequesterReputation();
     }
   }
@@ -1688,7 +1690,7 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
     final status = _booking['status']?.toString() ?? '';
   
     // ✅ PRIVACY: Hide customer details after completion
-    if (status == 'completed') return const SizedBox.shrink();
+    if (status == 'completed' || status == 'cancelled') return const SizedBox.shrink();
   
     if (status != 'accepted' && status != 'in_progress') {
       return const SizedBox.shrink();
@@ -2141,7 +2143,7 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
   }
 
 
-  /// Build location card with privacy protection for completed bookings
+  /// Build location card with privacy protection for completed and cancelled bookings
   Widget _buildLocationCard(
     BuildContext context,
     String latStr,
@@ -2151,7 +2153,7 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
   ) {
     final l10n = AppLocalizations.of(context);
     final cs = Theme.of(context).colorScheme;
-    final isCompleted = status == 'completed';
+    final isCompleted = status == 'completed' || status == 'cancelled';
     
     return Card(
       child: Padding(
@@ -2181,7 +2183,7 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
             ),
             const SizedBox(height: 10),
             
-            // ✅ PRIVACY: For completed bookings, show general area only
+            // ✅ PRIVACY: For completed or cancelled bookings, show general area only
             if (isCompleted) ...[
               Container(
                 padding: const EdgeInsets.all(12),
@@ -2196,7 +2198,9 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
                     const SizedBox(width: 10),
                     Expanded(
                       child: Text(
-                        'For your safety, exact location details are hidden after service completion. Only general area is shown.',
+                        status == 'cancelled'
+                            ? 'For your safety, exact location details are hidden after cancellation. Only general area is shown.'
+                            : 'For your safety, exact location details are hidden after service completion. Only general area is shown.',
                         style: TextStyle(
                           fontSize: 12,
                           color: Colors.amber.shade900,
@@ -2286,6 +2290,383 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
     return 'Service area';
   }
 
+
+  /// Build the "Request Placed" card showing when booking was created
+  /// Visible for ALL booking statuses
+  Widget _buildRequestPlacedCard(BuildContext context) {
+    final cs = Theme.of(context).colorScheme;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    
+    // ✅ FIX: Use 'request_time' - this is the field name from Django model
+    final createdAt = _booking['request_time']?.toString();
+    if (createdAt == null || createdAt.isEmpty) return const SizedBox.shrink();
+    
+    return Card(
+      elevation: 1,
+      color: isDark ? cs.surfaceContainerHigh : Colors.grey.shade50,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12),
+        side: BorderSide(
+          color: isDark ? cs.outlineVariant : Colors.grey.shade300,
+          width: 1,
+        ),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // Header
+            Row(
+              children: [
+                Container(
+                  padding: const EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                    color: cs.primaryContainer.withOpacity(0.5),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Icon(
+                    Icons.history,
+                    size: 20,
+                    color: cs.primary,
+                  ),
+                ),
+                const SizedBox(width: 12),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Request Placed',
+                        style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                          fontWeight: FontWeight.w900,
+                          color: cs.onSurface,
+                        ),
+                      ),
+                      const SizedBox(height: 2),
+                      Text(
+                        'When this booking was submitted',
+                        style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                          fontSize: 11,
+                          color: cs.onSurfaceVariant,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            
+            const SizedBox(height: 16),
+            
+            // Timestamp display
+            Container(
+              width: double.infinity,
+              padding: const EdgeInsets.all(14),
+              decoration: BoxDecoration(
+                color: isDark 
+                    ? cs.surface 
+                    : Colors.white,
+                borderRadius: BorderRadius.circular(10),
+                border: Border.all(
+                  color: isDark ? cs.outlineVariant : Colors.grey.shade200,
+                ),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  // Full formatted timestamp with seconds
+                  Text(
+                    DateTimeHelper.formatCreationTimestamp(createdAt),
+                    style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                      fontWeight: FontWeight.w700,
+                      color: cs.onSurface,
+                      height: 1.3,
+                    ),
+                  ),
+                  const SizedBox(height: 8),
+                  // Timezone indicator
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.language,
+                        size: 14,
+                        color: cs.onSurfaceVariant.withOpacity(0.7),
+                      ),
+                      const SizedBox(width: 6),
+                      Text(
+                        'Your local time (${DateTimeHelper.getTimezoneAbbreviation()})',
+                        style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                          fontSize: 11,
+                          color: cs.onSurfaceVariant.withOpacity(0.7),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  /// Build the booking timeline card showing all status transitions
+  /// Useful for completed/cancelled bookings to see full history
+  Widget _buildBookingTimelineCard(BuildContext context) {
+    final cs = Theme.of(context).colorScheme;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    
+    final status = _booking['status']?.toString() ?? '';
+    // ✅ FIX: Use 'request_time' - this is the field name from Django model
+    final createdAt = _booking['request_time']?.toString();
+    final acceptedAt = _booking['accepted_at']?.toString();
+    final startedAt = _booking['started_at']?.toString() ?? _booking['in_progress_at']?.toString();
+    final completedAt = _booking['completed_at']?.toString();
+    final cancelledAt = _booking['cancelled_at']?.toString();
+    
+    // Only show timeline if we have at least created_at
+    if (createdAt == null || createdAt.isEmpty) return const SizedBox.shrink();
+    
+    // Build timeline steps
+    final List<_TimelineStep> steps = [];
+    
+    // Step 1: Created (always present)
+    steps.add(_TimelineStep(
+      title: 'Request Created',
+      timestamp: createdAt,
+      icon: Icons.add_circle_outline,
+      isCompleted: true,
+      color: Colors.blue,
+    ));
+    
+    // Step 2: Accepted
+    final isAccepted = acceptedAt != null && acceptedAt.isNotEmpty;
+    final isCancelled = status == 'cancelled';
+    
+    if (!isCancelled || isAccepted) {
+      steps.add(_TimelineStep(
+        title: 'Accepted',
+        timestamp: acceptedAt,
+        icon: Icons.check_circle_outline,
+        isCompleted: isAccepted,
+        color: Colors.green,
+        elapsed: isAccepted ? DateTimeHelper.getElapsedTime(createdAt, acceptedAt) : null,
+      ));
+    }
+    
+    // Step 3: In Progress (if applicable)
+    final isInProgress = status == 'in_progress' || status == 'completed';
+    if (isInProgress || startedAt != null) {
+      steps.add(_TimelineStep(
+        title: 'In Progress',
+        timestamp: startedAt,
+        icon: Icons.play_circle_outline,
+        isCompleted: startedAt != null,
+        color: const Color(0xFFB76E79), // Rose gold
+        elapsed: startedAt != null ? DateTimeHelper.getElapsedTime(acceptedAt ?? createdAt, startedAt) : null,
+      ));
+    }
+    
+    // Step 4: Completed or Cancelled
+    if (status == 'completed') {
+      steps.add(_TimelineStep(
+        title: 'Completed',
+        timestamp: completedAt,
+        icon: Icons.celebration,
+        isCompleted: true,
+        color: Colors.green,
+        elapsed: completedAt != null 
+            ? DateTimeHelper.getElapsedTime(startedAt ?? acceptedAt ?? createdAt, completedAt) 
+            : null,
+      ));
+    } else if (status == 'cancelled') {
+      steps.add(_TimelineStep(
+        title: 'Cancelled',
+        timestamp: cancelledAt,
+        icon: Icons.cancel_outlined,
+        isCompleted: true,
+        color: Colors.red,
+        elapsed: cancelledAt != null 
+            ? DateTimeHelper.getElapsedTime(acceptedAt ?? createdAt, cancelledAt) 
+            : null,
+      ));
+    } else if (status != 'cancelled') {
+      // Show pending completion step
+      steps.add(_TimelineStep(
+        title: 'Completed',
+        timestamp: null,
+        icon: Icons.flag_outlined,
+        isCompleted: false,
+        color: Colors.grey,
+      ));
+    }
+    
+    return Card(
+      elevation: 1,
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // Header
+            Row(
+              children: [
+                Icon(Icons.timeline, size: 20, color: cs.primary),
+                const SizedBox(width: 8),
+                Text(
+                  'Booking Timeline',
+                  style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                    fontWeight: FontWeight.w900,
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 16),
+            
+            // Timeline visualization
+            ...List.generate(steps.length, (index) {
+              final step = steps[index];
+              final isLast = index == steps.length - 1;
+              
+              return _buildTimelineItem(
+                context: context,
+                step: step,
+                isLast: isLast,
+                isDark: isDark,
+              );
+            }),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildTimelineItem({
+    required BuildContext context,
+    required _TimelineStep step,
+    required bool isLast,
+    required bool isDark,
+  }) {
+    final cs = Theme.of(context).colorScheme;
+    
+    return IntrinsicHeight(
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          // Timeline indicator column
+          SizedBox(
+            width: 32,
+            child: Column(
+              children: [
+                // Circle indicator
+                Container(
+                  width: 28,
+                  height: 28,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: step.isCompleted 
+                        ? step.color.withOpacity(0.15) 
+                        : Colors.grey.withOpacity(0.1),
+                    border: Border.all(
+                      color: step.isCompleted ? step.color : Colors.grey.shade400,
+                      width: 2,
+                    ),
+                  ),
+                  child: Icon(
+                    step.icon,
+                    size: 14,
+                    color: step.isCompleted ? step.color : Colors.grey.shade400,
+                  ),
+                ),
+                // Connecting line
+                if (!isLast)
+                  Expanded(
+                    child: Container(
+                      width: 2,
+                      margin: const EdgeInsets.symmetric(vertical: 4),
+                      color: step.isCompleted 
+                          ? step.color.withOpacity(0.3) 
+                          : Colors.grey.shade300,
+                    ),
+                  ),
+              ],
+            ),
+          ),
+          
+          const SizedBox(width: 12),
+          
+          // Content column
+          Expanded(
+            child: Padding(
+              padding: EdgeInsets.only(bottom: isLast ? 0 : 20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  // Title row
+                  Row(
+                    children: [
+                      Text(
+                        step.title,
+                        style: TextStyle(
+                          fontWeight: FontWeight.w700,
+                          fontSize: 14,
+                          color: step.isCompleted 
+                              ? cs.onSurface 
+                              : cs.onSurfaceVariant,
+                        ),
+                      ),
+                      if (step.elapsed != null && step.elapsed!.isNotEmpty) ...[
+                        const SizedBox(width: 8),
+                        Container(
+                          padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                          decoration: BoxDecoration(
+                            color: step.color.withOpacity(0.1),
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          child: Text(
+                            step.elapsed!,
+                            style: TextStyle(
+                              fontSize: 10,
+                              fontWeight: FontWeight.w600,
+                              color: step.color,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ],
+                  ),
+                  
+                  // Timestamp
+                  if (step.timestamp != null && step.timestamp!.isNotEmpty) ...[
+                    const SizedBox(height: 4),
+                    Text(
+                      DateTimeHelper.formatCreationTimestampShort(step.timestamp),
+                      style: TextStyle(
+                        fontSize: 12,
+                        color: cs.onSurfaceVariant,
+                      ),
+                    ),
+                  ] else if (!step.isCompleted) ...[
+                    const SizedBox(height: 4),
+                    Text(
+                      'Pending...',
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontStyle: FontStyle.italic,
+                        color: Colors.grey.shade500,
+                      ),
+                    ),
+                  ],
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
 
   Widget _portfolioGridCard(BuildContext context, List<dynamic> posts) {
     final l10n = AppLocalizations.of(context);
@@ -2909,25 +3290,25 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
                         l10n.distanceMiles(_distanceMilesValue!.toStringAsFixed(1)),
                         strong: true,
                       ),
-                    // ✅ PRIVACY: Hide full address after completion
-                    if (locationAddress.isNotEmpty && status != 'completed')
+                    // ✅ PRIVACY: Hide full address after completion or cancellation
+                    if (locationAddress.isNotEmpty && status != 'completed' && status != 'cancelled')
                       _kv(
                         context,
                         'Location',
                         locationAddress,
                       )
-                    else if (locationAddress.isNotEmpty && status == 'completed')
+                    else if (locationAddress.isNotEmpty && (status == 'completed' || status == 'cancelled'))
                       _kv(
                         context,
                         'Service Area',
                         _getGeneralArea(locationAddress),
                       ),
                     // ✅ METADATA: Show when booking was requested
-                    if (_booking['created_at'] != null && _booking['created_at'].toString().isNotEmpty)
+                    if (_booking['request_time'] != null && _booking['request_time'].toString().isNotEmpty)
                       _kv(
                         context,
                         'Requested',
-                        DateTimeHelper.formatMetadataTime(_booking['created_at'].toString()),
+                        DateTimeHelper.formatMetadataTime(_booking['request_time'].toString()),
                       ),
                     
                     // ✅ METADATA: Accepted at
@@ -3015,6 +3396,14 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
               ),
             ),
 
+            // ✅ NEW: Request Placed Card (shows for ALL statuses)
+            const SizedBox(height: 8),
+            _buildRequestPlacedCard(context),
+
+            // ✅ NEW: Booking Timeline Card (shows for all statuses with history)
+            const SizedBox(height: 8),
+            _buildBookingTimelineCard(context),
+
             // ETA Card (show for requester when booking is accepted/in_progress)
             if (widget.role == 'user' &&
                 (status == 'accepted' || status == 'in_progress') &&
@@ -3024,8 +3413,10 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
             ],
 
             // Enhanced job details and requester reputation for providers (after acceptance)
+            // ✅ PRIVACY: Hide for cancelled bookings
             if (widget.role == 'provider' &&
-                (status == 'accepted' || status == 'in_progress' || status == 'completed')) ...[
+                (status == 'accepted' || status == 'in_progress' || status == 'completed') &&
+                status != 'cancelled') ...[
               const SizedBox(height: 8),
               _buildEnhancedJobDetailsCard(context),
               const SizedBox(height: 8),
@@ -3035,6 +3426,7 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
             // Provider evaluation section (USER only, once accepted/in_progress)
             if (widget.role == 'user' &&
                 (status == 'accepted' || status == 'in_progress') &&
+                status != 'cancelled' &&
                 provider != null) ...[
               _providerHeaderCard(context, provider),
               _buildProviderReviewsCard(context),
@@ -3590,3 +3982,23 @@ class _RequesterReviewDialogState extends State<_RequesterReviewDialog> {
       }
     }
   }
+
+
+/// Helper class for timeline steps
+class _TimelineStep {
+  final String title;
+  final String? timestamp;
+  final IconData icon;
+  final bool isCompleted;
+  final Color color;
+  final String? elapsed;
+
+  _TimelineStep({
+    required this.title,
+    this.timestamp,
+    required this.icon,
+    required this.isCompleted,
+    required this.color,
+    this.elapsed,
+  });
+}

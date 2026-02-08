@@ -12,6 +12,7 @@ import 'open_jobs_screen.dart';
 import 'bookings_screen.dart';
 import 'provider_wallet_screen.dart';
 import 'language_settings_screen.dart';
+import 'my_reputation_screen.dart';
 
 import 'widgets/background_layer.dart';
 
@@ -81,6 +82,17 @@ class AccountScreen extends StatelessWidget {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(builder: (_) => const BookingsScreen(role: 'user')),
+                      );
+                    },
+                  ),
+
+                if (!isProvider)
+                  tile(
+                    icon: Icons.star_outline,
+                    title: l10n.mainMyReputation,
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(builder: (_) => MyReputationScreen()),
                       );
                     },
                   ),

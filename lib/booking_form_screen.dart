@@ -26,7 +26,12 @@ bool get _stripeSupported {
 }
 
 class BookingFormScreen extends StatefulWidget {
-  const BookingFormScreen({super.key});
+  final String? preSelectedService;
+  
+  const BookingFormScreen({
+    super.key,
+    this.preSelectedService,
+  });
 
   @override
   State<BookingFormScreen> createState() => _BookingFormScreenState();
@@ -92,6 +97,12 @@ class _BookingFormScreenState extends State<BookingFormScreen> {
     super.initState();
     final now = DateTime.now();
     _selectedDate = DateTime(now.year, now.month, now.day);
+  
+    // Set pre-selected service if provided
+    if (widget.preSelectedService != null && widget.preSelectedService!.isNotEmpty) {
+      _serviceType = widget.preSelectedService!;
+    }
+  
     _loadUserInfo();
     _initDeepLinks();
     _autoFetchLocation();
@@ -105,6 +116,31 @@ class _BookingFormScreenState extends State<BookingFormScreen> {
     _notesController.dispose();
     _linkSubscription?.cancel();
     super.dispose();
+  }
+
+  String _getServiceDisplayName(String key) {
+    final l10n = AppLocalizations.of(context)!;
+  
+    final Map<String, String> serviceNames = {
+      'haircut': l10n.serviceHaircutLabel,
+      'braids': l10n.serviceBraidsLabel,
+      'shave': l10n.serviceShaveLabel,
+      'color': l10n.serviceHairColoringLabel,
+      'manicure': l10n.serviceManicureLabel,
+      'pedicure': l10n.servicePedicureLabel,
+      'nails': l10n.serviceNailArtLabel,
+      'makeup': l10n.serviceMakeupLabel,
+      'facial': l10n.serviceFacialLabel,
+      'waxing': l10n.serviceWaxingLabel,
+      'massage': l10n.serviceMassageLabel,
+      'tattoo': l10n.serviceTattooLabel,
+      'styling': l10n.serviceHairStylingLabel,
+      'treatment': l10n.serviceHairTreatmentLabel,
+      'extensions': l10n.serviceHairExtensionsLabel,
+      'other': l10n.serviceOtherServicesLabel,
+    };
+  
+    return serviceNames[key] ?? key;
   }
 
   /// Automatically fetch user's GPS location when screen opens
@@ -1322,52 +1358,96 @@ class _BookingFormScreenState extends State<BookingFormScreen> {
                         ),
                   ),
                   const SizedBox(height: 8),
-                  DropdownMenu<String>(
-                    initialSelection: _serviceType,
-                    label: Text(l10n.serviceDropdownLabel),
-                    dropdownMenuEntries: [
-                      DropdownMenuEntry(
-                          value: 'haircut', label: l10n.serviceHaircutLabel),
-                      DropdownMenuEntry(
-                          value: 'braids', label: l10n.serviceBraidsLabel),
-                      DropdownMenuEntry(
-                          value: 'shave', label: l10n.serviceShaveLabel),
-                      DropdownMenuEntry(
-                          value: 'color', label: l10n.serviceHairColoringLabel),
-                      DropdownMenuEntry(
-                          value: 'manicure', label: l10n.serviceManicureLabel),
-                      DropdownMenuEntry(
-                          value: 'pedicure', label: l10n.servicePedicureLabel),
-                      DropdownMenuEntry(
-                          value: 'nails', label: l10n.serviceNailArtLabel),
-                      DropdownMenuEntry(
-                          value: 'makeup', label: l10n.serviceMakeupLabel),
-                      DropdownMenuEntry(
-                          value: 'facial', label: l10n.serviceFacialLabel),
-                      DropdownMenuEntry(
-                          value: 'waxing', label: l10n.serviceWaxingLabel),
-                      DropdownMenuEntry(
-                          value: 'massage', label: l10n.serviceMassageLabel),
-                      DropdownMenuEntry(
-                          value: 'tattoo', label: l10n.serviceTattooLabel),
-                      DropdownMenuEntry(
-                          value: 'styling',
-                          label: l10n.serviceHairStylingLabel),
-                      DropdownMenuEntry(
-                          value: 'treatment',
-                          label: l10n.serviceHairTreatmentLabel),
-                      DropdownMenuEntry(
-                          value: 'extensions',
-                          label: l10n.serviceHairExtensionsLabel),
-                      DropdownMenuEntry(
-                          value: 'other',
-                          label: l10n.serviceOtherServicesLabel),
-                    ],
-                    onSelected: (value) {
-                      if (value == null) return;
-                      setState(() => _serviceType = value);
-                    },
-                  ),
+                  // Show read-only selected service if pre-selected
+                  if (widget.preSelectedService != null && widget.preSelectedService!.isNotEmpty)
+                    Container(
+                      padding: const EdgeInsets.all(16),
+                      decoration: BoxDecoration(
+                        color: Theme.of(context).colorScheme.surfaceContainerHighest,
+                        borderRadius: BorderRadius.circular(12),
+                        border: Border.all(
+                          color: Theme.of(context).colorScheme.primary,
+                          width: 2,
+                        ),
+                      ),
+                      child: Row(
+                        children: [
+                          Icon(
+                            Icons.check_circle,
+                            color: Theme.of(context).colorScheme.primary,
+                          ),
+                          const SizedBox(width: 12),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Selected Service',
+                                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                                    color: Theme.of(context).colorScheme.onSurfaceVariant,
+                                  ),
+                                ),
+                                const SizedBox(height: 4),
+                                Text(
+                                  _getServiceDisplayName(_serviceType),
+                                  style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                                    fontWeight: FontWeight.bold,
+                                    color: Theme.of(context).colorScheme.onSurface,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    )
+                  else
+                    DropdownMenu<String>(
+                      initialSelection: _serviceType,
+                      label: Text(l10n.serviceDropdownLabel),
+                      dropdownMenuEntries: [
+                        DropdownMenuEntry(
+                            value: 'haircut', label: l10n.serviceHaircutLabel),
+                        DropdownMenuEntry(
+                            value: 'braids', label: l10n.serviceBraidsLabel),
+                        DropdownMenuEntry(
+                            value: 'shave', label: l10n.serviceShaveLabel),
+                        DropdownMenuEntry(
+                            value: 'color', label: l10n.serviceHairColoringLabel),
+                        DropdownMenuEntry(
+                            value: 'manicure', label: l10n.serviceManicureLabel),
+                        DropdownMenuEntry(
+                            value: 'pedicure', label: l10n.servicePedicureLabel),
+                        DropdownMenuEntry(
+                            value: 'nails', label: l10n.serviceNailArtLabel),
+                        DropdownMenuEntry(
+                            value: 'makeup', label: l10n.serviceMakeupLabel),
+                        DropdownMenuEntry(
+                            value: 'facial', label: l10n.serviceFacialLabel),
+                        DropdownMenuEntry(
+                            value: 'waxing', label: l10n.serviceWaxingLabel),
+                        DropdownMenuEntry(
+                            value: 'massage', label: l10n.serviceMassageLabel),
+                        DropdownMenuEntry(
+                            value: 'tattoo', label: l10n.serviceTattooLabel),
+                        DropdownMenuEntry(
+                            value: 'styling',
+                            label: l10n.serviceHairStylingLabel),
+                        DropdownMenuEntry(
+                            value: 'treatment',
+                            label: l10n.serviceHairTreatmentLabel),
+                        DropdownMenuEntry(
+                            value: 'extensions',
+                            label: l10n.serviceHairExtensionsLabel),
+                        DropdownMenuEntry(
+                            value: 'other',
+                            label: l10n.serviceOtherServicesLabel),
+                      ],
+                      onSelected: (value) {
+                        if (value == null) return;
+                        setState(() => _serviceType = value);
+                      },
+                    ),
                   const SizedBox(height: 12),
                   TextFormField(
                     controller: _notesController,

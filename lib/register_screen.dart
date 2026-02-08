@@ -56,6 +56,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
   bool _locationDetectionAttempted = false;
   bool _userChangedCountry = false;
 
+  // Key to force CountryStateCityPicker rebuild after GPS detection
+  int _locationPickerKey = 0;
+
   @override
   void initState() {
     super.initState();
@@ -174,31 +177,36 @@ class _RegisterScreenState extends State<RegisterScreen> {
         final city = placemark.locality ?? placemark.administrativeArea;
 
         if (country != null && country.isNotEmpty) {
+          // ✅ STEP 1: Store detected info and reset controllers
           setState(() {
             _detectedCountry = country;
             _detectedCity = city;  // Keep for reference/logging, but don't auto-fill
             _detectingLocation = false;
             _locationDetectionAttempted = true;
+            // Clear all location controllers for clean rebuild
+            _countryController.text = '';
+            _stateController.text = '';
+            _cityController.text = '';
           });
 
-          // Auto-fill the country field
-          // Note: CountryStateCityPicker uses specific country names
-          // We need to set it programmatically
-          _countryController.text = country;
-          
-          // ✅ ULTRA HACK: Force CountryStateCityPicker to rebuild
-          // The widget needs a frame to process the controller change
+          // ✅ STEP 2: Small delay for widget to dispose cleanly
+          await Future.delayed(const Duration(milliseconds: 150));
+
+          if (!mounted) return;
+
+          // ✅ STEP 3: Set country and force picker rebuild with new key
+          setState(() {
+            _countryController.text = country;
+            _locationPickerKey++;
+          });
+
+          // ✅ STEP 4: Sync phone country code after rebuild
           WidgetsBinding.instance.addPostFrameCallback((_) {
             if (mounted) {
-              setState(() {
-                // This empty setState forces the CountryStateCityPicker 
-                // to rebuild and recognize the new country value
-              });
+              _syncPhoneCountryWithSelectedCountry();
             }
           });
 
-          // Sync phone country code
-          _syncPhoneCountryWithSelectedCountry();
           return;
         }
       }
@@ -650,6 +658,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             crossAxisAlignment: CrossAxisAlignment.stretch,
                             children: [
                               CountryStateCityPicker(
+                                key: ValueKey('location_picker_$_locationPickerKey'),
                                 country: _countryController,
                                 state: _stateController,
                                 city: _cityController,

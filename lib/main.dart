@@ -9,6 +9,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_stripe/flutter_stripe.dart' as stripe;
 import 'package:url_launcher/url_launcher.dart';
 import 'services/notification_service.dart';
+import 'widgets/service_selector_widget.dart';
+import 'widgets/provider_action_widget.dart';
+import 'profile_picture_state.dart';
+import 'profile_picture_viewer_screen.dart';
 
 import 'app_theme.dart';
 import 'widgets/background_layer.dart';
@@ -485,6 +489,7 @@ class _AuthGateState extends State<AuthGate> {
     if (userData == null) {
       // token invalid or server error -> force login
       await ApiClient.logout();
+      clearProfilePictureState();  // ADD THIS LINE
       if (!mounted) return;
       setState(() {
         _child = const LoginScreen();
@@ -499,6 +504,7 @@ class _AuthGateState extends State<AuthGate> {
     // 3) Email verification gate
     if (!emailVerified) {
       await ApiClient.logout();
+      clearProfilePictureState();  // ADD THIS LINE
       if (!mounted) return;
       setState(() {
         _child = const LoginScreen();
@@ -877,6 +883,12 @@ class _MainShellState extends State<MainShell> {
   Future<void> _loadHeaderUser() async {
     final u = await ApiClient.getCurrentUser();
     if (!mounted || u == null) return;
+
+    final profileUrl = _resolveUrl(u['profile_picture_url']?.toString());
+  
+    // Update global state
+    profilePictureState.updateProfilePicture(profileUrl);
+
     setState(() {
       _firstName = (u['first_name'] ?? '').toString().trim();
       _profilePictureUrl = _resolveUrl(u['profile_picture_url']?.toString());
@@ -1051,10 +1063,22 @@ class _HomeScreenState extends State<HomeScreen> {
     _loadUserData();
     _loadUnreadCount();
     _checkAndSurfaceImportantNotifications();
+
+    // Listen for profile picture updates
+    profilePictureState.profilePictureUrl.addListener(_onProfilePictureChanged);
+  }
+
+  void _onProfilePictureChanged() {
+    if (!mounted) return;
+    setState(() {
+      _profilePictureUrl = profilePictureState.profilePictureUrl.value;
+    });
   }
 
   @override
   void dispose() {
+
+  profilePictureState.profilePictureUrl.removeListener(_onProfilePictureChanged);
     _notificationSubscription?.cancel();
     super.dispose();
   }
@@ -1133,9 +1157,14 @@ class _HomeScreenState extends State<HomeScreen> {
       final userData = await ApiClient.getCurrentUser();
       if (!mounted || userData == null) return;
 
+      final profileUrl = _resolveUrl(userData['profile_picture_url']?.toString());
+
+      // Update global state
+      profilePictureState.updateProfilePicture(profileUrl);
+
       setState(() {
         _firstName = (userData['first_name'] ?? '').toString().trim();
-        _profilePictureUrl = _resolveUrl(userData['profile_picture_url']?.toString());
+        _profilePictureUrl = profileUrl;
         _userAddress = userData['address']?.toString();
       });
 
@@ -1333,6 +1362,11 @@ class _HomeScreenState extends State<HomeScreen> {
                               final uri = Uri.parse('mailto:support@styloria.app?subject=Styloria%20Help');
                               await launchUrl(uri, mode: LaunchMode.externalApplication);
                             }
+                            if (v == 'reputation' && widget.role != 'provider') {
+                              await Navigator.of(context).push(
+                                MaterialPageRoute(builder: (_) => const MyReputationScreen()),
+                              );
+                            }
                             if (v == 'wallet') {
                               await Navigator.of(context).push(
                                 MaterialPageRoute(builder: (_) => const ProviderWalletScreen()),
@@ -1355,6 +1389,8 @@ class _HomeScreenState extends State<HomeScreen> {
                             PopupMenuItem(value: 'referral', child: Text(l10n.mainReferral)),
                             PopupMenuItem(value: 'settings', child: Text(l10n.mainSettings)),
                             PopupMenuItem(value: 'help', child: Text(l10n.mainHelp)),
+                            if (widget.role != 'provider')
+                              PopupMenuItem(value: 'reputation', child: Text(l10n.mainMyReputation)),
                             if (widget.role == 'provider') ...[
                               const PopupMenuDivider(),
                               PopupMenuItem(value: 'wallet', child: Text(l10n.mainWallet)),
@@ -1367,6 +1403,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           icon: const Icon(Icons.logout, color: Colors.white),
                           onPressed: () async {
                             await ApiClient.logout();
+                            clearProfilePictureState();  // ADD THIS LINE
                             if (!context.mounted) return;
                             Navigator.of(context).pushAndRemoveUntil(
                               MaterialPageRoute(builder: (_) => const LoginScreen()),
@@ -1403,6 +1440,18 @@ class _HomeScreenState extends State<HomeScreen> {
                             MaterialPageRoute(builder: (_) => const ProfileScreen()),
                           );
                         },
+                        onProfilePictureTap: (_profilePictureUrl != null && _profilePictureUrl!.isNotEmpty)
+                            ? () {
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    builder: (_) => ProfilePictureViewerScreen(
+                                      imageUrl: _profilePictureUrl!,
+                                      userName: _firstName ?? 'User',
+                                    ),
+                                  ),
+                                );
+                              }
+                            : null,
                       ),
 
                       // Location info (if available)
@@ -1438,139 +1487,11 @@ class _HomeScreenState extends State<HomeScreen> {
 
                       const SizedBox(height: 16),
 
-                      // Provider-specific actions
-                      if (widget.role == 'provider') ...[
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 16),
-                          child: ElevatedButton(
-                            onPressed: () {
-                              Navigator.of(context).push(
-                                MaterialPageRoute(
-                                  builder: (_) => const ProviderProfileScreen(),
-                                ),
-                              );
-                            },
-                            child: Text(l10n.manageProviderProfile),
-                          ),
-                        ),
-                        const SizedBox(height: 12),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 16),
-                          child: ElevatedButton(
-                            onPressed: () {
-                              Navigator.of(context).push(
-                                MaterialPageRoute(
-                                  builder: (_) => const OpenJobsScreen(),
-                                ),
-                              );
-                            },
-                            child: Text(l10n.browseOpenJobs),
-                          ),
-                        ),
-                        const SizedBox(height: 12),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 16),
-                          child: ElevatedButton(
-                            onPressed: () {
-                              Navigator.of(context).push(
-                                MaterialPageRoute(
-                                  builder: (_) => const ProviderWalletScreen(),
-                                ),
-                              );
-                            },
-                            child: Text(l10n.walletTitle),
-                          ),
-                        ),
-                        const SizedBox(height: 12),
-                      ],
-
-                      // Quick Actions Section
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 16),
-                        child: Center(
-                          child: Text(
-                            l10n.quickActions,
-                            style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.blue.shade700,
-                            ),
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                      ),
-                      const SizedBox(height: 12),
-
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 16),
-                        child: ElevatedButton(
-                          onPressed: () {
-                            Navigator.of(context).push(
-                              MaterialPageRoute(
-                                builder: (_) => const BookingFormScreen(),
-                              ),
-                            );
-                          },
-                          child: Text(l10n.newBooking),
-                        ),
-                      ),
-                      const SizedBox(height: 12),
-
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 16),
-                        child: ElevatedButton(
-                          onPressed: () {
-                            Navigator.of(context).push(
-                              MaterialPageRoute(
-                                builder: (_) => const MyReviewsScreen(),
-                              ),
-                            );
-                          },
-                          child: Text(l10n.myReviewsTitle),
-                        ),
-                      ),
-                      const SizedBox(height: 12),
-
-                      // My Reputation (users only)
-                      if (widget.role != 'provider') ...[
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 16),
-                          child: ElevatedButton.icon(
-                            onPressed: () {
-                              Navigator.of(context).push(
-                                MaterialPageRoute(
-                                  builder: (_) => const MyReputationScreen(),
-                                ),
-                              );
-                            },
-                            icon: const Icon(Icons.star_outline),
-                            label: Text(l10n.mainMyReputation),
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.blue.shade600,
-                              foregroundColor: Colors.white,
-                            ),
-                          ),
-                        ),
-                        const SizedBox(height: 12),
-                      ],
-
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 16),
-                        child: ElevatedButton(
-                          onPressed: () async {
-                            await Navigator.of(context).push(
-                              MaterialPageRoute(builder: (_) => const NotificationsScreen()),
-                            );
-                            if (!mounted) return;
-                            _loadUnreadCount();
-                          },
-                          child: Text(
-                            _unreadCount > 0
-                                ? l10n.notificationsWithUnread(_unreadCount)
-                                : l10n.navNotifications,
-                          ),
-                        ),
-                      ),
+                      // Visual action selector for both customers and providers
+                      if (widget.role != 'provider') 
+                        const ServiceSelectorWidget()
+                      else
+                        const ProviderActionWidget(),
                     ],
                   ),
                 ),

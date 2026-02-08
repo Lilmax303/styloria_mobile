@@ -9,6 +9,7 @@ class ProfileCard extends StatelessWidget {
   final String? tier;
   final int? completionPercent;
   final VoidCallback? onViewProfile;
+  final VoidCallback? onProfilePictureTap;
 
   const ProfileCard({
     super.key,
@@ -17,7 +18,8 @@ class ProfileCard extends StatelessWidget {
     required this.userRole,
     this.tier,
     this.completionPercent,
-    this.onViewProfile,
+    required this.onViewProfile,
+    this.onProfilePictureTap,
   });
 
   Color _getTierColor() {
@@ -25,13 +27,13 @@ class ProfileCard extends StatelessWidget {
     
     switch (tier!.toLowerCase()) {
       case 'platinum':
-        return const Color(0xFFE5E4E2); // Platinum silver
+        return const Color(0xFFE5E4E2);
       case 'gold':
-        return const Color(0xFFD4AF37); // Gold
+        return const Color(0xFFD4AF37);
       case 'silver':
-        return const Color(0xFFC0C0C0); // Silver
+        return const Color(0xFFC0C0C0);
       case 'bronze':
-        return const Color(0xFFCD7F32); // Bronze
+        return const Color(0xFFCD7F32);
       default:
         return Colors.grey;
     }
@@ -112,19 +114,22 @@ class ProfileCard extends StatelessWidget {
                   ),
                 ],
               ),
-              child: CircleAvatar(
-                radius: 37,
-                backgroundColor: Colors.grey.shade200,
-                backgroundImage: profilePictureUrl != null && profilePictureUrl!.isNotEmpty
-                    ? NetworkImage(profilePictureUrl!)
-                    : null,
-                child: profilePictureUrl == null || profilePictureUrl!.isEmpty
-                    ? Icon(
-                        Icons.person,
-                        size: 40,
-                        color: Colors.grey.shade600,
-                      )
-                    : null,
+              child: GestureDetector(
+                onTap: onProfilePictureTap,
+                child: CircleAvatar(
+                  radius: 37,
+                  backgroundColor: Colors.grey.shade200,
+                  backgroundImage: profilePictureUrl != null && profilePictureUrl!.isNotEmpty
+                      ? NetworkImage(profilePictureUrl!)
+                      : null,
+                  child: profilePictureUrl == null || profilePictureUrl!.isEmpty
+                      ? Icon(
+                          Icons.person,
+                          size: 40,
+                          color: Colors.grey.shade600,
+                        )
+                      : null,
+                ),
               ),
             ),
             
@@ -205,7 +210,7 @@ class ProfileCard extends StatelessWidget {
                         ),
                         const SizedBox(width: 8),
                         Text(
-                          '${completionPercent}%',
+                          '$completionPercent%',
                           style: TextStyle(
                             fontSize: 11,
                             fontWeight: FontWeight.w700,

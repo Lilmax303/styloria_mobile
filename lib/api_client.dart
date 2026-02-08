@@ -2054,6 +2054,13 @@ class ApiClient {
     return null;
   }
 
+  // ---------- DELETE PROFILE PICTURE ----------
+
+  static Future<bool> deleteProfilePicture() async {
+    final response = await _authorizedRequest('DELETE', '/api/users/me/profile_picture/');
+    return response.statusCode >= 200 && response.statusCode < 300;
+  }
+
   // ---------- NEARBY OPEN JOBS (15 MILES) ----------
 
   static Future<List<dynamic>?> getNearbyOpenJobs({

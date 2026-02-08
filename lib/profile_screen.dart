@@ -5,6 +5,7 @@ import 'profile_picture_screen.dart';
 import 'package:styloria_mobile/gen_l10n/app_localizations.dart';
 import 'api_client.dart';
 import 'my_reputation_screen.dart';
+import 'profile_picture_state.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -37,10 +38,22 @@ class _ProfileScreenState extends State<ProfileScreen> {
     super.initState();
     _loadProfile();
     _loadReputation();
+
+    // Listen for profile picture updates
+    profilePictureState.profilePictureUrl.addListener(_onProfilePictureChanged);
+  }
+
+  void _onProfilePictureChanged() {
+    if (!mounted) return;
+    setState(() {
+      _profilePictureUrl = profilePictureState.profilePictureUrl.value;
+    });
   }
 
   @override
   void dispose() {
+
+  profilePictureState.profilePictureUrl.removeListener(_onProfilePictureChanged);
     _firstNameController.dispose();
     _lastNameController.dispose();
     _emailController.dispose();

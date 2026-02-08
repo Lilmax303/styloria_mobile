@@ -1304,6 +1304,36 @@ abstract class AppLocalizations {
   /// **'No portfolio posts available.'**
   String get noPortfolioPostsAvailable;
 
+  /// No description provided for @deleteProfilePicture.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete Profile Picture'**
+  String get deleteProfilePicture;
+
+  /// No description provided for @deleteProfilePictureTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete Profile Picture'**
+  String get deleteProfilePictureTitle;
+
+  /// No description provided for @deleteProfilePictureConfirmation.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to delete your profile picture?'**
+  String get deleteProfilePictureConfirmation;
+
+  /// No description provided for @profilePictureDeletedSuccessfully.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile picture deleted successfully.'**
+  String get profilePictureDeletedSuccessfully;
+
+  /// No description provided for @failedToDeleteProfilePicture.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to delete profile picture.'**
+  String get failedToDeleteProfilePicture;
+
   /// No description provided for @bookingLocation.
   ///
   /// In en, this message translates to:

@@ -76,4 +76,6 @@ flutter:
   generate: true
   assets:
     - assets/backgrounds/
+    - assets/services/
+    - assets/provider_actions/
     - .env
