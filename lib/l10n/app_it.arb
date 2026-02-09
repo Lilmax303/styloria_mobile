@@ -236,6 +236,32 @@
       "id": {}
     }
   },
+
+  "myCustomerRating": "La mia valutazione cliente",
+  "outOf5": "/ 5.0",
+  "reviewsFromProviders": "{count} {count, plural, =1{recensione} other{recensioni}} dai fornitori",
+  "@reviewsFromProviders": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "failedToLoadReputation": "Impossibile caricare i dati della reputazione",
+  "somethingWentWrong": "Qualcosa è andato storto",
+  "retry": "Riprova",
+  "weDetectedYoureIn": "📍 Abbiamo rilevato che ti trovi in {country}. Seleziona il tuo paese qui sotto.",
+  "@weDetectedYoureIn": {
+    "placeholders": {
+      "country": {"type": "String"}
+    }
+  },
+  "locationConfirmed": "✓ Posizione confermata: {country}",
+  "@locationConfirmed": {
+    "placeholders": {
+      "country": {"type": "String"}
+    }
+  },
+  "locationMarkedAsOther": "Posizione contrassegnata come \"Altro\" - puoi procedere con la registrazione",
+
   "unableToStartChat": "Impossibile avviare la chat. La chat è disponibile solo quando la prenotazione è accettata, in corso o completata nelle ultime 24 ore.",
   "invalidChatThreadFromServer": "Thread di chat non valido restituito dal server.",
   "messageNotSentPolicy": "Messaggio non inviato. Nota: non è consentito condividere numeri di telefono o email nella chat.",

@@ -114,6 +114,32 @@
       "identifier": {}
     }
   },
+
+  "myCustomerRating": "Ma note client",
+  "outOf5": "/ 5.0",
+  "reviewsFromProviders": "{count} {count, plural, =1{avis} other{avis}} des prestataires",
+  "@reviewsFromProviders": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "failedToLoadReputation": "Échec du chargement des données de réputation",
+  "somethingWentWrong": "Une erreur s'est produite",
+  "retry": "Réessayer",
+  "weDetectedYoureIn": "📍 Nous avons détecté que vous êtes en {country}. Veuillez sélectionner votre pays ci-dessous.",
+  "@weDetectedYoureIn": {
+    "placeholders": {
+      "country": {"type": "String"}
+    }
+  },
+  "locationConfirmed": "✓ Localisation confirmée : {country}",
+  "@locationConfirmed": {
+    "placeholders": {
+      "country": {"type": "String"}
+    }
+  },
+  "locationMarkedAsOther": "Localisation marquée comme \"Autre\" - vous pouvez continuer l'inscription",
+
   "verificationCodeLabel": "Code de vérification",
   "sendingEllipsis": "Envoi...",
   "resendCode": "Renvoyer le code",

@@ -215,6 +215,32 @@
       "amount": {}
     }
   },
+
+  "myCustomerRating": "내 고객 평점",
+  "outOf5": "/ 5.0",
+  "reviewsFromProviders": "서비스 제공자로부터 {count}개의 리뷰",
+  "@reviewsFromProviders": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "failedToLoadReputation": "평판 데이터를 불러오지 못했습니다",
+  "somethingWentWrong": "문제가 발생했습니다",
+  "retry": "다시 시도",
+  "weDetectedYoureIn": "📍 현재 위치가 {country}(으)로 감지되었습니다. 아래에서 국가를 선택해 주세요.",
+  "@weDetectedYoureIn": {
+    "placeholders": {
+      "country": {"type": "String"}
+    }
+  },
+  "locationConfirmed": "✓ 위치 확인됨: {country}",
+  "@locationConfirmed": {
+    "placeholders": {
+      "country": {"type": "String"}
+    }
+  },
+  "locationMarkedAsOther": "위치가 \"기타\"로 표시됨 - 등록을 계속할 수 있습니다",
+
   "userConfirmedLabel": "사용자 확인",
   "providerConfirmedLabel": "제공자 확인",
   "payoutReleasedLabel": "정산 해제",

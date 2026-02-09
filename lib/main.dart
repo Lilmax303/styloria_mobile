@@ -1,4 +1,4 @@
-// lib/main.dart
+// lib/main.dart - UPDATED VERSION
 
 import 'dart:io' show Platform;
 import 'package:flutter/foundation.dart' show kIsWeb;
@@ -45,6 +45,8 @@ import 'dart:async';
 import 'forgot_password_screen.dart';
 import 'l10n/fallback_localization_delegates.dart';
 import 'onboarding_screen.dart';
+import 'splash_screen.dart'; // ✅ NEW IMPORT
+import 'language_settings_screen.dart'; // ✅ NEW IMPORT
 
 const Color kGradientStart = Color(0xFF111827);
 const Color kGradientEnd = Color(0xFF0B0F14);
@@ -116,6 +118,7 @@ class StyloriaAppState extends State<StyloriaApp> {
   // Language list (as requested)
   static const List<Locale> supportedLocales = [
     Locale('en'), // English
+    Locale('es'), // Spanish
     Locale('fr'), // French
     Locale('zh'), // Mandarin (Chinese)
     Locale('ru'), // Russian
@@ -370,7 +373,7 @@ class StyloriaAppState extends State<StyloriaApp> {
     // Save locally (so it persists even if user is logged out)
     await ApiClient.saveLanguageCode(code);
 
-    // Optional: also sync to backend (won’t break if backend doesn’t support it yet)
+    // Optional: also sync to backend (won't break if backend doesn't support it yet)
     try {
       await ApiClient.updateCurrentUser({"preferred_language": code});
     } catch (_) {}
@@ -420,7 +423,7 @@ class StyloriaAppState extends State<StyloriaApp> {
 
 
 // =======================
-// AUTH GATE (AUTO LOGIN)
+// AUTH GATE (AUTO LOGIN) - ✅ UPDATED WITH SPLASH SCREEN
 // =======================
 
 class AuthGate extends StatefulWidget {
@@ -431,12 +434,19 @@ class AuthGate extends StatefulWidget {
 }
 
 class _AuthGateState extends State<AuthGate> {
+  bool _showSplash = true; // ✅ NEW: Show splash first
   bool _loading = true;
   Widget? _child;
 
   @override
   void initState() {
     super.initState();
+    // Don't start bootstrap yet - wait for splash
+  }
+
+  void _onSplashComplete() {
+    // ✅ Called when splash animation finishes
+    setState(() => _showSplash = false);
     _bootstrap();
   }
 
@@ -489,7 +499,7 @@ class _AuthGateState extends State<AuthGate> {
     if (userData == null) {
       // token invalid or server error -> force login
       await ApiClient.logout();
-      clearProfilePictureState();  // ADD THIS LINE
+      clearProfilePictureState();
       if (!mounted) return;
       setState(() {
         _child = const LoginScreen();
@@ -504,7 +514,7 @@ class _AuthGateState extends State<AuthGate> {
     // 3) Email verification gate
     if (!emailVerified) {
       await ApiClient.logout();
-      clearProfilePictureState();  // ADD THIS LINE
+      clearProfilePictureState();
       if (!mounted) return;
       setState(() {
         _child = const LoginScreen();
@@ -547,6 +557,12 @@ class _AuthGateState extends State<AuthGate> {
 
   @override
   Widget build(BuildContext context) {
+    // ✅ Show splash screen first
+    if (_showSplash) {
+      return SplashScreen(onComplete: _onSplashComplete);
+    }
+
+    // ✅ After splash, show loading or actual screen
     if (_loading || _child == null) {
       return const Scaffold(
         body: Center(child: CircularProgressIndicator()),
@@ -557,7 +573,7 @@ class _AuthGateState extends State<AuthGate> {
 }
 
 // =======================
-// LOGIN SCREEN
+// LOGIN SCREEN - ✅ UPDATED WITH LANGUAGE BUTTON
 // =======================
 
 class LoginScreen extends StatefulWidget {
@@ -617,6 +633,14 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
+  // ✅ NEW: Show language picker dialog
+  void _showLanguagePicker() {
+    showDialog(
+      context: context,
+      builder: (context) => const LanguagePickerDialog(),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
@@ -628,154 +652,183 @@ class _LoginScreenState extends State<LoginScreen> {
             imageAsset: 'assets/backgrounds/bg_login_black_marble.jpg',
             overlayColor: const Color(0xFF0B0F14),
             overlayOpacity: 0.68,
-            child: Center(
-              child: SingleChildScrollView(
-                child: ConstrainedBox(
-                  constraints: const BoxConstraints(maxWidth: 420),
-                  child: Card(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(18),
+            child: Column(
+              children: [
+                // ✅ NEW: Top bar with language button
+                SafeArea(
+                  bottom: false,
+                  child: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        // Language button in top-right corner
+                        IconButton(
+                          icon: const Icon(Icons.language, color: Colors.white),
+                          tooltip: l10n.language,
+                          onPressed: _showLanguagePicker,
+                          style: IconButton.styleFrom(
+                            backgroundColor: Colors.white.withOpacity(0.1),
+                          ),
+                        ),
+                      ],
                     ),
-                    elevation: 12,
-                    child: Padding(
-                      padding: const EdgeInsets.all(24.0),
-                      child: Form(
-                        key: _formKey,
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          crossAxisAlignment: CrossAxisAlignment.stretch,
-                          children: [
-                            Text(
-                              l10n.loginWelcomeTitle,
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                fontSize: 24,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            const SizedBox(height: 8),
-                            Text(
-                              l10n.loginWelcomeSubtitle,
-                              textAlign: TextAlign.center,
-                            ),
-                            const SizedBox(height: 24),
-                            TextFormField(
-                              controller: _usernameController,
-                              decoration: InputDecoration(
-                                labelText: l10n.username,
-                                border: const OutlineInputBorder(),
-                              ),
-                              validator: (value) =>
-                                  (value == null || value.isEmpty)
-                                      ? l10n.required
-                                      : null,
-                            ),
-                            const SizedBox(height: 12),
-                            TextFormField(
-                              controller: _passwordController,
-                              decoration: InputDecoration(
-                                labelText: l10n.password,
-                                border: const OutlineInputBorder(),
-                                suffixIcon: IconButton(
-                                  icon: Icon(
-                                    _showPassword ? Icons.visibility_off : Icons.visibility,
-                                  ),
-                                  onPressed: () => setState(() => _showPassword = !_showPassword),
-                                  tooltip: _showPassword
-                                      ? l10n.hidePassword
-                                      : l10n.showPassword,
-                                ),
-                              ),
-                              obscureText: !_showPassword,
-                              validator: (value) =>
-                                  (value == null || value.isEmpty)
-                                      ? l10n.required
-                                      : null,
-                            ),
+                  ),
+                ),
 
-                            Padding(
-                              padding: const EdgeInsets.only(top: 4, left: 4),
-                              child: Text(
-                                l10n.tapEyeToShowPassword,
-                                style: TextStyle(
-                                  fontSize: 11,
-                                  color: Theme.of(context).colorScheme.onSurfaceVariant,
-                                ),
-                              ),
-                            ),
-                            const SizedBox(height: 16),
-                            if (_error != null)
-                              Text(
-                                _error!,
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  color: Theme.of(context).colorScheme.error,
-                                ),
-                              ),
-                            const SizedBox(height: 12),
-                            ElevatedButton(
-                              onPressed: _loading ? null : _handleLogin,
-                              child: _loading
-                                  ? const SizedBox(
-                                      height: 18,
-                                      width: 18,
-                                      child: CircularProgressIndicator(
-                                          strokeWidth: 2),
-                                    )
-                                  : Text(l10n.login),
-                            ),
-                            const SizedBox(height: 4),
-                            Align(
-                              alignment: Alignment.centerRight,
-                              child: TextButton(
-                                onPressed: _loading
-                                    ? null
-                                    : () {
-                                        Navigator.of(context).push(
-                                          MaterialPageRoute(
-                                            builder: (_) =>
-                                                const ForgotPasswordScreen(),
-                                          ),
-                                        );
-                                      },
-                                child: Text(
-                                  l10n.forgotPassword,
-                                  style: TextStyle(
-                                    color: Theme.of(context).colorScheme.primary,
-                                    fontSize: 13,
+                // Rest of login screen
+                Expanded(
+                  child: Center(
+                    child: SingleChildScrollView(
+                      child: ConstrainedBox(
+                        constraints: const BoxConstraints(maxWidth: 420),
+                        child: Card(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(18),
+                          ),
+                          elevation: 12,
+                          child: Padding(
+                            padding: const EdgeInsets.all(24.0),
+                            child: Form(
+                              key: _formKey,
+                              child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                crossAxisAlignment: CrossAxisAlignment.stretch,
+                                children: [
+                                  Text(
+                                    l10n.loginWelcomeTitle,
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      fontSize: 24,
+                                      fontWeight: FontWeight.bold,
+                                    ),
                                   ),
-                                ),
-                              ),
-                            ),
-                            const SizedBox(height: 8),
-                            TextButton(
-                              onPressed: _loading
-                                  ? null
-                                  : () {
-                                      Navigator.of(context).push(
-                                        MaterialPageRoute(
-                                          builder: (_) =>
-                                              const RegisterScreen(),
+                                  const SizedBox(height: 8),
+                                  Text(
+                                    l10n.loginWelcomeSubtitle,
+                                    textAlign: TextAlign.center,
+                                  ),
+                                  const SizedBox(height: 24),
+                                  TextFormField(
+                                    controller: _usernameController,
+                                    decoration: InputDecoration(
+                                      labelText: l10n.username,
+                                      border: const OutlineInputBorder(),
+                                    ),
+                                    validator: (value) =>
+                                        (value == null || value.isEmpty)
+                                            ? l10n.required
+                                            : null,
+                                  ),
+                                  const SizedBox(height: 12),
+                                  TextFormField(
+                                    controller: _passwordController,
+                                    decoration: InputDecoration(
+                                      labelText: l10n.password,
+                                      border: const OutlineInputBorder(),
+                                      suffixIcon: IconButton(
+                                        icon: Icon(
+                                          _showPassword ? Icons.visibility_off : Icons.visibility,
                                         ),
+                                        onPressed: () => setState(() => _showPassword = !_showPassword),
+                                        tooltip: _showPassword
+                                            ? l10n.hidePassword
+                                            : l10n.showPassword,
+                                      ),
+                                    ),
+                                    obscureText: !_showPassword,
+                                    validator: (value) =>
+                                        (value == null || value.isEmpty)
+                                            ? l10n.required
+                                            : null,
+                                  ),
+
+                                  Padding(
+                                    padding: const EdgeInsets.only(top: 4, left: 4),
+                                    child: Text(
+                                      l10n.tapEyeToShowPassword,
+                                      style: TextStyle(
+                                        fontSize: 11,
+                                        color: Theme.of(context).colorScheme.onSurfaceVariant,
+                                      ),
+                                    ),
+                                  ),
+                                  const SizedBox(height: 16),
+                                  if (_error != null)
+                                    Text(
+                                      _error!,
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        color: Theme.of(context).colorScheme.error,
+                                      ),
+                                    ),
+                                  const SizedBox(height: 12),
+                                  ElevatedButton(
+                                    onPressed: _loading ? null : _handleLogin,
+                                    child: _loading
+                                        ? const SizedBox(
+                                            height: 18,
+                                            width: 18,
+                                            child: CircularProgressIndicator(
+                                                strokeWidth: 2),
+                                          )
+                                        : Text(l10n.login),
+                                  ),
+                                  const SizedBox(height: 4),
+                                  Align(
+                                    alignment: Alignment.centerRight,
+                                    child: TextButton(
+                                      onPressed: _loading
+                                          ? null
+                                          : () {
+                                              Navigator.of(context).push(
+                                                MaterialPageRoute(
+                                                  builder: (_) =>
+                                                      const ForgotPasswordScreen(),
+                                                ),
+                                              );
+                                            },
+                                      child: Text(
+                                        l10n.forgotPassword,
+                                        style: TextStyle(
+                                          color: Theme.of(context).colorScheme.primary,
+                                          fontSize: 13,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  const SizedBox(height: 8),
+                                  TextButton(
+                                    onPressed: _loading
+                                        ? null
+                                        : () {
+                                            Navigator.of(context).push(
+                                              MaterialPageRoute(
+                                                builder: (_) =>
+                                                    const RegisterScreen(),
+                                              ),
+                                            );
+                                          },
+                                    child: Text(l10n.createNewAccount),
+                                  ),
+                                  TextButton(
+                                    onPressed: _loading ? null : () {
+                                      Navigator.of(context).push(
+                                        MaterialPageRoute(builder: (_) => const RequestEmailVerificationScreen()),
                                       );
                                     },
-                              child: Text(l10n.createNewAccount),
+                                    child: Text(l10n.requestEmailVerificationCode),
+                                  ),
+                                ],
+                              ),
                             ),
-                            TextButton(
-                              onPressed: _loading ? null : () {
-                                Navigator.of(context).push(
-                                  MaterialPageRoute(builder: (_) => const RequestEmailVerificationScreen()),
-                                );
-                              },
-                              child: Text(l10n.requestEmailVerificationCode),
-                            ),
-                          ],
+                          ),
                         ),
                       ),
                     ),
                   ),
                 ),
-              ),
+              ],
             ),
           ),
           if (_loading)
@@ -793,8 +846,163 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 }
 
+// ✅ NEW: Language Picker Dialog
+class LanguagePickerDialog extends StatelessWidget {
+  const LanguagePickerDialog({super.key});
+
+  static const _languages = <Map<String, String>>[
+    {'code': 'en', 'name': 'English', 'native': 'English'},
+    {'code': 'es', 'name': 'Spanish', 'native': 'Español'},
+    {'code': 'fr', 'name': 'French', 'native': 'Français'},
+    {'code': 'zh', 'name': 'Chinese', 'native': '中文'},
+    {'code': 'ru', 'name': 'Russian', 'native': 'Русский'},
+    {'code': 'ko', 'name': 'Korean', 'native': '한국어'},
+    {'code': 'ja', 'name': 'Japanese', 'native': '日本語'},
+    {'code': 'ur', 'name': 'Urdu', 'native': 'اردو'},
+    {'code': 'ar', 'name': 'Arabic', 'native': 'العربية'},
+    {'code': 'he', 'name': 'Hebrew', 'native': 'עברית'},
+    {'code': 'de', 'name': 'German', 'native': 'Deutsch'},
+    {'code': 'it', 'name': 'Italian', 'native': 'Italiano'},
+    {'code': 'hi', 'name': 'Hindi', 'native': 'हिन्दी'},
+    {'code': 'sw', 'name': 'Swahili', 'native': 'Kiswahili'},
+    {'code': 'af', 'name': 'Afrikaans', 'native': 'Afrikaans'},
+    {'code': 'ha', 'name': 'Hausa', 'native': 'Hausa'},
+    {'code': 'am', 'name': 'Amharic', 'native': 'አማርኛ'},
+    {'code': 'ak', 'name': 'Twi', 'native': 'Twi'},
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    final appState = StyloriaApp.of(context);
+    final currentCode = appState?.locale?.languageCode;
+
+    return Dialog(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          // Header
+          Container(
+            padding: const EdgeInsets.all(20),
+            decoration: BoxDecoration(
+              color: Theme.of(context).colorScheme.primaryContainer,
+              borderRadius: const BorderRadius.vertical(top: Radius.circular(16)),
+            ),
+            child: Row(
+              children: [
+                Icon(Icons.language, color: Theme.of(context).colorScheme.onPrimaryContainer),
+                const SizedBox(width: 12),
+                Text(
+                  l10n.language,
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Theme.of(context).colorScheme.onPrimaryContainer,
+                  ),
+                ),
+              ],
+            ),
+          ),
+
+          // Language list
+          ConstrainedBox(
+            constraints: const BoxConstraints(maxHeight: 400),
+            child: ListView(
+              shrinkWrap: true,
+              children: [
+                // System default option
+                ListTile(
+                  leading: const Icon(Icons.phone_android),
+                  title: Text(l10n.systemDefault),
+                  trailing: currentCode == null
+                      ? const Icon(Icons.check, color: Colors.green)
+                      : null,
+                  onTap: () async {
+                    await appState?.clearLanguageToSystemDefault();
+                    if (context.mounted) {
+                      Navigator.pop(context);
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(content: Text(l10n.languageSetToSystemDefault)),
+                      );
+                    }
+                  },
+                ),
+                const Divider(height: 1),
+                
+                // All languages
+                ..._languages.map((lang) {
+                  final code = lang['code']!;
+                  final name = lang['name']!;
+                  final native = lang['native']!;
+                  final isSelected = code == currentCode;
+
+                  return ListTile(
+                    leading: Text(
+                      _getFlagEmoji(code),
+                      style: const TextStyle(fontSize: 24),
+                    ),
+                    title: Text(native),
+                    subtitle: Text(name),
+                    trailing: isSelected
+                        ? const Icon(Icons.check, color: Colors.green)
+                        : null,
+                    onTap: () async {
+                      await appState?.setLanguage(code);
+                      if (context.mounted) {
+                        Navigator.pop(context);
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(content: Text(l10n.languageSetToName(name))),
+                        );
+                      }
+                    },
+                  );
+                }),
+              ],
+            ),
+          ),
+
+          // Close button
+          Padding(
+            padding: const EdgeInsets.all(16),
+            child: TextButton(
+              onPressed: () => Navigator.pop(context),
+              child: Text(l10n.close),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  String _getFlagEmoji(String code) {
+    // Map language codes to flag emojis
+    const flags = {
+      'en': '🇬🇧',
+      'es': '🇪🇸',
+      'fr': '🇫🇷',
+      'zh': '🇨🇳',
+      'ru': '🇷🇺',
+      'ko': '🇰🇷',
+      'ja': '🇯🇵',
+      'ur': '🇵🇰',
+      'ar': '🇸🇦',
+      'he': '🇮🇱',
+      'de': '🇩🇪',
+      'it': '🇮🇹',
+      'hi': '🇮🇳',
+      'sw': '🇰🇪',
+      'af': '🇿🇦',
+      'ha': '🇳🇬',
+      'am': '🇪🇹',
+      'ak': '🇬🇭',
+    };
+    return flags[code] ?? '🌐';
+  }
+}
+
 // ======================
-// MAIN SHELL WITH TABS
+// MAIN SHELL WITH TABS (NO CHANGES - keeping your existing code)
 // ======================
 
 class MainShell extends StatefulWidget {
@@ -843,7 +1051,7 @@ class _MainShellState extends State<MainShell> {
     if (widget.role == 'provider') {
       _pages = [
         HomeScreen(role: widget.role),
-        const BookingsScreen(role: 'user'),      // provider’s own requests
+        const BookingsScreen(role: 'user'),      // provider's own requests
         const BookingsScreen(role: 'provider'),  // assigned jobs
         const NotificationsScreen(),
         AccountScreen(role: widget.role),
@@ -1035,7 +1243,7 @@ class _MainShellState extends State<MainShell> {
 }
 
 // ============
-// HOME SCREEN
+// HOME SCREEN (NO CHANGES - keeping your existing code)
 // ============
 
 class HomeScreen extends StatefulWidget {
@@ -1052,8 +1260,8 @@ class _HomeScreenState extends State<HomeScreen> {
   String? _profilePictureUrl;
   String? _userAddress;
   String? _firstName;
-  String? _tier; // Provider tier (Bronze, Silver, Gold, Platinum)
-  int? _completionPercent; // Profile completion percentage
+  String? _tier;
+  int? _completionPercent;
 
   StreamSubscription? _notificationSubscription;
 
@@ -1064,7 +1272,6 @@ class _HomeScreenState extends State<HomeScreen> {
     _loadUnreadCount();
     _checkAndSurfaceImportantNotifications();
 
-    // Listen for profile picture updates
     profilePictureState.profilePictureUrl.addListener(_onProfilePictureChanged);
   }
 
@@ -1084,10 +1291,8 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Future<void> _initNotificationService() async {
-    // Connect to WebSocket
     await NotificationService.instance.connect();
     
-    // Listen for notifications
     _notificationSubscription = NotificationService.instance.notifications.listen((notification) {
       _handleNotification(notification);
     });
@@ -1099,10 +1304,8 @@ class _HomeScreenState extends State<HomeScreen> {
     final type = notification['type']?.toString();
     final text = notification['text']?.toString();
 
-    // Update unread count
     _loadUnreadCount();
     
-    // Show snackbar for important notifications
     if (type == 'chat_message') {
       final senderName = notification['sender_name'] ?? 'Someone';
       final preview = notification['content_preview'] ?? 'sent you a message';
@@ -1138,8 +1341,6 @@ class _HomeScreenState extends State<HomeScreen> {
             label: 'View',
             textColor: Colors.white,
             onPressed: () {
-              // Navigate to chat or bookings
-              // You can access notification['service_request_id'] to open the right chat
             },
           ),
         ),
@@ -1151,7 +1352,6 @@ class _HomeScreenState extends State<HomeScreen> {
     }
   }
 
-  // Combined data loading
   Future<void> _loadUserData() async {
     try {
       final userData = await ApiClient.getCurrentUser();
@@ -1159,7 +1359,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
       final profileUrl = _resolveUrl(userData['profile_picture_url']?.toString());
 
-      // Update global state
       profilePictureState.updateProfilePicture(profileUrl);
 
       setState(() {
@@ -1168,7 +1367,6 @@ class _HomeScreenState extends State<HomeScreen> {
         _userAddress = userData['address']?.toString();
       });
 
-      // Load provider-specific data if user is a provider
       if (widget.role == 'provider') {
         await _loadProviderData();
       }
@@ -1220,7 +1418,6 @@ class _HomeScreenState extends State<HomeScreen> {
       final notes = await ApiClient.getNotifications();
       if (!mounted || notes == null || notes.isEmpty) return;
 
-      // find the newest unread important message
       Map<String, dynamic>? important;
       for (final item in notes) {
         final n = item as Map<String, dynamic>;
@@ -1228,8 +1425,8 @@ class _HomeScreenState extends State<HomeScreen> {
         if (read) continue;
         final msg = (n['message'] ?? '').toString();
 
-        final isNoProviders = msg.contains('We’re sorry—there are currently no available providers');
-        final isGoodNews = msg.contains('Good news—providers are now available for your request');
+        final isNoProviders = msg.contains("We're sorry—there are currently no available providers");
+        final isGoodNews = msg.contains("Good news—providers are now available for your request");
 
         if (isNoProviders || isGoodNews) {
           important = n;
@@ -1248,7 +1445,6 @@ class _HomeScreenState extends State<HomeScreen> {
         );
       }
 
-      // Mark read so it doesn't keep popping up.
       if (id != null) {
         final parsedId = (id is int) ? id : int.tryParse(id.toString());
         if (parsedId != null) {
@@ -1303,7 +1499,6 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    // Welcome text (left side)
                     Expanded(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -1330,7 +1525,6 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
 
-                    // Actions (right side) - ONLY dark mode + menu + logout
                     Row(
                       children: [
                         IconButton(
@@ -1403,7 +1597,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           icon: const Icon(Icons.logout, color: Colors.white),
                           onPressed: () async {
                             await ApiClient.logout();
-                            clearProfilePictureState();  // ADD THIS LINE
+                            clearProfilePictureState();
                             if (!context.mounted) return;
                             Navigator.of(context).pushAndRemoveUntil(
                               MaterialPageRoute(builder: (_) => const LoginScreen()),
@@ -1417,18 +1611,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
 
-              // ==========================================
-              // SCROLLABLE CONTENT
-              // ==========================================
               Expanded(
                 child: SingleChildScrollView(
                   padding: const EdgeInsets.only(top: 8, bottom: 16),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      // ==========================================
-                      // PROFILE CARD HERO (NEW!)
-                      // ==========================================
                       ProfileCard(
                         profilePictureUrl: _profilePictureUrl,
                         userName: _firstName ?? 'User',
@@ -1454,7 +1642,6 @@ class _HomeScreenState extends State<HomeScreen> {
                             : null,
                       ),
 
-                      // Location info (if available)
                       if (_userAddress != null && _userAddress!.isNotEmpty)
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
@@ -1487,7 +1674,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
                       const SizedBox(height: 16),
 
-                      // Visual action selector for both customers and providers
                       if (widget.role != 'provider') 
                         const ServiceSelectorWidget()
                       else

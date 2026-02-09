@@ -121,6 +121,9 @@ class AppLocalizationsAm extends AppLocalizations {
   }
 
   @override
+  String get close => 'Close';
+
+  @override
   String get forgotPassword => 'Forgot Password?';
 
   @override
@@ -258,6 +261,35 @@ class AppLocalizationsAm extends AppLocalizations {
 
   @override
   String get locationUpdatedFromAddress => 'ቦታ ከአድራሻ ተዘምኗል';
+
+  @override
+  String get myCustomerRating => 'የእኔ የደንበኛ ደረጃ';
+
+  @override
+  String get outOf5 => '/ 5.0';
+
+  @override
+  String reviewsFromProviders(int count) {
+    return 'ከአገልግሎት ሰጪዎች $count ግምገማዎች';
+  }
+
+  @override
+  String get failedToLoadReputation => 'የስም ዝና ውሂብን መጫን አልተሳካም';
+
+  @override
+  String get somethingWentWrong => 'የሆነ ስህተት ተፈጥሯል';
+
+  @override
+  String get retry => 'ደግመው ይሞክሩ';
+
+  @override
+  String weDetectedYoureIn(String country) {
+    return '📍 በ$country ውስጥ እንዳሉ አግኝተናል። እባክዎ ከታች ሀገርዎን ይምረጡ።';
+  }
+
+  @override
+  String get locationMarkedAsOther =>
+      'አካባቢ እንደ \"ሌላ\" ምልክት ተደርጓል - በምዝገባ መቀጠል ይችላሉ';
 
   @override
   String get createAccountTitle => 'መለያ ፍጠር';
@@ -980,9 +1012,6 @@ class AppLocalizationsAm extends AppLocalizations {
   String get noData => 'ምንም መረጃ የለም።';
 
   @override
-  String get retry => 'ደግመው ይሞክሩ';
-
-  @override
   String get summaryTitle => 'ማጠቃለያ';
 
   @override
@@ -1174,6 +1203,274 @@ class AppLocalizationsAm extends AppLocalizations {
 
   @override
   String get markRead => 'ተነበበ አድርግ';
+
+  @override
+  String get customerReviewSubmitted => 'የደንበኛ ግምገማ ተልኳል!';
+
+  @override
+  String get loadingCustomerDetails => 'የደንበኛ ዝርዝሮችን በመጫን ላይ...';
+
+  @override
+  String get customerDetails => 'የደንበኛ ዝርዝሮች';
+
+  @override
+  String get navigateButton => 'አሳይ';
+
+  @override
+  String get callButton => 'ደውል';
+
+  @override
+  String get whatOthersSay => 'ሌሎች የሚሉት';
+
+  @override
+  String get showLess => 'ያነሰ አሳይ';
+
+  @override
+  String showMoreCount(int count) {
+    return 'ተጨማሪ አሳይ ($count ተጨማሪ)';
+  }
+
+  @override
+  String get todayLabel => 'ዛሬ';
+
+  @override
+  String get yesterdayLabel => 'ትናንት';
+
+  @override
+  String daysAgoShort(int days) {
+    return 'ከ$days ቀናት በፊት';
+  }
+
+  @override
+  String weeksAgoShort(int weeks) {
+    return 'ከ$weeks ሳምንታት በፊት';
+  }
+
+  @override
+  String providerHasArrived(String name) {
+    return '$name ደርሷል!';
+  }
+
+  @override
+  String get meetProviderToBeginService =>
+      'እባክዎ አገልግሎት ለመጀመር ከአገልግሎት ሰጭዎ ጋር ይገናኙ';
+
+  @override
+  String get locationNotAvailable => 'አካባቢ አይገኝም';
+
+  @override
+  String get couldNotOpenMaps => 'ካርታ መክፈት አልተቻለም';
+
+  @override
+  String get cannotMakePhoneCalls => 'በዚህ መሳሪያ ላይ ስልክ መደወል አይቻልም';
+
+  @override
+  String get confirmCompletionWarning =>
+      'አገልግሎቱ ሙሉ በሙሉ ከተጠናቀቀ ብቻ ያረጋግጡ። ይህን ማደስ ላይችሉ ይችላሉ።';
+
+  @override
+  String get paymentVerificationTitle => 'የክፍያ ማረጋገጫ';
+
+  @override
+  String get paymentVerificationMessage =>
+      'በአሳሽዎ ውስጥ ክፍያውን ከጨረሱ በኋላ ለማረጋገጥ \"ክፍያ አረጋግጥ\" ን ይንኩ።';
+
+  @override
+  String get verifyPaymentButton => 'ክፍያ አረጋግጥ';
+
+  @override
+  String get verifyingPayment => 'ክፍያን በማረጋገጥ ላይ...';
+
+  @override
+  String get couldNotOpenPaymentPage => 'የክፍያ ገጽ መክፈት አልተቻለም። እባክዎ እንደገና ይሞክሩ።';
+
+  @override
+  String get paymentStillProcessing =>
+      'ክፍያ አሁንም በሂደት ላይ ነው። እባክዎ ትንሽ ቆይተው ይፈትሹ።';
+
+  @override
+  String get statusPending => 'በመጠባበቅ ላይ';
+
+  @override
+  String get customerProfile => 'የደንበኛ መገለጫ';
+
+  @override
+  String get newCustomer => 'አዲስ ደንበኛ';
+
+  @override
+  String get newCustomerNoReviews => 'ይህ እስካሁን ግምገማ የሌለው አዲስ ደንበኛ ነው።';
+
+  @override
+  String get whatOtherProvidersSay => 'ሌሎች አገልግሎት ሰጭዎች የሚሉት';
+
+  @override
+  String get justNow => 'አሁን';
+
+  @override
+  String monthsAgoShort(int months) {
+    return 'ከ$months ወራት በፊት';
+  }
+
+  @override
+  String daysAgoShortCompact(int days) {
+    return 'ከ$days ቀናት በፊት';
+  }
+
+  @override
+  String hoursAgoShort(int hours) {
+    return 'ከ$hours ሰዓታት በፊት';
+  }
+
+  @override
+  String get generalArea => 'አጠቃላይ አካባቢ';
+
+  @override
+  String get serviceCompleted => 'አገልግሎት ተጠናቋል';
+
+  @override
+  String get completedServiceArea => 'የተጠናቀቀ አገልግሎት አካባቢ';
+
+  @override
+  String get serviceArea => 'የአገልግሎት አካባቢ';
+
+  @override
+  String get locationHiddenAfterCancellation =>
+      'ለደህንነትዎ፣ ከተሰረዘ በኋላ ትክክለኛ የአካባቢ ዝርዝሮች ተደብቀዋል። አጠቃላይ አካባቢ ብቻ ይታያል።';
+
+  @override
+  String get locationHiddenAfterCompletion =>
+      'ለደህንነትዎ፣ አገልግሎት ከተጠናቀቀ በኋላ ትክክለኛ የአካባቢ ዝርዝሮች ተደብቀዋል። አጠቃላይ አካባቢ ብቻ ይታያል።';
+
+  @override
+  String get mapMarkerMe => 'እኔ';
+
+  @override
+  String get mapMarkerOther => 'ሌላ';
+
+  @override
+  String get requestPlaced => 'ጥያቄ ቀርቧል';
+
+  @override
+  String get whenBookingSubmitted => 'ይህ ቦታ የተያዘበት ጊዜ';
+
+  @override
+  String yourLocalTimeTimezone(String timezone) {
+    return 'የእርስዎ የአካባቢ ሰዓት ($timezone)';
+  }
+
+  @override
+  String get bookingTimeline => 'የቦታ ማስያዝ ጊዜ መስመር';
+
+  @override
+  String get timelineRequestCreated => 'ጥያቄ ተፈጥሯል';
+
+  @override
+  String get timelineAccepted => 'ተቀባይነት አግኝቷል';
+
+  @override
+  String get timelineInProgress => 'በሂደት ላይ';
+
+  @override
+  String get timelineCompleted => 'ተጠናቋል';
+
+  @override
+  String get timelineCancelled => 'ተሰርዟል';
+
+  @override
+  String get timelinePending => 'በመጠባበቅ ላይ...';
+
+  @override
+  String get viewLess => 'ያነሰ ይመልከቱ';
+
+  @override
+  String viewMoreCount(int count) {
+    return 'ተጨማሪ ይመልከቱ ($count ተጨማሪ)';
+  }
+
+  @override
+  String get paymentRequiredImmediately => 'ክፍያ ወዲያውኑ ያስፈልጋል!';
+
+  @override
+  String get paymentReminder => 'የክፍያ ማስታወሻ';
+
+  @override
+  String hoursRemaining(String hours) {
+    return '⏱ $hours ሰዓታት ቀሪ';
+  }
+
+  @override
+  String get serviceAppointment => 'የአገልግሎት ቀጠሮ';
+
+  @override
+  String get todayBadge => 'ዛሬ';
+
+  @override
+  String get locationField => 'አካባቢ';
+
+  @override
+  String get serviceAreaField => 'የአገልግሎት አካባቢ';
+
+  @override
+  String get requestedField => 'የተጠየቀበት';
+
+  @override
+  String allTimesInLocalTimezone(String timezone) {
+    return 'ሁሉም ጊዜያት በእርስዎ የአካባቢ ሰዓት ዞን ($timezone) ይታያሉ';
+  }
+
+  @override
+  String get completionConfirmed => 'ማጠናቀቅ ተረጋግጧል';
+
+  @override
+  String get rateCustomer => 'ደንበኛን ደርግ';
+
+  @override
+  String get customerReviewed => 'ደንበኛ ተደርጓል';
+
+  @override
+  String get failedToSubmitReviewTryAgain =>
+      'ግምገማ መላክ አልተቻለም። እባክዎ እንደገና ይሞክሩ።';
+
+  @override
+  String get shareYourExperience => 'ልምድዎን ያጋሩ...';
+
+  @override
+  String rateRequesterTitle(String name) {
+    return '$nameን ደርግ';
+  }
+
+  @override
+  String get howWasExperienceWithCustomer => 'ከዚህ ደንበኛ ጋር ልምድዎ እንዴት ነበር?';
+
+  @override
+  String get commentOptional => 'አስተያየት (አማራጭ)';
+
+  @override
+  String get cancelButton => 'ይቅር';
+
+  @override
+  String get submitButton => 'ላክ';
+
+  @override
+  String get ratingPoor => 'ደካማ';
+
+  @override
+  String get ratingFair => 'ተመጣጣኝ';
+
+  @override
+  String get ratingGood => 'ጥሩ';
+
+  @override
+  String get ratingVeryGood => 'በጣም ጥሩ';
+
+  @override
+  String get ratingExcellent => 'እጅግ በጣም ጥሩ';
+
+  @override
+  String get profileCompletion => 'የመገለጫ ሙሉነት';
+
+  @override
+  String get viewProfile => 'መገለጫ ይመልከቱ';
 
   @override
   String get providerKycTitle => 'የአቅራቢ ማረጋገጫ (KYC)';
@@ -1938,8 +2235,8 @@ class AppLocalizationsAm extends AppLocalizations {
   String get detectingYourLocation => 'Detecting your location...';
 
   @override
-  String locationDetectedAs(Object country) {
-    return 'Location detected: $country';
+  String locationConfirmed(String country) {
+    return '✓ አካባቢ ተረጋግጧል: $country';
   }
 
   @override

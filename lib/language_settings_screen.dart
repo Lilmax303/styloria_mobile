@@ -16,6 +16,7 @@ class _LanguageSettingsScreenState extends State<LanguageSettingsScreen> {
 
   static const _languages = <Map<String, String>>[
     {'code': 'en', 'name': 'English'},
+    {'code': 'es', 'name': 'Spanish'},
     {'code': 'fr', 'name': 'French'},
     {'code': 'zh', 'name': 'Mandarin (Chinese)'},
     {'code': 'ru', 'name': 'Russian'},

@@ -11,6 +11,7 @@ import 'app_localizations_am.dart';
 import 'app_localizations_ar.dart';
 import 'app_localizations_de.dart';
 import 'app_localizations_en.dart';
+import 'app_localizations_es.dart';
 import 'app_localizations_fr.dart';
 import 'app_localizations_ha.dart';
 import 'app_localizations_he.dart';
@@ -115,6 +116,7 @@ abstract class AppLocalizations {
     Locale('ar'),
     Locale('de'),
     Locale('en'),
+    Locale('es'),
     Locale('fr'),
     Locale('ha'),
     Locale('he'),
@@ -343,6 +345,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Language set to {name}'**
   String languageSetToName(Object name);
+
+  /// No description provided for @close.
+  ///
+  /// In en, this message translates to:
+  /// **'Close'**
+  String get close;
 
   /// No description provided for @forgotPassword.
   ///
@@ -613,6 +621,54 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Location updated from address'**
   String get locationUpdatedFromAddress;
+
+  /// No description provided for @myCustomerRating.
+  ///
+  /// In en, this message translates to:
+  /// **'My Customer Rating'**
+  String get myCustomerRating;
+
+  /// No description provided for @outOf5.
+  ///
+  /// In en, this message translates to:
+  /// **'/ 5.0'**
+  String get outOf5;
+
+  /// No description provided for @reviewsFromProviders.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} {count, plural, =1{review} other{reviews}} from providers'**
+  String reviewsFromProviders(int count);
+
+  /// No description provided for @failedToLoadReputation.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to load reputation data'**
+  String get failedToLoadReputation;
+
+  /// No description provided for @somethingWentWrong.
+  ///
+  /// In en, this message translates to:
+  /// **'Something went wrong'**
+  String get somethingWentWrong;
+
+  /// No description provided for @retry.
+  ///
+  /// In en, this message translates to:
+  /// **'Retry'**
+  String get retry;
+
+  /// No description provided for @weDetectedYoureIn.
+  ///
+  /// In en, this message translates to:
+  /// **'📍 We detected you\'re in {country}. Please select your country below.'**
+  String weDetectedYoureIn(String country);
+
+  /// No description provided for @locationMarkedAsOther.
+  ///
+  /// In en, this message translates to:
+  /// **'Location marked as \"Other\" - you can proceed with registration'**
+  String get locationMarkedAsOther;
 
   /// No description provided for @createAccountTitle.
   ///
@@ -1880,12 +1936,6 @@ abstract class AppLocalizations {
   /// **'No data.'**
   String get noData;
 
-  /// No description provided for @retry.
-  ///
-  /// In en, this message translates to:
-  /// **'Retry'**
-  String get retry;
-
   /// No description provided for @summaryTitle.
   ///
   /// In en, this message translates to:
@@ -2215,6 +2265,480 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Mark read'**
   String get markRead;
+
+  /// No description provided for @customerReviewSubmitted.
+  ///
+  /// In en, this message translates to:
+  /// **'Customer review submitted!'**
+  String get customerReviewSubmitted;
+
+  /// No description provided for @loadingCustomerDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Loading customer details...'**
+  String get loadingCustomerDetails;
+
+  /// No description provided for @customerDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Customer Details'**
+  String get customerDetails;
+
+  /// No description provided for @navigateButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Navigate'**
+  String get navigateButton;
+
+  /// No description provided for @callButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Call'**
+  String get callButton;
+
+  /// No description provided for @whatOthersSay.
+  ///
+  /// In en, this message translates to:
+  /// **'What others say'**
+  String get whatOthersSay;
+
+  /// No description provided for @showLess.
+  ///
+  /// In en, this message translates to:
+  /// **'Show less'**
+  String get showLess;
+
+  /// No description provided for @showMoreCount.
+  ///
+  /// In en, this message translates to:
+  /// **'Show more ({count} more)'**
+  String showMoreCount(int count);
+
+  /// No description provided for @todayLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Today'**
+  String get todayLabel;
+
+  /// No description provided for @yesterdayLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Yesterday'**
+  String get yesterdayLabel;
+
+  /// No description provided for @daysAgoShort.
+  ///
+  /// In en, this message translates to:
+  /// **'{days} days ago'**
+  String daysAgoShort(int days);
+
+  /// No description provided for @weeksAgoShort.
+  ///
+  /// In en, this message translates to:
+  /// **'{weeks} week{weeks, plural, =1{} other{s}} ago'**
+  String weeksAgoShort(int weeks);
+
+  /// No description provided for @providerHasArrived.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} has arrived!'**
+  String providerHasArrived(String name);
+
+  /// No description provided for @meetProviderToBeginService.
+  ///
+  /// In en, this message translates to:
+  /// **'Please meet your provider to begin your service'**
+  String get meetProviderToBeginService;
+
+  /// No description provided for @locationNotAvailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Location not available'**
+  String get locationNotAvailable;
+
+  /// No description provided for @couldNotOpenMaps.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not open maps'**
+  String get couldNotOpenMaps;
+
+  /// No description provided for @cannotMakePhoneCalls.
+  ///
+  /// In en, this message translates to:
+  /// **'Cannot make phone calls on this device'**
+  String get cannotMakePhoneCalls;
+
+  /// No description provided for @confirmCompletionWarning.
+  ///
+  /// In en, this message translates to:
+  /// **'Only confirm if the service has been fully completed. You may not be able to undo this.'**
+  String get confirmCompletionWarning;
+
+  /// No description provided for @paymentVerificationTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Payment Verification'**
+  String get paymentVerificationTitle;
+
+  /// No description provided for @paymentVerificationMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'After completing the payment in your browser, tap \"Verify Payment\" to confirm.'**
+  String get paymentVerificationMessage;
+
+  /// No description provided for @verifyPaymentButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Verify Payment'**
+  String get verifyPaymentButton;
+
+  /// No description provided for @verifyingPayment.
+  ///
+  /// In en, this message translates to:
+  /// **'Verifying payment...'**
+  String get verifyingPayment;
+
+  /// No description provided for @couldNotOpenPaymentPage.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not open payment page. Please try again.'**
+  String get couldNotOpenPaymentPage;
+
+  /// No description provided for @paymentStillProcessing.
+  ///
+  /// In en, this message translates to:
+  /// **'Payment is still processing. Please check back in a moment.'**
+  String get paymentStillProcessing;
+
+  /// No description provided for @statusPending.
+  ///
+  /// In en, this message translates to:
+  /// **'Pending'**
+  String get statusPending;
+
+  /// No description provided for @customerProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'Customer Profile'**
+  String get customerProfile;
+
+  /// No description provided for @newCustomer.
+  ///
+  /// In en, this message translates to:
+  /// **'New customer'**
+  String get newCustomer;
+
+  /// No description provided for @newCustomerNoReviews.
+  ///
+  /// In en, this message translates to:
+  /// **'This is a new customer with no reviews yet.'**
+  String get newCustomerNoReviews;
+
+  /// No description provided for @whatOtherProvidersSay.
+  ///
+  /// In en, this message translates to:
+  /// **'What other providers say'**
+  String get whatOtherProvidersSay;
+
+  /// No description provided for @justNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Just now'**
+  String get justNow;
+
+  /// No description provided for @monthsAgoShort.
+  ///
+  /// In en, this message translates to:
+  /// **'{months}mo ago'**
+  String monthsAgoShort(int months);
+
+  /// No description provided for @daysAgoShortCompact.
+  ///
+  /// In en, this message translates to:
+  /// **'{days}d ago'**
+  String daysAgoShortCompact(int days);
+
+  /// No description provided for @hoursAgoShort.
+  ///
+  /// In en, this message translates to:
+  /// **'{hours}h ago'**
+  String hoursAgoShort(int hours);
+
+  /// No description provided for @generalArea.
+  ///
+  /// In en, this message translates to:
+  /// **'General Area'**
+  String get generalArea;
+
+  /// No description provided for @serviceCompleted.
+  ///
+  /// In en, this message translates to:
+  /// **'Service completed'**
+  String get serviceCompleted;
+
+  /// No description provided for @completedServiceArea.
+  ///
+  /// In en, this message translates to:
+  /// **'Completed service area'**
+  String get completedServiceArea;
+
+  /// No description provided for @serviceArea.
+  ///
+  /// In en, this message translates to:
+  /// **'Service area'**
+  String get serviceArea;
+
+  /// No description provided for @locationHiddenAfterCancellation.
+  ///
+  /// In en, this message translates to:
+  /// **'For your safety, exact location details are hidden after cancellation. Only general area is shown.'**
+  String get locationHiddenAfterCancellation;
+
+  /// No description provided for @locationHiddenAfterCompletion.
+  ///
+  /// In en, this message translates to:
+  /// **'For your safety, exact location details are hidden after service completion. Only general area is shown.'**
+  String get locationHiddenAfterCompletion;
+
+  /// No description provided for @mapMarkerMe.
+  ///
+  /// In en, this message translates to:
+  /// **'Me'**
+  String get mapMarkerMe;
+
+  /// No description provided for @mapMarkerOther.
+  ///
+  /// In en, this message translates to:
+  /// **'Other'**
+  String get mapMarkerOther;
+
+  /// No description provided for @requestPlaced.
+  ///
+  /// In en, this message translates to:
+  /// **'Request Placed'**
+  String get requestPlaced;
+
+  /// No description provided for @whenBookingSubmitted.
+  ///
+  /// In en, this message translates to:
+  /// **'When this booking was submitted'**
+  String get whenBookingSubmitted;
+
+  /// No description provided for @yourLocalTimeTimezone.
+  ///
+  /// In en, this message translates to:
+  /// **'Your local time ({timezone})'**
+  String yourLocalTimeTimezone(String timezone);
+
+  /// No description provided for @bookingTimeline.
+  ///
+  /// In en, this message translates to:
+  /// **'Booking Timeline'**
+  String get bookingTimeline;
+
+  /// No description provided for @timelineRequestCreated.
+  ///
+  /// In en, this message translates to:
+  /// **'Request Created'**
+  String get timelineRequestCreated;
+
+  /// No description provided for @timelineAccepted.
+  ///
+  /// In en, this message translates to:
+  /// **'Accepted'**
+  String get timelineAccepted;
+
+  /// No description provided for @timelineInProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'In Progress'**
+  String get timelineInProgress;
+
+  /// No description provided for @timelineCompleted.
+  ///
+  /// In en, this message translates to:
+  /// **'Completed'**
+  String get timelineCompleted;
+
+  /// No description provided for @timelineCancelled.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancelled'**
+  String get timelineCancelled;
+
+  /// No description provided for @timelinePending.
+  ///
+  /// In en, this message translates to:
+  /// **'Pending...'**
+  String get timelinePending;
+
+  /// No description provided for @viewLess.
+  ///
+  /// In en, this message translates to:
+  /// **'View Less'**
+  String get viewLess;
+
+  /// No description provided for @viewMoreCount.
+  ///
+  /// In en, this message translates to:
+  /// **'View More ({count} more)'**
+  String viewMoreCount(int count);
+
+  /// No description provided for @paymentRequiredImmediately.
+  ///
+  /// In en, this message translates to:
+  /// **'Payment Required Immediately!'**
+  String get paymentRequiredImmediately;
+
+  /// No description provided for @paymentReminder.
+  ///
+  /// In en, this message translates to:
+  /// **'Payment Reminder'**
+  String get paymentReminder;
+
+  /// No description provided for @hoursRemaining.
+  ///
+  /// In en, this message translates to:
+  /// **'⏱ {hours}h remaining'**
+  String hoursRemaining(String hours);
+
+  /// No description provided for @serviceAppointment.
+  ///
+  /// In en, this message translates to:
+  /// **'Service Appointment'**
+  String get serviceAppointment;
+
+  /// No description provided for @todayBadge.
+  ///
+  /// In en, this message translates to:
+  /// **'TODAY'**
+  String get todayBadge;
+
+  /// No description provided for @locationField.
+  ///
+  /// In en, this message translates to:
+  /// **'Location'**
+  String get locationField;
+
+  /// No description provided for @serviceAreaField.
+  ///
+  /// In en, this message translates to:
+  /// **'Service Area'**
+  String get serviceAreaField;
+
+  /// No description provided for @requestedField.
+  ///
+  /// In en, this message translates to:
+  /// **'Requested'**
+  String get requestedField;
+
+  /// No description provided for @allTimesInLocalTimezone.
+  ///
+  /// In en, this message translates to:
+  /// **'All times shown in your local timezone ({timezone})'**
+  String allTimesInLocalTimezone(String timezone);
+
+  /// No description provided for @completionConfirmed.
+  ///
+  /// In en, this message translates to:
+  /// **'Completion confirmed'**
+  String get completionConfirmed;
+
+  /// No description provided for @rateCustomer.
+  ///
+  /// In en, this message translates to:
+  /// **'Rate Customer'**
+  String get rateCustomer;
+
+  /// No description provided for @customerReviewed.
+  ///
+  /// In en, this message translates to:
+  /// **'Customer reviewed'**
+  String get customerReviewed;
+
+  /// No description provided for @failedToSubmitReviewTryAgain.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to submit review. Please try again.'**
+  String get failedToSubmitReviewTryAgain;
+
+  /// No description provided for @shareYourExperience.
+  ///
+  /// In en, this message translates to:
+  /// **'Share your experience...'**
+  String get shareYourExperience;
+
+  /// No description provided for @rateRequesterTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Rate {name}'**
+  String rateRequesterTitle(String name);
+
+  /// No description provided for @howWasExperienceWithCustomer.
+  ///
+  /// In en, this message translates to:
+  /// **'How was your experience with this customer?'**
+  String get howWasExperienceWithCustomer;
+
+  /// No description provided for @commentOptional.
+  ///
+  /// In en, this message translates to:
+  /// **'Comment (optional)'**
+  String get commentOptional;
+
+  /// No description provided for @cancelButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get cancelButton;
+
+  /// No description provided for @submitButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Submit'**
+  String get submitButton;
+
+  /// No description provided for @ratingPoor.
+  ///
+  /// In en, this message translates to:
+  /// **'Poor'**
+  String get ratingPoor;
+
+  /// No description provided for @ratingFair.
+  ///
+  /// In en, this message translates to:
+  /// **'Fair'**
+  String get ratingFair;
+
+  /// No description provided for @ratingGood.
+  ///
+  /// In en, this message translates to:
+  /// **'Good'**
+  String get ratingGood;
+
+  /// No description provided for @ratingVeryGood.
+  ///
+  /// In en, this message translates to:
+  /// **'Very Good'**
+  String get ratingVeryGood;
+
+  /// No description provided for @ratingExcellent.
+  ///
+  /// In en, this message translates to:
+  /// **'Excellent'**
+  String get ratingExcellent;
+
+  /// No description provided for @profileCompletion.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile completion'**
+  String get profileCompletion;
+
+  /// No description provided for @viewProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'View Profile'**
+  String get viewProfile;
 
   /// No description provided for @providerKycTitle.
   ///
@@ -3524,11 +4048,11 @@ abstract class AppLocalizations {
   /// **'Detecting your location...'**
   String get detectingYourLocation;
 
-  /// No description provided for @locationDetectedAs.
+  /// No description provided for @locationConfirmed.
   ///
   /// In en, this message translates to:
-  /// **'Location detected: {country}'**
-  String locationDetectedAs(Object country);
+  /// **'✓ Location confirmed: {country}'**
+  String locationConfirmed(String country);
 
   /// No description provided for @refresh.
   ///
@@ -5162,6 +5686,7 @@ class _AppLocalizationsDelegate
         'ar',
         'de',
         'en',
+        'es',
         'fr',
         'ha',
         'he',
@@ -5194,6 +5719,8 @@ AppLocalizations lookupAppLocalizations(Locale locale) {
       return AppLocalizationsDe();
     case 'en':
       return AppLocalizationsEn();
+    case 'es':
+      return AppLocalizationsEs();
     case 'fr':
       return AppLocalizationsFr();
     case 'ha':

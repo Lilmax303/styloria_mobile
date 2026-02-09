@@ -126,6 +126,9 @@ class AppLocalizationsRu extends AppLocalizations {
   }
 
   @override
+  String get close => 'Close';
+
+  @override
   String get forgotPassword => 'Forgot Password?';
 
   @override
@@ -268,6 +271,43 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get locationUpdatedFromAddress => 'Местоположение обновлено по адресу';
+
+  @override
+  String get myCustomerRating => 'Мой рейтинг клиента';
+
+  @override
+  String get outOf5 => '/ 5.0';
+
+  @override
+  String reviewsFromProviders(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'отзывов',
+      few: 'отзыва',
+      one: 'отзыв',
+    );
+    return '$count $_temp0 от поставщиков';
+  }
+
+  @override
+  String get failedToLoadReputation =>
+      'Не удалось загрузить данные о репутации';
+
+  @override
+  String get somethingWentWrong => 'Что-то пошло не так';
+
+  @override
+  String get retry => 'Повторить';
+
+  @override
+  String weDetectedYoureIn(String country) {
+    return '📍 Мы определили, что вы находитесь в $country. Пожалуйста, выберите вашу страну ниже.';
+  }
+
+  @override
+  String get locationMarkedAsOther =>
+      'Местоположение отмечено как \"Другое\" - вы можете продолжить регистрацию';
 
   @override
   String get createAccountTitle => 'Создать аккаунт';
@@ -1011,9 +1051,6 @@ class AppLocalizationsRu extends AppLocalizations {
   String get noData => 'Нет данных.';
 
   @override
-  String get retry => 'Повторить';
-
-  @override
   String get summaryTitle => 'Сводка';
 
   @override
@@ -1211,6 +1248,277 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get markRead => 'Пометить прочитанным';
+
+  @override
+  String get customerReviewSubmitted => 'Отзыв клиента отправлен!';
+
+  @override
+  String get loadingCustomerDetails => 'Загрузка данных клиента...';
+
+  @override
+  String get customerDetails => 'Данные клиента';
+
+  @override
+  String get navigateButton => 'Навигация';
+
+  @override
+  String get callButton => 'Позвонить';
+
+  @override
+  String get whatOthersSay => 'Что говорят другие';
+
+  @override
+  String get showLess => 'Показать меньше';
+
+  @override
+  String showMoreCount(int count) {
+    return 'Показать ещё ($count)';
+  }
+
+  @override
+  String get todayLabel => 'Сегодня';
+
+  @override
+  String get yesterdayLabel => 'Вчера';
+
+  @override
+  String daysAgoShort(int days) {
+    return '$days дн. назад';
+  }
+
+  @override
+  String weeksAgoShort(int weeks) {
+    return '$weeks нед. назад';
+  }
+
+  @override
+  String providerHasArrived(String name) {
+    return '$name прибыл!';
+  }
+
+  @override
+  String get meetProviderToBeginService =>
+      'Пожалуйста, встретьте вашего исполнителя, чтобы начать услугу';
+
+  @override
+  String get locationNotAvailable => 'Местоположение недоступно';
+
+  @override
+  String get couldNotOpenMaps => 'Не удалось открыть карту';
+
+  @override
+  String get cannotMakePhoneCalls =>
+      'Невозможно совершать звонки на этом устройстве';
+
+  @override
+  String get confirmCompletionWarning =>
+      'Подтверждайте только если услуга полностью завершена. Это действие нельзя отменить.';
+
+  @override
+  String get paymentVerificationTitle => 'Проверка платежа';
+
+  @override
+  String get paymentVerificationMessage =>
+      'После завершения оплаты в браузере нажмите «Проверить платёж» для подтверждения.';
+
+  @override
+  String get verifyPaymentButton => 'Проверить платёж';
+
+  @override
+  String get verifyingPayment => 'Проверка платежа...';
+
+  @override
+  String get couldNotOpenPaymentPage =>
+      'Не удалось открыть страницу оплаты. Попробуйте снова.';
+
+  @override
+  String get paymentStillProcessing =>
+      'Платёж всё ещё обрабатывается. Пожалуйста, проверьте позже.';
+
+  @override
+  String get statusPending => 'Ожидание';
+
+  @override
+  String get customerProfile => 'Профиль клиента';
+
+  @override
+  String get newCustomer => 'Новый клиент';
+
+  @override
+  String get newCustomerNoReviews => 'Это новый клиент без отзывов.';
+
+  @override
+  String get whatOtherProvidersSay => 'Что говорят другие исполнители';
+
+  @override
+  String get justNow => 'Только что';
+
+  @override
+  String monthsAgoShort(int months) {
+    return '$monthsмес. назад';
+  }
+
+  @override
+  String daysAgoShortCompact(int days) {
+    return '$daysд назад';
+  }
+
+  @override
+  String hoursAgoShort(int hours) {
+    return '$hoursч назад';
+  }
+
+  @override
+  String get generalArea => 'Общий район';
+
+  @override
+  String get serviceCompleted => 'Услуга выполнена';
+
+  @override
+  String get completedServiceArea => 'Район выполненной услуги';
+
+  @override
+  String get serviceArea => 'Район услуги';
+
+  @override
+  String get locationHiddenAfterCancellation =>
+      'В целях вашей безопасности точные данные о местоположении скрыты после отмены. Показан только общий район.';
+
+  @override
+  String get locationHiddenAfterCompletion =>
+      'В целях вашей безопасности точные данные о местоположении скрыты после завершения услуги. Показан только общий район.';
+
+  @override
+  String get mapMarkerMe => 'Я';
+
+  @override
+  String get mapMarkerOther => 'Другой';
+
+  @override
+  String get requestPlaced => 'Заявка размещена';
+
+  @override
+  String get whenBookingSubmitted => 'Когда была отправлена заявка';
+
+  @override
+  String yourLocalTimeTimezone(String timezone) {
+    return 'Ваше местное время ($timezone)';
+  }
+
+  @override
+  String get bookingTimeline => 'Хронология заявки';
+
+  @override
+  String get timelineRequestCreated => 'Заявка создана';
+
+  @override
+  String get timelineAccepted => 'Принято';
+
+  @override
+  String get timelineInProgress => 'В процессе';
+
+  @override
+  String get timelineCompleted => 'Завершено';
+
+  @override
+  String get timelineCancelled => 'Отменено';
+
+  @override
+  String get timelinePending => 'Ожидание...';
+
+  @override
+  String get viewLess => 'Свернуть';
+
+  @override
+  String viewMoreCount(int count) {
+    return 'Показать ещё ($count)';
+  }
+
+  @override
+  String get paymentRequiredImmediately => 'Требуется немедленная оплата!';
+
+  @override
+  String get paymentReminder => 'Напоминание об оплате';
+
+  @override
+  String hoursRemaining(String hours) {
+    return '⏱ Осталось $hoursч';
+  }
+
+  @override
+  String get serviceAppointment => 'Запись на услугу';
+
+  @override
+  String get todayBadge => 'СЕГОДНЯ';
+
+  @override
+  String get locationField => 'Местоположение';
+
+  @override
+  String get serviceAreaField => 'Район услуги';
+
+  @override
+  String get requestedField => 'Запрошено';
+
+  @override
+  String allTimesInLocalTimezone(String timezone) {
+    return 'Все времена указаны в вашем часовом поясе ($timezone)';
+  }
+
+  @override
+  String get completionConfirmed => 'Завершение подтверждено';
+
+  @override
+  String get rateCustomer => 'Оценить клиента';
+
+  @override
+  String get customerReviewed => 'Клиент оценён';
+
+  @override
+  String get failedToSubmitReviewTryAgain =>
+      'Не удалось отправить отзыв. Попробуйте снова.';
+
+  @override
+  String get shareYourExperience => 'Поделитесь своим опытом...';
+
+  @override
+  String rateRequesterTitle(String name) {
+    return 'Оценить $name';
+  }
+
+  @override
+  String get howWasExperienceWithCustomer =>
+      'Как прошло взаимодействие с этим клиентом?';
+
+  @override
+  String get commentOptional => 'Комментарий (необязательно)';
+
+  @override
+  String get cancelButton => 'Отмена';
+
+  @override
+  String get submitButton => 'Отправить';
+
+  @override
+  String get ratingPoor => 'Плохо';
+
+  @override
+  String get ratingFair => 'Удовлетворительно';
+
+  @override
+  String get ratingGood => 'Хорошо';
+
+  @override
+  String get ratingVeryGood => 'Очень хорошо';
+
+  @override
+  String get ratingExcellent => 'Отлично';
+
+  @override
+  String get profileCompletion => 'Заполненность профиля';
+
+  @override
+  String get viewProfile => 'Посмотреть профиль';
 
   @override
   String get providerKycTitle => 'Проверка поставщика (KYC)';
@@ -1990,8 +2298,8 @@ class AppLocalizationsRu extends AppLocalizations {
   String get detectingYourLocation => 'Detecting your location...';
 
   @override
-  String locationDetectedAs(Object country) {
-    return 'Location detected: $country';
+  String locationConfirmed(String country) {
+    return '✓ Местоположение подтверждено: $country';
   }
 
   @override

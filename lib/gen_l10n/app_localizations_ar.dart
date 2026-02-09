@@ -123,6 +123,9 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
+  String get close => 'Close';
+
+  @override
   String get forgotPassword => 'Forgot Password?';
 
   @override
@@ -262,6 +265,41 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get locationUpdatedFromAddress => 'تم تحديث الموقع من العنوان';
+
+  @override
+  String get myCustomerRating => 'تقييمي كعميل';
+
+  @override
+  String get outOf5 => '/ 5.0';
+
+  @override
+  String reviewsFromProviders(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'تقييمات',
+      one: 'تقييم',
+    );
+    return '$count $_temp0 من مقدمي الخدمات';
+  }
+
+  @override
+  String get failedToLoadReputation => 'فشل في تحميل بيانات السمعة';
+
+  @override
+  String get somethingWentWrong => 'حدث خطأ ما';
+
+  @override
+  String get retry => 'إعادة المحاولة';
+
+  @override
+  String weDetectedYoureIn(String country) {
+    return '📍 اكتشفنا أنك في $country. يرجى اختيار بلدك أدناه.';
+  }
+
+  @override
+  String get locationMarkedAsOther =>
+      'تم تحديد الموقع كـ \"أخرى\" - يمكنك متابعة التسجيل';
 
   @override
   String get createAccountTitle => 'إنشاء حساب';
@@ -994,9 +1032,6 @@ class AppLocalizationsAr extends AppLocalizations {
   String get noData => 'لا توجد بيانات.';
 
   @override
-  String get retry => 'إعادة المحاولة';
-
-  @override
   String get summaryTitle => 'الملخص';
 
   @override
@@ -1191,6 +1226,276 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get markRead => 'وضع علامة مقروء';
+
+  @override
+  String get customerReviewSubmitted => 'تم إرسال تقييم العميل!';
+
+  @override
+  String get loadingCustomerDetails => 'جاري تحميل بيانات العميل...';
+
+  @override
+  String get customerDetails => 'تفاصيل العميل';
+
+  @override
+  String get navigateButton => 'التنقل';
+
+  @override
+  String get callButton => 'اتصال';
+
+  @override
+  String get whatOthersSay => 'ما يقوله الآخرون';
+
+  @override
+  String get showLess => 'عرض أقل';
+
+  @override
+  String showMoreCount(int count) {
+    return 'عرض المزيد ($count إضافية)';
+  }
+
+  @override
+  String get todayLabel => 'اليوم';
+
+  @override
+  String get yesterdayLabel => 'أمس';
+
+  @override
+  String daysAgoShort(int days) {
+    return 'منذ $days أيام';
+  }
+
+  @override
+  String weeksAgoShort(int weeks) {
+    return 'منذ $weeks أسابيع';
+  }
+
+  @override
+  String providerHasArrived(String name) {
+    return '$name وصل!';
+  }
+
+  @override
+  String get meetProviderToBeginService =>
+      'يرجى مقابلة مقدم الخدمة لبدء الخدمة';
+
+  @override
+  String get locationNotAvailable => 'الموقع غير متاح';
+
+  @override
+  String get couldNotOpenMaps => 'تعذر فتح الخريطة';
+
+  @override
+  String get cannotMakePhoneCalls =>
+      'لا يمكن إجراء مكالمات هاتفية على هذا الجهاز';
+
+  @override
+  String get confirmCompletionWarning =>
+      'قم بالتأكيد فقط إذا تم إنهاء الخدمة بالكامل. قد لا تتمكن من التراجع عن هذا.';
+
+  @override
+  String get paymentVerificationTitle => 'التحقق من الدفع';
+
+  @override
+  String get paymentVerificationMessage =>
+      'بعد إتمام الدفع في متصفحك، انقر على \"التحقق من الدفع\" للتأكيد.';
+
+  @override
+  String get verifyPaymentButton => 'التحقق من الدفع';
+
+  @override
+  String get verifyingPayment => 'جاري التحقق من الدفع...';
+
+  @override
+  String get couldNotOpenPaymentPage =>
+      'تعذر فتح صفحة الدفع. يرجى المحاولة مرة أخرى.';
+
+  @override
+  String get paymentStillProcessing =>
+      'لا يزال الدفع قيد المعالجة. يرجى التحقق مرة أخرى بعد قليل.';
+
+  @override
+  String get statusPending => 'قيد الانتظار';
+
+  @override
+  String get customerProfile => 'ملف العميل';
+
+  @override
+  String get newCustomer => 'عميل جديد';
+
+  @override
+  String get newCustomerNoReviews => 'هذا عميل جديد بدون تقييمات حتى الآن.';
+
+  @override
+  String get whatOtherProvidersSay => 'ما يقوله مقدمو الخدمات الآخرون';
+
+  @override
+  String get justNow => 'الآن';
+
+  @override
+  String monthsAgoShort(int months) {
+    return 'منذ $months شهر';
+  }
+
+  @override
+  String daysAgoShortCompact(int days) {
+    return 'منذ $days يوم';
+  }
+
+  @override
+  String hoursAgoShort(int hours) {
+    return 'منذ $hours ساعة';
+  }
+
+  @override
+  String get generalArea => 'المنطقة العامة';
+
+  @override
+  String get serviceCompleted => 'تم إنهاء الخدمة';
+
+  @override
+  String get completedServiceArea => 'منطقة الخدمة المكتملة';
+
+  @override
+  String get serviceArea => 'منطقة الخدمة';
+
+  @override
+  String get locationHiddenAfterCancellation =>
+      'لسلامتك، تم إخفاء تفاصيل الموقع الدقيقة بعد الإلغاء. يتم عرض المنطقة العامة فقط.';
+
+  @override
+  String get locationHiddenAfterCompletion =>
+      'لسلامتك، تم إخفاء تفاصيل الموقع الدقيقة بعد إتمام الخدمة. يتم عرض المنطقة العامة فقط.';
+
+  @override
+  String get mapMarkerMe => 'أنا';
+
+  @override
+  String get mapMarkerOther => 'الآخر';
+
+  @override
+  String get requestPlaced => 'تم تقديم الطلب';
+
+  @override
+  String get whenBookingSubmitted => 'متى تم تقديم هذا الحجز';
+
+  @override
+  String yourLocalTimeTimezone(String timezone) {
+    return 'توقيتك المحلي ($timezone)';
+  }
+
+  @override
+  String get bookingTimeline => 'الجدول الزمني للحجز';
+
+  @override
+  String get timelineRequestCreated => 'تم إنشاء الطلب';
+
+  @override
+  String get timelineAccepted => 'تم القبول';
+
+  @override
+  String get timelineInProgress => 'قيد التنفيذ';
+
+  @override
+  String get timelineCompleted => 'مكتمل';
+
+  @override
+  String get timelineCancelled => 'ملغي';
+
+  @override
+  String get timelinePending => 'قيد الانتظار...';
+
+  @override
+  String get viewLess => 'عرض أقل';
+
+  @override
+  String viewMoreCount(int count) {
+    return 'عرض المزيد ($count إضافية)';
+  }
+
+  @override
+  String get paymentRequiredImmediately => 'الدفع مطلوب فوراً!';
+
+  @override
+  String get paymentReminder => 'تذكير بالدفع';
+
+  @override
+  String hoursRemaining(String hours) {
+    return '⏱ $hours ساعة متبقية';
+  }
+
+  @override
+  String get serviceAppointment => 'موعد الخدمة';
+
+  @override
+  String get todayBadge => 'اليوم';
+
+  @override
+  String get locationField => 'الموقع';
+
+  @override
+  String get serviceAreaField => 'منطقة الخدمة';
+
+  @override
+  String get requestedField => 'تم الطلب';
+
+  @override
+  String allTimesInLocalTimezone(String timezone) {
+    return 'جميع الأوقات معروضة بتوقيتك المحلي ($timezone)';
+  }
+
+  @override
+  String get completionConfirmed => 'تم تأكيد الإنهاء';
+
+  @override
+  String get rateCustomer => 'تقييم العميل';
+
+  @override
+  String get customerReviewed => 'تم تقييم العميل';
+
+  @override
+  String get failedToSubmitReviewTryAgain =>
+      'فشل في إرسال التقييم. يرجى المحاولة مرة أخرى.';
+
+  @override
+  String get shareYourExperience => 'شارك تجربتك...';
+
+  @override
+  String rateRequesterTitle(String name) {
+    return 'تقييم $name';
+  }
+
+  @override
+  String get howWasExperienceWithCustomer => 'كيف كانت تجربتك مع هذا العميل؟';
+
+  @override
+  String get commentOptional => 'تعليق (اختياري)';
+
+  @override
+  String get cancelButton => 'إلغاء';
+
+  @override
+  String get submitButton => 'إرسال';
+
+  @override
+  String get ratingPoor => 'سيء';
+
+  @override
+  String get ratingFair => 'مقبول';
+
+  @override
+  String get ratingGood => 'جيد';
+
+  @override
+  String get ratingVeryGood => 'جيد جداً';
+
+  @override
+  String get ratingExcellent => 'ممتاز';
+
+  @override
+  String get profileCompletion => 'اكتمال الملف الشخصي';
+
+  @override
+  String get viewProfile => 'عرض الملف الشخصي';
 
   @override
   String get providerKycTitle => 'التحقق من المزوّد (اعرف عميلك)';
@@ -1956,8 +2261,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get detectingYourLocation => 'Detecting your location...';
 
   @override
-  String locationDetectedAs(Object country) {
-    return 'Location detected: $country';
+  String locationConfirmed(String country) {
+    return '✓ تم تأكيد الموقع: $country';
   }
 
   @override

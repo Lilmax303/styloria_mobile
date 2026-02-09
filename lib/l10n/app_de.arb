@@ -291,6 +291,32 @@
       "role": {}
     }
   },
+
+  "myCustomerRating": "Meine Kundenbewertung",
+  "outOf5": "/ 5.0",
+  "reviewsFromProviders": "{count} {count, plural, =1{Bewertung} other{Bewertungen}} von Anbietern",
+  "@reviewsFromProviders": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "failedToLoadReputation": "Reputationsdaten konnten nicht geladen werden",
+  "somethingWentWrong": "Etwas ist schiefgelaufen",
+  "retry": "Erneut versuchen",
+  "weDetectedYoureIn": "📍 Wir haben erkannt, dass Sie sich in {country} befinden. Bitte wählen Sie unten Ihr Land aus.",
+  "@weDetectedYoureIn": {
+    "placeholders": {
+      "country": {"type": "String"}
+    }
+  },
+  "locationConfirmed": "✓ Standort bestätigt: {country}",
+  "@locationConfirmed": {
+    "placeholders": {
+      "country": {"type": "String"}
+    }
+  },
+  "locationMarkedAsOther": "Standort als \"Andere\" markiert - Sie können mit der Registrierung fortfahren",
+
   "dateOfBirthYyyyMmDd": "Geburtsdatum (YYYY-MM-DD)",
   "saveProfile": "Profil speichern",
   "failedToSaveProfile": "Profil konnte nicht gespeichert werden. Bitte versuche es erneut.",

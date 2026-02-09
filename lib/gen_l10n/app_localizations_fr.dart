@@ -128,6 +128,9 @@ class AppLocalizationsFr extends AppLocalizations {
   }
 
   @override
+  String get close => 'Close';
+
+  @override
   String get forgotPassword => 'Forgot Password?';
 
   @override
@@ -274,6 +277,42 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get locationUpdatedFromAddress =>
       'Position mise à jour depuis l’adresse';
+
+  @override
+  String get myCustomerRating => 'Ma note client';
+
+  @override
+  String get outOf5 => '/ 5.0';
+
+  @override
+  String reviewsFromProviders(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'avis',
+      one: 'avis',
+    );
+    return '$count $_temp0 des prestataires';
+  }
+
+  @override
+  String get failedToLoadReputation =>
+      'Échec du chargement des données de réputation';
+
+  @override
+  String get somethingWentWrong => 'Une erreur s\'est produite';
+
+  @override
+  String get retry => 'Réessayer';
+
+  @override
+  String weDetectedYoureIn(String country) {
+    return '📍 Nous avons détecté que vous êtes en $country. Veuillez sélectionner votre pays ci-dessous.';
+  }
+
+  @override
+  String get locationMarkedAsOther =>
+      'Localisation marquée comme \"Autre\" - vous pouvez continuer l\'inscription';
 
   @override
   String get createAccountTitle => 'Créer un compte';
@@ -1029,9 +1068,6 @@ class AppLocalizationsFr extends AppLocalizations {
   String get noData => 'Aucune donnée.';
 
   @override
-  String get retry => 'Réessayer';
-
-  @override
   String get summaryTitle => 'Récapitulatif';
 
   @override
@@ -1230,6 +1266,283 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get markRead => 'Marquer comme lu';
+
+  @override
+  String get customerReviewSubmitted => 'Customer review submitted!';
+
+  @override
+  String get loadingCustomerDetails => 'Loading customer details...';
+
+  @override
+  String get customerDetails => 'Customer Details';
+
+  @override
+  String get navigateButton => 'Navigate';
+
+  @override
+  String get callButton => 'Call';
+
+  @override
+  String get whatOthersSay => 'What others say';
+
+  @override
+  String get showLess => 'Show less';
+
+  @override
+  String showMoreCount(int count) {
+    return 'Show more ($count more)';
+  }
+
+  @override
+  String get todayLabel => 'Today';
+
+  @override
+  String get yesterdayLabel => 'Yesterday';
+
+  @override
+  String daysAgoShort(int days) {
+    return '$days days ago';
+  }
+
+  @override
+  String weeksAgoShort(int weeks) {
+    String _temp0 = intl.Intl.pluralLogic(
+      weeks,
+      locale: localeName,
+      other: 's',
+      one: '',
+    );
+    return '$weeks week$_temp0 ago';
+  }
+
+  @override
+  String providerHasArrived(String name) {
+    return '$name has arrived!';
+  }
+
+  @override
+  String get meetProviderToBeginService =>
+      'Please meet your provider to begin your service';
+
+  @override
+  String get locationNotAvailable => 'Location not available';
+
+  @override
+  String get couldNotOpenMaps => 'Could not open maps';
+
+  @override
+  String get cannotMakePhoneCalls => 'Cannot make phone calls on this device';
+
+  @override
+  String get confirmCompletionWarning =>
+      'Only confirm if the service has been fully completed. You may not be able to undo this.';
+
+  @override
+  String get paymentVerificationTitle => 'Payment Verification';
+
+  @override
+  String get paymentVerificationMessage =>
+      'After completing the payment in your browser, tap \"Verify Payment\" to confirm.';
+
+  @override
+  String get verifyPaymentButton => 'Verify Payment';
+
+  @override
+  String get verifyingPayment => 'Verifying payment...';
+
+  @override
+  String get couldNotOpenPaymentPage =>
+      'Could not open payment page. Please try again.';
+
+  @override
+  String get paymentStillProcessing =>
+      'Payment is still processing. Please check back in a moment.';
+
+  @override
+  String get statusPending => 'Pending';
+
+  @override
+  String get customerProfile => 'Customer Profile';
+
+  @override
+  String get newCustomer => 'New customer';
+
+  @override
+  String get newCustomerNoReviews =>
+      'This is a new customer with no reviews yet.';
+
+  @override
+  String get whatOtherProvidersSay => 'What other providers say';
+
+  @override
+  String get justNow => 'Just now';
+
+  @override
+  String monthsAgoShort(int months) {
+    return '${months}mo ago';
+  }
+
+  @override
+  String daysAgoShortCompact(int days) {
+    return '${days}d ago';
+  }
+
+  @override
+  String hoursAgoShort(int hours) {
+    return '${hours}h ago';
+  }
+
+  @override
+  String get generalArea => 'General Area';
+
+  @override
+  String get serviceCompleted => 'Service completed';
+
+  @override
+  String get completedServiceArea => 'Completed service area';
+
+  @override
+  String get serviceArea => 'Service area';
+
+  @override
+  String get locationHiddenAfterCancellation =>
+      'For your safety, exact location details are hidden after cancellation. Only general area is shown.';
+
+  @override
+  String get locationHiddenAfterCompletion =>
+      'For your safety, exact location details are hidden after service completion. Only general area is shown.';
+
+  @override
+  String get mapMarkerMe => 'Me';
+
+  @override
+  String get mapMarkerOther => 'Other';
+
+  @override
+  String get requestPlaced => 'Request Placed';
+
+  @override
+  String get whenBookingSubmitted => 'When this booking was submitted';
+
+  @override
+  String yourLocalTimeTimezone(String timezone) {
+    return 'Your local time ($timezone)';
+  }
+
+  @override
+  String get bookingTimeline => 'Booking Timeline';
+
+  @override
+  String get timelineRequestCreated => 'Request Created';
+
+  @override
+  String get timelineAccepted => 'Accepted';
+
+  @override
+  String get timelineInProgress => 'In Progress';
+
+  @override
+  String get timelineCompleted => 'Completed';
+
+  @override
+  String get timelineCancelled => 'Cancelled';
+
+  @override
+  String get timelinePending => 'Pending...';
+
+  @override
+  String get viewLess => 'View Less';
+
+  @override
+  String viewMoreCount(int count) {
+    return 'View More ($count more)';
+  }
+
+  @override
+  String get paymentRequiredImmediately => 'Payment Required Immediately!';
+
+  @override
+  String get paymentReminder => 'Payment Reminder';
+
+  @override
+  String hoursRemaining(String hours) {
+    return '⏱ ${hours}h remaining';
+  }
+
+  @override
+  String get serviceAppointment => 'Service Appointment';
+
+  @override
+  String get todayBadge => 'TODAY';
+
+  @override
+  String get locationField => 'Location';
+
+  @override
+  String get serviceAreaField => 'Service Area';
+
+  @override
+  String get requestedField => 'Requested';
+
+  @override
+  String allTimesInLocalTimezone(String timezone) {
+    return 'All times shown in your local timezone ($timezone)';
+  }
+
+  @override
+  String get completionConfirmed => 'Completion confirmed';
+
+  @override
+  String get rateCustomer => 'Rate Customer';
+
+  @override
+  String get customerReviewed => 'Customer reviewed';
+
+  @override
+  String get failedToSubmitReviewTryAgain =>
+      'Failed to submit review. Please try again.';
+
+  @override
+  String get shareYourExperience => 'Share your experience...';
+
+  @override
+  String rateRequesterTitle(String name) {
+    return 'Rate $name';
+  }
+
+  @override
+  String get howWasExperienceWithCustomer =>
+      'How was your experience with this customer?';
+
+  @override
+  String get commentOptional => 'Comment (optional)';
+
+  @override
+  String get cancelButton => 'Cancel';
+
+  @override
+  String get submitButton => 'Submit';
+
+  @override
+  String get ratingPoor => 'Poor';
+
+  @override
+  String get ratingFair => 'Fair';
+
+  @override
+  String get ratingGood => 'Good';
+
+  @override
+  String get ratingVeryGood => 'Very Good';
+
+  @override
+  String get ratingExcellent => 'Excellent';
+
+  @override
+  String get profileCompletion => 'Profile completion';
+
+  @override
+  String get viewProfile => 'View Profile';
 
   @override
   String get providerKycTitle => 'Vérification du prestataire (KYC)';
@@ -2011,8 +2324,8 @@ class AppLocalizationsFr extends AppLocalizations {
   String get detectingYourLocation => 'Detecting your location...';
 
   @override
-  String locationDetectedAs(Object country) {
-    return 'Location detected: $country';
+  String locationConfirmed(String country) {
+    return '✓ Localisation confirmée : $country';
   }
 
   @override

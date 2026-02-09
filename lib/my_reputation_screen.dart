@@ -42,7 +42,7 @@ class _MyReputationScreenState extends State<MyReputationScreen> {
         });
       } else {
         setState(() {
-          _error = 'Failed to load reputation data';
+          _error = l10n.failedToLoadReputation;
           _isLoading = false;
         });
       }
@@ -81,13 +81,13 @@ class _MyReputationScreenState extends State<MyReputationScreen> {
             const Icon(Icons.error_outline, size: 48, color: Colors.red),
             const SizedBox(height: 16),
             Text(
-              _error ?? 'Something went wrong',
+              _error ?? l10n.somethingWentWrong,
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 16),
             ElevatedButton(
               onPressed: _loadReputation,
-              child: const Text('Retry'),
+              child: Text(l10n.retry),
             ),
           ],
         ),

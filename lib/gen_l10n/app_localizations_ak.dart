@@ -126,6 +126,9 @@ class AppLocalizationsAk extends AppLocalizations {
   }
 
   @override
+  String get close => 'Close';
+
+  @override
   String get forgotPassword => 'Forgot Password?';
 
   @override
@@ -266,6 +269,35 @@ class AppLocalizationsAk extends AppLocalizations {
 
   @override
   String get locationUpdatedFromAddress => 'Wɔde address no asesa beaeɛ no';
+
+  @override
+  String get myCustomerRating => 'Me Customer Rating';
+
+  @override
+  String get outOf5 => '/ 5.0';
+
+  @override
+  String reviewsFromProviders(int count) {
+    return 'Nhwehwɛmu $count a efi nnipa a wɔde ma';
+  }
+
+  @override
+  String get failedToLoadReputation => 'Wantumi anya din pa data no';
+
+  @override
+  String get somethingWentWrong => 'Biribi akɔ basaa';
+
+  @override
+  String get retry => 'San hwɛ';
+
+  @override
+  String weDetectedYoureIn(String country) {
+    return '📍 Yɛahu sɛ wowɔ $country. Yɛsrɛ wo, yi wo man wɔ ase ha.';
+  }
+
+  @override
+  String get locationMarkedAsOther =>
+      'Wɔde baabi a wowɔ no ahyɛ \"Foforo\" - wubetumi akɔ so de wo din';
 
   @override
   String get createAccountTitle => 'Bɔ Akaunt';
@@ -1005,9 +1037,6 @@ class AppLocalizationsAk extends AppLocalizations {
   String get noData => 'Data nni hɔ.';
 
   @override
-  String get retry => 'San sɔ hwɛ bio';
-
-  @override
   String get summaryTitle => 'Summary';
 
   @override
@@ -1202,6 +1231,276 @@ class AppLocalizationsAk extends AppLocalizations {
 
   @override
   String get markRead => 'Hyɛ sɛ read';
+
+  @override
+  String get customerReviewSubmitted => 'Wɔde customer no nhwehwɛmu abrɛ no!';
+
+  @override
+  String get loadingCustomerDetails => 'Wɔretwe customer no ho nsɛm...';
+
+  @override
+  String get customerDetails => 'Customer No Ho Nsɛm';
+
+  @override
+  String get navigateButton => 'Kɔ hɔ';
+
+  @override
+  String get callButton => 'Frɛ';
+
+  @override
+  String get whatOthersSay => 'Deɛ afoforo ka';
+
+  @override
+  String get showLess => 'Kyerɛ kakra';
+
+  @override
+  String showMoreCount(int count) {
+    return 'Kyerɛ pii ($count pii)';
+  }
+
+  @override
+  String get todayLabel => 'Ɛnnɛ';
+
+  @override
+  String get yesterdayLabel => 'Nnora';
+
+  @override
+  String daysAgoShort(int days) {
+    return 'nna $days a atwam';
+  }
+
+  @override
+  String weeksAgoShort(int weeks) {
+    return 'nnawɔtwe $weeks a atwam';
+  }
+
+  @override
+  String providerHasArrived(String name) {
+    return '$name adu!';
+  }
+
+  @override
+  String get meetProviderToBeginService =>
+      'Yɛsrɛ wo, hyia wo provider no na wo ahyɛ aseɛ';
+
+  @override
+  String get locationNotAvailable => 'Beae no nni hɔ';
+
+  @override
+  String get couldNotOpenMaps => 'Yentumi nbue map no';
+
+  @override
+  String get cannotMakePhoneCalls => 'Yentumi mfrɛ wɔ saa device yi so';
+
+  @override
+  String get confirmCompletionWarning =>
+      'Gye tom sɛ dwumadie no awie koraa. Ebia worentumi nsakra eyi.';
+
+  @override
+  String get paymentVerificationTitle => 'Tua Ka Ho Nhwehwɛmu';
+
+  @override
+  String get paymentVerificationMessage =>
+      'Sɛ woawie tua ka no a, mia \"Hwɛ Tua Ka No\" na gyina mu.';
+
+  @override
+  String get verifyPaymentButton => 'Hwɛ Tua Ka No';
+
+  @override
+  String get verifyingPayment => 'Wɔrehwehwɛ tua ka no...';
+
+  @override
+  String get couldNotOpenPaymentPage =>
+      'Yentumi nbue tua ka page no. Yɛsrɛ wo, san hwɛ bio.';
+
+  @override
+  String get paymentStillProcessing =>
+      'Tua ka no da so kɔ so. Yɛsrɛ wo, san hwɛ akyiri yi.';
+
+  @override
+  String get statusPending => 'Ɛretwɛn';
+
+  @override
+  String get customerProfile => 'Customer Profile';
+
+  @override
+  String get newCustomer => 'Customer foforo';
+
+  @override
+  String get newCustomerNoReviews =>
+      'Eyinom yɛ customer foforo a nhwehwɛmu biara nni hɔ.';
+
+  @override
+  String get whatOtherProvidersSay => 'Deɛ providers afoforo ka';
+
+  @override
+  String get justNow => 'Mprempren';
+
+  @override
+  String monthsAgoShort(int months) {
+    return 'bosome $months a atwam';
+  }
+
+  @override
+  String daysAgoShortCompact(int days) {
+    return 'nna $days a atwam';
+  }
+
+  @override
+  String hoursAgoShort(int hours) {
+    return 'dɔnhwere $hours a atwam';
+  }
+
+  @override
+  String get generalArea => 'Mpɔtam Kɛse';
+
+  @override
+  String get serviceCompleted => 'Dwumadie awie';
+
+  @override
+  String get completedServiceArea => 'Dwumadie a awie mpɔtam';
+
+  @override
+  String get serviceArea => 'Dwumadie mpɔtam';
+
+  @override
+  String get locationHiddenAfterCancellation =>
+      'Wo asomdwoe nti, beae pɔtee no ahintaw sɛ wɔayi no. Mpɔtam kɛse no nkutoo na ɛkyerɛ.';
+
+  @override
+  String get locationHiddenAfterCompletion =>
+      'Wo asomdwoe nti, beae pɔtee no ahintaw sɛ dwumadie no awie. Mpɔtam kɛse no nkutoo na ɛkyerɛ.';
+
+  @override
+  String get mapMarkerMe => 'Me';
+
+  @override
+  String get mapMarkerOther => 'Ɔfoforo';
+
+  @override
+  String get requestPlaced => 'Wɔde Abisadeɛ Ahyɛ';
+
+  @override
+  String get whenBookingSubmitted => 'Bere a wɔde booking yi brɛɛ';
+
+  @override
+  String yourLocalTimeTimezone(String timezone) {
+    return 'Wo mpɔtam bere ($timezone)';
+  }
+
+  @override
+  String get bookingTimeline => 'Booking Bere Nsɛntitire';
+
+  @override
+  String get timelineRequestCreated => 'Wɔbɔɔ Abisadeɛ';
+
+  @override
+  String get timelineAccepted => 'Wɔagye Atom';
+
+  @override
+  String get timelineInProgress => 'Ɛrekɔ So';
+
+  @override
+  String get timelineCompleted => 'Awie';
+
+  @override
+  String get timelineCancelled => 'Wɔayi';
+
+  @override
+  String get timelinePending => 'Ɛretwɛn...';
+
+  @override
+  String get viewLess => 'Hwɛ Kakra';
+
+  @override
+  String viewMoreCount(int count) {
+    return 'Hwɛ Pii ($count pii)';
+  }
+
+  @override
+  String get paymentRequiredImmediately => 'Ɛsɛ Sɛ Wotua Ka Ntɛm!';
+
+  @override
+  String get paymentReminder => 'Tua Ka Ho Nkaeɛ';
+
+  @override
+  String hoursRemaining(String hours) {
+    return '⏱ $hours dɔnhwere aka';
+  }
+
+  @override
+  String get serviceAppointment => 'Dwumadie Nhyiam';
+
+  @override
+  String get todayBadge => 'ƐNNƐ';
+
+  @override
+  String get locationField => 'Beae';
+
+  @override
+  String get serviceAreaField => 'Dwumadie Mpɔtam';
+
+  @override
+  String get requestedField => 'Wɔbisae';
+
+  @override
+  String allTimesInLocalTimezone(String timezone) {
+    return 'Bere nyinaa wɔ wo mpɔtam bere mu ($timezone)';
+  }
+
+  @override
+  String get completionConfirmed => 'Wɔagye awie no atom';
+
+  @override
+  String get rateCustomer => 'Bu Customer No';
+
+  @override
+  String get customerReviewed => 'Wɔabu customer no';
+
+  @override
+  String get failedToSubmitReviewTryAgain =>
+      'Anhwɛ yie sɛ wɔde nhwehwɛmu no brɛ. Yɛsrɛ wo, san hwɛ bio.';
+
+  @override
+  String get shareYourExperience => 'Kyɛ wo nsusuiɛ...';
+
+  @override
+  String rateRequesterTitle(String name) {
+    return 'Bu $name';
+  }
+
+  @override
+  String get howWasExperienceWithCustomer => 'Ɛyɛɛ dɛn wɔ customer yi ho?';
+
+  @override
+  String get commentOptional => 'Nsɛm (ɛho nhia)';
+
+  @override
+  String get cancelButton => 'Yi';
+
+  @override
+  String get submitButton => 'Mena';
+
+  @override
+  String get ratingPoor => 'Ɛnyɛ';
+
+  @override
+  String get ratingFair => 'Ɛyɛ kakra';
+
+  @override
+  String get ratingGood => 'Ɛyɛ';
+
+  @override
+  String get ratingVeryGood => 'Ɛyɛ paa';
+
+  @override
+  String get ratingExcellent => 'Ɛyɛ papa';
+
+  @override
+  String get profileCompletion => 'Profile awie';
+
+  @override
+  String get viewProfile => 'Hwɛ Profile';
 
   @override
   String get providerKycTitle => 'Ɔsomfoɔ Nkyerɛkyerɛmu (KYC)';
@@ -1973,8 +2272,8 @@ class AppLocalizationsAk extends AppLocalizations {
   String get detectingYourLocation => 'Detecting your location...';
 
   @override
-  String locationDetectedAs(Object country) {
-    return 'Location detected: $country';
+  String locationConfirmed(String country) {
+    return '✓ Baabi a wowɔ no asi so dua: $country';
   }
 
   @override

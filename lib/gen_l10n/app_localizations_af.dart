@@ -127,6 +127,9 @@ class AppLocalizationsAf extends AppLocalizations {
   }
 
   @override
+  String get close => 'Close';
+
+  @override
   String get forgotPassword => 'Forgot Password?';
 
   @override
@@ -268,6 +271,41 @@ class AppLocalizationsAf extends AppLocalizations {
 
   @override
   String get locationUpdatedFromAddress => 'Ligging vanaf adres opgedateer';
+
+  @override
+  String get myCustomerRating => 'My kliëntgradering';
+
+  @override
+  String get outOf5 => '/ 5.0';
+
+  @override
+  String reviewsFromProviders(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'resensies',
+      one: 'resensie',
+    );
+    return '$count $_temp0 van verskaffers';
+  }
+
+  @override
+  String get failedToLoadReputation => 'Kon nie reputasiedata laai nie';
+
+  @override
+  String get somethingWentWrong => 'Iets het verkeerd geloop';
+
+  @override
+  String get retry => 'Probeer weer';
+
+  @override
+  String weDetectedYoureIn(String country) {
+    return '📍 Ons het bespeur dat jy in $country is. Kies asseblief jou land hieronder.';
+  }
+
+  @override
+  String get locationMarkedAsOther =>
+      'Ligging gemerk as \"Ander\" - jy kan voortgaan met registrasie';
 
   @override
   String get createAccountTitle => 'Skep rekening';
@@ -1012,9 +1050,6 @@ class AppLocalizationsAf extends AppLocalizations {
   String get noData => 'Geen data.';
 
   @override
-  String get retry => 'Probeer weer';
-
-  @override
   String get summaryTitle => 'Opsomming';
 
   @override
@@ -1209,6 +1244,278 @@ class AppLocalizationsAf extends AppLocalizations {
 
   @override
   String get markRead => 'Merk as gelees';
+
+  @override
+  String get customerReviewSubmitted => 'Kliëntresensie ingedien!';
+
+  @override
+  String get loadingCustomerDetails => 'Laai kliëntbesonderhede...';
+
+  @override
+  String get customerDetails => 'Kliëntbesonderhede';
+
+  @override
+  String get navigateButton => 'Navigeer';
+
+  @override
+  String get callButton => 'Bel';
+
+  @override
+  String get whatOthersSay => 'Wat ander sê';
+
+  @override
+  String get showLess => 'Wys minder';
+
+  @override
+  String showMoreCount(int count) {
+    return 'Wys meer ($count meer)';
+  }
+
+  @override
+  String get todayLabel => 'Vandag';
+
+  @override
+  String get yesterdayLabel => 'Gister';
+
+  @override
+  String daysAgoShort(int days) {
+    return '$days dae gelede';
+  }
+
+  @override
+  String weeksAgoShort(int weeks) {
+    return '$weeks weke gelede';
+  }
+
+  @override
+  String providerHasArrived(String name) {
+    return '$name het aangekom!';
+  }
+
+  @override
+  String get meetProviderToBeginService =>
+      'Ontmoet asseblief jou diensverskaffer om die diens te begin';
+
+  @override
+  String get locationNotAvailable => 'Ligging nie beskikbaar nie';
+
+  @override
+  String get couldNotOpenMaps => 'Kon nie kaart oopmaak nie';
+
+  @override
+  String get cannotMakePhoneCalls =>
+      'Kan nie telefoonoproepe maak op hierdie toestel nie';
+
+  @override
+  String get confirmCompletionWarning =>
+      'Bevestig slegs as die diens volledig voltooi is. Jy sal dit dalk nie kan ongedaan maak nie.';
+
+  @override
+  String get paymentVerificationTitle => 'Betalingsverifikasie';
+
+  @override
+  String get paymentVerificationMessage =>
+      'Nadat jy die betaling in jou blaaier voltooi het, tik \"Verifieer Betaling\" om te bevestig.';
+
+  @override
+  String get verifyPaymentButton => 'Verifieer Betaling';
+
+  @override
+  String get verifyingPayment => 'Verifieer betaling...';
+
+  @override
+  String get couldNotOpenPaymentPage =>
+      'Kon nie betalingsbladsy oopmaak nie. Probeer asseblief weer.';
+
+  @override
+  String get paymentStillProcessing =>
+      'Betaling word nog verwerk. Kyk asseblief later weer.';
+
+  @override
+  String get statusPending => 'Hangend';
+
+  @override
+  String get customerProfile => 'Kliëntprofiel';
+
+  @override
+  String get newCustomer => 'Nuwe kliënt';
+
+  @override
+  String get newCustomerNoReviews =>
+      'Hierdie is \'n nuwe kliënt met nog geen resensies nie.';
+
+  @override
+  String get whatOtherProvidersSay => 'Wat ander diensverskaffers sê';
+
+  @override
+  String get justNow => 'Nou net';
+
+  @override
+  String monthsAgoShort(int months) {
+    return '${months}m gelede';
+  }
+
+  @override
+  String daysAgoShortCompact(int days) {
+    return '${days}d gelede';
+  }
+
+  @override
+  String hoursAgoShort(int hours) {
+    return '${hours}u gelede';
+  }
+
+  @override
+  String get generalArea => 'Algemene Area';
+
+  @override
+  String get serviceCompleted => 'Diens voltooi';
+
+  @override
+  String get completedServiceArea => 'Voltooide diensarea';
+
+  @override
+  String get serviceArea => 'Diensarea';
+
+  @override
+  String get locationHiddenAfterCancellation =>
+      'Vir jou veiligheid is presiese liggingbesonderhede versteek na kansellasie. Slegs algemene area word gewys.';
+
+  @override
+  String get locationHiddenAfterCompletion =>
+      'Vir jou veiligheid is presiese liggingbesonderhede versteek na diensvoltooiing. Slegs algemene area word gewys.';
+
+  @override
+  String get mapMarkerMe => 'Ek';
+
+  @override
+  String get mapMarkerOther => 'Ander';
+
+  @override
+  String get requestPlaced => 'Versoek Geplaas';
+
+  @override
+  String get whenBookingSubmitted => 'Wanneer hierdie bespreking ingedien is';
+
+  @override
+  String yourLocalTimeTimezone(String timezone) {
+    return 'Jou plaaslike tyd ($timezone)';
+  }
+
+  @override
+  String get bookingTimeline => 'Besprekingstydlyn';
+
+  @override
+  String get timelineRequestCreated => 'Versoek Geskep';
+
+  @override
+  String get timelineAccepted => 'Aanvaar';
+
+  @override
+  String get timelineInProgress => 'In Proses';
+
+  @override
+  String get timelineCompleted => 'Voltooi';
+
+  @override
+  String get timelineCancelled => 'Gekanselleer';
+
+  @override
+  String get timelinePending => 'Hangend...';
+
+  @override
+  String get viewLess => 'Sien Minder';
+
+  @override
+  String viewMoreCount(int count) {
+    return 'Sien Meer ($count meer)';
+  }
+
+  @override
+  String get paymentRequiredImmediately => 'Betaling Onmiddellik Benodig!';
+
+  @override
+  String get paymentReminder => 'Betalingsherinnering';
+
+  @override
+  String hoursRemaining(String hours) {
+    return '⏱ ${hours}u oor';
+  }
+
+  @override
+  String get serviceAppointment => 'Diensafspraak';
+
+  @override
+  String get todayBadge => 'VANDAG';
+
+  @override
+  String get locationField => 'Ligging';
+
+  @override
+  String get serviceAreaField => 'Diensarea';
+
+  @override
+  String get requestedField => 'Versoek';
+
+  @override
+  String allTimesInLocalTimezone(String timezone) {
+    return 'Alle tye word in jou plaaslike tydsone ($timezone) gewys';
+  }
+
+  @override
+  String get completionConfirmed => 'Voltooiing bevestig';
+
+  @override
+  String get rateCustomer => 'Gradeer Kliënt';
+
+  @override
+  String get customerReviewed => 'Kliënt gegradeer';
+
+  @override
+  String get failedToSubmitReviewTryAgain =>
+      'Kon nie resensie indien nie. Probeer asseblief weer.';
+
+  @override
+  String get shareYourExperience => 'Deel jou ervaring...';
+
+  @override
+  String rateRequesterTitle(String name) {
+    return 'Gradeer $name';
+  }
+
+  @override
+  String get howWasExperienceWithCustomer =>
+      'Hoe was jou ervaring met hierdie kliënt?';
+
+  @override
+  String get commentOptional => 'Kommentaar (opsioneel)';
+
+  @override
+  String get cancelButton => 'Kanselleer';
+
+  @override
+  String get submitButton => 'Indien';
+
+  @override
+  String get ratingPoor => 'Swak';
+
+  @override
+  String get ratingFair => 'Redelik';
+
+  @override
+  String get ratingGood => 'Goed';
+
+  @override
+  String get ratingVeryGood => 'Baie Goed';
+
+  @override
+  String get ratingExcellent => 'Uitstekend';
+
+  @override
+  String get profileCompletion => 'Profielvoltooiing';
+
+  @override
+  String get viewProfile => 'Sien Profiel';
 
   @override
   String get providerKycTitle => 'Verskaffer-verifikasie (KYC)';
@@ -1982,8 +2289,8 @@ class AppLocalizationsAf extends AppLocalizations {
   String get detectingYourLocation => 'Detecting your location...';
 
   @override
-  String locationDetectedAs(Object country) {
-    return 'Location detected: $country';
+  String locationConfirmed(String country) {
+    return '✓ Ligging bevestig: $country';
   }
 
   @override

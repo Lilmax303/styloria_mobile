@@ -313,6 +313,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   /// ⭐ NEW: Builds the customer rating display card
   Widget _buildRatingSection(bool isDark) {
+    final l10n = AppLocalizations.of(context);
+
     return GestureDetector(
       onTap: () {
         Navigator.of(context).push(
@@ -358,7 +360,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'My Customer Rating',
+                          l10n.myCustomerRating,
                           style: TextStyle(
                             fontSize: 13,
                             color: isDark ? Colors.grey.shade400 : Colors.grey.shade600,
@@ -375,8 +377,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               ),
                             ),
                             const SizedBox(width: 4),
-                            const Text(
-                              '/ 5.0',
+                            Text(
+                              l10n.outOf5,
                               style: TextStyle(
                                 fontSize: 14,
                                 color: Colors.grey,
@@ -396,7 +398,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           ],
                         ),
                         Text(
-                          '$_totalReviews ${_totalReviews == 1 ? 'review' : 'reviews'} from providers',
+                          l10n.reviewsFromProviders(_totalReviews),
                           style: TextStyle(
                             fontSize: 12,
                             color: isDark ? Colors.grey.shade400 : Colors.grey.shade600,

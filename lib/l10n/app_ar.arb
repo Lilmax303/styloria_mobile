@@ -149,6 +149,31 @@
     }
   },
 
+  "myCustomerRating": "تقييمي كعميل",
+  "outOf5": "/ 5.0",
+  "reviewsFromProviders": "{count} {count, plural, =1{تقييم} other{تقييمات}} من مقدمي الخدمات",
+  "@reviewsFromProviders": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "failedToLoadReputation": "فشل في تحميل بيانات السمعة",
+  "somethingWentWrong": "حدث خطأ ما",
+  "retry": "إعادة المحاولة",
+  "weDetectedYoureIn": "📍 اكتشفنا أنك في {country}. يرجى اختيار بلدك أدناه.",
+  "@weDetectedYoureIn": {
+    "placeholders": {
+      "country": {"type": "String"}
+    }
+  },
+  "locationConfirmed": "✓ تم تأكيد الموقع: {country}",
+  "@locationConfirmed": {
+    "placeholders": {
+      "country": {"type": "String"}
+    }
+  },
+  "locationMarkedAsOther": "تم تحديد الموقع كـ \"أخرى\" - يمكنك متابعة التسجيل",
+
   "invalidBookingIdForChat": "معرّف الحجز غير صالح للدردشة.",
   "invalidBookingIdForCall": "معرّف الحجز غير صالح للمكالمة.",
   "unableToLoadContactInfo": "تعذّر تحميل معلومات الاتصال. تأكد من أن الحجز نشط.",
@@ -436,6 +461,86 @@
       "error": {}
     }
   },
+
+  "customerReviewSubmitted": "تم إرسال تقييم العميل!",
+  "loadingCustomerDetails": "جاري تحميل بيانات العميل...",
+  "customerDetails": "تفاصيل العميل",
+  "navigateButton": "التنقل",
+  "callButton": "اتصال",
+  "whatOthersSay": "ما يقوله الآخرون",
+  "showLess": "عرض أقل",
+  "showMoreCount": "عرض المزيد ({count} إضافية)",
+  "todayLabel": "اليوم",
+  "yesterdayLabel": "أمس",
+  "daysAgoShort": "منذ {days} أيام",
+  "weeksAgoShort": "منذ {weeks} أسابيع",
+  "providerHasArrived": "{name} وصل!",
+  "meetProviderToBeginService": "يرجى مقابلة مقدم الخدمة لبدء الخدمة",
+  "locationNotAvailable": "الموقع غير متاح",
+  "couldNotOpenMaps": "تعذر فتح الخريطة",
+  "cannotMakePhoneCalls": "لا يمكن إجراء مكالمات هاتفية على هذا الجهاز",
+  "confirmCompletionWarning": "قم بالتأكيد فقط إذا تم إنهاء الخدمة بالكامل. قد لا تتمكن من التراجع عن هذا.",
+  "paymentVerificationTitle": "التحقق من الدفع",
+  "paymentVerificationMessage": "بعد إتمام الدفع في متصفحك، انقر على \"التحقق من الدفع\" للتأكيد.",
+  "verifyPaymentButton": "التحقق من الدفع",
+  "verifyingPayment": "جاري التحقق من الدفع...",
+  "couldNotOpenPaymentPage": "تعذر فتح صفحة الدفع. يرجى المحاولة مرة أخرى.",
+  "paymentStillProcessing": "لا يزال الدفع قيد المعالجة. يرجى التحقق مرة أخرى بعد قليل.",
+  "statusPending": "قيد الانتظار",
+  "customerProfile": "ملف العميل",
+  "newCustomer": "عميل جديد",
+  "newCustomerNoReviews": "هذا عميل جديد بدون تقييمات حتى الآن.",
+  "whatOtherProvidersSay": "ما يقوله مقدمو الخدمات الآخرون",
+  "justNow": "الآن",
+  "monthsAgoShort": "منذ {months} شهر",
+  "daysAgoShortCompact": "منذ {days} يوم",
+  "hoursAgoShort": "منذ {hours} ساعة",
+  "generalArea": "المنطقة العامة",
+  "serviceCompleted": "تم إنهاء الخدمة",
+  "completedServiceArea": "منطقة الخدمة المكتملة",
+  "serviceArea": "منطقة الخدمة",
+  "locationHiddenAfterCancellation": "لسلامتك، تم إخفاء تفاصيل الموقع الدقيقة بعد الإلغاء. يتم عرض المنطقة العامة فقط.",
+  "locationHiddenAfterCompletion": "لسلامتك، تم إخفاء تفاصيل الموقع الدقيقة بعد إتمام الخدمة. يتم عرض المنطقة العامة فقط.",
+  "mapMarkerMe": "أنا",
+  "mapMarkerOther": "الآخر",
+  "requestPlaced": "تم تقديم الطلب",
+  "whenBookingSubmitted": "متى تم تقديم هذا الحجز",
+  "yourLocalTimeTimezone": "توقيتك المحلي ({timezone})",
+  "bookingTimeline": "الجدول الزمني للحجز",
+  "timelineRequestCreated": "تم إنشاء الطلب",
+  "timelineAccepted": "تم القبول",
+  "timelineInProgress": "قيد التنفيذ",
+  "timelineCompleted": "مكتمل",
+  "timelineCancelled": "ملغي",
+  "timelinePending": "قيد الانتظار...",
+  "viewLess": "عرض أقل",
+  "viewMoreCount": "عرض المزيد ({count} إضافية)",
+  "paymentRequiredImmediately": "الدفع مطلوب فوراً!",
+  "paymentReminder": "تذكير بالدفع",
+  "hoursRemaining": "⏱ {hours} ساعة متبقية",
+  "serviceAppointment": "موعد الخدمة",
+  "todayBadge": "اليوم",
+  "locationField": "الموقع",
+  "serviceAreaField": "منطقة الخدمة",
+  "requestedField": "تم الطلب",
+  "allTimesInLocalTimezone": "جميع الأوقات معروضة بتوقيتك المحلي ({timezone})",
+  "completionConfirmed": "تم تأكيد الإنهاء",
+  "rateCustomer": "تقييم العميل",
+  "customerReviewed": "تم تقييم العميل",
+  "failedToSubmitReviewTryAgain": "فشل في إرسال التقييم. يرجى المحاولة مرة أخرى.",
+  "shareYourExperience": "شارك تجربتك...",
+  "rateRequesterTitle": "تقييم {name}",
+  "howWasExperienceWithCustomer": "كيف كانت تجربتك مع هذا العميل؟",
+  "commentOptional": "تعليق (اختياري)",
+  "cancelButton": "إلغاء",
+  "submitButton": "إرسال",
+  "ratingPoor": "سيء",
+  "ratingFair": "مقبول",
+  "ratingGood": "جيد",
+  "ratingVeryGood": "جيد جداً",
+  "ratingExcellent": "ممتاز",
+  "profileCompletion": "اكتمال الملف الشخصي",
+  "viewProfile": "عرض الملف الشخصي",
 
   "signOut": "تسجيل الخروج",
 

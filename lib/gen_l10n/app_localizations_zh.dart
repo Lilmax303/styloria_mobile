@@ -121,6 +121,9 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
+  String get close => 'Close';
+
+  @override
   String get forgotPassword => 'Forgot Password?';
 
   @override
@@ -257,6 +260,34 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get locationUpdatedFromAddress => '已根据地址更新位置';
+
+  @override
+  String get myCustomerRating => '我的客户评分';
+
+  @override
+  String get outOf5 => '/ 5.0';
+
+  @override
+  String reviewsFromProviders(int count) {
+    return '来自服务商的 $count 条评价';
+  }
+
+  @override
+  String get failedToLoadReputation => '加载信誉数据失败';
+
+  @override
+  String get somethingWentWrong => '出了点问题';
+
+  @override
+  String get retry => '重试';
+
+  @override
+  String weDetectedYoureIn(String country) {
+    return '📍 我们检测到您在$country。请在下方选择您的国家。';
+  }
+
+  @override
+  String get locationMarkedAsOther => '位置标记为「其他」- 您可以继续注册';
 
   @override
   String get createAccountTitle => '创建账户';
@@ -967,9 +998,6 @@ class AppLocalizationsZh extends AppLocalizations {
   String get noData => '暂无数据。';
 
   @override
-  String get retry => '重试';
-
-  @override
   String get summaryTitle => '汇总';
 
   @override
@@ -1159,6 +1187,267 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get markRead => '标记已读';
+
+  @override
+  String get customerReviewSubmitted => '客户评价已提交！';
+
+  @override
+  String get loadingCustomerDetails => '正在加载客户详情...';
+
+  @override
+  String get customerDetails => '客户详情';
+
+  @override
+  String get navigateButton => '导航';
+
+  @override
+  String get callButton => '呼叫';
+
+  @override
+  String get whatOthersSay => '其他人的评价';
+
+  @override
+  String get showLess => '收起';
+
+  @override
+  String showMoreCount(int count) {
+    return '显示更多（还有$count条）';
+  }
+
+  @override
+  String get todayLabel => '今天';
+
+  @override
+  String get yesterdayLabel => '昨天';
+
+  @override
+  String daysAgoShort(int days) {
+    return '$days天前';
+  }
+
+  @override
+  String weeksAgoShort(int weeks) {
+    return '$weeks周前';
+  }
+
+  @override
+  String providerHasArrived(String name) {
+    return '$name已到达！';
+  }
+
+  @override
+  String get meetProviderToBeginService => '请与您的服务商会面开始服务';
+
+  @override
+  String get locationNotAvailable => '位置不可用';
+
+  @override
+  String get couldNotOpenMaps => '无法打开地图';
+
+  @override
+  String get cannotMakePhoneCalls => '此设备无法拨打电话';
+
+  @override
+  String get confirmCompletionWarning => '仅在服务完全完成时才确认。此操作可能无法撤销。';
+
+  @override
+  String get paymentVerificationTitle => '支付验证';
+
+  @override
+  String get paymentVerificationMessage => '在浏览器中完成支付后，点击「验证支付」进行确认。';
+
+  @override
+  String get verifyPaymentButton => '验证支付';
+
+  @override
+  String get verifyingPayment => '正在验证支付...';
+
+  @override
+  String get couldNotOpenPaymentPage => '无法打开支付页面。请重试。';
+
+  @override
+  String get paymentStillProcessing => '支付仍在处理中。请稍后再试。';
+
+  @override
+  String get statusPending => '待处理';
+
+  @override
+  String get customerProfile => '客户资料';
+
+  @override
+  String get newCustomer => '新客户';
+
+  @override
+  String get newCustomerNoReviews => '这是一位没有评价的新客户。';
+
+  @override
+  String get whatOtherProvidersSay => '其他服务商的评价';
+
+  @override
+  String get justNow => '刚刚';
+
+  @override
+  String monthsAgoShort(int months) {
+    return '$months个月前';
+  }
+
+  @override
+  String daysAgoShortCompact(int days) {
+    return '$days天前';
+  }
+
+  @override
+  String hoursAgoShort(int hours) {
+    return '$hours小时前';
+  }
+
+  @override
+  String get generalArea => '大致区域';
+
+  @override
+  String get serviceCompleted => '服务已完成';
+
+  @override
+  String get completedServiceArea => '已完成服务区域';
+
+  @override
+  String get serviceArea => '服务区域';
+
+  @override
+  String get locationHiddenAfterCancellation => '为了您的安全，取消后精确位置已隐藏。仅显示大致区域。';
+
+  @override
+  String get locationHiddenAfterCompletion => '为了您的安全，服务完成后精确位置已隐藏。仅显示大致区域。';
+
+  @override
+  String get mapMarkerMe => '我';
+
+  @override
+  String get mapMarkerOther => '对方';
+
+  @override
+  String get requestPlaced => '请求已提交';
+
+  @override
+  String get whenBookingSubmitted => '预约提交时间';
+
+  @override
+  String yourLocalTimeTimezone(String timezone) {
+    return '您的当地时间（$timezone）';
+  }
+
+  @override
+  String get bookingTimeline => '预约时间线';
+
+  @override
+  String get timelineRequestCreated => '请求已创建';
+
+  @override
+  String get timelineAccepted => '已接受';
+
+  @override
+  String get timelineInProgress => '进行中';
+
+  @override
+  String get timelineCompleted => '已完成';
+
+  @override
+  String get timelineCancelled => '已取消';
+
+  @override
+  String get timelinePending => '等待中...';
+
+  @override
+  String get viewLess => '收起';
+
+  @override
+  String viewMoreCount(int count) {
+    return '查看更多（还有$count条）';
+  }
+
+  @override
+  String get paymentRequiredImmediately => '需要立即付款！';
+
+  @override
+  String get paymentReminder => '付款提醒';
+
+  @override
+  String hoursRemaining(String hours) {
+    return '⏱ 剩余$hours小时';
+  }
+
+  @override
+  String get serviceAppointment => '服务预约';
+
+  @override
+  String get todayBadge => '今天';
+
+  @override
+  String get locationField => '位置';
+
+  @override
+  String get serviceAreaField => '服务区域';
+
+  @override
+  String get requestedField => '请求时间';
+
+  @override
+  String allTimesInLocalTimezone(String timezone) {
+    return '所有时间均显示为您的当地时区（$timezone）';
+  }
+
+  @override
+  String get completionConfirmed => '完成已确认';
+
+  @override
+  String get rateCustomer => '评价客户';
+
+  @override
+  String get customerReviewed => '客户已评价';
+
+  @override
+  String get failedToSubmitReviewTryAgain => '提交评价失败。请重试。';
+
+  @override
+  String get shareYourExperience => '分享您的体验...';
+
+  @override
+  String rateRequesterTitle(String name) {
+    return '评价$name';
+  }
+
+  @override
+  String get howWasExperienceWithCustomer => '您与这位客户的体验如何？';
+
+  @override
+  String get commentOptional => '评论（可选）';
+
+  @override
+  String get cancelButton => '取消';
+
+  @override
+  String get submitButton => '提交';
+
+  @override
+  String get ratingPoor => '差';
+
+  @override
+  String get ratingFair => '一般';
+
+  @override
+  String get ratingGood => '好';
+
+  @override
+  String get ratingVeryGood => '很好';
+
+  @override
+  String get ratingExcellent => '优秀';
+
+  @override
+  String get profileCompletion => '资料完成度';
+
+  @override
+  String get viewProfile => '查看资料';
 
   @override
   String get providerKycTitle => '服务者认证（KYC）';
@@ -1905,8 +2194,8 @@ class AppLocalizationsZh extends AppLocalizations {
   String get detectingYourLocation => 'Detecting your location...';
 
   @override
-  String locationDetectedAs(Object country) {
-    return 'Location detected: $country';
+  String locationConfirmed(String country) {
+    return '✓ 位置已确认：$country';
   }
 
   @override

@@ -126,6 +126,9 @@ class AppLocalizationsSw extends AppLocalizations {
   }
 
   @override
+  String get close => 'Close';
+
+  @override
   String get forgotPassword => 'Forgot Password?';
 
   @override
@@ -268,6 +271,35 @@ class AppLocalizationsSw extends AppLocalizations {
 
   @override
   String get locationUpdatedFromAddress => 'Eneo limesasishwa kutoka anwani';
+
+  @override
+  String get myCustomerRating => 'Ukadiriaji Wangu wa Mteja';
+
+  @override
+  String get outOf5 => '/ 5.0';
+
+  @override
+  String reviewsFromProviders(int count) {
+    return 'Maoni $count kutoka kwa watoa huduma';
+  }
+
+  @override
+  String get failedToLoadReputation => 'Imeshindwa kupakia data ya sifa';
+
+  @override
+  String get somethingWentWrong => 'Kuna kitu kimeenda vibaya';
+
+  @override
+  String get retry => 'Jaribu tena';
+
+  @override
+  String weDetectedYoureIn(String country) {
+    return '📍 Tumegundua uko $country. Tafadhali chagua nchi yako hapa chini.';
+  }
+
+  @override
+  String get locationMarkedAsOther =>
+      'Mahali pamewekwa alama kama \"Nyingine\" - unaweza kuendelea na usajili';
 
   @override
   String get createAccountTitle => 'Unda akaunti';
@@ -1012,9 +1044,6 @@ class AppLocalizationsSw extends AppLocalizations {
   String get noData => 'Hakuna data.';
 
   @override
-  String get retry => 'Jaribu tena';
-
-  @override
   String get summaryTitle => 'Muhtasari';
 
   @override
@@ -1211,6 +1240,277 @@ class AppLocalizationsSw extends AppLocalizations {
 
   @override
   String get markRead => 'Weka imesomwa';
+
+  @override
+  String get customerReviewSubmitted => 'Maoni ya mteja yametumwa!';
+
+  @override
+  String get loadingCustomerDetails => 'Inapakia maelezo ya mteja...';
+
+  @override
+  String get customerDetails => 'Maelezo ya Mteja';
+
+  @override
+  String get navigateButton => 'Elekeza';
+
+  @override
+  String get callButton => 'Piga simu';
+
+  @override
+  String get whatOthersSay => 'Wengine wanasema nini';
+
+  @override
+  String get showLess => 'Onyesha kidogo';
+
+  @override
+  String showMoreCount(int count) {
+    return 'Onyesha zaidi ($count zaidi)';
+  }
+
+  @override
+  String get todayLabel => 'Leo';
+
+  @override
+  String get yesterdayLabel => 'Jana';
+
+  @override
+  String daysAgoShort(int days) {
+    return 'siku $days zilizopita';
+  }
+
+  @override
+  String weeksAgoShort(int weeks) {
+    return 'wiki $weeks zilizopita';
+  }
+
+  @override
+  String providerHasArrived(String name) {
+    return '$name amefika!';
+  }
+
+  @override
+  String get meetProviderToBeginService =>
+      'Tafadhali kutana na mtoa huduma wako ili kuanza huduma';
+
+  @override
+  String get locationNotAvailable => 'Mahali hapapatikani';
+
+  @override
+  String get couldNotOpenMaps => 'Imeshindwa kufungua ramani';
+
+  @override
+  String get cannotMakePhoneCalls => 'Huwezi kupiga simu kwenye kifaa hiki';
+
+  @override
+  String get confirmCompletionWarning =>
+      'Thibitisha tu ikiwa huduma imekamilika kabisa. Huenda usiweze kurudisha hii.';
+
+  @override
+  String get paymentVerificationTitle => 'Uthibitisho wa Malipo';
+
+  @override
+  String get paymentVerificationMessage =>
+      'Baada ya kukamilisha malipo kwenye kivinjari chako, gonga \"Thibitisha Malipo\" ili kuthibitisha.';
+
+  @override
+  String get verifyPaymentButton => 'Thibitisha Malipo';
+
+  @override
+  String get verifyingPayment => 'Inathibitisha malipo...';
+
+  @override
+  String get couldNotOpenPaymentPage =>
+      'Imeshindwa kufungua ukurasa wa malipo. Tafadhali jaribu tena.';
+
+  @override
+  String get paymentStillProcessing =>
+      'Malipo bado yanashughulikiwa. Tafadhali angalia tena baadaye.';
+
+  @override
+  String get statusPending => 'Inasubiri';
+
+  @override
+  String get customerProfile => 'Wasifu wa Mteja';
+
+  @override
+  String get newCustomer => 'Mteja mpya';
+
+  @override
+  String get newCustomerNoReviews =>
+      'Huyu ni mteja mpya ambaye hana maoni bado.';
+
+  @override
+  String get whatOtherProvidersSay => 'Watoa huduma wengine wanasema nini';
+
+  @override
+  String get justNow => 'Sasa hivi';
+
+  @override
+  String monthsAgoShort(int months) {
+    return 'miezi $months iliyopita';
+  }
+
+  @override
+  String daysAgoShortCompact(int days) {
+    return 'siku $days zilizopita';
+  }
+
+  @override
+  String hoursAgoShort(int hours) {
+    return 'masaa $hours yaliyopita';
+  }
+
+  @override
+  String get generalArea => 'Eneo la Jumla';
+
+  @override
+  String get serviceCompleted => 'Huduma imekamilika';
+
+  @override
+  String get completedServiceArea => 'Eneo la huduma iliyokamilika';
+
+  @override
+  String get serviceArea => 'Eneo la huduma';
+
+  @override
+  String get locationHiddenAfterCancellation =>
+      'Kwa usalama wako, maelezo kamili ya mahali yamefichwa baada ya kughairiwa. Eneo la jumla tu linaonyeshwa.';
+
+  @override
+  String get locationHiddenAfterCompletion =>
+      'Kwa usalama wako, maelezo kamili ya mahali yamefichwa baada ya huduma kukamilika. Eneo la jumla tu linaonyeshwa.';
+
+  @override
+  String get mapMarkerMe => 'Mimi';
+
+  @override
+  String get mapMarkerOther => 'Mwingine';
+
+  @override
+  String get requestPlaced => 'Ombi Limewekwa';
+
+  @override
+  String get whenBookingSubmitted => 'Wakati hifadhi hii iliwasilishwa';
+
+  @override
+  String yourLocalTimeTimezone(String timezone) {
+    return 'Muda wako wa eneo ($timezone)';
+  }
+
+  @override
+  String get bookingTimeline => 'Ratiba ya Hifadhi';
+
+  @override
+  String get timelineRequestCreated => 'Ombi Limeundwa';
+
+  @override
+  String get timelineAccepted => 'Imekubaliwa';
+
+  @override
+  String get timelineInProgress => 'Inaendelea';
+
+  @override
+  String get timelineCompleted => 'Imekamilika';
+
+  @override
+  String get timelineCancelled => 'Imeghairiwa';
+
+  @override
+  String get timelinePending => 'Inasubiri...';
+
+  @override
+  String get viewLess => 'Angalia Kidogo';
+
+  @override
+  String viewMoreCount(int count) {
+    return 'Angalia Zaidi ($count zaidi)';
+  }
+
+  @override
+  String get paymentRequiredImmediately => 'Malipo Yanahitajika Mara Moja!';
+
+  @override
+  String get paymentReminder => 'Ukumbusho wa Malipo';
+
+  @override
+  String hoursRemaining(String hours) {
+    return '⏱ masaa $hours yamebaki';
+  }
+
+  @override
+  String get serviceAppointment => 'Miadi ya Huduma';
+
+  @override
+  String get todayBadge => 'LEO';
+
+  @override
+  String get locationField => 'Mahali';
+
+  @override
+  String get serviceAreaField => 'Eneo la Huduma';
+
+  @override
+  String get requestedField => 'Imeombwa';
+
+  @override
+  String allTimesInLocalTimezone(String timezone) {
+    return 'Nyakati zote zinaonyeshwa katika eneo lako la saa ($timezone)';
+  }
+
+  @override
+  String get completionConfirmed => 'Ukamilishaji umethibitishwa';
+
+  @override
+  String get rateCustomer => 'Kadiria Mteja';
+
+  @override
+  String get customerReviewed => 'Mteja amekadiriwa';
+
+  @override
+  String get failedToSubmitReviewTryAgain =>
+      'Imeshindwa kutuma maoni. Tafadhali jaribu tena.';
+
+  @override
+  String get shareYourExperience => 'Shiriki uzoefu wako...';
+
+  @override
+  String rateRequesterTitle(String name) {
+    return 'Kadiria $name';
+  }
+
+  @override
+  String get howWasExperienceWithCustomer =>
+      'Uzoefu wako na mteja huyu ulikuwaje?';
+
+  @override
+  String get commentOptional => 'Maoni (hiari)';
+
+  @override
+  String get cancelButton => 'Ghairi';
+
+  @override
+  String get submitButton => 'Wasilisha';
+
+  @override
+  String get ratingPoor => 'Mbaya';
+
+  @override
+  String get ratingFair => 'Wastani';
+
+  @override
+  String get ratingGood => 'Nzuri';
+
+  @override
+  String get ratingVeryGood => 'Nzuri Sana';
+
+  @override
+  String get ratingExcellent => 'Bora';
+
+  @override
+  String get profileCompletion => 'Ukamilishaji wa wasifu';
+
+  @override
+  String get viewProfile => 'Angalia Wasifu';
 
   @override
   String get providerKycTitle => 'Uthibitishaji wa Mtoa Huduma (KYC)';
@@ -1984,8 +2284,8 @@ class AppLocalizationsSw extends AppLocalizations {
   String get detectingYourLocation => 'Detecting your location...';
 
   @override
-  String locationDetectedAs(Object country) {
-    return 'Location detected: $country';
+  String locationConfirmed(String country) {
+    return '✓ Mahali pamethibitishwa: $country';
   }
 
   @override

@@ -1,0 +1,1413 @@
+{
+  "@@locale": "es",
+
+  "appTitle": "Styloria",
+
+  "account": "Cuenta",
+  "profile": "Perfil",
+  "myBookings": "Mis Reservas",
+  "openJobs": "Trabajos Disponibles",
+  "earnings": "Ganancias",
+  "paymentMethods": "Métodos de pago",
+  "referFriends": "Invitar amigos",
+  "language": "Idioma",
+  "settings": "Configuración",
+
+  "darkMode": "Modo oscuro",
+  "systemDefault": "Predeterminado del sistema",
+  "languageUpdated": "Idioma actualizado",
+  "languageSetToSystemDefault": "Idioma configurado como predeterminado del sistema",
+
+  "helpAndSupport": "Ayuda y Soporte",
+  "chatWithCustomerService": "Chatear con servicio al cliente",
+  "aboutAndPolicies": "Acerca de y Políticas",
+  "viewUserPoliciesAndAgreements": "Ver políticas y acuerdos del usuario",
+
+  "logOut": "Cerrar sesión",
+  "deleteAccount": "Eliminar cuenta",
+  "deleteAccountSubtitle": "Esta acción no se puede deshacer",
+
+  "deleteAccountTitle": "Eliminar cuenta",
+  "deleteAccountConfirmBody": "¿Estás seguro de que deseas eliminar tu cuenta?\n\nEsta acción cerrará tu sesión y podrías perder el acceso permanentemente.",
+  "no": "No",
+  "yesDelete": "Sí, eliminar",
+
+  "deleteAccountSheetTitle": "Lamentamos verte partir.",
+  "deleteAccountSheetPrompt": "¿Puedes decirnos por qué? (Selecciona todas las que apliquen)",
+  "deleteAccountSelectAtLeastOneReason": "Por favor selecciona al menos una razón.",
+  "tellUsMoreOptional": "Cuéntanos más (opcional)",
+  "suggestionsToImproveOptional": "Sugerencias para mejorar (opcional)",
+  "deleteMyAccount": "Eliminar mi cuenta",
+  "cancel": "Cancelar",
+  "failedToDeleteAccount": "No se pudo eliminar la cuenta. Por favor intenta de nuevo.",
+
+  "choosePreferredLanguage": "Elige tu idioma preferido",
+  "noteSomeTextMayStillAppearInEnglish": "Nota: Esto cambia el idioma de la aplicación. Algunos textos pueden seguir apareciendo en inglés hasta que se agreguen las traducciones.",
+  "languageSetToName": "Idioma configurado a {name}",
+  "@languageSetToName": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+
+  "forgotPassword": "¿Olvidaste tu contraseña?",
+  "forgotPasswordTitle": "Restablecer tu Contraseña",
+  "forgotPasswordSubtitle": "Ingresa tu correo electrónico y te enviaremos un código para restablecer tu contraseña.",
+  "resetPasswordTitle": "Crear Nueva Contraseña",
+  "resetPasswordSubtitle": "Ingresa el código enviado a tu correo electrónico y elige una nueva contraseña.",
+  "sendResetCode": "Enviar Código de Restablecimiento",
+  "resetPassword": "Restablecer Contraseña",
+  "newPassword": "Nueva Contraseña",
+  "confirmPassword": "Confirmar Contraseña",
+  "dateOfBirth": "Fecha de Nacimiento",
+  "verificationCode": "Código de Verificación",
+  "invalidEmail": "Por favor ingresa un correo electrónico válido",
+  "invalidCode": "Por favor ingresa un código válido",
+  "passwordTooShort": "La contraseña debe tener al menos 8 caracteres",
+  "changeEmail": "Usar un correo diferente",
+  "backToLogin": "Volver al Inicio de Sesión",
+
+  "deletionReason1": "Ya no necesito Styloria",
+  "deletionReason2": "Tuve problemas para verificar mi cuenta (correo/KYC)",
+  "deletionReason3": "No pude encontrar servicios/proveedores cerca de mí",
+  "deletionReason4": "Los precios o tarifas eran muy altos / poco claros",
+  "deletionReason5": "La aplicación era confusa / difícil de usar",
+  "deletionReason6": "Errores o problemas de rendimiento",
+  "deletionReason7": "Problemas de pago/reembolso",
+  "deletionReason8": "Mala experiencia con un proveedor/usuario",
+  "deletionReason9": "Preocupaciones de privacidad o seguridad",
+  "deletionReason10": "Creé esta cuenta por error",
+  "deletionReason11": "Me estoy cambiando a otra plataforma",
+  "deletionReason12": "Otro",
+
+  "loginWelcomeTitle": "Bienvenido a Styloria",
+  "loginWelcomeSubtitle": "Inicia sesión para administrar tus reservas y servicios.",
+  "loginFailedToLoadUserInfo": "Inicio de sesión exitoso pero no se pudo cargar la información del usuario.",
+
+  "username": "Nombre de usuario",
+  "password": "Contraseña",
+  "required": "Requerido",
+  "login": "Iniciar Sesión",
+  "createNewAccount": "Crear una nueva cuenta",
+  "requestEmailVerificationCode": "Solicitar código de verificación por correo",
+
+  "serviceLocationHint": "Ingresa dónde quieres que se realice el servicio. Puede ser diferente a tu ubicación actual.",
+  "serviceAddressLabel": "Dirección del Servicio",
+  "serviceAddressHint": "ej., Calle Principal 123, Ciudad, País",
+  "searchAddressTooltip": "Buscar esta dirección",
+  "serviceLocationSet": "Ubicación del servicio establecida",
+  "coordinatesLabel": "Coordenadas",
+  "pleaseEnterAddress": "Por favor ingresa una dirección",
+  "locationUpdatedFromAddress": "Ubicación actualizada desde la dirección",
+
+  "myCustomerRating": "Mi Calificación como Cliente",
+  "outOf5": "/ 5.0",
+  "reviewsFromProviders": "{count} {count, plural, =1{reseña} other{reseñas}} de proveedores",
+  "@reviewsFromProviders": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "failedToLoadReputation": "No se pudo cargar los datos de reputación",
+  "somethingWentWrong": "Algo salió mal",
+  "retry": "Reintentar",
+  "weDetectedYoureIn": "📍 Detectamos que estás en {country}. Por favor selecciona tu país a continuación.",
+  "@weDetectedYoureIn": {
+    "placeholders": {
+      "country": {"type": "String"}
+    }
+  },
+  "locationMarkedAsOther": "Ubicación marcada como \"Otro\" - puedes continuar con el registro",
+
+  "createAccountTitle": "Crear Cuenta",
+  "joinStyloria": "Únete a Styloria",
+  "registerSubtitle": "Crea una cuenta para reservar servicios o convertirte en proveedor",
+
+  "iWantTo": "Quiero:",
+  "bookServices": "Reservar Servicios",
+  "provideServices": "Ofrecer Servicios",
+
+  "personalInformation": "Información Personal",
+  "firstName": "Nombre",
+  "lastName": "Apellido",
+  "selectDateOfBirth": "Seleccionar Fecha de Nacimiento",
+
+  "phoneNumber": "Número de Teléfono",
+  "pleaseEnterPhoneNumber": "Por favor ingresa un número de teléfono",
+
+  "accountInformation": "Información de la Cuenta",
+  "chooseUniqueUsernameHint": "Elige un nombre de usuario único",
+
+  "youAreCurrentlyUnavailable": "Actualmente No Estás Disponible",
+  "toBrowseAndAcceptJobsEnableAvailability": "Para explorar y aceptar solicitudes de trabajo cercanas, necesitas establecerte como disponible para reservas.",
+  "goToProfileSettings": "Ir a Configuración de Perfil",
+  "tipToggleAvailableForBookings": "Consejo: Activa \"Disponible para Reservas\" en tu Perfil de Proveedor para comenzar a recibir solicitudes de trabajo.",
+  "requestedBy": "Solicitado por: {name}",
+  "@requestedBy": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "locationLabel": "Ubicación: {address}",
+  "@locationLabel": {
+    "placeholders": {
+      "address": {
+        "type": "String"
+      }
+    }
+  },
+
+  "email": "Correo Electrónico",
+  "emailHint": "tu@correo.com",
+  "enterValidEmail": "Ingresa un correo electrónico válido",
+
+  "security": "Seguridad",
+  "passwordHintAtLeast10": "Al menos 10 caracteres",
+  "passwordMin10": "La contraseña debe tener al menos 10 caracteres",
+  "iAgreeTo": "Acepto los ",
+  "termsOfService": "Términos de Servicio",
+  "and": "y",
+  "privacyPolicy": "Política de Privacidad",
+  "passwordIsRequired": "La contraseña es requerida",
+  "passwordsDoNotMatch": "Las contraseñas no coinciden",
+
+  "pleaseSelectDob": "Por favor selecciona tu fecha de nacimiento.",
+  "pleaseSelectCountry": "Por favor selecciona tu país.",
+  "pleaseSelectCity": "Por favor selecciona tu ciudad.",
+  "pleaseEnterValidPhone": "Por favor ingresa un número de teléfono válido.",
+  "mustAcceptTerms": "Debes aceptar los términos y condiciones.",
+  "mustBeAtLeast18": "Debes tener al menos 18 años para registrarte.",
+
+  "agreeToTerms": "Acepto los Términos de Servicio y la Política de Privacidad",
+  "createAccountButton": "Crear Cuenta",
+  "alreadyHaveAccount": "¿Ya tienes una cuenta?",
+
+  "emailVerifiedSuccessPleaseLogin": "Correo verificado exitosamente. Por favor inicia sesión.",
+  "pleaseVerifyEmailToContinue": "Por favor verifica tu correo para continuar.",
+
+  "requestVerificationCodeTitle": "Solicitar código de verificación",
+  "requestVerificationInstructions": "Ingresa tu correo electrónico o nombre de usuario.\nEnviaremos un nuevo código de verificación al correo de esa cuenta.",
+  "emailOrUsername": "Correo Electrónico o Nombre de Usuario",
+  "sendCode": "Enviar código",
+  "ifAccountExistsCodeSent": "Si esa cuenta existe, se envió un código.",
+  "failedToSendVerificationCode": "No se pudo enviar el código de verificación.",
+
+  "verifyYourEmailTitle": "Verifica tu correo electrónico",
+  "verificationCodeSentInfo": "Se envió un código de verificación al correo de esta cuenta.",
+  "emailVerificationInstructions": "Ingresa el código de 6 dígitos enviado al correo de esta cuenta:\n{identifier}",
+  "@emailVerificationInstructions": {
+    "placeholders": {
+      "identifier": {}
+    }
+  },
+  "verificationCodeLabel": "Código de verificación",
+  "sendingEllipsis": "Enviando...",
+  "resendCode": "Reenviar código",
+  "enter6DigitCodeError": "Ingresa el código de 6 dígitos.",
+  "verifyingEllipsis": "Verificando...",
+  "verify": "Verificar",
+  "invalidOrExpiredCodeTryResending": "Código inválido o expirado. Intenta reenviarlo.",
+
+  "bookingTitle": "Reserva #{id}",
+  "@bookingTitle": { "placeholders": { "id": {} } },
+
+  "invalidBookingIdForChat": "ID de reserva inválido para chat.",
+  "invalidBookingIdForCall": "ID de reserva inválido para llamada.",
+  "unableToLoadContactInfo": "No se puede cargar la información de contacto. Asegúrate de que la reserva esté activa.",
+  "noPhoneNumberAvailableForName": "No hay número de teléfono disponible para {name}.",
+  "@noPhoneNumberAvailableForName": { "placeholders": { "name": {} } },
+  "deviceCannotPlaceCalls": "Este dispositivo no puede realizar llamadas telefónicas.",
+
+  "cancelBookingDialogTitle": "Cancelar reserva",
+  "cancelBookingDialogBody": "¿Realmente deseas cancelar esta reserva?\n\nNota: Si el proveedor ya aceptó y han pasado más de 7 minutos (pero menos de 40 minutos aproximadamente), se puede aplicar una penalización según las reglas.",
+  "yesCancel": "Sí, cancelar",
+
+  "failedToCancelBooking": "No se pudo cancelar la reserva.",
+  "bookingCancelledPenaltyApplied": "Reserva cancelada. Se aplicó una penalización de {amount}.",
+  "@bookingCancelledPenaltyApplied": { "placeholders": { "amount": {} } },
+  "bookingCancelledSuccessfully": "Reserva cancelada exitosamente.",
+
+  "failedToConfirmCompletion": "No se pudo confirmar la finalización. Por favor intenta de nuevo.",
+  "bothSidesConfirmedCompletedPayoutReleased": "Ambas partes confirmaron. Reserva marcada como completada y pago liberado.",
+  "youConfirmedCompletionWaitingForProvider": "Confirmaste la finalización. Esperando confirmación del proveedor.",
+  "youConfirmedCompletionWaitingForUser": "Confirmaste la finalización. Esperando confirmación del usuario.",
+
+  "statusUnknown": "desconocido",
+  "statusAccepted": "aceptado",
+  "statusInProgress": "en progreso",
+  "statusCompleted": "completado",
+  "statusCancelled": "cancelado",
+
+  "paymentPaid": "pagado",
+  "paymentPending": "pendiente",
+  "paymentFailed": "fallido",
+
+  "bookingAcceptedBy": "Reserva aceptada por {name}",
+  "@bookingAcceptedBy": { "placeholders": { "name": {} } },
+
+  "whenLabel": "Cuándo",
+  "atTime": "a las {time}",
+  "@atTime": { "placeholders": { "time": {} } },
+
+  "userLabel": "Usuario",
+  "providerLabel": "Proveedor",
+  "estimatedPriceLabel": "Precio estimado",
+  "offeredPaidLabel": "Ofrecido / pagado",
+  "distanceLabel": "Distancia",
+  "distanceMiles": "{miles} millas",
+  "@distanceMiles": { "placeholders": { "miles": {} } },
+
+  "acceptedAtLabel": "Aceptado a las",
+  "cancelledAtLabel": "Cancelado a las",
+  "cancelledByLabel": "Cancelado por",
+  "penaltyAppliedLabel": "Penalización aplicada: {amount}",
+  "@penaltyAppliedLabel": { "placeholders": { "amount": {} } },
+
+  "userConfirmedLabel": "Usuario confirmó",
+  "providerConfirmedLabel": "Proveedor confirmó",
+  "payoutReleasedLabel": "Pago liberado",
+
+  "yesLower": "sí",
+  "noLower": "no",
+
+  "chat": "Chat",
+  "call": "Llamar",
+
+  "actions": "Acciones",
+  "confirmCompletion": "Confirmar finalización",
+  "noFurtherActionsForBooking": "No hay más acciones disponibles para esta reserva.",
+
+  "freeCancellationEndsIn": "Cancelación gratuita termina en {time}",
+  "@freeCancellationEndsIn": { "placeholders": { "time": {} } },
+  "earlyFreeCancellationEndedWarning": "El período de cancelación gratuita temprana ha terminado. Hasta aproximadamente 40 minutos después de la aceptación, las cancelaciones tardías pueden incurrir en una penalización.",
+
+  "cancelBooking": "Cancelar reserva",
+  "cancelBookingNoPenalty": "Cancelar reserva (sin penalización)",
+  "cancelBookingPenaltyMayApply": "Cancelar reserva (puede aplicar penalización)",
+
+  "cancellationPolicyInfo": "Puedes cancelar sin penalización en los primeros 7 minutos después de la aceptación del proveedor, y nuevamente después de aproximadamente 40 minutos si es necesario. Entre esos tiempos, se puede aplicar una penalización según las reglas.",
+
+  "ratingLine": "Calificación: {rating} ({reviewCount, plural, =1{1 reseña} other{{reviewCount} reseñas}})",
+  "@ratingLine": {
+    "placeholders": {
+      "rating": {},
+      "reviewCount": { "type": "int" }
+    }
+  },
+
+  "proofOfSkillsPortfolio": "Prueba de habilidades (Portafolio)",
+  "noPortfolioPostsAvailable": "No hay publicaciones de portafolio disponibles.",
+  "deleteProfilePicture": "Eliminar Foto de Perfil",
+  "deleteProfilePictureTitle": "Eliminar Foto de Perfil",
+  "deleteProfilePictureConfirmation": "¿Estás seguro de que deseas eliminar tu foto de perfil?",
+  "profilePictureDeletedSuccessfully": "Foto de perfil eliminada exitosamente.",
+  "failedToDeleteProfilePicture": "No se pudo eliminar la foto de perfil.",
+
+  "bookingLocation": "Ubicación de la reserva",
+
+  "location": "Ubicación",
+  "latitude": "Latitud",
+  "longitude": "Longitud",
+  "mapWillAppearWhenCoordinatesValid": "El mapa aparecerá aquí cuando las coordenadas sean válidas.",
+
+  "chatForBookingTitle": "Chat para reserva #{id}",
+  "@chatForBookingTitle": { "placeholders": { "id": {} } },
+
+  "unableToStartChat": "No se puede iniciar el chat. El chat solo está disponible cuando la reserva está aceptada, en progreso, o completada en el último día.",
+  "invalidChatThreadFromServer": "Hilo de chat inválido devuelto del servidor.",
+
+  "messageNotSentPolicy": "Mensaje no enviado. Nota: no está permitido compartir números de teléfono o correos electrónicos, y el chat solo está disponible mientras la reserva esté activa.",
+  "unknown": "Desconocido",
+  "typeMessageHint": "Escribe un mensaje...",
+
+  "uploadProfilePicture": "Subir Foto de Perfil",
+  "currentProfilePicture": "Foto de Perfil Actual",
+  "newPicturePreview": "Vista Previa de Nueva Foto",
+  "chooseImage": "Elegir Imagen",
+  "upload": "Subir",
+
+  "noImageBytesFoundWeb": "No se encontraron bytes de imagen (web).",
+  "pleasePickAnImageFirst": "Por favor elige una imagen primero.",
+  "uploadFailedCheckServerLogs": "Subida fallida. Revisa los registros del servidor / token.",
+  "profilePictureUploadedSuccessfully": "¡Foto de perfil subida exitosamente!",
+  "errorWithValue": "Error: {error}",
+  "@errorWithValue": { "placeholders": { "error": {} } },
+
+  "tapToChangeProfilePicture": "Toca para cambiar la foto de perfil",
+  "usernameValue": "Nombre de usuario: {username}",
+  "@usernameValue": { "placeholders": { "username": {} } },
+  "roleValue": "Rol: {role}",
+  "@roleValue": { "placeholders": { "role": {} } },
+
+  "dateOfBirthYyyyMmDd": "Fecha de nacimiento (AAAA-MM-DD)",
+  "saveProfile": "Guardar Perfil",
+  "profileUpdated": "Perfil actualizado.",
+
+  "completeYourProviderProfile": "Completa tu Perfil de Proveedor",
+  "completeProviderProfileBody": "Para comenzar a aceptar trabajos y ganar dinero, completa tu perfil de proveedor.",
+  "setupProfileNow": "Configurar Perfil Ahora",
+  "doItLater": "Hacerlo Después",
+
+  "bookingTimerPenaltyPeriodActive": "Período de penalización activo",
+  "bookingTimerFreeCancellationPeriod": "Período de cancelación gratuita",
+  "bookingTimerTimeRemaining": "Tiempo restante: {time}",
+  "@bookingTimerTimeRemaining": { "placeholders": { "time": {} } },
+  "bookingTimerCancellingNowPenalty": "Cancelar ahora incurrirá en una penalización del 10%.",
+  "bookingTimerCancelNoPenalty": "Puedes cancelar sin penalización.",
+
+  "myReviewsTitle": "Mis Reseñas",
+  "failedToLoadReviews": "No se pudieron cargar las reseñas.",
+  "noReviewsYet": "Aún no has dejado ninguna reseña.",
+  "providerWithName": "Proveedor: {name}",
+  "@providerWithName": { "placeholders": { "name": {} } },
+  "providerGeneric": "Proveedor",
+  "ratingWithValue": "Calificación: {rating}",
+  "@ratingWithValue": { "placeholders": { "rating": {} } },
+
+  "nearbyOpenJobsTitle": "Trabajos Disponibles Cercanos",
+  "failedToLoadOpenJobsHint": "No se pudieron cargar los trabajos disponibles.\nAsegúrate de tener un perfil de proveedor con ubicación establecida y disponible=true.",
+  "errorLoadingJobsWithValue": "Error al cargar trabajos: {error}",
+  "@errorLoadingJobsWithValue": { "placeholders": { "error": {} } },
+  "noOpenJobsFoundNearbyTitle": "No se encontraron trabajos disponibles cerca",
+  "noOpenJobsFoundNearbyBody": "Asegúrate de:\n- Haber establecido tu ubicación de proveedor\n- Estar marcado como disponible\n- Los usuarios hayan creado y pagado reservas",
+  "currencyLabel": "Moneda: {symbol}",
+  "@currencyLabel": { "placeholders": { "symbol": {} } },
+  "pricesShownInCurrency": "Precios mostrados en {symbol} ({country})",
+  "@pricesShownInCurrency": { "placeholders": { "symbol": {}, "country": {} } },
+  "jobTitleWithId": "Trabajo #{id}",
+  "@jobTitleWithId": { "placeholders": { "id": {} } },
+  "serviceLine": "Servicio: {service}",
+  "@serviceLine": { "placeholders": { "service": {} } },
+  "whenLine": "Cuándo: {date} {time}",
+  "@whenLine": { "placeholders": { "date": {}, "time": {} } },
+  "priceLine": "Precio: {price}",
+  "@priceLine": { "placeholders": { "price": {} } },
+  "acceptJob": "Aceptar Trabajo",
+  "failedToAcceptJob": "No se pudo aceptar el trabajo.",
+  "jobAcceptedSuccessfully": "Trabajo aceptado exitosamente.",
+
+  "newServiceRequestTitle": "Nueva Solicitud de Servicio",
+  "reviewAlreadySubmitted": "Reseña enviada ✓",
+  "offeredPriceLabel": "Precio ofrecido",
+  "offeredPriceHint": "ej. 25.00",
+  "enterValidPrice": "Ingresa un precio válido",
+  "bookAndPay": "Reservar y Pagar",
+  "bookAndPayAmount": "Reservar y Pagar {amount}",
+  "@bookAndPayAmount": { "placeholders": { "amount": {} } },
+  "haircutService": "Corte de cabello",
+  "stylingService": "Peinado",
+  "timeLabel": "Hora:",
+  "notesLabel": "Notas",
+  "requestCreatedAndPaidBroadcast": "¡Solicitud creada y pagada! Transmitiendo a proveedores.",
+  "locationLatLng": "Ubicación: {lat}, {lng}",
+  "@locationLatLng": { "placeholders": { "lat": {}, "lng": {} } },
+
+  "paymentMethodsTitle": "Métodos de pago",
+  "paymentPreferencesInfo": "Estas preferencias se almacenan localmente en tu dispositivo. Los pagos reales se procesan de forma segura a través de Stripe/otros gateways.",
+  "preferredMethodLabel": "Método preferido (gateway local seleccionado por país)",
+  "methodVisaMastercard": "Visa/Mastercard",
+  "methodMobileMoney": "Dinero Móvil (Momo/Paystack/Africa)",
+  "methodPaypal": "PayPal",
+  "methodApplePayGooglePay": "Apple Pay/Google Pay",
+  "methodWeChatPay": "WeChat Pay (China)",
+  "methodAlipay": "Alipay (China)",
+  "methodUnionPay": "Tarjeta UnionPay (China)",
+  "mobileMoneyNumberLabel": "Número de Dinero Móvil",
+  "wechatAlipayIdLabel": "ID de WeChat/Alipay",
+  "cardLast4DigitsLabel": "Últimos 4 dígitos de la tarjeta",
+  "paypalEmailLabel": "Correo de PayPal",
+  "applePayEnabledOnDevice": "Apple Pay habilitado en este dispositivo",
+  "savePaymentPreferences": "Guardar Preferencias de Pago",
+  "paymentPrefsSavedInfo": "Preferencias de pago guardadas localmente. El cobro real se maneja a través de Stripe/otros gateways después.",
+
+  "failedToLoadImage": "No se pudo cargar la imagen",
+
+  "earningsTitle": "Ganancias",
+  "couldNotLoadEarningsSummary": "No se pudo cargar el resumen de ganancias.",
+  "noData": "Sin datos.",
+  "summaryTitle": "Resumen",
+  "totalLabel": "Total",
+  "pendingLabel": "Pendiente",
+  "paidLabel": "Pagado",
+  "pdfReportTitle": "Reporte PDF",
+  "periodLabel": "Período",
+  "periodThisMonth": "Este mes",
+  "periodLastMonth": "Mes pasado",
+  "periodYtd": "Año hasta la fecha",
+  "periodAllTime": "Todo el tiempo",
+  "couldNotDownloadPdfReport": "No se pudo descargar el reporte PDF.",
+  "couldNotOpenPdfWithValue": "No se pudo abrir el PDF: {error}",
+  "@couldNotOpenPdfWithValue": { "placeholders": { "error": {} } },
+  "savingFilesNotSupportedWeb": "Guardar archivos no está soportado en Web en este momento.",
+  "savedToDocumentsIosWithPath": "Guardado en Documentos (iOS):\n{path}",
+  "@savedToDocumentsIosWithPath": { "placeholders": { "path": {} } },
+  "savedToFilesWithPath": "Guardado en archivos:\n{path}",
+  "@savedToFilesWithPath": { "placeholders": { "path": {} } },
+  "open": "Abrir",
+  "failedToSavePdfWithValue": "No se pudo guardar el PDF: {error}",
+  "@failedToSavePdfWithValue": { "placeholders": { "error": {} } },
+  "openPdfReport": "Abrir reporte PDF",
+  "savePdfToDownloads": "Guardar PDF en Descargas",
+  "reportWatermarkNote": "El reporte PDF debe incluir la marca de agua de Styloria.",
+
+  "referFriendsTitle": "Invitar amigos",
+  "shareReferralCodeBody": "Comparte tu código de referido con amigos. Más adelante puedes agregar recompensas cuando se registren y completen reservas.",
+  "yourReferralCodeLabel": "Tu código de referido:",
+  "copy": "Copiar",
+  "referralCodeCopiedWithCode": "Código de referido copiado: {code}",
+  "@referralCodeCopiedWithCode": { "placeholders": { "code": {} } },
+
+  "navHome": "Inicio",
+  "navBookings": "Reservas",
+  "navNotifications": "Notificaciones",
+  "navAccount": "Cuenta",
+
+  "welcome": "Bienvenido",
+  "welcomeName": "Bienvenido, {name}",
+  "@welcomeName": { "placeholders": { "name": {} } },
+
+  "toggleThemeTooltip": "Cambiar modo claro/oscuro",
+
+  "loggedInAs": "Conectado como: {role}",
+  "@loggedInAs": { "placeholders": { "role": {} } },
+
+  "locationWithValue": "Ubicación: {value}",
+  "@locationWithValue": { "placeholders": { "value": {} } },
+
+  "homeTagline": "Transforma tu experiencia de cuidado personal con reservas en tiempo real y proveedores de confianza.",
+
+  "manageProviderProfile": "Administrar Perfil de Proveedor",
+  "browseOpenJobs": "Explorar Trabajos Disponibles",
+
+  "quickActions": "Acciones rápidas",
+  "newBooking": "Nueva Reserva",
+
+  "notificationsWithUnread": "Notificaciones ({count, plural, =1{1 sin leer} other{{count} sin leer}})",
+  "@notificationsWithUnread": { "placeholders": { "count": { "type": "int" } } },
+
+  "liveLocationTrackingTitle": "Seguimiento de Ubicación en Vivo",
+  "live": "En vivo",
+
+  "locationServicesDisabled": "Los servicios de ubicación están deshabilitados",
+  "locationPermissionDenied": "Permiso de ubicación denegado",
+  "locationPermissionPermanentlyDenied": "Permiso de ubicación denegado permanentemente",
+
+  "failedToGetLocationWithValue": "No se pudo obtener la ubicación: {error}",
+  "@failedToGetLocationWithValue": { "placeholders": { "error": {} } },
+
+  "youProvider": "Tú (Proveedor)",
+  "youCustomer": "Tú (Cliente)",
+  "customer": "Cliente",
+
+  "bookingDetails": "Detalles de la Reserva",
+  "navigate": "Navegar",
+
+  "failedToLoadNotifications": "No se pudieron cargar las notificaciones.",
+  "failedToMarkAsRead": "No se pudo marcar como leído",
+  "noNotificationsYet": "Aún no hay notificaciones.",
+  "markRead": "Marcar como leído",
+
+  "providerKycTitle": "Verificación de Proveedor (KYC)",
+  "logoutTooltip": "Cerrar sesión",
+
+  "statusLabel": "Estado: {status}",
+  "@statusLabel": { "placeholders": { "status": {} } },
+
+  "rejectedWithNotes": "Rechazado: {notes}",
+  "@rejectedWithNotes": { "placeholders": { "notes": {} } },
+
+  "kycInstructions": "Para acceder a las funciones de proveedor, sube tu identificación y una selfie para verificación.",
+  "idFrontRequired": "ID Frontal (requerido)",
+  "selectIdFront": "Seleccionar ID Frontal",
+  "idBackRequired": "ID Trasero (requerido)",
+  "selectIdBackRequired": "Seleccionar ID Trasero",
+  "selfieRequired": "Selfie (requerido)",
+  "selectSelfie": "Seleccionar Selfie",
+  "takeSelfie": "Tomar Selfie",
+
+  "errorUploadAllRequired": "Por favor sube la ID (frontal), ID (trasero), y una selfie.",
+
+  "failedSubmitKycCode": "No se pudo enviar KYC (código {code}).",
+  "@failedSubmitKycCode": { "placeholders": { "code": {} } },
+
+  "submittedCurrentStatus": "Enviado. Estado actual: {status}",
+  "@submittedCurrentStatus": { "placeholders": { "status": {} } },
+
+  "unknownStatus": "desconocido",
+  "submitKyc": "Enviar KYC",
+  "verificationMayTakeTimeNote": "Nota: La verificación puede tomar tiempo. Podrás acceder a las funciones de proveedor una vez aprobado.",
+
+  "reviewsReceivedTitle": "Reseñas Recibidas",
+  "noReviewsYetHelpText": "Aún no hay reseñas. Completa servicios para recibir reseñas de clientes.",
+  "failedToLoadReviewsWithError": "No se pudieron cargar las reseñas: {error}",
+
+  "providerArrivingTitle": "{name} está en camino",
+  "etaIsEstimate": "* Tiempo estimado (la ruta real puede variar)",
+
+  "enterVerificationCodeTitle": "Ingresa el Código de Verificación",
+  "otpSentToUsername": "Enviamos un código de 6 dígitos al número de teléfono\nasociado con \"{username}\".",
+  "@otpSentToUsername": { "placeholders": { "username": {} } },
+
+  "sixDigitCodeLabel": "Código de 6 dígitos",
+  "enterSixDigitCodeValidation": "Ingresa el código de 6 dígitos",
+  "otpInvalidOrExpired": "Código inválido o expirado.",
+  "failedLoadUserInfoAfterVerification": "No se pudo cargar la información del usuario después de la verificación.",
+
+  "chatWithSupportTitle": "Chatear con Soporte",
+  "unableStartSupportChat": "No se puede iniciar el chat de soporte.",
+  "invalidSupportThreadReturned": "Hilo de soporte inválido devuelto del servidor.",
+  "noMessagesYet": "Aún no hay mensajes. ¡Inicia una conversación!",
+  "supportDefaultName": "Soporte",
+
+  "aboutPoliciesTitle": "Acerca de y Políticas",
+
+  "newBookingTitle": "Nueva Reserva",
+  "appointmentDetailsTitle": "Detalles de la cita",
+  "pickDate": "Elegir fecha",
+  "pickTime": "Elegir hora",
+
+  "serviceTypeTitle": "Tipo de servicio",
+  "serviceDropdownLabel": "Servicio",
+  "serviceHaircutLabel": "Corte de cabello",
+  "serviceBraidsLabel": "Trenzas",
+  "serviceShaveLabel": "Afeitado",
+  "serviceHairColoringLabel": "Coloración de cabello",
+  "serviceManicureLabel": "Manicure",
+  "servicePedicureLabel": "Pedicure",
+  "serviceNailArtLabel": "Arte de uñas",
+  "serviceMakeupLabel": "Maquillaje",
+  "serviceFacialLabel": "Tratamiento facial",
+  "serviceWaxingLabel": "Depilación",
+  "serviceMassageLabel": "Masaje",
+  "serviceTattooLabel": "Tatuaje",
+  "serviceHairStylingLabel": "Peinado",
+  "serviceHairTreatmentLabel": "Tratamiento capilar",
+  "serviceHairExtensionsLabel": "Extensiones de cabello",
+  "serviceOtherServicesLabel": "Otros servicios",
+
+  "notesForProviderOptionalLabel": "Notas para tu proveedor (opcional)",
+
+  "locationTitle": "Ubicación",
+  "latitudeLabel": "Latitud",
+  "longitudeLabel": "Longitud",
+  "requiredField": "Requerido",
+  "useMyCurrentLocation": "Usar mi ubicación actual",
+  "pricesShownIn": "Precios mostrados en {symbol} ({country})",
+  "@pricesShownIn": { "placeholders": { "symbol": {}, "country": {} } },
+
+  "chooseTimeLaterThanCurrent": "Por favor elige una hora posterior a la hora actual.",
+  "pleasePickDateAndTime": "Por favor elige fecha y hora.",
+  "locationUpdatedFromGps": "Ubicación actualizada desde GPS.",
+  "failedToGetLocation": "No se pudo obtener la ubicación: {error}",
+  "@failedToGetLocation": { "placeholders": { "error": {} } },
+
+  "bookingCreatedChoosePrice": "¡Reserva creada! ID: {id} • Elige tu opción de precio.",
+  "@bookingCreatedChoosePrice": { "placeholders": { "id": {} } },
+
+  "failedToCreateBooking": "No se pudo crear la reserva.",
+
+  "paymentsNotSupportedLong": "Los pagos no están soportados en esta plataforma. Por favor ejecuta la app en Android, iOS, macOS o Web para probar pagos reales.",
+  "noBookingToConfirm": "No hay reserva para confirmar. Por favor crea una reserva primero.",
+  "pleaseChoosePriceOption": "Por favor elige una opción de precio.",
+  "failedCreatePaymentTryAgain": "No se pudo crear el pago en el servidor. Por favor intenta de nuevo.",
+
+  "paymentSuccessfulMessage": "¡Pago exitoso!\nReserva #{bookingId} • Pagado: {paid}\nTu solicitud ahora es visible para proveedores cercanos.",
+  "@paymentSuccessfulMessage": { "placeholders": { "bookingId": {}, "paid": {} } },
+
+  "paymentSucceededButFailedUpdate": "El pago fue exitoso, pero no se pudo actualizar la reserva en el servidor.",
+  "paymentCancelledOrFailed": "Pago cancelado o fallido: {reason}",
+  "@paymentCancelledOrFailed": { "placeholders": { "reason": {} } },
+
+  "unexpectedPaymentError": "Error de pago inesperado: {error}",
+  "@unexpectedPaymentError": { "placeholders": { "error": {} } },
+
+  "createBookingButton": "Crear Reserva",
+  "chooseYourPriceOptionTitle": "Elige Tu Opción de Precio",
+  "transportationCostLabel": "Costo de transporte: {cost}",
+  "@transportationCostLabel": { "placeholders": { "cost": {} } },
+
+  "budgetTierTitle": "ECONÓMICO",
+  "standardTierTitle": "ESTÁNDAR",
+  "priorityTierTitle": "PRIORITARIO",
+  "budgetTierDescription": "Mejor valor entre proveedores cercanos",
+  "standardTierDescription": "Balance recomendado de precio y disponibilidad",
+  "priorityTierDescription": "Opción premium para atraer proveedores top más rápido",
+
+  "naShort": "N/D",
+
+  "priceBreakdownTitle": "Desglose de Precio",
+  "servicePriceLabel": "Precio del Servicio",
+  "transportationLabel": "Transporte",
+  "serviceFeeLabel": "Tarifa de Servicio ({percent}%)",
+  "@serviceFeeLabel": { "placeholders": { "percent": {} } },
+
+  "allPricesIn": "Todos los precios en {currency} ({country})",
+  "@allPricesIn": { "placeholders": { "currency": {}, "country": {} } },
+
+  "userCountryPlaceholder": "País del usuario",
+  "totalToPayTitle": "Total a Pagar",
+  "includesServiceTransportation": "Incluye servicio + transporte",
+  "confirmAndPay": "Confirmar y Pagar",
+
+  "howPricingWorksTitle": "Cómo Funciona el Precio",
+  "howPricingWorksBullets": "• Económico: mejor valor entre proveedores cercanos\n• Estándar: predeterminado recomendado\n• Prioritario: opción premium para acelerar la aceptación\n• El transporte está incluido en el total",
+
+  "myBookingsTitle": "Mis Reservas",
+  "myAssignedJobsTitle": "Mis Trabajos Asignados",
+  "pleaseCompleteProviderProfileFirst": "Por favor completa tu perfil de proveedor primero.",
+
+  "profileSetupRequiredTitle": "Configuración de Perfil Requerida",
+  "profileSetupRequiredBody": "Necesitas completar tu perfil de proveedor antes de poder ver trabajos asignados y ganancias.",
+  "later": "Después",
+  "setupNow": "Configurar Ahora",
+
+  "noBookingsFound": "No se encontraron reservas.",
+  "findNearbyOpenJobs": "Encontrar Trabajos Disponibles Cercanos",
+  "pay": "Pagar",
+  "rate": "Calificar",
+
+  "bookingNumber": "Reserva #{id}",
+  "@bookingNumber": { "placeholders": { "id": {} } },
+
+  "whenOn": "Cuándo: {date}",
+  "@whenOn": { "placeholders": { "date": {} } },
+
+  "whenAt": "Cuándo: {date} a las {time}",
+  "@whenAt": { "placeholders": { "date": {}, "time": {} } },
+
+  "providerLine": "Proveedor: {name}",
+  "@providerLine": { "placeholders": { "name": {} } },
+
+  "userLine": "Usuario: {name}",
+  "@userLine": { "placeholders": { "name": {} } },
+
+  "estimatedPriceLine": "Precio estimado: {price}",
+  "@estimatedPriceLine": { "placeholders": { "price": {} } },
+
+  "paymentLine": "Pago: {status}",
+  "@paymentLine": { "placeholders": { "status": {} } },
+
+  "paymentUnpaid": "no pagado",
+  "paymentUnknown": "desconocido",
+
+  "confirmPaymentTitle": "Confirmar pago",
+  "confirmPaymentBody": "¿Pagar {amount} para confirmar esta reserva?",
+  "@confirmPaymentBody": { "placeholders": { "amount": {} } },
+
+  "yesPay": "Sí, Pagar",
+  "failedToCreatePaymentIntent": "No se pudo crear la intención de pago.",
+  "paymentSuccessfulShort": "Pago exitoso.",
+  "paymentSucceededButFailedUpdateBooking": "El pago fue exitoso, pero no se pudo actualizar la reserva en el servidor.",
+  "paymentCancelledOrFailedReason": "Pago cancelado o fallido: {reason}",
+  "@paymentCancelledOrFailedReason": { "placeholders": { "reason": {} } },
+  "unexpectedPaymentErrorReason": "Error de pago inesperado: {error}",
+  "@unexpectedPaymentErrorReason": { "placeholders": { "error": {} } },
+
+  "rateProviderTitle": "Calificar a {providerName}",
+  "@rateProviderTitle": { 
+    "placeholders": { 
+      "providerName": {} 
+    } 
+  },
+
+  "selectRatingHelp": "Selecciona calificación (1 = pobre, 5 = excelente):",
+  "commentsOptionalLabel": "Comentarios (opcional)",
+  "submit": "Enviar",
+  "reviewSubmitted": "Reseña enviada.",
+  "failedSubmitReview": "No se pudo enviar la reseña.",
+
+  "failedToLoadProfile": "No se pudo cargar el perfil: {error}",
+  "@failedToLoadProfile": { "placeholders": { "error": {} } },
+
+  "profileSavedSuccess": "¡Perfil {action} exitosamente!",
+  "@profileSavedSuccess": { "placeholders": { "action": {} } },
+
+  "failedToSaveProfile": "No se pudo guardar el perfil. Por favor intenta de nuevo.",
+  "genericError": "Error: {error}",
+  "@genericError": { "placeholders": { "error": {} } },
+
+  "locationPermissionDeniedEnableInSettings": "Permiso de ubicación denegado. Por favor habilita en configuración.",
+  "locationPermissionPermanentlyDeniedEnableInAppSettings": "Permiso de ubicación denegado permanentemente. Por favor habilita en la configuración de la app.",
+  "errorGettingLocation": "Error al obtener ubicación: {error}",
+  "@errorGettingLocation": { "placeholders": { "error": {} } },
+
+  "couldNotFindLocationForAddress": "No se pudo encontrar la ubicación para esta dirección",
+  "errorConvertingAddress": "Error al convertir dirección: {error}",
+  "@errorConvertingAddress": { "placeholders": { "error": {} } },
+
+  "portfolioUnavailableCompleteKycFirst": "Portafolio no disponible. Si eres proveedor, completa la verificación KYC primero.",
+  "failedToLoadPortfolio": "No se pudo cargar el portafolio: {error}",
+  "@failedToLoadPortfolio": { "placeholders": { "error": {} } },
+
+  "addPhoto": "Agregar Foto",
+  "addVideo": "Agregar Video",
+  "addPost": "Agregar publicación",
+
+  "captionOptionalTitle": "Descripción (opcional)",
+  "captionHintExample": "ej., \"Trenzas sin nudos en cliente\"",
+  "skip": "Omitir",
+  "save": "Guardar",
+
+  "failedToCreatePortfolioPost": "No se pudo crear la publicación del portafolio.",
+  "uploadFailedMediaUpload": "Subida fallida (subida de medios).",
+  "uploadFailed": "Subida fallida: {error}",
+  "@uploadFailed": { "placeholders": { "error": {} } },
+
+  "deletePostTitle": "¿Eliminar publicación?",
+  "deletePostBody": "Esto eliminará la publicación de tu portafolio.",
+  "delete": "Eliminar",
+  "deleteFailed": "Eliminación fallida.",
+  "deleteFailedWithError": "Eliminación fallida: {error}",
+  "@deleteFailedWithError": { "placeholders": { "error": {} } },
+
+  "portfolioTitle": "Portafolio",
+  "noPortfolioPostsYetHelpText": "Aún no hay publicaciones de portafolio. Agrega fotos/videos de tu trabajo para ayudar a los clientes a confiar en tus habilidades.",
+
+  "setupProviderProfileTitle": "Configurar Perfil de Proveedor",
+  "providerProfileTitle": "Perfil de Proveedor",
+
+  "welcomeToStyloriaTitle": "¡Bienvenido a Styloria!",
+  "completeProviderProfileToStartEarning": "Completa tu perfil de proveedor para comenzar a aceptar trabajos y ganar dinero.",
+
+  "reviewCountLabel": "({count} {count, plural, one{reseña} other{reseñas}})",
+  "@reviewCountLabel": { "placeholders": { "count": { "type": "int" } } },
+
+  "topRatedChip": "Mejor Calificado",
+
+  "bioLabel": "Bio / Descripción",
+  "bioHint": "Cuéntales a los clientes sobre tus habilidades y experiencia...",
+  "pleaseEnterBio": "Por favor ingresa una bio",
+  "bioMinLength": "La bio debe tener al menos {min} caracteres",
+  "@bioMinLength": { "placeholders": { "min": { "type": "int" } } },
+
+  "yourLocationTitle": "Tu Ubicación",
+  "locationHelpMatchNearbyClients": "Tu ubicación nos ayuda a conectarte con clientes cercanos",
+  "locationHelpUpdateToFindJobs": "Actualiza tu ubicación para encontrar trabajos en diferentes áreas",
+
+  "useMyCurrentLocationTitle": "Usar Mi Ubicación Actual",
+  "gpsSubtitle": "Obtener ubicación automáticamente usando GPS",
+  "orLabel": "O",
+
+  "enterYourAddressTitle": "Ingresa Tu Dirección",
+  "fullAddressLabel": "Dirección Completa",
+  "fullAddressHint": "ej., Calle Principal 123, Ciudad, País",
+  "find": "Buscar",
+  "addressHelpText": "Ingresa tu dirección, ciudad y país",
+
+  "coordinatesAutoFilledTitle": "Coordenadas (Auto-completadas)",
+
+  "servicePricingTitle": "Precios de Servicios",
+  "servicePricingHelp": "Establece tu precio para cada servicio. Marca \"No Ofrecido\" para servicios que no puedes proporcionar.",
+  "serviceHeader": "Servicio",
+  "priceHeader": "Precio",
+  "notOfferedHeader": "No Ofrecido",
+  "priceHint": "0.00",
+
+  "providerHowPricingWorksTitle": "Cómo Funciona el Precio:",
+  "providerHowPricingWorksBody": "• Tu precio es lo que cobras por el servicio\n• Costo de transporte = 80% de la moneda del usuario por km\n• Los usuarios ven 3 opciones basadas en proveedores cercanos:\n  - Económico: Precio más bajo entre proveedores cercanos\n  - Estándar: Precio promedio de proveedores cercanos\n  - Prioritario: Precio más alto entre proveedores cercanos",
+
+  "availableForBookingsTitle": "Disponible para Reservas",
+  "availableOnHelp": "✓ Aparecerás en los resultados de búsqueda para clientes cercanos",
+  "availableOffHelp": "✗ No recibirás nuevas ofertas de trabajo",
+
+  "completeSetupStartEarning": "Completar Configuración y Comenzar a Ganar",
+  "updateProfile": "Actualizar Perfil",
+  "skipForNow": "Omitir por Ahora",
+  "paymentsNotSupportedShort": "Los pagos no están soportados en esta plataforma. Por favor usa Android, iOS, macOS o Web.",
+  "genericContact": "Contacto",
+  "genericProvider": "Proveedor",
+  "genericNotAvailable": "N/D",
+
+  "showPassword": "Mostrar contraseña",
+  "hidePassword": "Ocultar contraseña",
+  "tapEyeToShowPassword": "Toca el ícono del ojo para mostrar/ocultar contraseña",
+
+  "certificationRequiredTitle": "Certificación Requerida",
+  "certificationRequiredMessage": "Este servicio requiere una certificación profesional verificada para protegerte a ti y a tus clientes.\n\nLos servicios de masaje requieren prueba de capacitación/licencia en terapia de masaje.",
+  "@certificationRequiredMessage": {
+    "placeholders": {
+      "service": {}
+    }
+  },
+  "certificationPendingTitle": "Certificación Pendiente de Revisión",
+  "certificationPendingMessage": "Tu certificación está esperando verificación del administrador. Esto generalmente toma 24-48 horas. Podrás ofrecer este servicio una vez aprobado.",
+  "certificationExpiredTitle": "Certificación Expirada",
+  "certificationExpiredMessage": "Tu certificación ha expirado. Por favor sube una certificación válida y vigente para continuar ofreciendo este servicio.",
+  "certificationStepsTitle": "Cómo obtener la certificación:",
+  "certificationStep1": "1. Ve a la sección 'Certificaciones y Licencias' abajo",
+  "certificationStep2": "2. Sube tu licencia/certificado de terapia de masaje",
+  "certificationStep3": "3. Espera la verificación del administrador (24-48 horas)",
+  "addCertification": "Agregar Certificación",
+  "scrollToCertificationsHint": "Desplázate hacia abajo a la sección de Certificaciones para agregar tu certificación",
+  "requiresCertificationTooltip": "Este servicio requiere una certificación verificada",
+
+  "detectingYourLocation": "Detectando tu ubicación...",
+  "locationConfirmed": "✓ Ubicación confirmada: {country}",
+  "@locationConfirmed": {
+    "placeholders": {
+      "country": {"type": "String"}
+    }
+  },
+
+  "refresh": "Actualizar",
+  "countryMismatchWarningTitle": "País diferente seleccionado",
+  "countryMismatchWarningBody": "Detectamos tu ubicación como {country}. Si estás viajando o reubicándote, puedes continuar con tu selección. Tu moneda se basará en el país seleccionado.",
+  "@countryMismatchWarningBody": {
+    "placeholders": {
+      "country": {}
+    }
+  },
+
+  "reviewSelectRatingPrompt": "Selecciona una calificación (1 a 5).",
+  "reviewCommentOptionalLabel": "Comentario (opcional)",
+  "genericCancel": "Cancelar",
+  "genericSubmit": "Enviar",
+  "reviewSubmitFailed": "No se pudo enviar la reseña.",
+  "rateThisService": "Califica este servicio",
+
+  "tipLeaveTitle": "Dejar una propina",
+  "tipChooseAmountPrompt": "Elige un monto de propina, o ingresa un monto personalizado.",
+  "tipNoTip": "Sin propina",
+  "tipCustomAmountLabel": "Monto de propina personalizado",
+  "genericContinue": "Continuar",
+
+  "tipSkipped": "Propina omitida.",
+  "tipFailedToSaveChoice": "No se pudo guardar la elección de propina.",
+  "tipFailedToCreatePayment": "No se pudo crear el pago de propina.",
+  "tipPaidSuccessfully": "¡Propina pagada exitosamente. Gracias!",
+  "tipPaidButUpdateFailed": "El pago de la propina fue exitoso, pero la actualización de la reserva falló.",
+
+  "tipCancelledOrFailed": "Propina cancelada/fallida: {message}",
+  "@tipCancelledOrFailed": {
+    "placeholders": {
+      "message": {}
+    }
+  },
+
+  "tipUnexpectedError": "Error inesperado de propina: {error}",
+  "@tipUnexpectedError": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+
+  "tipAlreadyPaidLabel": "Propina ya pagada",
+  "tipSkippedLabel": "Propina omitida",
+  "tipLeaveButton": "Dejar una propina",
+
+  "walletTitle": "Cartera",
+  "walletTooltip": "Cartera",
+
+  "payoutSettingsTitle": "Configuración de Pagos",
+  "payoutSettingsTooltip": "Configuración de pagos",
+
+  "walletNoWalletYet": "Aún no tienes cartera. Completa trabajos para ganar.",
+  "walletCurrencyFieldLabel": "Moneda",
+
+  "walletAvailableLine": "Disponible: {amount} {currency}",
+  "@walletAvailableLine": { "placeholders": { "amount": {}, "currency": {} } },
+
+  "walletPendingLine": "Pendiente: {amount} {currency}",
+  "@walletPendingLine": { "placeholders": { "amount": {}, "currency": {} } },
+
+  "walletCashOutInstant": "Retirar (Instantáneo)",
+  "walletCashOutFailed": "Retiro fallido.",
+  "walletCashOutSentTransfer": "Retiro enviado. Transferencia: {transferId}",
+  "@walletCashOutSentTransfer": { "placeholders": { "transferId": {} } },
+
+  "walletTransactionsTitle": "Transacciones",
+  "walletNoTransactionsYet": "Aún no hay transacciones.",
+
+  "payoutAutoPayoutsTitle": "Pagos automáticos",
+  "payoutAutoPayoutsSubtitle": "Envía pagos automáticamente en tu horario elegido.",
+  "payoutDayUtcLabel": "Día de pago (UTC)",
+  "payoutHourUtcLabel": "Hora de pago (UTC)",
+  "payoutMinimumAmountLabel": "Monto mínimo de pago automático",
+  "payoutMinimumAmountHelper": "El pago automático se ejecuta solo si el saldo disponible ≥ este monto.",
+  "payoutInstantCashOutEnabledTitle": "Retiro instantáneo habilitado",
+  "payoutInstantCashOutEnabledSubtitle": "Permitir el botón \"Retirar\" (se aplica comisión).",
+
+  "payoutSettingsSaved": "Configuración de pagos guardada.",
+  "payoutSettingsSaveFailed": "No se pudo guardar la configuración de pagos.",
+
+  "servicePricingStepIndicator": "Paso {current} de {total}",
+  "@servicePricingStepIndicator": {
+    "placeholders": {
+      "current": {},
+      "total": {}
+    }
+  },
+
+  "customerReviewSubmitted": "¡Reseña del cliente enviada!",
+  "loadingCustomerDetails": "Cargando detalles del cliente...",
+  "customerDetails": "Detalles del Cliente",
+  "navigateButton": "Navegar",
+  "callButton": "Llamar",
+  "whatOthersSay": "Lo que dicen otros",
+  "showLess": "Mostrar menos",
+  "showMoreCount": "Mostrar más ({count} más)",
+  "@showMoreCount": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "todayLabel": "Hoy",
+  "yesterdayLabel": "Ayer",
+  "daysAgoShort": "hace {days} días",
+  "@daysAgoShort": {
+    "placeholders": {
+      "days": {"type": "int"}
+    }
+  },
+  "weeksAgoShort": "hace {weeks} semana{weeks, plural, =1{} other{s}}",
+  "@weeksAgoShort": {
+    "placeholders": {
+      "weeks": {"type": "int"}
+    }
+  },
+  "providerHasArrived": "¡{name} ha llegado!",
+  "@providerHasArrived": {
+    "placeholders": {
+      "name": {"type": "String"}
+    }
+  },
+  "meetProviderToBeginService": "Por favor, reúnete con tu proveedor para comenzar el servicio",
+  "locationNotAvailable": "Ubicación no disponible",
+  "couldNotOpenMaps": "No se pudo abrir el mapa",
+  "cannotMakePhoneCalls": "No se pueden realizar llamadas telefónicas en este dispositivo",
+  "confirmCompletionWarning": "Solo confirma si el servicio ha sido completamente finalizado. Es posible que no puedas deshacer esto.",
+  "paymentVerificationTitle": "Verificación de Pago",
+  "paymentVerificationMessage": "Después de completar el pago en tu navegador, toca \"Verificar Pago\" para confirmar.",
+  "verifyPaymentButton": "Verificar Pago",
+  "verifyingPayment": "Verificando pago...",
+  "couldNotOpenPaymentPage": "No se pudo abrir la página de pago. Por favor, intenta de nuevo.",
+  "paymentStillProcessing": "El pago aún se está procesando. Por favor, vuelve a verificar en un momento.",
+  "statusPending": "Pendiente",
+  "customerProfile": "Perfil del Cliente",
+  "newCustomer": "Cliente nuevo",
+  "newCustomerNoReviews": "Este es un cliente nuevo sin reseñas aún.",
+  "whatOtherProvidersSay": "Lo que dicen otros proveedores",
+  "justNow": "Ahora mismo",
+  "monthsAgoShort": "hace {months}m",
+  "@monthsAgoShort": {
+    "placeholders": {
+      "months": {"type": "int"}
+    }
+  },
+  "daysAgoShortCompact": "hace {days}d",
+  "@daysAgoShortCompact": {
+    "placeholders": {
+      "days": {"type": "int"}
+    }
+  },
+  "hoursAgoShort": "hace {hours}h",
+  "@hoursAgoShort": {
+    "placeholders": {
+      "hours": {"type": "int"}
+    }
+  },
+  "generalArea": "Área General",
+  "serviceCompleted": "Servicio completado",
+  "completedServiceArea": "Área de servicio completado",
+  "serviceArea": "Área de servicio",
+  "locationHiddenAfterCancellation": "Por tu seguridad, los detalles exactos de la ubicación están ocultos después de la cancelación. Solo se muestra el área general.",
+  "locationHiddenAfterCompletion": "Por tu seguridad, los detalles exactos de la ubicación están ocultos después de completar el servicio. Solo se muestra el área general.",
+  "mapMarkerMe": "Yo",
+  "mapMarkerOther": "Otro",
+  "requestPlaced": "Solicitud Realizada",
+  "whenBookingSubmitted": "Cuándo se envió esta reserva",
+  "yourLocalTimeTimezone": "Tu hora local ({timezone})",
+  "@yourLocalTimeTimezone": {
+    "placeholders": {
+      "timezone": {"type": "String"}
+    }
+  },
+  "bookingTimeline": "Línea de Tiempo de la Reserva",
+  "timelineRequestCreated": "Solicitud Creada",
+  "timelineAccepted": "Aceptada",
+  "timelineInProgress": "En Progreso",
+  "timelineCompleted": "Completada",
+  "timelineCancelled": "Cancelada",
+  "timelinePending": "Pendiente...",
+  "viewLess": "Ver Menos",
+  "viewMoreCount": "Ver Más ({count} más)",
+  "@viewMoreCount": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "paymentRequiredImmediately": "¡Pago Requerido Inmediatamente!",
+  "paymentReminder": "Recordatorio de Pago",
+  "hoursRemaining": "⏱ {hours}h restantes",
+  "@hoursRemaining": {
+    "placeholders": {
+      "hours": {"type": "String"}
+    }
+  },
+  "serviceAppointment": "Cita de Servicio",
+  "todayBadge": "HOY",
+  "locationField": "Ubicación",
+  "serviceAreaField": "Área de Servicio",
+  "requestedField": "Solicitado",
+  "allTimesInLocalTimezone": "Todas las horas se muestran en tu zona horaria local ({timezone})",
+  "@allTimesInLocalTimezone": {
+    "placeholders": {
+      "timezone": {"type": "String"}
+    }
+  },
+  "completionConfirmed": "Finalización confirmada",
+  "rateCustomer": "Calificar Cliente",
+  "customerReviewed": "Cliente calificado",
+  "failedToSubmitReviewTryAgain": "No se pudo enviar la reseña. Por favor, intenta de nuevo.",
+  "shareYourExperience": "Comparte tu experiencia...",
+  "rateRequesterTitle": "Calificar a {name}",
+  "@rateRequesterTitle": {
+    "placeholders": {
+      "name": {"type": "String"}
+    }
+  },
+  "howWasExperienceWithCustomer": "¿Cómo fue tu experiencia con este cliente?",
+  "commentOptional": "Comentario (opcional)",
+  "cancelButton": "Cancelar",
+  "submitButton": "Enviar",
+  "ratingPoor": "Malo",
+  "ratingFair": "Regular",
+  "ratingGood": "Bueno",
+  "ratingVeryGood": "Muy Bueno",
+  "ratingExcellent": "Excelente",
+  "profileCompletion": "Completitud del perfil",
+  "viewProfile": "Ver Perfil",
+
+  "serviceSelectionTitle": "¿Qué servicios ofreces?",
+  "serviceSelectionSubtitle": "Toca para seleccionar los servicios que proporcionas. Puedes cambiar esto en cualquier momento.",
+  "priceSettingTitle": "Establece tus precios",
+  "priceSettingSubtitle": "Ingresa tu precio para cada servicio que seleccionaste.",
+  "nextButton": "Siguiente",
+  "backButton": "Atrás",
+  "editServicesLink": "Editar servicios",
+  "selectAtLeastOneService": "Por favor selecciona al menos un servicio para continuar.",
+  "noServicesSelectedYet": "Aún no has seleccionado servicios. Vuelve atrás para seleccionar servicios.",
+  "servicesSelectedCount": "{count} {count, plural, =1{servicio} other{servicios}} seleccionados",
+  "@servicesSelectedCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "certificationRequiredChip": "Requiere certificación",
+  "savePrices": "Guardar Precios",
+  "onboardingSkip": "Omitir",
+  "onboardingGetStarted": "Comenzar",
+  "onboardingMaybeLater": "Quizás Después",
+  "onboardingEnableLocation": "Habilitar Ubicación",
+
+  "onboardingWelcomeTitle": "Bienvenido a Styloria",
+  "onboardingWelcomeSubtitle": "Tu mercado personal de belleza y cuidado personal",
+  "onboardingWelcomeDescription": "Reserva estilistas profesionales, barberos y expertos en belleza — en cualquier momento, en cualquier lugar.",
+
+  "onboardingCustomerTitle": "Reserva Servicios al Instante",
+  "onboardingCustomerSubtitle": "Encuentra y reserva servicios de belleza con facilidad",
+  "onboardingCustomerBullet1": "Encuentra proveedores verificados cerca de ti",
+  "onboardingCustomerBullet2": "Compara precios de forma transparente",
+  "onboardingCustomerBullet3": "Paga de forma segura en la app",
+  "onboardingCustomerBullet4": "Rastrea a tu proveedor en tiempo real",
+
+  "onboardingProviderTitle": "Haz Crecer Tu Negocio",
+  "onboardingProviderSubtitle": "Convierte tus habilidades en ingresos",
+  "onboardingProviderBullet1": "Establece tus propios precios y horarios",
+  "onboardingProviderBullet2": "Conéctate con clientes cercanos",
+  "onboardingProviderBullet3": "Construye tu reputación con reseñas",
+  "onboardingProviderBullet4": "Pagos instantáneos a tu cuenta",
+
+  "onboardingLocationTitle": "Habilitar Servicios de Ubicación",
+  "onboardingLocationSubtitle": "Styloria usa tu ubicación para conectarte con servicios cercanos",
+  "onboardingLocationBenefit1": "Encuentra proveedores de servicios cerca de ti",
+  "onboardingLocationBenefit2": "Calcula costos de transporte precisos",
+  "onboardingLocationBenefit3": "Te conecta con profesionales disponibles",
+  "onboardingLocationBenefit4": "Habilita seguimiento en tiempo real durante citas",
+  "onboardingLocationPrivacyNote": "Tu ubicación solo se usa mientras la app está abierta. Nunca te rastreamos en segundo plano.",
+  "onboardingLocationEnabled": "¡Ubicación habilitada exitosamente!",
+
+  "onboardingLocationDeniedTitle": "Permiso de Ubicación Denegado",
+  "onboardingLocationDeniedMessage": "Sin acceso a la ubicación, necesitarás ingresar tu dirección manualmente al reservar servicios. Puedes habilitar la ubicación después en la configuración de tu dispositivo.",
+  "onboardingContinueWithoutLocation": "Continuar Sin Ubicación",
+  "onboardingOpenSettings": "Abrir Configuración",
+
+  "onboardingLocationServicesOffTitle": "Servicios de Ubicación Deshabilitados",
+  "onboardingLocationServicesOffMessage": "Los servicios de ubicación de tu dispositivo están desactivados. Habilítalos para obtener la experiencia completa de Styloria.",
+  "onboardingEnableLocationServices": "Habilitar Servicios de Ubicación",
+
+  "providerLocationRequiredTitle": "Ubicación Requerida",
+  "providerLocationRequiredMessage": "Para aparecer en los resultados de búsqueda y recibir solicitudes de trabajo de clientes cercanos, necesitas habilitar el acceso a la ubicación.",
+  "providerLocationRequiredBenefitsTitle": "Por qué necesitamos tu ubicación:",
+  "providerLocationRequiredBenefit1": "• Aparecer en búsquedas de clientes cercanos",
+  "providerLocationRequiredBenefit2": "• Recibir solicitudes de trabajo en tu área",
+  "providerLocationRequiredBenefit3": "• Calcular distancias precisas para clientes",
+  "providerStayUnavailable": "Permanecer No Disponible",
+  "providerEnableLocation": "Habilitar Ubicación",
+  "providerLocationEnabledNowAvailable": "¡Ubicación habilitada! Ahora estás disponible para reservas.",
+
+  "providerLocationPermanentlyDeniedTitle": "Permiso de Ubicación Requerido",
+  "providerLocationPermanentlyDeniedMessage": "El permiso de ubicación fue denegado permanentemente. Para habilitar la disponibilidad, abre la configuración de tu dispositivo y otorga acceso de ubicación a Styloria.",
+  "providerOpenSettings": "Abrir Configuración",
+
+  "providerLocationServicesDisabled": "Los servicios de ubicación están deshabilitados en tu dispositivo.",
+  "providerEnableLocationServices": "Habilitar",
+  "providerLocationDeniedCannotBeAvailable": "Acceso a ubicación denegado. No puedes estar disponible para reservas sin habilitar la ubicación.",
+  "signOut": "Cerrar sesión",
+
+  "kycIdFrontPhoto": "Foto Frontal del ID",
+  "kycIdFrontMessage": "Toma una foto del frente de tu tarjeta de identificación",
+  "kycIdBackPhoto": "Foto Trasera del ID",
+  "kycIdBackMessage": "Toma una foto del reverso de tu tarjeta de identificación",
+  "kycCamera": "Cámara",
+  "kycGallery": "Galería",
+  "kycChooseSource": "Elige fuente:",
+  "kycFailedCaptureImage": "No se pudo capturar la imagen",
+  "kycFailedCaptureSelfie": "No se pudo capturar la selfie",
+  "kycCameraNotAvailable": "Cámara no disponible",
+  "kycCameraNotAvailableMessage": "La cámara no está disponible. ¿Te gustaría seleccionar una imagen de tu galería en su lugar?",
+  "kycUseGallery": "Usar Galería",
+  "kycDocumentsLocked": "Los documentos están bloqueados mientras están pendientes de revisión. No puedes hacer cambios hasta que se complete la verificación.",
+  "kycVerificationSubmittedSuccessfully": "Verificación enviada exitosamente",
+  "kycVerificationSubmitted": "Verificación Enviada",
+  "kycThankYouSubmitting": "¡Gracias por enviar tus documentos de verificación!",
+  "kycWhatHappensNext": "¿Qué sucede después:",
+  "kycReviewTime": "Nuestro equipo revisará tus documentos en 24-48 horas",
+  "kycEmailNotification": "Recibirás un correo electrónico cuando tu verificación esté completa",
+  "kycCheckEmail": "Revisa tu correo para actualizaciones sobre el estado de tu verificación",
+  "kycLocked": "Tus documentos ahora están bloqueados y no pueden cambiarse durante la revisión",
+  "kycRecommendSignOut": "Te recomendamos cerrar sesión y volver más tarde para ver el resultado de tu verificación.",
+  "kycStaySignedIn": "Permanecer Conectado",
+  "kycVerificationPending": "Verificación Pendiente",
+  "kycVerificationPendingSubtitle": "Tus documentos están siendo revisados",
+  "kycVerificationApproved": "Verificación Aprobada",
+  "kycVerificationApprovedSubtitle": "Ahora puedes acceder a todas las funciones de proveedor",
+  "kycVerificationRejected": "Verificación Rechazada",
+  "kycVerificationRejectedSubtitle": "Por favor revisa las notas a continuación y vuelve a enviar",
+  "kycVerificationRequired": "Verificación Requerida",
+  "kycVerificationRequiredSubtitle": "Completa la verificación para acceder a las funciones de proveedor",
+  "kycReviewNotes": "Notas de Revisión",
+  "kycIdCardFront": "Tarjeta de ID (Frente)",
+  "kycIdCardBack": "Tarjeta de ID (Reverso)",
+  "kycVerificationSelfie": "Selfie de Verificación",
+  "kycButtonLocked": "Bloqueado",
+  "kycCaptureIdFront": "Capturar ID Frontal",
+  "kycCaptureIdBack": "Capturar ID Trasero",
+  "kycDocumentsLockedButton": "Documentos Bloqueados",
+  "kycTipsTitle": "📸 Consejos para buenas fotos:",
+  "kycTipGoodLighting": "• Usa buena iluminación",
+  "kycTipFlatCard": "• Coloca la tarjeta de ID en una superficie plana",
+  "kycTipReadableText": "• Asegúrate de que todo el texto sea legible",
+  "kycTipFaceCamera": "• Mira directamente a la cámara para la selfie",
+  "kycTipAvoidGlare": "• Evita reflejos o sombras",
+  "kycFailedSubmitVerification": "No se pudo enviar la verificación",
+
+  "paystackSetupTitle": "Configurar Cuenta de Pago",
+  "paystackVerifying": "Verificando...",
+  "paystackVerificationSuccess": "¡Configuración de pago guardada exitosamente!",
+  "paystackVerificationFailed": "No se pudo guardar la configuración de pago",
+  "paystackSelectBank": "Selecciona Tu Banco",
+  "paystackAccountNumber": "Número de Cuenta",
+  "paystackVerifyAccount": "Verificar Cuenta",
+  "paystackAccountVerified": "Cuenta Verificada",
+  "paystackSavePayoutAccount": "Guardar Cuenta de Pago",
+  "paystackNoBanksAvailable": "No hay bancos disponibles para {country}",
+  "@paystackNoBanksAvailable": {
+    "placeholders": {
+      "country": {}
+    }
+  },
+  "paystackRetry": "Reintentar",
+  "paystackPayoutsInfo": "Tus ganancias se enviarán a esta cuenta. Los pagos se procesan en 24 horas.",
+  "paystackConnected": "Cuenta: conectada",
+  "paystackNotConnected": "Cuenta: no conectada",
+  "paystackDetailsSubmitted": "Detalles enviados:",
+  "paystackPayoutsEnabled": "Pagos habilitados:",
+  "paystackYes": "sí",
+  "paystackNo": "no",
+  "paystackFinishSetup": "Finalizar Configuración de Stripe",
+  "paystackConnectStripe": "Conectar Stripe",
+  "paystackOpenDashboard": "Abrir Panel de Stripe",
+  "paystackMustFinishSetup": "Debes finalizar la configuración de Stripe antes de poder retirar.",
+  "paystackPayouts": "Pagos de Paystack",
+  "paystackAddBankDetails": "Agrega los detalles de tu cuenta bancaria en Configuración de Pagos para recibir pagos a través de Paystack.",
+  "paystackOpenSettings": "Abrir Configuración de Pagos",
+
+  "payoutPaystackForCountry": "Pagos a través de Paystack para {country}",
+  "@payoutPaystackForCountry": {
+    "placeholders": {
+      "country": {}
+    }
+  },
+  "payoutFlutterwaveForCountry": "Los pagos se procesan a través de Flutterwave para {country}",
+  "@payoutFlutterwaveForCountry": {
+    "placeholders": {
+      "country": {}
+    }
+  },
+  "payoutStripeConnect": "Stripe Connect",
+  "payoutBankAccountDetails": "Detalles de Cuenta Bancaria",
+  "payoutAccountHolderName": "Nombre del Titular de la Cuenta",
+  "payoutAccountHolderNameHint": "Ingresa el nombre como aparece en tu cuenta bancaria",
+  "payoutSelectBank": "Seleccionar Banco *",
+  "payoutBankName": "Nombre del Banco *",
+  "payoutBankNameManual": "Nombre del Banco (manual)",
+  "payoutBankNameHint": "ej., Banco Santander, BBVA",
+  "payoutBankCode": "Código del Banco *",
+  "payoutBankCodeManual": "Código del Banco (manual)",
+  "payoutBankCodeHint": "Código de banco de Flutterwave",
+  "payoutBankCodeHelper": "Contacta a soporte si no conoces el código del banco",
+  "payoutAccountNumber": "Número de Cuenta *",
+  "payoutAccountNumberHint": "Ingresa tu número de cuenta bancaria",
+  "payoutMobileMoney": "Dinero Móvil",
+  "payoutFullName": "Nombre Completo (como está registrado) *",
+  "payoutFullNameHint": "Nombre registrado en tu cuenta de dinero móvil",
+  "payoutMobileNetwork": "Red Móvil *",
+  "payoutSelectNetwork": "Selecciona tu red móvil",
+  "payoutMobileNetworkHint": "ej., MTN, Vodafone, Airtel",
+  "payoutCountryCode": "Código de País",
+  "payoutMobileMoneyNumber": "Número de Dinero Móvil *",
+  "payoutMobileMoneyNumberHint": "ej., 0541234567",
+  "payoutZipCode": "Código Postal",
+  "payoutZipCodeHint": "Si lo requiere tu red",
+  "payoutMethod": "Método de Pago",
+  "payoutBankTransfer": "Transferencia Bancaria",
+  "payoutCurrency": "Moneda",
+  "payoutCurrencyLocked": "Bloqueado a la moneda de {country}",
+  "@payoutCurrencyLocked": {
+    "placeholders": {
+      "country": {}
+    }
+  },
+  "payoutBeneficiaryId": "ID de Beneficiario",
+  "payoutBeneficiaryIdHint": "Opcional - para transferencias recurrentes",
+  "payoutSchedule": "Programación de Pagos",
+  "payoutFrequency": "Frecuencia de Pago",
+  "payoutFrequencyWeekly": "Semanal",
+  "payoutFrequencyMonthly": "Mensual (1ro de cada mes)",
+  "payoutDayHelper": "Disponible: Martes, Jueves, Viernes",
+  "payoutMonthlyInfo": "Los pagos mensuales se procesan el 1ro de cada mes.",
+  "payoutInstantCashout": "Retiro Instantáneo",
+  "payoutInstantCashoutInfo": "• Retiros instantáneos ilimitados disponibles\n• Se aplica comisión del 5% a retiros instantáneos\n• Los pagos programados no tienen comisión",
+  "payoutNextScheduled": "Próximo Pago Programado",
+  "payoutYourLocalTime": "Tu hora local ({timezone})",
+  "@payoutYourLocalTime": {
+    "placeholders": {
+      "timezone": {}
+    }
+  },
+  "payoutAmountToCashOut": "Monto a retirar",
+  "payoutMinMaxRange": "Mín: {min} - Máx: {max}",
+  "@payoutMinMaxRange": {
+    "placeholders": {
+      "min": {},
+      "max": {}
+    }
+  },
+  "payoutMaxButton": "MÁX",
+  "payoutCashOutNow": "Retirar (Instantáneo)",
+  "payoutAvailableBalance": "Saldo Disponible",
+  "payoutPendingFunds": "Pendiente",
+  "payoutPendingInfo": "Los fondos pendientes estarán disponibles después del período de retención",
+  "payoutLifetimeEarnings": "Ganancias Totales",
+  "payoutTotalCashedOut": "Total Retirado",
+  "payoutUnlimitedCashouts": "Ilimitado",
+
+  "mainHello": "Hola",
+  "mainViewProfile": "Ver Perfil",
+  "mainBookings": "Reservas",
+  "mainNotifications": "Notificaciones",
+  "mainReferral": "Referidos",
+  "mainSettings": "Configuración",
+  "mainHelp": "Ayuda",
+  "mainWallet": "Cartera",
+  "mainEarnings": "Ganancias",
+  "mainOpenJobs": "Trabajos Disponibles",
+  "mainAssignedJobs": "Trabajos Asignados",
+  "mainMyReputation": "Mi Reputación",
+
+  "reputationTitle": "Mi Reputación",
+  "reputationYourCustomerRating": "Tu Calificación como Cliente",
+  "reputationBasedOnReviews": "Basado en {count} {count, plural, =1{reseña} other{reseñas}}",
+  "@reputationBasedOnReviews": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationExcellentCustomer": "⭐ Cliente Excelente",
+  "reputationGreatCustomer": "👍 Gran Cliente",
+  "reputationGoodCustomer": "✓ Buen Cliente",
+  "reputationAverage": "Promedio",
+  "reputationNeedsImprovement": "Necesita Mejorar",
+  "reputationNoRatingYet": "Sin Calificación Aún",
+  "reputationWhatProvidersSay": "Lo Que Dicen los Proveedores Sobre Ti",
+  "reputationNoReviews": "Sin Reseñas Aún",
+  "reputationNoReviewsHelp": "¡Completa reservas para construir tu reputación!\nLos proveedores te calificarán después de completar servicios.",
+  "reputationShowMore": "Mostrar Más ({count} más)",
+  "@reputationShowMore": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationShowLess": "Mostrar Menos",
+  "reputationJustNow": "Ahora mismo",
+  "reputationMinutesAgo": "hace {minutes} min",
+  "@reputationMinutesAgo": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationHoursAgo": "hace {hours} {hours, plural, =1{hora} other{horas}}",
+  "@reputationHoursAgo": {
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationDaysAgo": "hace {days} {days, plural, =1{día} other{días}}",
+  "@reputationDaysAgo": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationWeeksAgo": "hace {weeks} {weeks, plural, =1{semana} other{semanas}}",
+  "@reputationWeeksAgo": {
+    "placeholders": {
+      "weeks": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationMonthsAgo": "hace {months} {months, plural, =1{mes} other{meses}}",
+  "@reputationMonthsAgo": {
+    "placeholders": {
+      "months": {
+        "type": "int"
+      }
+    }
+  },
+  "reputationYearsAgo": "hace {years} {years, plural, =1{año} other{años}}",
+  "@reputationYearsAgo": {
+    "placeholders": {
+      "years": {
+        "type": "int"
+      }
+    }
+  },
+
+  "notificationsTitle": "Notificaciones",
+  "notificationsNoNotifications": "Aún no hay notificaciones."
+}

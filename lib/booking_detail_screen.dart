@@ -339,8 +339,8 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
         _requesterReviewSubmitted = true;
       });
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('Customer review submitted!'),
+        SnackBar(
+          content: Text(l10n.customerReviewSubmitted),
           backgroundColor: Colors.green,
         ),
       );
@@ -533,7 +533,7 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
     
     if (lat == null || lng == null) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Location not available')),
+        SnackBar(content: Text(AppLocalizations.of(context).locationNotAvailable)),
       );
       return;
     }
@@ -545,7 +545,7 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
     } else {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Could not open maps')),
+          SnackBar(content: Text(AppLocalizations.of(context).couldNotOpenMaps)),
         );
       }
     }
@@ -571,7 +571,7 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
     
     if (!canCall) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Cannot make phone calls on this device')),
+        SnackBar(content: Text(AppLocalizations.of(context).cannotMakePhoneCalls)),
       );
       return;
     }
@@ -661,9 +661,7 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
       context: context,
       builder: (dialogContext) => AlertDialog(
         title: Text(l10n.confirmCompletion),
-        content: Text(
-          'Only confirm if the service has been fully completed. You may not be able to undo this.',
-        ),
+        content: Text(l10n.confirmCompletionWarning),
         actions: [
           TextButton(
             onPressed: () => Navigator.of(dialogContext).pop(false),
@@ -907,7 +905,7 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
           if (!launched) {
             setState(() => _processingTip = false);
             messenger.showSnackBar(
-              const SnackBar(content: Text('Could not open payment page. Please try again.')),
+              SnackBar(content: Text(l10n.couldNotOpenPaymentPage)),
             );
             return;
           }
@@ -919,10 +917,8 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
             context: context,
             barrierDismissible: false,
             builder: (ctx) => AlertDialog(
-              title: const Text('Payment Verification'),
-              content: const Text(
-                'After completing the payment in your browser, tap "Verify Payment" to confirm.',
-              ),
+              title: Text(l10n.paymentVerificationTitle),
+              content: Text(l10n.paymentVerificationMessage),
               actions: [
                 TextButton(
                   onPressed: () => Navigator.of(ctx).pop(false),
@@ -930,7 +926,7 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
                 ),
                 ElevatedButton(
                   onPressed: () => Navigator.of(ctx).pop(true),
-                  child: const Text('Verify Payment'),
+                  child: Text(l10n.verifyPaymentButton),
                 ),
               ],
             ),
@@ -948,7 +944,7 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
 
           // Verify the payment
           messenger.showSnackBar(
-            const SnackBar(content: Text('Verifying payment...')),
+            SnackBar(content: Text(l10n.verifyingPayment)),
           );
 
           final verifyResult = await ApiClient.verifyTipPaystackPayment(
@@ -1076,7 +1072,7 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
             
             if (status == 'pending') {
               messenger.showSnackBar(
-                const SnackBar(content: Text('Payment is still processing. Please check back in a moment.')),
+                SnackBar(content: Text(l10n.paymentStillProcessing)),
               );
             } else {
               messenger.showSnackBar(
@@ -1357,7 +1353,7 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      '$providerName has arrived!',
+                      l10n.providerHasArrived(providerName),
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
                         fontWeight: FontWeight.w900,
                         color: Colors.white,
@@ -1365,7 +1361,7 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
                     ),
                     const SizedBox(height: 4),
                     Text(
-                      'Please meet your provider to begin your service',
+                      l10n.meetProviderToBeginService,
                       style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                         color: Colors.white.withOpacity(0.9),
                       ),
@@ -1478,7 +1474,7 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'What others say',
+                l10n.whatOthersSay,
                 style: Theme.of(context).textTheme.titleSmall?.copyWith(
                   fontWeight: FontWeight.w900,
                 ),
@@ -1513,7 +1509,7 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
                 const Icon(Icons.format_quote, size: 20, color: Colors.amber),
                 const SizedBox(width: 8),
                 Text(
-                  'What others say',
+                  l10n.whatOthersSay,
                   style: Theme.of(context).textTheme.titleSmall?.copyWith(
                     fontWeight: FontWeight.w900,
                   ),
@@ -1559,14 +1555,14 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
                     final diff = now.difference(dt);
                     
                     if (diff.inDays == 0) {
-                      dateStr = 'Today';
+                      dateStr = l10n.todayLabel;
                     } else if (diff.inDays == 1) {
-                      dateStr = 'Yesterday';
+                      dateStr = l10n.yesterdayLabel;
                     } else if (diff.inDays < 7) {
-                      dateStr = '${diff.inDays} days ago';
+                      dateStr = l10n.daysAgoShort(diff.inDays);
                     } else if (diff.inDays < 30) {
                       final weeks = (diff.inDays / 7).floor();
-                      dateStr = '$weeks week${weeks > 1 ? 's' : ''} ago';
+                      dateStr = l10n.weeksAgoShort(weeks);
                     } else {
                       dateStr = '${dt.day}/${dt.month}/${dt.year}';
                     }
@@ -1668,8 +1664,8 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
                   ),
                   label: Text(
                     _providerReviewsExpanded
-                        ? 'Show less'
-                        : 'Show more (${totalReviews - _initialProviderReviewsToShow} more)',
+                        ? l10n.showLess
+                        : l10n.showMoreCount(totalReviews - _initialProviderReviewsToShow),
                     style: const TextStyle(fontWeight: FontWeight.w600),
                   ),
                 ),
@@ -1704,7 +1700,7 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
             children: [
               const CircularProgressIndicator(),
               const SizedBox(height: 8),
-              Text('Loading customer details...'),
+              Text(l10n.loadingCustomerDetails),
             ],
           ),
         ),
@@ -1730,7 +1726,7 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
                 Icon(Icons.person, color: Theme.of(context).primaryColor),
                 const SizedBox(width: 8),
                 Text(
-                  'Customer Details',
+                  l10n.customerDetails,
                   style: Theme.of(context).textTheme.titleMedium?.copyWith(
                     fontWeight: FontWeight.bold,
                   ),
@@ -1784,7 +1780,7 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
                   child: ElevatedButton.icon(
                     onPressed: _openNavigation,
                     icon: const Icon(Icons.navigation),
-                    label: const Text('Navigate'),
+                    label: Text(l10n.navigateButton),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.blue,
                       foregroundColor: Colors.white,
@@ -1799,7 +1795,7 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
                     child: ElevatedButton.icon(
                       onPressed: _callCustomer,
                       icon: const Icon(Icons.phone),
-                      label: const Text('Call'),
+                      label: Text(l10n.callButton),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.green,
                         foregroundColor: Colors.white,
@@ -1826,6 +1822,7 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
     
     final cs = Theme.of(context).colorScheme;
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final l10n = AppLocalizations.of(context);
     
     // Get requester info from booking
     final user = _booking['user'] as Map<String, dynamic>?;
@@ -1858,7 +1855,7 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
                 Icon(Icons.person_pin, color: Colors.blue.shade700),
                 const SizedBox(width: 8),
                 Text(
-                  'Customer Profile',
+                  l10n.customerProfile,
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 16,
@@ -1919,7 +1916,7 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
                           Text(
                             avgRating > 0
                                 ? '${avgRating.toStringAsFixed(1)} ($totalReviews)'
-                                : 'New customer',
+                                : l10n.newCustomer,
                             style: TextStyle(
                               fontSize: 13,
                               color: avgRating > 0 ? cs.onSurface : Colors.grey,
@@ -1943,6 +1940,8 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
   }
 
   Widget _buildRequesterReviewsSection(List<dynamic> reviews, bool isDark, int totalReviews) {
+    final l10n = AppLocalizations.of(context);
+
     // Loading state
     if (_requesterReputationLoading) {
       return const Padding(
@@ -1966,7 +1965,7 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
             const SizedBox(width: 8),
             Expanded(
               child: Text(
-                'This is a new customer with no reviews yet.',
+                l10n.newCustomerNoReviews,
                 style: TextStyle(
                   fontSize: 12,
                   color: Colors.grey.shade600,
@@ -1995,7 +1994,7 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
             const Icon(Icons.format_quote, size: 16, color: Colors.amber),
             const SizedBox(width: 4),
             Text(
-              'What other providers say',
+              l10n.whatOtherProvidersSay,
               style: TextStyle(
                 fontWeight: FontWeight.w600,
                 fontSize: 13,
@@ -2021,13 +2020,13 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
               final date = DateTime.parse(createdAt);
               final diff = DateTime.now().difference(date);
               if (diff.inDays > 30) {
-                timeAgo = '${(diff.inDays / 30).floor()}mo ago';
+                timeAgo = l10n.monthsAgoShort((diff.inDays / 30).floor());
               } else if (diff.inDays > 0) {
-                timeAgo = '${diff.inDays}d ago';
+                timeAgo = l10n.daysAgoShortCompact(diff.inDays);
               } else if (diff.inHours > 0) {
-                timeAgo = '${diff.inHours}h ago';
+                timeAgo = l10n.hoursAgoShort(diff.inHours);
               } else {
-                timeAgo = 'Just now';
+                timeAgo = l10n.justNow;
               }
             } catch (_) {}
           }
@@ -2132,8 +2131,8 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
               ),
               label: Text(
                 _requesterReputationExpanded
-                    ? 'Show less'
-                    : 'Show more (${reviews.length - _initialRequesterReviewsToShow} more)',
+                    ? l10n.showLess
+                    : l10n.showMoreCount(reviews.length - _initialRequesterReviewsToShow),
                 style: const TextStyle(fontSize: 12),
               ),
             ),
@@ -2151,8 +2150,9 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
     String locationAddress,
     String status,
   ) {
-    final l10n = AppLocalizations.of(context);
     final cs = Theme.of(context).colorScheme;
+    final l10n = AppLocalizations.of(context);
+
     final isCompleted = status == 'completed' || status == 'cancelled';
     
     return Card(
@@ -2199,8 +2199,8 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
                     Expanded(
                       child: Text(
                         status == 'cancelled'
-                            ? 'For your safety, exact location details are hidden after cancellation. Only general area is shown.'
-                            : 'For your safety, exact location details are hidden after service completion. Only general area is shown.',
+                            ? l10n.locationHiddenAfterCancellation
+                            : l10n.locationHiddenAfterCompletion,
                         style: TextStyle(
                           fontSize: 12,
                           color: Colors.amber.shade900,
@@ -2214,9 +2214,9 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
               
               // Show only general area (city/region)
               if (locationAddress.isNotEmpty)
-                _kv(context, 'General Area', _getGeneralArea(locationAddress))
+                _kv(context, l10n.generalArea, _getGeneralArea(locationAddress))
               else
-                _kv(context, 'General Area', 'Service completed'),
+                _kv(context, l10n.generalArea, l10n.serviceCompleted),
               
             ] else ...[
               // ✅ ACTIVE SERVICE: Show full location details
@@ -2245,13 +2245,13 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
                           Marker(
                             markerId: const MarkerId('me'),
                             position: _myPosition!,
-                            infoWindow: const InfoWindow(title: 'Me'),
+                            infoWindow: InfoWindow(title: l10n.mapMarkerMe),
                           ),
                         if (_otherPosition != null)
                           Marker(
                             markerId: const MarkerId('other'),
                             position: _otherPosition!,
-                            infoWindow: const InfoWindow(title: 'Other'),
+                            infoWindow: InfoWindow(title: l10n.mapMarkerOther),
                           ),
                       },
                       myLocationEnabled: false,
@@ -2275,7 +2275,7 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
   
   /// Extract general area from full address (city/region only)
   String _getGeneralArea(String fullAddress) {
-    if (fullAddress.isEmpty) return 'Completed service area';
+    if (fullAddress.isEmpty) return AppLocalizations.of(context).completedServiceArea;
     
     // Split by comma and take last 1-2 parts (city, country)
     final parts = fullAddress.split(',').map((s) => s.trim()).toList();
@@ -2287,7 +2287,7 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
       return parts[0];
     }
     
-    return 'Service area';
+    return AppLocalizations.of(context).serviceArea;
   }
 
 
@@ -2296,6 +2296,7 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
   Widget _buildRequestPlacedCard(BuildContext context) {
     final cs = Theme.of(context).colorScheme;
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final l10n = AppLocalizations.of(context);
     
     // ✅ FIX: Use 'request_time' - this is the field name from Django model
     final createdAt = _booking['request_time']?.toString();
@@ -2337,7 +2338,7 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Request Placed',
+                        l10n.requestPlaced,
                         style: Theme.of(context).textTheme.titleSmall?.copyWith(
                           fontWeight: FontWeight.w900,
                           color: cs.onSurface,
@@ -2345,7 +2346,7 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
                       ),
                       const SizedBox(height: 2),
                       Text(
-                        'When this booking was submitted',
+                        l10n.whenBookingSubmitted,
                         style: Theme.of(context).textTheme.bodySmall?.copyWith(
                           fontSize: 11,
                           color: cs.onSurfaceVariant,
@@ -2395,7 +2396,7 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
                       ),
                       const SizedBox(width: 6),
                       Text(
-                        'Your local time (${DateTimeHelper.getTimezoneAbbreviation()})',
+                        l10n.yourLocalTimeTimezone(DateTimeHelper.getTimezoneAbbreviation()),
                         style: Theme.of(context).textTheme.bodySmall?.copyWith(
                           fontSize: 11,
                           color: cs.onSurfaceVariant.withOpacity(0.7),
@@ -2417,6 +2418,7 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
   Widget _buildBookingTimelineCard(BuildContext context) {
     final cs = Theme.of(context).colorScheme;
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final l10n = AppLocalizations.of(context);
     
     final status = _booking['status']?.toString() ?? '';
     // ✅ FIX: Use 'request_time' - this is the field name from Django model
@@ -2434,7 +2436,7 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
     
     // Step 1: Created (always present)
     steps.add(_TimelineStep(
-      title: 'Request Created',
+      title: l10n.timelineRequestCreated,
       timestamp: createdAt,
       icon: Icons.add_circle_outline,
       isCompleted: true,
@@ -2447,7 +2449,7 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
     
     if (!isCancelled || isAccepted) {
       steps.add(_TimelineStep(
-        title: 'Accepted',
+        title: l10n.timelineAccepted,
         timestamp: acceptedAt,
         icon: Icons.check_circle_outline,
         isCompleted: isAccepted,
@@ -2460,7 +2462,7 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
     final isInProgress = status == 'in_progress' || status == 'completed';
     if (isInProgress || startedAt != null) {
       steps.add(_TimelineStep(
-        title: 'In Progress',
+        title: l10n.timelineInProgress,
         timestamp: startedAt,
         icon: Icons.play_circle_outline,
         isCompleted: startedAt != null,
@@ -2472,7 +2474,7 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
     // Step 4: Completed or Cancelled
     if (status == 'completed') {
       steps.add(_TimelineStep(
-        title: 'Completed',
+        title: l10n.timelineCompleted,
         timestamp: completedAt,
         icon: Icons.celebration,
         isCompleted: true,
@@ -2483,7 +2485,7 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
       ));
     } else if (status == 'cancelled') {
       steps.add(_TimelineStep(
-        title: 'Cancelled',
+        title: l10n.timelineCancelled,
         timestamp: cancelledAt,
         icon: Icons.cancel_outlined,
         isCompleted: true,
@@ -2495,7 +2497,7 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
     } else if (status != 'cancelled') {
       // Show pending completion step
       steps.add(_TimelineStep(
-        title: 'Completed',
+        title: l10n.timelineCompleted,
         timestamp: null,
         icon: Icons.flag_outlined,
         isCompleted: false,
@@ -2516,7 +2518,7 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
                 Icon(Icons.timeline, size: 20, color: cs.primary),
                 const SizedBox(width: 8),
                 Text(
-                  'Booking Timeline',
+                  l10n.bookingTimeline,
                   style: Theme.of(context).textTheme.titleSmall?.copyWith(
                     fontWeight: FontWeight.w900,
                   ),
@@ -2550,6 +2552,7 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
     required bool isDark,
   }) {
     final cs = Theme.of(context).colorScheme;
+    final l10n = AppLocalizations.of(context);
     
     return IntrinsicHeight(
       child: Row(
@@ -2651,7 +2654,7 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
                   ] else if (!step.isCompleted) ...[
                     const SizedBox(height: 4),
                     Text(
-                      'Pending...',
+                      l10n.timelinePending,
                       style: TextStyle(
                         fontSize: 12,
                         fontStyle: FontStyle.italic,
@@ -2850,8 +2853,8 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
                     ),
                     label: Text(
                       _portfolioExpanded
-                          ? 'View Less'
-                          : 'View More (${totalItems - _initialPortfolioItemsToShow} more)',
+                          ? l10n.viewLess
+                          : l10n.viewMoreCount(totalItems - _initialPortfolioItemsToShow),
                       style: const TextStyle(fontWeight: FontWeight.w600),
                     ),
                   ),
@@ -2865,6 +2868,8 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
   }
 
   Widget _buildAutoCancelWarningCard(BuildContext context, Map<String, dynamic> warning) {
+    final l10n = AppLocalizations.of(context);
+
     final level = warning['level']?.toString() ?? 'info';
     final message = warning['message']?.toString() ?? '';
     final hoursRemaining = (warning['hours_remaining'] as num?)?.toDouble() ?? 0;
@@ -2921,8 +2926,8 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
                 children: [
                   Text(
                     level == 'critical' 
-                        ? 'Payment Required Immediately!'
-                        : 'Payment Reminder',
+                        ? l10n.paymentRequiredImmediately
+                        : l10n.paymentReminder,
                     style: TextStyle(
                       fontWeight: FontWeight.w900,
                       color: textColor,
@@ -2946,7 +2951,7 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
                         borderRadius: BorderRadius.circular(12),
                       ),
                       child: Text(
-                        '⏱ ${hoursRemaining.toStringAsFixed(0)}h remaining',
+                        l10n.hoursRemaining(hoursRemaining.toStringAsFixed(0)),
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: textColor,
@@ -3217,7 +3222,7 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    'Service Appointment',
+                                    l10n.serviceAppointment,
                                     style: Theme.of(context).textTheme.bodySmall?.copyWith(
                                       color: cs.onSurfaceVariant,
                                       fontWeight: FontWeight.w600,
@@ -3261,8 +3266,8 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
                                           color: Colors.orange,
                                           borderRadius: BorderRadius.circular(12),
                                         ),
-                                        child: const Text(
-                                          'TODAY',
+                                        child: Text(
+                                          l10n.todayBadge,
                                           style: TextStyle(
                                             color: Colors.white,
                                             fontSize: 10,
@@ -3294,20 +3299,20 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
                     if (locationAddress.isNotEmpty && status != 'completed' && status != 'cancelled')
                       _kv(
                         context,
-                        'Location',
+                        l10n.locationField,
                         locationAddress,
                       )
                     else if (locationAddress.isNotEmpty && (status == 'completed' || status == 'cancelled'))
                       _kv(
                         context,
-                        'Service Area',
+                        l10n.serviceAreaField,
                         _getGeneralArea(locationAddress),
                       ),
                     // ✅ METADATA: Show when booking was requested
                     if (_booking['request_time'] != null && _booking['request_time'].toString().isNotEmpty)
                       _kv(
                         context,
-                        'Requested',
+                        l10n.requestedField,
                         DateTimeHelper.formatMetadataTime(_booking['request_time'].toString()),
                       ),
                     
@@ -3355,7 +3360,7 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
                           const SizedBox(width: 8),
                           Expanded(
                             child: Text(
-                              'All times shown in your local timezone (${DateTimeHelper.getTimezoneAbbreviation()})',
+                              l10n.allTimesInLocalTimezone(DateTimeHelper.getTimezoneAbbreviation()),
                               style: Theme.of(context).textTheme.bodySmall?.copyWith(
                                 fontSize: 11,
                                 color: cs.onSurfaceVariant,
@@ -3483,7 +3488,7 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
                               : const Icon(Icons.check_circle),
                           label: Text(
                             alreadyConfirmedByMe
-                                ? 'Completion confirmed'
+                                ? l10n.completionConfirmed
                                 : l10n.confirmCompletion,
                           ),
                         ),
@@ -3553,7 +3558,7 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
                       ElevatedButton.icon(
                         onPressed: _openRequesterReviewDialog,
                         icon: const Icon(Icons.rate_review),
-                        label: const Text('Rate Customer'),
+                        label: Text(l10n.rateCustomer),
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.amber,
                           foregroundColor: Colors.black87,
@@ -3579,7 +3584,7 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
                             Icon(Icons.check_circle, color: Colors.green.shade700, size: 18),
                             const SizedBox(width: 8),
                             Text(
-                              'Customer reviewed',
+                              l10n.customerReviewed,
                               style: TextStyle(
                                 color: Colors.green.shade700,
                                 fontWeight: FontWeight.w600,
@@ -3720,7 +3725,7 @@ class _ReviewDialogState extends State<_ReviewDialog> {
     } else {
       setState(() => _submitting = false);
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Failed to submit review. Please try again.')),
+        SnackBar(content: Text(AppLocalizations.of(context).failedToSubmitReviewTryAgain)),
       );
     }
   }
@@ -3766,7 +3771,7 @@ class _ReviewDialogState extends State<_ReviewDialog> {
             enabled: !_submitting,
             decoration: InputDecoration(
               labelText: l10n.reviewCommentOptionalLabel,
-              hintText: 'Share your experience...',
+              hintText: l10n.shareYourExperience,
               border: const OutlineInputBorder(),
             ),
           ),
@@ -3814,6 +3819,8 @@ class _RequesterReviewDialogState extends State<_RequesterReviewDialog> {
   bool _submitting = false;
   String? _error;
 
+  AppLocalizations get l10n => AppLocalizations.of(context);
+
   @override
   void dispose() {
     _commentController.dispose();
@@ -3856,7 +3863,7 @@ class _RequesterReviewDialogState extends State<_RequesterReviewDialog> {
           const SizedBox(width: 8),
           Expanded(
             child: Text(
-              'Rate ${widget.requesterName}',
+              l10n.rateRequesterTitle(widget.requesterName),
               overflow: TextOverflow.ellipsis,
             ),
           ),
@@ -3867,8 +3874,8 @@ class _RequesterReviewDialogState extends State<_RequesterReviewDialog> {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
-              'How was your experience with this customer?',
+            Text(
+              l10n.howWasExperienceWithCustomer,
               style: TextStyle(fontSize: 14),
             ),
             const SizedBox(height: 16),
@@ -3912,10 +3919,10 @@ class _RequesterReviewDialogState extends State<_RequesterReviewDialog> {
               maxLines: 3,
               maxLength: 500,
               enabled: !_submitting,
-              decoration: const InputDecoration(
-                labelText: 'Comment (optional)',
-                hintText: 'Share your experience with this customer...',
-                border: OutlineInputBorder(),
+              decoration: InputDecoration(
+                labelText: l10n.commentOptional,
+                hintText: l10n.shareYourExperience,
+                border: const OutlineInputBorder(),
               ),
             ),
              
@@ -3932,7 +3939,7 @@ class _RequesterReviewDialogState extends State<_RequesterReviewDialog> {
       actions: [
         TextButton(
           onPressed: _submitting ? null : () => Navigator.of(context).pop(null),
-          child: const Text('Cancel'),
+          child: Text(l10n.cancelButton),
         ),
         ElevatedButton(
           onPressed: _submitting ? null : _submit,
@@ -3942,7 +3949,7 @@ class _RequesterReviewDialogState extends State<_RequesterReviewDialog> {
                   width: 18,
                   child: CircularProgressIndicator(strokeWidth: 2),
                 )
-              : const Text('Submit'),
+              : Text(l10n.submitButton),
         ),
       ],
     );
@@ -3951,15 +3958,15 @@ class _RequesterReviewDialogState extends State<_RequesterReviewDialog> {
   String _getRatingLabel(int rating) {
     switch (rating) {
       case 1:
-        return 'Poor';
+        return l10n.ratingPoor;
       case 2:
-        return 'Fair';
+        return l10n.ratingFair;
       case 3:
-        return 'Good';
+        return l10n.ratingGood;
       case 4:
-        return 'Very Good';
+        return l10n.ratingVeryGood;
       case 5:
-        return 'Excellent';
+        return l10n.ratingExcellent;
       default:
         return '';
     }

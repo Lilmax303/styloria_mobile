@@ -49,6 +49,7 @@
       "name": {}
     }
   },
+  "close": "Close",
 
   "forgotPassword": "Forgot Password?",
   "forgotPasswordTitle": "Reset Your Password",
@@ -99,6 +100,25 @@
   "coordinatesLabel": "Coordinates",
   "pleaseEnterAddress": "Please enter an address",
   "locationUpdatedFromAddress": "Location updated from address",
+
+  "myCustomerRating": "My Customer Rating",
+  "outOf5": "/ 5.0",
+  "reviewsFromProviders": "{count} {count, plural, =1{review} other{reviews}} from providers",
+  "@reviewsFromProviders": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "failedToLoadReputation": "Failed to load reputation data",
+  "somethingWentWrong": "Something went wrong",
+  "retry": "Retry",
+  "weDetectedYoureIn": "📍 We detected you're in {country}. Please select your country below.",
+  "@weDetectedYoureIn": {
+    "placeholders": {
+      "country": {"type": "String"}
+    }
+  },
+  "locationMarkedAsOther": "Location marked as \"Other\" - you can proceed with registration",
 
   "createAccountTitle": "Create Account",
   "joinStyloria": "Join Styloria",
@@ -499,6 +519,146 @@
   "noNotificationsYet": "No notifications yet.",
   "markRead": "Mark read",
 
+  "customerReviewSubmitted": "Customer review submitted!",
+  "loadingCustomerDetails": "Loading customer details...",
+  "customerDetails": "Customer Details",
+  "navigateButton": "Navigate",
+  "callButton": "Call",
+  "whatOthersSay": "What others say",
+  "showLess": "Show less",
+  "showMoreCount": "Show more ({count} more)",
+  "@showMoreCount": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "todayLabel": "Today",
+  "yesterdayLabel": "Yesterday",
+  "daysAgoShort": "{days} days ago",
+  "@daysAgoShort": {
+    "placeholders": {
+      "days": {"type": "int"}
+    }
+  },
+  "weeksAgoShort": "{weeks} week{weeks, plural, =1{} other{s}} ago",
+  "@weeksAgoShort": {
+    "placeholders": {
+      "weeks": {"type": "int"}
+    }
+  },
+  "providerHasArrived": "{name} has arrived!",
+  "@providerHasArrived": {
+    "placeholders": {
+      "name": {"type": "String"}
+    }
+  },
+  "meetProviderToBeginService": "Please meet your provider to begin your service",
+  "locationNotAvailable": "Location not available",
+  "couldNotOpenMaps": "Could not open maps",
+  "cannotMakePhoneCalls": "Cannot make phone calls on this device",
+  "confirmCompletionWarning": "Only confirm if the service has been fully completed. You may not be able to undo this.",
+  "paymentVerificationTitle": "Payment Verification",
+  "paymentVerificationMessage": "After completing the payment in your browser, tap \"Verify Payment\" to confirm.",
+  "verifyPaymentButton": "Verify Payment",
+  "verifyingPayment": "Verifying payment...",
+  "couldNotOpenPaymentPage": "Could not open payment page. Please try again.",
+  "paymentStillProcessing": "Payment is still processing. Please check back in a moment.",
+  "statusPending": "Pending",
+  "customerProfile": "Customer Profile",
+  "newCustomer": "New customer",
+  "newCustomerNoReviews": "This is a new customer with no reviews yet.",
+  "whatOtherProvidersSay": "What other providers say",
+  "justNow": "Just now",
+  "monthsAgoShort": "{months}mo ago",
+  "@monthsAgoShort": {
+    "placeholders": {
+      "months": {"type": "int"}
+    }
+  },
+  "daysAgoShortCompact": "{days}d ago",
+  "@daysAgoShortCompact": {
+    "placeholders": {
+      "days": {"type": "int"}
+    }
+  },
+  "hoursAgoShort": "{hours}h ago",
+  "@hoursAgoShort": {
+    "placeholders": {
+      "hours": {"type": "int"}
+    }
+  },
+  "generalArea": "General Area",
+  "serviceCompleted": "Service completed",
+  "completedServiceArea": "Completed service area",
+  "serviceArea": "Service area",
+  "locationHiddenAfterCancellation": "For your safety, exact location details are hidden after cancellation. Only general area is shown.",
+  "locationHiddenAfterCompletion": "For your safety, exact location details are hidden after service completion. Only general area is shown.",
+  "mapMarkerMe": "Me",
+  "mapMarkerOther": "Other",
+  "requestPlaced": "Request Placed",
+  "whenBookingSubmitted": "When this booking was submitted",
+  "yourLocalTimeTimezone": "Your local time ({timezone})",
+  "@yourLocalTimeTimezone": {
+    "placeholders": {
+      "timezone": {"type": "String"}
+    }
+  },
+  "bookingTimeline": "Booking Timeline",
+  "timelineRequestCreated": "Request Created",
+  "timelineAccepted": "Accepted",
+  "timelineInProgress": "In Progress",
+  "timelineCompleted": "Completed",
+  "timelineCancelled": "Cancelled",
+  "timelinePending": "Pending...",
+  "viewLess": "View Less",
+  "viewMoreCount": "View More ({count} more)",
+  "@viewMoreCount": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "paymentRequiredImmediately": "Payment Required Immediately!",
+  "paymentReminder": "Payment Reminder",
+  "hoursRemaining": "⏱ {hours}h remaining",
+  "@hoursRemaining": {
+    "placeholders": {
+      "hours": {"type": "String"}
+    }
+  },
+  "serviceAppointment": "Service Appointment",
+  "todayBadge": "TODAY",
+  "locationField": "Location",
+  "serviceAreaField": "Service Area",
+  "requestedField": "Requested",
+  "allTimesInLocalTimezone": "All times shown in your local timezone ({timezone})",
+  "@allTimesInLocalTimezone": {
+    "placeholders": {
+      "timezone": {"type": "String"}
+    }
+  },
+  "completionConfirmed": "Completion confirmed",
+  "rateCustomer": "Rate Customer",
+  "customerReviewed": "Customer reviewed",
+  "failedToSubmitReviewTryAgain": "Failed to submit review. Please try again.",
+  "shareYourExperience": "Share your experience...",
+  "rateRequesterTitle": "Rate {name}",
+  "@rateRequesterTitle": {
+    "placeholders": {
+      "name": {"type": "String"}
+    }
+  },
+  "howWasExperienceWithCustomer": "How was your experience with this customer?",
+  "commentOptional": "Comment (optional)",
+  "cancelButton": "Cancel",
+  "submitButton": "Submit",
+  "ratingPoor": "Poor",
+  "ratingFair": "Fair",
+  "ratingGood": "Good",
+  "ratingVeryGood": "Very Good",
+  "ratingExcellent": "Excellent",
+  "profileCompletion": "Profile completion",
+  "viewProfile": "View Profile",
+
   "providerKycTitle": "Provider Verification (KYC)",
   "logoutTooltip": "Log out",
 
@@ -858,12 +1018,13 @@
   "requiresCertificationTooltip": "This service requires a verified certification",
 
   "detectingYourLocation": "Detecting your location...",
-  "locationDetectedAs": "Location detected: {country}",
-  "@locationDetectedAs": {
+  "locationConfirmed": "✓ Location confirmed: {country}",
+  "@locationConfirmed": {
     "placeholders": {
-      "country": {}
+      "country": {"type": "String"}
     }
   },
+
   "refresh": "Refresh",
   "countryMismatchWarningTitle": "Different country selected",
   "countryMismatchWarningBody": "We detected your location as {country}. If you're traveling or relocating, you can continue with your selection. Your currency will be based on your selected country.",

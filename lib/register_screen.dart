@@ -58,12 +58,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
   // GPS Detection state
   bool _detectingLocation = false;
   String? _detectedCountry;
-  String? _detectedCity;
   bool _locationDetectionAttempted = false;
   bool _userChangedCountry = false;
 
-  // Key to force CountryStateCityPicker rebuild after GPS detection
-  int _locationPickerKey = 0;
 
   @override
   void initState() {
@@ -110,7 +107,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
   }
 
   void _onCountryChanged() {
-    // Check if user manually changed the country after auto-detection
     if (_detectedCountry != null && _locationDetectionAttempted) {
       final currentCountry = _countryController.text.trim().toLowerCase();
       final detected = _detectedCountry!.toLowerCase();
@@ -121,10 +117,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
             _userChangedCountry = true;
           });
         }
-      } else if (currentCountry == detected && _userChangedCountry) {
-        setState(() {
-          _userChangedCountry = false;
-        });
+      } else if (currentCountry.isNotEmpty && currentCountry == detected) {
+        if (_userChangedCountry) {
+          setState(() {
+            _userChangedCountry = false;
+          });
+        }
       }
     }
   }
@@ -181,39 +179,24 @@ class _RegisterScreenState extends State<RegisterScreen> {
       if (placemarks.isNotEmpty && mounted) {
         final placemark = placemarks.first;
         final country = placemark.country;
-        final city = placemark.locality ?? placemark.administrativeArea;
 
         if (country != null && country.isNotEmpty) {
           // ✅ STEP 1: Store detected info and reset controllers
           setState(() {
             _detectedCountry = country;
-            _detectedCity = city;  // Keep for reference/logging, but don't auto-fill
             _detectingLocation = false;
             _locationDetectionAttempted = true;
-            // Clear all location controllers for clean rebuild
-            _countryController.text = '';
-            _stateController.text = '';
-            _cityController.text = '';
+            // ✅ DON'T auto-fill the country controller anymore!
+            // Just store the detected country for comparison
           });
 
-          // ✅ STEP 2: Small delay for widget to dispose cleanly
-          await Future.delayed(const Duration(milliseconds: 150));
-
-          if (!mounted) return;
-
-          // ✅ STEP 3: Set country and force picker rebuild with new key
-          setState(() {
-            _countryController.text = country;
-            _locationPickerKey++;
-          });
-
-          // ✅ STEP 4: Sync phone country code after rebuild
-          WidgetsBinding.instance.addPostFrameCallback((_) {
-            if (mounted) {
-              _syncPhoneCountryWithSelectedCountry();
-            }
-          });
-
+          // ✅ Sync phone country code based on detected country
+          final iso2 = _countryNameToIso2(country);
+          if (iso2 != null && mounted) {
+            setState(() {
+              _selectedIso2ForPhone = iso2;
+            });
+          }
           return;
         }
       }
@@ -228,6 +211,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       });
     }
   }
+
 
   String? _countryNameToIso2(String countryName) {
     final name = countryName.trim().toLowerCase();
@@ -611,8 +595,37 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               ),
                             ),
 
-                          // Location Detected Success Message
-                          if (_detectedCountry != null && !_userChangedCountry && !_detectingLocation)
+                          // Location Hint (shows BEFORE user selects country)
+                          if (_detectedCountry != null && 
+                              !_detectingLocation && 
+                              _countryController.text.isEmpty)
+                            Container(
+                              padding: const EdgeInsets.all(12),
+                              margin: const EdgeInsets.only(bottom: 12),
+                              decoration: BoxDecoration(
+                                color: cs.primaryContainer,
+                                borderRadius: BorderRadius.circular(8),
+                                border: Border.all(color: cs.primary.withOpacity(0.3)),
+                              ),
+                              child: Row(
+                                children: [
+                                  Icon(Icons.location_on, color: cs.primary, size: 20),
+                                  const SizedBox(width: 8),
+                                  Expanded(
+                                    child: Text(
+                                      l10n.weDetectedYoureIn(_detectedCountry!),
+                                      style: TextStyle(color: cs.onPrimaryContainer, fontSize: 13),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+
+                          // Location Confirmed (shows AFTER user selects matching country)
+                          if (_detectedCountry != null && 
+                              !_detectingLocation && 
+                              _countryController.text.isNotEmpty &&
+                              !_userChangedCountry)
                             Container(
                               padding: const EdgeInsets.all(12),
                               margin: const EdgeInsets.only(bottom: 12),
@@ -623,20 +636,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               ),
                               child: Row(
                                 children: [
-                                  Icon(Icons.location_on, color: Colors.green.shade700, size: 20),
+                                  Icon(Icons.check_circle, color: Colors.green.shade700, size: 20),
                                   const SizedBox(width: 8),
                                   Expanded(
                                     child: Text(
-                                      l10n.locationDetectedAs(_detectedCountry!),
+                                      l10n.locationConfirmed(_countryController.text),
                                       style: TextStyle(color: Colors.green.shade700, fontSize: 13),
                                     ),
-                                  ),
-                                  IconButton(
-                                    icon: Icon(Icons.refresh, color: Colors.green.shade700, size: 20),
-                                    onPressed: _detectLocationAndAutoFill,
-                                    tooltip: l10n.refresh,
-                                    padding: EdgeInsets.zero,
-                                    constraints: const BoxConstraints(),
                                   ),
                                 ],
                               ),
@@ -689,7 +695,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             crossAxisAlignment: CrossAxisAlignment.stretch,
                             children: [
                               CountryStateCityPicker(
-                                key: ValueKey('location_picker_$_locationPickerKey'),
+                                key: const ValueKey('location_picker'),
                                 country: _countryController,
                                 state: _stateController,
                                 city: _cityController,
@@ -794,7 +800,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                         const SizedBox(width: 8),
                                         Expanded(
                                           child: Text(
-                                            'Location marked as "Other" - you can proceed with registration',
+                                            l10n.locationMarkedAsOther,
                                             style: TextStyle(
                                               color: Colors.green.shade700,
                                               fontSize: 11,

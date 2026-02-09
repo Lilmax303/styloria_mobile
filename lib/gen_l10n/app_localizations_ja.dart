@@ -121,6 +121,9 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
+  String get close => 'Close';
+
+  @override
   String get forgotPassword => 'Forgot Password?';
 
   @override
@@ -257,6 +260,34 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get locationUpdatedFromAddress => '住所から位置情報を更新しました';
+
+  @override
+  String get myCustomerRating => '私の顧客評価';
+
+  @override
+  String get outOf5 => '/ 5.0';
+
+  @override
+  String reviewsFromProviders(int count) {
+    return 'サービス提供者からの$count件のレビュー';
+  }
+
+  @override
+  String get failedToLoadReputation => '評判データの読み込みに失敗しました';
+
+  @override
+  String get somethingWentWrong => '問題が発生しました';
+
+  @override
+  String get retry => '再試行';
+
+  @override
+  String weDetectedYoureIn(String country) {
+    return '📍 現在地は$countryと検出されました。以下から国を選択してください。';
+  }
+
+  @override
+  String get locationMarkedAsOther => '位置が「その他」に設定されました - 登録を続行できます';
 
   @override
   String get createAccountTitle => 'アカウント作成';
@@ -974,9 +1005,6 @@ class AppLocalizationsJa extends AppLocalizations {
   String get noData => 'データがありません。';
 
   @override
-  String get retry => '再試行';
-
-  @override
   String get summaryTitle => 'サマリー';
 
   @override
@@ -1168,6 +1196,271 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get markRead => '既読にする';
+
+  @override
+  String get customerReviewSubmitted => 'お客様のレビューが送信されました！';
+
+  @override
+  String get loadingCustomerDetails => 'お客様情報を読み込んでいます...';
+
+  @override
+  String get customerDetails => 'お客様情報';
+
+  @override
+  String get navigateButton => 'ナビゲート';
+
+  @override
+  String get callButton => '電話';
+
+  @override
+  String get whatOthersSay => '他のユーザーの声';
+
+  @override
+  String get showLess => '閉じる';
+
+  @override
+  String showMoreCount(int count) {
+    return 'もっと見る（あと$count件）';
+  }
+
+  @override
+  String get todayLabel => '今日';
+
+  @override
+  String get yesterdayLabel => '昨日';
+
+  @override
+  String daysAgoShort(int days) {
+    return '$days日前';
+  }
+
+  @override
+  String weeksAgoShort(int weeks) {
+    return '$weeks週間前';
+  }
+
+  @override
+  String providerHasArrived(String name) {
+    return '$nameさんが到着しました！';
+  }
+
+  @override
+  String get meetProviderToBeginService => 'サービス開始のためプロバイダーと会ってください';
+
+  @override
+  String get locationNotAvailable => '位置情報が利用できません';
+
+  @override
+  String get couldNotOpenMaps => 'マップを開けませんでした';
+
+  @override
+  String get cannotMakePhoneCalls => 'このデバイスでは通話できません';
+
+  @override
+  String get confirmCompletionWarning =>
+      'サービスが完全に完了した場合のみ確認してください。この操作は取り消せない場合があります。';
+
+  @override
+  String get paymentVerificationTitle => '支払い確認';
+
+  @override
+  String get paymentVerificationMessage =>
+      'ブラウザで支払いを完了後、「支払いを確認」をタップして確認してください。';
+
+  @override
+  String get verifyPaymentButton => '支払いを確認';
+
+  @override
+  String get verifyingPayment => '支払いを確認中...';
+
+  @override
+  String get couldNotOpenPaymentPage => '支払いページを開けませんでした。再試行してください。';
+
+  @override
+  String get paymentStillProcessing => '支払いはまだ処理中です。しばらくしてから確認してください。';
+
+  @override
+  String get statusPending => '保留中';
+
+  @override
+  String get customerProfile => 'お客様プロフィール';
+
+  @override
+  String get newCustomer => '新規のお客様';
+
+  @override
+  String get newCustomerNoReviews => 'まだレビューのない新規のお客様です。';
+
+  @override
+  String get whatOtherProvidersSay => '他のプロバイダーの評価';
+
+  @override
+  String get justNow => 'たった今';
+
+  @override
+  String monthsAgoShort(int months) {
+    return '$monthsヶ月前';
+  }
+
+  @override
+  String daysAgoShortCompact(int days) {
+    return '$days日前';
+  }
+
+  @override
+  String hoursAgoShort(int hours) {
+    return '$hours時間前';
+  }
+
+  @override
+  String get generalArea => 'おおよその地域';
+
+  @override
+  String get serviceCompleted => 'サービス完了';
+
+  @override
+  String get completedServiceArea => '完了したサービスエリア';
+
+  @override
+  String get serviceArea => 'サービスエリア';
+
+  @override
+  String get locationHiddenAfterCancellation =>
+      '安全のため、キャンセル後は正確な位置情報が非表示になります。おおよその地域のみ表示されます。';
+
+  @override
+  String get locationHiddenAfterCompletion =>
+      '安全のため、サービス完了後は正確な位置情報が非表示になります。おおよその地域のみ表示されます。';
+
+  @override
+  String get mapMarkerMe => '自分';
+
+  @override
+  String get mapMarkerOther => '相手';
+
+  @override
+  String get requestPlaced => 'リクエスト送信済み';
+
+  @override
+  String get whenBookingSubmitted => '予約送信日時';
+
+  @override
+  String yourLocalTimeTimezone(String timezone) {
+    return 'お住まいの時間帯（$timezone）';
+  }
+
+  @override
+  String get bookingTimeline => '予約タイムライン';
+
+  @override
+  String get timelineRequestCreated => 'リクエスト作成';
+
+  @override
+  String get timelineAccepted => '承諾済み';
+
+  @override
+  String get timelineInProgress => '進行中';
+
+  @override
+  String get timelineCompleted => '完了';
+
+  @override
+  String get timelineCancelled => 'キャンセル済み';
+
+  @override
+  String get timelinePending => '保留中...';
+
+  @override
+  String get viewLess => '閉じる';
+
+  @override
+  String viewMoreCount(int count) {
+    return 'もっと見る（あと$count件）';
+  }
+
+  @override
+  String get paymentRequiredImmediately => '今すぐ支払いが必要です！';
+
+  @override
+  String get paymentReminder => '支払いリマインダー';
+
+  @override
+  String hoursRemaining(String hours) {
+    return '⏱ 残り$hours時間';
+  }
+
+  @override
+  String get serviceAppointment => 'サービス予約';
+
+  @override
+  String get todayBadge => '今日';
+
+  @override
+  String get locationField => '場所';
+
+  @override
+  String get serviceAreaField => 'サービスエリア';
+
+  @override
+  String get requestedField => 'リクエスト日時';
+
+  @override
+  String allTimesInLocalTimezone(String timezone) {
+    return 'すべての時間はお住まいの時間帯（$timezone）で表示されています';
+  }
+
+  @override
+  String get completionConfirmed => '完了確認済み';
+
+  @override
+  String get rateCustomer => 'お客様を評価';
+
+  @override
+  String get customerReviewed => 'お客様を評価済み';
+
+  @override
+  String get failedToSubmitReviewTryAgain => 'レビューの送信に失敗しました。再試行してください。';
+
+  @override
+  String get shareYourExperience => '体験を共有してください...';
+
+  @override
+  String rateRequesterTitle(String name) {
+    return '$nameさんを評価';
+  }
+
+  @override
+  String get howWasExperienceWithCustomer => 'このお客様との体験はいかがでしたか？';
+
+  @override
+  String get commentOptional => 'コメント（任意）';
+
+  @override
+  String get cancelButton => 'キャンセル';
+
+  @override
+  String get submitButton => '送信';
+
+  @override
+  String get ratingPoor => '悪い';
+
+  @override
+  String get ratingFair => '普通';
+
+  @override
+  String get ratingGood => '良い';
+
+  @override
+  String get ratingVeryGood => 'とても良い';
+
+  @override
+  String get ratingExcellent => '素晴らしい';
+
+  @override
+  String get profileCompletion => 'プロフィール完成度';
+
+  @override
+  String get viewProfile => 'プロフィールを見る';
 
   @override
   String get providerKycTitle => '提供者の本人確認（KYC）';
@@ -1921,8 +2214,8 @@ class AppLocalizationsJa extends AppLocalizations {
   String get detectingYourLocation => 'Detecting your location...';
 
   @override
-  String locationDetectedAs(Object country) {
-    return 'Location detected: $country';
+  String locationConfirmed(String country) {
+    return '✓ 位置確認済み: $country';
   }
 
   @override

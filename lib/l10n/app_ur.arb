@@ -173,6 +173,32 @@
       "time": {}
     }
   },
+
+  "myCustomerRating": "میری کسٹمر ریٹنگ",
+  "outOf5": "/ 5.0",
+  "reviewsFromProviders": "فراہم کنندگان کی طرف سے {count} جائزے",
+  "@reviewsFromProviders": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "failedToLoadReputation": "ساکھ کا ڈیٹا لوڈ کرنے میں ناکامی",
+  "somethingWentWrong": "کچھ غلط ہو گیا",
+  "retry": "دوبارہ کوشش کریں",
+  "weDetectedYoureIn": "📍 ہم نے پتہ لگایا کہ آپ {country} میں ہیں۔ براہ کرم نیچے اپنا ملک منتخب کریں۔",
+  "@weDetectedYoureIn": {
+    "placeholders": {
+      "country": {"type": "String"}
+    }
+  },
+  "locationConfirmed": "✓ مقام کی تصدیق: {country}",
+  "@locationConfirmed": {
+    "placeholders": {
+      "country": {"type": "String"}
+    }
+  },
+  "locationMarkedAsOther": "مقام کو \"دیگر\" کے طور پر نشان زد کیا گیا - آپ رجسٹریشن جاری رکھ سکتے ہیں",
+
   "userLabel": "صارف",
   "providerLabel": "فراہم کنندہ",
   "estimatedPriceLabel": "اندازاً قیمت",

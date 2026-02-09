@@ -231,6 +231,32 @@
       "time": {}
     }
   },
+
+  "myCustomerRating": "דירוג הלקוח שלי",
+  "outOf5": "/ 5.0",
+  "reviewsFromProviders": "{count} {count, plural, =1{ביקורת} other{ביקורות}} מספקי שירות",
+  "@reviewsFromProviders": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "failedToLoadReputation": "טעינת נתוני המוניטין נכשלה",
+  "somethingWentWrong": "משהו השתבש",
+  "retry": "נסה שוב",
+  "weDetectedYoureIn": "📍 זיהינו שאתה נמצא ב{country}. אנא בחר את המדינה שלך למטה.",
+  "@weDetectedYoureIn": {
+    "placeholders": {
+      "country": {"type": "String"}
+    }
+  },
+  "locationConfirmed": "✓ המיקום אושר: {country}",
+  "@locationConfirmed": {
+    "placeholders": {
+      "country": {"type": "String"}
+    }
+  },
+  "locationMarkedAsOther": "המיקום סומן כ\"אחר\" - תוכל להמשיך בהרשמה",
+
   "earlyFreeCancellationEndedWarning": "תקופת הביטול החינמי המוקדמת הסתיימה. עד כ-40 דקות לאחר האישור, ביטול מאוחר עלול לגרור קנס.",
   "cancelBooking": "בטל/י הזמנה",
   "cancelBookingNoPenalty": "בטל/י הזמנה (ללא קנס)",

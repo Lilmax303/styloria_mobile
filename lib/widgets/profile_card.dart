@@ -1,6 +1,7 @@
 // lib/widgets/profile_card.dart
 
 import 'package:flutter/material.dart';
+import 'package:styloria_mobile/gen_l10n/app_localizations.dart';
 
 class ProfileCard extends StatelessWidget {
   final String? profilePictureUrl;
@@ -74,6 +75,7 @@ class ProfileCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final cs = Theme.of(context).colorScheme;
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final l10n = AppLocalizations.of(context);
     
     return Card(
       elevation: 2,
@@ -221,7 +223,7 @@ class ProfileCard extends StatelessWidget {
                     ),
                     const SizedBox(height: 4),
                     Text(
-                      'Profile completion',
+                      l10n.profileCompletion,
                       style: TextStyle(
                         fontSize: 10,
                         color: cs.onSurfaceVariant.withOpacity(0.7),
@@ -235,9 +237,9 @@ class ProfileCard extends StatelessWidget {
                     OutlinedButton.icon(
                       onPressed: onViewProfile,
                       icon: const Icon(Icons.visibility, size: 14),
-                      label: const Text(
-                        'View Profile',
-                        style: TextStyle(fontSize: 12),
+                      label: Text(
+                        l10n.viewProfile,
+                        style: const TextStyle(fontSize: 12),
                       ),
                       style: OutlinedButton.styleFrom(
                         padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),

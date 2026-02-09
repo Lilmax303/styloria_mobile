@@ -127,6 +127,9 @@ class AppLocalizationsHa extends AppLocalizations {
   }
 
   @override
+  String get close => 'Close';
+
+  @override
   String get forgotPassword => 'Forgot Password?';
 
   @override
@@ -268,6 +271,35 @@ class AppLocalizationsHa extends AppLocalizations {
 
   @override
   String get locationUpdatedFromAddress => 'An sabunta wuri daga adireshi';
+
+  @override
+  String get myCustomerRating => 'Ƙimar Abokin Ciniki Na';
+
+  @override
+  String get outOf5 => '/ 5.0';
+
+  @override
+  String reviewsFromProviders(int count) {
+    return 'Bita $count daga masu ba da sabis';
+  }
+
+  @override
+  String get failedToLoadReputation => 'An kasa loda bayanan suna';
+
+  @override
+  String get somethingWentWrong => 'Wani abu ya samu kuskure';
+
+  @override
+  String get retry => 'Sake gwadawa';
+
+  @override
+  String weDetectedYoureIn(String country) {
+    return '📍 Mun gano kana cikin $country. Da fatan za a zaɓi ƙasarka a ƙasa.';
+  }
+
+  @override
+  String get locationMarkedAsOther =>
+      'An yiwa wuri alama a matsayin \"Wani\" - za ka iya ci gaba da rajista';
 
   @override
   String get createAccountTitle => 'Ƙirƙiri asusu';
@@ -1011,9 +1043,6 @@ class AppLocalizationsHa extends AppLocalizations {
   String get noData => 'Babu data.';
 
   @override
-  String get retry => 'Sake gwadawa';
-
-  @override
   String get summaryTitle => 'Taƙaitawa';
 
   @override
@@ -1208,6 +1237,277 @@ class AppLocalizationsHa extends AppLocalizations {
 
   @override
   String get markRead => 'Sanya an karanta';
+
+  @override
+  String get customerReviewSubmitted => 'An aika sharhin abokin ciniki!';
+
+  @override
+  String get loadingCustomerDetails => 'Ana loda bayanan abokin ciniki...';
+
+  @override
+  String get customerDetails => 'Bayanan Abokin Ciniki';
+
+  @override
+  String get navigateButton => 'Tafiya';
+
+  @override
+  String get callButton => 'Kira';
+
+  @override
+  String get whatOthersSay => 'Abin da wasu ke cewa';
+
+  @override
+  String get showLess => 'Nuna kadan';
+
+  @override
+  String showMoreCount(int count) {
+    return 'Nuna kari ($count kari)';
+  }
+
+  @override
+  String get todayLabel => 'Yau';
+
+  @override
+  String get yesterdayLabel => 'Jiya';
+
+  @override
+  String daysAgoShort(int days) {
+    return 'kwanaki $days da suka wuce';
+  }
+
+  @override
+  String weeksAgoShort(int weeks) {
+    return 'makonni $weeks da suka wuce';
+  }
+
+  @override
+  String providerHasArrived(String name) {
+    return '$name ya iso!';
+  }
+
+  @override
+  String get meetProviderToBeginService =>
+      'Da fatan za a sadu da mai ba da sabis don fara aiki';
+
+  @override
+  String get locationNotAvailable => 'Wurin ba ya nan';
+
+  @override
+  String get couldNotOpenMaps => 'Ba a iya buɗe taswirar ba';
+
+  @override
+  String get cannotMakePhoneCalls => 'Ba za a iya yin kira a wannan na\'ura ba';
+
+  @override
+  String get confirmCompletionWarning =>
+      'Tabbatar ne kawai idan an gama aikin gaba daya. Wataƙila ba za ku iya canza wannan ba.';
+
+  @override
+  String get paymentVerificationTitle => 'Tabbatar Biyan Kuɗi';
+
+  @override
+  String get paymentVerificationMessage =>
+      'Bayan kammala biyan kuɗi a browser, danna \"Tabbatar Biyan Kuɗi\" don tabbatarwa.';
+
+  @override
+  String get verifyPaymentButton => 'Tabbatar Biyan Kuɗi';
+
+  @override
+  String get verifyingPayment => 'Ana tabbatar da biyan kuɗi...';
+
+  @override
+  String get couldNotOpenPaymentPage =>
+      'Ba a iya buɗe shafin biyan kuɗi ba. Da fatan za a sake gwadawa.';
+
+  @override
+  String get paymentStillProcessing =>
+      'Har yanzu ana aiwatar da biyan kuɗi. Da fatan za a duba nan gaba.';
+
+  @override
+  String get statusPending => 'Ana jira';
+
+  @override
+  String get customerProfile => 'Bayanin Abokin Ciniki';
+
+  @override
+  String get newCustomer => 'Sabon abokin ciniki';
+
+  @override
+  String get newCustomerNoReviews =>
+      'Wannan sabon abokin ciniki ne ba tare da sharhi ba tukuna.';
+
+  @override
+  String get whatOtherProvidersSay => 'Abin da masu ba da sabis ke cewa';
+
+  @override
+  String get justNow => 'Yanzu';
+
+  @override
+  String monthsAgoShort(int months) {
+    return 'watanni $months da suka wuce';
+  }
+
+  @override
+  String daysAgoShortCompact(int days) {
+    return 'kwanaki $days da suka wuce';
+  }
+
+  @override
+  String hoursAgoShort(int hours) {
+    return 'awanni $hours da suka wuce';
+  }
+
+  @override
+  String get generalArea => 'Yankin Gaba Daya';
+
+  @override
+  String get serviceCompleted => 'An gama aiki';
+
+  @override
+  String get completedServiceArea => 'Yankin aikin da aka kammala';
+
+  @override
+  String get serviceArea => 'Yankin sabis';
+
+  @override
+  String get locationHiddenAfterCancellation =>
+      'Don amincin ku, an ɓoye cikakkun bayanan wurin bayan soke. Ana nuna yankin gaba ɗaya kawai.';
+
+  @override
+  String get locationHiddenAfterCompletion =>
+      'Don amincin ku, an ɓoye cikakkun bayanan wurin bayan kammala aiki. Ana nuna yankin gaba ɗaya kawai.';
+
+  @override
+  String get mapMarkerMe => 'Ni';
+
+  @override
+  String get mapMarkerOther => 'Wani';
+
+  @override
+  String get requestPlaced => 'An Sanya Buƙata';
+
+  @override
+  String get whenBookingSubmitted => 'Lokacin da aka aika wannan ajiyar wuri';
+
+  @override
+  String yourLocalTimeTimezone(String timezone) {
+    return 'Lokacin ku na gida ($timezone)';
+  }
+
+  @override
+  String get bookingTimeline => 'Tarihin Ajiyar Wuri';
+
+  @override
+  String get timelineRequestCreated => 'An Ƙirƙiri Buƙata';
+
+  @override
+  String get timelineAccepted => 'An Karɓa';
+
+  @override
+  String get timelineInProgress => 'Ana Ci Gaba';
+
+  @override
+  String get timelineCompleted => 'An Kammala';
+
+  @override
+  String get timelineCancelled => 'An Soke';
+
+  @override
+  String get timelinePending => 'Ana jira...';
+
+  @override
+  String get viewLess => 'Duba Kadan';
+
+  @override
+  String viewMoreCount(int count) {
+    return 'Duba Kari ($count kari)';
+  }
+
+  @override
+  String get paymentRequiredImmediately => 'Ana Buƙatar Biyan Kuɗi Nan Take!';
+
+  @override
+  String get paymentReminder => 'Tunatarwa kan Biyan Kuɗi';
+
+  @override
+  String hoursRemaining(String hours) {
+    return '⏱ $hours awanni sun rage';
+  }
+
+  @override
+  String get serviceAppointment => 'Alƙawarin Sabis';
+
+  @override
+  String get todayBadge => 'YAU';
+
+  @override
+  String get locationField => 'Wuri';
+
+  @override
+  String get serviceAreaField => 'Yankin Sabis';
+
+  @override
+  String get requestedField => 'An Nema';
+
+  @override
+  String allTimesInLocalTimezone(String timezone) {
+    return 'Duk lokutan ana nuna su a yankin lokacinku ($timezone)';
+  }
+
+  @override
+  String get completionConfirmed => 'An tabbatar da kammalawa';
+
+  @override
+  String get rateCustomer => 'Yi Wa Abokin Ciniki Maki';
+
+  @override
+  String get customerReviewed => 'An yi wa abokin ciniki sharhi';
+
+  @override
+  String get failedToSubmitReviewTryAgain =>
+      'Ba a iya aika sharhi ba. Da fatan za a sake gwadawa.';
+
+  @override
+  String get shareYourExperience => 'Raba gogewar ku...';
+
+  @override
+  String rateRequesterTitle(String name) {
+    return 'Yi wa $name maki';
+  }
+
+  @override
+  String get howWasExperienceWithCustomer =>
+      'Yaya gogewar ku da wannan abokin ciniki?';
+
+  @override
+  String get commentOptional => 'Sharhi (na zaɓi)';
+
+  @override
+  String get cancelButton => 'Soke';
+
+  @override
+  String get submitButton => 'Aika';
+
+  @override
+  String get ratingPoor => 'Mara kyau';
+
+  @override
+  String get ratingFair => 'Matsakaici';
+
+  @override
+  String get ratingGood => 'Mai kyau';
+
+  @override
+  String get ratingVeryGood => 'Mai kyau sosai';
+
+  @override
+  String get ratingExcellent => 'Nagari';
+
+  @override
+  String get profileCompletion => 'Cika bayanin martaba';
+
+  @override
+  String get viewProfile => 'Duba Bayani';
 
   @override
   String get providerKycTitle => 'Tabbatar da Mai Ba da Sabis (KYC)';
@@ -1979,8 +2279,8 @@ class AppLocalizationsHa extends AppLocalizations {
   String get detectingYourLocation => 'Detecting your location...';
 
   @override
-  String locationDetectedAs(Object country) {
-    return 'Location detected: $country';
+  String locationConfirmed(String country) {
+    return '✓ An tabbatar da wuri: $country';
   }
 
   @override
