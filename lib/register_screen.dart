@@ -49,6 +49,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
   bool _showPassword = false;
   bool _showConfirmPassword = false;
 
+  // Referral code
+  final _referralCodeController = TextEditingController();
+  bool _validatingReferral = false;
+  bool? _referralCodeValid;
+  String? _referrerName;
+
   // GPS Detection state
   bool _detectingLocation = false;
   String? _detectedCountry;
@@ -84,6 +90,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
     _passwordConfirmController.dispose();
     _firstNameController.dispose();
     _lastNameController.dispose();
+    _referralCodeController.dispose();
     super.dispose();
   }
 
@@ -274,6 +281,29 @@ class _RegisterScreenState extends State<RegisterScreen> {
   }
 
 
+  Future<void> _validateReferralCode() async {
+    final code = _referralCodeController.text.trim();
+    if (code.isEmpty) {
+      setState(() {
+        _referralCodeValid = null;
+        _referrerName = null;
+      });
+      return;
+    }
+
+    setState(() => _validatingReferral = true);
+
+    final result = await ApiClient.validateReferralCode(code);
+
+    if (!mounted) return;
+
+    setState(() {
+      _validatingReferral = false;
+      _referralCodeValid = result['valid'] == true;
+      _referrerName = result['referrer_first_name'];
+    });
+  }
+
   Future<void> _openUrl(String url) async {
     final uri = Uri.parse(url);
     if (await canLaunchUrl(uri)) {
@@ -348,6 +378,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
           '${dateOfBirth.year}-${dateOfBirth.month.toString().padLeft(2, '0')}-${dateOfBirth.day.toString().padLeft(2, '0')}',
       detectedCountry: _detectedCountry,
       countryMismatch: _userChangedCountry,
+      referralCode: _referralCodeController.text.trim(),
     );
 
     if (!mounted) return;
@@ -801,6 +832,97 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               return null;
                             },
                           ),
+
+                          // ═══════════════════════════════════════════════════════
+                          // REFERRAL CODE INPUT
+                          // ═══════════════════════════════════════════════════════
+                          const SizedBox(height: 20),
+                          Text(
+                            'Referral Code (Optional)',
+                            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                          ),
+                          const SizedBox(height: 8),
+                          TextFormField(
+                            controller: _referralCodeController,
+                            decoration: InputDecoration(
+                              labelText: 'Enter referral code',
+                              hintText: 'e.g., JOHN1X2K',
+                              border: const OutlineInputBorder(),
+                              prefixIcon: const Icon(Icons.card_giftcard),
+                              suffixIcon: _validatingReferral
+                                  ? const Padding(
+                                      padding: EdgeInsets.all(12),
+                                      child: SizedBox(
+                                        width: 20,
+                                        height: 20,
+                                        child: CircularProgressIndicator(strokeWidth: 2),
+                                      ),
+                                    )
+                                  : _referralCodeValid == true
+                                      ? const Icon(Icons.check_circle, color: Colors.green)
+                                      : _referralCodeValid == false
+                                          ? const Icon(Icons.error, color: Colors.red)
+                                          : null,
+                            ),
+                            textCapitalization: TextCapitalization.characters,
+                            onChanged: (value) {
+                              if (value.length >= 4) {
+                                _validateReferralCode();
+                              } else {
+                                setState(() {
+                                  _referralCodeValid = null;
+                                  _referrerName = null;
+                                });
+                              }
+                            },
+                          ),
+                          
+                          // Referral validation feedback
+                          if (_referralCodeValid == true && _referrerName != null)
+                            Container(
+                              margin: const EdgeInsets.only(top: 8),
+                              padding: const EdgeInsets.all(12),
+                              decoration: BoxDecoration(
+                                color: Colors.green.shade50,
+                                borderRadius: BorderRadius.circular(8),
+                                border: Border.all(color: Colors.green.shade200),
+                              ),
+                              child: Row(
+                                children: [
+                                  Icon(Icons.celebration, color: Colors.green.shade700, size: 20),
+                                  const SizedBox(width: 8),
+                                  Expanded(
+                                    child: Text(
+                                      'Referred by $_referrerName! You\'ll both get rewards when you complete your first booking.',
+                                      style: TextStyle(color: Colors.green.shade700, fontSize: 13),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          
+                          if (_referralCodeValid == false)
+                            Container(
+                              margin: const EdgeInsets.only(top: 8),
+                              padding: const EdgeInsets.all(12),
+                              decoration: BoxDecoration(
+                                color: Colors.red.shade50,
+                                borderRadius: BorderRadius.circular(8),
+                                border: Border.all(color: Colors.red.shade200),
+                              ),
+                              child: Row(
+                                children: [
+                                  Icon(Icons.info_outline, color: Colors.red.shade700, size: 20),
+                                  const SizedBox(width: 8),
+                                  Expanded(
+                                    child: Text(
+                                      'Invalid referral code. You can still continue without one.',
+                                      style: TextStyle(color: Colors.red.shade700, fontSize: 13),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
 
                           const SizedBox(height: 12),
                           Text(

@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:share_plus/share_plus.dart';
 import 'package:styloria_mobile/gen_l10n/app_localizations.dart';
 
 import 'api_client.dart';
@@ -14,36 +15,76 @@ class ReferralScreen extends StatefulWidget {
 }
 
 class _ReferralScreenState extends State<ReferralScreen> {
-  String _username = '';
+  Map<String, dynamic>? _stats;
   bool _loading = true;
+  String? _error;
 
   @override
   void initState() {
     super.initState();
-    _loadUser();
+    _loadStats();
   }
 
-  Future<void> _loadUser() async {
-    final data = await ApiClient.getCurrentUser();
-    if (!mounted) return;
+  Future<void> _loadStats() async {
     setState(() {
-      _username = data?['username']?.toString() ?? '';
+      _loading = true;
+      _error = null;
+    });
+
+    final stats = await ApiClient.getReferralStats();
+    
+    if (!mounted) return;
+    
+    setState(() {
+      _stats = stats;
       _loading = false;
+      if (stats == null) {
+        _error = 'Failed to load referral stats';
+      }
     });
   }
 
   Future<void> _copyCode() async {
-    final code = 'STYLORIA-$_username';
+    final code = _stats?['referral_code']?.toString() ?? '';
+    if (code.isEmpty) return;
+    
     await Clipboard.setData(ClipboardData(text: code));
     if (!mounted) return;
+    
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text(AppLocalizations.of(context).referralCodeCopiedWithCode(code))),
+      SnackBar(
+        content: Text('Referral code "$code" copied!'),
+        backgroundColor: Colors.green,
+      ),
     );
+  }
+
+  Future<void> _shareCode() async {
+    final code = _stats?['referral_code']?.toString() ?? '';
+    if (code.isEmpty) return;
+    
+    final discountPercent = _stats?['discount_percent'] ?? 7;
+    final creditsPerReferral = _stats?['credits_per_referral'] ?? 5;
+    
+    final shareText = '''
+🎉 Join me on Styloria!
+
+Use my referral code: $code
+
+When you complete your first booking, I'll get $creditsPerReferral bookings with $discountPercent% off!
+
+Download Styloria and get amazing services delivered to your door.
+''';
+    
+    await Share.share(shareText, subject: 'Join Styloria with my referral code!');
   }
 
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
+    final cs = Theme.of(context).colorScheme;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+
     if (_loading) {
       return Scaffold(
         appBar: AppBar(title: Text(l10n.referFriendsTitle)),
@@ -51,47 +92,461 @@ class _ReferralScreenState extends State<ReferralScreen> {
       );
     }
 
-    final code = 'STYLORIA-$_username';
+    if (_error != null || _stats == null) {
+      return Scaffold(
+        appBar: AppBar(title: Text(l10n.referFriendsTitle)),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(Icons.error_outline, size: 64, color: cs.error),
+              const SizedBox(height: 16),
+              Text(_error ?? 'Something went wrong'),
+              const SizedBox(height: 16),
+              ElevatedButton(
+                onPressed: _loadStats,
+                child: const Text('Retry'),
+              ),
+            ],
+          ),
+        ),
+      );
+    }
+
+    final code = _stats!['referral_code']?.toString() ?? '';
+    final credits = _stats!['referral_credits'] ?? 0;
+    final totalReferrals = _stats!['total_referrals'] ?? 0;
+    final totalEarned = _stats!['total_credits_earned'] ?? 0;
+    final totalUsed = _stats!['total_credits_used'] ?? 0;
+    final discountPercent = _stats!['discount_percent'] ?? 7;
+    final creditsPerReferral = _stats!['credits_per_referral'] ?? 5;
+    final pendingReferrals = _stats!['pending_referrals'] ?? 0;
+    final referrals = (_stats!['referrals'] as List?) ?? [];
 
     return Scaffold(
-      appBar: AppBar(title: Text(l10n.referFriendsTitle)),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              l10n.shareReferralCodeBody,
-              style: Theme.of(context).textTheme.bodyMedium,
-            ),
-            const SizedBox(height: 16),
-            Row(
-              children: [
-                Expanded(
-                  child: Text(
-                    l10n.yourReferralCodeLabel,
-                    style: Theme.of(context).textTheme.titleMedium,
-                  ),
+      appBar: AppBar(
+        title: Text(l10n.referFriendsTitle),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.refresh),
+            onPressed: _loadStats,
+            tooltip: 'Refresh',
+          ),
+        ],
+      ),
+      body: RefreshIndicator(
+        onRefresh: _loadStats,
+        child: SingleChildScrollView(
+          physics: const AlwaysScrollableScrollPhysics(),
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              // Hero Card - Referral Code
+              Card(
+                elevation: 4,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(16),
                 ),
-              ],
-            ),
-            const SizedBox(height: 8),
-            Row(
-              children: [
-                Expanded(
-                  child: SelectableText(
-                    code,
-                    style: const TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
+                child: Container(
+                  padding: const EdgeInsets.all(24),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(16),
+                    gradient: LinearGradient(
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                      colors: [
+                        cs.primaryContainer,
+                        cs.secondaryContainer,
+                      ],
                     ),
                   ),
+                  child: Column(
+                    children: [
+                      Icon(
+                        Icons.card_giftcard,
+                        size: 48,
+                        color: cs.primary,
+                      ),
+                      const SizedBox(height: 12),
+                      Text(
+                        'Your Referral Code',
+                        style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                          color: cs.onPrimaryContainer,
+                        ),
+                      ),
+                      const SizedBox(height: 8),
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                        decoration: BoxDecoration(
+                          color: isDark ? Colors.black26 : Colors.white,
+                          borderRadius: BorderRadius.circular(12),
+                          border: Border.all(color: cs.primary, width: 2),
+                        ),
+                        child: Text(
+                          code,
+                          style: Theme.of(context).textTheme.headlineMedium?.copyWith(
+                            fontWeight: FontWeight.w900,
+                            letterSpacing: 2,
+                            color: cs.primary,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 16),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          ElevatedButton.icon(
+                            onPressed: _copyCode,
+                            icon: const Icon(Icons.copy, size: 18),
+                            label: const Text('Copy'),
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.white,
+                              foregroundColor: Colors.black87,
+                              elevation: 2,
+                              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                            ),
+                          ),
+                          const SizedBox(width: 12),
+                          ElevatedButton.icon(
+                            onPressed: _shareCode,
+                            icon: const Icon(Icons.share, size: 18),
+                            label: const Text('Share'),
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.black87,
+                              foregroundColor: Colors.white,
+                              elevation: 2,
+                              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
-                TextButton(
-                  onPressed: _copyCode,
-                  child: Text(l10n.copy),
+              ),
+
+              const SizedBox(height: 16),
+
+              // How it Works Card
+              Card(
+                child: Padding(
+                  padding: const EdgeInsets.all(16),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          Icon(Icons.info_outline, color: cs.primary),
+                          const SizedBox(width: 8),
+                          Text(
+                            'How It Works',
+                            style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
+                      const Divider(),
+                      _buildStep(context, '1', 'Share your code with friends'),
+                      _buildStep(context, '2', 'They sign up using your code'),
+                      _buildStep(context, '3', 'When they complete their first booking...'),
+                      _buildStep(context, '🎉', 'You get $creditsPerReferral bookings with $discountPercent% off!', isHighlight: true),
+                    ],
+                  ),
+                ),
+              ),
+
+              const SizedBox(height: 16),
+
+              // Stats Grid
+              Row(
+                children: [
+                  Expanded(
+                    child: _buildStatCard(
+                      context,
+                      '$credits',
+                      'Credits Available',
+                      Icons.confirmation_number,
+                      Colors.green,
+                    ),
+                  ),
+                  const SizedBox(width: 12),
+                  Expanded(
+                    child: _buildStatCard(
+                      context,
+                      '$totalReferrals',
+                      'Successful Referrals',
+                      Icons.people,
+                      Colors.blue,
+                    ),
+                  ),
+                ],
+              ),
+
+              const SizedBox(height: 12),
+
+              Row(
+                children: [
+                  Expanded(
+                    child: _buildStatCard(
+                      context,
+                      '$totalEarned',
+                      'Total Earned',
+                      Icons.emoji_events,
+                      Colors.amber,
+                    ),
+                  ),
+                  const SizedBox(width: 12),
+                  Expanded(
+                    child: _buildStatCard(
+                      context,
+                      '$totalUsed',
+                      'Credits Used',
+                      Icons.check_circle,
+                      Colors.purple,
+                    ),
+                  ),
+                ],
+              ),
+
+              if (pendingReferrals > 0) ...[
+                const SizedBox(height: 12),
+                Container(
+                  padding: const EdgeInsets.all(12),
+                  decoration: BoxDecoration(
+                    color: Colors.orange.shade50,
+                    borderRadius: BorderRadius.circular(12),
+                    border: Border.all(color: Colors.orange.shade200),
+                  ),
+                  child: Row(
+                    children: [
+                      Icon(Icons.hourglass_empty, color: Colors.orange.shade700),
+                      const SizedBox(width: 12),
+                      Expanded(
+                        child: Text(
+                          '$pendingReferrals friend${pendingReferrals > 1 ? 's' : ''} signed up but haven\'t completed a booking yet.',
+                          style: TextStyle(color: Colors.orange.shade700),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ],
+
+              // Referral History
+              if (referrals.isNotEmpty) ...[
+                const SizedBox(height: 24),
+                Text(
+                  'Referral History',
+                  style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(height: 12),
+                Card(
+                  child: ListView.separated(
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
+                    itemCount: referrals.length,
+                    separatorBuilder: (_, __) => const Divider(height: 1),
+                    itemBuilder: (context, index) {
+                      final ref = referrals[index] as Map<String, dynamic>;
+                      final name = ref['referred_first_name']?.toString() ?? 
+                                   ref['referred_username']?.toString() ?? 'User';
+                      final status = ref['status']?.toString() ?? 'pending';
+                      final createdAt = ref['created_at']?.toString() ?? '';
+                      final qualifiedAt = ref['qualified_at']?.toString();
+                      
+                      IconData statusIcon;
+                      Color statusColor;
+                      String statusText;
+                      
+                      switch (status) {
+                        case 'qualified':
+                          statusIcon = Icons.check_circle;
+                          statusColor = Colors.green;
+                          statusText = 'Completed';
+                          break;
+                        case 'expired':
+                          statusIcon = Icons.cancel;
+                          statusColor = Colors.grey;
+                          statusText = 'Expired';
+                          break;
+                        default:
+                          statusIcon = Icons.hourglass_empty;
+                          statusColor = Colors.orange;
+                          statusText = 'Pending';
+                      }
+                      
+                      // Format date
+                      String dateText = '';
+                      try {
+                        final dt = DateTime.parse(createdAt);
+                        dateText = '${dt.day}/${dt.month}/${dt.year}';
+                      } catch (_) {}
+                      
+                      return ListTile(
+                        leading: CircleAvatar(
+                          backgroundColor: statusColor.withOpacity(0.1),
+                          child: Text(
+                            name.isNotEmpty ? name[0].toUpperCase() : '?',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: statusColor,
+                            ),
+                          ),
+                        ),
+                        title: Text(
+                          name,
+                          style: const TextStyle(fontWeight: FontWeight.w600),
+                        ),
+                        subtitle: Text(
+                          dateText.isNotEmpty ? 'Joined $dateText' : 'Joined recently',
+                          style: TextStyle(fontSize: 12, color: cs.onSurfaceVariant),
+                        ),
+                        trailing: Container(
+                          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                          decoration: BoxDecoration(
+                            color: statusColor.withOpacity(0.1),
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Icon(statusIcon, size: 14, color: statusColor),
+                              const SizedBox(width: 4),
+                              Text(
+                                statusText,
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w600,
+                                  color: statusColor,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                ),
+              ],
+
+              // Empty state for no referrals
+              if (referrals.isEmpty) ...[
+                const SizedBox(height: 32),
+                Center(
+                  child: Column(
+                    children: [
+                      Icon(
+                        Icons.people_outline,
+                        size: 64,
+                        color: cs.onSurfaceVariant.withOpacity(0.5),
+                      ),
+                      const SizedBox(height: 16),
+                      Text(
+                        'No referrals yet',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600,
+                          color: cs.onSurfaceVariant,
+                        ),
+                      ),
+                      const SizedBox(height: 8),
+                      Text(
+                        'Share your code with friends to earn discounts!',
+                        style: TextStyle(
+                          color: cs.onSurfaceVariant.withOpacity(0.7),
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+
+              const SizedBox(height: 32),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildStep(BuildContext context, String number, String text, {bool isHighlight = false}) {
+    final cs = Theme.of(context).colorScheme;
+    
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 8),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            width: 28,
+            height: 28,
+            decoration: BoxDecoration(
+              color: isHighlight ? Colors.green : cs.primaryContainer,
+              shape: BoxShape.circle,
+            ),
+            child: Center(
+              child: Text(
+                number,
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: isHighlight ? Colors.white : cs.onPrimaryContainer,
+                  fontSize: number.length > 1 ? 12 : 14,
+                ),
+              ),
+            ),
+          ),
+          const SizedBox(width: 12),
+          Expanded(
+            child: Text(
+              text,
+              style: TextStyle(
+                fontWeight: isHighlight ? FontWeight.bold : FontWeight.normal,
+                color: isHighlight ? Colors.green.shade700 : null,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildStatCard(
+    BuildContext context,
+    String value,
+    String label,
+    IconData icon,
+    Color color,
+  ) {
+    final cs = Theme.of(context).colorScheme;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    
+    return Card(
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          children: [
+            Icon(icon, color: color, size: 28),
+            const SizedBox(height: 8),
+            Text(
+              value,
+              style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                fontWeight: FontWeight.w900,
+                color: color,
+              ),
+            ),
+            const SizedBox(height: 4),
+            Text(
+              label,
+              style: TextStyle(
+                fontSize: 12,
+                color: cs.onSurfaceVariant,
+              ),
+              textAlign: TextAlign.center,
             ),
           ],
         ),

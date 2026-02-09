@@ -465,6 +465,7 @@ class ApiClient {
     required String dateOfBirth,
     String? detectedCountry,
     bool? countryMismatch,
+    String? referralCode,
   }) async {
     final url = Uri.parse('$baseUrl/api/users/');
 
@@ -486,6 +487,8 @@ class ApiClient {
           'detected_country': detectedCountry,
         if (countryMismatch != null) 
           'country_mismatch': countryMismatch,
+        if (referralCode != null && referralCode.isNotEmpty)
+          'referred_by_code': referralCode,
       };
 
       final response = await http.post(
@@ -1073,6 +1076,9 @@ class ApiClient {
   ///   "ok": true,
   ///   "client_secret": "...",
   ///   "status_code": 200
+  ///   "referral_discount_applied": true,
+  ///   "referral_discount_amount": 3.50,
+  ///   "original_price": 50.0
   /// }
   /// OR
   /// {
@@ -1084,9 +1090,15 @@ class ApiClient {
   static Future<Map<String, dynamic>> createPaymentIntentDetailed(
     int serviceRequestId, {
     double? offeredPrice,
+    String? selectedTier,
+    bool useReferralCredit = true,
   }) async {
-    final body = <String, dynamic>{'service_request_id': serviceRequestId};
+    final body = <String, dynamic>{
+      'service_request_id': serviceRequestId,
+      'use_referral_credit': useReferralCredit,
+    };
     if (offeredPrice != null) body['offered_price'] = offeredPrice;
+    if (selectedTier != null) body['selected_tier'] = selectedTier;
 
     final response = await _authorizedRequest(
       'POST',
@@ -1109,6 +1121,10 @@ class ApiClient {
         "client_secret": decoded["client_secret"]?.toString(),
         "payment_intent_id": decoded["payment_intent_id"]?.toString(),
         "currency": decoded["currency"]?.toString(),
+        // Referral info from response
+        "referral_discount_applied": decoded["referral_discount_applied"] ?? false,
+        "referral_discount_amount": decoded["referral_discount_amount"],
+        "original_price": decoded["original_price"],
       };
     }
 
@@ -1135,10 +1151,15 @@ class ApiClient {
   ///   "customer_email": "x@y.com",
   ///   "customer_phone": "+233....",
   ///   "customer_name": "First Last"
+  ///   "referral_discount_applied": true,
+  ///   "referral_discount_amount": 3.50,
+  ///   "original_price": 50.0
   /// }
   static Future<Map<String, dynamic>?> createFlutterwaveCheckout({
     required int serviceRequestId,
     required double amount,
+    String? selectedTier,
+    bool useReferralCredit = true,
   }) async {
     final response = await _authorizedRequest(
       'POST',
@@ -1147,6 +1168,8 @@ class ApiClient {
       body: jsonEncode({
         'service_request_id': serviceRequestId,
         'amount': amount,
+        if (selectedTier != null) 'selected_tier': selectedTier,
+        'use_referral_credit': useReferralCredit,
       }),
     );
     if (response.statusCode == 200) {
@@ -1302,6 +1325,8 @@ class ApiClient {
   static Future<Map<String, dynamic>?> createPaystackCheckout({
     required int serviceRequestId,
     required double amount,
+    String? selectedTier,
+    bool useReferralCredit = true,
   }) async {
     final response = await _authorizedRequest(
       'POST',
@@ -1310,6 +1335,8 @@ class ApiClient {
       body: jsonEncode({
         'service_request_id': serviceRequestId,
         'amount': amount,
+        if (selectedTier != null) 'selected_tier': selectedTier,
+        'use_referral_credit': useReferralCredit,
       }),
     );
     if (response.statusCode == 200) {
@@ -1473,6 +1500,57 @@ class ApiClient {
       "detail": decoded["detail"]?.toString() ?? "tip_verification_failed",
       "raw": decoded,
     };
+  }
+
+
+  // ---------- REFERRAL SYSTEM ----------
+
+  /// Get current user's referral stats and code
+  static Future<Map<String, dynamic>?> getReferralStats() async {
+    final response = await _authorizedRequest('GET', '/api/referral/stats/');
+    if (response.statusCode == 200) {
+      return jsonDecode(response.body) as Map<String, dynamic>;
+    }
+    return null;
+  }
+
+  /// Validate a referral code before registration
+  static Future<Map<String, dynamic>> validateReferralCode(String code) async {
+    final response = await http.post(
+      Uri.parse('$baseUrl/api/referral/validate/'),
+      headers: {'Content-Type': 'application/json'},
+      body: jsonEncode({'code': code}),
+    );
+    
+    if (response.statusCode == 200) {
+      final data = jsonDecode(response.body);
+      return {
+        'valid': data['valid'] == true,
+        'referrer_first_name': data['referrer_first_name'],
+      };
+    }
+    return {'valid': false};
+  }
+
+  /// Get referral discount preview for a booking
+  static Future<Map<String, dynamic>?> getReferralDiscountPreview(int serviceRequestId) async {
+    final response = await _authorizedRequest(
+      'GET', 
+      '/api/referral/discount_preview/$serviceRequestId/'
+    );
+    if (response.statusCode == 200) {
+      return jsonDecode(response.body) as Map<String, dynamic>;
+    }
+    return null;
+  }
+
+
+  /// Check if referral discount was already applied to a booking
+  /// Used to prevent showing "use credit" option on payment retry
+  static Future<bool> isReferralDiscountApplied(int serviceRequestId) async {
+    final booking = await getServiceRequest(serviceRequestId);
+    if (booking == null) return false;
+    return booking['referral_discount_applied'] == true;
   }
 
 

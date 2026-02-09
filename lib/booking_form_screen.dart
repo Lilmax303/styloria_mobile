@@ -92,6 +92,11 @@ class _BookingFormScreenState extends State<BookingFormScreen> {
   String? _userCurrencySymbol;
   String? _userCurrency;
 
+  bool _hasReferralDiscount = false;
+  double _discountAmount = 0.0;
+  double? _finalPrice;
+  int _creditsRemaining = 0;
+
   @override
   void initState() {
     super.initState();
@@ -585,6 +590,27 @@ class _BookingFormScreenState extends State<BookingFormScreen> {
     }
   }
 
+  /// Recalculate referral discount based on currently selected price
+  void _recalculateReferralDiscount() {
+    if (_selectedOffer == null || _creditsRemaining <= 0) {
+      setState(() {
+        _hasReferralDiscount = false;
+        _discountAmount = 0.0;
+        _finalPrice = _selectedOffer;
+      });
+      return;
+    }
+    
+    final discount = _selectedOffer! * 0.07; // 7% discount
+    final discountedPrice = _selectedOffer! - discount;
+    
+    setState(() {
+      _hasReferralDiscount = true;
+      _discountAmount = discount;
+      _finalPrice = discountedPrice;
+    });
+  }
+
   Future<void> _createBooking() async {
     if (_selectedDate == null || _selectedTime == null) {
       setState(() {
@@ -721,6 +747,17 @@ class _BookingFormScreenState extends State<BookingFormScreen> {
         _selectedPriceTier = 'standard';
         _selectedOffer = _standardPrice;
       });
+
+     // Check if user has referral credits
+     final userData = await ApiClient.getCurrentUser();
+     if (!mounted) return;
+     
+     final credits = userData?['referral_credits'] ?? 0;
+     _creditsRemaining = credits;
+     
+     // Recalculate discount for the selected tier
+     _recalculateReferralDiscount();
+
     } else {
       // fallback
       const estimatedPrice = 50.0;
@@ -798,6 +835,8 @@ class _BookingFormScreenState extends State<BookingFormScreen> {
         final checkout = await ApiClient.createPaystackCheckout(
           serviceRequestId: _createdRequestId!,
           amount: amount,
+          selectedTier: _selectedPriceTier,  // Add this parameter
+          useReferralCredit: _creditsRemaining > 0,  // Add this parameter
         );
         
         if (!mounted) return;
@@ -887,6 +926,8 @@ class _BookingFormScreenState extends State<BookingFormScreen> {
         final checkout = await ApiClient.createFlutterwaveCheckout(
           serviceRequestId: _createdRequestId!,
           amount: amount,
+          selectedTier: _selectedPriceTier,
+          useReferralCredit: _creditsRemaining > 0,
         );
         if (!mounted) return;
 
@@ -1005,6 +1046,8 @@ class _BookingFormScreenState extends State<BookingFormScreen> {
       final pi = await ApiClient.createPaymentIntentDetailed(
         _createdRequestId!,
         offeredPrice: _selectedOffer,
+        selectedTier: _selectedPriceTier,  // Add this parameter
+        useReferralCredit: _creditsRemaining > 0,  // Add this parameter
       );
 
       if (!mounted) return;
@@ -1175,6 +1218,8 @@ class _BookingFormScreenState extends State<BookingFormScreen> {
             _selectedPriceTier = tier;
             _selectedOffer = price;
           });
+          // Recalculate discount for new tier
+          _recalculateReferralDiscount();
         },
         borderRadius: BorderRadius.circular(16),
         child: Padding(
@@ -1193,6 +1238,8 @@ class _BookingFormScreenState extends State<BookingFormScreen> {
                         _selectedPriceTier = value;
                         _selectedOffer = price;
                       });
+                      // Recalculate discount for new tier
+                      _recalculateReferralDiscount();
                     },
                     activeColor: accentColor,
                   ),
@@ -1694,6 +1741,7 @@ class _BookingFormScreenState extends State<BookingFormScreen> {
                                   ),
                             ),
                             const SizedBox(height: 8),
+                            
                             Text(
                               _money(_selectedOffer),
                               style: Theme.of(context)
@@ -1717,6 +1765,39 @@ class _BookingFormScreenState extends State<BookingFormScreen> {
                           ],
                         ),
                       ),
+
+                    if (_hasReferralDiscount) ...[
+                      const SizedBox(height: 12),
+                      Container(
+                        padding: const EdgeInsets.all(12),
+                        decoration: BoxDecoration(
+                          color: Colors.green.withOpacity(0.1),
+                          borderRadius: BorderRadius.circular(8),
+                          border: Border.all(color: Colors.green),
+                        ),
+                        child: Row(
+                          children: [
+                            const Icon(Icons.card_giftcard, color: Colors.green),
+                            const SizedBox(width: 8),
+                            Expanded(
+                              child: Text(
+                                'Referral Discount Applied: ${_money(_discountAmount)}',
+                                style: const TextStyle(
+                                  color: Colors.green,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(height: 4),
+                      Text(
+                        'You have $_creditsRemaining credits remaining (1 will be used)',
+                        style: TextStyle(fontSize: 12, color: Colors.grey[600]),
+                      ),
+                    ],
+
                     const SizedBox(height: 12),
                     ElevatedButton(
                       onPressed: _paying ? null : _confirmOffer,

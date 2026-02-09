@@ -17,6 +17,7 @@ dependencies:
   google_fonts: ^7.0.2
   country_picker: ^2.0.26
   app_links: ^7.0.0
+  share_plus: ^12.0.1  # ← Add this line
 
   flutter_localizations:
     sdk: flutter
