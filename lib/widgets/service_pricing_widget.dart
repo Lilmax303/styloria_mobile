@@ -64,6 +64,29 @@ class _ServicePricingWidgetState extends State<ServicePricingWidget>
     'other': 'assets/services/other.png',
   };
 
+  // ===== NEW: Constants for grid layout =====
+  static const double _fixedCircleSize = 100.0;  // Fixed size for all screens
+  static const double _circleSpacing = 16.0;     // Space between circles
+  static const double _horizontalPadding = 16.0; // Left/right padding
+  static const int _minColumns = 2;
+  static const int _maxColumns = 5;
+
+  /// Calculate how many columns fit in the available width
+  int _calculateColumnCount(double screenWidth) {
+    final availableWidth = screenWidth - (_horizontalPadding * 2);
+    final itemWidth = _fixedCircleSize + _circleSpacing;
+    final columns = (availableWidth / itemWidth).floor();
+    return columns.clamp(_minColumns, _maxColumns);
+  }
+
+  /// Calculate spacing to distribute items evenly
+  double _calculateSpacing(double screenWidth, int columnCount) {
+    final availableWidth = screenWidth - (_horizontalPadding * 2);
+    final totalItemsWidth = columnCount * _fixedCircleSize;
+    final totalSpacing = availableWidth - totalItemsWidth;
+    return (totalSpacing / (columnCount - 1)).clamp(8.0, 40.0);
+  }
+
   @override
   void initState() {
     super.initState();
@@ -395,10 +418,8 @@ class _ServicePricingWidgetState extends State<ServicePricingWidget>
 
   Widget _buildServiceSelectionStep() {
     final screenWidth = MediaQuery.of(context).size.width;
-    final circleSize = (screenWidth - 80) / 2.5;
-    final clampedSize = circleSize.clamp(80.0, 120.0);
     final isDark = Theme.of(context).brightness == Brightness.dark;
-
+    
     return GestureDetector(
       onTap: _clearSelection,
       behavior: HitTestBehavior.translucent,
@@ -407,11 +428,19 @@ class _ServicePricingWidgetState extends State<ServicePricingWidget>
           AnimatedBuilder(
             animation: _selectionController,
             builder: (context, _) {
-              return Wrap(
-                spacing: 12,
-                runSpacing: 16,
-                alignment: WrapAlignment.center,
-                children: widget.serviceTypes.map((service) {
+              return GridView.builder(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                padding: EdgeInsets.symmetric(horizontal: _horizontalPadding),
+                gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+                  maxCrossAxisExtent: _fixedCircleSize + 20, // Max width per cell
+                  crossAxisSpacing: _circleSpacing,
+                  mainAxisSpacing: 12.0,
+                  childAspectRatio: 0.65, // width/height - enough for circle + label
+                ),
+                itemCount: widget.serviceTypes.length,
+                itemBuilder: (context, index) {
+                  final service = widget.serviceTypes[index];
                   final serviceId = service['id'] as String;
                   final isOffered = service['offered'] as bool;
                   final isSelected = _selectedServiceKey == serviceId;
@@ -420,43 +449,50 @@ class _ServicePricingWidgetState extends State<ServicePricingWidget>
                   return _ServiceSelectionOrb(
                     serviceId: serviceId,
                     serviceName: _getServiceLabel(serviceId),
-                    imagePath:
-                        _serviceImages[serviceId] ?? 'assets/services/other.png',
+                    imagePath: _serviceImages[serviceId] ?? 'assets/services/other.png',
                     isOffered: isOffered,
                     isSelected: isSelected,
                     hasSelection: hasSelection,
-                    size: clampedSize,
+                    size: _fixedCircleSize,
                     scaleValue: _scaleAnimation.value,
                     blurValue: _blurAnimation.value,
                     buttonValue: _buttonAnimation.value.clamp(0.0, 1.0),
                     onTap: () => _onServiceTap(serviceId),
                     onSelectConfirm: () => _onSelectConfirm(serviceId),
-                    isDarkMode: isDark, // ← PASS DARK MODE FLAG
+                    isDarkMode: isDark,
                   );
-                }).toList(),
+                },
               );
             },
           ),
 
           const SizedBox(height: 20),
 
+          // Selected services count indicator
           if (_selectedServicesCount > 0)
             Container(
+              margin: const EdgeInsets.symmetric(horizontal: 16),
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
-                color: Colors.green.shade50,
+                color: isDark ? Colors.green.shade900.withOpacity(0.3) : Colors.green.shade50,
                 borderRadius: BorderRadius.circular(12),
-                border: Border.all(color: Colors.green.shade200),
+                border: Border.all(
+                  color: isDark ? Colors.green.shade700 : Colors.green.shade200,
+                ),
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(Icons.check_circle, color: Colors.green.shade700, size: 20),
+                  Icon(
+                    Icons.check_circle,
+                    color: isDark ? Colors.green.shade300 : Colors.green.shade700,
+                    size: 20,
+                  ),
                   const SizedBox(width: 8),
                   Text(
                     '$_selectedServicesCount service${_selectedServicesCount > 1 ? 's' : ''} selected',
                     style: TextStyle(
-                      color: Colors.green.shade700,
+                      color: isDark ? Colors.green.shade300 : Colors.green.shade700,
                       fontWeight: FontWeight.w600,
                     ),
                   ),
@@ -466,32 +502,36 @@ class _ServicePricingWidgetState extends State<ServicePricingWidget>
 
           const SizedBox(height: 16),
 
+          // Continue button
           if (_selectedServicesCount > 0)
-            SizedBox(
-              width: double.infinity,
-              child: ElevatedButton(
-                onPressed: () => setState(() => _currentStep = 2),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: _goldAccent,
-                  padding: const EdgeInsets.symmetric(vertical: 14),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                ),
-                child: const Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      'Continue to Pricing',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w600,
-                        fontSize: 15,
-                      ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () => setState(() => _currentStep = 2),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: _goldAccent,
+                    padding: const EdgeInsets.symmetric(vertical: 14),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
                     ),
-                    SizedBox(width: 8),
-                    Icon(Icons.arrow_forward, color: Colors.white, size: 18),
-                  ],
+                  ),
+                  child: const Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Continue to Pricing',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w600,
+                          fontSize: 15,
+                        ),
+                      ),
+                      SizedBox(width: 8),
+                      Icon(Icons.arrow_forward, color: Colors.white, size: 18),
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -504,13 +544,13 @@ class _ServicePricingWidgetState extends State<ServicePricingWidget>
     final offeredServices =
         widget.serviceTypes.where((s) => s['offered'] == true).toList();
     final screenWidth = MediaQuery.of(context).size.width;
-    final circleSize = (screenWidth - 80) / 2.5;
-    final clampedSize = circleSize.clamp(90.0, 130.0);
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
+    // Empty state
     if (offeredServices.isEmpty) {
       return Container(
         padding: const EdgeInsets.all(20),
+        margin: const EdgeInsets.symmetric(horizontal: 16),
         decoration: BoxDecoration(
           color: isDark ? Colors.orange.shade900.withOpacity(0.3) : Colors.orange.shade50,
           borderRadius: BorderRadius.circular(12),
@@ -545,11 +585,19 @@ class _ServicePricingWidgetState extends State<ServicePricingWidget>
 
     return Column(
       children: [
-        Wrap(
-          spacing: 16,
-          runSpacing: 20,
-          alignment: WrapAlignment.center,
-          children: offeredServices.map((service) {
+        GridView.builder(
+          shrinkWrap: true,
+          physics: const NeverScrollableScrollPhysics(),
+          padding: EdgeInsets.symmetric(horizontal: _horizontalPadding),
+          gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+            maxCrossAxisExtent: _fixedCircleSize + 20, // Max width per cell
+            crossAxisSpacing: _circleSpacing,
+            mainAxisSpacing: 16.0,
+            childAspectRatio: 0.55, // width/height - gives enough height for circle + text
+          ),
+          itemCount: offeredServices.length,
+          itemBuilder: (context, index) {
+            final service = offeredServices[index];
             final serviceId = service['id'] as String;
             final price = service['price'] as double;
             final serviceIndex =
@@ -558,20 +606,20 @@ class _ServicePricingWidgetState extends State<ServicePricingWidget>
             return _ServicePriceDisplay(
               serviceId: serviceId,
               serviceName: _getServiceLabel(serviceId),
-              imagePath:
-                  _serviceImages[serviceId] ?? 'assets/services/other.png',
+              imagePath: _serviceImages[serviceId] ?? 'assets/services/other.png',
               price: price,
               currencySymbol: widget.currencySymbol,
-              size: clampedSize,
+              size: _fixedCircleSize,
               onTap: () => _showPriceDialog(serviceId, serviceIndex),
               onLongPress: () => widget.onToggleService(serviceIndex, false),
-              isDarkMode: isDark, // ← PASS DARK MODE FLAG
+              isDarkMode: isDark,
             );
-          }).toList(),
+          },
         ),
 
         const SizedBox(height: 24),
 
+        // Add more services button
         OutlinedButton.icon(
           onPressed: () => setState(() => _currentStep = 1),
           icon: const Icon(Icons.add),

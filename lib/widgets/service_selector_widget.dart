@@ -113,20 +113,24 @@ class _ServiceSelectorWidgetState extends State<ServiceSelectorWidget>
     }
   }
 
+  // ===== NEW: Constants for grid layout =====
+  static const double _fixedCircleSize = 105.0;  // Fixed size for all screens
+  static const double _circleSpacing = 16.0;     // Space between circles
+  static const double _horizontalPadding = 16.0; // Left/right padding
+  static const int _minColumns = 2;
+  static const int _maxColumns = 6;
+
   @override
   Widget build(BuildContext context) {
     final allServices = [..._topServices, if (_showAll) ..._hiddenServices];
     final screenWidth = MediaQuery.of(context).size.width;
-
-    final circleSize = (screenWidth - 56) / 2.5;
-    final clampedSize = circleSize.clamp(80.0, 140.0);
-
+    
     return GestureDetector(
       onTap: _clearSelection,
       behavior: HitTestBehavior.translucent,
       child: Column(
         children: [
-          // ===== FIXED: Header with explicit dark color =====
+          // ===== Header (unchanged) =====
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
             child: Column(
@@ -139,7 +143,7 @@ class _ServiceSelectorWidgetState extends State<ServiceSelectorWidget>
                     fontSize: 18,
                     fontWeight: FontWeight.w600,
                     letterSpacing: 0.3,
-                    color: _headerTextColor,  // ← FIXED: Always dark
+                    color: _headerTextColor,
                     height: 1.3,
                   ),
                 ),
@@ -158,23 +162,30 @@ class _ServiceSelectorWidgetState extends State<ServiceSelectorWidget>
             ),
           ),
 
-          // Services Grid
+          // ===== NEW: Services Grid with dynamic columns =====
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 12),
+            padding: EdgeInsets.symmetric(horizontal: _horizontalPadding),
             child: AnimatedBuilder(
               animation: _selectionController,
               builder: (context, _) {
-                return Wrap(
-                  spacing: 12,
-                  runSpacing: 16,
-                  alignment: WrapAlignment.center,
-                  children: allServices.map((service) {
+                return GridView.builder(
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+                    maxCrossAxisExtent: _fixedCircleSize + 20,
+                    crossAxisSpacing: _circleSpacing,
+                    mainAxisSpacing: 12.0,
+                    childAspectRatio: 0.70, // width/height
+                  ),
+                  itemCount: allServices.length,
+                  itemBuilder: (context, index) {
+                    final service = allServices[index];
                     final isSelected = _selectedServiceKey == service.key;
                     final hasSelection = _selectedServiceKey != null;
 
                     return _ServiceOrb(
                       service: service,
-                      size: clampedSize,
+                      size: _fixedCircleSize,
                       isSelected: isSelected,
                       hasSelection: hasSelection,
                       scaleValue: _scaleAnimation.value,
@@ -182,17 +193,16 @@ class _ServiceSelectorWidgetState extends State<ServiceSelectorWidget>
                       buttonValue: _buttonAnimation.value.clamp(0.0, 1.0),
                       onTap: () => _onServiceTap(service.key),
                       onSelectConfirm: () => _onSelectConfirm(service.key),
-                      // ===== FIXED: Pass explicit colors =====
                       nameColor: _serviceNameColor,
                       nameSelectedColor: _serviceNameSelectedColor,
                     );
-                  }).toList(),
+                  },
                 );
               },
             ),
           ),
 
-          // Show More/Less button
+          // ===== Show More/Less button (unchanged) =====
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 20),
             child: GestureDetector(
