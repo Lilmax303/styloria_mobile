@@ -59,31 +59,44 @@ bool get _stripeSupported {
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  // Load .env file
-  await dotenv.load(fileName: ".env");
-
-  // Use compile-time environment variable OR default
-  const apiBaseUrl = String.fromEnvironment(
-    'API_BASE_URL',
-    defaultValue: 'https://styloria.up.railway.app',
-  );
-  
-  // ✅ Read from .env file
-  final stripeKey = dotenv.env['STRIPE_PUBLISHABLE_KEY'] ?? '';
-
-  debugPrint('API URL: $apiBaseUrl');
-  debugPrint('Stripe key loaded: ${stripeKey.isNotEmpty ? "YES" : "NO"}');
-
-
-  // Initialize Stripe if key is provided
-  if (_stripeSupported && stripeKey.isNotEmpty) {
+  // Wrap everything in try-catch to prevent white screen crashes
+  try {
+    // Load .env file with error handling
     try {
-      stripe.Stripe.publishableKey = stripeKey;
-      await stripe.Stripe.instance.applySettings();
-      debugPrint('✅ Stripe initialized successfully');
+      await dotenv.load(fileName: ".env");
+      debugPrint('✅ .env file loaded');
     } catch (e) {
-      debugPrint('⚠️ Warning: Stripe initialization failed: $e');
+      debugPrint('⚠️ .env file not found or failed to load: $e');
+      // Continue without .env - use defaults
     }
+
+    // Use compile-time environment variable OR default
+    const apiBaseUrl = String.fromEnvironment(
+      'API_BASE_URL',
+      defaultValue: 'https://styloria.up.railway.app',
+    );
+
+    // Read from .env file with null safety
+    final stripeKey = dotenv.env['STRIPE_PUBLISHABLE_KEY'] ?? '';
+
+    debugPrint('API URL: $apiBaseUrl');
+    debugPrint('Stripe key loaded: ${stripeKey.isNotEmpty ? "YES" : "NO"}');
+
+    // Initialize Stripe if key is provided (with platform check)
+    if (_stripeSupported && stripeKey.isNotEmpty) {
+      try {
+        stripe.Stripe.publishableKey = stripeKey;
+        await stripe.Stripe.instance.applySettings();
+        debugPrint('✅ Stripe initialized successfully');
+      } catch (e) {
+        debugPrint('⚠️ Warning: Stripe initialization failed: $e');
+        // Don't crash - continue without Stripe
+      }
+    }
+  } catch (e, stackTrace) {
+    debugPrint('❌ Error during app initialization: $e');
+    debugPrint('Stack trace: $stackTrace');
+    // Continue to runApp even if there's an error
   }
 
   runApp(const StyloriaApp());
@@ -108,6 +121,7 @@ class StyloriaApp extends StatefulWidget {
 class StyloriaAppState extends State<StyloriaApp> {
   ThemeMode _themeMode = ThemeMode.light;
   Locale? _locale;
+  bool _splashComplete = false;
 
   final AppLinks _appLinks = AppLinks();
   StreamSubscription<Uri>? _linkSub;
@@ -136,6 +150,14 @@ class StyloriaAppState extends State<StyloriaApp> {
     Locale('am'), // Amharic
     Locale('ak'), // Twi (see note: 'ak' is more standard)
   ];
+
+  void completeSplash() {  // ✅ ADD THIS METHOD
+    if (mounted) {
+      setState(() => _splashComplete = true);
+    }
+  }
+
+  bool get splashComplete => _splashComplete;  // ✅ ADD THIS GETTER
 
   @override
   void initState() {
@@ -434,19 +456,38 @@ class AuthGate extends StatefulWidget {
 }
 
 class _AuthGateState extends State<AuthGate> {
-  bool _showSplash = true; // ✅ NEW: Show splash first
   bool _loading = true;
   Widget? _child;
 
   @override
   void initState() {
     super.initState();
-    // Don't start bootstrap yet - wait for splash
+    _checkSplashAndBootstrap();  
+  }
+
+  void _checkSplashAndBootstrap() {
+    final appState = StyloriaApp.of(context);
+    
+    // If splash already shown, go straight to bootstrap
+    if (appState?.splashComplete == true) {
+      _bootstrap();
+    }
+    // Otherwise, splash screen will call _onSplashComplete when done
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    // Re-check after dependencies are available
+    final appState = StyloriaApp.of(context);
+    if (appState?.splashComplete == true && _loading && _child == null) {
+      _bootstrap();
+    }
   }
 
   void _onSplashComplete() {
-    // ✅ Called when splash animation finishes
-    setState(() => _showSplash = false);
+    // Mark splash as complete at app level
+    StyloriaApp.of(context)?.completeSplash();
     _bootstrap();
   }
 
@@ -459,7 +500,6 @@ class _AuthGateState extends State<AuthGate> {
         _child = OnboardingScreen(
           onComplete: () {
             if (!mounted) return;
-            // Restart bootstrap after onboarding
             setState(() {
               _loading = true;
               _child = null;
@@ -483,8 +523,7 @@ class _AuthGateState extends State<AuthGate> {
       return;
     }
 
-    // 2) Read cached role (allowed), BUT do not skip server call:
-    //    we must fetch user at least once to check email_verified.
+    // 2) Read cached role (allowed), BUT do not skip server call
     final cachedRole = await ApiClient.getCachedUserRole();
 
     Map<String, dynamic>? userData;
@@ -497,7 +536,6 @@ class _AuthGateState extends State<AuthGate> {
     if (!mounted) return;
 
     if (userData == null) {
-      // token invalid or server error -> force login
       await ApiClient.logout();
       clearProfilePictureState();
       if (!mounted) return;
@@ -526,14 +564,13 @@ class _AuthGateState extends State<AuthGate> {
     // 4) Verified -> proceed
     await ApiClient.saveUserRole(role);
 
-
     // 5) KYC gate (providers only) BEFORE home
     if (role == 'provider') {
       final provider = await ApiClient.getMyProviderProfileAnyStatus();
       final status = provider?['verification_status']?.toString();
 
       if (!mounted) return;
-  
+
       if (status != 'approved') {
         setState(() {
           _child = ProviderKycScreen(
@@ -554,11 +591,12 @@ class _AuthGateState extends State<AuthGate> {
     });
   }
 
-
   @override
   Widget build(BuildContext context) {
-    // ✅ Show splash screen first
-    if (_showSplash) {
+    final appState = StyloriaApp.of(context);
+    
+    // ✅ Show splash screen ONLY if not yet complete
+    if (appState?.splashComplete != true) {
       return SplashScreen(onComplete: _onSplashComplete);
     }
 
