@@ -128,6 +128,10 @@ class _ServicePricingWidgetState extends State<ServicePricingWidget>
   int get _selectedServicesCount =>
       widget.serviceTypes.where((s) => s['offered'] == true).length;
 
+  bool _hasAnyCertRequiredServices() {
+    return widget.serviceTypes.any((s) => s['requiresCertification'] == true);
+  }
+
   String _getServiceLabel(String serviceId) {
     if (widget.getServiceLabel != null) {
       return widget.getServiceLabel!(serviceId) ?? serviceId;
@@ -446,6 +450,11 @@ class _ServicePricingWidgetState extends State<ServicePricingWidget>
                   final isSelected = _selectedServiceKey == serviceId;
                   final hasSelection = _selectedServiceKey != null;
 
+                  // Determine certification lock state
+                  final bool requiresCert = service['requiresCertification'] == true;
+                  final bool hasVerifiedCert = widget.certificationStatus[serviceId]?['has_verified_cert'] == true;
+                  final bool hasPendingCert = widget.certificationStatus[serviceId]?['has_pending_cert'] == true;
+
                   return _ServiceSelectionOrb(
                     serviceId: serviceId,
                     serviceName: _getServiceLabel(serviceId),
@@ -460,13 +469,66 @@ class _ServicePricingWidgetState extends State<ServicePricingWidget>
                     onTap: () => _onServiceTap(serviceId),
                     onSelectConfirm: () => _onSelectConfirm(serviceId),
                     isDarkMode: isDark,
+                    requiresCertification: requiresCert,
+                    hasVerifiedCert: hasVerifiedCert,
+                    hasPendingCert: hasPendingCert,
                   );
                 },
               );
             },
           ),
 
-          const SizedBox(height: 20),
+          const SizedBox(height: 12),
+
+          // ═══════════════════════════════════════════
+          // CERTIFICATION LOCK LEGEND
+          // ═══════════════════════════════════════════
+          if (_hasAnyCertRequiredServices())
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: Container(
+                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+                decoration: BoxDecoration(
+                  color: isDark
+                      ? Colors.grey.shade900.withOpacity(0.5)
+                      : Colors.grey.shade50,
+                  borderRadius: BorderRadius.circular(10),
+                  border: Border.all(
+                    color: isDark ? Colors.grey.shade700 : Colors.grey.shade200,
+                  ),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    // Locked
+                    Icon(Icons.lock_rounded, size: 13,
+                        color: isDark ? Colors.red.shade400 : Colors.red.shade600),
+                    const SizedBox(width: 3),
+                    Text('Cert Required',
+                        style: TextStyle(fontSize: 10,
+                            color: isDark ? Colors.grey.shade400 : Colors.grey.shade600)),
+                    const SizedBox(width: 12),
+                    // Pending
+                    Icon(Icons.hourglass_top_rounded, size: 13,
+                        color: isDark ? Colors.orange.shade400 : Colors.orange.shade600),
+                    const SizedBox(width: 3),
+                    Text('Pending',
+                        style: TextStyle(fontSize: 10,
+                            color: isDark ? Colors.grey.shade400 : Colors.grey.shade600)),
+                    const SizedBox(width: 12),
+                    // Verified
+                    Icon(Icons.verified_rounded, size: 13,
+                        color: isDark ? Colors.green.shade400 : Colors.green.shade600),
+                    const SizedBox(width: 3),
+                    Text('Certified',
+                        style: TextStyle(fontSize: 10,
+                            color: isDark ? Colors.grey.shade400 : Colors.grey.shade600)),
+                  ],
+                ),
+              ),
+            ),
+
+          const SizedBox(height: 12),
 
           // Selected services count indicator
           if (_selectedServicesCount > 0)
@@ -685,7 +747,13 @@ class _ServiceSelectionOrb extends StatefulWidget {
   final double buttonValue;
   final VoidCallback onTap;
   final VoidCallback onSelectConfirm;
-  final bool isDarkMode; // ← NEW
+  final bool isDarkMode;
+  // ═══════════════════════════════════════════
+  // Certification lock state
+  // ═══════════════════════════════════════════
+  final bool requiresCertification;
+  final bool hasVerifiedCert;
+  final bool hasPendingCert;
 
   const _ServiceSelectionOrb({
     required this.serviceId,
@@ -701,6 +769,9 @@ class _ServiceSelectionOrb extends StatefulWidget {
     required this.onTap,
     required this.onSelectConfirm,
     required this.isDarkMode,
+    this.requiresCertification = false,
+    this.hasVerifiedCert = false,
+    this.hasPendingCert = false,
   });
 
   @override
@@ -826,29 +897,42 @@ class _ServiceSelectionOrbState extends State<_ServiceSelectionOrb>
                             ],
                           ),
                           child: ClipOval(
-                            child: ImageFiltered(
-                              imageFilter: ImageFilter.blur(
-                                sigmaX: blur,
-                                sigmaY: blur,
-                              ),
-                              child: Image.asset(
-                                widget.imagePath,
-                                fit: BoxFit.cover,
-                                width: widget.size,
-                                height: widget.size,
-                                errorBuilder: (context, error, stackTrace) {
-                                  return Container(
-                                    color: widget.isDarkMode 
-                                        ? Colors.grey.shade800 
-                                        : Colors.grey.shade200,
-                                    child: Icon(
-                                      Icons.spa,
-                                      size: widget.size * 0.35,
-                                      color: _goldAccent,
+                            child: Stack(
+                              children: [
+                                ImageFiltered(
+                                  imageFilter: ImageFilter.blur(
+                                    sigmaX: blur,
+                                    sigmaY: blur,
+                                  ),
+                                  child: Image.asset(
+                                    widget.imagePath,
+                                    fit: BoxFit.cover,
+                                    width: widget.size,
+                                    height: widget.size,
+                                    errorBuilder: (context, error, stackTrace) {
+                                      return Container(
+                                        color: widget.isDarkMode 
+                                            ? Colors.grey.shade800 
+                                            : Colors.grey.shade200,
+                                        child: Icon(
+                                          Icons.spa,
+                                          size: widget.size * 0.35,
+                                          color: _goldAccent,
+                                        ),
+                                      );
+                                    },
+                                  ),
+                                ),
+                                // Grey tint overlay for locked services
+                                if (widget.requiresCertification && !widget.hasVerifiedCert && !widget.isSelected)
+                                  Container(
+                                    width: widget.size,
+                                    height: widget.size,
+                                    color: Colors.black.withOpacity(
+                                      widget.hasPendingCert ? 0.15 : 0.3,
                                     ),
-                                  );
-                                },
-                              ),
+                                  ),
+                              ],
                             ),
                           ),
                         ),
@@ -872,6 +956,101 @@ class _ServiceSelectionOrbState extends State<_ServiceSelectionOrb>
                               ),
                             ),
                           ),
+
+                        // ═══════════════════════════════════════════
+                        // CERTIFICATION LOCK BADGE
+                        // ═══════════════════════════════════════════
+                        if (widget.requiresCertification && !widget.isSelected) ...[
+                          // LOCKED: No cert at all
+                          if (!widget.hasVerifiedCert && !widget.hasPendingCert)
+                            Positioned(
+                              top: -2,
+                              right: -2,
+                              child: Container(
+                                width: 26,
+                                height: 26,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: widget.isDarkMode
+                                      ? Colors.red.shade800
+                                      : Colors.red.shade600,
+                                  border: Border.all(color: Colors.white, width: 2),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.red.withOpacity(0.4),
+                                      blurRadius: 4,
+                                      offset: const Offset(0, 1),
+                                    ),
+                                  ],
+                                ),
+                                child: const Icon(
+                                  Icons.lock_rounded,
+                                  color: Colors.white,
+                                  size: 14,
+                                ),
+                              ),
+                            ),
+
+                          // PENDING: Cert uploaded, awaiting verification
+                          if (!widget.hasVerifiedCert && widget.hasPendingCert)
+                            Positioned(
+                              top: -2,
+                              right: -2,
+                              child: Container(
+                                width: 26,
+                                height: 26,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: widget.isDarkMode
+                                      ? Colors.orange.shade800
+                                      : Colors.orange.shade600,
+                                  border: Border.all(color: Colors.white, width: 2),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.orange.withOpacity(0.4),
+                                      blurRadius: 4,
+                                      offset: const Offset(0, 1),
+                                    ),
+                                  ],
+                                ),
+                                child: const Icon(
+                                  Icons.hourglass_top_rounded,
+                                  color: Colors.white,
+                                  size: 14,
+                                ),
+                              ),
+                            ),
+
+                          // VERIFIED: Cert approved (show shield checkmark)
+                          if (widget.hasVerifiedCert)
+                            Positioned(
+                              top: -2,
+                              right: -2,
+                              child: Container(
+                                width: 26,
+                                height: 26,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: widget.isDarkMode
+                                      ? Colors.green.shade700
+                                      : Colors.green.shade600,
+                                  border: Border.all(color: Colors.white, width: 2),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.green.withOpacity(0.4),
+                                      blurRadius: 4,
+                                      offset: const Offset(0, 1),
+                                    ),
+                                  ],
+                                ),
+                                child: const Icon(
+                                  Icons.verified_rounded,
+                                  color: Colors.white,
+                                  size: 14,
+                                ),
+                              ),
+                            ),
+                        ],
 
                         if (widget.isSelected && safeButtonOpacity > 0.01)
                           Opacity(
@@ -938,25 +1117,49 @@ class _ServiceSelectionOrbState extends State<_ServiceSelectionOrb>
 
                     const SizedBox(height: 6),
 
-                    // ===== THEME-AWARE SERVICE NAME =====
-                    Text(
-                      widget.serviceName,
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontFamily: 'Georgia',
-                        fontSize: 11,
-                        fontWeight: widget.isSelected || widget.isOffered
-                            ? FontWeight.w700
-                            : FontWeight.w600,
-                        color: widget.isOffered
-                            ? offeredColor
-                            : (widget.isSelected
-                                ? serviceNameSelectedColor
-                                : serviceNameColor),
-                        letterSpacing: 0.2,
-                      ),
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
+                    // ===== SERVICE NAME WITH LOCK INDICATOR =====
+                    Row(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Flexible(
+                          child: Text(
+                            widget.serviceName,
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontFamily: 'Georgia',
+                              fontSize: 11,
+                              fontWeight: widget.isSelected || widget.isOffered
+                                  ? FontWeight.w700
+                                  : FontWeight.w600,
+                              color: widget.isOffered
+                                  ? offeredColor
+                                  : (widget.requiresCertification && !widget.hasVerifiedCert)
+                                      ? (widget.isDarkMode
+                                          ? Colors.grey.shade500
+                                          : Colors.grey.shade500)
+                                      : (widget.isSelected
+                                          ? serviceNameSelectedColor
+                                          : serviceNameColor),
+                              letterSpacing: 0.2,
+                            ),
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
+                        if (widget.requiresCertification && !widget.hasVerifiedCert && !widget.isSelected) ...[
+                          const SizedBox(width: 2),
+                          Icon(
+                            widget.hasPendingCert
+                                ? Icons.hourglass_top_rounded
+                                : Icons.lock_rounded,
+                            size: 10,
+                            color: widget.hasPendingCert
+                                ? (widget.isDarkMode ? Colors.orange.shade400 : Colors.orange.shade600)
+                                : (widget.isDarkMode ? Colors.red.shade400 : Colors.red.shade500),
+                          ),
+                        ],
+                      ],
                     ),
                   ],
                 ),
