@@ -6,6 +6,8 @@ import 'package:intl/intl.dart';
 import 'package:file_picker/file_picker.dart';
 
 import '../api_client.dart';
+import 'dart:convert';
+import 'service_type_selector.dart';
 
 class CertificationsSection extends StatefulWidget {
   final VoidCallback? onCertificationsChanged;
@@ -25,6 +27,13 @@ class _CertificationsSectionState extends State<CertificationsSection> {
   int? _trustScore;
   String? _currentTier;
   String? _error;
+
+  // All service types available on the platform
+  static const List<String> _allServiceTypes = [
+    'haircut', 'braids', 'shave', 'color', 'manicure', 'pedicure',
+    'nails', 'makeup', 'facial', 'waxing', 'massage', 'tattoo',
+    'styling', 'treatment', 'extensions', 'other',
+  ];
 
   @override
   void initState() {
@@ -68,6 +77,7 @@ class _CertificationsSectionState extends State<CertificationsSection> {
     DateTime? expiryDate;
     PlatformFile? selectedFile;
     String? fileError;
+    List<String> selectedServiceTypes = [];
 
     final result = await showDialog<bool>(
       context: context,
@@ -146,6 +156,19 @@ class _CertificationsSectionState extends State<CertificationsSection> {
                   },
                 ),
                 const SizedBox(height: 16),
+
+                // ═══════════════════════════════════════════════
+                // SERVICE TYPE SELECTOR
+                // ═══════════════════════════════════════════════
+                ServiceTypeSelector(
+                  serviceTypes: _allServiceTypes,
+                  selectedServices: selectedServiceTypes,
+                  onSelectionChanged: (selected) {
+                    selectedServiceTypes = selected;
+                  },
+                ),
+                const SizedBox(height: 16),
+
                 // Document Upload (REQUIRED)
                 Container(
                   padding: const EdgeInsets.all(12),
@@ -341,6 +364,7 @@ class _CertificationsSectionState extends State<CertificationsSection> {
         issueDate: issueDate,
         expiryDate: expiryDate,
         document: selectedFile,
+        certifiedServiceTypes: selectedServiceTypes,
       );
     }
   }
@@ -351,6 +375,7 @@ class _CertificationsSectionState extends State<CertificationsSection> {
     DateTime? issueDate,
     DateTime? expiryDate,
     PlatformFile? document,
+    List<String>? certifiedServiceTypes,
   }) async {
     // Show loading
     showDialog(
@@ -367,6 +392,7 @@ class _CertificationsSectionState extends State<CertificationsSection> {
         documentName: document?.name,
         issueDate: issueDate != null ? DateFormat('yyyy-MM-dd').format(issueDate) : null,
         expiryDate: expiryDate != null ? DateFormat('yyyy-MM-dd').format(expiryDate) : null,
+        certifiedServiceTypes: certifiedServiceTypes,
       );
 
       Navigator.pop(context); // Close loading
@@ -430,6 +456,30 @@ class _CertificationsSectionState extends State<CertificationsSection> {
       }
     }
   }
+
+
+  String _getServiceLabel(String serviceId) {
+    const labels = {
+      'haircut': 'Haircut',
+      'braids': 'Braids',
+      'shave': 'Shave',
+      'color': 'Hair Coloring',
+      'manicure': 'Manicure',
+      'pedicure': 'Pedicure',
+      'nails': 'Nail Art',
+      'makeup': 'Makeup',
+      'facial': 'Facial',
+      'waxing': 'Waxing',
+      'massage': 'Massage',
+      'tattoo': 'Tattoo',
+      'styling': 'Hair Styling',
+      'treatment': 'Hair Treatment',
+      'extensions': 'Hair Extensions',
+      'other': 'Other',
+    };
+    return labels[serviceId] ?? serviceId;
+  }
+
 
   Map<String, dynamic> _getTierInfo(String? tier) {
     switch (tier?.toLowerCase()) {
@@ -690,6 +740,62 @@ class _CertificationsSectionState extends State<CertificationsSection> {
                               color: isDark ? Colors.grey.shade400 : Colors.grey.shade600,
                             ),
                           ),
+                        // ═══════════════════════════════════════
+                        // Show linked services as small chips
+                        // ═══════════════════════════════════════
+                        if (cert['certified_service_types'] != null &&
+                            (cert['certified_service_types'] as List).isNotEmpty)
+                          Padding(
+                            padding: const EdgeInsets.only(top: 6),
+                            child: Wrap(
+                              spacing: 4,
+                              runSpacing: 4,
+                              children: (cert['certified_service_types'] as List)
+                                  .map<Widget>((svc) {
+                                final label = _getServiceLabel(svc.toString());
+                                return Container(
+                                  padding: const EdgeInsets.symmetric(
+                                    horizontal: 6,
+                                    vertical: 2,
+                                  ),
+                                  decoration: BoxDecoration(
+                                    color: isDark
+                                        ? Colors.blue.shade900.withOpacity(0.4)
+                                        : Colors.blue.shade50,
+                                    borderRadius: BorderRadius.circular(10),
+                                    border: Border.all(
+                                      color: isDark
+                                          ? Colors.blue.shade700
+                                          : Colors.blue.shade200,
+                                    ),
+                                  ),
+                                  child: Text(
+                                    label,
+                                    style: TextStyle(
+                                      fontSize: 10,
+                                      color: isDark
+                                          ? Colors.blue.shade300
+                                          : Colors.blue.shade700,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  ),
+                                );
+                              }).toList(),
+                            ),
+                          ),
+                        if (cert['certified_service_types'] == null ||
+                            (cert['certified_service_types'] as List).isEmpty)
+                          Padding(
+                            padding: const EdgeInsets.only(top: 4),
+                            child: Text(
+                              'No services linked',
+                              style: TextStyle(
+                                fontSize: 10,
+                                color: isDark ? Colors.grey.shade500 : Colors.grey.shade400,
+                                fontStyle: FontStyle.italic,
+                              ),
+                            ),
+                          ),
                         if (cert['expiry_date'] != null)
                           Text(
                             'Expires: ${cert['expiry_date']}',
@@ -795,7 +901,7 @@ class _CertificationsSectionState extends State<CertificationsSection> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Massage Service Requirement',
+                          'Service-Linked Certifications',
                           style: TextStyle(
                             fontSize: 12,
                             fontWeight: FontWeight.bold,
@@ -804,7 +910,9 @@ class _CertificationsSectionState extends State<CertificationsSection> {
                         ),
                         const SizedBox(height: 4),
                         Text(
-                          'To offer massage services, you must upload a verified massage therapy certification. Include "massage" in the certification name.',
+                          'When uploading a certification, select which services it covers. '
+                          'Some services (like Massage) require a verified certification before you can offer them. '
+                          'Your trust score increases per-service based on linked certifications.',
                           style: TextStyle(
                             fontSize: 11, 
                             color: isDark ? Colors.blue.shade300 : Colors.blue.shade800,

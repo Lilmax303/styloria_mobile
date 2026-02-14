@@ -2439,6 +2439,7 @@ class ApiClient {
     String? documentName,
     String? issueDate,
     String? expiryDate,
+    List<String>? certifiedServiceTypes,
   }) async {
     Future<http.Response> sendOnce(String token) async {
       final uri = Uri.parse('$baseUrl/api/service_providers/add_certification/');
@@ -2453,8 +2454,14 @@ class ApiClient {
       if (issueDate != null && issueDate.isNotEmpty) {
         req.fields['issue_date'] = issueDate;
       }
+
       if (expiryDate != null && expiryDate.isNotEmpty) {
         req.fields['expiry_date'] = expiryDate;
+      }
+
+      // Send linked service types as JSON string
+      if (certifiedServiceTypes != null && certifiedServiceTypes.isNotEmpty) {
+        req.fields['certified_service_types'] = jsonEncode(certifiedServiceTypes);
       }
 
       if (documentBytes != null && documentName != null) {
