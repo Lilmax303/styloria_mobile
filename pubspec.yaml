@@ -3,7 +3,7 @@
 name: styloria_mobile
 description: A new Flutter project.
 publish_to: 'none'
-version: 1.0.0+6
+version: 1.0.0+5
 
 
 environment:
@@ -80,4 +80,3 @@ flutter:
     - assets/services/
     - assets/provider_actions/
     - assets/images/splash_logo.png
-    - .env
