@@ -180,14 +180,16 @@ class _ProviderProfileScreenState extends State<ProviderProfileScreen>
       'name': 'Facial',
       'price': 0.0,
       'offered': false,
-      'category': 'other'
+      'category': 'other',
+      'requiresCertification': true
     },
     {
       'id': 'waxing',
       'name': 'Waxing',
       'price': 0.0,
       'offered': false,
-      'category': 'other'
+      'category': 'other',
+      'requiresCertification': true
     },
     {
       'id': 'massage',
@@ -202,7 +204,8 @@ class _ProviderProfileScreenState extends State<ProviderProfileScreen>
       'name': 'Tattoo',
       'price': 0.0,
       'offered': false,
-      'category': 'other'
+      'category': 'other',
+      'requiresCertification': true
     },
     {
       'id': 'styling',
