@@ -119,6 +119,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
+    final colorScheme = Theme.of(context).colorScheme;
 
     return Scaffold(
       appBar: AppBar(
@@ -142,10 +143,20 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                     mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      Icon(
-                        Icons.lock_reset,
-                        size: 48,
-                        color: Theme.of(context).colorScheme.primary,
+                      Container(
+                        width: 80,
+                        height: 80,
+                        decoration: BoxDecoration(
+                          color: colorScheme.primaryContainer.withOpacity(0.25),
+                          shape: BoxShape.circle,
+                        ),
+                        child: Icon(
+                          _step == 1
+                              ? Icons.lock_reset_rounded
+                              : Icons.mark_email_unread_outlined,
+                          size: 40,
+                          color: colorScheme.primary,
+                        ),
                       ),
                       const SizedBox(height: 16),
                       Text(
@@ -153,7 +164,9 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                             ? l10n.forgotPasswordTitle
                             : l10n.resetPasswordTitle,
                         textAlign: TextAlign.center,
-                        style: const TextStyle(
+                        style: Theme.of(context)
+                            .textTheme
+                            .headlineSmall?.copyWith(
                           fontSize: 22,
                           fontWeight: FontWeight.bold,
                         ),
@@ -164,8 +177,9 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                             ? l10n.forgotPasswordSubtitle
                             : l10n.resetPasswordSubtitle,
                         textAlign: TextAlign.center,
-                        style: TextStyle(
-                          color: Colors.grey.shade600,
+                        style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                          color: colorScheme.onSurfaceVariant,
+                          height: 1.45,
                           fontSize: 14,
                         ),
                       ),
@@ -174,16 +188,29 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                       // Error message
                       if (_error != null) ...[
                         Container(
-                          padding: const EdgeInsets.all(12),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 14, vertical: 12),
                           decoration: BoxDecoration(
-                            color: Colors.red.shade50,
-                            borderRadius: BorderRadius.circular(8),
-                            border: Border.all(color: Colors.red.shade200),
+                            color: colorScheme.errorContainer.withOpacity(0.3),
+                            borderRadius: BorderRadius.circular(10),
                           ),
-                          child: Text(
-                            _error!,
-                            style: TextStyle(color: Colors.red.shade700),
-                            textAlign: TextAlign.center,
+                          child: Row(
+                            children: [
+                              Icon(Icons.error_outline_rounded,
+                                  size: 20, color: colorScheme.error),
+                              const SizedBox(width: 10),
+                              Expanded(
+                                child: Text(
+                                  _error!,
+                                  style: TextStyle(
+                                    color: colorScheme.error,
+                                    fontSize: 13,
+                                    fontWeight: FontWeight.w500,
+                                    height: 1.4,
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                         const SizedBox(height: 16),
@@ -192,20 +219,95 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                       // Success message
                       if (_success != null) ...[
                         Container(
-                          padding: const EdgeInsets.all(12),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 14, vertical: 12),
                           decoration: BoxDecoration(
-                            color: Colors.green.shade50,
-                            borderRadius: BorderRadius.circular(8),
-                            border: Border.all(color: Colors.green.shade200),
+                            color: Colors.green.shade50.withOpacity(0.8),
+                            borderRadius: BorderRadius.circular(10),
                           ),
-                          child: Text(
-                            _success!,
-                            style: TextStyle(color: Colors.green.shade700),
-                            textAlign: TextAlign.center,
+                          child: Row(
+                            children: [
+                              Icon(Icons.check_circle_outline_rounded,
+                                  size: 20, color: Colors.green.shade700),
+                              const SizedBox(width: 10),
+                              Expanded(
+                                child: Text(
+                                  _success!,
+                                  style: TextStyle(
+                                    color: Colors.green.shade700,
+                                    fontSize: 13,
+                                    fontWeight: FontWeight.w500,
+                                    height: 1.4,
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                         const SizedBox(height: 16),
                       ],
+
+                      // ── Spam / Junk Notice Card (Step 2 only) ──────
+                      if (_step == 2) ...[
+                        Container(
+                          width: double.infinity,
+                          padding: const EdgeInsets.all(16),
+                          decoration: BoxDecoration(
+                            color: colorScheme.secondaryContainer
+                                .withOpacity(0.35),
+                            borderRadius: BorderRadius.circular(12),
+                            border: Border.all(
+                              color: colorScheme.secondaryContainer,
+                              width: 1,
+                            ),
+                          ),
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Icon(
+                                Icons.info_outline_rounded,
+                                size: 22,
+                                color: colorScheme.secondary,
+                              ),
+                              const SizedBox(width: 12),
+                              Expanded(
+                                child: Column(
+                                  crossAxisAlignment:
+                                      CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      l10n.cantFindEmailTitle,
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .titleSmall
+                                          ?.copyWith(
+                                            fontWeight: FontWeight.w600,
+                                            color: colorScheme
+                                                .onSecondaryContainer,
+                                          ),
+                                    ),
+                                    const SizedBox(height: 4),
+                                    Text(
+                                      l10n.checkSpamJunkNotice,
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .bodySmall
+                                          ?.copyWith(
+                                            color: colorScheme
+                                                .onSecondaryContainer
+                                                .withOpacity(0.85),
+                                            height: 1.45,
+                                          ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        const SizedBox(height: 20),
+                      ],
+
 
                       // Step 1: Enter email
                       if (_step == 1) ...[
@@ -215,7 +317,22 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                           decoration: InputDecoration(
                             labelText: l10n.email,
                             prefixIcon: const Icon(Icons.email_outlined),
-                            border: const OutlineInputBorder(),
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                            enabledBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(12),
+                              borderSide: BorderSide(
+                                color: colorScheme.outline.withOpacity(0.5),
+                              ),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(12),
+                              borderSide: BorderSide(
+                                color: colorScheme.primary,
+                                width: 2,
+                              ),
+                            ),
                           ),
                           validator: (value) {
                             if (value == null || value.trim().isEmpty) {
@@ -232,12 +349,20 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                           onPressed: _loading ? null : _sendResetCode,
                           style: ElevatedButton.styleFrom(
                             padding: const EdgeInsets.symmetric(vertical: 14),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                            textStyle: const TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600,
+                            ),
                           ),
                           child: _loading
                               ? const SizedBox(
                                   height: 20,
                                   width: 20,
-                                  child: CircularProgressIndicator(strokeWidth: 2),
+                                  child: CircularProgressIndicator(
+                                      strokeWidth: 2.5),
                                 )
                               : Text(l10n.sendResetCode),
                         ),
@@ -251,7 +376,21 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                           decoration: InputDecoration(
                             labelText: l10n.email,
                             prefixIcon: const Icon(Icons.email_outlined),
-                            border: const OutlineInputBorder(),
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                            enabledBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(12),
+                              borderSide: BorderSide(
+                                color: colorScheme.outline.withOpacity(0.3),
+                              ),
+                            ),
+                            disabledBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(12),
+                              borderSide: BorderSide(
+                                color: colorScheme.outline.withOpacity(0.2),
+                              ),
+                            ),
                             filled: true,
                             fillColor: Colors.grey.shade100,
                           ),
@@ -263,7 +402,22 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                           decoration: InputDecoration(
                             labelText: l10n.verificationCode,
                             prefixIcon: const Icon(Icons.pin_outlined),
-                            border: const OutlineInputBorder(),
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                            enabledBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(12),
+                              borderSide: BorderSide(
+                                color: colorScheme.outline.withOpacity(0.5),
+                              ),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(12),
+                              borderSide: BorderSide(
+                                color: colorScheme.primary,
+                                width: 2,
+                              ),
+                            ),
                             hintText: '123456',
                           ),
                           validator: (value) {
@@ -283,7 +437,22 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                           decoration: InputDecoration(
                             labelText: l10n.newPassword,
                             prefixIcon: const Icon(Icons.lock_outline),
-                            border: const OutlineInputBorder(),
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                            enabledBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(12),
+                              borderSide: BorderSide(
+                                color: colorScheme.outline.withOpacity(0.5),
+                              ),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(12),
+                              borderSide: BorderSide(
+                                color: colorScheme.primary,
+                                width: 2,
+                              ),
+                            ),
                             suffixIcon: IconButton(
                               icon: Icon(
                                 _showNewPassword ? Icons.visibility_off : Icons.visibility,
@@ -308,7 +477,22 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                           decoration: InputDecoration(
                             labelText: l10n.confirmPassword,
                             prefixIcon: const Icon(Icons.lock_outline),
-                            border: const OutlineInputBorder(),
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                            enabledBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(12),
+                              borderSide: BorderSide(
+                                color: colorScheme.outline.withOpacity(0.5),
+                              ),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(12),
+                              borderSide: BorderSide(
+                                color: colorScheme.primary,
+                                width: 2,
+                              ),
+                            ),
                             suffixIcon: IconButton(
                               icon: Icon(
                                 _showConfirmPassword ? Icons.visibility_off : Icons.visibility,
@@ -338,12 +522,20 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                           onPressed: _loading ? null : _resetPassword,
                           style: ElevatedButton.styleFrom(
                             padding: const EdgeInsets.symmetric(vertical: 14),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                            textStyle: const TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600,
+                            ),
                           ),
                           child: _loading
                               ? const SizedBox(
                                   height: 20,
                                   width: 20,
-                                  child: CircularProgressIndicator(strokeWidth: 2),
+                                  child: CircularProgressIndicator(
+                                      strokeWidth: 2.5),
                                 )
                               : Text(l10n.resetPassword),
                         ),

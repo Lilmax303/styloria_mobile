@@ -171,6 +171,13 @@ class AppLocalizationsEs extends AppLocalizations {
   String get invalidCode => 'Por favor ingresa un código válido';
 
   @override
+  String get cantFindEmailTitle => 'Can\'t find the email?';
+
+  @override
+  String get checkSpamJunkNotice =>
+      'Please check your Spam, Junk, or Promotions folder. The email may take a moment to arrive. Be sure to mark it as \"Not Spam\" so you receive future communications from us.';
+
+  @override
   String get passwordTooShort =>
       'La contraseña debe tener al menos 8 caracteres';
 

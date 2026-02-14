@@ -64,6 +64,16 @@
   "verificationCode": "Verification Code",
   "invalidEmail": "Please enter a valid email",
   "invalidCode": "Please enter a valid code",
+  "cantFindEmailTitle": "Can't find the email?",
+  "@cantFindEmailTitle": {
+    "description": "Title for the spam/junk folder notice on email verification screen"
+  },
+
+  "checkSpamJunkNotice": "Please check your Spam, Junk, or Promotions folder. The email may take a moment to arrive. Be sure to mark it as \"Not Spam\" so you receive future communications from us.",
+  "@checkSpamJunkNotice": {
+    "description": "Notice telling user to check spam/junk/promotions folders for the verification email"
+  },
+
   "passwordTooShort": "Password must be at least 8 characters",
   "changeEmail": "Use a different email",
   "backToLogin": "Back to Login",

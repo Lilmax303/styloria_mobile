@@ -430,6 +430,18 @@ abstract class AppLocalizations {
   /// **'Please enter a valid code'**
   String get invalidCode;
 
+  /// Title for the spam/junk folder notice on email verification screen
+  ///
+  /// In en, this message translates to:
+  /// **'Can\'t find the email?'**
+  String get cantFindEmailTitle;
+
+  /// Notice telling user to check spam/junk/promotions folders for the verification email
+  ///
+  /// In en, this message translates to:
+  /// **'Please check your Spam, Junk, or Promotions folder. The email may take a moment to arrive. Be sure to mark it as \"Not Spam\" so you receive future communications from us.'**
+  String get checkSpamJunkNotice;
+
   /// No description provided for @passwordTooShort.
   ///
   /// In en, this message translates to:
