@@ -772,7 +772,11 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
       final preset5 = (totalPaid * 0.05);
       final preset10 = (totalPaid * 0.10);
       final preset15 = (totalPaid * 0.15);
-  
+
+      // Tips are always paid in the requester's (booking's) currency
+      final tipSymbol = _booking['booking_currency_symbol']?.toString() ??
+          _booking['currency_symbol']?.toString() ?? '';
+
       final controller = TextEditingController();
  
       final chosen = await showDialog<double?>(
@@ -796,15 +800,15 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
                     ),
                     OutlinedButton(
                       onPressed: () => Navigator.of(ctx).pop(double.parse(preset5.toStringAsFixed(2))),
-                      child: Text('5% (${preset5.toStringAsFixed(2)})'),
+                      child: Text('5% ($tipSymbol${preset5.toStringAsFixed(2)})'),
                     ),
                     OutlinedButton(
                       onPressed: () => Navigator.of(ctx).pop(double.parse(preset10.toStringAsFixed(2))),
-                      child: Text('10% (${preset10.toStringAsFixed(2)})'),
+                      child: Text('10% ($tipSymbol${preset10.toStringAsFixed(2)})'),
                     ),
                     OutlinedButton(
                       onPressed: () => Navigator.of(ctx).pop(double.parse(preset15.toStringAsFixed(2))),
-                      child: Text('15% (${preset15.toStringAsFixed(2)})'),
+                      child: Text('15% ($tipSymbol${preset15.toStringAsFixed(2)})'),
                     ),
                   ],
                 ),
@@ -814,6 +818,7 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
                   keyboardType: const TextInputType.numberWithOptions(decimal: true),
                   decoration: InputDecoration(
                     labelText: l10n.tipCustomAmountLabel,
+                    prefixText: tipSymbol.isNotEmpty ? '$tipSymbol ' : null,
                     border: OutlineInputBorder(),
                   ),
                 ),
@@ -2983,6 +2988,32 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
     final serviceType = booking['service_type']?.toString() ?? na;
     final offeredPrice = booking['offered_price']?.toString() ?? na;
 
+    // ═══════════════════════════════════════════════════════════
+    // CURRENCY-AWARE PRICE DISPLAY
+    // Requester sees their own currency (what they paid)
+    // Provider sees only converted amount in their own currency
+    // ═══════════════════════════════════════════════════════════
+    final bookingCurrencySymbol = booking['booking_currency_symbol']?.toString() ?? '';
+    final viewerCurrencySymbol = booking['currency_symbol']?.toString() ?? '';
+    final convertedPriceRaw = booking['converted_price'];
+
+    String displayPrice;
+    if (offeredPrice == na) {
+      displayPrice = na;
+    } else if (widget.role == 'provider' && convertedPriceRaw != null) {
+      // Provider always sees their own currency only
+      final convertedNum = double.tryParse(convertedPriceRaw.toString());
+      if (convertedNum != null) {
+        displayPrice = '$viewerCurrencySymbol${convertedNum.toStringAsFixed(2)}';
+      } else {
+        displayPrice = '$viewerCurrencySymbol$offeredPrice';
+      }
+    } else {
+      // Requester sees their own currency (booking currency)
+      displayPrice = '$bookingCurrencySymbol$offeredPrice';
+    }
+    // ═══════════════════════════════════════════════════════════
+
     // Auto-cancel warning
     final autoCancelWarning = booking['auto_cancel_warning'] as Map<String, dynamic>?;
 
@@ -3022,6 +3053,8 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
     }
 
     final totalPaid = _parseAmount(booking['offered_price']) ?? _parseAmount(booking['estimated_price']) ?? 0.0;
+    // Note: totalPaid is in the BOOKING's original currency (requester's currency)
+    // This is correct for tip calculation since tips are charged in requester's currency
 
     String userName = '';
     String providerFirstName = '';
@@ -3287,7 +3320,7 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
                     ],
                     if (userName.isNotEmpty) _kv(context, l10n.userLabel, userName),
                     if (providerName.isNotEmpty) _kv(context, l10n.providerLabel, providerName),
-                    if (offeredPrice != na) _kv(context, l10n.offeredPaidLabel, offeredPrice, strong: true),
+                    if (offeredPrice != na) _kv(context, l10n.offeredPaidLabel, displayPrice, strong: true),
                     if (_distanceMilesValue != null)
                       _kv(
                         context,
@@ -3336,7 +3369,11 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
                       Padding(
                         padding: const EdgeInsets.only(bottom: 8),
                         child: Text(
-                          l10n.penaltyAppliedLabel(penaltyAmount),
+                          l10n.penaltyAppliedLabel(
+                            widget.role == 'provider' && convertedPriceRaw != null
+                                ? '$viewerCurrencySymbol$penaltyAmount'
+                                : '$bookingCurrencySymbol$penaltyAmount',
+                          ),
                           style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                                 color: cs.error,
                                 fontWeight: FontWeight.w800,

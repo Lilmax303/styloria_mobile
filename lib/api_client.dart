@@ -4,6 +4,8 @@
 import 'dart:convert';
 import 'dart:io';
 import 'dart:typed_data';
+import 'package:uuid/uuid.dart';
+import 'package:path/path.dart' as p;
 
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
@@ -2221,6 +2223,11 @@ class ApiClient {
     required int postId,
     required XFile file,
   }) async {
+
+    // Shorten the iOS image-picker filename to prevent backend varchar overflow
+    final ext = p.extension(file.name).toLowerCase();  // e.g. '.jpg'
+    final shortName = '${const Uuid().v4().split('-').first}$ext';
+
     Future<http.Response> sendOnce(String token) async {
       final uri = Uri.parse('$baseUrl/api/service_providers/me/portfolio/$postId/media/');
       final req = http.MultipartRequest('POST', uri);
@@ -2229,9 +2236,9 @@ class ApiClient {
 
       if (kIsWeb) {
         final bytes = await file.readAsBytes();
-        req.files.add(http.MultipartFile.fromBytes('file', bytes, filename: file.name));
+        req.files.add(http.MultipartFile.fromBytes('file', bytes, filename: shortName));
       } else {
-        req.files.add(await http.MultipartFile.fromPath('file', file.path, filename: file.name));
+        req.files.add(await http.MultipartFile.fromPath('file', file.path, filename: shortName));
       }
 
       final streamed = await req.send();

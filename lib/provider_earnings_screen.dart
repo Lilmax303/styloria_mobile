@@ -375,6 +375,7 @@ class _MoneyRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Show currency code and let the backend provide properly converted amounts
     final cur = currency.isEmpty ? '' : '$currency ';
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 6),
@@ -382,7 +383,10 @@ class _MoneyRow extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(label),
-          Text('$cur${amount.toStringAsFixed(2)}'),
+          Text(
+            '$cur${amount.toStringAsFixed(2)}',
+            style: const TextStyle(fontWeight: FontWeight.w700),
+          ),
         ],
       ),
     );

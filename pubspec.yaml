@@ -18,6 +18,8 @@ dependencies:
   country_picker: ^2.0.26
   app_links: ^7.0.0
   share_plus: ^12.0.1  # ← Add this line
+  uuid: ^4.0.0
+
 
   flutter_localizations:
     sdk: flutter

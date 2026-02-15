@@ -119,7 +119,8 @@ class _OpenJobsScreenState extends State<OpenJobsScreen> {
     }
   }
 
-  // Helper method to format price based on user's country
+  /// Format a price that is ALREADY in the user's currency.
+  /// Do NOT use this for raw offered_price from other currencies.
   String _formatPrice(dynamic price) {
     if (price == null || price == 'N/A') return 'N/A';
     
@@ -734,7 +735,7 @@ Widget _buildUnavailablePrompt() {
 
                           if (_userCurrencySymbol != null)
                             Text(
-                              l10n.currencyLabel(_userCurrencySymbol!),
+                              'Your currency: $_userCurrencySymbol',
                               style: const TextStyle(color: Colors.grey, fontStyle: FontStyle.italic),
                             ),
                         ],
@@ -758,12 +759,15 @@ Widget _buildUnavailablePrompt() {
                               children: [
                                 Icon(Icons.currency_exchange, size: 16, color: Colors.blue.shade700),
                                 const SizedBox(width: 8),
-                                Text(
-                                  l10n.pricesShownInCurrency(_userCurrencySymbol!, _userCountry!),
-                                  style: TextStyle(
-                                    fontSize: 12,
-                                    color: Colors.blue.shade700,
-                                    fontWeight: FontWeight.w600,
+                                Flexible(
+                                  child: Text(
+                                    'All prices shown in your currency ($_userCurrencySymbol)',
+                                    style: TextStyle(
+                                      fontSize: 12,
+                                      color: Colors.blue.shade700,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                    textAlign: TextAlign.center,
                                   ),
                                 ),
                               ],
@@ -814,10 +818,35 @@ Widget _buildUnavailablePrompt() {
                                     job['service_type']?.toString() ?? 'N/A';
                                 final appointmentTime =
                                     job['appointment_time']?.toString() ?? '';
-                                final offeredPrice =
+                                // ═══════════════════════════════════════
+                                // CURRENCY-AWARE PRICE: Use converted_price
+                                // (backend converts to provider's currency)
+                                // Provider ONLY sees their own currency.
+                                // ═══════════════════════════════════════
+                                final convertedPrice =
+                                    job['converted_price']?.toString() ??
+                                        job['converted_estimated_price']?.toString();
+                                final rawPrice =
                                     job['offered_price']?.toString() ??
                                         job['estimated_price']?.toString() ??
                                         'N/A';
+                                final viewerSymbol =
+                                    job['currency_symbol']?.toString() ??
+                                        _userCurrencySymbol ?? '';
+
+                                // Always show in provider's own currency
+                                String priceDisplay;
+                                if (convertedPrice != null) {
+                                  final num = double.tryParse(convertedPrice);
+                                  priceDisplay = num != null
+                                      ? '$viewerSymbol${num.toStringAsFixed(2)}'
+                                      : '$viewerSymbol$convertedPrice';
+                                } else if (rawPrice != 'N/A') {
+                                  priceDisplay = '$viewerSymbol$rawPrice';
+                                } else {
+                                  priceDisplay = 'N/A';
+                                }
+                                // ═══════════════════════════════════════
 
                                 // Get job tier
                                 final jobTier = job['selected_tier']?.toString();
@@ -978,7 +1007,13 @@ Widget _buildUnavailablePrompt() {
                                             ],
                                           ),
                                         ],
-                                        Text(l10n.priceLine(_formatPrice(offeredPrice))),
+                                        Text(
+                                          l10n.priceLine(priceDisplay),
+                                          style: const TextStyle(
+                                            fontWeight: FontWeight.w700,
+                                            fontSize: 14,
+                                          ),
+                                        ),
                                         const SizedBox(height: 12),
                                         Align(
                                           alignment: Alignment.centerRight,
