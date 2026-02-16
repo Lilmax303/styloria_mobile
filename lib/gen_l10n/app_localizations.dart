@@ -1975,7 +1975,7 @@ abstract class AppLocalizations {
   /// No description provided for @pdfReportTitle.
   ///
   /// In en, this message translates to:
-  /// **'PDF report'**
+  /// **'PDF Report'**
   String get pdfReportTitle;
 
   /// No description provided for @periodLabel.
@@ -1983,6 +1983,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Period'**
   String get periodLabel;
+
+  /// No description provided for @periodDaily.
+  ///
+  /// In en, this message translates to:
+  /// **'Daily'**
+  String get periodDaily;
+
+  /// No description provided for @periodWeekly.
+  ///
+  /// In en, this message translates to:
+  /// **'Weekly'**
+  String get periodWeekly;
+
+  /// No description provided for @periodMonthly.
+  ///
+  /// In en, this message translates to:
+  /// **'Monthly'**
+  String get periodMonthly;
+
+  /// No description provided for @periodYearly.
+  ///
+  /// In en, this message translates to:
+  /// **'Yearly'**
+  String get periodYearly;
 
   /// No description provided for @periodThisMonth.
   ///
@@ -2053,20 +2077,170 @@ abstract class AppLocalizations {
   /// No description provided for @openPdfReport.
   ///
   /// In en, this message translates to:
-  /// **'Open PDF report'**
+  /// **'View PDF Report'**
   String get openPdfReport;
 
   /// No description provided for @savePdfToDownloads.
   ///
   /// In en, this message translates to:
-  /// **'Save PDF to Downloads'**
+  /// **'Download PDF Report'**
   String get savePdfToDownloads;
 
   /// No description provided for @reportWatermarkNote.
   ///
   /// In en, this message translates to:
-  /// **'The report PDF should include the Styloria watermark.'**
+  /// **'PDF reflects your current time and category filters. Includes STYLORIA watermark.'**
   String get reportWatermarkNote;
+
+  /// No description provided for @earningsCategoryAll.
+  ///
+  /// In en, this message translates to:
+  /// **'All Earnings'**
+  String get earningsCategoryAll;
+
+  /// No description provided for @earningsCategoryCompletedServices.
+  ///
+  /// In en, this message translates to:
+  /// **'Completed Service Payments'**
+  String get earningsCategoryCompletedServices;
+
+  /// No description provided for @earningsCategoryTips.
+  ///
+  /// In en, this message translates to:
+  /// **'Tips Received'**
+  String get earningsCategoryTips;
+
+  /// No description provided for @earningsCategoryCancellationPenalty.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancellation Penalty Income'**
+  String get earningsCategoryCancellationPenalty;
+
+  /// No description provided for @earningsCategoryPending.
+  ///
+  /// In en, this message translates to:
+  /// **'Pending / Processing'**
+  String get earningsCategoryPending;
+
+  /// No description provided for @earningsCategoryInstantCashouts.
+  ///
+  /// In en, this message translates to:
+  /// **'Instant Cashouts'**
+  String get earningsCategoryInstantCashouts;
+
+  /// No description provided for @earningsCategoryScheduledPayouts.
+  ///
+  /// In en, this message translates to:
+  /// **'Scheduled Payouts'**
+  String get earningsCategoryScheduledPayouts;
+
+  /// No description provided for @earningsCategoryRefunds.
+  ///
+  /// In en, this message translates to:
+  /// **'Refunds / Reversals'**
+  String get earningsCategoryRefunds;
+
+  /// No description provided for @earningsCategoryAdjustments.
+  ///
+  /// In en, this message translates to:
+  /// **'Adjustments / Corrections'**
+  String get earningsCategoryAdjustments;
+
+  /// No description provided for @earningsTimeFilter.
+  ///
+  /// In en, this message translates to:
+  /// **'Time Period'**
+  String get earningsTimeFilter;
+
+  /// No description provided for @earningsCategoryFilter.
+  ///
+  /// In en, this message translates to:
+  /// **'Category'**
+  String get earningsCategoryFilter;
+
+  /// No description provided for @earningsFilteredTotal.
+  ///
+  /// In en, this message translates to:
+  /// **'Filtered Total'**
+  String get earningsFilteredTotal;
+
+  /// No description provided for @earningsTotalCredits.
+  ///
+  /// In en, this message translates to:
+  /// **'Total Credits'**
+  String get earningsTotalCredits;
+
+  /// No description provided for @earningsTotalDebits.
+  ///
+  /// In en, this message translates to:
+  /// **'Total Debits'**
+  String get earningsTotalDebits;
+
+  /// No description provided for @earningsNetAmount.
+  ///
+  /// In en, this message translates to:
+  /// **'Net Amount'**
+  String get earningsNetAmount;
+
+  /// No description provided for @earningsTransactionCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} transaction(s)'**
+  String earningsTransactionCount(Object count);
+
+  /// No description provided for @earningsNoTransactions.
+  ///
+  /// In en, this message translates to:
+  /// **'No transactions found for this filter.'**
+  String get earningsNoTransactions;
+
+  /// No description provided for @earningsAvailableBalance.
+  ///
+  /// In en, this message translates to:
+  /// **'Available Balance'**
+  String get earningsAvailableBalance;
+
+  /// No description provided for @earningsPendingBalance.
+  ///
+  /// In en, this message translates to:
+  /// **'Pending Balance'**
+  String get earningsPendingBalance;
+
+  /// No description provided for @earningsTotalBalance.
+  ///
+  /// In en, this message translates to:
+  /// **'Total Balance'**
+  String get earningsTotalBalance;
+
+  /// No description provided for @earningsLifetimeEarnings.
+  ///
+  /// In en, this message translates to:
+  /// **'Lifetime Earnings'**
+  String get earningsLifetimeEarnings;
+
+  /// No description provided for @earningsLifetimePayouts.
+  ///
+  /// In en, this message translates to:
+  /// **'Lifetime Payouts'**
+  String get earningsLifetimePayouts;
+
+  /// No description provided for @earningsLoadMore.
+  ///
+  /// In en, this message translates to:
+  /// **'Load more'**
+  String get earningsLoadMore;
+
+  /// No description provided for @earningsReportSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Generate Report'**
+  String get earningsReportSection;
+
+  /// No description provided for @earningsReportDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Download a detailed PDF report for the currently selected filters.'**
+  String get earningsReportDescription;
 
   /// No description provided for @referFriendsTitle.
   ///

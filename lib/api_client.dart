@@ -1928,8 +1928,17 @@ class ApiClient {
 
   // ---------- PROVIDER EARNINGS ----------
 
-  static Future<Map<String, dynamic>?> getProviderEarningsSummary() async {
-    final response = await _authorizedRequest('GET', '/api/providers/earnings/summary/');
+  /// Fetch earnings summary with optional period and category filters.
+  /// GET /api/providers/earnings/summary/?period=monthly&category=all
+  static Future<Map<String, dynamic>?> getProviderEarningsSummary({
+    String period = 'all_time',
+    String category = 'all',
+  }) async {
+    final qp = Uri(queryParameters: {
+      'period': period,
+      'category': category,
+    }).query;
+    final response = await _authorizedRequest('GET', '/api/providers/earnings/summary/?$qp');
     if (response.statusCode == 200) {
       final decoded = jsonDecode(response.body);
       if (decoded is Map<String, dynamic>) return decoded;
@@ -1938,16 +1947,45 @@ class ApiClient {
     return null;
   }
 
-  static Future<Uint8List?> downloadProviderEarningsReportPdf({required String period}) async {
-    final encodedPeriod = Uri.encodeQueryComponent(period);
-    final response = await _authorizedRequest('GET', '/api/providers/earnings/report/?period=$encodedPeriod');
+  /// Fetch filtered earnings transactions.
+  /// GET /api/providers/earnings/transactions/?period=monthly&category=all&page=1
+  static Future<Map<String, dynamic>?> getProviderEarningsTransactions({
+    String period = 'all_time',
+    String category = 'all',
+    int page = 1,
+  }) async {
+    final qp = Uri(queryParameters: {
+      'period': period,
+      'category': category,
+      'page': page.toString(),
+    }).query;
+    final response = await _authorizedRequest('GET', '/api/providers/earnings/transactions/?$qp');
+    if (response.statusCode == 200) {
+      final decoded = jsonDecode(response.body);
+      if (decoded is Map<String, dynamic>) return decoded;
+      if (decoded is Map) return Map<String, dynamic>.from(decoded);
+    }
+    return null;
+  }
+
+  /// Download earnings report PDF with period and category filters.
+  static Future<Uint8List?> downloadProviderEarningsReportPdf({
+    required String period,
+    String category = 'all',
+  }) async {
+    final qp = Uri(queryParameters: {
+      'period': period,
+      'category': category,
+    }).query;
+    final response = await _authorizedRequest('GET', '/api/providers/earnings/report/?$qp');
     if (response.statusCode == 200) return response.bodyBytes;
     return null;
   }
 
-  static String providerEarningsReportFilename(String period) {
-    final safe = period.replaceAll(RegExp(r'[^a-zA-Z0-9_\-]'), '_');
-    return 'styloria_earnings_$safe.pdf';
+  static String providerEarningsReportFilename(String period, {String category = 'all'}) {
+    final safePeriod = period.replaceAll(RegExp(r'[^a-zA-Z0-9_\-]'), '_');
+    final safeCat = category.replaceAll(RegExp(r'[^a-zA-Z0-9_\-]'), '_');
+    return 'styloria_earnings_${safePeriod}_$safeCat.pdf';
   }
 
   

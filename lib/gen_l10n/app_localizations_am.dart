@@ -1037,6 +1037,18 @@ class AppLocalizationsAm extends AppLocalizations {
   String get periodLabel => 'ወቅት';
 
   @override
+  String get periodDaily => 'Daily';
+
+  @override
+  String get periodWeekly => 'Weekly';
+
+  @override
+  String get periodMonthly => 'Monthly';
+
+  @override
+  String get periodYearly => 'Yearly';
+
+  @override
   String get periodThisMonth => 'ይህ ወር';
 
   @override
@@ -1086,6 +1098,85 @@ class AppLocalizationsAm extends AppLocalizations {
   @override
   String get reportWatermarkNote =>
       'የሪፖርት PDF ውስጥ የStyloria watermark መኖር አለበት።';
+
+  @override
+  String get earningsCategoryAll => 'All Earnings';
+
+  @override
+  String get earningsCategoryCompletedServices => 'Completed Service Payments';
+
+  @override
+  String get earningsCategoryTips => 'Tips Received';
+
+  @override
+  String get earningsCategoryCancellationPenalty =>
+      'Cancellation Penalty Income';
+
+  @override
+  String get earningsCategoryPending => 'Pending / Processing';
+
+  @override
+  String get earningsCategoryInstantCashouts => 'Instant Cashouts';
+
+  @override
+  String get earningsCategoryScheduledPayouts => 'Scheduled Payouts';
+
+  @override
+  String get earningsCategoryRefunds => 'Refunds / Reversals';
+
+  @override
+  String get earningsCategoryAdjustments => 'Adjustments / Corrections';
+
+  @override
+  String get earningsTimeFilter => 'Time Period';
+
+  @override
+  String get earningsCategoryFilter => 'Category';
+
+  @override
+  String get earningsFilteredTotal => 'Filtered Total';
+
+  @override
+  String get earningsTotalCredits => 'Total Credits';
+
+  @override
+  String get earningsTotalDebits => 'Total Debits';
+
+  @override
+  String get earningsNetAmount => 'Net Amount';
+
+  @override
+  String earningsTransactionCount(Object count) {
+    return '$count transaction(s)';
+  }
+
+  @override
+  String get earningsNoTransactions => 'No transactions found for this filter.';
+
+  @override
+  String get earningsAvailableBalance => 'Available Balance';
+
+  @override
+  String get earningsPendingBalance => 'Pending Balance';
+
+  @override
+  String get earningsTotalBalance => 'Total Balance';
+
+  @override
+  String get earningsLifetimeEarnings => 'Lifetime Earnings';
+
+  @override
+  String get earningsLifetimePayouts => 'Lifetime Payouts';
+
+  @override
+  String get earningsLoadMore => 'Load more';
+
+  @override
+  String get earningsReportSection => 'Generate Report';
+
+  @override
+  String get earningsReportDescription =>
+      'Download a detailed PDF report for the currently selected filters.';
 
   @override
   String get referFriendsTitle => 'ጓደኞችን ያስገቡ';
