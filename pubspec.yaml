@@ -82,4 +82,3 @@ flutter:
     - assets/services/
     - assets/provider_actions/
     - assets/images/splash_logo.png
-    - .env
