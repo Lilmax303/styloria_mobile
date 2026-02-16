@@ -76,8 +76,11 @@ void main() async {
       defaultValue: 'https://styloria.up.railway.app',
     );
 
-    // Read from .env file with null safety
-    final stripeKey = dotenv.env['STRIPE_PUBLISHABLE_KEY'] ?? '';
+    // Read from .env file first, then fall back to compile-time environment variable
+    const stripeKeyFromEnv = String.fromEnvironment('STRIPE_PUBLISHABLE_KEY', defaultValue: '');
+    final stripeKey = dotenv.env['STRIPE_PUBLISHABLE_KEY']?.isNotEmpty == true
+        ? dotenv.env['STRIPE_PUBLISHABLE_KEY']!
+        : stripeKeyFromEnv;
 
     debugPrint('API URL: $apiBaseUrl');
     debugPrint('Stripe key loaded: ${stripeKey.isNotEmpty ? "YES" : "NO"}');
