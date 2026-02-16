@@ -3,10 +3,10 @@ workflows:
     name: iOS App Store Release
     max_build_duration: 60
     instance_type: mac_mini_m1
-    
+
     integrations:
       app_store_connect: Styloria ASC
-    
+
     environment:
       ios_signing:
         distribution_type: app_store
@@ -14,45 +14,76 @@ workflows:
       flutter: stable
       xcode: latest
       cocoapods: default
+      groups:
+        - stripe_credentials  # Create this group in Codemagic UI
       vars:
-        STRIPE_PUBLISHABLE_KEY: ${STRIPE_PUBLISHABLE_KEY}
         GOOGLE_MAPS_API_KEY: ${GOOGLE_MAPS_API_KEY}
-    
+
     scripts:
       - name: Set up code signing
         script: |
           xcode-project use-profiles
-      
-      - name: Create .env file
+
+      - name: Generate .env file
         script: |
+          cd $CM_BUILD_DIR
           echo "STRIPE_PUBLISHABLE_KEY=$STRIPE_PUBLISHABLE_KEY" > .env
           echo "GOOGLE_MAPS_API_KEY=$GOOGLE_MAPS_API_KEY" >> .env
-      
+
+          echo "===== Verifying .env ====="
+          cat .env
+          if grep -q "STRIPE_PUBLISHABLE_KEY=pk_" .env; then
+            echo "✅ Stripe key is present"
+          else
+            echo "❌ ERROR: Stripe key is missing or empty!"
+            exit 1
+          fi
+
+      - name: Ensure .env is in pubspec.yaml assets
+        script: |
+          cd $CM_BUILD_DIR
+          if ! grep -q "\.env" pubspec.yaml; then
+            echo "❌ WARNING: .env is NOT listed in pubspec.yaml assets!"
+            echo "   Adding it now..."
+            sed -i '' '/^flutter:/,/^[^ ]/{/assets:/a\
+          \    - .env
+          }' pubspec.yaml
+            echo "✅ .env added to pubspec.yaml assets"
+          else
+            echo "✅ .env already in pubspec.yaml assets"
+          fi
+
       - name: Set up iOS Google Maps API Key
         script: |
+          cd $CM_BUILD_DIR
           if [ -f "ios/Runner/AppDelegate.swift" ]; then
             sed -i '' "s/GOOGLE_MAPS_API_KEY_PLACEHOLDER/$GOOGLE_MAPS_API_KEY/g" ios/Runner/AppDelegate.swift || true
+            echo "✅ Google Maps API Key injected"
           fi
-      
+
       - name: Get Flutter packages
         script: |
+          cd $CM_BUILD_DIR
+          flutter clean
           flutter pub get
-      
+
       - name: Install CocoaPods dependencies
         script: |
-          cd ios && pod install
-      
+          cd $CM_BUILD_DIR/ios
+          pod install
+
       - name: Build iOS IPA
         script: |
+          cd $CM_BUILD_DIR
           flutter build ipa --release \
             --build-name=1.0.0 \
             --build-number=$PROJECT_BUILD_NUMBER \
             --export-options-plist=/Users/builder/export_options.plist
-    
+
     artifacts:
       - build/ios/ipa/*.ipa
       - /tmp/xcodebuild_logs/*.log
-    
+
     publishing:
       app_store_connect:
         auth: integration
@@ -60,7 +91,7 @@ workflows:
         submit_to_app_store: false
       email:
         recipients:
-          - your-email@example.com
+          - mnti3030@icloud.com  # ← Replace with your real email
         notify:
           success: true
           failure: true

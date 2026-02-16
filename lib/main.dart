@@ -70,20 +70,33 @@ void main() async {
       // Continue without .env - use defaults
     }
 
-    // Use compile-time environment variable OR default
-    const apiBaseUrl = String.fromEnvironment(
+    // === API URL ===
+    // Priority: .env file → --dart-define → hardcoded default
+    const apiBaseUrlCompile = String.fromEnvironment(
       'API_BASE_URL',
       defaultValue: 'https://styloria.up.railway.app',
     );
+    final apiBaseUrl = (dotenv.env['API_BASE_URL']?.isNotEmpty == true)
+        ? dotenv.env['API_BASE_URL']!
+        : apiBaseUrlCompile;
 
-    // Read from .env file first, then fall back to compile-time environment variable
-    const stripeKeyFromEnv = String.fromEnvironment('STRIPE_PUBLISHABLE_KEY', defaultValue: '');
-    final stripeKey = dotenv.env['STRIPE_PUBLISHABLE_KEY']?.isNotEmpty == true
+    // === STRIPE KEY ===
+    // Priority: .env file → --dart-define → empty (disabled)
+    const stripeKeyCompile = String.fromEnvironment('STRIPE_PUBLISHABLE_KEY', defaultValue: '');
+    final stripeKey = (dotenv.env['STRIPE_PUBLISHABLE_KEY']?.isNotEmpty == true)
         ? dotenv.env['STRIPE_PUBLISHABLE_KEY']!
-        : stripeKeyFromEnv;
+        : stripeKeyCompile;
+
+    // === GOOGLE MAPS KEY ===
+    const googleMapsKeyCompile = String.fromEnvironment('GOOGLE_MAPS_API_KEY', defaultValue: '');
+    final googleMapsKey = (dotenv.env['GOOGLE_MAPS_API_KEY']?.isNotEmpty == true)
+        ? dotenv.env['GOOGLE_MAPS_API_KEY']!
+        : googleMapsKeyCompile;
 
     debugPrint('API URL: $apiBaseUrl');
     debugPrint('Stripe key loaded: ${stripeKey.isNotEmpty ? "YES" : "NO"}');
+    debugPrint('Google Maps key loaded: ${googleMapsKey.isNotEmpty ? "YES" : "NO"}');
+
 
     // Initialize Stripe if key is provided (with platform check)
     if (_stripeSupported && stripeKey.isNotEmpty) {
