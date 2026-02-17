@@ -50,6 +50,8 @@
     }
   },
   "close": "Close",
+  "customerNotes": "Customer Notes",
+  "yourNotes": "Your Notes",
 
   "forgotPassword": "Forgot Password?",
   "forgotPasswordTitle": "Reset Your Password",

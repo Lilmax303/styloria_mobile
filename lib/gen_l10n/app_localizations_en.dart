@@ -129,6 +129,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get close => 'Close';
 
   @override
+  String get customerNotes => 'Customer Notes';
+
+  @override
+  String get yourNotes => 'Your Notes';
+
+  @override
   String get forgotPassword => 'Forgot Password?';
 
   @override

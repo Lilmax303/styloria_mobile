@@ -1,6 +1,8 @@
 {
   "af": [
     "close",
+    "customerNotes",
+    "yourNotes",
     "forgotPassword",
     "forgotPasswordTitle",
     "forgotPasswordSubtitle",
@@ -151,6 +153,8 @@
 
   "ak": [
     "close",
+    "customerNotes",
+    "yourNotes",
     "forgotPassword",
     "forgotPasswordTitle",
     "forgotPasswordSubtitle",
@@ -301,6 +305,8 @@
 
   "am": [
     "close",
+    "customerNotes",
+    "yourNotes",
     "forgotPassword",
     "forgotPasswordTitle",
     "forgotPasswordSubtitle",
@@ -451,6 +457,8 @@
 
   "ar": [
     "close",
+    "customerNotes",
+    "yourNotes",
     "forgotPassword",
     "forgotPasswordTitle",
     "forgotPasswordSubtitle",
@@ -601,6 +609,8 @@
 
   "de": [
     "close",
+    "customerNotes",
+    "yourNotes",
     "forgotPassword",
     "forgotPasswordTitle",
     "forgotPasswordSubtitle",
@@ -830,6 +840,8 @@
 
   "es": [
     "close",
+    "customerNotes",
+    "yourNotes",
     "cantFindEmailTitle",
     "checkSpamJunkNotice",
     "periodDaily",
@@ -866,6 +878,8 @@
 
   "fr": [
     "close",
+    "customerNotes",
+    "yourNotes",
     "forgotPassword",
     "forgotPasswordTitle",
     "forgotPasswordSubtitle",
@@ -1096,6 +1110,8 @@
 
   "ha": [
     "close",
+    "customerNotes",
+    "yourNotes",
     "forgotPassword",
     "forgotPasswordTitle",
     "forgotPasswordSubtitle",
@@ -1246,6 +1262,8 @@
 
   "he": [
     "close",
+    "customerNotes",
+    "yourNotes",
     "forgotPassword",
     "forgotPasswordTitle",
     "forgotPasswordSubtitle",
@@ -1475,6 +1493,8 @@
 
   "hi": [
     "close",
+    "customerNotes",
+    "yourNotes",
     "forgotPassword",
     "forgotPasswordTitle",
     "forgotPasswordSubtitle",
@@ -1704,6 +1724,8 @@
 
   "it": [
     "close",
+    "customerNotes",
+    "yourNotes",
     "forgotPassword",
     "forgotPasswordTitle",
     "forgotPasswordSubtitle",
@@ -1933,6 +1955,8 @@
 
   "ja": [
     "close",
+    "customerNotes",
+    "yourNotes",
     "forgotPassword",
     "forgotPasswordTitle",
     "forgotPasswordSubtitle",
@@ -2084,6 +2108,8 @@
 
   "ko": [
     "close",
+    "customerNotes",
+    "yourNotes",
     "forgotPassword",
     "forgotPasswordTitle",
     "forgotPasswordSubtitle",
@@ -2335,6 +2361,8 @@
 
   "ru": [
     "close",
+    "customerNotes",
+    "yourNotes",
     "forgotPassword",
     "forgotPasswordTitle",
     "forgotPasswordSubtitle",
@@ -2486,6 +2514,8 @@
 
   "sw": [
     "close",
+    "customerNotes",
+    "yourNotes",
     "forgotPassword",
     "forgotPasswordTitle",
     "forgotPasswordSubtitle",
@@ -2636,6 +2666,8 @@
 
   "ur": [
     "close",
+    "customerNotes",
+    "yourNotes",
     "forgotPassword",
     "forgotPasswordTitle",
     "forgotPasswordSubtitle",
@@ -2865,6 +2897,8 @@
 
   "zh": [
     "close",
+    "customerNotes",
+    "yourNotes",
     "forgotPassword",
     "forgotPasswordTitle",
     "forgotPasswordSubtitle",

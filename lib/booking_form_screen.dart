@@ -80,7 +80,7 @@ class _BookingFormScreenState extends State<BookingFormScreen> {
   Map<String, dynamic>? _standardBreakdown;
   Map<String, dynamic>? _priorityBreakdown;
 
-  String _selectedPriceTier = 'standard'; // 'budget', 'standard', 'priority'
+  String _selectedPriceTier = 'standard'; // 'budget', 'standard', 'premium'
   double? _transportationCost;
   double? _budgetPrice;
   double? _standardPrice;
@@ -708,7 +708,7 @@ class _BookingFormScreenState extends State<BookingFormScreen> {
 
         final budget = _parseDouble(priceData['budget_price']);
         final standard = _parseDouble(priceData['standard_price']);
-        final priority = _parseDouble(priceData['priority_price']);
+        final priority = _parseDouble(priceData['premium_price']) ?? _parseDouble(priceData['priority_price']);
 
         if (hasNoProvidersMessage && budget == null && standard == null && priority == null) {
           _resultIsSuccess = false;
@@ -741,7 +741,7 @@ class _BookingFormScreenState extends State<BookingFormScreen> {
         if (breakdown != null) {
           _budgetBreakdown = breakdown['budget'] as Map<String, dynamic>?;
           _standardBreakdown = breakdown['standard'] as Map<String, dynamic>?;
-          _priorityBreakdown = breakdown['priority'] as Map<String, dynamic>?;
+          _priorityBreakdown = breakdown['premium'] as Map<String, dynamic>?;
         }
 
         _selectedPriceTier = 'standard';
@@ -1196,7 +1196,7 @@ class _BookingFormScreenState extends State<BookingFormScreen> {
       breakdown = _budgetBreakdown;
     } else if (tier == 'standard') {
       breakdown = _standardBreakdown;
-    } else if (tier == 'priority') {
+    } else if (tier == 'premium') {
       breakdown = _priorityBreakdown;
     }
 
@@ -1713,10 +1713,10 @@ class _BookingFormScreenState extends State<BookingFormScreen> {
                     const SizedBox(height: 12),
                     _buildPriceOptionCard(
                       title: l10n.priorityTierTitle,
-                      tier: 'priority',
+                      tier: 'premium',
                       price: _priorityPrice,
                       description: l10n.priorityTierDescription,
-                      isSelected: _selectedPriceTier == 'priority',
+                      isSelected: _selectedPriceTier == 'premium',
                       accentColor: priorityColor,
                     ),
                     const SizedBox(height: 16),

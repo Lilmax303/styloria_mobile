@@ -352,6 +352,18 @@ abstract class AppLocalizations {
   /// **'Close'**
   String get close;
 
+  /// No description provided for @customerNotes.
+  ///
+  /// In en, this message translates to:
+  /// **'Customer Notes'**
+  String get customerNotes;
+
+  /// No description provided for @yourNotes.
+  ///
+  /// In en, this message translates to:
+  /// **'Your Notes'**
+  String get yourNotes;
+
   /// No description provided for @forgotPassword.
   ///
   /// In en, this message translates to:

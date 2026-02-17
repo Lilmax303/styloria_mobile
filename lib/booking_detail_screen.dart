@@ -3318,6 +3318,58 @@ class _BookingDetailScreenState extends State<BookingDetailScreen> {
                       ),
                       const SizedBox(height: 14),
                     ],
+
+                    // Customer notes
+                    if ((booking['notes'] ?? '').toString().trim().isNotEmpty) ...[
+                      Container(
+                        width: double.infinity,
+                        padding: const EdgeInsets.all(14),
+                        decoration: BoxDecoration(
+                          color: Colors.amber.withOpacity(0.08),
+                          borderRadius: BorderRadius.circular(12),
+                          border: Border.all(
+                            color: Colors.amber.shade300,
+                            width: 1.5,
+                          ),
+                        ),
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Icon(
+                              Icons.note_alt_outlined,
+                              size: 20,
+                              color: Colors.amber.shade800,
+                            ),
+                            const SizedBox(width: 12),
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    widget.role == 'provider'
+                                        ? l10n.customerNotes
+                                        : l10n.yourNotes,
+                                    style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                                      fontWeight: FontWeight.w800,
+                                      color: Colors.amber.shade900,
+                                    ),
+                                  ),
+                                  const SizedBox(height: 4),
+                                  Text(
+                                    booking['notes'].toString().trim(),
+                                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                                      color: cs.onSurface,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(height: 14),
+                    ],
+ 
                     if (userName.isNotEmpty) _kv(context, l10n.userLabel, userName),
                     if (providerName.isNotEmpty) _kv(context, l10n.providerLabel, providerName),
                     if (offeredPrice != na) _kv(context, l10n.offeredPaidLabel, displayPrice, strong: true),

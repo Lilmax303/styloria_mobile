@@ -981,6 +981,55 @@ Widget _buildUnavailablePrompt() {
                                             l10n.locationLabel(requesterAddress),
                                             style: const TextStyle(color: Colors.grey),
                                           ),
+                                        // Customer notes (if any)
+                                        if ((job['notes'] ?? '').toString().trim().isNotEmpty) ...[
+                                          const SizedBox(height: 8),
+                                          Container(
+                                            width: double.infinity,
+                                            padding: const EdgeInsets.all(10),
+                                            decoration: BoxDecoration(
+                                              color: Colors.amber.shade50,
+                                              borderRadius: BorderRadius.circular(8),
+                                              border: Border.all(
+                                                color: Colors.amber.shade200,
+                                              ),
+                                            ),
+                                            child: Row(
+                                              crossAxisAlignment: CrossAxisAlignment.start,
+                                              children: [
+                                                Icon(
+                                                  Icons.note_alt_outlined,
+                                                  size: 16,
+                                                  color: Colors.amber.shade800,
+                                                ),
+                                                const SizedBox(width: 8),
+                                                Expanded(
+                                                  child: Column(
+                                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                                    children: [
+                                                      Text(
+                                                        'Customer Note',
+                                                        style: TextStyle(
+                                                          fontSize: 11,
+                                                          fontWeight: FontWeight.w700,
+                                                          color: Colors.amber.shade900,
+                                                        ),
+                                                      ),
+                                                      const SizedBox(height: 2),
+                                                      Text(
+                                                        job['notes'].toString().trim(),
+                                                        style: TextStyle(
+                                                          fontSize: 13,
+                                                          color: Colors.amber.shade900,
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ],
 
                                         // ✅ IMPROVED: Better time display with TODAY indicator
                                         if (dateStr.isNotEmpty || timeStr.isNotEmpty) ...[
