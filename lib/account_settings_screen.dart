@@ -19,6 +19,7 @@ class _AccountSettingsScreenState extends State<AccountSettingsScreen> {
 
   static const List<Map<String, String>> _languages = [
     {'code': 'en', 'name': 'English'},
+    {'code': 'es', 'name': 'Spanish'},
     {'code': 'fr', 'name': 'French'},
     {'code': 'zh', 'name': 'Mandarin (Chinese)'},
     {'code': 'ru', 'name': 'Russian'},
@@ -56,7 +57,15 @@ class _AccountSettingsScreenState extends State<AccountSettingsScreen> {
   void didChangeDependencies() {
     super.didChangeDependencies();
     final appState = StyloriaApp.of(context);
-    _selectedLanguageCode = appState?.locale?.languageCode; // null = system default
+    final code = appState?.locale?.languageCode;
+    
+    // Safety: if the current locale isn't in our dropdown list, 
+    // fall back to null (system default) to prevent DropdownButton crash
+    if (code != null && !_languages.any((l) => l['code'] == code)) {
+      _selectedLanguageCode = null;
+    } else {
+      _selectedLanguageCode = code;
+    }
   }
 
   Future<void> _logout(BuildContext context) async {

@@ -233,15 +233,14 @@ class AppLocalizationsEs extends AppLocalizations {
   String get deletionReason12 => 'Otro';
 
   @override
-  String get loginWelcomeTitle => 'Bienvenido a Styloria';
+  String get loginWelcomeTitle => 'Bienvenido de Nuevo';
 
   @override
-  String get loginWelcomeSubtitle =>
-      'Inicia sesión para administrar tus reservas y servicios.';
+  String get loginWelcomeSubtitle => 'Inicia sesión en tu cuenta';
 
   @override
   String get loginFailedToLoadUserInfo =>
-      'Inicio de sesión exitoso pero no se pudo cargar la información del usuario.';
+      'No se pudo cargar la información del usuario.';
 
   @override
   String get username => 'Nombre de usuario';
@@ -263,23 +262,364 @@ class AppLocalizationsEs extends AppLocalizations {
       'Solicitar código de verificación por correo';
 
   @override
+  String get selectYourServicesTitle => 'Selecciona tus servicios';
+
+  @override
+  String get yourServicesAndPricing => 'Tus servicios y precios';
+
+  @override
+  String get tapServiceToAddSubtitle =>
+      'Toca un servicio para añadirlo a tus ofertas';
+
+  @override
+  String get tapToEditLongPressRemove =>
+      'Toca para editar precio • Mantén pulsado para eliminar';
+
+  @override
+  String pricingStepLabel(int current, int total) {
+    return 'Paso $current/$total';
+  }
+
+  @override
+  String get certRequiredLegend => 'Certif. requerida';
+
+  @override
+  String get pendingLegend => 'Pendiente';
+
+  @override
+  String get certifiedLegend => 'Certificado';
+
+  @override
+  String get continueToPricing => 'Continuar a precios';
+
+  @override
+  String get noServicesSelectedMessage =>
+      'Aún no se han seleccionado servicios';
+
+  @override
+  String get selectServicesButton => 'Seleccionar servicios';
+
+  @override
+  String get addMoreServicesButton => 'Añadir más servicios';
+
+  @override
+  String get savePricingButton => 'Guardar precios';
+
+  @override
+  String get removeLabel => 'QUITAR';
+
+  @override
+  String get selectLabel => 'ELEGIR';
+
+  @override
+  String get tapToEditHint => 'Toca para editar';
+
+  @override
+  String setPriceForService(String service) {
+    return 'Establecer precio para $service';
+  }
+
+  @override
+  String get paymentSuccessfulTitle => 'Pago Exitoso';
+
+  @override
+  String get paymentCouldNotBeVerified => 'No se pudo verificar el pago';
+
+  @override
+  String get stripeNotConfigured =>
+      'El sistema de pago no está configurado. Por favor, contacte al soporte o intente de nuevo más tarde.';
+
+  @override
+  String get stripeConfigError =>
+      'Stripe no está configurado. Por favor, asegúrese de que la aplicación esté correctamente configurada.';
+
+  @override
+  String get selectedServiceLabel => 'Servicio Seleccionado';
+
+  @override
+  String referralDiscountApplied(String amount) {
+    return 'Descuento por referido aplicado: $amount';
+  }
+
+  @override
+  String creditsRemainingInfo(int count) {
+    return 'Tienes $count créditos restantes (se usará 1)';
+  }
+
+  @override
   String get serviceLocationHint =>
-      'Ingresa dónde quieres que se realice el servicio. Puede ser diferente a tu ubicación actual.';
+      'Aquí es donde el proveedor vendrá a atenderte';
 
   @override
-  String get serviceAddressLabel => 'Dirección del Servicio';
+  String get serviceAddressLabel => 'Dirección del servicio';
 
   @override
-  String get serviceAddressHint => 'ej., Calle Principal 123, Ciudad, País';
+  String get serviceAddressHint =>
+      'Ingresa la dirección donde deseas el servicio';
 
   @override
-  String get searchAddressTooltip => 'Buscar esta dirección';
+  String get searchAddressTooltip => 'Buscar dirección';
 
   @override
-  String get serviceLocationSet => 'Ubicación del servicio establecida';
+  String get serviceLocationSet => 'Ubicación establecida';
 
   @override
   String get coordinatesLabel => 'Coordenadas';
+
+  @override
+  String get hairServicesCategory => 'Servicios de cabello';
+
+  @override
+  String get beautyWellnessCategory => 'Belleza y Bienestar';
+
+  @override
+  String get certifiedLabel => 'Certificado';
+
+  @override
+  String get removeServiceTooltip => 'Eliminar servicio';
+
+  @override
+  String get tabBasicInfo => 'Info Básica';
+
+  @override
+  String get tabPortfolio => 'Portafolio';
+
+  @override
+  String get tabPricing => 'Precios';
+
+  @override
+  String get tabReviews => 'Reseñas';
+
+  @override
+  String setPriceOrMarkNotOffered(String service) {
+    return 'Por favor, establece un precio para \"$service\" o márcalo como \"No ofrecido\".';
+  }
+
+  @override
+  String get rescheduleRequiredTitle => 'Reprogramación Requerida';
+
+  @override
+  String get rescheduleRequiredMessage =>
+      'Tu reserva no fue pagada. Por favor, selecciona una nueva hora para HOY para continuar con el pago.';
+
+  @override
+  String get selectNewAppointmentTime => 'Selecciona nueva hora de cita:';
+
+  @override
+  String get tapToSelectTime => 'Toca para seleccionar hora';
+
+  @override
+  String todayAtTimeSimple(String time) {
+    return 'Hoy a las $time';
+  }
+
+  @override
+  String get selectTimeForToday => 'Selecciona hora para HOY';
+
+  @override
+  String get selectTimeAtLeast30Min =>
+      'Por favor, selecciona una hora al menos 30 minutos desde ahora.';
+
+  @override
+  String get mustBeAtLeast30MinFromNow =>
+      '* Debe ser al menos 30 minutos desde ahora';
+
+  @override
+  String get continueToPayment => 'Continuar al Pago';
+
+  @override
+  String get failedToUpdateTime => 'Error al actualizar la hora';
+
+  @override
+  String get failedSubmitReviewTryAgain =>
+      'Error al enviar la reseña. Por favor, inténtalo de nuevo.';
+
+  @override
+  String get processingPayment => 'Procesando Pago';
+
+  @override
+  String get completePaymentInBrowser => 'Completa tu pago en el navegador...';
+
+  @override
+  String get waitingForPaymentConfirmation =>
+      'Esperando confirmación de pago...';
+
+  @override
+  String get stillWaitingCompletePayment =>
+      'Aún esperando... Por favor, completa el pago.';
+
+  @override
+  String get paymentVerificationTimedOut =>
+      'La verificación del pago ha expirado. Por favor, revisa tus reservas.';
+
+  @override
+  String get checkingPaymentStatus => 'Verificando estado del pago...';
+
+  @override
+  String get paymentNotYetReceived =>
+      'Pago aún no recibido. Por favor, completa el pago.';
+
+  @override
+  String get couldNotVerifyTryAgain =>
+      'No se pudo verificar. Por favor, inténtalo de nuevo.';
+
+  @override
+  String get willUpdateAutomatically =>
+      'Esto se actualizará automáticamente cuando el pago esté completo.';
+
+  @override
+  String get checkNow => 'Verificar Ahora';
+
+  @override
+  String get providerActionHeader => '¿Qué te gustaría hacer hoy?';
+
+  @override
+  String get providerActionBrowseJobs => 'Buscar trabajos';
+
+  @override
+  String get providerActionWallet => 'Billetera';
+
+  @override
+  String get providerActionManageProfile => 'Gestionar perfil';
+
+  @override
+  String get providerActionNotifications => 'Notificaciones';
+
+  @override
+  String get providerActionNewBooking => 'Nueva reserva';
+
+  @override
+  String get providerActionMyReviews => 'Mis reseñas';
+
+  @override
+  String get providerActionPortfolio => 'Portafolio';
+
+  @override
+  String get providerActionServicesPricing => 'Servicios y precios';
+
+  @override
+  String get moreActionsButton => 'Más acciones';
+
+  @override
+  String get showLessButton => 'Mostrar menos';
+
+  @override
+  String get goButton => 'IR';
+
+  @override
+  String get priceInputLabel => 'Precio';
+
+  @override
+  String get pleaseEnterValidPrice => 'Por favor ingresa un precio válido';
+
+  @override
+  String get savePriceButton => 'Guardar precio';
+
+  @override
+  String pricingCertDialogBody(String service) {
+    return 'Para ofrecer $service, necesitas una certificación verificada. Por favor añade tu certificación en la pestaña de Información básica.';
+  }
+
+  @override
+  String get stripeSetupComplete => 'La configuración de Stripe está completa.';
+
+  @override
+  String get openPayoutSettings => 'Abrir configuración de pagos';
+
+  @override
+  String get walletNoWalletSelected => 'No se ha seleccionado billetera.';
+
+  @override
+  String get walletNoAvailableBalance =>
+      'No hay saldo disponible para retirar.';
+
+  @override
+  String walletBelowMinimumCashout(
+      String min, String currency, String available) {
+    return 'El retiro mínimo es de $min $currency. Tu saldo disponible es de $available $currency.';
+  }
+
+  @override
+  String get walletInstantCashoutDisabled =>
+      'El retiro instantáneo está deshabilitado en tu configuración.';
+
+  @override
+  String walletInstantCashoutAvailable(String remaining, String period) {
+    return 'Retiro instantáneo disponible ($remaining restantes $period). Se aplica una comisión del 5%.';
+  }
+
+  @override
+  String get walletInstantCashoutUnlimited =>
+      'Retiro instantáneo disponible en cualquier momento. Se aplica una comisión del 5%.';
+
+  @override
+  String get walletEnterAmountToCashOut =>
+      'Por favor ingresa un monto para retirar.';
+
+  @override
+  String get walletEnterValidAmount => 'Por favor ingresa un monto válido.';
+
+  @override
+  String get walletCashoutInitiated => '¡Retiro iniciado con éxito!';
+
+  @override
+  String walletPayoutFailed(String reason) {
+    return 'Pago fallido: $reason';
+  }
+
+  @override
+  String get walletTransferCouldNotComplete =>
+      'No se pudo completar la transferencia. Por favor verifica tu configuración de pagos.';
+
+  @override
+  String walletPayoutStatusLabel(String status) {
+    return 'Pago: $status';
+  }
+
+  @override
+  String get serviceSelectorHeader => '¿Con qué servicio podemos ayudarte?';
+
+  @override
+  String get showMore => 'Mostrar más';
+
+  @override
+  String get serviceSelectorSelectButton => 'ELEGIR';
+
+  @override
+  String get certServiceSelectorTitle =>
+      '¿Para qué servicios califica esta certificación?';
+
+  @override
+  String get certServiceSelectorHint =>
+      'Selecciona todos los servicios que cubre esta certificación. Puedes seleccionar varios.';
+
+  @override
+  String get certNoServicesSelectedWarning =>
+      'No se seleccionaron servicios. Esta certificación no desbloqueará ningún servicio.';
+
+  @override
+  String get portfolioShowcaseTitle => 'Muestra tu mejor trabajo';
+
+  @override
+  String get portfolioShowcaseSubtitle =>
+      'Tu portafolio cuenta tu historia. Deja que tu trabajo hable por sí mismo.';
+
+  @override
+  String get providerUnavailableMessage =>
+      'Actualmente no estás disponible para reservas. Por favor, activa tu disponibilidad en la configuración de tu perfil.';
+
+  @override
+  String get portfolioEmptyTitle => 'Tu portafolio está vacío';
+
+  @override
+  String get portfolioEmptySubtitle =>
+      'Añade fotos y videos de tu trabajo para atraer más clientes.';
+
+  @override
+  String get portfolioUploading => 'Subiendo...';
+
+  @override
+  String get portfolioAddButton => 'Añadir al portafolio';
 
   @override
   String get pleaseEnterAddress => 'Por favor ingresa una dirección';
@@ -323,6 +663,207 @@ class AppLocalizationsEs extends AppLocalizations {
   @override
   String get locationMarkedAsOther =>
       'Ubicación marcada como \"Otro\" - puedes continuar con el registro';
+
+  @override
+  String get referralLoadFailed =>
+      'No se pudieron cargar las estadísticas de referidos';
+
+  @override
+  String referralCodeCopiedSnackbar(String code) {
+    return '¡Código de referido \"$code\" copiado!';
+  }
+
+  @override
+  String referralShareText(String code, int credits, int discount) {
+    return '🎉 ¡Únete a mí en Styloria!\n\nUsa mi código de referido: $code\n\nCuando completes tu primera reserva, ¡obtendré $credits reservas con $discount% de descuento!\n\nDescarga Styloria y recibe servicios increíbles en tu puerta.';
+  }
+
+  @override
+  String get referralShareSubject =>
+      '¡Únete a Styloria con mi código de referido!';
+
+  @override
+  String get referralYourCode => 'Tu código de referido';
+
+  @override
+  String get shareLabel => 'Compartir';
+
+  @override
+  String get howItWorks => 'Cómo funciona';
+
+  @override
+  String get referralStep1Share => 'Comparte tu código con amigos';
+
+  @override
+  String get referralStep2SignUp => 'Ellos se registran usando tu código';
+
+  @override
+  String get referralStep3Booking => 'Cuando completen su primera reserva...';
+
+  @override
+  String referralStepReward(int credits, int discount) {
+    return '¡Obtienes $credits reservas con $discount% de descuento!';
+  }
+
+  @override
+  String get creditsAvailable => 'Créditos disponibles';
+
+  @override
+  String get successfulReferrals => 'Referidos exitosos';
+
+  @override
+  String get totalEarned => 'Total ganado';
+
+  @override
+  String get creditsUsed => 'Créditos usados';
+
+  @override
+  String referralPendingFriendsMessage(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other:
+          '$count amigos se registraron pero aún no han completado una reserva.',
+      one: '1 amigo se registró pero aún no ha completado una reserva.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get referralHistory => 'Historial de referidos';
+
+  @override
+  String get referralStatusCompleted => 'Completado';
+
+  @override
+  String get referralStatusExpired => 'Expirado';
+
+  @override
+  String get referralStatusPending => 'Pendiente';
+
+  @override
+  String referralJoinedDate(String date) {
+    return 'Se unió el $date';
+  }
+
+  @override
+  String get referralJoinedRecently => 'Se unió recientemente';
+
+  @override
+  String get noReferralsYet => 'Aún no hay referidos';
+
+  @override
+  String get shareCodeForDiscounts =>
+      '¡Comparte tu código con amigos para ganar descuentos!';
+
+  @override
+  String get userFallbackName => 'Usuario';
+
+  @override
+  String tierYourTier(String title) {
+    return 'Tu nivel: $title';
+  }
+
+  @override
+  String tierTrustScore(int score) {
+    return 'Puntuación de confianza: $score/100';
+  }
+
+  @override
+  String get tierYouCanAccept => 'Puedes aceptar:';
+
+  @override
+  String get tierCertifiedExpert => 'Experto certificado';
+
+  @override
+  String get tierVerifiedPro => 'Profesional verificado';
+
+  @override
+  String get tierNewAndEager => 'Nuevo y entusiasta';
+
+  @override
+  String get tierPremiumBadge => '💜 Premium';
+
+  @override
+  String get tierStandardBadge => '💙 Estándar';
+
+  @override
+  String get tierBudgetBadge => '💚 Económico';
+
+  @override
+  String get tierUpgradeHintBudget =>
+      '¡Completa tu biografía, añade fotos de portafolio y sube certificaciones para desbloquear trabajos Estándar y Premium!';
+
+  @override
+  String get tierUpgradeHintStandard =>
+      '¡Añade más elementos de portafolio y certificaciones para desbloquear trabajos Premium con mayores ganancias!';
+
+  @override
+  String get filterLabel => 'Filtrar: ';
+
+  @override
+  String get filterAll => 'Todos';
+
+  @override
+  String noTierJobsAvailable(String tier) {
+    return 'No hay trabajos $tier disponibles';
+  }
+
+  @override
+  String get clearFilter => 'Borrar filtro';
+
+  @override
+  String allPricesInYourCurrency(String symbol) {
+    return 'Todos los precios se muestran en tu moneda ($symbol)';
+  }
+
+  @override
+  String yourCurrencyIs(String symbol) {
+    return 'Tu moneda: $symbol';
+  }
+
+  @override
+  String get tierRequiredDialogTitle => 'Nivel requerido';
+
+  @override
+  String thisIsATierJob(String title) {
+    return 'Este es un trabajo de nivel $title.';
+  }
+
+  @override
+  String get yourTierColon => 'Tu nivel: ';
+
+  @override
+  String get requiredColon => 'Requerido: ';
+
+  @override
+  String get okButton => 'OK';
+
+  @override
+  String get improveProfileButton => 'Mejorar perfil';
+
+  @override
+  String get customerNoteLabel => 'Nota del cliente';
+
+  @override
+  String todayAtTime(String time) {
+    return 'Hoy a las $time';
+  }
+
+  @override
+  String dateAtTime(String date, String time) {
+    return '$date a las $time';
+  }
+
+  @override
+  String ratingValue(String rating) {
+    return 'Calificación de $rating';
+  }
+
+  @override
+  String reviewsCountParens(int count) {
+    return '($count reseñas)';
+  }
 
   @override
   String get createAccountTitle => 'Crear Cuenta';
@@ -498,6 +1039,39 @@ class AppLocalizationsEs extends AppLocalizations {
   String emailVerificationInstructions(Object identifier) {
     return 'Ingresa el código de 6 dígitos enviado al correo de esta cuenta:\n$identifier';
   }
+
+  @override
+  String get verifyingPaystackPayment => 'Verificando pago de Paystack...';
+
+  @override
+  String get paymentVerifiedSuccessfully => '¡Pago verificado exitosamente!';
+
+  @override
+  String get paymentVerificationFailed => 'La verificación del pago falló';
+
+  @override
+  String errorVerifyingPayment(String error) {
+    return 'Error al verificar el pago: $error';
+  }
+
+  @override
+  String get paymentWasCancelled => 'El pago fue cancelado.';
+
+  @override
+  String paymentVerificationFailedDetail(String detail) {
+    return 'Error en la verificación del pago: $detail';
+  }
+
+  @override
+  String helloName(String name) {
+    return 'Hola $name';
+  }
+
+  @override
+  String get hello => 'Hola';
+
+  @override
+  String get view => 'Ver';
 
   @override
   String get verificationCodeLabel => 'Código de verificación';

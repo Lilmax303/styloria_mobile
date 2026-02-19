@@ -32,14 +32,14 @@ class _ReferralScreenState extends State<ReferralScreen> {
     });
 
     final stats = await ApiClient.getReferralStats();
-    
+
     if (!mounted) return;
-    
+
     setState(() {
       _stats = stats;
       _loading = false;
       if (stats == null) {
-        _error = 'Failed to load referral stats';
+        _error = AppLocalizations.of(context).referralLoadFailed;
       }
     });
   }
@@ -47,13 +47,13 @@ class _ReferralScreenState extends State<ReferralScreen> {
   Future<void> _copyCode() async {
     final code = _stats?['referral_code']?.toString() ?? '';
     if (code.isEmpty) return;
-    
+
     await Clipboard.setData(ClipboardData(text: code));
     if (!mounted) return;
-    
+
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
-        content: Text('Referral code "$code" copied!'),
+        content: Text(AppLocalizations.of(context).referralCodeCopiedSnackbar(code)),
         backgroundColor: Colors.green,
       ),
     );
@@ -62,21 +62,14 @@ class _ReferralScreenState extends State<ReferralScreen> {
   Future<void> _shareCode() async {
     final code = _stats?['referral_code']?.toString() ?? '';
     if (code.isEmpty) return;
-    
+
     final discountPercent = _stats?['discount_percent'] ?? 7;
     final creditsPerReferral = _stats?['credits_per_referral'] ?? 5;
-    
-    final shareText = '''
-🎉 Join me on Styloria!
+    final l10n = AppLocalizations.of(context);
 
-Use my referral code: $code
+    final shareText = l10n.referralShareText(code, creditsPerReferral, discountPercent);
 
-When you complete your first booking, I'll get $creditsPerReferral bookings with $discountPercent% off!
-
-Download Styloria and get amazing services delivered to your door.
-''';
-    
-    await Share.share(shareText, subject: 'Join Styloria with my referral code!');
+    await Share.share(shareText, subject: l10n.referralShareSubject);
   }
 
   @override
@@ -101,11 +94,11 @@ Download Styloria and get amazing services delivered to your door.
             children: [
               Icon(Icons.error_outline, size: 64, color: cs.error),
               const SizedBox(height: 16),
-              Text(_error ?? 'Something went wrong'),
+              Text(_error ?? l10n.somethingWentWrong),
               const SizedBox(height: 16),
               ElevatedButton(
                 onPressed: _loadStats,
-                child: const Text('Retry'),
+                child: Text(l10n.retry),
               ),
             ],
           ),
@@ -130,7 +123,7 @@ Download Styloria and get amazing services delivered to your door.
           IconButton(
             icon: const Icon(Icons.refresh),
             onPressed: _loadStats,
-            tooltip: 'Refresh',
+            tooltip: l10n.refresh,
           ),
         ],
       ),
@@ -170,7 +163,7 @@ Download Styloria and get amazing services delivered to your door.
                       ),
                       const SizedBox(height: 12),
                       Text(
-                        'Your Referral Code',
+                        l10n.referralYourCode,
                         style: Theme.of(context).textTheme.titleMedium?.copyWith(
                           color: cs.onPrimaryContainer,
                         ),
@@ -199,7 +192,7 @@ Download Styloria and get amazing services delivered to your door.
                           ElevatedButton.icon(
                             onPressed: _copyCode,
                             icon: const Icon(Icons.copy, size: 18),
-                            label: const Text('Copy'),
+                            label: Text(l10n.copy),
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.white,
                               foregroundColor: Colors.black87,
@@ -211,7 +204,7 @@ Download Styloria and get amazing services delivered to your door.
                           ElevatedButton.icon(
                             onPressed: _shareCode,
                             icon: const Icon(Icons.share, size: 18),
-                            label: const Text('Share'),
+                            label: Text(l10n.shareLabel),
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.black87,
                               foregroundColor: Colors.white,
@@ -240,7 +233,7 @@ Download Styloria and get amazing services delivered to your door.
                           Icon(Icons.info_outline, color: cs.primary),
                           const SizedBox(width: 8),
                           Text(
-                            'How It Works',
+                            l10n.howItWorks,
                             style: Theme.of(context).textTheme.titleMedium?.copyWith(
                               fontWeight: FontWeight.bold,
                             ),
@@ -248,10 +241,15 @@ Download Styloria and get amazing services delivered to your door.
                         ],
                       ),
                       const Divider(),
-                      _buildStep(context, '1', 'Share your code with friends'),
-                      _buildStep(context, '2', 'They sign up using your code'),
-                      _buildStep(context, '3', 'When they complete their first booking...'),
-                      _buildStep(context, '🎉', 'You get $creditsPerReferral bookings with $discountPercent% off!', isHighlight: true),
+                      _buildStep(context, '1', l10n.referralStep1Share),
+                      _buildStep(context, '2', l10n.referralStep2SignUp),
+                      _buildStep(context, '3', l10n.referralStep3Booking),
+                      _buildStep(
+                        context,
+                        '🎉',
+                        l10n.referralStepReward(creditsPerReferral, discountPercent),
+                        isHighlight: true,
+                      ),
                     ],
                   ),
                 ),
@@ -266,7 +264,7 @@ Download Styloria and get amazing services delivered to your door.
                     child: _buildStatCard(
                       context,
                       '$credits',
-                      'Credits Available',
+                      l10n.creditsAvailable,
                       Icons.confirmation_number,
                       Colors.green,
                     ),
@@ -276,7 +274,7 @@ Download Styloria and get amazing services delivered to your door.
                     child: _buildStatCard(
                       context,
                       '$totalReferrals',
-                      'Successful Referrals',
+                      l10n.successfulReferrals,
                       Icons.people,
                       Colors.blue,
                     ),
@@ -292,7 +290,7 @@ Download Styloria and get amazing services delivered to your door.
                     child: _buildStatCard(
                       context,
                       '$totalEarned',
-                      'Total Earned',
+                      l10n.totalEarned,
                       Icons.emoji_events,
                       Colors.amber,
                     ),
@@ -302,7 +300,7 @@ Download Styloria and get amazing services delivered to your door.
                     child: _buildStatCard(
                       context,
                       '$totalUsed',
-                      'Credits Used',
+                      l10n.creditsUsed,
                       Icons.check_circle,
                       Colors.purple,
                     ),
@@ -325,7 +323,7 @@ Download Styloria and get amazing services delivered to your door.
                       const SizedBox(width: 12),
                       Expanded(
                         child: Text(
-                          '$pendingReferrals friend${pendingReferrals > 1 ? 's' : ''} signed up but haven\'t completed a booking yet.',
+                          l10n.referralPendingFriendsMessage(pendingReferrals),
                           style: TextStyle(color: Colors.orange.shade700),
                         ),
                       ),
@@ -338,7 +336,7 @@ Download Styloria and get amazing services delivered to your door.
               if (referrals.isNotEmpty) ...[
                 const SizedBox(height: 24),
                 Text(
-                  'Referral History',
+                  l10n.referralHistory,
                   style: Theme.of(context).textTheme.titleMedium?.copyWith(
                     fontWeight: FontWeight.bold,
                   ),
@@ -352,40 +350,40 @@ Download Styloria and get amazing services delivered to your door.
                     separatorBuilder: (_, __) => const Divider(height: 1),
                     itemBuilder: (context, index) {
                       final ref = referrals[index] as Map<String, dynamic>;
-                      final name = ref['referred_first_name']?.toString() ?? 
-                                   ref['referred_username']?.toString() ?? 'User';
+                      final name = ref['referred_first_name']?.toString() ??
+                          ref['referred_username']?.toString() ??
+                          l10n.userFallbackName;
                       final status = ref['status']?.toString() ?? 'pending';
                       final createdAt = ref['created_at']?.toString() ?? '';
-                      final qualifiedAt = ref['qualified_at']?.toString();
-                      
+
                       IconData statusIcon;
                       Color statusColor;
                       String statusText;
-                      
+
                       switch (status) {
                         case 'qualified':
                           statusIcon = Icons.check_circle;
                           statusColor = Colors.green;
-                          statusText = 'Completed';
+                          statusText = l10n.referralStatusCompleted;
                           break;
                         case 'expired':
                           statusIcon = Icons.cancel;
                           statusColor = Colors.grey;
-                          statusText = 'Expired';
+                          statusText = l10n.referralStatusExpired;
                           break;
                         default:
                           statusIcon = Icons.hourglass_empty;
                           statusColor = Colors.orange;
-                          statusText = 'Pending';
+                          statusText = l10n.referralStatusPending;
                       }
-                      
+
                       // Format date
                       String dateText = '';
                       try {
                         final dt = DateTime.parse(createdAt);
                         dateText = '${dt.day}/${dt.month}/${dt.year}';
                       } catch (_) {}
-                      
+
                       return ListTile(
                         leading: CircleAvatar(
                           backgroundColor: statusColor.withOpacity(0.1),
@@ -402,7 +400,9 @@ Download Styloria and get amazing services delivered to your door.
                           style: const TextStyle(fontWeight: FontWeight.w600),
                         ),
                         subtitle: Text(
-                          dateText.isNotEmpty ? 'Joined $dateText' : 'Joined recently',
+                          dateText.isNotEmpty
+                              ? l10n.referralJoinedDate(dateText)
+                              : l10n.referralJoinedRecently,
                           style: TextStyle(fontSize: 12, color: cs.onSurfaceVariant),
                         ),
                         trailing: Container(
@@ -446,7 +446,7 @@ Download Styloria and get amazing services delivered to your door.
                       ),
                       const SizedBox(height: 16),
                       Text(
-                        'No referrals yet',
+                        l10n.noReferralsYet,
                         style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.w600,
@@ -455,7 +455,7 @@ Download Styloria and get amazing services delivered to your door.
                       ),
                       const SizedBox(height: 8),
                       Text(
-                        'Share your code with friends to earn discounts!',
+                        l10n.shareCodeForDiscounts,
                         style: TextStyle(
                           color: cs.onSurfaceVariant.withOpacity(0.7),
                         ),
@@ -474,9 +474,10 @@ Download Styloria and get amazing services delivered to your door.
     );
   }
 
-  Widget _buildStep(BuildContext context, String number, String text, {bool isHighlight = false}) {
+  Widget _buildStep(BuildContext context, String number, String text,
+      {bool isHighlight = false}) {
     final cs = Theme.of(context).colorScheme;
-    
+
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8),
       child: Row(
@@ -523,8 +524,7 @@ Download Styloria and get amazing services delivered to your door.
     Color color,
   ) {
     final cs = Theme.of(context).colorScheme;
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-    
+
     return Card(
       child: Padding(
         padding: const EdgeInsets.all(16),

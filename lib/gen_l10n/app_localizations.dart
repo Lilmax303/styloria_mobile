@@ -547,19 +547,19 @@ abstract class AppLocalizations {
   /// No description provided for @loginWelcomeTitle.
   ///
   /// In en, this message translates to:
-  /// **'Welcome to Styloria'**
+  /// **'Welcome Back'**
   String get loginWelcomeTitle;
 
   /// No description provided for @loginWelcomeSubtitle.
   ///
   /// In en, this message translates to:
-  /// **'Sign in to manage your bookings and services.'**
+  /// **'Sign in to your account'**
   String get loginWelcomeSubtitle;
 
   /// No description provided for @loginFailedToLoadUserInfo.
   ///
   /// In en, this message translates to:
-  /// **'Login succeeded but failed to load user info.'**
+  /// **'Failed to load user info.'**
   String get loginFailedToLoadUserInfo;
 
   /// No description provided for @username.
@@ -598,6 +598,150 @@ abstract class AppLocalizations {
   /// **'Request email verification code'**
   String get requestEmailVerificationCode;
 
+  /// No description provided for @selectYourServicesTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Select Your Services'**
+  String get selectYourServicesTitle;
+
+  /// No description provided for @yourServicesAndPricing.
+  ///
+  /// In en, this message translates to:
+  /// **'Your Services & Pricing'**
+  String get yourServicesAndPricing;
+
+  /// No description provided for @tapServiceToAddSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap a service to add it to your offerings'**
+  String get tapServiceToAddSubtitle;
+
+  /// No description provided for @tapToEditLongPressRemove.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap to edit price • Long press to remove'**
+  String get tapToEditLongPressRemove;
+
+  /// No description provided for @pricingStepLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Step {current}/{total}'**
+  String pricingStepLabel(int current, int total);
+
+  /// No description provided for @certRequiredLegend.
+  ///
+  /// In en, this message translates to:
+  /// **'Cert Required'**
+  String get certRequiredLegend;
+
+  /// No description provided for @pendingLegend.
+  ///
+  /// In en, this message translates to:
+  /// **'Pending'**
+  String get pendingLegend;
+
+  /// No description provided for @certifiedLegend.
+  ///
+  /// In en, this message translates to:
+  /// **'Certified'**
+  String get certifiedLegend;
+
+  /// No description provided for @continueToPricing.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue to Pricing'**
+  String get continueToPricing;
+
+  /// No description provided for @noServicesSelectedMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'No services selected yet'**
+  String get noServicesSelectedMessage;
+
+  /// No description provided for @selectServicesButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Select Services'**
+  String get selectServicesButton;
+
+  /// No description provided for @addMoreServicesButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Add More Services'**
+  String get addMoreServicesButton;
+
+  /// No description provided for @savePricingButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Save Pricing'**
+  String get savePricingButton;
+
+  /// No description provided for @removeLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'REMOVE'**
+  String get removeLabel;
+
+  /// No description provided for @selectLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'SELECT'**
+  String get selectLabel;
+
+  /// No description provided for @tapToEditHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap to edit'**
+  String get tapToEditHint;
+
+  /// No description provided for @setPriceForService.
+  ///
+  /// In en, this message translates to:
+  /// **'Set Price for {service}'**
+  String setPriceForService(String service);
+
+  /// No description provided for @paymentSuccessfulTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Payment Successful'**
+  String get paymentSuccessfulTitle;
+
+  /// No description provided for @paymentCouldNotBeVerified.
+  ///
+  /// In en, this message translates to:
+  /// **'Payment could not be verified'**
+  String get paymentCouldNotBeVerified;
+
+  /// No description provided for @stripeNotConfigured.
+  ///
+  /// In en, this message translates to:
+  /// **'Payment system is not configured. Please contact support or try again later.'**
+  String get stripeNotConfigured;
+
+  /// No description provided for @stripeConfigError.
+  ///
+  /// In en, this message translates to:
+  /// **'Stripe is not configured. Please ensure the app is properly set up.'**
+  String get stripeConfigError;
+
+  /// No description provided for @selectedServiceLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Selected Service'**
+  String get selectedServiceLabel;
+
+  /// No description provided for @referralDiscountApplied.
+  ///
+  /// In en, this message translates to:
+  /// **'Referral Discount Applied: {amount}'**
+  String referralDiscountApplied(String amount);
+
+  /// No description provided for @creditsRemainingInfo.
+  ///
+  /// In en, this message translates to:
+  /// **'You have {count} credits remaining (1 will be used)'**
+  String creditsRemainingInfo(int count);
+
   /// No description provided for @serviceLocationHint.
   ///
   /// In en, this message translates to:
@@ -633,6 +777,445 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Coordinates'**
   String get coordinatesLabel;
+
+  /// No description provided for @hairServicesCategory.
+  ///
+  /// In en, this message translates to:
+  /// **'Hair Services'**
+  String get hairServicesCategory;
+
+  /// No description provided for @beautyWellnessCategory.
+  ///
+  /// In en, this message translates to:
+  /// **'Beauty & Wellness'**
+  String get beautyWellnessCategory;
+
+  /// No description provided for @certifiedLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Certified'**
+  String get certifiedLabel;
+
+  /// No description provided for @removeServiceTooltip.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove service'**
+  String get removeServiceTooltip;
+
+  /// No description provided for @tabBasicInfo.
+  ///
+  /// In en, this message translates to:
+  /// **'Basic Info'**
+  String get tabBasicInfo;
+
+  /// No description provided for @tabPortfolio.
+  ///
+  /// In en, this message translates to:
+  /// **'Portfolio'**
+  String get tabPortfolio;
+
+  /// No description provided for @tabPricing.
+  ///
+  /// In en, this message translates to:
+  /// **'Pricing'**
+  String get tabPricing;
+
+  /// No description provided for @tabReviews.
+  ///
+  /// In en, this message translates to:
+  /// **'Reviews'**
+  String get tabReviews;
+
+  /// No description provided for @setPriceOrMarkNotOffered.
+  ///
+  /// In en, this message translates to:
+  /// **'Please set a price for \"{service}\" or mark it as \"Not Offered\".'**
+  String setPriceOrMarkNotOffered(String service);
+
+  /// No description provided for @rescheduleRequiredTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Reschedule Required'**
+  String get rescheduleRequiredTitle;
+
+  /// No description provided for @rescheduleRequiredMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Your booking was left unpaid. Please select a new time for TODAY to continue with payment.'**
+  String get rescheduleRequiredMessage;
+
+  /// No description provided for @selectNewAppointmentTime.
+  ///
+  /// In en, this message translates to:
+  /// **'Select new appointment time:'**
+  String get selectNewAppointmentTime;
+
+  /// No description provided for @tapToSelectTime.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap to select time'**
+  String get tapToSelectTime;
+
+  /// No description provided for @todayAtTimeSimple.
+  ///
+  /// In en, this message translates to:
+  /// **'Today at {time}'**
+  String todayAtTimeSimple(String time);
+
+  /// No description provided for @selectTimeForToday.
+  ///
+  /// In en, this message translates to:
+  /// **'Select time for TODAY'**
+  String get selectTimeForToday;
+
+  /// No description provided for @selectTimeAtLeast30Min.
+  ///
+  /// In en, this message translates to:
+  /// **'Please select a time at least 30 minutes from now.'**
+  String get selectTimeAtLeast30Min;
+
+  /// No description provided for @mustBeAtLeast30MinFromNow.
+  ///
+  /// In en, this message translates to:
+  /// **'* Must be at least 30 minutes from now'**
+  String get mustBeAtLeast30MinFromNow;
+
+  /// No description provided for @continueToPayment.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue to Payment'**
+  String get continueToPayment;
+
+  /// No description provided for @failedToUpdateTime.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to update time'**
+  String get failedToUpdateTime;
+
+  /// No description provided for @failedSubmitReviewTryAgain.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to submit review. Please try again.'**
+  String get failedSubmitReviewTryAgain;
+
+  /// No description provided for @processingPayment.
+  ///
+  /// In en, this message translates to:
+  /// **'Processing Payment'**
+  String get processingPayment;
+
+  /// No description provided for @completePaymentInBrowser.
+  ///
+  /// In en, this message translates to:
+  /// **'Complete your payment in the browser...'**
+  String get completePaymentInBrowser;
+
+  /// No description provided for @waitingForPaymentConfirmation.
+  ///
+  /// In en, this message translates to:
+  /// **'Waiting for payment confirmation...'**
+  String get waitingForPaymentConfirmation;
+
+  /// No description provided for @stillWaitingCompletePayment.
+  ///
+  /// In en, this message translates to:
+  /// **'Still waiting... Please complete payment.'**
+  String get stillWaitingCompletePayment;
+
+  /// No description provided for @paymentVerificationTimedOut.
+  ///
+  /// In en, this message translates to:
+  /// **'Payment verification timed out. Please check your bookings.'**
+  String get paymentVerificationTimedOut;
+
+  /// No description provided for @checkingPaymentStatus.
+  ///
+  /// In en, this message translates to:
+  /// **'Checking payment status...'**
+  String get checkingPaymentStatus;
+
+  /// No description provided for @paymentNotYetReceived.
+  ///
+  /// In en, this message translates to:
+  /// **'Payment not yet received. Please complete payment.'**
+  String get paymentNotYetReceived;
+
+  /// No description provided for @couldNotVerifyTryAgain.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not verify. Please try again.'**
+  String get couldNotVerifyTryAgain;
+
+  /// No description provided for @willUpdateAutomatically.
+  ///
+  /// In en, this message translates to:
+  /// **'This will update automatically when payment is complete.'**
+  String get willUpdateAutomatically;
+
+  /// No description provided for @checkNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Check Now'**
+  String get checkNow;
+
+  /// No description provided for @providerActionHeader.
+  ///
+  /// In en, this message translates to:
+  /// **'What would you like to do today?'**
+  String get providerActionHeader;
+
+  /// No description provided for @providerActionBrowseJobs.
+  ///
+  /// In en, this message translates to:
+  /// **'Browse Jobs'**
+  String get providerActionBrowseJobs;
+
+  /// No description provided for @providerActionWallet.
+  ///
+  /// In en, this message translates to:
+  /// **'Wallet'**
+  String get providerActionWallet;
+
+  /// No description provided for @providerActionManageProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'Manage Profile'**
+  String get providerActionManageProfile;
+
+  /// No description provided for @providerActionNotifications.
+  ///
+  /// In en, this message translates to:
+  /// **'Notifications'**
+  String get providerActionNotifications;
+
+  /// No description provided for @providerActionNewBooking.
+  ///
+  /// In en, this message translates to:
+  /// **'New Booking'**
+  String get providerActionNewBooking;
+
+  /// No description provided for @providerActionMyReviews.
+  ///
+  /// In en, this message translates to:
+  /// **'My Reviews'**
+  String get providerActionMyReviews;
+
+  /// No description provided for @providerActionPortfolio.
+  ///
+  /// In en, this message translates to:
+  /// **'Portfolio'**
+  String get providerActionPortfolio;
+
+  /// No description provided for @providerActionServicesPricing.
+  ///
+  /// In en, this message translates to:
+  /// **'Services & Pricing'**
+  String get providerActionServicesPricing;
+
+  /// No description provided for @moreActionsButton.
+  ///
+  /// In en, this message translates to:
+  /// **'More Actions'**
+  String get moreActionsButton;
+
+  /// No description provided for @showLessButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Show Less'**
+  String get showLessButton;
+
+  /// No description provided for @goButton.
+  ///
+  /// In en, this message translates to:
+  /// **'GO'**
+  String get goButton;
+
+  /// No description provided for @priceInputLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Price'**
+  String get priceInputLabel;
+
+  /// No description provided for @pleaseEnterValidPrice.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter a valid price'**
+  String get pleaseEnterValidPrice;
+
+  /// No description provided for @savePriceButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Save Price'**
+  String get savePriceButton;
+
+  /// No description provided for @pricingCertDialogBody.
+  ///
+  /// In en, this message translates to:
+  /// **'To offer {service}, you need a verified certification. Please add your certification in the Basic Info tab.'**
+  String pricingCertDialogBody(String service);
+
+  /// No description provided for @stripeSetupComplete.
+  ///
+  /// In en, this message translates to:
+  /// **'Stripe setup is complete.'**
+  String get stripeSetupComplete;
+
+  /// No description provided for @openPayoutSettings.
+  ///
+  /// In en, this message translates to:
+  /// **'Open Payout Settings'**
+  String get openPayoutSettings;
+
+  /// No description provided for @walletNoWalletSelected.
+  ///
+  /// In en, this message translates to:
+  /// **'No wallet selected.'**
+  String get walletNoWalletSelected;
+
+  /// No description provided for @walletNoAvailableBalance.
+  ///
+  /// In en, this message translates to:
+  /// **'No available balance to cash out.'**
+  String get walletNoAvailableBalance;
+
+  /// No description provided for @walletBelowMinimumCashout.
+  ///
+  /// In en, this message translates to:
+  /// **'Minimum cashout is {min} {currency}. Your available balance is {available} {currency}.'**
+  String walletBelowMinimumCashout(
+      String min, String currency, String available);
+
+  /// No description provided for @walletInstantCashoutDisabled.
+  ///
+  /// In en, this message translates to:
+  /// **'Instant cashout is disabled in your settings.'**
+  String get walletInstantCashoutDisabled;
+
+  /// No description provided for @walletInstantCashoutAvailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Instant cashout available ({remaining} remaining {period}). 5% fee applies.'**
+  String walletInstantCashoutAvailable(String remaining, String period);
+
+  /// No description provided for @walletInstantCashoutUnlimited.
+  ///
+  /// In en, this message translates to:
+  /// **'Instant cashout available anytime. 5% fee applies.'**
+  String get walletInstantCashoutUnlimited;
+
+  /// No description provided for @walletEnterAmountToCashOut.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter an amount to cash out.'**
+  String get walletEnterAmountToCashOut;
+
+  /// No description provided for @walletEnterValidAmount.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter a valid amount.'**
+  String get walletEnterValidAmount;
+
+  /// No description provided for @walletCashoutInitiated.
+  ///
+  /// In en, this message translates to:
+  /// **'Cashout initiated successfully!'**
+  String get walletCashoutInitiated;
+
+  /// No description provided for @walletPayoutFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Payout failed: {reason}'**
+  String walletPayoutFailed(String reason);
+
+  /// No description provided for @walletTransferCouldNotComplete.
+  ///
+  /// In en, this message translates to:
+  /// **'Transfer could not be completed. Please check your payout settings.'**
+  String get walletTransferCouldNotComplete;
+
+  /// No description provided for @walletPayoutStatusLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Payout: {status}'**
+  String walletPayoutStatusLabel(String status);
+
+  /// No description provided for @serviceSelectorHeader.
+  ///
+  /// In en, this message translates to:
+  /// **'Which service can we help you with?'**
+  String get serviceSelectorHeader;
+
+  /// No description provided for @showMore.
+  ///
+  /// In en, this message translates to:
+  /// **'Show More'**
+  String get showMore;
+
+  /// No description provided for @serviceSelectorSelectButton.
+  ///
+  /// In en, this message translates to:
+  /// **'SELECT'**
+  String get serviceSelectorSelectButton;
+
+  /// No description provided for @certServiceSelectorTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Which services does this certification qualify for?'**
+  String get certServiceSelectorTitle;
+
+  /// No description provided for @certServiceSelectorHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Select all services that this certification covers. You can select multiple.'**
+  String get certServiceSelectorHint;
+
+  /// No description provided for @certNoServicesSelectedWarning.
+  ///
+  /// In en, this message translates to:
+  /// **'No services selected. This certification won\'t unlock any services.'**
+  String get certNoServicesSelectedWarning;
+
+  /// No description provided for @portfolioShowcaseTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Showcase Your Best Work'**
+  String get portfolioShowcaseTitle;
+
+  /// No description provided for @portfolioShowcaseSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Your portfolio tells your story. Let your work speak for itself.'**
+  String get portfolioShowcaseSubtitle;
+
+  /// No description provided for @providerUnavailableMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'You are currently unavailable for bookings. Please enable availability in your profile settings.'**
+  String get providerUnavailableMessage;
+
+  /// No description provided for @portfolioEmptyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Your Portfolio is Empty'**
+  String get portfolioEmptyTitle;
+
+  /// No description provided for @portfolioEmptySubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Add photos and videos of your work to attract more clients.'**
+  String get portfolioEmptySubtitle;
+
+  /// No description provided for @portfolioUploading.
+  ///
+  /// In en, this message translates to:
+  /// **'Uploading...'**
+  String get portfolioUploading;
+
+  /// No description provided for @portfolioAddButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Add to Portfolio'**
+  String get portfolioAddButton;
 
   /// No description provided for @pleaseEnterAddress.
   ///
@@ -693,6 +1276,324 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Location marked as \"Other\" - you can proceed with registration'**
   String get locationMarkedAsOther;
+
+  /// No description provided for @referralLoadFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to load referral stats'**
+  String get referralLoadFailed;
+
+  /// No description provided for @referralCodeCopiedSnackbar.
+  ///
+  /// In en, this message translates to:
+  /// **'Referral code \"{code}\" copied!'**
+  String referralCodeCopiedSnackbar(String code);
+
+  /// No description provided for @referralShareText.
+  ///
+  /// In en, this message translates to:
+  /// **'🎉 Join me on Styloria!\n\nUse my referral code: {code}\n\nWhen you complete your first booking, I\'ll get {credits} bookings with {discount}% off!\n\nDownload Styloria and get amazing services delivered to your door.'**
+  String referralShareText(String code, int credits, int discount);
+
+  /// No description provided for @referralShareSubject.
+  ///
+  /// In en, this message translates to:
+  /// **'Join Styloria with my referral code!'**
+  String get referralShareSubject;
+
+  /// No description provided for @referralYourCode.
+  ///
+  /// In en, this message translates to:
+  /// **'Your Referral Code'**
+  String get referralYourCode;
+
+  /// No description provided for @shareLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Share'**
+  String get shareLabel;
+
+  /// No description provided for @howItWorks.
+  ///
+  /// In en, this message translates to:
+  /// **'How It Works'**
+  String get howItWorks;
+
+  /// No description provided for @referralStep1Share.
+  ///
+  /// In en, this message translates to:
+  /// **'Share your code with friends'**
+  String get referralStep1Share;
+
+  /// No description provided for @referralStep2SignUp.
+  ///
+  /// In en, this message translates to:
+  /// **'They sign up using your code'**
+  String get referralStep2SignUp;
+
+  /// No description provided for @referralStep3Booking.
+  ///
+  /// In en, this message translates to:
+  /// **'When they complete their first booking...'**
+  String get referralStep3Booking;
+
+  /// No description provided for @referralStepReward.
+  ///
+  /// In en, this message translates to:
+  /// **'You get {credits} bookings with {discount}% off!'**
+  String referralStepReward(int credits, int discount);
+
+  /// No description provided for @creditsAvailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Credits Available'**
+  String get creditsAvailable;
+
+  /// No description provided for @successfulReferrals.
+  ///
+  /// In en, this message translates to:
+  /// **'Successful Referrals'**
+  String get successfulReferrals;
+
+  /// No description provided for @totalEarned.
+  ///
+  /// In en, this message translates to:
+  /// **'Total Earned'**
+  String get totalEarned;
+
+  /// No description provided for @creditsUsed.
+  ///
+  /// In en, this message translates to:
+  /// **'Credits Used'**
+  String get creditsUsed;
+
+  /// No description provided for @referralPendingFriendsMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 friend signed up but hasn\'t completed a booking yet.} other{{count} friends signed up but haven\'t completed a booking yet.}}'**
+  String referralPendingFriendsMessage(int count);
+
+  /// No description provided for @referralHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'Referral History'**
+  String get referralHistory;
+
+  /// No description provided for @referralStatusCompleted.
+  ///
+  /// In en, this message translates to:
+  /// **'Completed'**
+  String get referralStatusCompleted;
+
+  /// No description provided for @referralStatusExpired.
+  ///
+  /// In en, this message translates to:
+  /// **'Expired'**
+  String get referralStatusExpired;
+
+  /// No description provided for @referralStatusPending.
+  ///
+  /// In en, this message translates to:
+  /// **'Pending'**
+  String get referralStatusPending;
+
+  /// No description provided for @referralJoinedDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Joined {date}'**
+  String referralJoinedDate(String date);
+
+  /// No description provided for @referralJoinedRecently.
+  ///
+  /// In en, this message translates to:
+  /// **'Joined recently'**
+  String get referralJoinedRecently;
+
+  /// No description provided for @noReferralsYet.
+  ///
+  /// In en, this message translates to:
+  /// **'No referrals yet'**
+  String get noReferralsYet;
+
+  /// No description provided for @shareCodeForDiscounts.
+  ///
+  /// In en, this message translates to:
+  /// **'Share your code with friends to earn discounts!'**
+  String get shareCodeForDiscounts;
+
+  /// No description provided for @userFallbackName.
+  ///
+  /// In en, this message translates to:
+  /// **'User'**
+  String get userFallbackName;
+
+  /// No description provided for @tierYourTier.
+  ///
+  /// In en, this message translates to:
+  /// **'Your Tier: {title}'**
+  String tierYourTier(String title);
+
+  /// No description provided for @tierTrustScore.
+  ///
+  /// In en, this message translates to:
+  /// **'Trust Score: {score}/100'**
+  String tierTrustScore(int score);
+
+  /// No description provided for @tierYouCanAccept.
+  ///
+  /// In en, this message translates to:
+  /// **'You can accept:'**
+  String get tierYouCanAccept;
+
+  /// No description provided for @tierCertifiedExpert.
+  ///
+  /// In en, this message translates to:
+  /// **'Certified Expert'**
+  String get tierCertifiedExpert;
+
+  /// No description provided for @tierVerifiedPro.
+  ///
+  /// In en, this message translates to:
+  /// **'Verified Pro'**
+  String get tierVerifiedPro;
+
+  /// No description provided for @tierNewAndEager.
+  ///
+  /// In en, this message translates to:
+  /// **'New & Eager'**
+  String get tierNewAndEager;
+
+  /// No description provided for @tierPremiumBadge.
+  ///
+  /// In en, this message translates to:
+  /// **'💜 Premium'**
+  String get tierPremiumBadge;
+
+  /// No description provided for @tierStandardBadge.
+  ///
+  /// In en, this message translates to:
+  /// **'💙 Standard'**
+  String get tierStandardBadge;
+
+  /// No description provided for @tierBudgetBadge.
+  ///
+  /// In en, this message translates to:
+  /// **'💚 Budget'**
+  String get tierBudgetBadge;
+
+  /// No description provided for @tierUpgradeHintBudget.
+  ///
+  /// In en, this message translates to:
+  /// **'Complete your bio, add portfolio photos, and upload certifications to unlock Standard & Premium jobs!'**
+  String get tierUpgradeHintBudget;
+
+  /// No description provided for @tierUpgradeHintStandard.
+  ///
+  /// In en, this message translates to:
+  /// **'Add more portfolio items and certifications to unlock Premium jobs with higher earnings!'**
+  String get tierUpgradeHintStandard;
+
+  /// No description provided for @filterLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Filter: '**
+  String get filterLabel;
+
+  /// No description provided for @filterAll.
+  ///
+  /// In en, this message translates to:
+  /// **'All'**
+  String get filterAll;
+
+  /// No description provided for @noTierJobsAvailable.
+  ///
+  /// In en, this message translates to:
+  /// **'No {tier} jobs available'**
+  String noTierJobsAvailable(String tier);
+
+  /// No description provided for @clearFilter.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear filter'**
+  String get clearFilter;
+
+  /// No description provided for @allPricesInYourCurrency.
+  ///
+  /// In en, this message translates to:
+  /// **'All prices shown in your currency ({symbol})'**
+  String allPricesInYourCurrency(String symbol);
+
+  /// No description provided for @yourCurrencyIs.
+  ///
+  /// In en, this message translates to:
+  /// **'Your currency: {symbol}'**
+  String yourCurrencyIs(String symbol);
+
+  /// No description provided for @tierRequiredDialogTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Tier Required'**
+  String get tierRequiredDialogTitle;
+
+  /// No description provided for @thisIsATierJob.
+  ///
+  /// In en, this message translates to:
+  /// **'This is a {title} job.'**
+  String thisIsATierJob(String title);
+
+  /// No description provided for @yourTierColon.
+  ///
+  /// In en, this message translates to:
+  /// **'Your tier: '**
+  String get yourTierColon;
+
+  /// No description provided for @requiredColon.
+  ///
+  /// In en, this message translates to:
+  /// **'Required: '**
+  String get requiredColon;
+
+  /// No description provided for @okButton.
+  ///
+  /// In en, this message translates to:
+  /// **'OK'**
+  String get okButton;
+
+  /// No description provided for @improveProfileButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Improve Profile'**
+  String get improveProfileButton;
+
+  /// No description provided for @customerNoteLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Customer Note'**
+  String get customerNoteLabel;
+
+  /// No description provided for @todayAtTime.
+  ///
+  /// In en, this message translates to:
+  /// **'Today at {time}'**
+  String todayAtTime(String time);
+
+  /// No description provided for @dateAtTime.
+  ///
+  /// In en, this message translates to:
+  /// **'{date} at {time}'**
+  String dateAtTime(String date, String time);
+
+  /// No description provided for @ratingValue.
+  ///
+  /// In en, this message translates to:
+  /// **'{rating} rating'**
+  String ratingValue(String rating);
+
+  /// No description provided for @reviewsCountParens.
+  ///
+  /// In en, this message translates to:
+  /// **'({count} reviews)'**
+  String reviewsCountParens(int count);
 
   /// No description provided for @createAccountTitle.
   ///
@@ -1005,6 +1906,60 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Enter the 6-digit code sent to the email on this account:\n{identifier}'**
   String emailVerificationInstructions(Object identifier);
+
+  /// No description provided for @verifyingPaystackPayment.
+  ///
+  /// In en, this message translates to:
+  /// **'Verifying Paystack payment...'**
+  String get verifyingPaystackPayment;
+
+  /// No description provided for @paymentVerifiedSuccessfully.
+  ///
+  /// In en, this message translates to:
+  /// **'Payment verified successfully!'**
+  String get paymentVerifiedSuccessfully;
+
+  /// No description provided for @paymentVerificationFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Payment verification failed'**
+  String get paymentVerificationFailed;
+
+  /// No description provided for @errorVerifyingPayment.
+  ///
+  /// In en, this message translates to:
+  /// **'Error verifying payment: {error}'**
+  String errorVerifyingPayment(String error);
+
+  /// No description provided for @paymentWasCancelled.
+  ///
+  /// In en, this message translates to:
+  /// **'Payment was cancelled.'**
+  String get paymentWasCancelled;
+
+  /// No description provided for @paymentVerificationFailedDetail.
+  ///
+  /// In en, this message translates to:
+  /// **'Payment verification failed: {detail}'**
+  String paymentVerificationFailedDetail(String detail);
+
+  /// No description provided for @helloName.
+  ///
+  /// In en, this message translates to:
+  /// **'Hello {name}'**
+  String helloName(String name);
+
+  /// No description provided for @hello.
+  ///
+  /// In en, this message translates to:
+  /// **'Hello'**
+  String get hello;
+
+  /// No description provided for @view.
+  ///
+  /// In en, this message translates to:
+  /// **'View'**
+  String get view;
 
   /// No description provided for @verificationCodeLabel.
   ///

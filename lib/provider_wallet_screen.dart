@@ -29,7 +29,6 @@ class _ProviderWalletScreenState extends State<ProviderWalletScreen> {
   bool _isAfricaProvider = false;
   bool _isPaystackProvider = false;
 
-  // Instant cashout state
   final _cashoutAmountCtrl = TextEditingController();
   Map<String, dynamic>? _instantCashoutInfo;
   bool _cashoutLoading = false;
@@ -76,7 +75,7 @@ class _ProviderWalletScreenState extends State<ProviderWalletScreen> {
     if (!wasEnabled && nowEnabled && !_stripeCompleteNotified) {
       _stripeCompleteNotified = true;
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Stripe setup is complete.')),
+        SnackBar(content: Text(AppLocalizations.of(context).stripeSetupComplete)),
       );
     }
   }
@@ -119,7 +118,8 @@ class _ProviderWalletScreenState extends State<ProviderWalletScreen> {
     if (!mounted) return;
 
     _wallets = wallets ?? [];
-    _selectedCurrency = _wallets.isNotEmpty ? (_wallets.first['currency']?.toString()) : null;
+    _selectedCurrency =
+        _wallets.isNotEmpty ? (_wallets.first['currency']?.toString()) : null;
     setState(() => _loading = false);
 
     if (_selectedCurrency != null) {
@@ -130,7 +130,8 @@ class _ProviderWalletScreenState extends State<ProviderWalletScreen> {
 
   Future<void> _loadTransactions(String currency) async {
     setState(() => _txLoading = true);
-    final tx = await ApiClient.getProviderWalletTransactions(currency: currency);
+    final tx =
+        await ApiClient.getProviderWalletTransactions(currency: currency);
     if (!mounted) return;
     setState(() {
       _transactions = tx ?? [];
@@ -139,11 +140,12 @@ class _ProviderWalletScreenState extends State<ProviderWalletScreen> {
   }
 
   void _updateCashoutAmountHint() {
-    // Pre-fill with max available if empty
     if (_cashoutAmountCtrl.text.isEmpty && _selectedCurrency != null) {
       final wallet = _getSelectedWallet();
       if (wallet != null) {
-        final available = double.tryParse(wallet['available_balance']?.toString() ?? '0') ?? 0;
+        final available = double.tryParse(
+                wallet['available_balance']?.toString() ?? '0') ??
+            0;
         if (available > 0) {
           _cashoutAmountCtrl.text = available.toStringAsFixed(2);
         }
@@ -160,31 +162,34 @@ class _ProviderWalletScreenState extends State<ProviderWalletScreen> {
   }
 
   Map<String, dynamic> _getButtonState() {
+    final l10n = AppLocalizations.of(context);
     final wallet = _getSelectedWallet();
     if (wallet == null) {
       return {
         'enabled': false,
         'reason': 'no_wallet',
-        'message': 'No wallet selected.',
+        'message': l10n.walletNoWalletSelected,
       };
     }
 
-    // Check wallet-level button state from API
     final walletButtonState = wallet['instant_cashout_button_state'];
     if (walletButtonState is Map) {
       return Map<String, dynamic>.from(walletButtonState);
     }
 
-    // Fallback: compute locally
-    final available = double.tryParse(wallet['available_balance']?.toString() ?? '0') ?? 0;
-    final minAmount = double.tryParse(wallet['minimum_cashout_amount']?.toString() ?? '5') ?? 5;
+    final available = double.tryParse(
+            wallet['available_balance']?.toString() ?? '0') ??
+        0;
+    final minAmount = double.tryParse(
+            wallet['minimum_cashout_amount']?.toString() ?? '5') ??
+        5;
     final currency = _selectedCurrency ?? 'USD';
 
     if (available <= 0) {
       return {
         'enabled': false,
         'reason': 'no_balance',
-        'message': 'No available balance to cash out.',
+        'message': l10n.walletNoAvailableBalance,
       };
     }
 
@@ -192,11 +197,14 @@ class _ProviderWalletScreenState extends State<ProviderWalletScreen> {
       return {
         'enabled': false,
         'reason': 'below_minimum',
-        'message': 'Minimum cashout is ${minAmount.toStringAsFixed(2)} $currency. Your available balance is ${available.toStringAsFixed(2)} $currency.',
+        'message': l10n.walletBelowMinimumCashout(
+          minAmount.toStringAsFixed(2),
+          currency,
+          available.toStringAsFixed(2),
+        ),
       };
     }
 
-    // Check payout settings from instant cashout info
     final settings = _instantCashoutInfo?['payout_settings'];
     if (settings != null) {
       final instantEnabled = settings['instant_payout_enabled'] == true;
@@ -204,22 +212,24 @@ class _ProviderWalletScreenState extends State<ProviderWalletScreen> {
         return {
           'enabled': false,
           'reason': 'disabled',
-          'message': 'Instant cashout is disabled in your settings.',
+          'message': l10n.walletInstantCashoutDisabled,
         };
       }
 
-      // Extract remaining uses and period from settings or instant cashout info
-      final remaining = _instantCashoutInfo?['remaining_uses'] ?? 
-                        settings['instant_payout_limit'] ?? 
-                        'unlimited';
-      final periodText = _instantCashoutInfo?['period'] ?? 
-                         settings['instant_payout_period'] ?? 
-                         'this period';
+      final remaining = _instantCashoutInfo?['remaining_uses'] ??
+          settings['instant_payout_limit'] ??
+          'unlimited';
+      final periodText = _instantCashoutInfo?['period'] ??
+          settings['instant_payout_period'] ??
+          'this period';
 
       return {
         'enabled': true,
         'reason': 'available',
-        'message': 'Instant cashout available ($remaining remaining $periodText). 5% fee applies.',
+        'message': l10n.walletInstantCashoutAvailable(
+          remaining.toString(),
+          periodText.toString(),
+        ),
         'remaining_uses': remaining,
         'max_amount': available.toStringAsFixed(2),
         'min_amount': minAmount.toStringAsFixed(2),
@@ -227,11 +237,10 @@ class _ProviderWalletScreenState extends State<ProviderWalletScreen> {
       };
     }
 
-    // Default: allow if balance is sufficient
     return {
       'enabled': true,
       'reason': 'available',
-      'message': 'Instant cashout available anytime. 5% fee applies.',
+      'message': l10n.walletInstantCashoutUnlimited,
       'unlimited': true,
       'max_amount': available.toStringAsFixed(2),
       'min_amount': minAmount.toStringAsFixed(2),
@@ -247,7 +256,7 @@ class _ProviderWalletScreenState extends State<ProviderWalletScreen> {
     final amountText = _cashoutAmountCtrl.text.trim();
     if (amountText.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Please enter an amount to cash out.')),
+        SnackBar(content: Text(l10n.walletEnterAmountToCashOut)),
       );
       return;
     }
@@ -255,20 +264,22 @@ class _ProviderWalletScreenState extends State<ProviderWalletScreen> {
     final amount = double.tryParse(amountText);
     if (amount == null || amount <= 0) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Please enter a valid amount.')),
+        SnackBar(content: Text(l10n.walletEnterValidAmount)),
       );
       return;
     }
 
     setState(() => _cashoutLoading = true);
 
-    final res = await ApiClient.providerCashOut(currency: currency, amount: amount);
+    final res =
+        await ApiClient.providerCashOut(currency: currency, amount: amount);
     if (!mounted) return;
 
     setState(() => _cashoutLoading = false);
 
     if (res['success'] != true) {
-      final detail = res['detail']?.toString() ?? l10n.walletCashOutFailed;
+      final detail =
+          res['detail']?.toString() ?? l10n.walletCashOutFailed;
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text(detail),
@@ -278,16 +289,16 @@ class _ProviderWalletScreenState extends State<ProviderWalletScreen> {
       return;
     }
 
-    // Check if the payout actually succeeded (not just the API call)
     final payout = res['payout'] as Map<String, dynamic>?;
     if (payout != null) {
-      final payoutStatus = payout['status']?.toString()?.toLowerCase();
+      final payoutStatus =
+          payout['status']?.toString().toLowerCase();
       if (payoutStatus == 'failed' || payoutStatus == 'reversed') {
-        final failureReason = payout['failure_reason']?.toString() ?? 
-            'Transfer could not be completed. Please check your payout settings.';
+        final failureReason = payout['failure_reason']?.toString() ??
+            l10n.walletTransferCouldNotComplete;
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text('Payout failed: $failureReason'),
+            content: Text(l10n.walletPayoutFailed(failureReason)),
             backgroundColor: Colors.red.shade700,
             duration: const Duration(seconds: 5),
           ),
@@ -298,15 +309,13 @@ class _ProviderWalletScreenState extends State<ProviderWalletScreen> {
         return;
       }
     }
-	
 
-    final message = res['message']?.toString() ?? 'Cashout initiated successfully!';
+    final message = res['message']?.toString() ??
+        l10n.walletCashoutInitiated;
 
-    // UPDATE WALLET IMMEDIATELY FROM RESPONSE
     final updatedWallet = res['wallet'];
     if (updatedWallet != null && _selectedCurrency != null) {
       setState(() {
-        // Find and update the wallet in the list
         final index = _wallets.indexWhere(
           (w) => w['currency']?.toString() == _selectedCurrency,
         );
@@ -324,10 +333,8 @@ class _ProviderWalletScreenState extends State<ProviderWalletScreen> {
       ),
     );
 
-    // Clear amount field
     _cashoutAmountCtrl.clear();
 
-    // Also refresh from server to ensure consistency
     await _loadWallets();
     await _loadInstantCashoutInfo();
   }
@@ -336,7 +343,8 @@ class _ProviderWalletScreenState extends State<ProviderWalletScreen> {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
     if (_loading) {
-      return const Scaffold(body: Center(child: CircularProgressIndicator()));
+      return const Scaffold(
+          body: Center(child: CircularProgressIndicator()));
     }
 
     final stripeStatus = _stripeStatus ?? {};
@@ -353,10 +361,11 @@ class _ProviderWalletScreenState extends State<ProviderWalletScreen> {
             tooltip: l10n.payoutSettingsTooltip,
             onPressed: () async {
               await Navigator.of(context).push(
-                MaterialPageRoute(builder: (_) => const ProviderPayoutSettingsScreen()),
+                MaterialPageRoute(
+                    builder: (_) =>
+                        const ProviderPayoutSettingsScreen()),
               );
               if (!mounted) return;
-              // Refresh after settings change
               await _loadWallets();
               await _loadStripeStatus();
               await _loadInstantCashoutInfo();
@@ -373,7 +382,7 @@ class _ProviderWalletScreenState extends State<ProviderWalletScreen> {
         child: ListView(
           padding: const EdgeInsets.all(16),
           children: [
-            // Paystack providers (Ghana, Nigeria, South Africa, Kenya, Côte d'Ivoire)
+            // Paystack providers
             if (_isPaystackProvider) ...[
               Card(
                 child: Padding(
@@ -383,9 +392,12 @@ class _ProviderWalletScreenState extends State<ProviderWalletScreen> {
                     children: [
                       Row(
                         children: [
-                          Icon(Icons.verified, color: Colors.green.shade700, size: 20),
+                          Icon(Icons.verified,
+                              color: Colors.green.shade700, size: 20),
                           const SizedBox(width: 8),
-                          Text(l10n.paystackPayouts, style: const TextStyle(fontWeight: FontWeight.bold)),
+                          Text(l10n.paystackPayouts,
+                              style: const TextStyle(
+                                  fontWeight: FontWeight.bold)),
                         ],
                       ),
                       const SizedBox(height: 6),
@@ -396,7 +408,9 @@ class _ProviderWalletScreenState extends State<ProviderWalletScreen> {
                         child: OutlinedButton(
                           onPressed: () async {
                             await Navigator.of(context).push(
-                              MaterialPageRoute(builder: (_) => const ProviderPayoutSettingsScreen()),
+                              MaterialPageRoute(
+                                  builder: (_) =>
+                                      const ProviderPayoutSettingsScreen()),
                             );
                             if (!mounted) return;
                             await _loadWallets();
@@ -417,7 +431,9 @@ class _ProviderWalletScreenState extends State<ProviderWalletScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(l10n.payoutMethod, style: const TextStyle(fontWeight: FontWeight.bold)),
+                      Text(l10n.payoutMethod,
+                          style: const TextStyle(
+                              fontWeight: FontWeight.bold)),
                       const SizedBox(height: 6),
                       Text(l10n.paystackAddBankDetails),
                       const SizedBox(height: 10),
@@ -426,13 +442,15 @@ class _ProviderWalletScreenState extends State<ProviderWalletScreen> {
                         child: OutlinedButton(
                           onPressed: () async {
                             await Navigator.of(context).push(
-                              MaterialPageRoute(builder: (_) => const ProviderPayoutSettingsScreen()),
+                              MaterialPageRoute(
+                                  builder: (_) =>
+                                      const ProviderPayoutSettingsScreen()),
                             );
                             if (!mounted) return;
                             await _loadWallets();
                             await _loadInstantCashoutInfo();
                           },
-                          child: const Text('Open Payout Settings'),
+                          child: Text(l10n.openPayoutSettings),
                         ),
                       ),
                     ],
@@ -440,19 +458,27 @@ class _ProviderWalletScreenState extends State<ProviderWalletScreen> {
                 ),
               ),
             ] else ...[
-              // Stripe providers (rest of world)
+              // Stripe providers
               Card(
                 child: Padding(
                   padding: const EdgeInsets.all(12),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(l10n.payoutStripeConnect, style: const TextStyle(fontWeight: FontWeight.bold)),
+                      Text(l10n.payoutStripeConnect,
+                          style: const TextStyle(
+                              fontWeight: FontWeight.bold)),
                       const SizedBox(height: 6),
-                      if (_stripeLoading) const LinearProgressIndicator() else ...[
-                        Text(hasAcct ? l10n.paystackConnected : l10n.paystackNotConnected),
-                        Text('${l10n.paystackDetailsSubmitted} ${detailsSubmitted ? l10n.paystackYes : l10n.paystackNo}'),
-                        Text('${l10n.paystackPayoutsEnabled} ${payoutsEnabled ? l10n.paystackYes : l10n.paystackNo}'),
+                      if (_stripeLoading)
+                        const LinearProgressIndicator()
+                      else ...[
+                        Text(hasAcct
+                            ? l10n.paystackConnected
+                            : l10n.paystackNotConnected),
+                        Text(
+                            '${l10n.paystackDetailsSubmitted} ${detailsSubmitted ? l10n.paystackYes : l10n.paystackNo}'),
+                        Text(
+                            '${l10n.paystackPayoutsEnabled} ${payoutsEnabled ? l10n.paystackYes : l10n.paystackNo}'),
                       ],
                       const SizedBox(height: 10),
                       Wrap(
@@ -461,17 +487,28 @@ class _ProviderWalletScreenState extends State<ProviderWalletScreen> {
                         children: [
                           if (!payoutsEnabled)
                             ElevatedButton(
-                              onPressed: _stripeLoading ? null : _openStripeOnboarding,
-                              child: Text(hasAcct ? l10n.paystackFinishSetup : l10n.paystackConnectStripe),
+                              onPressed: _stripeLoading
+                                  ? null
+                                  : _openStripeOnboarding,
+                              child: Text(hasAcct
+                                  ? l10n.paystackFinishSetup
+                                  : l10n.paystackConnectStripe),
                             ),
                           OutlinedButton(
-                            onPressed: (!hasAcct || _stripeLoading) ? null : _openStripeDashboard,
-                            child: Text(l10n.paystackOpenDashboard),
+                            onPressed:
+                                (!hasAcct || _stripeLoading)
+                                    ? null
+                                    : _openStripeDashboard,
+                            child:
+                                Text(l10n.paystackOpenDashboard),
                           ),
                         ],
                       ),
                       const SizedBox(height: 6),
-                      Text(l10n.paystackMustFinishSetup, style: Theme.of(context).textTheme.bodySmall),
+                      Text(l10n.paystackMustFinishSetup,
+                          style: Theme.of(context)
+                              .textTheme
+                              .bodySmall),
                     ],
                   ),
                 ),
@@ -489,8 +526,10 @@ class _ProviderWalletScreenState extends State<ProviderWalletScreen> {
                   border: const OutlineInputBorder(),
                 ),
                 items: _wallets.map((w) {
-                  final c = w['currency']?.toString() ?? 'USD';
-                  return DropdownMenuItem(value: c, child: Text(c));
+                  final c =
+                      w['currency']?.toString() ?? 'USD';
+                  return DropdownMenuItem(
+                      value: c, child: Text(c));
                 }).toList(),
                 onChanged: (val) async {
                   if (val == null) return;
@@ -504,10 +543,13 @@ class _ProviderWalletScreenState extends State<ProviderWalletScreen> {
               const SizedBox(height: 12),
               _buildInstantCashoutSection(),
               const SizedBox(height: 18),
-              Text(l10n.walletTransactionsTitle, style: const TextStyle(fontWeight: FontWeight.bold)),
+              Text(l10n.walletTransactionsTitle,
+                  style: const TextStyle(
+                      fontWeight: FontWeight.bold)),
               const SizedBox(height: 8),
               if (_txLoading)
-                const Center(child: CircularProgressIndicator())
+                const Center(
+                    child: CircularProgressIndicator())
               else if (_transactions.isEmpty)
                 Text(l10n.walletNoTransactionsYet)
               else
@@ -522,16 +564,19 @@ class _ProviderWalletScreenState extends State<ProviderWalletScreen> {
   Widget _buildInstantCashoutSection() {
     final l10n = AppLocalizations.of(context);
     final buttonState = _getButtonState();
-    final isEnabled = buttonState['enabled'] == true && !_cashoutLoading;
+    final isEnabled =
+        buttonState['enabled'] == true && !_cashoutLoading;
     final message = buttonState['message']?.toString() ?? '';
-    final reason = buttonState['reason']?.toString() ?? '';
     final currency = _selectedCurrency ?? 'USD';
     final wallet = _getSelectedWallet();
-    final available = double.tryParse(wallet?['available_balance']?.toString() ?? '0') ?? 0;
-    final minAmount = buttonState['min_amount']?.toString() ?? '5.00';
-    final maxAmount = buttonState['max_amount']?.toString() ?? available.toStringAsFixed(2);
+    final available = double.tryParse(
+            wallet?['available_balance']?.toString() ?? '0') ??
+        0;
+    final minAmount =
+        buttonState['min_amount']?.toString() ?? '5.00';
+    final maxAmount = buttonState['max_amount']?.toString() ??
+        available.toStringAsFixed(2);
 
-    // Determine notice color based on state
     Color noticeColor;
     Color noticeBgColor;
     IconData noticeIcon;
@@ -556,12 +601,14 @@ class _ProviderWalletScreenState extends State<ProviderWalletScreen> {
               children: [
                 Text(
                   l10n.payoutInstantCashout,
-                  style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                  style: const TextStyle(
+                      fontWeight: FontWeight.bold, fontSize: 16),
                 ),
                 const Spacer(),
                 if (isEnabled)
                   Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 8, vertical: 4),
                     decoration: BoxDecoration(
                       color: Colors.green.shade100,
                       borderRadius: BorderRadius.circular(12),
@@ -583,15 +630,19 @@ class _ProviderWalletScreenState extends State<ProviderWalletScreen> {
             TextField(
               controller: _cashoutAmountCtrl,
               enabled: isEnabled,
-              keyboardType: const TextInputType.numberWithOptions(decimal: true),
+              keyboardType: const TextInputType.numberWithOptions(
+                  decimal: true),
               inputFormatters: [
-                FilteringTextInputFormatter.allow(RegExp(r'^\d*\.?\d{0,2}')),
+                FilteringTextInputFormatter.allow(
+                    RegExp(r'^\d*\.?\d{0,2}')),
               ],
               decoration: InputDecoration(
                 labelText: l10n.payoutAmountToCashOut,
                 prefixText: '$currency ',
                 border: const OutlineInputBorder(),
-                helperText: isEnabled ? l10n.payoutMinMaxRange(minAmount, maxAmount) : null,
+                helperText: isEnabled
+                    ? l10n.payoutMinMaxRange(minAmount, maxAmount)
+                    : null,
                 suffixIcon: isEnabled
                     ? TextButton(
                         onPressed: () {
@@ -610,9 +661,12 @@ class _ProviderWalletScreenState extends State<ProviderWalletScreen> {
               child: ElevatedButton(
                 onPressed: isEnabled ? _cashOut : null,
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: isEnabled ? Colors.green : Colors.grey.shade400,
+                  backgroundColor: isEnabled
+                      ? Colors.green
+                      : Colors.grey.shade400,
                   foregroundColor: Colors.white,
-                  padding: const EdgeInsets.symmetric(vertical: 14),
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 14),
                 ),
                 child: _cashoutLoading
                     ? const SizedBox(
@@ -634,12 +688,14 @@ class _ProviderWalletScreenState extends State<ProviderWalletScreen> {
               decoration: BoxDecoration(
                 color: noticeBgColor,
                 borderRadius: BorderRadius.circular(8),
-                border: Border.all(color: noticeColor.withOpacity(0.3)),
+                border: Border.all(
+                    color: noticeColor.withOpacity(0.3)),
               ),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Icon(noticeIcon, color: noticeColor, size: 20),
+                  Icon(noticeIcon,
+                      color: noticeColor, size: 20),
                   const SizedBox(width: 10),
                   Expanded(
                     child: Text(
@@ -666,10 +722,18 @@ class _ProviderWalletScreenState extends State<ProviderWalletScreen> {
     final w = _getSelectedWallet();
     if (w == null) return const SizedBox.shrink();
 
-    final available = double.tryParse(w['available_balance']?.toString() ?? '0') ?? 0;
-    final pending = double.tryParse(w['pending_balance']?.toString() ?? '0') ?? 0;
-    final lifetimeEarnings = double.tryParse(w['lifetime_earnings']?.toString() ?? '0') ?? 0;
-    final lifetimePayouts = double.tryParse(w['lifetime_payouts']?.toString() ?? '0') ?? 0;
+    final available = double.tryParse(
+            w['available_balance']?.toString() ?? '0') ??
+        0;
+    final pending = double.tryParse(
+            w['pending_balance']?.toString() ?? '0') ??
+        0;
+    final lifetimeEarnings = double.tryParse(
+            w['lifetime_earnings']?.toString() ?? '0') ??
+        0;
+    final lifetimePayouts = double.tryParse(
+            w['lifetime_payouts']?.toString() ?? '0') ??
+        0;
 
     return Card(
       child: Padding(
@@ -677,18 +741,19 @@ class _ProviderWalletScreenState extends State<ProviderWalletScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Available Balance (main display)
+            // Available Balance
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
                   l10n.payoutAvailableBalance,
-                  style: const TextStyle(fontSize: 14, color: Colors.grey),
+                  style: const TextStyle(
+                      fontSize: 14, color: Colors.grey),
                 ),
                 IconButton(
                   icon: const Icon(Icons.refresh, size: 20),
                   onPressed: _loadWallets,
-                  tooltip: 'Refresh',
+                  tooltip: l10n.refresh,
                 ),
               ],
             ),
@@ -705,7 +770,8 @@ class _ProviderWalletScreenState extends State<ProviderWalletScreen> {
             // Pending Balance
             Row(
               children: [
-                Icon(Icons.schedule, size: 16, color: Colors.orange.shade700),
+                Icon(Icons.schedule,
+                    size: 16, color: Colors.orange.shade700),
                 const SizedBox(width: 8),
                 Text(
                   '${l10n.payoutPendingFunds}: ${pending.toStringAsFixed(2)} $currency',
@@ -720,7 +786,8 @@ class _ProviderWalletScreenState extends State<ProviderWalletScreen> {
               const SizedBox(height: 4),
               Text(
                 l10n.payoutPendingInfo,
-                style: const TextStyle(fontSize: 11, color: Colors.grey),
+                style: const TextStyle(
+                    fontSize: 11, color: Colors.grey),
               ),
             ],
 
@@ -731,11 +798,13 @@ class _ProviderWalletScreenState extends State<ProviderWalletScreen> {
               children: [
                 Expanded(
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    crossAxisAlignment:
+                        CrossAxisAlignment.start,
                     children: [
                       Text(
                         l10n.payoutLifetimeEarnings,
-                        style: const TextStyle(fontSize: 12, color: Colors.grey),
+                        style: const TextStyle(
+                            fontSize: 12, color: Colors.grey),
                       ),
                       Text(
                         '${lifetimeEarnings.toStringAsFixed(2)} $currency',
@@ -749,11 +818,13 @@ class _ProviderWalletScreenState extends State<ProviderWalletScreen> {
                 ),
                 Expanded(
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    crossAxisAlignment:
+                        CrossAxisAlignment.start,
                     children: [
                       Text(
                         l10n.payoutTotalCashedOut,
-                        style: const TextStyle(fontSize: 12, color: Colors.grey),
+                        style: const TextStyle(
+                            fontSize: 12, color: Colors.grey),
                       ),
                       Text(
                         '${lifetimePayouts.toStringAsFixed(2)} $currency',
@@ -774,7 +845,10 @@ class _ProviderWalletScreenState extends State<ProviderWalletScreen> {
   }
 
   Widget _txTile(dynamic tx) {
-    final map = (tx is Map) ? Map<String, dynamic>.from(tx as Map) : <String, dynamic>{};
+    final l10n = AppLocalizations.of(context);
+    final map = (tx is Map)
+        ? Map<String, dynamic>.from(tx as Map)
+        : <String, dynamic>{};
     final kind = map['kind']?.toString() ?? '';
     final direction = map['direction']?.toString() ?? '';
     final amount = map['amount']?.toString() ?? '';
@@ -784,7 +858,6 @@ class _ProviderWalletScreenState extends State<ProviderWalletScreen> {
     final payoutStatus = map['payout_status']?.toString() ?? '';
     final payoutMethod = map['payout_method']?.toString() ?? '';
 
-    // Determine icon and color based on direction and status
     IconData icon;
     Color iconColor;
 
@@ -796,7 +869,6 @@ class _ProviderWalletScreenState extends State<ProviderWalletScreen> {
       iconColor = Colors.red;
     }
 
-    // Status badge color
     Color statusColor;
     switch (status) {
       case 'paid':
@@ -815,7 +887,6 @@ class _ProviderWalletScreenState extends State<ProviderWalletScreen> {
         statusColor = Colors.grey;
     }
 
-    // ✅ IMPROVED: Format date with timezone awareness
     String formattedDate = when.isNotEmpty
         ? DateTimeHelper.formatMetadataTime(when)
         : '';
@@ -839,11 +910,13 @@ class _ProviderWalletScreenState extends State<ProviderWalletScreen> {
               ),
             ),
             Container(
-              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+              padding: const EdgeInsets.symmetric(
+                  horizontal: 8, vertical: 2),
               decoration: BoxDecoration(
                 color: statusColor.withOpacity(0.1),
                 borderRadius: BorderRadius.circular(12),
-                border: Border.all(color: statusColor.withOpacity(0.5)),
+                border: Border.all(
+                    color: statusColor.withOpacity(0.5)),
               ),
               child: Text(
                 status.toUpperCase(),
@@ -867,7 +940,6 @@ class _ProviderWalletScreenState extends State<ProviderWalletScreen> {
             const SizedBox(height: 2),
             Row(
               children: [
-                // ✅ IMPROVED: Add clock icon
                 Icon(
                   Icons.access_time,
                   size: 11,
@@ -876,20 +948,27 @@ class _ProviderWalletScreenState extends State<ProviderWalletScreen> {
                 const SizedBox(width: 4),
                 Text(
                   formattedDate,
-                  style: TextStyle(fontSize: 11, color: Colors.grey.shade600),
+                  style: TextStyle(
+                      fontSize: 11,
+                      color: Colors.grey.shade600),
                 ),
                 if (payoutMethod.isNotEmpty) ...[
                   const SizedBox(width: 8),
                   Text(
                     '• $payoutMethod',
-                    style: TextStyle(fontSize: 11, color: Colors.grey.shade600),
+                    style: TextStyle(
+                        fontSize: 11,
+                        color: Colors.grey.shade600),
                   ),
                 ],
-                if (payoutStatus.isNotEmpty && payoutStatus != status) ...[
+                if (payoutStatus.isNotEmpty &&
+                    payoutStatus != status) ...[
                   const SizedBox(width: 8),
                   Text(
-                    '• Payout: $payoutStatus',
-                    style: TextStyle(fontSize: 11, color: Colors.grey.shade600),
+                    '• ${l10n.walletPayoutStatusLabel(payoutStatus)}',
+                    style: TextStyle(
+                        fontSize: 11,
+                        color: Colors.grey.shade600),
                   ),
                 ],
               ],

@@ -230,21 +230,19 @@ class AppLocalizationsAk extends AppLocalizations {
   String get deletionReason12 => 'Afoforo';
 
   @override
-  String get loginWelcomeTitle => 'Akwaaba ba Styloria';
+  String get loginWelcomeTitle => 'Akwaaba Bio';
 
   @override
-  String get loginWelcomeSubtitle =>
-      'Kɔ mu (sign in) na hwɛ wo bookings ne services.';
+  String get loginWelcomeSubtitle => 'Hyɛn wo account mu';
 
   @override
-  String get loginFailedToLoadUserInfo =>
-      'Login no yɛɛ yie, nanso anomaa wɔ user info a wɔde bɛbrɛ.';
+  String get loginFailedToLoadUserInfo => 'Yɛantumi amfa wo ho nsɛm amma.';
 
   @override
   String get username => 'Username';
 
   @override
-  String get password => 'Password';
+  String get password => 'Ahintasɛm';
 
   @override
   String get required => 'Ɛhia';
@@ -259,23 +257,358 @@ class AppLocalizationsAk extends AppLocalizations {
   String get requestEmailVerificationCode => 'Bisa email verification code';
 
   @override
-  String get serviceLocationHint =>
-      'Enter where you want the service performed. This can be different from your current location.';
+  String get selectYourServicesTitle => 'Paw wo Dwumadie ahorow';
 
   @override
-  String get serviceAddressLabel => 'Service Address';
+  String get yourServicesAndPricing => 'Wo Dwumadie ahorow ne Aboɔden';
 
   @override
-  String get serviceAddressHint => 'e.g., 123 Main St, Accra, Ghana';
+  String get tapServiceToAddSubtitle =>
+      'Mia dwumadie bi so de ka wo nneɛma a wode ma ho';
 
   @override
-  String get searchAddressTooltip => 'Find this address';
+  String get tapToEditLongPressRemove =>
+      'Mia so na sesa boɔ • Mia mu kyɛre na yi firi hɔ';
 
   @override
-  String get serviceLocationSet => 'Service location set';
+  String pricingStepLabel(int current, int total) {
+    return 'Anammɔn $current/$total';
+  }
 
   @override
-  String get coordinatesLabel => 'Coordinates';
+  String get certRequiredLegend => 'Ɛhia Certification';
+
+  @override
+  String get pendingLegend => 'Ɛretwɛn';
+
+  @override
+  String get certifiedLegend => 'Wɔahyɛ nsam';
+
+  @override
+  String get continueToPricing => 'Toa so kɔ Aboɔden ho';
+
+  @override
+  String get noServicesSelectedMessage => 'Wɔmpaw dwumadie biara da';
+
+  @override
+  String get selectServicesButton => 'Paw Dwumadie ahorow';
+
+  @override
+  String get addMoreServicesButton => 'Fa Dwumadie pii ka ho';
+
+  @override
+  String get savePricingButton => 'Sie Aboɔden';
+
+  @override
+  String get removeLabel => 'YI FIRI HƆ';
+
+  @override
+  String get selectLabel => 'PAW';
+
+  @override
+  String get tapToEditHint => 'Mia so na sesa';
+
+  @override
+  String setPriceForService(String service) {
+    return 'Hyɛ $service boɔ';
+  }
+
+  @override
+  String get paymentSuccessfulTitle => 'Tua no Asi Yɛ';
+
+  @override
+  String get paymentCouldNotBeVerified => 'Yɛantumi anhwehwɛ tua no mu';
+
+  @override
+  String get stripeNotConfigured =>
+      'Tua nhyehyɛe no nsi yɛ. Yɛsrɛ wo, ka kyerɛ mmoa anaa bɔ mmɔden bio akyire yi.';
+
+  @override
+  String get stripeConfigError =>
+      'Stripe nsi yɛ. Yɛsrɛ wo, hwɛ sɛ app no ahyehyɛ yɛ.';
+
+  @override
+  String get selectedServiceLabel => 'Adwuma a Wɔapaw';
+
+  @override
+  String referralDiscountApplied(String amount) {
+    return 'Nkyerɛkyerɛmu tebea adi dwuma: $amount';
+  }
+
+  @override
+  String creditsRemainingInfo(int count) {
+    return 'Wo wɔ credits $count a aka (1 bɛdi dwuma)';
+  }
+
+  @override
+  String get serviceLocationHint => 'Ɛha na odwumayɛni no bɛba abɛyɛ wo adwuma';
+
+  @override
+  String get serviceAddressLabel => 'Adwuma Beae';
+
+  @override
+  String get serviceAddressHint => 'Hyɛ beae a wopɛ adwuma no wɔ hɔ';
+
+  @override
+  String get searchAddressTooltip => 'Hwehwɛ beae';
+
+  @override
+  String get serviceLocationSet => 'Beae no ahyehyɛ';
+
+  @override
+  String get coordinatesLabel => 'Beae nsusuwii';
+
+  @override
+  String get hairServicesCategory => 'Nwi Ho Adwuma';
+
+  @override
+  String get beautyWellnessCategory => 'Ahoɔfɛ ne Apɔmuden';
+
+  @override
+  String get certifiedLabel => 'Wɔahyɛ no ama';
+
+  @override
+  String get removeServiceTooltip => 'Yi adwuma no';
+
+  @override
+  String get tabBasicInfo => 'Nsɛm Titiriw';
+
+  @override
+  String get tabPortfolio => 'Adwuma ho Nsɛm';
+
+  @override
+  String get tabPricing => 'Boɔ';
+
+  @override
+  String get tabReviews => 'Nsusuwii';
+
+  @override
+  String setPriceOrMarkNotOffered(String service) {
+    return 'Yɛsrɛ wo, hyɛ boɔ ma \"$service\" anaa hyɛ no sɛ \"Yɛmfa nni dwuma\".';
+  }
+
+  @override
+  String get rescheduleRequiredTitle => 'Nhyehyɛe Foforɔ Hia';
+
+  @override
+  String get rescheduleRequiredMessage =>
+      'Wo nhyehyɛe no tua ntua. Yɛsrɛ wo, paw bere foforɔ ma ƐNNƐ na tua ka.';
+
+  @override
+  String get selectNewAppointmentTime => 'Paw nhyiamu bere foforɔ:';
+
+  @override
+  String get tapToSelectTime => 'Mia na paw bere';
+
+  @override
+  String todayAtTimeSimple(String time) {
+    return 'Ɛnnɛ bere $time';
+  }
+
+  @override
+  String get selectTimeForToday => 'Paw bere ma ƐNNƐ';
+
+  @override
+  String get selectTimeAtLeast30Min =>
+      'Yɛsrɛ wo, paw bere a ɛwɔ simimaa 30 pɛ firi seisei.';
+
+  @override
+  String get mustBeAtLeast30MinFromNow =>
+      '* Ɛsɛ sɛ ɛyɛ simimaa 30 pɛ firi seisei';
+
+  @override
+  String get continueToPayment => 'Kɔ So Tua';
+
+  @override
+  String get failedToUpdateTime => 'Yɛantumi ansakra bere no';
+
+  @override
+  String get failedSubmitReviewTryAgain =>
+      'Nsusuwii no antumi ankɔ. Yɛsrɛ wo, bɔ mmɔden bio.';
+
+  @override
+  String get processingPayment => 'Yɛreyɛ Tua no Adwuma';
+
+  @override
+  String get completePaymentInBrowser => 'Wie wo tua no wɔ browser mu...';
+
+  @override
+  String get waitingForPaymentConfirmation => 'Yɛretwɛn tua ho nhyɛso...';
+
+  @override
+  String get stillWaitingCompletePayment =>
+      'Yɛda so retwɛn... Yɛsrɛ wo, wie tua no.';
+
+  @override
+  String get paymentVerificationTimedOut =>
+      'Tua hwehwɛ bere no atwam. Yɛsrɛ wo, hwɛ wo nhyehyɛe.';
+
+  @override
+  String get checkingPaymentStatus => 'Yɛrehwɛ tua tebea...';
+
+  @override
+  String get paymentNotYetReceived => 'Yɛnnya tua no. Yɛsrɛ wo, wie tua no.';
+
+  @override
+  String get couldNotVerifyTryAgain =>
+      'Yɛantumi anhwehwɛ mu. Yɛsrɛ wo, bɔ mmɔden bio.';
+
+  @override
+  String get willUpdateAutomatically =>
+      'Eyi bɛsakra ne ho ankasa sɛ tua no ba wie a.';
+
+  @override
+  String get checkNow => 'Hwɛ Seisei';
+
+  @override
+  String get providerActionHeader => 'Deɛn na wopɛ sɛ woyɛ ɛnnɛ?';
+
+  @override
+  String get providerActionBrowseJobs => 'Hwehwɛ Adwuma';
+
+  @override
+  String get providerActionWallet => 'Sika Kotoku';
+
+  @override
+  String get providerActionManageProfile => 'Hwɛ wo Profile so';
+
+  @override
+  String get providerActionNotifications => 'Nkra';
+
+  @override
+  String get providerActionNewBooking => 'Booking Foforɔ';
+
+  @override
+  String get providerActionMyReviews => 'Me Nsɛm';
+
+  @override
+  String get providerActionPortfolio => 'Me Nnwuma';
+
+  @override
+  String get providerActionServicesPricing => 'Dwumadie ne Aboɔden';
+
+  @override
+  String get moreActionsButton => 'Nneɛma pii';
+
+  @override
+  String get showLessButton => 'Kyerɛ kakraa bi';
+
+  @override
+  String get goButton => 'KƆ';
+
+  @override
+  String get priceInputLabel => 'Boɔ';
+
+  @override
+  String get pleaseEnterValidPrice => 'Yɛsrɛ wo hyɛ boɔ pa bi';
+
+  @override
+  String get savePriceButton => 'Sie Boɔ no';
+
+  @override
+  String pricingCertDialogBody(String service) {
+    return 'Sɛ wopɛ sɛ wode $service ma a, ɛsɛ sɛ wunya certification a wɔahwɛ mu. Yɛsrɛ wo fa wo certification ka ho wɔ Nsɛm Titire tab no mu.';
+  }
+
+  @override
+  String get stripeSetupComplete => 'Stripe setup no awie.';
+
+  @override
+  String get openPayoutSettings => 'Bue Payout Settings';
+
+  @override
+  String get walletNoWalletSelected => 'Wɔmpaw sika kotoku biara.';
+
+  @override
+  String get walletNoAvailableBalance => 'Sika biara nni hɔ a wobɛtumi ayi.';
+
+  @override
+  String walletBelowMinimumCashout(
+      String min, String currency, String available) {
+    return 'Sika a wobɛtumi ayi a ɛto so aaa ne $min $currency. Wo sika a ɛwɔ hɔ ne $available $currency.';
+  }
+
+  @override
+  String get walletInstantCashoutDisabled =>
+      'Instant cashout no adane wɔ wo settings mu.';
+
+  @override
+  String walletInstantCashoutAvailable(String remaining, String period) {
+    return 'Instant cashout wɔ hɔ ($remaining aka $period). 5% fee bɛba.';
+  }
+
+  @override
+  String get walletInstantCashoutUnlimited =>
+      'Instant cashout wɔ hɔ bere biara. 5% fee bɛba.';
+
+  @override
+  String get walletEnterAmountToCashOut =>
+      'Yɛsrɛ wo hyɛ sika dodow a wopɛ sɛ woyi.';
+
+  @override
+  String get walletEnterValidAmount => 'Yɛsrɛ wo hyɛ sika dodow pa.';
+
+  @override
+  String get walletCashoutInitiated => 'Sika yi no ahyɛ aseɛ yie!';
+
+  @override
+  String walletPayoutFailed(String reason) {
+    return 'Akatua no ankɔ yie: $reason';
+  }
+
+  @override
+  String get walletTransferCouldNotComplete =>
+      'Yɛantumi amfa sika no ankɔ. Yɛsrɛ wo hwɛ wo payout settings.';
+
+  @override
+  String walletPayoutStatusLabel(String status) {
+    return 'Akatua: $status';
+  }
+
+  @override
+  String get serviceSelectorHeader => 'Dwumadie bɛn na yɛbɛtumi aboa wo?';
+
+  @override
+  String get showMore => 'Kyerɛ pii';
+
+  @override
+  String get serviceSelectorSelectButton => 'PAW';
+
+  @override
+  String get certServiceSelectorTitle =>
+      'Dwumadie bɛn na certification yi fa ho?';
+
+  @override
+  String get certServiceSelectorHint =>
+      'Paw dwumadie nyinaa a certification yi kata so. Wobɛtumi apaw pii.';
+
+  @override
+  String get certNoServicesSelectedWarning =>
+      'Wɔmpaw dwumadie biara. Certification yi remmue dwumadie biara.';
+
+  @override
+  String get portfolioShowcaseTitle => 'Kyerɛ wo Nnwuma Pa';
+
+  @override
+  String get portfolioShowcaseSubtitle =>
+      'Wo portfolio ka wo asɛm. Ma wo adwuma nka ne ho asɛm.';
+
+  @override
+  String get providerUnavailableMessage =>
+      'Seesei wo nni hɔ ma nhyehyɛe. Yɛsrɛ wo, ma wo ho kwan wɔ wo profile nhyehyɛe mu.';
+
+  @override
+  String get portfolioEmptyTitle => 'Wo Portfolio yɛ hunu';
+
+  @override
+  String get portfolioEmptySubtitle =>
+      'Fa mfonini ne video ka ho na ɛbɛtwe adetofoɔ pii aba.';
+
+  @override
+  String get portfolioUploading => 'Ɛreupload...';
+
+  @override
+  String get portfolioAddButton => 'Fa ka Portfolio ho';
 
   @override
   String get pleaseEnterAddress => 'Mesrɛ wo, kyerɛw address bi';
@@ -311,6 +644,204 @@ class AppLocalizationsAk extends AppLocalizations {
   @override
   String get locationMarkedAsOther =>
       'Wɔde baabi a wowɔ no ahyɛ \"Foforo\" - wubetumi akɔ so de wo din';
+
+  @override
+  String get referralLoadFailed => 'Yɛantumi amfa referral nsɛm no amma';
+
+  @override
+  String referralCodeCopiedSnackbar(String code) {
+    return 'Wɔakyerɛw referral code \"$code\" no!';
+  }
+
+  @override
+  String referralShareText(String code, int credits, int discount) {
+    return '🎉 Bra me nkyɛn wɔ Styloria so!\n\nFa me referral code yi di dwuma: $code\n\nSɛ wowie wo booking a edi kan a, mɛnya booking $credits a $discount% bɛtu so!\n\nDownload Styloria na nya nneɛma pa a wɔde bɛba wo fie.';
+  }
+
+  @override
+  String get referralShareSubject => 'Bra Styloria so fa me referral code!';
+
+  @override
+  String get referralYourCode => 'Wo Referral Code';
+
+  @override
+  String get shareLabel => 'Kyɛ';
+
+  @override
+  String get howItWorks => 'Sɛnea Ɛyɛ Adwuma';
+
+  @override
+  String get referralStep1Share => 'Kyɛ wo code no ma wo nnamfoɔ';
+
+  @override
+  String get referralStep2SignUp => 'Wɔde wo code no sign up';
+
+  @override
+  String get referralStep3Booking => 'Sɛ wɔwie wɔn booking a ɛdi kan a...';
+
+  @override
+  String referralStepReward(int credits, int discount) {
+    return 'Wunya booking $credits a $discount% bɛtu so!';
+  }
+
+  @override
+  String get creditsAvailable => 'Credits a ɛwɔ hɔ';
+
+  @override
+  String get successfulReferrals => 'Referrals a ɛkɔɔ yie';
+
+  @override
+  String get totalEarned => 'Nea wuanya nyinaa';
+
+  @override
+  String get creditsUsed => 'Credits a wɔde ayɛ adwuma';
+
+  @override
+  String referralPendingFriendsMessage(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Nnamfoɔ $count de sign up nanso wɔnyɛɛ booking da.',
+      one: 'Adamfo 1 de sign up nanso ɔnyɛɛ booking da.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get referralHistory => 'Referral Abakɔsɛm';
+
+  @override
+  String get referralStatusCompleted => 'Awie';
+
+  @override
+  String get referralStatusExpired => 'Abɔ mu';
+
+  @override
+  String get referralStatusPending => 'Ɛretwɛn';
+
+  @override
+  String referralJoinedDate(String date) {
+    return 'Baa hɔ $date';
+  }
+
+  @override
+  String get referralJoinedRecently => 'Baa hɔ nnansa yi';
+
+  @override
+  String get noReferralsYet => 'Referral biara mmɛba da';
+
+  @override
+  String get shareCodeForDiscounts =>
+      'Kyɛ wo code no ma wo nnamfoɔ na nya discounts!';
+
+  @override
+  String get userFallbackName => 'Obi';
+
+  @override
+  String tierYourTier(String title) {
+    return 'Wo Level: $title';
+  }
+
+  @override
+  String tierTrustScore(int score) {
+    return 'Trust Score: $score/100';
+  }
+
+  @override
+  String get tierYouCanAccept => 'Wobɛtumi agye:';
+
+  @override
+  String get tierCertifiedExpert => 'Ɔnimdefoɔ a wɔahyɛ no nsam';
+
+  @override
+  String get tierVerifiedPro => 'Pro a wɔahwɛ no mu';
+
+  @override
+  String get tierNewAndEager => 'Foforɔ na ɔpɛ sɛ ɔyɛ';
+
+  @override
+  String get tierPremiumBadge => '💜 Premium';
+
+  @override
+  String get tierStandardBadge => '💙 Standard';
+
+  @override
+  String get tierBudgetBadge => '💚 Budget';
+
+  @override
+  String get tierUpgradeHintBudget =>
+      'Wie wo bio hyɛ, fa portfolio mfonini ka ho, na upload wo certifications na wobɛbue Standard ne Premium adwuma!';
+
+  @override
+  String get tierUpgradeHintStandard =>
+      'Fa portfolio nneɛma ne certifications pii ka ho na wobɛbue Premium adwuma a akatua yɛ kɛseɛ!';
+
+  @override
+  String get filterLabel => 'Hwehwɛ mu: ';
+
+  @override
+  String get filterAll => 'Nyinaa';
+
+  @override
+  String noTierJobsAvailable(String tier) {
+    return '$tier adwuma biara nni hɔ';
+  }
+
+  @override
+  String get clearFilter => 'Yi filter no';
+
+  @override
+  String allPricesInYourCurrency(String symbol) {
+    return 'Aboɔden nyinaa wɔ wo sika mu ($symbol)';
+  }
+
+  @override
+  String yourCurrencyIs(String symbol) {
+    return 'Wo sika: $symbol';
+  }
+
+  @override
+  String get tierRequiredDialogTitle => 'Level a ɛhia';
+
+  @override
+  String thisIsATierJob(String title) {
+    return 'Eyi yɛ $title adwuma.';
+  }
+
+  @override
+  String get yourTierColon => 'Wo level: ';
+
+  @override
+  String get requiredColon => 'Deɛ ɛhia: ';
+
+  @override
+  String get okButton => 'Yiw';
+
+  @override
+  String get improveProfileButton => 'Yɛ wo Profile pa';
+
+  @override
+  String get customerNoteLabel => 'Adetofoɔ Nsɛm';
+
+  @override
+  String todayAtTime(String time) {
+    return 'Ɛnnɛ bere $time';
+  }
+
+  @override
+  String dateAtTime(String date, String time) {
+    return '$date bere $time';
+  }
+
+  @override
+  String ratingValue(String rating) {
+    return 'Nsɔhwɛ $rating';
+  }
+
+  @override
+  String reviewsCountParens(int count) {
+    return '(reviews $count)';
+  }
 
   @override
   String get createAccountTitle => 'Bɔ Akaunt';
@@ -484,6 +1015,39 @@ class AppLocalizationsAk extends AppLocalizations {
   String emailVerificationInstructions(Object identifier) {
     return 'Kyerɛ 6-digit code a wɔasoma akɔ email a ɛwɔ akaunt no so:\n$identifier';
   }
+
+  @override
+  String get verifyingPaystackPayment => 'Yɛrehwehwɛ Paystack tua ho...';
+
+  @override
+  String get paymentVerifiedSuccessfully => 'Tua no ahwehwɛ mu yɛ pɛ!';
+
+  @override
+  String get paymentVerificationFailed => 'Tua hwehwɛ mu ansi yɛ';
+
+  @override
+  String errorVerifyingPayment(String error) {
+    return 'Mfomso wɔ tua hwehwɛ mu: $error';
+  }
+
+  @override
+  String get paymentWasCancelled => 'Wɔatwa tua no mu.';
+
+  @override
+  String paymentVerificationFailedDetail(String detail) {
+    return 'Tua hwehwɛ mu ansi yɛ: $detail';
+  }
+
+  @override
+  String helloName(String name) {
+    return 'Maakye $name';
+  }
+
+  @override
+  String get hello => 'Maakye';
+
+  @override
+  String get view => 'Hwɛ';
 
   @override
   String get verificationCodeLabel => 'Verification code';

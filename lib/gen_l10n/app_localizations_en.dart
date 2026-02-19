@@ -229,15 +229,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get deletionReason12 => 'Other';
 
   @override
-  String get loginWelcomeTitle => 'Welcome to Styloria';
+  String get loginWelcomeTitle => 'Welcome Back';
 
   @override
-  String get loginWelcomeSubtitle =>
-      'Sign in to manage your bookings and services.';
+  String get loginWelcomeSubtitle => 'Sign in to your account';
 
   @override
-  String get loginFailedToLoadUserInfo =>
-      'Login succeeded but failed to load user info.';
+  String get loginFailedToLoadUserInfo => 'Failed to load user info.';
 
   @override
   String get username => 'Username';
@@ -258,6 +256,90 @@ class AppLocalizationsEn extends AppLocalizations {
   String get requestEmailVerificationCode => 'Request email verification code';
 
   @override
+  String get selectYourServicesTitle => 'Select Your Services';
+
+  @override
+  String get yourServicesAndPricing => 'Your Services & Pricing';
+
+  @override
+  String get tapServiceToAddSubtitle =>
+      'Tap a service to add it to your offerings';
+
+  @override
+  String get tapToEditLongPressRemove =>
+      'Tap to edit price • Long press to remove';
+
+  @override
+  String pricingStepLabel(int current, int total) {
+    return 'Step $current/$total';
+  }
+
+  @override
+  String get certRequiredLegend => 'Cert Required';
+
+  @override
+  String get pendingLegend => 'Pending';
+
+  @override
+  String get certifiedLegend => 'Certified';
+
+  @override
+  String get continueToPricing => 'Continue to Pricing';
+
+  @override
+  String get noServicesSelectedMessage => 'No services selected yet';
+
+  @override
+  String get selectServicesButton => 'Select Services';
+
+  @override
+  String get addMoreServicesButton => 'Add More Services';
+
+  @override
+  String get savePricingButton => 'Save Pricing';
+
+  @override
+  String get removeLabel => 'REMOVE';
+
+  @override
+  String get selectLabel => 'SELECT';
+
+  @override
+  String get tapToEditHint => 'Tap to edit';
+
+  @override
+  String setPriceForService(String service) {
+    return 'Set Price for $service';
+  }
+
+  @override
+  String get paymentSuccessfulTitle => 'Payment Successful';
+
+  @override
+  String get paymentCouldNotBeVerified => 'Payment could not be verified';
+
+  @override
+  String get stripeNotConfigured =>
+      'Payment system is not configured. Please contact support or try again later.';
+
+  @override
+  String get stripeConfigError =>
+      'Stripe is not configured. Please ensure the app is properly set up.';
+
+  @override
+  String get selectedServiceLabel => 'Selected Service';
+
+  @override
+  String referralDiscountApplied(String amount) {
+    return 'Referral Discount Applied: $amount';
+  }
+
+  @override
+  String creditsRemainingInfo(int count) {
+    return 'You have $count credits remaining (1 will be used)';
+  }
+
+  @override
   String get serviceLocationHint =>
       'Enter where you want the service performed. This can be different from your current location.';
 
@@ -275,6 +357,260 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get coordinatesLabel => 'Coordinates';
+
+  @override
+  String get hairServicesCategory => 'Hair Services';
+
+  @override
+  String get beautyWellnessCategory => 'Beauty & Wellness';
+
+  @override
+  String get certifiedLabel => 'Certified';
+
+  @override
+  String get removeServiceTooltip => 'Remove service';
+
+  @override
+  String get tabBasicInfo => 'Basic Info';
+
+  @override
+  String get tabPortfolio => 'Portfolio';
+
+  @override
+  String get tabPricing => 'Pricing';
+
+  @override
+  String get tabReviews => 'Reviews';
+
+  @override
+  String setPriceOrMarkNotOffered(String service) {
+    return 'Please set a price for \"$service\" or mark it as \"Not Offered\".';
+  }
+
+  @override
+  String get rescheduleRequiredTitle => 'Reschedule Required';
+
+  @override
+  String get rescheduleRequiredMessage =>
+      'Your booking was left unpaid. Please select a new time for TODAY to continue with payment.';
+
+  @override
+  String get selectNewAppointmentTime => 'Select new appointment time:';
+
+  @override
+  String get tapToSelectTime => 'Tap to select time';
+
+  @override
+  String todayAtTimeSimple(String time) {
+    return 'Today at $time';
+  }
+
+  @override
+  String get selectTimeForToday => 'Select time for TODAY';
+
+  @override
+  String get selectTimeAtLeast30Min =>
+      'Please select a time at least 30 minutes from now.';
+
+  @override
+  String get mustBeAtLeast30MinFromNow =>
+      '* Must be at least 30 minutes from now';
+
+  @override
+  String get continueToPayment => 'Continue to Payment';
+
+  @override
+  String get failedToUpdateTime => 'Failed to update time';
+
+  @override
+  String get failedSubmitReviewTryAgain =>
+      'Failed to submit review. Please try again.';
+
+  @override
+  String get processingPayment => 'Processing Payment';
+
+  @override
+  String get completePaymentInBrowser =>
+      'Complete your payment in the browser...';
+
+  @override
+  String get waitingForPaymentConfirmation =>
+      'Waiting for payment confirmation...';
+
+  @override
+  String get stillWaitingCompletePayment =>
+      'Still waiting... Please complete payment.';
+
+  @override
+  String get paymentVerificationTimedOut =>
+      'Payment verification timed out. Please check your bookings.';
+
+  @override
+  String get checkingPaymentStatus => 'Checking payment status...';
+
+  @override
+  String get paymentNotYetReceived =>
+      'Payment not yet received. Please complete payment.';
+
+  @override
+  String get couldNotVerifyTryAgain => 'Could not verify. Please try again.';
+
+  @override
+  String get willUpdateAutomatically =>
+      'This will update automatically when payment is complete.';
+
+  @override
+  String get checkNow => 'Check Now';
+
+  @override
+  String get providerActionHeader => 'What would you like to do today?';
+
+  @override
+  String get providerActionBrowseJobs => 'Browse Jobs';
+
+  @override
+  String get providerActionWallet => 'Wallet';
+
+  @override
+  String get providerActionManageProfile => 'Manage Profile';
+
+  @override
+  String get providerActionNotifications => 'Notifications';
+
+  @override
+  String get providerActionNewBooking => 'New Booking';
+
+  @override
+  String get providerActionMyReviews => 'My Reviews';
+
+  @override
+  String get providerActionPortfolio => 'Portfolio';
+
+  @override
+  String get providerActionServicesPricing => 'Services & Pricing';
+
+  @override
+  String get moreActionsButton => 'More Actions';
+
+  @override
+  String get showLessButton => 'Show Less';
+
+  @override
+  String get goButton => 'GO';
+
+  @override
+  String get priceInputLabel => 'Price';
+
+  @override
+  String get pleaseEnterValidPrice => 'Please enter a valid price';
+
+  @override
+  String get savePriceButton => 'Save Price';
+
+  @override
+  String pricingCertDialogBody(String service) {
+    return 'To offer $service, you need a verified certification. Please add your certification in the Basic Info tab.';
+  }
+
+  @override
+  String get stripeSetupComplete => 'Stripe setup is complete.';
+
+  @override
+  String get openPayoutSettings => 'Open Payout Settings';
+
+  @override
+  String get walletNoWalletSelected => 'No wallet selected.';
+
+  @override
+  String get walletNoAvailableBalance => 'No available balance to cash out.';
+
+  @override
+  String walletBelowMinimumCashout(
+      String min, String currency, String available) {
+    return 'Minimum cashout is $min $currency. Your available balance is $available $currency.';
+  }
+
+  @override
+  String get walletInstantCashoutDisabled =>
+      'Instant cashout is disabled in your settings.';
+
+  @override
+  String walletInstantCashoutAvailable(String remaining, String period) {
+    return 'Instant cashout available ($remaining remaining $period). 5% fee applies.';
+  }
+
+  @override
+  String get walletInstantCashoutUnlimited =>
+      'Instant cashout available anytime. 5% fee applies.';
+
+  @override
+  String get walletEnterAmountToCashOut =>
+      'Please enter an amount to cash out.';
+
+  @override
+  String get walletEnterValidAmount => 'Please enter a valid amount.';
+
+  @override
+  String get walletCashoutInitiated => 'Cashout initiated successfully!';
+
+  @override
+  String walletPayoutFailed(String reason) {
+    return 'Payout failed: $reason';
+  }
+
+  @override
+  String get walletTransferCouldNotComplete =>
+      'Transfer could not be completed. Please check your payout settings.';
+
+  @override
+  String walletPayoutStatusLabel(String status) {
+    return 'Payout: $status';
+  }
+
+  @override
+  String get serviceSelectorHeader => 'Which service can we help you with?';
+
+  @override
+  String get showMore => 'Show More';
+
+  @override
+  String get serviceSelectorSelectButton => 'SELECT';
+
+  @override
+  String get certServiceSelectorTitle =>
+      'Which services does this certification qualify for?';
+
+  @override
+  String get certServiceSelectorHint =>
+      'Select all services that this certification covers. You can select multiple.';
+
+  @override
+  String get certNoServicesSelectedWarning =>
+      'No services selected. This certification won\'t unlock any services.';
+
+  @override
+  String get portfolioShowcaseTitle => 'Showcase Your Best Work';
+
+  @override
+  String get portfolioShowcaseSubtitle =>
+      'Your portfolio tells your story. Let your work speak for itself.';
+
+  @override
+  String get providerUnavailableMessage =>
+      'You are currently unavailable for bookings. Please enable availability in your profile settings.';
+
+  @override
+  String get portfolioEmptyTitle => 'Your Portfolio is Empty';
+
+  @override
+  String get portfolioEmptySubtitle =>
+      'Add photos and videos of your work to attract more clients.';
+
+  @override
+  String get portfolioUploading => 'Uploading...';
+
+  @override
+  String get portfolioAddButton => 'Add to Portfolio';
 
   @override
   String get pleaseEnterAddress => 'Please enter an address';
@@ -316,6 +652,205 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get locationMarkedAsOther =>
       'Location marked as \"Other\" - you can proceed with registration';
+
+  @override
+  String get referralLoadFailed => 'Failed to load referral stats';
+
+  @override
+  String referralCodeCopiedSnackbar(String code) {
+    return 'Referral code \"$code\" copied!';
+  }
+
+  @override
+  String referralShareText(String code, int credits, int discount) {
+    return '🎉 Join me on Styloria!\n\nUse my referral code: $code\n\nWhen you complete your first booking, I\'ll get $credits bookings with $discount% off!\n\nDownload Styloria and get amazing services delivered to your door.';
+  }
+
+  @override
+  String get referralShareSubject => 'Join Styloria with my referral code!';
+
+  @override
+  String get referralYourCode => 'Your Referral Code';
+
+  @override
+  String get shareLabel => 'Share';
+
+  @override
+  String get howItWorks => 'How It Works';
+
+  @override
+  String get referralStep1Share => 'Share your code with friends';
+
+  @override
+  String get referralStep2SignUp => 'They sign up using your code';
+
+  @override
+  String get referralStep3Booking =>
+      'When they complete their first booking...';
+
+  @override
+  String referralStepReward(int credits, int discount) {
+    return 'You get $credits bookings with $discount% off!';
+  }
+
+  @override
+  String get creditsAvailable => 'Credits Available';
+
+  @override
+  String get successfulReferrals => 'Successful Referrals';
+
+  @override
+  String get totalEarned => 'Total Earned';
+
+  @override
+  String get creditsUsed => 'Credits Used';
+
+  @override
+  String referralPendingFriendsMessage(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count friends signed up but haven\'t completed a booking yet.',
+      one: '1 friend signed up but hasn\'t completed a booking yet.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get referralHistory => 'Referral History';
+
+  @override
+  String get referralStatusCompleted => 'Completed';
+
+  @override
+  String get referralStatusExpired => 'Expired';
+
+  @override
+  String get referralStatusPending => 'Pending';
+
+  @override
+  String referralJoinedDate(String date) {
+    return 'Joined $date';
+  }
+
+  @override
+  String get referralJoinedRecently => 'Joined recently';
+
+  @override
+  String get noReferralsYet => 'No referrals yet';
+
+  @override
+  String get shareCodeForDiscounts =>
+      'Share your code with friends to earn discounts!';
+
+  @override
+  String get userFallbackName => 'User';
+
+  @override
+  String tierYourTier(String title) {
+    return 'Your Tier: $title';
+  }
+
+  @override
+  String tierTrustScore(int score) {
+    return 'Trust Score: $score/100';
+  }
+
+  @override
+  String get tierYouCanAccept => 'You can accept:';
+
+  @override
+  String get tierCertifiedExpert => 'Certified Expert';
+
+  @override
+  String get tierVerifiedPro => 'Verified Pro';
+
+  @override
+  String get tierNewAndEager => 'New & Eager';
+
+  @override
+  String get tierPremiumBadge => '💜 Premium';
+
+  @override
+  String get tierStandardBadge => '💙 Standard';
+
+  @override
+  String get tierBudgetBadge => '💚 Budget';
+
+  @override
+  String get tierUpgradeHintBudget =>
+      'Complete your bio, add portfolio photos, and upload certifications to unlock Standard & Premium jobs!';
+
+  @override
+  String get tierUpgradeHintStandard =>
+      'Add more portfolio items and certifications to unlock Premium jobs with higher earnings!';
+
+  @override
+  String get filterLabel => 'Filter: ';
+
+  @override
+  String get filterAll => 'All';
+
+  @override
+  String noTierJobsAvailable(String tier) {
+    return 'No $tier jobs available';
+  }
+
+  @override
+  String get clearFilter => 'Clear filter';
+
+  @override
+  String allPricesInYourCurrency(String symbol) {
+    return 'All prices shown in your currency ($symbol)';
+  }
+
+  @override
+  String yourCurrencyIs(String symbol) {
+    return 'Your currency: $symbol';
+  }
+
+  @override
+  String get tierRequiredDialogTitle => 'Tier Required';
+
+  @override
+  String thisIsATierJob(String title) {
+    return 'This is a $title job.';
+  }
+
+  @override
+  String get yourTierColon => 'Your tier: ';
+
+  @override
+  String get requiredColon => 'Required: ';
+
+  @override
+  String get okButton => 'OK';
+
+  @override
+  String get improveProfileButton => 'Improve Profile';
+
+  @override
+  String get customerNoteLabel => 'Customer Note';
+
+  @override
+  String todayAtTime(String time) {
+    return 'Today at $time';
+  }
+
+  @override
+  String dateAtTime(String date, String time) {
+    return '$date at $time';
+  }
+
+  @override
+  String ratingValue(String rating) {
+    return '$rating rating';
+  }
+
+  @override
+  String reviewsCountParens(int count) {
+    return '($count reviews)';
+  }
 
   @override
   String get createAccountTitle => 'Create Account';
@@ -489,6 +1024,39 @@ class AppLocalizationsEn extends AppLocalizations {
   String emailVerificationInstructions(Object identifier) {
     return 'Enter the 6-digit code sent to the email on this account:\n$identifier';
   }
+
+  @override
+  String get verifyingPaystackPayment => 'Verifying Paystack payment...';
+
+  @override
+  String get paymentVerifiedSuccessfully => 'Payment verified successfully!';
+
+  @override
+  String get paymentVerificationFailed => 'Payment verification failed';
+
+  @override
+  String errorVerifyingPayment(String error) {
+    return 'Error verifying payment: $error';
+  }
+
+  @override
+  String get paymentWasCancelled => 'Payment was cancelled.';
+
+  @override
+  String paymentVerificationFailedDetail(String detail) {
+    return 'Payment verification failed: $detail';
+  }
+
+  @override
+  String helloName(String name) {
+    return 'Hello $name';
+  }
+
+  @override
+  String get hello => 'Hello';
+
+  @override
+  String get view => 'View';
 
   @override
   String get verificationCodeLabel => 'Verification code';

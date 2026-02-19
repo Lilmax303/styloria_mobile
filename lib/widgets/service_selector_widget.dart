@@ -2,6 +2,7 @@
 
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:styloria_mobile/gen_l10n/app_localizations.dart';
 import '../booking_form_screen.dart';
 
 class ServiceSelectorWidget extends StatefulWidget {
@@ -21,33 +22,71 @@ class _ServiceSelectorWidgetState extends State<ServiceSelectorWidget>
   late Animation<double> _blurAnimation;
   late Animation<double> _buttonAnimation;
 
-  // ===== FIXED: Explicit colors that work on light marble background =====
-  static const Color _headerTextColor = Color(0xFF1A1A2E);      // Dark navy - always visible
-  static const Color _serviceNameColor = Color(0xFF2D2D3A);     // Dark grey - always visible
-  static const Color _serviceNameSelectedColor = Color(0xFFB8860B); // Dark gold - always visible
+  static const Color _headerTextColor = Color(0xFF1A1A2E);
+  static const Color _serviceNameColor = Color(0xFF2D2D3A);
+  static const Color _serviceNameSelectedColor = Color(0xFFB8860B);
   static const Color _goldAccent = Color(0xFFD4AF37);
   static const Color _goldLight = Color(0xFFF4D03F);
 
-  final List<ServiceItem> _topServices = [
-    ServiceItem(key: 'haircut', name: 'Haircut', imagePath: 'assets/services/haircut.png'),
-    ServiceItem(key: 'braids', name: 'Braids', imagePath: 'assets/services/braids.png'),
-    ServiceItem(key: 'tattoo', name: 'Tattoo', imagePath: 'assets/services/tattoo.png'),
-    ServiceItem(key: 'makeup', name: 'Makeup', imagePath: 'assets/services/makeup.png'),
-    ServiceItem(key: 'manicure', name: 'Manicure', imagePath: 'assets/services/manicure.png'),
-    ServiceItem(key: 'pedicure', name: 'Pedicure', imagePath: 'assets/services/pedicure.png'),
-    ServiceItem(key: 'nails', name: 'Nail Art', imagePath: 'assets/services/nailart.png'),
-    ServiceItem(key: 'massage', name: 'Massage', imagePath: 'assets/services/massage.png'),
-    ServiceItem(key: 'styling', name: 'Hair Styling', imagePath: 'assets/services/hairstyling.png'),
+  // Keys + image paths only — names resolved at build time
+  static const List<_ServiceDef> _topServiceDefs = [
+    _ServiceDef(key: 'haircut', nameKey: 'serviceHaircutLabel', imagePath: 'assets/services/haircut.png'),
+    _ServiceDef(key: 'braids', nameKey: 'serviceBraidsLabel', imagePath: 'assets/services/braids.png'),
+    _ServiceDef(key: 'tattoo', nameKey: 'serviceTattooLabel', imagePath: 'assets/services/tattoo.png'),
+    _ServiceDef(key: 'makeup', nameKey: 'serviceMakeupLabel', imagePath: 'assets/services/makeup.png'),
+    _ServiceDef(key: 'manicure', nameKey: 'serviceManicureLabel', imagePath: 'assets/services/manicure.png'),
+    _ServiceDef(key: 'pedicure', nameKey: 'servicePedicureLabel', imagePath: 'assets/services/pedicure.png'),
+    _ServiceDef(key: 'nails', nameKey: 'serviceNailArtLabel', imagePath: 'assets/services/nailart.png'),
+    _ServiceDef(key: 'massage', nameKey: 'serviceMassageLabel', imagePath: 'assets/services/massage.png'),
+    _ServiceDef(key: 'styling', nameKey: 'serviceHairStylingLabel', imagePath: 'assets/services/hairstyling.png'),
   ];
 
-  final List<ServiceItem> _hiddenServices = [
-    ServiceItem(key: 'shave', name: 'Shave', imagePath: 'assets/services/shave.png'),
-    ServiceItem(key: 'color', name: 'Hair Coloring', imagePath: 'assets/services/haircoloring.png'),
-    ServiceItem(key: 'facial', name: 'Facial', imagePath: 'assets/services/facial.png'),
-    ServiceItem(key: 'waxing', name: 'Waxing', imagePath: 'assets/services/waxing.png'),
-    ServiceItem(key: 'treatment', name: 'Hair Treatment', imagePath: 'assets/services/hairtreatment.png'),
-    ServiceItem(key: 'extensions', name: 'Extensions', imagePath: 'assets/services/hairextensions.png'),
+  static const List<_ServiceDef> _hiddenServiceDefs = [
+    _ServiceDef(key: 'shave', nameKey: 'serviceShaveLabel', imagePath: 'assets/services/shave.png'),
+    _ServiceDef(key: 'color', nameKey: 'serviceHairColoringLabel', imagePath: 'assets/services/haircoloring.png'),
+    _ServiceDef(key: 'facial', nameKey: 'serviceFacialLabel', imagePath: 'assets/services/facial.png'),
+    _ServiceDef(key: 'waxing', nameKey: 'serviceWaxingLabel', imagePath: 'assets/services/waxing.png'),
+    _ServiceDef(key: 'treatment', nameKey: 'serviceHairTreatmentLabel', imagePath: 'assets/services/hairtreatment.png'),
+    _ServiceDef(key: 'extensions', nameKey: 'serviceHairExtensionsLabel', imagePath: 'assets/services/hairextensions.png'),
   ];
+
+  /// Resolve a nameKey to a localized string
+  String _resolveServiceName(String nameKey, AppLocalizations l10n) {
+    switch (nameKey) {
+      case 'serviceHaircutLabel':
+        return l10n.serviceHaircutLabel;
+      case 'serviceBraidsLabel':
+        return l10n.serviceBraidsLabel;
+      case 'serviceTattooLabel':
+        return l10n.serviceTattooLabel;
+      case 'serviceMakeupLabel':
+        return l10n.serviceMakeupLabel;
+      case 'serviceManicureLabel':
+        return l10n.serviceManicureLabel;
+      case 'servicePedicureLabel':
+        return l10n.servicePedicureLabel;
+      case 'serviceNailArtLabel':
+        return l10n.serviceNailArtLabel;
+      case 'serviceMassageLabel':
+        return l10n.serviceMassageLabel;
+      case 'serviceHairStylingLabel':
+        return l10n.serviceHairStylingLabel;
+      case 'serviceShaveLabel':
+        return l10n.serviceShaveLabel;
+      case 'serviceHairColoringLabel':
+        return l10n.serviceHairColoringLabel;
+      case 'serviceFacialLabel':
+        return l10n.serviceFacialLabel;
+      case 'serviceWaxingLabel':
+        return l10n.serviceWaxingLabel;
+      case 'serviceHairTreatmentLabel':
+        return l10n.serviceHairTreatmentLabel;
+      case 'serviceHairExtensionsLabel':
+        return l10n.serviceHairExtensionsLabel;
+      default:
+        return nameKey;
+    }
+  }
 
   @override
   void initState() {
@@ -113,30 +152,45 @@ class _ServiceSelectorWidgetState extends State<ServiceSelectorWidget>
     }
   }
 
-  // ===== NEW: Constants for grid layout =====
-  static const double _fixedCircleSize = 105.0;  // Fixed size for all screens
-  static const double _circleSpacing = 16.0;     // Space between circles
-  static const double _horizontalPadding = 16.0; // Left/right padding
-  static const int _minColumns = 2;
-  static const int _maxColumns = 6;
+  static const double _fixedCircleSize = 105.0;
+  static const double _circleSpacing = 16.0;
+  static const double _horizontalPadding = 16.0;
 
   @override
   Widget build(BuildContext context) {
-    final allServices = [..._topServices, if (_showAll) ..._hiddenServices];
-    final screenWidth = MediaQuery.of(context).size.width;
-    
+    final l10n = AppLocalizations.of(context);
+
+    // Build resolved service items
+    final topServices = _topServiceDefs
+        .map((def) => ServiceItem(
+              key: def.key,
+              name: _resolveServiceName(def.nameKey, l10n),
+              imagePath: def.imagePath,
+            ))
+        .toList();
+
+    final hiddenServices = _hiddenServiceDefs
+        .map((def) => ServiceItem(
+              key: def.key,
+              name: _resolveServiceName(def.nameKey, l10n),
+              imagePath: def.imagePath,
+            ))
+        .toList();
+
+    final allServices = [...topServices, if (_showAll) ...hiddenServices];
+
     return GestureDetector(
       onTap: _clearSelection,
       behavior: HitTestBehavior.translucent,
       child: Column(
         children: [
-          // ===== Header (unchanged) =====
+          // Header
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
             child: Column(
               children: [
                 Text(
-                  'Which service can we help you with?',
+                  l10n.serviceSelectorHeader,
                   textAlign: TextAlign.center,
                   style: const TextStyle(
                     fontFamily: 'Georgia',
@@ -162,7 +216,7 @@ class _ServiceSelectorWidgetState extends State<ServiceSelectorWidget>
             ),
           ),
 
-          // ===== NEW: Services Grid with dynamic columns =====
+          // Services Grid
           Padding(
             padding: EdgeInsets.symmetric(horizontal: _horizontalPadding),
             child: AnimatedBuilder(
@@ -175,7 +229,7 @@ class _ServiceSelectorWidgetState extends State<ServiceSelectorWidget>
                     maxCrossAxisExtent: _fixedCircleSize + 20,
                     crossAxisSpacing: _circleSpacing,
                     mainAxisSpacing: 12.0,
-                    childAspectRatio: 0.70, // width/height
+                    childAspectRatio: 0.70,
                   ),
                   itemCount: allServices.length,
                   itemBuilder: (context, index) {
@@ -195,6 +249,7 @@ class _ServiceSelectorWidgetState extends State<ServiceSelectorWidget>
                       onSelectConfirm: () => _onSelectConfirm(service.key),
                       nameColor: _serviceNameColor,
                       nameSelectedColor: _serviceNameSelectedColor,
+                      selectLabel: l10n.serviceSelectorSelectButton,
                     );
                   },
                 );
@@ -202,14 +257,15 @@ class _ServiceSelectorWidgetState extends State<ServiceSelectorWidget>
             ),
           ),
 
-          // ===== Show More/Less button (unchanged) =====
+          // Show More/Less button
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 20),
             child: GestureDetector(
               onTap: () => setState(() => _showAll = !_showAll),
               child: AnimatedContainer(
                 duration: const Duration(milliseconds: 300),
-                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: _showAll
@@ -230,7 +286,7 @@ class _ServiceSelectorWidgetState extends State<ServiceSelectorWidget>
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(
-                      _showAll ? 'Show Less' : 'Show More',
+                      _showAll ? l10n.showLess : l10n.showMore,
                       style: const TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.w600,
@@ -259,7 +315,20 @@ class _ServiceSelectorWidgetState extends State<ServiceSelectorWidget>
   }
 }
 
-// Service data model
+// Internal definition — holds keys, not localized strings
+class _ServiceDef {
+  final String key;
+  final String nameKey;
+  final String imagePath;
+
+  const _ServiceDef({
+    required this.key,
+    required this.nameKey,
+    required this.imagePath,
+  });
+}
+
+// Runtime data model with resolved localized name
 class ServiceItem {
   final String key;
   final String name;
@@ -272,7 +341,7 @@ class ServiceItem {
   });
 }
 
-// Individual Service Orb
+// Individual Service Orb — updated with selectLabel parameter
 class _ServiceOrb extends StatefulWidget {
   final ServiceItem service;
   final double size;
@@ -283,9 +352,9 @@ class _ServiceOrb extends StatefulWidget {
   final double buttonValue;
   final VoidCallback onTap;
   final VoidCallback onSelectConfirm;
-  // ===== FIXED: Accept explicit colors =====
   final Color nameColor;
   final Color nameSelectedColor;
+  final String selectLabel;
 
   const _ServiceOrb({
     required this.service,
@@ -299,6 +368,7 @@ class _ServiceOrb extends StatefulWidget {
     required this.onSelectConfirm,
     required this.nameColor,
     required this.nameSelectedColor,
+    required this.selectLabel,
   });
 
   @override
@@ -371,12 +441,10 @@ class _ServiceOrbState extends State<_ServiceOrb>
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    // Circular image
                     Stack(
                       alignment: Alignment.center,
                       clipBehavior: Clip.none,
                       children: [
-                        // Glow effect
                         if (widget.isSelected)
                           Positioned(
                             child: Container(
@@ -386,8 +454,9 @@ class _ServiceOrbState extends State<_ServiceOrb>
                                 shape: BoxShape.circle,
                                 boxShadow: [
                                   BoxShadow(
-                                    color: _goldAccent
-                                        .withOpacity((0.5 * safeButtonOpacity).clamp(0.0, 1.0)),
+                                    color: _goldAccent.withOpacity(
+                                        (0.5 * safeButtonOpacity)
+                                            .clamp(0.0, 1.0)),
                                     blurRadius: 20,
                                     spreadRadius: 2,
                                   ),
@@ -395,8 +464,6 @@ class _ServiceOrbState extends State<_ServiceOrb>
                               ),
                             ),
                           ),
-
-                        // Main circular image
                         Container(
                           width: widget.size,
                           height: widget.size,
@@ -414,7 +481,8 @@ class _ServiceOrbState extends State<_ServiceOrb>
                                   widget.isSelected ? 0.25 : 0.12,
                                 ),
                                 blurRadius: widget.isSelected ? 15 : 8,
-                                offset: Offset(0, widget.isSelected ? 6 : 3),
+                                offset:
+                                    Offset(0, widget.isSelected ? 6 : 3),
                               ),
                             ],
                           ),
@@ -429,9 +497,11 @@ class _ServiceOrbState extends State<_ServiceOrb>
                                 fit: BoxFit.cover,
                                 width: widget.size,
                                 height: widget.size,
-                                errorBuilder: (context, error, stackTrace) {
+                                errorBuilder:
+                                    (context, error, stackTrace) {
                                   return Container(
-                                    color: cs.surfaceContainerHighest,
+                                    color:
+                                        cs.surfaceContainerHighest,
                                     child: Icon(
                                       Icons.spa,
                                       size: widget.size * 0.35,
@@ -443,13 +513,14 @@ class _ServiceOrbState extends State<_ServiceOrb>
                             ),
                           ),
                         ),
-
-                        // SELECT button overlay
-                        if (widget.isSelected && safeButtonOpacity > 0.01)
+                        if (widget.isSelected &&
+                            safeButtonOpacity > 0.01)
                           Opacity(
                             opacity: safeButtonOpacity,
                             child: Transform.scale(
-                              scale: (0.5 + (0.5 * safeButtonOpacity)).clamp(0.1, 1.5),
+                              scale: (0.5 +
+                                      (0.5 * safeButtonOpacity))
+                                  .clamp(0.1, 1.5),
                               child: Container(
                                 width: widget.size,
                                 height: widget.size,
@@ -459,38 +530,55 @@ class _ServiceOrbState extends State<_ServiceOrb>
                                     begin: Alignment.topCenter,
                                     end: Alignment.bottomCenter,
                                     colors: [
-                                      Colors.black.withOpacity(0.15),
-                                      Colors.black.withOpacity(0.65),
+                                      Colors.black
+                                          .withOpacity(0.15),
+                                      Colors.black
+                                          .withOpacity(0.65),
                                     ],
                                   ),
                                 ),
                                 child: Center(
                                   child: GestureDetector(
-                                    onTap: widget.onSelectConfirm,
+                                    onTap:
+                                        widget.onSelectConfirm,
                                     child: Container(
-                                      padding: const EdgeInsets.symmetric(
+                                      padding:
+                                          const EdgeInsets
+                                              .symmetric(
                                         horizontal: 16,
                                         vertical: 8,
                                       ),
                                       decoration: BoxDecoration(
-                                        gradient: const LinearGradient(
-                                          colors: [_goldAccent, _goldLight],
+                                        gradient:
+                                            const LinearGradient(
+                                          colors: [
+                                            _goldAccent,
+                                            _goldLight
+                                          ],
                                         ),
-                                        borderRadius: BorderRadius.circular(20),
+                                        borderRadius:
+                                            BorderRadius.circular(
+                                                20),
                                         boxShadow: [
                                           BoxShadow(
-                                            color: _goldAccent.withOpacity(0.4),
+                                            color: _goldAccent
+                                                .withOpacity(
+                                                    0.4),
                                             blurRadius: 10,
-                                            offset: const Offset(0, 3),
+                                            offset:
+                                                const Offset(
+                                                    0, 3),
                                           ),
                                         ],
                                       ),
-                                      child: const Text(
-                                        'SELECT',
-                                        style: TextStyle(
+                                      child: Text(
+                                        widget.selectLabel,
+                                        style:
+                                            const TextStyle(
                                           color: Colors.white,
                                           fontSize: 11,
-                                          fontWeight: FontWeight.bold,
+                                          fontWeight:
+                                              FontWeight.bold,
                                           letterSpacing: 1.2,
                                         ),
                                       ),
@@ -502,10 +590,7 @@ class _ServiceOrbState extends State<_ServiceOrb>
                           ),
                       ],
                     ),
-
                     const SizedBox(height: 8),
-
-                    // ===== FIXED: Service name with explicit dark color =====
                     Text(
                       widget.service.name,
                       textAlign: TextAlign.center,
@@ -515,17 +600,14 @@ class _ServiceOrbState extends State<_ServiceOrb>
                         fontWeight: widget.isSelected
                             ? FontWeight.w700
                             : FontWeight.w600,
-                        // ===== FIXED: Use explicit colors, not theme colors =====
                         color: widget.isSelected
-                            ? widget.nameSelectedColor  // Dark gold
-                            : widget.nameColor,          // Dark grey
+                            ? widget.nameSelectedColor
+                            : widget.nameColor,
                         letterSpacing: 0.3,
-                        // ===== BONUS: Add shadow for extra readability =====
                         shadows: const [
                           Shadow(
-                            color: Colors.white,
-                            blurRadius: 4,
-                          ),
+                              color: Colors.white,
+                              blurRadius: 4),
                         ],
                       ),
                       maxLines: 1,

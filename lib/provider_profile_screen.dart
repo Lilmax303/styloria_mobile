@@ -422,12 +422,14 @@ class _ProviderProfileScreenState extends State<ProviderProfileScreen>
     // Validate service prices: if offered, price must be > 0
     for (var service in _serviceTypes) {
       if (service['offered'] == true && (service['price'] as double) <= 0) {
+        final l10n = AppLocalizations.of(context)!;
+        final serviceName = _serviceLabel(service['id'] as String, l10n);
         setState(() {
-          _error = 'Please set a price for "${_serviceLabel(service['id'] as String, AppLocalizations.of(context)!)}" or mark it as "Not Offered".';
+          _error = l10n.setPriceOrMarkNotOffered(serviceName);
         });
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text('Please set a price for "${_serviceLabel(service['id'] as String, AppLocalizations.of(context)!)}" or mark it as "Not Offered".'),
+            content: Text(l10n.setPriceOrMarkNotOffered(serviceName)),
             backgroundColor: Colors.red,
           ),
         );
@@ -2189,8 +2191,8 @@ class _ProviderProfileScreenState extends State<ProviderProfileScreen>
                     ),
                     label: Text(
                       _reviewsExpanded
-                          ? 'Show less'
-                          : 'Show more (${totalReviews - _initialReviewsToShow} more)',
+                          ? l10n.showLess
+                          : l10n.showMoreCount(totalReviews - _initialReviewsToShow),
                       style: const TextStyle(fontWeight: FontWeight.w600),
                     ),
                   ),
@@ -2326,7 +2328,7 @@ class _ProviderProfileScreenState extends State<ProviderProfileScreen>
 
         // Hair Services
         Text(
-          'Hair Services',
+          l10n.hairServicesCategory,
           style: TextStyle(
             fontSize: 13,
             fontWeight: FontWeight.w600,
@@ -2339,7 +2341,7 @@ class _ProviderProfileScreenState extends State<ProviderProfileScreen>
 
         // Beauty & Wellness Services
         Text(
-          'Beauty & Wellness',
+          l10n.beautyWellnessCategory,
           style: TextStyle(
             fontSize: 13,
             fontWeight: FontWeight.w600,
@@ -2676,7 +2678,7 @@ class _ProviderProfileScreenState extends State<ProviderProfileScreen>
                       Icon(Icons.verified, size: 14, color: isDark ? Colors.green.shade300 : Colors.green[700]),
                       const SizedBox(width: 4),
                       Text(
-                        'Certified',
+                        l10n.certifiedLabel,
                         style: TextStyle(
                           fontSize: 11,
                           color: isDark ? Colors.green.shade300 : Colors.green[700],
@@ -2695,7 +2697,7 @@ class _ProviderProfileScreenState extends State<ProviderProfileScreen>
                   });
                 },
                 icon: const Icon(Icons.close, size: 18),
-                tooltip: 'Remove service',
+                tooltip: l10n.removeServiceTooltip,
                 padding: EdgeInsets.zero,
                 constraints: const BoxConstraints(),
                 color: isDark ? Colors.grey.shade400 : Colors.grey[600],
@@ -2781,11 +2783,11 @@ class _ProviderProfileScreenState extends State<ProviderProfileScreen>
             : TabBar(
                 controller: _tabController,
                 isScrollable: true,
-                tabs: const [
-                  Tab(icon: Icon(Icons.person), text: 'Basic Info'),
-                  Tab(icon: Icon(Icons.photo_library), text: 'Portfolio'),
-                  Tab(icon: Icon(Icons.attach_money), text: 'Pricing'),
-                  Tab(icon: Icon(Icons.star), text: 'Reviews'),
+                tabs: [
+                  Tab(icon: const Icon(Icons.person), text: l10n.tabBasicInfo),
+                  Tab(icon: const Icon(Icons.photo_library), text: l10n.tabPortfolio),
+                  Tab(icon: const Icon(Icons.attach_money), text: l10n.tabPricing),
+                  Tab(icon: const Icon(Icons.star), text: l10n.tabReviews),
                 ],
               ),
       ),

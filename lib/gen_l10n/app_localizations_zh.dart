@@ -223,13 +223,13 @@ class AppLocalizationsZh extends AppLocalizations {
   String get deletionReason12 => '其他';
 
   @override
-  String get loginWelcomeTitle => '欢迎使用 Styloria';
+  String get loginWelcomeTitle => '欢迎回来';
 
   @override
-  String get loginWelcomeSubtitle => '登录以管理你的预约和服务。';
+  String get loginWelcomeSubtitle => '登录您的账户';
 
   @override
-  String get loginFailedToLoadUserInfo => '登录成功，但无法加载用户信息。';
+  String get loginFailedToLoadUserInfo => '加载用户信息失败。';
 
   @override
   String get username => '用户名';
@@ -250,23 +250,336 @@ class AppLocalizationsZh extends AppLocalizations {
   String get requestEmailVerificationCode => '请求邮箱验证码';
 
   @override
-  String get serviceLocationHint =>
-      'Enter where you want the service performed. This can be different from your current location.';
+  String get selectYourServicesTitle => '选择您的服务';
 
   @override
-  String get serviceAddressLabel => 'Service Address';
+  String get yourServicesAndPricing => '您的服务与定价';
 
   @override
-  String get serviceAddressHint => 'e.g., 123 Main St, Accra, Ghana';
+  String get tapServiceToAddSubtitle => '点击服务将其添加到您的项目中';
 
   @override
-  String get searchAddressTooltip => 'Find this address';
+  String get tapToEditLongPressRemove => '点击编辑价格 • 长按移除';
 
   @override
-  String get serviceLocationSet => 'Service location set';
+  String pricingStepLabel(int current, int total) {
+    return '第 $current/$total 步';
+  }
 
   @override
-  String get coordinatesLabel => 'Coordinates';
+  String get certRequiredLegend => '需要认证';
+
+  @override
+  String get pendingLegend => '待审核';
+
+  @override
+  String get certifiedLegend => '已认证';
+
+  @override
+  String get continueToPricing => '继续设置定价';
+
+  @override
+  String get noServicesSelectedMessage => '尚未选择任何服务';
+
+  @override
+  String get selectServicesButton => '选择服务';
+
+  @override
+  String get addMoreServicesButton => '添加更多服务';
+
+  @override
+  String get savePricingButton => '保存定价';
+
+  @override
+  String get removeLabel => '移除';
+
+  @override
+  String get selectLabel => '选择';
+
+  @override
+  String get tapToEditHint => '点击编辑';
+
+  @override
+  String setPriceForService(String service) {
+    return '设置$service的价格';
+  }
+
+  @override
+  String get paymentSuccessfulTitle => '支付成功';
+
+  @override
+  String get paymentCouldNotBeVerified => '无法验证付款';
+
+  @override
+  String get stripeNotConfigured => '支付系统未配置。请联系客服或稍后重试。';
+
+  @override
+  String get stripeConfigError => 'Stripe 未配置。请确保应用程序已正确设置。';
+
+  @override
+  String get selectedServiceLabel => '已选服务';
+
+  @override
+  String referralDiscountApplied(String amount) {
+    return '推荐折扣已应用：$amount';
+  }
+
+  @override
+  String creditsRemainingInfo(int count) {
+    return '您还有 $count 个积分（将使用 1 个）';
+  }
+
+  @override
+  String get serviceLocationHint => '服务提供者将前往此地为您服务';
+
+  @override
+  String get serviceAddressLabel => '服务地址';
+
+  @override
+  String get serviceAddressHint => '输入您希望获得服务的地址';
+
+  @override
+  String get searchAddressTooltip => '搜索地址';
+
+  @override
+  String get serviceLocationSet => '位置已设置';
+
+  @override
+  String get coordinatesLabel => '坐标';
+
+  @override
+  String get hairServicesCategory => '美发服务';
+
+  @override
+  String get beautyWellnessCategory => '美容与养生';
+
+  @override
+  String get certifiedLabel => '已认证';
+
+  @override
+  String get removeServiceTooltip => '移除服务';
+
+  @override
+  String get tabBasicInfo => '基本信息';
+
+  @override
+  String get tabPortfolio => '作品集';
+
+  @override
+  String get tabPricing => '定价';
+
+  @override
+  String get tabReviews => '评价';
+
+  @override
+  String setPriceOrMarkNotOffered(String service) {
+    return '请为「$service」设置价格或标记为「不提供」。';
+  }
+
+  @override
+  String get rescheduleRequiredTitle => '需要重新安排';
+
+  @override
+  String get rescheduleRequiredMessage => '您的预约尚未付款。请为今天选择新的时间以继续付款。';
+
+  @override
+  String get selectNewAppointmentTime => '选择新的预约时间：';
+
+  @override
+  String get tapToSelectTime => '点击选择时间';
+
+  @override
+  String todayAtTimeSimple(String time) {
+    return '今天 $time';
+  }
+
+  @override
+  String get selectTimeForToday => '选择今天的时间';
+
+  @override
+  String get selectTimeAtLeast30Min => '请选择至少从现在起30分钟后的时间。';
+
+  @override
+  String get mustBeAtLeast30MinFromNow => '* 必须至少从现在起30分钟后';
+
+  @override
+  String get continueToPayment => '继续付款';
+
+  @override
+  String get failedToUpdateTime => '更新时间失败';
+
+  @override
+  String get failedSubmitReviewTryAgain => '提交评价失败。请重试。';
+
+  @override
+  String get processingPayment => '正在处理付款';
+
+  @override
+  String get completePaymentInBrowser => '请在浏览器中完成付款...';
+
+  @override
+  String get waitingForPaymentConfirmation => '等待付款确认...';
+
+  @override
+  String get stillWaitingCompletePayment => '仍在等待... 请完成付款。';
+
+  @override
+  String get paymentVerificationTimedOut => '付款验证超时。请检查您的预约。';
+
+  @override
+  String get checkingPaymentStatus => '正在检查付款状态...';
+
+  @override
+  String get paymentNotYetReceived => '尚未收到付款。请完成付款。';
+
+  @override
+  String get couldNotVerifyTryAgain => '无法验证。请重试。';
+
+  @override
+  String get willUpdateAutomatically => '付款完成后将自动更新。';
+
+  @override
+  String get checkNow => '立即检查';
+
+  @override
+  String get providerActionHeader => '您今天想做什么？';
+
+  @override
+  String get providerActionBrowseJobs => '浏览工作';
+
+  @override
+  String get providerActionWallet => '钱包';
+
+  @override
+  String get providerActionManageProfile => '管理资料';
+
+  @override
+  String get providerActionNotifications => '通知';
+
+  @override
+  String get providerActionNewBooking => '新预约';
+
+  @override
+  String get providerActionMyReviews => '我的评价';
+
+  @override
+  String get providerActionPortfolio => '作品集';
+
+  @override
+  String get providerActionServicesPricing => '服务与定价';
+
+  @override
+  String get moreActionsButton => '更多操作';
+
+  @override
+  String get showLessButton => '收起';
+
+  @override
+  String get goButton => '前往';
+
+  @override
+  String get priceInputLabel => '价格';
+
+  @override
+  String get pleaseEnterValidPrice => '请输入有效价格';
+
+  @override
+  String get savePriceButton => '保存价格';
+
+  @override
+  String pricingCertDialogBody(String service) {
+    return '要提供$service服务，您需要经过验证的资质证书。请在基本信息选项卡中添加您的证书。';
+  }
+
+  @override
+  String get stripeSetupComplete => 'Stripe 设置已完成。';
+
+  @override
+  String get openPayoutSettings => '打开付款设置';
+
+  @override
+  String get walletNoWalletSelected => '未选择钱包。';
+
+  @override
+  String get walletNoAvailableBalance => '没有可提取的余额。';
+
+  @override
+  String walletBelowMinimumCashout(
+      String min, String currency, String available) {
+    return '最低提现金额为 $min $currency。您的可用余额为 $available $currency。';
+  }
+
+  @override
+  String get walletInstantCashoutDisabled => '即时提现已在您的设置中禁用。';
+
+  @override
+  String walletInstantCashoutAvailable(String remaining, String period) {
+    return '即时提现可用（$period内剩余 $remaining 次）。收取 5% 手续费。';
+  }
+
+  @override
+  String get walletInstantCashoutUnlimited => '即时提现随时可用。收取 5% 手续费。';
+
+  @override
+  String get walletEnterAmountToCashOut => '请输入提现金额。';
+
+  @override
+  String get walletEnterValidAmount => '请输入有效金额。';
+
+  @override
+  String get walletCashoutInitiated => '提现已成功发起！';
+
+  @override
+  String walletPayoutFailed(String reason) {
+    return '付款失败：$reason';
+  }
+
+  @override
+  String get walletTransferCouldNotComplete => '转账无法完成。请检查您的付款设置。';
+
+  @override
+  String walletPayoutStatusLabel(String status) {
+    return '付款：$status';
+  }
+
+  @override
+  String get serviceSelectorHeader => '您需要什么服务？';
+
+  @override
+  String get showMore => '显示更多';
+
+  @override
+  String get serviceSelectorSelectButton => '选择';
+
+  @override
+  String get certServiceSelectorTitle => '此证书适用于哪些服务？';
+
+  @override
+  String get certServiceSelectorHint => '选择此证书涵盖的所有服务。您可以选择多个。';
+
+  @override
+  String get certNoServicesSelectedWarning => '未选择任何服务。此证书将不会解锁任何服务。';
+
+  @override
+  String get portfolioShowcaseTitle => '展示您的最佳作品';
+
+  @override
+  String get portfolioShowcaseSubtitle => '您的作品集讲述您的故事。让您的作品自己说话。';
+
+  @override
+  String get providerUnavailableMessage => '您目前无法接受预约。请在个人资料设置中启用可用状态。';
+
+  @override
+  String get portfolioEmptyTitle => '您的作品集为空';
+
+  @override
+  String get portfolioEmptySubtitle => '添加您的工作照片和视频以吸引更多客户。';
+
+  @override
+  String get portfolioUploading => '上传中...';
+
+  @override
+  String get portfolioAddButton => '添加到作品集';
 
   @override
   String get pleaseEnterAddress => '请输入地址';
@@ -301,6 +614,204 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get locationMarkedAsOther => '位置标记为「其他」- 您可以继续注册';
+
+  @override
+  String get referralLoadFailed => 'فشل في تحميل إحصائيات الإحالة';
+
+  @override
+  String referralCodeCopiedSnackbar(String code) {
+    return 'تم نسخ رمز الإحالة \"$code\"!';
+  }
+
+  @override
+  String referralShareText(String code, int credits, int discount) {
+    return '🎉 انضم إليّ على Styloria!\n\nاستخدم رمز الإحالة الخاص بي: $code\n\nعند إتمام أول حجز لك، سأحصل على $credits حجوزات بخصم $discount%!\n\nحمّل Styloria واحصل على خدمات رائعة حتى باب منزلك.';
+  }
+
+  @override
+  String get referralShareSubject =>
+      'انضم إلى Styloria باستخدام رمز الإحالة الخاص بي!';
+
+  @override
+  String get referralYourCode => 'رمز الإحالة الخاص بك';
+
+  @override
+  String get shareLabel => 'مشاركة';
+
+  @override
+  String get howItWorks => 'كيف يعمل';
+
+  @override
+  String get referralStep1Share => 'شارك رمزك مع أصدقائك';
+
+  @override
+  String get referralStep2SignUp => 'يقومون بالتسجيل باستخدام رمزك';
+
+  @override
+  String get referralStep3Booking => 'عند إتمام أول حجز لهم...';
+
+  @override
+  String referralStepReward(int credits, int discount) {
+    return 'تحصل على $credits حجوزات بخصم $discount%!';
+  }
+
+  @override
+  String get creditsAvailable => 'الرصيد المتاح';
+
+  @override
+  String get successfulReferrals => 'الإحالات الناجحة';
+
+  @override
+  String get totalEarned => 'إجمالي الأرباح';
+
+  @override
+  String get creditsUsed => 'الرصيد المستخدم';
+
+  @override
+  String referralPendingFriendsMessage(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count أصدقاء سجّلوا لكنهم لم يكملوا حجزًا بعد.',
+      one: 'صديق واحد سجّل لكنه لم يكمل حجزًا بعد.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get referralHistory => 'سجل الإحالات';
+
+  @override
+  String get referralStatusCompleted => 'مكتمل';
+
+  @override
+  String get referralStatusExpired => 'منتهي الصلاحية';
+
+  @override
+  String get referralStatusPending => 'قيد الانتظار';
+
+  @override
+  String referralJoinedDate(String date) {
+    return 'انضم في $date';
+  }
+
+  @override
+  String get referralJoinedRecently => 'انضم مؤخرًا';
+
+  @override
+  String get noReferralsYet => 'لا توجد إحالات بعد';
+
+  @override
+  String get shareCodeForDiscounts => 'شارك رمزك مع أصدقائك للحصول على خصومات!';
+
+  @override
+  String get userFallbackName => 'مستخدم';
+
+  @override
+  String tierYourTier(String title) {
+    return 'مستواك: $title';
+  }
+
+  @override
+  String tierTrustScore(int score) {
+    return 'درجة الثقة: $score/100';
+  }
+
+  @override
+  String get tierYouCanAccept => 'يمكنك قبول:';
+
+  @override
+  String get tierCertifiedExpert => 'خبير معتمد';
+
+  @override
+  String get tierVerifiedPro => 'محترف موثّق';
+
+  @override
+  String get tierNewAndEager => 'جديد ومتحمس';
+
+  @override
+  String get tierPremiumBadge => '💜 مميز';
+
+  @override
+  String get tierStandardBadge => '💙 عادي';
+
+  @override
+  String get tierBudgetBadge => '💚 اقتصادي';
+
+  @override
+  String get tierUpgradeHintBudget =>
+      'أكمل سيرتك الذاتية، وأضف صور أعمالك، وارفع شهاداتك لفتح الوظائف العادية والمميزة!';
+
+  @override
+  String get tierUpgradeHintStandard =>
+      'أضف المزيد من أعمالك وشهاداتك لفتح الوظائف المميزة ذات الأرباح الأعلى!';
+
+  @override
+  String get filterLabel => 'تصفية: ';
+
+  @override
+  String get filterAll => 'الكل';
+
+  @override
+  String noTierJobsAvailable(String tier) {
+    return 'لا توجد وظائف $tier متاحة';
+  }
+
+  @override
+  String get clearFilter => 'مسح التصفية';
+
+  @override
+  String allPricesInYourCurrency(String symbol) {
+    return 'جميع الأسعار معروضة بعملتك ($symbol)';
+  }
+
+  @override
+  String yourCurrencyIs(String symbol) {
+    return 'عملتك: $symbol';
+  }
+
+  @override
+  String get tierRequiredDialogTitle => 'المستوى مطلوب';
+
+  @override
+  String thisIsATierJob(String title) {
+    return 'هذه وظيفة بمستوى $title.';
+  }
+
+  @override
+  String get yourTierColon => 'مستواك: ';
+
+  @override
+  String get requiredColon => 'المطلوب: ';
+
+  @override
+  String get okButton => 'حسنًا';
+
+  @override
+  String get improveProfileButton => 'تحسين الملف الشخصي';
+
+  @override
+  String get customerNoteLabel => 'ملاحظة العميل';
+
+  @override
+  String todayAtTime(String time) {
+    return 'اليوم الساعة $time';
+  }
+
+  @override
+  String dateAtTime(String date, String time) {
+    return '$date الساعة $time';
+  }
+
+  @override
+  String ratingValue(String rating) {
+    return 'تقييم $rating';
+  }
+
+  @override
+  String reviewsCountParens(int count) {
+    return '($count مراجعات)';
+  }
 
   @override
   String get createAccountTitle => '创建账户';
@@ -466,6 +977,39 @@ class AppLocalizationsZh extends AppLocalizations {
   String emailVerificationInstructions(Object identifier) {
     return '请输入发送到该账户邮箱的 6 位验证码：\n$identifier';
   }
+
+  @override
+  String get verifyingPaystackPayment => '正在验证 Paystack 付款...';
+
+  @override
+  String get paymentVerifiedSuccessfully => '付款验证成功！';
+
+  @override
+  String get paymentVerificationFailed => '付款验证失败';
+
+  @override
+  String errorVerifyingPayment(String error) {
+    return '验证付款时出错：$error';
+  }
+
+  @override
+  String get paymentWasCancelled => '付款已取消。';
+
+  @override
+  String paymentVerificationFailedDetail(String detail) {
+    return '付款验证失败：$detail';
+  }
+
+  @override
+  String helloName(String name) {
+    return '你好 $name';
+  }
+
+  @override
+  String get hello => '你好';
+
+  @override
+  String get view => '查看';
 
   @override
   String get verificationCodeLabel => '验证码';

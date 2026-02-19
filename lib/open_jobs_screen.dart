@@ -107,7 +107,7 @@ class _OpenJobsScreenState extends State<OpenJobsScreen> {
         setState(() {
           _loading = false;
           _providerUnavailable = true;
-          _unavailableMessage = 'To view and accept open jobs, please enable "Available for Bookings" in your Provider Profile settings.';
+          _unavailableMessage = AppLocalizations.of(context).providerUnavailableMessage; // was hard-coded
         });
         return;
       }
@@ -137,22 +137,23 @@ class _OpenJobsScreenState extends State<OpenJobsScreen> {
 
   // NEW: Get tier display info
   Map<String, dynamic> _getTierInfo(String? tier) {
+    final l10n = AppLocalizations.of(context);
     switch (tier?.toLowerCase()) {
       case 'premium':
         return {
           'color': const Color(0xFFA855F7), // Purple
           'bgColor': const Color(0xFFF3E8FF),
           'icon': Icons.workspace_premium,
-          'badge': '💜 Premium',
-          'title': 'Certified Expert',
+          'badge': l10n.tierPremiumBadge,
+          'title': l10n.tierCertifiedExpert,
         };
       case 'standard':
         return {
           'color': const Color(0xFF3B82F6), // Blue
           'bgColor': const Color(0xFFDBEAFE),
           'icon': Icons.verified_user,
-          'badge': '💙 Standard',
-          'title': 'Verified Pro',
+          'badge': l10n.tierStandardBadge,
+          'title': l10n.tierVerifiedPro,
         };
       case 'budget':
       default:
@@ -160,8 +161,8 @@ class _OpenJobsScreenState extends State<OpenJobsScreen> {
           'color': const Color(0xFF22C55E), // Green
           'bgColor': const Color(0xFFDCFCE7),
           'icon': Icons.eco,
-          'badge': '💚 Budget',
-          'title': 'New & Eager',
+          'badge': l10n.tierBudgetBadge,
+          'title': l10n.tierNewAndEager,
         };
     }
   }
@@ -214,7 +215,7 @@ class _OpenJobsScreenState extends State<OpenJobsScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Your Tier: ${tierInfo['title']}',
+                      l10n.tierYourTier(tierInfo['title'] as String),
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 16,
@@ -223,7 +224,7 @@ class _OpenJobsScreenState extends State<OpenJobsScreen> {
                     ),
                     const SizedBox(height: 2),
                     Text(
-                      'Trust Score: ${_providerTrustScore ?? 0}/100',
+                      l10n.tierTrustScore(_providerTrustScore ?? 0),
                       style: TextStyle(
                         fontSize: 13,
                         color: Colors.grey.shade600,
@@ -265,7 +266,7 @@ class _OpenJobsScreenState extends State<OpenJobsScreen> {
             runSpacing: 4,
             children: [
               Text(
-                'You can accept:',
+                l10n.tierYouCanAccept,
                 style: TextStyle(
                   fontSize: 12,
                   color: Colors.grey.shade600,
@@ -328,10 +329,11 @@ class _OpenJobsScreenState extends State<OpenJobsScreen> {
 
   // NEW: Get upgrade hint based on current tier
   String _getUpgradeHint() {
+    final l10n = AppLocalizations.of(context);
     if (_providerTier == 'budget') {
-      return 'Complete your bio, add portfolio photos, and upload certifications to unlock Standard & Premium jobs!';
+      return l10n.tierUpgradeHintBudget;
     } else if (_providerTier == 'standard') {
-      return 'Add more portfolio items and certifications to unlock Premium jobs with higher earnings!';
+      return l10n.tierUpgradeHintStandard;
     }
     return '';
   }
@@ -341,23 +343,24 @@ class _OpenJobsScreenState extends State<OpenJobsScreen> {
     if (_eligibleTiers == null || _eligibleTiers!.isEmpty) {
       return const SizedBox.shrink();
     }
-    
+
+    final l10n = AppLocalizations.of(context);   
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
       child: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
         child: Row(
           children: [
-            const Text(
-              'Filter: ',
-              style: TextStyle(
+            Text(
+              l10n.filterLabel,
+              style: const TextStyle(
                 fontSize: 13,
                 fontWeight: FontWeight.w500,
               ),
             ),
             const SizedBox(width: 8),
             // "All" chip
-            _buildFilterChip(null, 'All'),
+            _buildFilterChip(null, l10n.filterAll),
             const SizedBox(width: 8),
             // Tier chips
             ..._eligibleTiers!.map((tier) {
@@ -489,7 +492,8 @@ class _OpenJobsScreenState extends State<OpenJobsScreen> {
    
    final yourTierInfo = _getTierInfo(yourTier);
    final requiredTierInfo = _getTierInfo(requiredTier);
-   
+
+   final l10n = AppLocalizations.of(context);   
    showDialog(
      context: context,
      builder: (context) => AlertDialog(
@@ -498,7 +502,7 @@ class _OpenJobsScreenState extends State<OpenJobsScreen> {
          children: [
            Icon(Icons.lock, color: Colors.orange.shade700),
            const SizedBox(width: 8),
-           const Text('Tier Required'),
+           Text(l10n.tierRequiredDialogTitle),
          ],
        ),
        content: Column(
@@ -506,13 +510,13 @@ class _OpenJobsScreenState extends State<OpenJobsScreen> {
          crossAxisAlignment: CrossAxisAlignment.start,
          children: [
            Text(
-             'This is a ${requiredTierInfo['title']} job.',
+             l10n.thisIsATierJob(requiredTierInfo['title'] as String),
              style: const TextStyle(fontWeight: FontWeight.bold),
            ),
            const SizedBox(height: 12),
            Row(
              children: [
-               const Text('Your tier: '),
+               Text(l10n.yourTierColon),
                Container(
                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                  decoration: BoxDecoration(
@@ -533,7 +537,7 @@ class _OpenJobsScreenState extends State<OpenJobsScreen> {
            const SizedBox(height: 8),
            Row(
              children: [
-               const Text('Required: '),
+               Text(l10n.requiredColon),
                Container(
                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                  decoration: BoxDecoration(
@@ -579,7 +583,7 @@ class _OpenJobsScreenState extends State<OpenJobsScreen> {
        actions: [
          TextButton(
            onPressed: () => Navigator.pop(context),
-           child: const Text('OK'),
+           child: Text(l10n.okButton),
          ),
          ElevatedButton(
            onPressed: () {
@@ -587,7 +591,7 @@ class _OpenJobsScreenState extends State<OpenJobsScreen> {
              // Navigate to profile to improve tier
              Navigator.pushNamed(context, '/provider-profile');
            },
-           child: const Text('Improve Profile'),
+           child: Text(l10n.improveProfileButton),
          ),
        ],
      ),
@@ -735,7 +739,7 @@ Widget _buildUnavailablePrompt() {
 
                           if (_userCurrencySymbol != null)
                             Text(
-                              'Your currency: $_userCurrencySymbol',
+                              l10n.yourCurrencyIs(_userCurrencySymbol!),
                               style: const TextStyle(color: Colors.grey, fontStyle: FontStyle.italic),
                             ),
                         ],
@@ -761,7 +765,7 @@ Widget _buildUnavailablePrompt() {
                                 const SizedBox(width: 8),
                                 Flexible(
                                   child: Text(
-                                    'All prices shown in your currency ($_userCurrencySymbol)',
+                                    l10n.allPricesInYourCurrency(_userCurrencySymbol!),
                                     style: TextStyle(
                                       fontSize: 12,
                                       color: Colors.blue.shade700,
@@ -790,7 +794,7 @@ Widget _buildUnavailablePrompt() {
                                             ),
                                             const SizedBox(height: 12),
                                             Text(
-                                              'No ${_selectedTierFilter ?? ""} jobs available',
+                                              l10n.noTierJobsAvailable(_selectedTierFilter ?? ""),
                                               style: TextStyle(
                                                 color: Colors.grey.shade600,
                                               ),
@@ -801,7 +805,7 @@ Widget _buildUnavailablePrompt() {
                                                   _selectedTierFilter = null;
                                                 });
                                               },
-                                              child: const Text('Clear filter'),
+                                              child: Text(l10n.clearFilter),
                                             ),
                                           ],
                                         ),
@@ -940,7 +944,7 @@ Widget _buildUnavailablePrompt() {
                                               const Icon(Icons.star, size: 14, color: Colors.amber),
                                               const SizedBox(width: 4),
                                               Text(
-                                                '${(job['requester_average_rating'] as num).toStringAsFixed(1)} rating',
+                                                l10n.ratingValue((job['requester_average_rating'] as num).toStringAsFixed(1)),
                                                 style: TextStyle(
                                                   fontSize: 12,
                                                   color: Colors.grey.shade600,
@@ -949,7 +953,7 @@ Widget _buildUnavailablePrompt() {
                                               ),
                                               if (job['requester_review_count'] != null) ...[
                                                 Text(
-                                                  ' (${job['requester_review_count']} reviews)',
+                                                  l10n.reviewsCountParens(job['requester_review_count'] as int),
                                                   style: TextStyle(
                                                     fontSize: 12,
                                                     color: Colors.grey.shade500,
@@ -965,7 +969,7 @@ Widget _buildUnavailablePrompt() {
                                               Icon(Icons.star_border, size: 14, color: Colors.grey.shade400),
                                               const SizedBox(width: 4),
                                               Text(
-                                                'New customer',
+                                                l10n.newCustomer,
                                                 style: TextStyle(
                                                   fontSize: 12,
                                                   color: Colors.grey.shade500,
@@ -1008,7 +1012,7 @@ Widget _buildUnavailablePrompt() {
                                                     crossAxisAlignment: CrossAxisAlignment.start,
                                                     children: [
                                                       Text(
-                                                        'Customer Note',
+                                                        l10n.customerNoteLabel,
                                                         style: TextStyle(
                                                           fontSize: 11,
                                                           fontWeight: FontWeight.w700,
@@ -1044,8 +1048,8 @@ Widget _buildUnavailablePrompt() {
                                               Text(
                                                 timeStr.isNotEmpty
                                                     ? (isToday 
-                                                        ? 'Today at $timeStr' 
-                                                        : '$dateStr at $timeStr')
+                                                        ? l10n.todayAtTime(timeStr) 
+                                                        : l10n.dateAtTime(dateStr, timeStr))
                                                     : dateStr,
                                                 style: TextStyle(
                                                   fontWeight: isToday ? FontWeight.w600 : FontWeight.normal,

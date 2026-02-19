@@ -3,6 +3,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:styloria_mobile/gen_l10n/app_localizations.dart';
 
 class ServicePricingWidget extends StatefulWidget {
   final List<Map<String, dynamic>> serviceTypes;
@@ -40,11 +41,9 @@ class _ServicePricingWidgetState extends State<ServicePricingWidget>
   late Animation<double> _blurAnimation;
   late Animation<double> _buttonAnimation;
 
-  // Gold accent colors (same in both modes)
   static const Color _goldAccent = Color(0xFFD4AF37);
   static const Color _goldLight = Color(0xFFF4D03F);
 
-  // Service images mapping
   final Map<String, String> _serviceImages = {
     'haircut': 'assets/services/haircut.png',
     'braids': 'assets/services/braids.png',
@@ -64,14 +63,12 @@ class _ServicePricingWidgetState extends State<ServicePricingWidget>
     'other': 'assets/services/other.png',
   };
 
-  // ===== NEW: Constants for grid layout =====
-  static const double _fixedCircleSize = 100.0;  // Fixed size for all screens
-  static const double _circleSpacing = 16.0;     // Space between circles
-  static const double _horizontalPadding = 16.0; // Left/right padding
+  static const double _fixedCircleSize = 100.0;
+  static const double _circleSpacing = 16.0;
+  static const double _horizontalPadding = 16.0;
   static const int _minColumns = 2;
   static const int _maxColumns = 5;
 
-  /// Calculate how many columns fit in the available width
   int _calculateColumnCount(double screenWidth) {
     final availableWidth = screenWidth - (_horizontalPadding * 2);
     final itemWidth = _fixedCircleSize + _circleSpacing;
@@ -79,7 +76,6 @@ class _ServicePricingWidgetState extends State<ServicePricingWidget>
     return columns.clamp(_minColumns, _maxColumns);
   }
 
-  /// Calculate spacing to distribute items evenly
   double _calculateSpacing(double screenWidth, int columnCount) {
     final availableWidth = screenWidth - (_horizontalPadding * 2);
     final totalItemsWidth = columnCount * _fixedCircleSize;
@@ -110,7 +106,6 @@ class _ServicePricingWidgetState extends State<ServicePricingWidget>
       ),
     );
 
-    // Auto-advance to step 2 if services already configured
     final hasConfiguredServices = widget.serviceTypes.any(
       (s) => s['offered'] == true && (s['price'] as double) > 0,
     );
@@ -136,6 +131,7 @@ class _ServicePricingWidgetState extends State<ServicePricingWidget>
     if (widget.getServiceLabel != null) {
       return widget.getServiceLabel!(serviceId) ?? serviceId;
     }
+    // Fallback — ideally caller always provides localized labels
     final labels = {
       'haircut': 'Haircut',
       'braids': 'Braids',
@@ -177,7 +173,6 @@ class _ServicePricingWidgetState extends State<ServicePricingWidget>
     final service = widget.serviceTypes[index];
     final isCurrentlyOffered = service['offered'] as bool;
 
-    // Check certification requirement
     if (!isCurrentlyOffered && service['requiresCertification'] == true) {
       final hasVerifiedCert =
           widget.certificationStatus[serviceKey]?['has_verified_cert'] == true;
@@ -189,13 +184,11 @@ class _ServicePricingWidgetState extends State<ServicePricingWidget>
       }
     }
 
-    // Toggle selection
     widget.onToggleService(index, !isCurrentlyOffered);
 
     _selectionController.reverse();
     setState(() => _selectedServiceKey = null);
 
-    // If enabling, show price dialog
     if (!isCurrentlyOffered) {
       Future.delayed(const Duration(milliseconds: 300), () {
         _showPriceDialog(serviceKey, index);
@@ -214,6 +207,7 @@ class _ServicePricingWidgetState extends State<ServicePricingWidget>
   }
 
   void _showCertificationRequired(String serviceId) {
+    final l10n = AppLocalizations.of(context);
     showDialog(
       context: context,
       builder: (ctx) => AlertDialog(
@@ -221,17 +215,16 @@ class _ServicePricingWidgetState extends State<ServicePricingWidget>
           children: [
             const Icon(Icons.verified_user, color: Colors.orange),
             const SizedBox(width: 8),
-            const Expanded(child: Text('Certification Required')),
+            Expanded(child: Text(l10n.certificationRequiredTitle)),
           ],
         ),
         content: Text(
-          'To offer ${_getServiceLabel(serviceId)}, you need a verified certification. '
-          'Please add your certification in the Basic Info tab.',
+          l10n.pricingCertDialogBody(_getServiceLabel(serviceId)),
         ),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(ctx),
-            child: const Text('OK'),
+            child: Text(l10n.okButton),
           ),
         ],
       ),
@@ -239,6 +232,7 @@ class _ServicePricingWidgetState extends State<ServicePricingWidget>
   }
 
   void _showPriceDialog(String serviceKey, int index) {
+    final l10n = AppLocalizations.of(context);
     final controller = TextEditingController();
     final service = widget.serviceTypes[index];
     final currentPrice = service['price'] as double;
@@ -272,7 +266,7 @@ class _ServicePricingWidgetState extends State<ServicePricingWidget>
             ),
             const SizedBox(height: 12),
             Text(
-              'Set Price for ${_getServiceLabel(serviceKey)}',
+              l10n.setPriceForService(_getServiceLabel(serviceKey)),
               textAlign: TextAlign.center,
               style: const TextStyle(fontSize: 18),
             ),
@@ -286,7 +280,7 @@ class _ServicePricingWidgetState extends State<ServicePricingWidget>
           ],
           autofocus: true,
           decoration: InputDecoration(
-            labelText: 'Price',
+            labelText: l10n.priceInputLabel,
             prefixText: '${widget.currencySymbol} ',
             border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
             hintText: '0.00',
@@ -301,15 +295,15 @@ class _ServicePricingWidgetState extends State<ServicePricingWidget>
               }
               Navigator.pop(ctx);
             },
-            child: const Text('Cancel'),
+            child: Text(l10n.cancel),
           ),
           ElevatedButton(
             onPressed: () {
               final price = double.tryParse(controller.text) ?? 0.0;
               if (price <= 0) {
                 ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(
-                    content: Text('Please enter a valid price'),
+                  SnackBar(
+                    content: Text(l10n.pleaseEnterValidPrice),
                     backgroundColor: Colors.orange,
                   ),
                 );
@@ -324,7 +318,8 @@ class _ServicePricingWidgetState extends State<ServicePricingWidget>
                 borderRadius: BorderRadius.circular(12),
               ),
             ),
-            child: const Text('Save Price', style: TextStyle(color: Colors.white)),
+            child: Text(l10n.savePriceButton,
+                style: const TextStyle(color: Colors.white)),
           ),
         ],
       ),
@@ -333,10 +328,10 @@ class _ServicePricingWidgetState extends State<ServicePricingWidget>
 
   @override
   Widget build(BuildContext context) {
-    // ===== THEME-AWARE COLORS =====
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final headerColor = isDark ? Colors.white : const Color(0xFF1A1A2E);
-    final subtitleColor = isDark ? Colors.grey.shade400 : const Color(0xFF4A4A5A);
+    final subtitleColor =
+        isDark ? Colors.grey.shade400 : const Color(0xFF4A4A5A);
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -345,20 +340,19 @@ class _ServicePricingWidgetState extends State<ServicePricingWidget>
         const SizedBox(height: 16),
         _buildProgressBar(),
         const SizedBox(height: 20),
-
         if (_currentStep == 1)
           _buildServiceSelectionStep()
         else
           _buildPriceDisplayStep(),
-
         const SizedBox(height: 20),
-
         if (_currentStep == 2) _buildSaveButton(),
       ],
     );
   }
 
   Widget _buildHeader(Color headerColor, Color subtitleColor) {
+    final l10n = AppLocalizations.of(context);
+
     return Row(
       children: [
         Expanded(
@@ -367,23 +361,23 @@ class _ServicePricingWidgetState extends State<ServicePricingWidget>
             children: [
               Text(
                 _currentStep == 1
-                    ? 'Select Your Services'
-                    : 'Your Services & Pricing',
+                    ? l10n.selectYourServicesTitle
+                    : l10n.yourServicesAndPricing,
                 style: TextStyle(
                   fontFamily: 'Georgia',
                   fontSize: 20,
                   fontWeight: FontWeight.w700,
-                  color: headerColor, // ← THEME-AWARE
+                  color: headerColor,
                 ),
               ),
               const SizedBox(height: 4),
               Text(
                 _currentStep == 1
-                    ? 'Tap a service to add it to your offerings'
-                    : 'Tap to edit price • Long press to remove',
+                    ? l10n.tapServiceToAddSubtitle
+                    : l10n.tapToEditLongPressRemove,
                 style: TextStyle(
                   fontSize: 13,
-                  color: subtitleColor, // ← THEME-AWARE
+                  color: subtitleColor,
                 ),
               ),
             ],
@@ -396,7 +390,7 @@ class _ServicePricingWidgetState extends State<ServicePricingWidget>
             borderRadius: BorderRadius.circular(20),
           ),
           child: Text(
-            'Step $_currentStep/2',
+            l10n.pricingStepLabel(_currentStep, 2),
             style: const TextStyle(
               color: Colors.white,
               fontWeight: FontWeight.bold,
@@ -421,9 +415,9 @@ class _ServicePricingWidgetState extends State<ServicePricingWidget>
   }
 
   Widget _buildServiceSelectionStep() {
-    final screenWidth = MediaQuery.of(context).size.width;
+    final l10n = AppLocalizations.of(context);
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    
+
     return GestureDetector(
       onTap: _clearSelection,
       behavior: HitTestBehavior.translucent,
@@ -435,12 +429,13 @@ class _ServicePricingWidgetState extends State<ServicePricingWidget>
               return GridView.builder(
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
-                padding: EdgeInsets.symmetric(horizontal: _horizontalPadding),
+                padding:
+                    EdgeInsets.symmetric(horizontal: _horizontalPadding),
                 gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-                  maxCrossAxisExtent: _fixedCircleSize + 20, // Max width per cell
+                  maxCrossAxisExtent: _fixedCircleSize + 20,
                   crossAxisSpacing: _circleSpacing,
                   mainAxisSpacing: 12.0,
-                  childAspectRatio: 0.65, // width/height - enough for circle + label
+                  childAspectRatio: 0.65,
                 ),
                 itemCount: widget.serviceTypes.length,
                 itemBuilder: (context, index) {
@@ -450,15 +445,22 @@ class _ServicePricingWidgetState extends State<ServicePricingWidget>
                   final isSelected = _selectedServiceKey == serviceId;
                   final hasSelection = _selectedServiceKey != null;
 
-                  // Determine certification lock state
-                  final bool requiresCert = service['requiresCertification'] == true;
-                  final bool hasVerifiedCert = widget.certificationStatus[serviceId]?['has_verified_cert'] == true;
-                  final bool hasPendingCert = widget.certificationStatus[serviceId]?['has_pending_cert'] == true;
+                  final bool requiresCert =
+                      service['requiresCertification'] == true;
+                  final bool hasVerifiedCert = widget
+                          .certificationStatus[serviceId]
+                          ?['has_verified_cert'] ==
+                      true;
+                  final bool hasPendingCert = widget
+                          .certificationStatus[serviceId]
+                          ?['has_pending_cert'] ==
+                      true;
 
                   return _ServiceSelectionOrb(
                     serviceId: serviceId,
                     serviceName: _getServiceLabel(serviceId),
-                    imagePath: _serviceImages[serviceId] ?? 'assets/services/other.png',
+                    imagePath: _serviceImages[serviceId] ??
+                        'assets/services/other.png',
                     isOffered: isOffered,
                     isSelected: isSelected,
                     hasSelection: hasSelection,
@@ -472,6 +474,8 @@ class _ServicePricingWidgetState extends State<ServicePricingWidget>
                     requiresCertification: requiresCert,
                     hasVerifiedCert: hasVerifiedCert,
                     hasPendingCert: hasPendingCert,
+                    removeLabel: l10n.removeLabel,
+                    selectLabel: l10n.selectLabel,
                   );
                 },
               );
@@ -480,49 +484,65 @@ class _ServicePricingWidgetState extends State<ServicePricingWidget>
 
           const SizedBox(height: 12),
 
-          // ═══════════════════════════════════════════
-          // CERTIFICATION LOCK LEGEND
-          // ═══════════════════════════════════════════
+          // Certification legend
           if (_hasAnyCertRequiredServices())
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Container(
-                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+                padding: const EdgeInsets.symmetric(
+                    horizontal: 12, vertical: 10),
                 decoration: BoxDecoration(
                   color: isDark
                       ? Colors.grey.shade900.withOpacity(0.5)
                       : Colors.grey.shade50,
                   borderRadius: BorderRadius.circular(10),
                   border: Border.all(
-                    color: isDark ? Colors.grey.shade700 : Colors.grey.shade200,
+                    color: isDark
+                        ? Colors.grey.shade700
+                        : Colors.grey.shade200,
                   ),
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    // Locked
-                    Icon(Icons.lock_rounded, size: 13,
-                        color: isDark ? Colors.red.shade400 : Colors.red.shade600),
+                    Icon(Icons.lock_rounded,
+                        size: 13,
+                        color: isDark
+                            ? Colors.red.shade400
+                            : Colors.red.shade600),
                     const SizedBox(width: 3),
-                    Text('Cert Required',
-                        style: TextStyle(fontSize: 10,
-                            color: isDark ? Colors.grey.shade400 : Colors.grey.shade600)),
+                    Text(l10n.certRequiredLegend,
+                        style: TextStyle(
+                            fontSize: 10,
+                            color: isDark
+                                ? Colors.grey.shade400
+                                : Colors.grey.shade600)),
                     const SizedBox(width: 12),
-                    // Pending
-                    Icon(Icons.hourglass_top_rounded, size: 13,
-                        color: isDark ? Colors.orange.shade400 : Colors.orange.shade600),
+                    Icon(Icons.hourglass_top_rounded,
+                        size: 13,
+                        color: isDark
+                            ? Colors.orange.shade400
+                            : Colors.orange.shade600),
                     const SizedBox(width: 3),
-                    Text('Pending',
-                        style: TextStyle(fontSize: 10,
-                            color: isDark ? Colors.grey.shade400 : Colors.grey.shade600)),
+                    Text(l10n.pendingLegend,
+                        style: TextStyle(
+                            fontSize: 10,
+                            color: isDark
+                                ? Colors.grey.shade400
+                                : Colors.grey.shade600)),
                     const SizedBox(width: 12),
-                    // Verified
-                    Icon(Icons.verified_rounded, size: 13,
-                        color: isDark ? Colors.green.shade400 : Colors.green.shade600),
+                    Icon(Icons.verified_rounded,
+                        size: 13,
+                        color: isDark
+                            ? Colors.green.shade400
+                            : Colors.green.shade600),
                     const SizedBox(width: 3),
-                    Text('Certified',
-                        style: TextStyle(fontSize: 10,
-                            color: isDark ? Colors.grey.shade400 : Colors.grey.shade600)),
+                    Text(l10n.certifiedLegend,
+                        style: TextStyle(
+                            fontSize: 10,
+                            color: isDark
+                                ? Colors.grey.shade400
+                                : Colors.grey.shade600)),
                   ],
                 ),
               ),
@@ -530,16 +550,20 @@ class _ServicePricingWidgetState extends State<ServicePricingWidget>
 
           const SizedBox(height: 12),
 
-          // Selected services count indicator
+          // Selected count — reuses existing servicesSelectedCount key
           if (_selectedServicesCount > 0)
             Container(
               margin: const EdgeInsets.symmetric(horizontal: 16),
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
-                color: isDark ? Colors.green.shade900.withOpacity(0.3) : Colors.green.shade50,
+                color: isDark
+                    ? Colors.green.shade900.withOpacity(0.3)
+                    : Colors.green.shade50,
                 borderRadius: BorderRadius.circular(12),
                 border: Border.all(
-                  color: isDark ? Colors.green.shade700 : Colors.green.shade200,
+                  color: isDark
+                      ? Colors.green.shade700
+                      : Colors.green.shade200,
                 ),
               ),
               child: Row(
@@ -547,14 +571,18 @@ class _ServicePricingWidgetState extends State<ServicePricingWidget>
                 children: [
                   Icon(
                     Icons.check_circle,
-                    color: isDark ? Colors.green.shade300 : Colors.green.shade700,
+                    color: isDark
+                        ? Colors.green.shade300
+                        : Colors.green.shade700,
                     size: 20,
                   ),
                   const SizedBox(width: 8),
                   Text(
-                    '$_selectedServicesCount service${_selectedServicesCount > 1 ? 's' : ''} selected',
+                    l10n.servicesSelectedCount(_selectedServicesCount),
                     style: TextStyle(
-                      color: isDark ? Colors.green.shade300 : Colors.green.shade700,
+                      color: isDark
+                          ? Colors.green.shade300
+                          : Colors.green.shade700,
                       fontWeight: FontWeight.w600,
                     ),
                   ),
@@ -579,19 +607,20 @@ class _ServicePricingWidgetState extends State<ServicePricingWidget>
                       borderRadius: BorderRadius.circular(12),
                     ),
                   ),
-                  child: const Row(
+                  child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        'Continue to Pricing',
-                        style: TextStyle(
+                        l10n.continueToPricing,
+                        style: const TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.w600,
                           fontSize: 15,
                         ),
                       ),
-                      SizedBox(width: 8),
-                      Icon(Icons.arrow_forward, color: Colors.white, size: 18),
+                      const SizedBox(width: 8),
+                      const Icon(Icons.arrow_forward,
+                          color: Colors.white, size: 18),
                     ],
                   ),
                 ),
@@ -603,42 +632,49 @@ class _ServicePricingWidgetState extends State<ServicePricingWidget>
   }
 
   Widget _buildPriceDisplayStep() {
+    final l10n = AppLocalizations.of(context);
     final offeredServices =
         widget.serviceTypes.where((s) => s['offered'] == true).toList();
-    final screenWidth = MediaQuery.of(context).size.width;
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
-    // Empty state
     if (offeredServices.isEmpty) {
       return Container(
         padding: const EdgeInsets.all(20),
         margin: const EdgeInsets.symmetric(horizontal: 16),
         decoration: BoxDecoration(
-          color: isDark ? Colors.orange.shade900.withOpacity(0.3) : Colors.orange.shade50,
+          color: isDark
+              ? Colors.orange.shade900.withOpacity(0.3)
+              : Colors.orange.shade50,
           borderRadius: BorderRadius.circular(12),
           border: Border.all(
-            color: isDark ? Colors.orange.shade700 : Colors.orange.shade200,
+            color: isDark
+                ? Colors.orange.shade700
+                : Colors.orange.shade200,
           ),
         ),
         child: Column(
           children: [
             Icon(
               Icons.info_outline,
-              color: isDark ? Colors.orange.shade300 : Colors.orange.shade700,
+              color: isDark
+                  ? Colors.orange.shade300
+                  : Colors.orange.shade700,
               size: 40,
             ),
             const SizedBox(height: 12),
             Text(
-              'No services selected yet',
+              l10n.noServicesSelectedMessage,
               style: TextStyle(
                 fontWeight: FontWeight.bold,
-                color: isDark ? Colors.orange.shade300 : Colors.orange.shade700,
+                color: isDark
+                    ? Colors.orange.shade300
+                    : Colors.orange.shade700,
               ),
             ),
             const SizedBox(height: 8),
             TextButton(
               onPressed: () => setState(() => _currentStep = 1),
-              child: const Text('Select Services'),
+              child: Text(l10n.selectServicesButton),
             ),
           ],
         ),
@@ -652,10 +688,10 @@ class _ServicePricingWidgetState extends State<ServicePricingWidget>
           physics: const NeverScrollableScrollPhysics(),
           padding: EdgeInsets.symmetric(horizontal: _horizontalPadding),
           gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-            maxCrossAxisExtent: _fixedCircleSize + 20, // Max width per cell
+            maxCrossAxisExtent: _fixedCircleSize + 20,
             crossAxisSpacing: _circleSpacing,
             mainAxisSpacing: 16.0,
-            childAspectRatio: 0.55, // width/height - gives enough height for circle + text
+            childAspectRatio: 0.55,
           ),
           itemCount: offeredServices.length,
           itemBuilder: (context, index) {
@@ -668,28 +704,31 @@ class _ServicePricingWidgetState extends State<ServicePricingWidget>
             return _ServicePriceDisplay(
               serviceId: serviceId,
               serviceName: _getServiceLabel(serviceId),
-              imagePath: _serviceImages[serviceId] ?? 'assets/services/other.png',
+              imagePath:
+                  _serviceImages[serviceId] ?? 'assets/services/other.png',
               price: price,
               currencySymbol: widget.currencySymbol,
               size: _fixedCircleSize,
               onTap: () => _showPriceDialog(serviceId, serviceIndex),
-              onLongPress: () => widget.onToggleService(serviceIndex, false),
+              onLongPress: () =>
+                  widget.onToggleService(serviceIndex, false),
               isDarkMode: isDark,
+              tapToEditHint: l10n.tapToEditHint,
             );
           },
         ),
 
         const SizedBox(height: 24),
 
-        // Add more services button
         OutlinedButton.icon(
           onPressed: () => setState(() => _currentStep = 1),
           icon: const Icon(Icons.add),
-          label: const Text('Add More Services'),
+          label: Text(l10n.addMoreServicesButton),
           style: OutlinedButton.styleFrom(
             foregroundColor: _goldAccent,
             side: const BorderSide(color: _goldAccent),
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+            padding:
+                const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(12),
             ),
@@ -700,6 +739,8 @@ class _ServicePricingWidgetState extends State<ServicePricingWidget>
   }
 
   Widget _buildSaveButton() {
+    final l10n = AppLocalizations.of(context);
+
     return SizedBox(
       width: double.infinity,
       child: ElevatedButton(
@@ -720,9 +761,9 @@ class _ServicePricingWidgetState extends State<ServicePricingWidget>
                   color: Colors.white,
                 ),
               )
-            : const Text(
-                'Save Pricing',
-                style: TextStyle(
+            : Text(
+                l10n.savePricingButton,
+                style: const TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.w600,
                   fontSize: 16,
@@ -733,7 +774,7 @@ class _ServicePricingWidgetState extends State<ServicePricingWidget>
   }
 }
 
-// ===== Service Selection Orb (Step 1) - THEME AWARE =====
+// ===== Service Selection Orb (Step 1) - Updated with l10n params =====
 class _ServiceSelectionOrb extends StatefulWidget {
   final String serviceId;
   final String serviceName;
@@ -748,12 +789,11 @@ class _ServiceSelectionOrb extends StatefulWidget {
   final VoidCallback onTap;
   final VoidCallback onSelectConfirm;
   final bool isDarkMode;
-  // ═══════════════════════════════════════════
-  // Certification lock state
-  // ═══════════════════════════════════════════
   final bool requiresCertification;
   final bool hasVerifiedCert;
   final bool hasPendingCert;
+  final String removeLabel;
+  final String selectLabel;
 
   const _ServiceSelectionOrb({
     required this.serviceId,
@@ -772,6 +812,8 @@ class _ServiceSelectionOrb extends StatefulWidget {
     this.requiresCertification = false,
     this.hasVerifiedCert = false,
     this.hasPendingCert = false,
+    required this.removeLabel,
+    required this.selectLabel,
   });
 
   @override
@@ -806,15 +848,12 @@ class _ServiceSelectionOrbState extends State<_ServiceSelectionOrb>
 
   @override
   Widget build(BuildContext context) {
-    // ===== THEME-AWARE COLORS =====
-    final serviceNameColor = widget.isDarkMode 
-        ? Colors.white 
-        : const Color(0xFF2D2D3A);
-    final serviceNameSelectedColor = widget.isDarkMode 
-        ? _goldLight 
-        : const Color(0xFFB8860B);
-    final offeredColor = widget.isDarkMode 
-        ? Colors.green.shade300 
+    final serviceNameColor =
+        widget.isDarkMode ? Colors.white : const Color(0xFF2D2D3A);
+    final serviceNameSelectedColor =
+        widget.isDarkMode ? _goldLight : const Color(0xFFB8860B);
+    final offeredColor = widget.isDarkMode
+        ? Colors.green.shade300
         : Colors.green.shade700;
 
     double scale = 1.0;
@@ -841,7 +880,8 @@ class _ServiceSelectionOrbState extends State<_ServiceSelectionOrb>
       child: AnimatedBuilder(
         animation: _hoverController,
         builder: (context, child) {
-          final hoverScale = widget.isSelected ? 1.0 : _hoverScale.value;
+          final hoverScale =
+              widget.isSelected ? 1.0 : _hoverScale.value;
 
           return AnimatedOpacity(
             duration: const Duration(milliseconds: 250),
@@ -866,7 +906,8 @@ class _ServiceSelectionOrbState extends State<_ServiceSelectionOrb>
                               boxShadow: [
                                 BoxShadow(
                                   color: _goldAccent.withOpacity(
-                                      (0.5 * safeButtonOpacity).clamp(0.0, 1.0)),
+                                      (0.5 * safeButtonOpacity)
+                                          .clamp(0.0, 1.0)),
                                   blurRadius: 18,
                                   spreadRadius: 2,
                                 ),
@@ -885,14 +926,18 @@ class _ServiceSelectionOrbState extends State<_ServiceSelectionOrb>
                                   : (widget.isSelected
                                       ? _goldAccent
                                       : _goldAccent.withOpacity(0.5)),
-                              width: widget.isOffered ? 3 : (widget.isSelected ? 3 : 2),
+                              width: widget.isOffered
+                                  ? 3
+                                  : (widget.isSelected ? 3 : 2),
                             ),
                             boxShadow: [
                               BoxShadow(
-                                color: Colors.black
-                                    .withOpacity(widget.isSelected ? 0.25 : 0.12),
-                                blurRadius: widget.isSelected ? 12 : 6,
-                                offset: Offset(0, widget.isSelected ? 5 : 3),
+                                color: Colors.black.withOpacity(
+                                    widget.isSelected ? 0.25 : 0.12),
+                                blurRadius:
+                                    widget.isSelected ? 12 : 6,
+                                offset: Offset(
+                                    0, widget.isSelected ? 5 : 3),
                               ),
                             ],
                           ),
@@ -909,10 +954,11 @@ class _ServiceSelectionOrbState extends State<_ServiceSelectionOrb>
                                     fit: BoxFit.cover,
                                     width: widget.size,
                                     height: widget.size,
-                                    errorBuilder: (context, error, stackTrace) {
+                                    errorBuilder:
+                                        (context, error, stackTrace) {
                                       return Container(
-                                        color: widget.isDarkMode 
-                                            ? Colors.grey.shade800 
+                                        color: widget.isDarkMode
+                                            ? Colors.grey.shade800
                                             : Colors.grey.shade200,
                                         child: Icon(
                                           Icons.spa,
@@ -923,13 +969,16 @@ class _ServiceSelectionOrbState extends State<_ServiceSelectionOrb>
                                     },
                                   ),
                                 ),
-                                // Grey tint overlay for locked services
-                                if (widget.requiresCertification && !widget.hasVerifiedCert && !widget.isSelected)
+                                if (widget.requiresCertification &&
+                                    !widget.hasVerifiedCert &&
+                                    !widget.isSelected)
                                   Container(
                                     width: widget.size,
                                     height: widget.size,
                                     color: Colors.black.withOpacity(
-                                      widget.hasPendingCert ? 0.15 : 0.3,
+                                      widget.hasPendingCert
+                                          ? 0.15
+                                          : 0.3,
                                     ),
                                   ),
                               ],
@@ -947,7 +996,8 @@ class _ServiceSelectionOrbState extends State<_ServiceSelectionOrb>
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
                                 color: Colors.green,
-                                border: Border.all(color: Colors.white, width: 2),
+                                border: Border.all(
+                                    color: Colors.white, width: 2),
                               ),
                               child: const Icon(
                                 Icons.check,
@@ -957,12 +1007,11 @@ class _ServiceSelectionOrbState extends State<_ServiceSelectionOrb>
                             ),
                           ),
 
-                        // ═══════════════════════════════════════════
-                        // CERTIFICATION LOCK BADGE
-                        // ═══════════════════════════════════════════
-                        if (widget.requiresCertification && !widget.isSelected) ...[
-                          // LOCKED: No cert at all
-                          if (!widget.hasVerifiedCert && !widget.hasPendingCert)
+                        // Certification badges (unchanged UI logic)
+                        if (widget.requiresCertification &&
+                            !widget.isSelected) ...[
+                          if (!widget.hasVerifiedCert &&
+                              !widget.hasPendingCert)
                             Positioned(
                               top: -2,
                               right: -2,
@@ -974,7 +1023,8 @@ class _ServiceSelectionOrbState extends State<_ServiceSelectionOrb>
                                   color: widget.isDarkMode
                                       ? Colors.red.shade800
                                       : Colors.red.shade600,
-                                  border: Border.all(color: Colors.white, width: 2),
+                                  border: Border.all(
+                                      color: Colors.white, width: 2),
                                   boxShadow: [
                                     BoxShadow(
                                       color: Colors.red.withOpacity(0.4),
@@ -990,9 +1040,8 @@ class _ServiceSelectionOrbState extends State<_ServiceSelectionOrb>
                                 ),
                               ),
                             ),
-
-                          // PENDING: Cert uploaded, awaiting verification
-                          if (!widget.hasVerifiedCert && widget.hasPendingCert)
+                          if (!widget.hasVerifiedCert &&
+                              widget.hasPendingCert)
                             Positioned(
                               top: -2,
                               right: -2,
@@ -1004,10 +1053,12 @@ class _ServiceSelectionOrbState extends State<_ServiceSelectionOrb>
                                   color: widget.isDarkMode
                                       ? Colors.orange.shade800
                                       : Colors.orange.shade600,
-                                  border: Border.all(color: Colors.white, width: 2),
+                                  border: Border.all(
+                                      color: Colors.white, width: 2),
                                   boxShadow: [
                                     BoxShadow(
-                                      color: Colors.orange.withOpacity(0.4),
+                                      color:
+                                          Colors.orange.withOpacity(0.4),
                                       blurRadius: 4,
                                       offset: const Offset(0, 1),
                                     ),
@@ -1020,8 +1071,6 @@ class _ServiceSelectionOrbState extends State<_ServiceSelectionOrb>
                                 ),
                               ),
                             ),
-
-                          // VERIFIED: Cert approved (show shield checkmark)
                           if (widget.hasVerifiedCert)
                             Positioned(
                               top: -2,
@@ -1034,10 +1083,12 @@ class _ServiceSelectionOrbState extends State<_ServiceSelectionOrb>
                                   color: widget.isDarkMode
                                       ? Colors.green.shade700
                                       : Colors.green.shade600,
-                                  border: Border.all(color: Colors.white, width: 2),
+                                  border: Border.all(
+                                      color: Colors.white, width: 2),
                                   boxShadow: [
                                     BoxShadow(
-                                      color: Colors.green.withOpacity(0.4),
+                                      color:
+                                          Colors.green.withOpacity(0.4),
                                       blurRadius: 4,
                                       offset: const Offset(0, 1),
                                     ),
@@ -1052,11 +1103,15 @@ class _ServiceSelectionOrbState extends State<_ServiceSelectionOrb>
                             ),
                         ],
 
-                        if (widget.isSelected && safeButtonOpacity > 0.01)
+                        // Select/Remove overlay button
+                        if (widget.isSelected &&
+                            safeButtonOpacity > 0.01)
                           Opacity(
                             opacity: safeButtonOpacity,
                             child: Transform.scale(
-                              scale: (0.5 + (0.5 * safeButtonOpacity)).clamp(0.1, 1.5),
+                              scale: (0.5 +
+                                      (0.5 * safeButtonOpacity))
+                                  .clamp(0.1, 1.5),
                               child: Container(
                                 width: widget.size,
                                 height: widget.size,
@@ -1075,17 +1130,25 @@ class _ServiceSelectionOrbState extends State<_ServiceSelectionOrb>
                                   child: GestureDetector(
                                     onTap: widget.onSelectConfirm,
                                     child: Container(
-                                      padding: const EdgeInsets.symmetric(
+                                      padding:
+                                          const EdgeInsets.symmetric(
                                         horizontal: 12,
                                         vertical: 6,
                                       ),
                                       decoration: BoxDecoration(
                                         gradient: LinearGradient(
                                           colors: widget.isOffered
-                                              ? [Colors.red.shade400, Colors.red.shade600]
-                                              : [_goldAccent, _goldLight],
+                                              ? [
+                                                  Colors.red.shade400,
+                                                  Colors.red.shade600
+                                                ]
+                                              : [
+                                                  _goldAccent,
+                                                  _goldLight
+                                                ],
                                         ),
-                                        borderRadius: BorderRadius.circular(16),
+                                        borderRadius:
+                                            BorderRadius.circular(16),
                                         boxShadow: [
                                           BoxShadow(
                                             color: (widget.isOffered
@@ -1093,12 +1156,15 @@ class _ServiceSelectionOrbState extends State<_ServiceSelectionOrb>
                                                     : _goldAccent)
                                                 .withOpacity(0.4),
                                             blurRadius: 8,
-                                            offset: const Offset(0, 2),
+                                            offset:
+                                                const Offset(0, 2),
                                           ),
                                         ],
                                       ),
                                       child: Text(
-                                        widget.isOffered ? 'REMOVE' : 'SELECT',
+                                        widget.isOffered
+                                            ? widget.removeLabel
+                                            : widget.selectLabel,
                                         style: const TextStyle(
                                           color: Colors.white,
                                           fontSize: 10,
@@ -1117,7 +1183,7 @@ class _ServiceSelectionOrbState extends State<_ServiceSelectionOrb>
 
                     const SizedBox(height: 6),
 
-                    // ===== SERVICE NAME WITH LOCK INDICATOR =====
+                    // Service name with lock indicator
                     Row(
                       mainAxisSize: MainAxisSize.min,
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -1129,12 +1195,14 @@ class _ServiceSelectionOrbState extends State<_ServiceSelectionOrb>
                             style: TextStyle(
                               fontFamily: 'Georgia',
                               fontSize: 11,
-                              fontWeight: widget.isSelected || widget.isOffered
-                                  ? FontWeight.w700
-                                  : FontWeight.w600,
+                              fontWeight:
+                                  widget.isSelected || widget.isOffered
+                                      ? FontWeight.w700
+                                      : FontWeight.w600,
                               color: widget.isOffered
                                   ? offeredColor
-                                  : (widget.requiresCertification && !widget.hasVerifiedCert)
+                                  : (widget.requiresCertification &&
+                                          !widget.hasVerifiedCert)
                                       ? (widget.isDarkMode
                                           ? Colors.grey.shade500
                                           : Colors.grey.shade500)
@@ -1147,7 +1215,9 @@ class _ServiceSelectionOrbState extends State<_ServiceSelectionOrb>
                             overflow: TextOverflow.ellipsis,
                           ),
                         ),
-                        if (widget.requiresCertification && !widget.hasVerifiedCert && !widget.isSelected) ...[
+                        if (widget.requiresCertification &&
+                            !widget.hasVerifiedCert &&
+                            !widget.isSelected) ...[
                           const SizedBox(width: 2),
                           Icon(
                             widget.hasPendingCert
@@ -1155,8 +1225,12 @@ class _ServiceSelectionOrbState extends State<_ServiceSelectionOrb>
                                 : Icons.lock_rounded,
                             size: 10,
                             color: widget.hasPendingCert
-                                ? (widget.isDarkMode ? Colors.orange.shade400 : Colors.orange.shade600)
-                                : (widget.isDarkMode ? Colors.red.shade400 : Colors.red.shade500),
+                                ? (widget.isDarkMode
+                                    ? Colors.orange.shade400
+                                    : Colors.orange.shade600)
+                                : (widget.isDarkMode
+                                    ? Colors.red.shade400
+                                    : Colors.red.shade500),
                           ),
                         ],
                       ],
@@ -1172,7 +1246,7 @@ class _ServiceSelectionOrbState extends State<_ServiceSelectionOrb>
   }
 }
 
-// ===== Service Price Display (Step 2) - THEME AWARE =====
+// ===== Service Price Display (Step 2) - Updated with l10n param =====
 class _ServicePriceDisplay extends StatelessWidget {
   final String serviceId;
   final String serviceName;
@@ -1182,7 +1256,8 @@ class _ServicePriceDisplay extends StatelessWidget {
   final double size;
   final VoidCallback onTap;
   final VoidCallback onLongPress;
-  final bool isDarkMode; // ← NEW
+  final bool isDarkMode;
+  final String tapToEditHint;
 
   static const Color _goldAccent = Color(0xFFD4AF37);
 
@@ -1196,20 +1271,17 @@ class _ServicePriceDisplay extends StatelessWidget {
     required this.onTap,
     required this.onLongPress,
     required this.isDarkMode,
+    required this.tapToEditHint,
   });
 
   @override
   Widget build(BuildContext context) {
-    // ===== THEME-AWARE COLORS =====
-    final serviceNameColor = isDarkMode 
-        ? Colors.white 
-        : const Color(0xFF2D2D3A);
-    final priceColor = isDarkMode 
-        ? Colors.green.shade300 
-        : Colors.green.shade700;
-    final hintColor = isDarkMode 
-        ? Colors.grey.shade500 
-        : Colors.grey.shade500;
+    final serviceNameColor =
+        isDarkMode ? Colors.white : const Color(0xFF2D2D3A);
+    final priceColor =
+        isDarkMode ? Colors.green.shade300 : Colors.green.shade700;
+    final hintColor =
+        isDarkMode ? Colors.grey.shade500 : Colors.grey.shade500;
 
     return GestureDetector(
       onTap: onTap,
@@ -1219,7 +1291,7 @@ class _ServicePriceDisplay extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            // Circular image - NO BOX
+            // Circular image
             Container(
               width: size,
               height: size,
@@ -1241,8 +1313,11 @@ class _ServicePriceDisplay extends StatelessWidget {
                   width: size,
                   height: size,
                   errorBuilder: (_, __, ___) => Container(
-                    color: isDarkMode ? Colors.grey.shade800 : Colors.grey.shade200,
-                    child: Icon(Icons.spa, color: _goldAccent, size: size * 0.35),
+                    color: isDarkMode
+                        ? Colors.grey.shade800
+                        : Colors.grey.shade200,
+                    child: Icon(Icons.spa,
+                        color: _goldAccent, size: size * 0.35),
                   ),
                 ),
               ),
@@ -1250,7 +1325,7 @@ class _ServicePriceDisplay extends StatelessWidget {
 
             const SizedBox(height: 8),
 
-            // ===== THEME-AWARE SERVICE NAME =====
+            // Service name
             Text(
               serviceName,
               textAlign: TextAlign.center,
@@ -1258,7 +1333,7 @@ class _ServicePriceDisplay extends StatelessWidget {
                 fontFamily: 'Georgia',
                 fontSize: 12,
                 fontWeight: FontWeight.w600,
-                color: serviceNameColor, // ← THEME-AWARE
+                color: serviceNameColor,
               ),
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
@@ -1266,24 +1341,24 @@ class _ServicePriceDisplay extends StatelessWidget {
 
             const SizedBox(height: 4),
 
-            // ===== THEME-AWARE PRICE =====
+            // Price
             Text(
               '$currencySymbol${price.toStringAsFixed(2)}',
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
-                color: priceColor, // ← THEME-AWARE
+                color: priceColor,
               ),
             ),
 
             const SizedBox(height: 4),
 
-            // ===== THEME-AWARE HINT =====
+            // Tap to edit hint
             Text(
-              'Tap to edit',
+              tapToEditHint,
               style: TextStyle(
                 fontSize: 9,
-                color: hintColor, // ← THEME-AWARE
+                color: hintColor,
               ),
             ),
           ],

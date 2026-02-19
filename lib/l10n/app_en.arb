@@ -104,6 +104,345 @@
   "createNewAccount": "Create a new account",
   "requestEmailVerificationCode": "Request email verification code",
 
+  "selectYourServicesTitle": "Select Your Services",
+  "@selectYourServicesTitle": {},
+
+  "yourServicesAndPricing": "Your Services & Pricing",
+  "@yourServicesAndPricing": {},
+
+  "tapServiceToAddSubtitle": "Tap a service to add it to your offerings",
+  "@tapServiceToAddSubtitle": {},
+
+  "tapToEditLongPressRemove": "Tap to edit price • Long press to remove",
+  "@tapToEditLongPressRemove": {},
+
+  "pricingStepLabel": "Step {current}/{total}",
+  "@pricingStepLabel": {
+    "placeholders": {
+      "current": {"type": "int"},
+      "total": {"type": "int"}
+    }
+  },
+
+  "certRequiredLegend": "Cert Required",
+  "@certRequiredLegend": {},
+
+  "pendingLegend": "Pending",
+  "@pendingLegend": {},
+
+  "certifiedLegend": "Certified",
+  "@certifiedLegend": {},
+
+  "continueToPricing": "Continue to Pricing",
+  "@continueToPricing": {},
+
+  "noServicesSelectedMessage": "No services selected yet",
+  "@noServicesSelectedMessage": {},
+
+  "selectServicesButton": "Select Services",
+  "@selectServicesButton": {},
+
+  "addMoreServicesButton": "Add More Services",
+  "@addMoreServicesButton": {},
+
+  "savePricingButton": "Save Pricing",
+  "@savePricingButton": {},
+
+  "removeLabel": "REMOVE",
+  "@removeLabel": {},
+
+  "selectLabel": "SELECT",
+  "@selectLabel": {},
+
+  "tapToEditHint": "Tap to edit",
+  "@tapToEditHint": {},
+
+  "setPriceForService": "Set Price for {service}",
+  "@setPriceForService": {
+    "placeholders": {
+      "service": {"type": "String"}
+    }
+  },
+
+  "paymentSuccessfulTitle": "Payment Successful",
+  "@paymentSuccessfulTitle": {},
+
+  "paymentCouldNotBeVerified": "Payment could not be verified",
+  "@paymentCouldNotBeVerified": {},
+
+  "stripeNotConfigured": "Payment system is not configured. Please contact support or try again later.",
+  "@stripeNotConfigured": {},
+
+  "stripeConfigError": "Stripe is not configured. Please ensure the app is properly set up.",
+  "@stripeConfigError": {},
+
+  "selectedServiceLabel": "Selected Service",
+  "@selectedServiceLabel": {},
+
+  "referralDiscountApplied": "Referral Discount Applied: {amount}",
+  "@referralDiscountApplied": { "placeholders": { "amount": { "type": "String" } } },
+
+  "creditsRemainingInfo": "You have {count} credits remaining (1 will be used)",
+  "@creditsRemainingInfo": { "placeholders": { "count": { "type": "int" } } },
+
+  "serviceLocationHint": "This is where the provider will come to serve you",
+  "@serviceLocationHint": {},
+
+  "serviceAddressLabel": "Service Address",
+  "@serviceAddressLabel": {},
+
+  "serviceAddressHint": "Enter the address where you want the service",
+  "@serviceAddressHint": {},
+
+  "searchAddressTooltip": "Search address",
+  "@searchAddressTooltip": {},
+
+  "serviceLocationSet": "Location set",
+  "@serviceLocationSet": {},
+
+  "coordinatesLabel": "Coordinates",
+  "@coordinatesLabel": {},
+
+  "hairServicesCategory": "Hair Services",
+  "@hairServicesCategory": {},
+
+  "beautyWellnessCategory": "Beauty & Wellness",
+  "@beautyWellnessCategory": {},
+
+  "certifiedLabel": "Certified",
+  "@certifiedLabel": {},
+
+  "removeServiceTooltip": "Remove service",
+  "@removeServiceTooltip": {},
+
+  "tabBasicInfo": "Basic Info",
+  "@tabBasicInfo": {},
+
+  "tabPortfolio": "Portfolio",
+  "@tabPortfolio": {},
+
+  "tabPricing": "Pricing",
+  "@tabPricing": {},
+
+  "tabReviews": "Reviews",
+  "@tabReviews": {},
+
+  "setPriceOrMarkNotOffered": "Please set a price for \"{service}\" or mark it as \"Not Offered\".",
+  "@setPriceOrMarkNotOffered": { "placeholders": { "service": { "type": "String" } } },
+
+  "rescheduleRequiredTitle": "Reschedule Required",
+  "@rescheduleRequiredTitle": {},
+
+  "rescheduleRequiredMessage": "Your booking was left unpaid. Please select a new time for TODAY to continue with payment.",
+  "@rescheduleRequiredMessage": {},
+
+  "selectNewAppointmentTime": "Select new appointment time:",
+  "@selectNewAppointmentTime": {},
+
+  "tapToSelectTime": "Tap to select time",
+  "@tapToSelectTime": {},
+
+  "todayAtTimeSimple": "Today at {time}",
+  "@todayAtTimeSimple": { "placeholders": { "time": { "type": "String" } } },
+
+  "selectTimeForToday": "Select time for TODAY",
+  "@selectTimeForToday": {},
+
+  "selectTimeAtLeast30Min": "Please select a time at least 30 minutes from now.",
+  "@selectTimeAtLeast30Min": {},
+
+  "mustBeAtLeast30MinFromNow": "* Must be at least 30 minutes from now",
+  "@mustBeAtLeast30MinFromNow": {},
+
+  "continueToPayment": "Continue to Payment",
+  "@continueToPayment": {},
+
+  "failedToUpdateTime": "Failed to update time",
+  "@failedToUpdateTime": {},
+
+  "failedSubmitReviewTryAgain": "Failed to submit review. Please try again.",
+  "@failedSubmitReviewTryAgain": {},
+
+  "processingPayment": "Processing Payment",
+  "@processingPayment": {},
+
+  "completePaymentInBrowser": "Complete your payment in the browser...",
+  "@completePaymentInBrowser": {},
+
+  "waitingForPaymentConfirmation": "Waiting for payment confirmation...",
+  "@waitingForPaymentConfirmation": {},
+
+  "stillWaitingCompletePayment": "Still waiting... Please complete payment.",
+  "@stillWaitingCompletePayment": {},
+
+  "paymentVerificationTimedOut": "Payment verification timed out. Please check your bookings.",
+  "@paymentVerificationTimedOut": {},
+
+  "checkingPaymentStatus": "Checking payment status...",
+  "@checkingPaymentStatus": {},
+
+  "paymentNotYetReceived": "Payment not yet received. Please complete payment.",
+  "@paymentNotYetReceived": {},
+
+  "couldNotVerifyTryAgain": "Could not verify. Please try again.",
+  "@couldNotVerifyTryAgain": {},
+
+  "willUpdateAutomatically": "This will update automatically when payment is complete.",
+  "@willUpdateAutomatically": {},
+
+  "checkNow": "Check Now",
+  "@checkNow": {},
+
+  "providerActionHeader": "What would you like to do today?",
+  "@providerActionHeader": {},
+
+  "providerActionBrowseJobs": "Browse Jobs",
+  "@providerActionBrowseJobs": {},
+
+  "providerActionWallet": "Wallet",
+  "@providerActionWallet": {},
+
+  "providerActionManageProfile": "Manage Profile",
+  "@providerActionManageProfile": {},
+
+  "providerActionNotifications": "Notifications",
+  "@providerActionNotifications": {},
+
+  "providerActionNewBooking": "New Booking",
+  "@providerActionNewBooking": {},
+
+  "providerActionMyReviews": "My Reviews",
+  "@providerActionMyReviews": {},
+
+  "providerActionPortfolio": "Portfolio",
+  "@providerActionPortfolio": {},
+
+  "providerActionServicesPricing": "Services & Pricing",
+  "@providerActionServicesPricing": {},
+
+  "moreActionsButton": "More Actions",
+  "@moreActionsButton": {},
+
+  "showLessButton": "Show Less",
+  "@showLessButton": {},
+
+  "goButton": "GO",
+  "@goButton": {},
+
+  "priceInputLabel": "Price",
+  "@priceInputLabel": {},
+
+  "pleaseEnterValidPrice": "Please enter a valid price",
+  "@pleaseEnterValidPrice": {},
+
+  "savePriceButton": "Save Price",
+  "@savePriceButton": {},
+
+  "pricingCertDialogBody": "To offer {service}, you need a verified certification. Please add your certification in the Basic Info tab.",
+  "@pricingCertDialogBody": {
+    "placeholders": {
+      "service": {"type": "String"}
+    }
+  },
+
+  "stripeSetupComplete": "Stripe setup is complete.",
+  "@stripeSetupComplete": {},
+
+  "openPayoutSettings": "Open Payout Settings",
+  "@openPayoutSettings": {},
+
+  "walletNoWalletSelected": "No wallet selected.",
+  "@walletNoWalletSelected": {},
+
+  "walletNoAvailableBalance": "No available balance to cash out.",
+  "@walletNoAvailableBalance": {},
+
+  "walletBelowMinimumCashout": "Minimum cashout is {min} {currency}. Your available balance is {available} {currency}.",
+  "@walletBelowMinimumCashout": {
+    "placeholders": {
+      "min": {"type": "String"},
+      "currency": {"type": "String"},
+      "available": {"type": "String"}
+    }
+  },
+
+  "walletInstantCashoutDisabled": "Instant cashout is disabled in your settings.",
+  "@walletInstantCashoutDisabled": {},
+
+  "walletInstantCashoutAvailable": "Instant cashout available ({remaining} remaining {period}). 5% fee applies.",
+  "@walletInstantCashoutAvailable": {
+    "placeholders": {
+      "remaining": {"type": "String"},
+      "period": {"type": "String"}
+    }
+  },
+
+  "walletInstantCashoutUnlimited": "Instant cashout available anytime. 5% fee applies.",
+  "@walletInstantCashoutUnlimited": {},
+
+  "walletEnterAmountToCashOut": "Please enter an amount to cash out.",
+  "@walletEnterAmountToCashOut": {},
+
+  "walletEnterValidAmount": "Please enter a valid amount.",
+  "@walletEnterValidAmount": {},
+
+  "walletCashoutInitiated": "Cashout initiated successfully!",
+  "@walletCashoutInitiated": {},
+
+  "walletPayoutFailed": "Payout failed: {reason}",
+  "@walletPayoutFailed": {
+    "placeholders": {
+      "reason": {"type": "String"}
+    }
+  },
+
+  "walletTransferCouldNotComplete": "Transfer could not be completed. Please check your payout settings.",
+  "@walletTransferCouldNotComplete": {},
+
+  "walletPayoutStatusLabel": "Payout: {status}",
+  "@walletPayoutStatusLabel": {
+    "placeholders": {
+      "status": {"type": "String"}
+    }
+  },
+
+  "serviceSelectorHeader": "Which service can we help you with?",
+  "@serviceSelectorHeader": {},
+
+  "showMore": "Show More",
+  "@showMore": {},
+
+  "serviceSelectorSelectButton": "SELECT",
+  "@serviceSelectorSelectButton": {},
+
+  "certServiceSelectorTitle": "Which services does this certification qualify for?",
+  "@certServiceSelectorTitle": {},
+
+  "certServiceSelectorHint": "Select all services that this certification covers. You can select multiple.",
+  "@certServiceSelectorHint": {},
+
+  "certNoServicesSelectedWarning": "No services selected. This certification won't unlock any services.",
+  "@certNoServicesSelectedWarning": {},
+
+  "portfolioShowcaseTitle": "Showcase Your Best Work",
+  "@portfolioShowcaseTitle": {},
+
+  "portfolioShowcaseSubtitle": "Your portfolio tells your story. Let your work speak for itself.",
+  "@portfolioShowcaseSubtitle": {},
+  "providerUnavailableMessage": "You are currently unavailable for bookings. Please enable availability in your profile settings.",
+
+  "portfolioEmptyTitle": "Your Portfolio is Empty",
+  "@portfolioEmptyTitle": {},
+
+  "portfolioEmptySubtitle": "Add photos and videos of your work to attract more clients.",
+  "@portfolioEmptySubtitle": {},
+
+  "portfolioUploading": "Uploading...",
+  "@portfolioUploading": {},
+
+  "portfolioAddButton": "Add to Portfolio",
+  "@portfolioAddButton": {},
+
   "serviceLocationHint": "Enter where you want the service performed. This can be different from your current location.",
   "serviceAddressLabel": "Service Address",
   "serviceAddressHint": "e.g., 123 Main St, Accra, Ghana",
@@ -131,6 +470,229 @@
     }
   },
   "locationMarkedAsOther": "Location marked as \"Other\" - you can proceed with registration",
+
+  "referralLoadFailed": "Failed to load referral stats",
+  "@referralLoadFailed": {},
+
+  "referralCodeCopiedSnackbar": "Referral code \"{code}\" copied!",
+  "@referralCodeCopiedSnackbar": {
+    "placeholders": {
+      "code": {"type": "String"}
+    }
+  },
+
+  "referralShareText": "🎉 Join me on Styloria!\n\nUse my referral code: {code}\n\nWhen you complete your first booking, I'll get {credits} bookings with {discount}% off!\n\nDownload Styloria and get amazing services delivered to your door.",
+  "@referralShareText": {
+    "placeholders": {
+      "code": {"type": "String"},
+      "credits": {"type": "int"},
+      "discount": {"type": "int"}
+    }
+  },
+
+  "referralShareSubject": "Join Styloria with my referral code!",
+  "@referralShareSubject": {},
+
+  "referralYourCode": "Your Referral Code",
+  "@referralYourCode": {},
+
+  "shareLabel": "Share",
+  "@shareLabel": {},
+
+  "howItWorks": "How It Works",
+  "@howItWorks": {},
+
+  "referralStep1Share": "Share your code with friends",
+  "@referralStep1Share": {},
+
+  "referralStep2SignUp": "They sign up using your code",
+  "@referralStep2SignUp": {},
+
+  "referralStep3Booking": "When they complete their first booking...",
+  "@referralStep3Booking": {},
+
+  "referralStepReward": "You get {credits} bookings with {discount}% off!",
+  "@referralStepReward": {
+    "placeholders": {
+      "credits": {"type": "int"},
+      "discount": {"type": "int"}
+    }
+  },
+
+  "creditsAvailable": "Credits Available",
+  "@creditsAvailable": {},
+
+  "successfulReferrals": "Successful Referrals",
+  "@successfulReferrals": {},
+
+  "totalEarned": "Total Earned",
+  "@totalEarned": {},
+
+  "creditsUsed": "Credits Used",
+  "@creditsUsed": {},
+
+  "referralPendingFriendsMessage": "{count, plural, =1{1 friend signed up but hasn't completed a booking yet.} other{{count} friends signed up but haven't completed a booking yet.}}",
+  "@referralPendingFriendsMessage": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+
+  "referralHistory": "Referral History",
+  "@referralHistory": {},
+
+  "referralStatusCompleted": "Completed",
+  "@referralStatusCompleted": {},
+
+  "referralStatusExpired": "Expired",
+  "@referralStatusExpired": {},
+
+  "referralStatusPending": "Pending",
+  "@referralStatusPending": {},
+
+  "referralJoinedDate": "Joined {date}",
+  "@referralJoinedDate": {
+    "placeholders": {
+      "date": {"type": "String"}
+    }
+  },
+
+  "referralJoinedRecently": "Joined recently",
+  "@referralJoinedRecently": {},
+
+  "noReferralsYet": "No referrals yet",
+  "@noReferralsYet": {},
+
+  "shareCodeForDiscounts": "Share your code with friends to earn discounts!",
+  "@shareCodeForDiscounts": {},
+
+  "userFallbackName": "User",
+  "@userFallbackName": {},
+
+  "tierYourTier": "Your Tier: {title}",
+  "@tierYourTier": {
+    "placeholders": {
+      "title": {"type": "String"}
+    }
+  },
+
+  "tierTrustScore": "Trust Score: {score}/100",
+  "@tierTrustScore": {
+    "placeholders": {
+      "score": {"type": "int"}
+    }
+  },
+
+  "tierYouCanAccept": "You can accept:",
+  "@tierYouCanAccept": {},
+
+  "tierCertifiedExpert": "Certified Expert",
+  "@tierCertifiedExpert": {},
+
+  "tierVerifiedPro": "Verified Pro",
+  "@tierVerifiedPro": {},
+
+  "tierNewAndEager": "New & Eager",
+  "@tierNewAndEager": {},
+
+  "tierPremiumBadge": "💜 Premium",
+  "@tierPremiumBadge": {},
+
+  "tierStandardBadge": "💙 Standard",
+  "@tierStandardBadge": {},
+
+  "tierBudgetBadge": "💚 Budget",
+  "@tierBudgetBadge": {},
+
+  "tierUpgradeHintBudget": "Complete your bio, add portfolio photos, and upload certifications to unlock Standard & Premium jobs!",
+  "@tierUpgradeHintBudget": {},
+
+  "tierUpgradeHintStandard": "Add more portfolio items and certifications to unlock Premium jobs with higher earnings!",
+  "@tierUpgradeHintStandard": {},
+
+  "filterLabel": "Filter: ",
+  "@filterLabel": {},
+
+  "filterAll": "All",
+  "@filterAll": {},
+
+  "noTierJobsAvailable": "No {tier} jobs available",
+  "@noTierJobsAvailable": {
+    "placeholders": {
+      "tier": {"type": "String"}
+    }
+  },
+
+  "clearFilter": "Clear filter",
+  "@clearFilter": {},
+
+  "allPricesInYourCurrency": "All prices shown in your currency ({symbol})",
+  "@allPricesInYourCurrency": {
+    "placeholders": {
+      "symbol": {"type": "String"}
+    }
+  },
+
+  "yourCurrencyIs": "Your currency: {symbol}",
+  "@yourCurrencyIs": {
+    "placeholders": {
+      "symbol": {"type": "String"}
+    }
+  },
+
+  "tierRequiredDialogTitle": "Tier Required",
+  "@tierRequiredDialogTitle": {},
+
+  "thisIsATierJob": "This is a {title} job.",
+  "@thisIsATierJob": {
+    "placeholders": {
+      "title": {"type": "String"}
+    }
+  },
+
+  "yourTierColon": "Your tier: ",
+  "@yourTierColon": {},
+
+  "requiredColon": "Required: ",
+  "@requiredColon": {},
+
+  "okButton": "OK",
+  "@okButton": {},
+
+  "improveProfileButton": "Improve Profile",
+  "@improveProfileButton": {},
+
+  "customerNoteLabel": "Customer Note",
+  "@customerNoteLabel": {},
+
+  "todayAtTime": "Today at {time}",
+  "@todayAtTime": {
+    "placeholders": {
+      "time": {"type": "String"}
+    }
+  },
+
+  "dateAtTime": "{date} at {time}",
+  "@dateAtTime": {
+    "placeholders": {
+      "date": {"type": "String"},
+      "time": {"type": "String"}
+    }
+  },
+
+  "ratingValue": "{rating} rating",
+  "@ratingValue": {
+    "placeholders": {
+      "rating": {"type": "String"}
+    }
+  },
+
+  "reviewsCountParens": "({count} reviews)",
+  "@reviewsCountParens": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
 
   "createAccountTitle": "Create Account",
   "joinStyloria": "Join Styloria",
@@ -216,6 +778,52 @@
       "identifier": {}
     }
   },
+
+  "verifyingPaystackPayment": "Verifying Paystack payment...",
+  "@verifyingPaystackPayment": {},
+
+  "paymentVerifiedSuccessfully": "Payment verified successfully!",
+  "@paymentVerifiedSuccessfully": {},
+
+  "paymentVerificationFailed": "Payment verification failed",
+  "@paymentVerificationFailed": {},
+
+  "errorVerifyingPayment": "Error verifying payment: {error}",
+  "@errorVerifyingPayment": { "placeholders": { "error": { "type": "String" } } },
+
+  "paymentCouldNotBeVerified": "Payment could not be verified",
+  "@paymentCouldNotBeVerified": {},
+
+  "paymentWasCancelled": "Payment was cancelled.",
+  "@paymentWasCancelled": {},
+
+  "paymentVerificationFailedDetail": "Payment verification failed: {detail}",
+  "@paymentVerificationFailedDetail": { "placeholders": { "detail": { "type": "String" } } },
+
+  "loginWelcomeTitle": "Welcome Back",
+  "@loginWelcomeTitle": {},
+
+  "loginWelcomeSubtitle": "Sign in to your account",
+  "@loginWelcomeSubtitle": {},
+
+  "loginFailedToLoadUserInfo": "Failed to load user info.",
+  "@loginFailedToLoadUserInfo": {},
+
+  "password": "Password",
+  "@password": {},
+
+  "helloName": "Hello {name}",
+  "@helloName": { "placeholders": { "name": { "type": "String" } } },
+
+  "hello": "Hello",
+  "@hello": {},
+
+  "view": "View",
+  "@view": {},
+
+  "providerUnavailableMessage": "You are currently unavailable for bookings. Please enable availability in your profile settings.",
+  "@providerUnavailableMessage": {},
+
   "verificationCodeLabel": "Verification code",
   "sendingEllipsis": "Sending...",
   "resendCode": "Resend code",

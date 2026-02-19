@@ -216,12 +216,12 @@ class StyloriaAppState extends State<StyloriaApp> {
       
         if (mounted) {
           ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(
+            SnackBar(
               content: Row(
                 children: [
-                  SizedBox(width: 20, height: 20, child: CircularProgressIndicator(strokeWidth: 2, color: Colors.white)),
-                  SizedBox(width: 16),
-                  Text('Verifying Paystack payment...'),
+                  const SizedBox(width: 20, height: 20, child: CircularProgressIndicator(strokeWidth: 2, color: Colors.white)),
+                  const SizedBox(width: 16),
+                  Text(AppLocalizations.of(context).verifyingPaystackPayment),
                 ],
               ),
               duration: Duration(seconds: 10),
@@ -240,12 +240,12 @@ class StyloriaAppState extends State<StyloriaApp> {
 
           if (verifyResult != null && verifyResult['verified'] == true) {
             ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(content: Text('Payment verified successfully!'), backgroundColor: Colors.green),
+              SnackBar(content: Text(AppLocalizations.of(context).paymentVerifiedSuccessfully), backgroundColor: Colors.green),
             );
           } else {
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
-                content: Text(verifyResult?['detail']?.toString() ?? 'Payment verification failed'),
+                content: Text(verifyResult?['detail']?.toString() ?? AppLocalizations.of(context).paymentVerificationFailed),
                 backgroundColor: Colors.red,
               ),
             );
@@ -254,7 +254,7 @@ class StyloriaAppState extends State<StyloriaApp> {
           if (mounted) {
             ScaffoldMessenger.of(context).hideCurrentSnackBar();
             ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(content: Text('Error verifying payment: $e'), backgroundColor: Colors.red),
+              SnackBar(content: Text(AppLocalizations.of(context).errorVerifyingPayment(e.toString())), backgroundColor: Colors.red),
             );
           }
         }
@@ -272,16 +272,16 @@ class StyloriaAppState extends State<StyloriaApp> {
       // Show a loading indicator via SnackBar
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
+          SnackBar(
             content: Row(
               children: [
-                SizedBox(
+                const SizedBox(
                   width: 20,
                   height: 20,
                   child: CircularProgressIndicator(strokeWidth: 2, color: Colors.white),
                 ),
-                SizedBox(width: 16),
-                Text('Verifying payment...'),
+                const SizedBox(width: 16),
+                Text(AppLocalizations.of(context).verifyingPayment),
               ],
             ),
             duration: Duration(seconds: 10),
@@ -326,27 +326,27 @@ class StyloriaAppState extends State<StyloriaApp> {
       // Show result
       if (verifyResult != null && verifyResult['verified'] == true) {
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text('Payment verified successfully!'),
+          SnackBar(
+            content: Text(AppLocalizations.of(context).paymentVerifiedSuccessfully),
             backgroundColor: Colors.green,
           ),
         );
       } else {
-        final detail = verifyResult?['detail']?.toString() ?? 'Payment could not be verified';
+        final detail = verifyResult?['detail']?.toString() ?? AppLocalizations.of(context).paymentCouldNotBeVerified;
         
         // Check if it's actually a cancellation vs failed verification
         final statusLower = status.toLowerCase();
         if (statusLower == 'cancelled') {
           ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(
-              content: Text('Payment was cancelled.'),
+          SnackBar(
+              content: Text(AppLocalizations.of(context).paymentWasCancelled),
               backgroundColor: Colors.orange,
             ),
           );
         } else {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
-              content: Text('Payment verification failed: $detail'),
+              content: Text(AppLocalizations.of(context).paymentVerificationFailedDetail(detail)),
               backgroundColor: Colors.red,
             ),
           );
@@ -1099,40 +1099,46 @@ class _MainShellState extends State<MainShell> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    if (_navBuilt) return;
-    final l10n = AppLocalizations.of(context);
 
-    if (widget.role == 'provider') {
-      _pages = [
-        HomeScreen(role: widget.role),
-        const BookingsScreen(role: 'user'),      // provider's own requests
-        const BookingsScreen(role: 'provider'),  // assigned jobs
-        const NotificationsScreen(),
-        AccountScreen(role: widget.role),
-      ];
-      _items = [
-        BottomNavigationBarItem(icon: Icon(Icons.home), label: AppLocalizations.of(context).navHome),
-        BottomNavigationBarItem(icon: Icon(Icons.book_online), label: AppLocalizations.of(context).navBookings),
-        BottomNavigationBarItem(icon: const Icon(Icons.work), label: l10n.mainAssignedJobs),
-        BottomNavigationBarItem(icon: Icon(Icons.notifications), label: AppLocalizations.of(context).navNotifications),
-        BottomNavigationBarItem(icon: Icon(Icons.person), label: AppLocalizations.of(context).navAccount),
-      ];
-    } else {
-      _pages = [
-        HomeScreen(role: widget.role),
-        const BookingsScreen(role: 'user'),
-        const NotificationsScreen(),
-        AccountScreen(role: widget.role),
-      ];
-      _items = [
-        BottomNavigationBarItem(icon: Icon(Icons.home), label: AppLocalizations.of(context).navHome),
-        BottomNavigationBarItem(icon: Icon(Icons.book_online), label: AppLocalizations.of(context).navBookings),
-        BottomNavigationBarItem(icon: Icon(Icons.notifications), label: AppLocalizations.of(context).navNotifications),
-        BottomNavigationBarItem(icon: Icon(Icons.person), label: AppLocalizations.of(context).navAccount),
-      ];
+    // Pages: build only ONCE (preserves IndexedStack child state)
+    if (!_navBuilt) {
+      if (widget.role == 'provider') {
+        _pages = [
+          HomeScreen(role: widget.role),
+          const BookingsScreen(role: 'user'),
+          const BookingsScreen(role: 'provider'),
+          const NotificationsScreen(),
+          AccountScreen(role: widget.role),
+        ];
+      } else {
+        _pages = [
+          HomeScreen(role: widget.role),
+          const BookingsScreen(role: 'user'),
+          const NotificationsScreen(),
+          AccountScreen(role: widget.role),
+        ];
+      }
+      _navBuilt = true;
     }
 
-    _navBuilt = true;
+    // Tab labels: ALWAYS rebuild (so they update on language change)
+    final l10n = AppLocalizations.of(context);
+    if (widget.role == 'provider') {
+      _items = [
+        BottomNavigationBarItem(icon: const Icon(Icons.home), label: l10n.navHome),
+        BottomNavigationBarItem(icon: const Icon(Icons.book_online), label: l10n.navBookings),
+        BottomNavigationBarItem(icon: const Icon(Icons.work), label: l10n.mainAssignedJobs),
+        BottomNavigationBarItem(icon: const Icon(Icons.notifications), label: l10n.navNotifications),
+        BottomNavigationBarItem(icon: const Icon(Icons.person), label: l10n.navAccount),
+      ];
+    } else {
+      _items = [
+        BottomNavigationBarItem(icon: const Icon(Icons.home), label: l10n.navHome),
+        BottomNavigationBarItem(icon: const Icon(Icons.book_online), label: l10n.navBookings),
+        BottomNavigationBarItem(icon: const Icon(Icons.notifications), label: l10n.navNotifications),
+        BottomNavigationBarItem(icon: const Icon(Icons.person), label: l10n.navAccount),
+      ];
+    }
   }
 
   String _resolveUrl(String? raw) {
@@ -1168,8 +1174,8 @@ class _MainShellState extends State<MainShell> {
   Widget _topMenuBar() {
     final isProvider = widget.role == 'provider';
     final greeting = (_firstName != null && _firstName!.isNotEmpty)
-        ? 'Hello ${_firstName!}'
-        : 'Hello';
+        ? l10n.helloName(_firstName!)
+        : l10n.hello;
 
     return Material(
       elevation: 2,
@@ -1392,7 +1398,7 @@ class _HomeScreenState extends State<HomeScreen> {
           duration: const Duration(seconds: 4),
           behavior: SnackBarBehavior.floating,
           action: SnackBarAction(
-            label: 'View',
+            label: AppLocalizations.of(context).view,
             textColor: Colors.white,
             onPressed: () {
             },
@@ -1673,8 +1679,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     children: [
                       ProfileCard(
                         profilePictureUrl: _profilePictureUrl,
-                        userName: _firstName ?? 'User',
-                        userRole: widget.role == 'provider' ? 'Provider' : 'Customer',
+                        userName: _firstName ?? l10n.userFallbackName,
+                        userRole: widget.role == 'provider' ? l10n.providerLabel : l10n.customer,
                         tier: _tier,
                         completionPercent: _completionPercent,
                         onViewProfile: () {

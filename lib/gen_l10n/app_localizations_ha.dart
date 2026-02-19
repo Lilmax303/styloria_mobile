@@ -233,14 +233,13 @@ class AppLocalizationsHa extends AppLocalizations {
   String get deletionReason12 => 'Sauran';
 
   @override
-  String get loginWelcomeTitle => 'Barka da zuwa Styloria';
+  String get loginWelcomeTitle => 'Barka da Dawowa';
 
   @override
-  String get loginWelcomeSubtitle => 'Shiga domin sarrafa ajiyarka da ayyuka.';
+  String get loginWelcomeSubtitle => 'Shiga cikin asusunka';
 
   @override
-  String get loginFailedToLoadUserInfo =>
-      'An shiga amma an kasa loda bayanan mai amfani.';
+  String get loginFailedToLoadUserInfo => 'An kasa loda bayanan mai amfani.';
 
   @override
   String get username => 'Sunan mai amfani';
@@ -261,23 +260,362 @@ class AppLocalizationsHa extends AppLocalizations {
   String get requestEmailVerificationCode => 'Nemi lambar tantance imel';
 
   @override
+  String get selectYourServicesTitle => 'Zaɓi Sabis ɗin Ka';
+
+  @override
+  String get yourServicesAndPricing => 'Sabis ɗin Ka da Farashin su';
+
+  @override
+  String get tapServiceToAddSubtitle =>
+      'Danna sabis ɗin don ƙara shi ga abin da kake bayarwa';
+
+  @override
+  String get tapToEditLongPressRemove =>
+      'Danna don gyara farashi • Danna tsawo don cire';
+
+  @override
+  String pricingStepLabel(int current, int total) {
+    return 'Mataki $current/$total';
+  }
+
+  @override
+  String get certRequiredLegend => 'Ana buƙatar Takadda';
+
+  @override
+  String get pendingLegend => 'Ana jira';
+
+  @override
+  String get certifiedLegend => 'An tabbatar';
+
+  @override
+  String get continueToPricing => 'Ci gaba zuwa Farashin';
+
+  @override
+  String get noServicesSelectedMessage => 'Ba a zaɓi sabis ɗin ba tukuna';
+
+  @override
+  String get selectServicesButton => 'Zaɓi Sabis ɗin';
+
+  @override
+  String get addMoreServicesButton => 'Ƙara Sabis ɗin';
+
+  @override
+  String get savePricingButton => 'Ajiye Farashin';
+
+  @override
+  String get removeLabel => 'CIRE';
+
+  @override
+  String get selectLabel => 'ZAƁA';
+
+  @override
+  String get tapToEditHint => 'Danna don gyarawa';
+
+  @override
+  String setPriceForService(String service) {
+    return 'Saita farashin $service';
+  }
+
+  @override
+  String get paymentSuccessfulTitle => 'Biya Ta Yi Nasara';
+
+  @override
+  String get paymentCouldNotBeVerified => 'Ba a iya tabbatar da biya ba';
+
+  @override
+  String get stripeNotConfigured =>
+      'Tsarin biya bai shirya ba. Da fatan za a tuntubi tallafi ko sake gwadawa daga baya.';
+
+  @override
+  String get stripeConfigError =>
+      'Stripe bai shirya ba. Da fatan za a tabbatar cewa manhajar ta shirya yadda ya kamata.';
+
+  @override
+  String get selectedServiceLabel => 'Sabis da Aka Zaɓa';
+
+  @override
+  String referralDiscountApplied(String amount) {
+    return 'An yi amfani da rangwamen bayar da shawara: $amount';
+  }
+
+  @override
+  String creditsRemainingInfo(int count) {
+    return 'Kuna da kuɗin $count da suka rage (za a yi amfani da 1)';
+  }
+
+  @override
   String get serviceLocationHint =>
-      'Enter where you want the service performed. This can be different from your current location.';
+      'Nan ne mai ba da sabis zai zo ya yi muku hidima';
 
   @override
-  String get serviceAddressLabel => 'Service Address';
+  String get serviceAddressLabel => 'Adireshin Sabis';
 
   @override
-  String get serviceAddressHint => 'e.g., 123 Main St, Accra, Ghana';
+  String get serviceAddressHint => 'Shigar da adireshin da kuke son sabis a';
 
   @override
-  String get searchAddressTooltip => 'Find this address';
+  String get searchAddressTooltip => 'Nemo adireshi';
 
   @override
-  String get serviceLocationSet => 'Service location set';
+  String get serviceLocationSet => 'An saita wurin';
 
   @override
-  String get coordinatesLabel => 'Coordinates';
+  String get coordinatesLabel => 'Ma\'aunin wuri';
+
+  @override
+  String get hairServicesCategory => 'Sabis na Gashi';
+
+  @override
+  String get beautyWellnessCategory => 'Kyau da Lafiya';
+
+  @override
+  String get certifiedLabel => 'An tabbatar';
+
+  @override
+  String get removeServiceTooltip => 'Cire sabis';
+
+  @override
+  String get tabBasicInfo => 'Bayani na Asali';
+
+  @override
+  String get tabPortfolio => 'Ayyukan da Na Yi';
+
+  @override
+  String get tabPricing => 'Farashin';
+
+  @override
+  String get tabReviews => 'Bita';
+
+  @override
+  String setPriceOrMarkNotOffered(String service) {
+    return 'Da fatan za a saita farashi ga \"$service\" ko a yi masa alama \"Ba a Bayarwa ba\".';
+  }
+
+  @override
+  String get rescheduleRequiredTitle => 'Ana Buƙatar Sabon Jadawali';
+
+  @override
+  String get rescheduleRequiredMessage =>
+      'Ba a biya kuɗin rajista ba. Da fatan za a zaɓi sabon lokaci na YAU don ci gaba da biya.';
+
+  @override
+  String get selectNewAppointmentTime => 'Zaɓi sabon lokacin alƙawari:';
+
+  @override
+  String get tapToSelectTime => 'Taɓa don zaɓar lokaci';
+
+  @override
+  String todayAtTimeSimple(String time) {
+    return 'Yau da ƙarfe $time';
+  }
+
+  @override
+  String get selectTimeForToday => 'Zaɓi lokaci na YAU';
+
+  @override
+  String get selectTimeAtLeast30Min =>
+      'Da fatan za a zaɓi lokaci aƙalla minti 30 daga yanzu.';
+
+  @override
+  String get mustBeAtLeast30MinFromNow =>
+      '* Dole ne ya kasance aƙalla minti 30 daga yanzu';
+
+  @override
+  String get continueToPayment => 'Ci Gaba da Biya';
+
+  @override
+  String get failedToUpdateTime => 'An kasa sabunta lokaci';
+
+  @override
+  String get failedSubmitReviewTryAgain =>
+      'An kasa aika bita. Da fatan za a sake gwadawa.';
+
+  @override
+  String get processingPayment => 'Ana Sarrafa Biya';
+
+  @override
+  String get completePaymentInBrowser => 'Kammala biya a cikin burauzar...';
+
+  @override
+  String get waitingForPaymentConfirmation => 'Ana jiran tabbatar da biya...';
+
+  @override
+  String get stillWaitingCompletePayment =>
+      'Har yanzu ana jira... Da fatan za a kammala biya.';
+
+  @override
+  String get paymentVerificationTimedOut =>
+      'Lokacin tabbatar da biya ya ƙare. Da fatan za a duba rajista.';
+
+  @override
+  String get checkingPaymentStatus => 'Ana duba yanayin biya...';
+
+  @override
+  String get paymentNotYetReceived =>
+      'Ba a sami biya ba tukuna. Da fatan za a kammala biya.';
+
+  @override
+  String get couldNotVerifyTryAgain =>
+      'Ba a iya tabbatarwa ba. Da fatan za a sake gwadawa.';
+
+  @override
+  String get willUpdateAutomatically =>
+      'Wannan zai sabunta da kansa idan an kammala biya.';
+
+  @override
+  String get checkNow => 'Duba Yanzu';
+
+  @override
+  String get providerActionHeader => 'Me kuke so ku yi a yau?';
+
+  @override
+  String get providerActionBrowseJobs => 'Bincika Ayyuka';
+
+  @override
+  String get providerActionWallet => 'Walat';
+
+  @override
+  String get providerActionManageProfile => 'Sarrafa Bayani';
+
+  @override
+  String get providerActionNotifications => 'Sanarwa';
+
+  @override
+  String get providerActionNewBooking => 'Sabon Bukin';
+
+  @override
+  String get providerActionMyReviews => 'Bita Na';
+
+  @override
+  String get providerActionPortfolio => 'Tarin Ayyuka';
+
+  @override
+  String get providerActionServicesPricing => 'Sabis da Farashi';
+
+  @override
+  String get moreActionsButton => 'Ƙarin Ayyuka';
+
+  @override
+  String get showLessButton => 'Nuna kaɗan';
+
+  @override
+  String get goButton => 'JE';
+
+  @override
+  String get priceInputLabel => 'Farashi';
+
+  @override
+  String get pleaseEnterValidPrice =>
+      'Da fatan za a shigar da farashi mai inganci';
+
+  @override
+  String get savePriceButton => 'Ajiye Farashi';
+
+  @override
+  String pricingCertDialogBody(String service) {
+    return 'Don bayar da $service, kana buƙatar takaddar sheda da aka tabbatar. Da fatan za a ƙara takaddar sheda a cikin shafin Bayanan Asali.';
+  }
+
+  @override
+  String get stripeSetupComplete => 'An kammala saita Stripe.';
+
+  @override
+  String get openPayoutSettings => 'Buɗe Saitunan Biyan Kuɗi';
+
+  @override
+  String get walletNoWalletSelected => 'Ba a zaɓi walat ba.';
+
+  @override
+  String get walletNoAvailableBalance => 'Babu kuɗi da za a iya cirewa.';
+
+  @override
+  String walletBelowMinimumCashout(
+      String min, String currency, String available) {
+    return 'Mafi ƙarancin cirewa shine $min $currency. Kuɗin da kuke da shi $available $currency ne.';
+  }
+
+  @override
+  String get walletInstantCashoutDisabled =>
+      'An kashe cirewar nan take a cikin saitunan ku.';
+
+  @override
+  String walletInstantCashoutAvailable(String remaining, String period) {
+    return 'Cirewar nan take tana samuwa ($remaining ya rage $period). Kuɗin sabis na 5% ya shafi.';
+  }
+
+  @override
+  String get walletInstantCashoutUnlimited =>
+      'Cirewar nan take tana samuwa koyaushe. Kuɗin sabis na 5% ya shafi.';
+
+  @override
+  String get walletEnterAmountToCashOut =>
+      'Da fatan za a shigar da adadin da za a cire.';
+
+  @override
+  String get walletEnterValidAmount =>
+      'Da fatan za a shigar da adadi mai inganci.';
+
+  @override
+  String get walletCashoutInitiated => 'An fara cirewa cikin nasara!';
+
+  @override
+  String walletPayoutFailed(String reason) {
+    return 'Biyan kuɗi ya ci tura: $reason';
+  }
+
+  @override
+  String get walletTransferCouldNotComplete =>
+      'Ba a iya kammala canja wurin ba. Da fatan za a bincika saitunan biyan kuɗin ku.';
+
+  @override
+  String walletPayoutStatusLabel(String status) {
+    return 'Biyan kuɗi: $status';
+  }
+
+  @override
+  String get serviceSelectorHeader => 'Wane sabis za mu iya taimaka muku?';
+
+  @override
+  String get showMore => 'Nuna ƙari';
+
+  @override
+  String get serviceSelectorSelectButton => 'ZAƁA';
+
+  @override
+  String get certServiceSelectorTitle =>
+      'Wane sabis ɗin ne wannan takaddar sheda ta cancanta?';
+
+  @override
+  String get certServiceSelectorHint =>
+      'Zaɓi dukan sabis ɗin da wannan takaddar sheda ta ƙunsa. Za ka iya zaɓar fiye da ɗaya.';
+
+  @override
+  String get certNoServicesSelectedWarning =>
+      'Ba a zaɓi sabis ɗin ba. Wannan takaddar sheda ba za ta buɗe wani sabis ba.';
+
+  @override
+  String get portfolioShowcaseTitle => 'Nuna Ayyukan Ka Mafi Kyau';
+
+  @override
+  String get portfolioShowcaseSubtitle =>
+      'Tarin ayyukan ka yana ba da labarin ka. Bari ayyukan ka su yi magana.';
+
+  @override
+  String get providerUnavailableMessage =>
+      'A halin yanzu ba ka samuwa don yin rajista ba. Da fatan za a kunna samuwar ka a cikin saitunan bayanan ka.';
+
+  @override
+  String get portfolioEmptyTitle => 'Tarin Ayyukan Ka Babu Komai';
+
+  @override
+  String get portfolioEmptySubtitle =>
+      'Ƙara hotuna da bidiyo na ayyukan ka don jan hankalin ƙarin abokan ciniki.';
+
+  @override
+  String get portfolioUploading => 'Ana loda...';
+
+  @override
+  String get portfolioAddButton => 'Ƙara zuwa Tarin Ayyuka';
 
   @override
   String get pleaseEnterAddress => 'Da fatan a shigar da adireshi';
@@ -313,6 +651,205 @@ class AppLocalizationsHa extends AppLocalizations {
   @override
   String get locationMarkedAsOther =>
       'An yiwa wuri alama a matsayin \"Wani\" - za ka iya ci gaba da rajista';
+
+  @override
+  String get referralLoadFailed => 'Ba a sami nasarar loda bayanan gayyata ba';
+
+  @override
+  String referralCodeCopiedSnackbar(String code) {
+    return 'An kwafi lambar gayyata \"$code\"!';
+  }
+
+  @override
+  String referralShareText(String code, int credits, int discount) {
+    return '🎉 Ku shigo tare da ni a Styloria!\n\nKu yi amfani da lambar gayyata tawa: $code\n\nIdan kun kammala bukin farko, zan sami buking $credits da rangwame $discount%!\n\nKu sauke Styloria ku sami sabis masu kyau a bakin kofar ku.';
+  }
+
+  @override
+  String get referralShareSubject =>
+      'Ku shigo Styloria da lambar gayyata tawa!';
+
+  @override
+  String get referralYourCode => 'Lambar Gayyata Taka';
+
+  @override
+  String get shareLabel => 'Raba';
+
+  @override
+  String get howItWorks => 'Yadda Yake Aiki';
+
+  @override
+  String get referralStep1Share => 'Raba lambar ka da abokanka';
+
+  @override
+  String get referralStep2SignUp => 'Suna yin rajista da lambar ka';
+
+  @override
+  String get referralStep3Booking => 'Idan sun kammala bukin su na farko...';
+
+  @override
+  String referralStepReward(int credits, int discount) {
+    return 'Za ka sami buking $credits da rangwame $discount%!';
+  }
+
+  @override
+  String get creditsAvailable => 'Kiredit ɗin da ake da su';
+
+  @override
+  String get successfulReferrals => 'Gayyatun da suka yi nasara';
+
+  @override
+  String get totalEarned => 'Jimlar da aka samu';
+
+  @override
+  String get creditsUsed => 'Kiredit ɗin da aka yi amfani da su';
+
+  @override
+  String referralPendingFriendsMessage(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Abokai $count sun yi rajista amma ba su kammala bukin ba tukuna.',
+      one: 'Aboki 1 ya yi rajista amma bai kammala bukin ba tukuna.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get referralHistory => 'Tarihin Gayyata';
+
+  @override
+  String get referralStatusCompleted => 'An kammala';
+
+  @override
+  String get referralStatusExpired => 'Ya ƙare';
+
+  @override
+  String get referralStatusPending => 'Ana jira';
+
+  @override
+  String referralJoinedDate(String date) {
+    return 'Ya shigo $date';
+  }
+
+  @override
+  String get referralJoinedRecently => 'Ya shigo kwanan nan';
+
+  @override
+  String get noReferralsYet => 'Babu gayyata har yanzu';
+
+  @override
+  String get shareCodeForDiscounts =>
+      'Raba lambar ka da abokai don samun rangwame!';
+
+  @override
+  String get userFallbackName => 'Mai amfani';
+
+  @override
+  String tierYourTier(String title) {
+    return 'Matakin ka: $title';
+  }
+
+  @override
+  String tierTrustScore(int score) {
+    return 'Maki Amana: $score/100';
+  }
+
+  @override
+  String get tierYouCanAccept => 'Za ka iya karɓa:';
+
+  @override
+  String get tierCertifiedExpert => 'Ƙwararre mai Takaddar Sheda';
+
+  @override
+  String get tierVerifiedPro => 'Ƙwararren da aka tabbatar';
+
+  @override
+  String get tierNewAndEager => 'Sabon mai Himma';
+
+  @override
+  String get tierPremiumBadge => '💜 Premium';
+
+  @override
+  String get tierStandardBadge => '💙 Standard';
+
+  @override
+  String get tierBudgetBadge => '💚 Budget';
+
+  @override
+  String get tierUpgradeHintBudget =>
+      'Kammala bayanan ka, ƙara hotunan portfolio, ka upload takardun sheda don buɗe ayyukan Standard da Premium!';
+
+  @override
+  String get tierUpgradeHintStandard =>
+      'Ƙara abubuwan portfolio da takardun sheda don buɗe ayyukan Premium mai yawan kuɗi!';
+
+  @override
+  String get filterLabel => 'Tace: ';
+
+  @override
+  String get filterAll => 'Duka';
+
+  @override
+  String noTierJobsAvailable(String tier) {
+    return 'Babu ayyukan $tier da ke samuwa';
+  }
+
+  @override
+  String get clearFilter => 'Share tace';
+
+  @override
+  String allPricesInYourCurrency(String symbol) {
+    return 'An nuna dukkan farashin a kuɗin ka ($symbol)';
+  }
+
+  @override
+  String yourCurrencyIs(String symbol) {
+    return 'Kuɗin ka: $symbol';
+  }
+
+  @override
+  String get tierRequiredDialogTitle => 'Ana Buƙatar Mataki';
+
+  @override
+  String thisIsATierJob(String title) {
+    return 'Wannan aikin $title ne.';
+  }
+
+  @override
+  String get yourTierColon => 'Matakin ka: ';
+
+  @override
+  String get requiredColon => 'Abin da ake buƙata: ';
+
+  @override
+  String get okButton => 'To';
+
+  @override
+  String get improveProfileButton => 'Inganta Bayani';
+
+  @override
+  String get customerNoteLabel => 'Bayanan Abokin Ciniki';
+
+  @override
+  String todayAtTime(String time) {
+    return 'Yau da ƙarfe $time';
+  }
+
+  @override
+  String dateAtTime(String date, String time) {
+    return '$date da ƙarfe $time';
+  }
+
+  @override
+  String ratingValue(String rating) {
+    return 'Ƙima $rating';
+  }
+
+  @override
+  String reviewsCountParens(int count) {
+    return '(bita $count)';
+  }
 
   @override
   String get createAccountTitle => 'Ƙirƙiri asusu';
@@ -485,6 +1022,39 @@ class AppLocalizationsHa extends AppLocalizations {
   String emailVerificationInstructions(Object identifier) {
     return 'Shigar da lambar 6-digit da aka aika zuwa imel na wannan asusu:\n$identifier';
   }
+
+  @override
+  String get verifyingPaystackPayment => 'Ana tabbatar da biyan Paystack...';
+
+  @override
+  String get paymentVerifiedSuccessfully => 'An tabbatar da biya cikin nasara!';
+
+  @override
+  String get paymentVerificationFailed => 'Tabbatar da biya ya gaza';
+
+  @override
+  String errorVerifyingPayment(String error) {
+    return 'Kuskure wajen tabbatar da biya: $error';
+  }
+
+  @override
+  String get paymentWasCancelled => 'An soke biyan.';
+
+  @override
+  String paymentVerificationFailedDetail(String detail) {
+    return 'Tabbatar da biya ya gaza: $detail';
+  }
+
+  @override
+  String helloName(String name) {
+    return 'Sannu $name';
+  }
+
+  @override
+  String get hello => 'Sannu';
+
+  @override
+  String get view => 'Duba';
 
   @override
   String get verificationCodeLabel => 'Lambar tantancewa';

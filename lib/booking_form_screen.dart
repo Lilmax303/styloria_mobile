@@ -308,7 +308,7 @@ class _BookingFormScreenState extends State<BookingFormScreen> {
           actions: [
             TextButton(
               onPressed: () => Navigator.of(dialogContext).pop(),
-              child: const Text('OK'),
+              child: Text(l10n.okButton),
             ),
           ],
         ),
@@ -318,7 +318,7 @@ class _BookingFormScreenState extends State<BookingFormScreen> {
       if (mounted) navigator.pop();
     } else {
       // Payment verification failed
-      final detail = verifyResult["detail"]?.toString() ?? 'Payment could not be verified';
+      final detail = verifyResult["detail"]?.toString() ?? l10n.paymentCouldNotBeVerified;
 
       setState(() {
         _paying = false;
@@ -363,7 +363,7 @@ class _BookingFormScreenState extends State<BookingFormScreen> {
           actions: [
             TextButton(
               onPressed: () => Navigator.of(dialogContext).pop(),
-              child: const Text('OK'),
+              child: Text(l10n.okButton),
             ),
           ],
         ),
@@ -372,7 +372,7 @@ class _BookingFormScreenState extends State<BookingFormScreen> {
       mainTabIndex.value = 1;
       if (mounted) navigator.pop();
     } else {
-      final detail = verifyResult["detail"]?.toString() ?? 'Payment could not be verified';
+      final detail = verifyResult["detail"]?.toString() ?? l10n.paymentCouldNotBeVerified;
 
       setState(() {
         _paying = false;
@@ -888,12 +888,12 @@ class _BookingFormScreenState extends State<BookingFormScreen> {
           await showDialog(
             context: context,
             builder: (dialogContext) => AlertDialog(
-              title: const Text('Payment Successful'),
+              title: Text(l10n.paymentSuccessfulTitle),
               content: Text(l10n.paymentSuccessfulShort),
               actions: [
                 TextButton(
                   onPressed: () => Navigator.of(dialogContext).pop(),
-                  child: const Text('OK'),
+                  child: Text(l10n.okButton),
                 ),
               ],
             ),
@@ -1008,12 +1008,12 @@ class _BookingFormScreenState extends State<BookingFormScreen> {
           await showDialog(
             context: context,
             builder: (dialogContext) => AlertDialog(
-              title: const Text('Payment successful'),
+              title: Text(l10n.paymentSuccessfulTitle),
               content: Text(l10n.paymentSuccessfulShort),
               actions: [
                 TextButton(
                   onPressed: () => Navigator.of(dialogContext).pop(),
-                  child: const Text('OK'),
+                  child: Text(l10n.okButton),
                 ),
               ],
             ),
@@ -1038,7 +1038,7 @@ class _BookingFormScreenState extends State<BookingFormScreen> {
         setState(() {
           _paying = false;
           _resultIsSuccess = false;
-          _resultMessage = 'Payment system is not configured. Please contact support or try again later.';
+          _resultMessage = l10n.stripeNotConfigured;
         });
         return;
       }
@@ -1113,7 +1113,7 @@ class _BookingFormScreenState extends State<BookingFormScreen> {
             actions: [
               TextButton(
                 onPressed: () => Navigator.of(dialogContext).pop(),
-                child: const Text('OK'),
+                child: Text(l10n.okButton),
               ),
             ],
           ),
@@ -1129,7 +1129,7 @@ class _BookingFormScreenState extends State<BookingFormScreen> {
       setState(() {
         _paying = false;
         _resultIsSuccess = false;
-        _resultMessage = 'Stripe is not configured. Please ensure the app is properly set up.';
+        _resultMessage = l10n.stripeConfigError;
       });
     } on stripe.StripeException catch (e) {
       if (!mounted) return;
@@ -1429,7 +1429,7 @@ class _BookingFormScreenState extends State<BookingFormScreen> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  'Selected Service',
+                                  l10n.selectedServiceLabel,
                                   style: Theme.of(context).textTheme.bodySmall?.copyWith(
                                     color: Theme.of(context).colorScheme.onSurfaceVariant,
                                   ),
@@ -1781,7 +1781,7 @@ class _BookingFormScreenState extends State<BookingFormScreen> {
                             const SizedBox(width: 8),
                             Expanded(
                               child: Text(
-                                'Referral Discount Applied: ${_money(_discountAmount)}',
+                                l10n.referralDiscountApplied(_money(_discountAmount)),
                                 style: const TextStyle(
                                   color: Colors.green,
                                   fontWeight: FontWeight.bold,
@@ -1793,7 +1793,7 @@ class _BookingFormScreenState extends State<BookingFormScreen> {
                       ),
                       const SizedBox(height: 4),
                       Text(
-                        'You have $_creditsRemaining credits remaining (1 will be used)',
+                        l10n.creditsRemainingInfo(_creditsRemaining),
                         style: TextStyle(fontSize: 12, color: Colors.grey[600]),
                       ),
                     ],

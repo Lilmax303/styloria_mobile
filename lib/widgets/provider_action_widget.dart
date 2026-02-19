@@ -2,6 +2,7 @@
 
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:styloria_mobile/gen_l10n/app_localizations.dart';
 import '../notifications_screen.dart';
 import '../provider_profile_screen.dart';
 import '../provider_wallet_screen.dart';
@@ -26,68 +27,90 @@ class _ProviderActionWidgetState extends State<ProviderActionWidget>
   late Animation<double> _blurAnimation;
   late Animation<double> _buttonAnimation;
 
-  // Fixed colors for light marble background
   static const Color _headerTextColor = Color(0xFF1A1A2E);
   static const Color _actionNameColor = Color(0xFF2D2D3A);
   static const Color _actionNameSelectedColor = Color(0xFFB8860B);
   static const Color _goldAccent = Color(0xFFD4AF37);
   static const Color _goldLight = Color(0xFFF4D03F);
 
-  // Top 4 actions (always visible - 2 rows of 2)
-  final List<ProviderActionItem> _topActions = [
-    ProviderActionItem(
+  // Keys only — names resolved at build time via l10n
+  static const List<_ActionDef> _topActionDefs = [
+    _ActionDef(
       key: 'browse_jobs',
-      name: 'Browse Jobs',
+      nameKey: 'providerActionBrowseJobs',
       imagePath: 'assets/provider_actions/browse_jobs.png',
       icon: Icons.work_outline,
     ),
-    ProviderActionItem(
+    _ActionDef(
       key: 'wallet',
-      name: 'Wallet',
+      nameKey: 'providerActionWallet',
       imagePath: 'assets/provider_actions/wallet.png',
       icon: Icons.account_balance_wallet,
     ),
-    ProviderActionItem(
+    _ActionDef(
       key: 'manage_profile',
-      name: 'Manage Profile',
+      nameKey: 'providerActionManageProfile',
       imagePath: 'assets/provider_actions/manage_profile.png',
       icon: Icons.person_outline,
     ),
-    ProviderActionItem(
+    _ActionDef(
       key: 'notifications',
-      name: 'Notifications',
+      nameKey: 'providerActionNotifications',
       imagePath: 'assets/provider_actions/notifications.png',
       icon: Icons.notifications_outlined,
     ),
   ];
 
-  // Hidden actions (shown when "Show More" is tapped)
-  final List<ProviderActionItem> _hiddenActions = [
-    ProviderActionItem(
+  static const List<_ActionDef> _hiddenActionDefs = [
+    _ActionDef(
       key: 'new_booking',
-      name: 'New Booking',
+      nameKey: 'providerActionNewBooking',
       imagePath: 'assets/provider_actions/new_booking.png',
       icon: Icons.calendar_today,
     ),
-    ProviderActionItem(
+    _ActionDef(
       key: 'reviews',
-      name: 'My Reviews',
+      nameKey: 'providerActionMyReviews',
       imagePath: 'assets/provider_actions/reviews.png',
       icon: Icons.star_outline,
     ),
-    ProviderActionItem(
+    _ActionDef(
       key: 'portfolio',
-      name: 'Portfolio',
+      nameKey: 'providerActionPortfolio',
       imagePath: 'assets/provider_actions/portfolio.png',
       icon: Icons.photo_library_outlined,
     ),
-    ProviderActionItem(
+    _ActionDef(
       key: 'pricing',
-      name: 'Services & Pricing',
+      nameKey: 'providerActionServicesPricing',
       imagePath: 'assets/provider_actions/pricing.png',
       icon: Icons.attach_money,
     ),
   ];
+
+  /// Resolve a nameKey to a localized string
+  String _resolveActionName(String nameKey, AppLocalizations l10n) {
+    switch (nameKey) {
+      case 'providerActionBrowseJobs':
+        return l10n.providerActionBrowseJobs;
+      case 'providerActionWallet':
+        return l10n.providerActionWallet;
+      case 'providerActionManageProfile':
+        return l10n.providerActionManageProfile;
+      case 'providerActionNotifications':
+        return l10n.providerActionNotifications;
+      case 'providerActionNewBooking':
+        return l10n.providerActionNewBooking;
+      case 'providerActionMyReviews':
+        return l10n.providerActionMyReviews;
+      case 'providerActionPortfolio':
+        return l10n.providerActionPortfolio;
+      case 'providerActionServicesPricing':
+        return l10n.providerActionServicesPricing;
+      default:
+        return nameKey;
+    }
+  }
 
   @override
   void initState() {
@@ -210,10 +233,30 @@ class _ProviderActionWidgetState extends State<ProviderActionWidget>
 
   @override
   Widget build(BuildContext context) {
-    final allActions = [..._topActions, if (_showAll) ..._hiddenActions];
+    final l10n = AppLocalizations.of(context);
+
+    // Build resolved action items
+    final topActions = _topActionDefs
+        .map((def) => ProviderActionItem(
+              key: def.key,
+              name: _resolveActionName(def.nameKey, l10n),
+              imagePath: def.imagePath,
+              icon: def.icon,
+            ))
+        .toList();
+
+    final hiddenActions = _hiddenActionDefs
+        .map((def) => ProviderActionItem(
+              key: def.key,
+              name: _resolveActionName(def.nameKey, l10n),
+              imagePath: def.imagePath,
+              icon: def.icon,
+            ))
+        .toList();
+
+    final allActions = [...topActions, if (_showAll) ...hiddenActions];
     final screenWidth = MediaQuery.of(context).size.width;
 
-    // ===== 2 PER ROW - Same calculation as ServiceSelectorWidget =====
     final circleSize = (screenWidth - 56) / 2.5;
     final clampedSize = circleSize.clamp(80.0, 140.0);
 
@@ -227,10 +270,10 @@ class _ProviderActionWidgetState extends State<ProviderActionWidget>
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
             child: Column(
               children: [
-                const Text(
-                  'What would you like to do today?',
+                Text(
+                  l10n.providerActionHeader,
                   textAlign: TextAlign.center,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontFamily: 'Georgia',
                     fontSize: 18,
                     fontWeight: FontWeight.w600,
@@ -254,7 +297,7 @@ class _ProviderActionWidgetState extends State<ProviderActionWidget>
             ),
           ),
 
-          // Actions Grid - 2 per row
+          // Actions Grid
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 12),
             child: AnimatedBuilder(
@@ -280,6 +323,7 @@ class _ProviderActionWidgetState extends State<ProviderActionWidget>
                       onSelectConfirm: () => _onSelectConfirm(action.key),
                       nameColor: _actionNameColor,
                       nameSelectedColor: _actionNameSelectedColor,
+                      goLabel: l10n.goButton,
                     );
                   }).toList(),
                 );
@@ -294,7 +338,8 @@ class _ProviderActionWidgetState extends State<ProviderActionWidget>
               onTap: () => setState(() => _showAll = !_showAll),
               child: AnimatedContainer(
                 duration: const Duration(milliseconds: 300),
-                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: _showAll
@@ -315,7 +360,7 @@ class _ProviderActionWidgetState extends State<ProviderActionWidget>
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(
-                      _showAll ? 'Show Less' : 'More Actions',
+                      _showAll ? l10n.showLessButton : l10n.moreActionsButton,
                       style: const TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.w600,
@@ -344,7 +389,22 @@ class _ProviderActionWidgetState extends State<ProviderActionWidget>
   }
 }
 
-// Data model
+// Internal definition — not localized, just holds keys
+class _ActionDef {
+  final String key;
+  final String nameKey;
+  final String imagePath;
+  final IconData icon;
+
+  const _ActionDef({
+    required this.key,
+    required this.nameKey,
+    required this.imagePath,
+    required this.icon,
+  });
+}
+
+// Runtime data model with resolved localized name
 class ProviderActionItem {
   final String key;
   final String name;
@@ -359,7 +419,7 @@ class ProviderActionItem {
   });
 }
 
-// Individual Action Orb - Same style as ServiceSelectorWidget
+// Individual Action Orb — updated with goLabel parameter
 class _ActionOrb extends StatefulWidget {
   final ProviderActionItem action;
   final double size;
@@ -372,6 +432,7 @@ class _ActionOrb extends StatefulWidget {
   final VoidCallback onSelectConfirm;
   final Color nameColor;
   final Color nameSelectedColor;
+  final String goLabel;
 
   const _ActionOrb({
     required this.action,
@@ -385,6 +446,7 @@ class _ActionOrb extends StatefulWidget {
     required this.onSelectConfirm,
     required this.nameColor,
     required this.nameSelectedColor,
+    required this.goLabel,
   });
 
   @override
@@ -419,8 +481,6 @@ class _ActionOrbState extends State<_ActionOrb>
 
   @override
   Widget build(BuildContext context) {
-    final cs = Theme.of(context).colorScheme;
-
     double scale = 1.0;
     if (widget.isSelected) {
       scale = widget.scaleValue.clamp(0.5, 2.0);
@@ -457,7 +517,7 @@ class _ActionOrbState extends State<_ActionOrb>
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    // Circular image - NO BOX
+                    // Circular image
                     Stack(
                       alignment: Alignment.center,
                       clipBehavior: Clip.none,
@@ -472,7 +532,8 @@ class _ActionOrbState extends State<_ActionOrb>
                               boxShadow: [
                                 BoxShadow(
                                   color: _goldAccent.withOpacity(
-                                      (0.5 * safeButtonOpacity).clamp(0.0, 1.0)),
+                                      (0.5 * safeButtonOpacity)
+                                          .clamp(0.0, 1.0)),
                                   blurRadius: 20,
                                   spreadRadius: 2,
                                 ),
@@ -498,7 +559,8 @@ class _ActionOrbState extends State<_ActionOrb>
                                   widget.isSelected ? 0.25 : 0.12,
                                 ),
                                 blurRadius: widget.isSelected ? 15 : 8,
-                                offset: Offset(0, widget.isSelected ? 6 : 3),
+                                offset:
+                                    Offset(0, widget.isSelected ? 6 : 3),
                               ),
                             ],
                           ),
@@ -513,8 +575,8 @@ class _ActionOrbState extends State<_ActionOrb>
                                 fit: BoxFit.cover,
                                 width: widget.size,
                                 height: widget.size,
-                                errorBuilder: (context, error, stackTrace) {
-                                  // Fallback to gradient + icon
+                                errorBuilder:
+                                    (context, error, stackTrace) {
                                   return Container(
                                     decoration: BoxDecoration(
                                       gradient: LinearGradient(
@@ -539,11 +601,13 @@ class _ActionOrbState extends State<_ActionOrb>
                         ),
 
                         // GO button overlay
-                        if (widget.isSelected && safeButtonOpacity > 0.01)
+                        if (widget.isSelected &&
+                            safeButtonOpacity > 0.01)
                           Opacity(
                             opacity: safeButtonOpacity,
                             child: Transform.scale(
-                              scale: (0.5 + (0.5 * safeButtonOpacity))
+                              scale: (0.5 +
+                                      (0.5 * safeButtonOpacity))
                                   .clamp(0.1, 1.5),
                               child: Container(
                                 width: widget.size,
@@ -563,26 +627,34 @@ class _ActionOrbState extends State<_ActionOrb>
                                   child: GestureDetector(
                                     onTap: widget.onSelectConfirm,
                                     child: Container(
-                                      padding: const EdgeInsets.symmetric(
+                                      padding:
+                                          const EdgeInsets.symmetric(
                                         horizontal: 16,
                                         vertical: 8,
                                       ),
                                       decoration: BoxDecoration(
-                                        gradient: const LinearGradient(
-                                          colors: [_goldAccent, _goldLight],
+                                        gradient:
+                                            const LinearGradient(
+                                          colors: [
+                                            _goldAccent,
+                                            _goldLight
+                                          ],
                                         ),
-                                        borderRadius: BorderRadius.circular(20),
+                                        borderRadius:
+                                            BorderRadius.circular(20),
                                         boxShadow: [
                                           BoxShadow(
-                                            color: _goldAccent.withOpacity(0.4),
+                                            color: _goldAccent
+                                                .withOpacity(0.4),
                                             blurRadius: 10,
-                                            offset: const Offset(0, 3),
+                                            offset:
+                                                const Offset(0, 3),
                                           ),
                                         ],
                                       ),
-                                      child: const Text(
-                                        'GO',
-                                        style: TextStyle(
+                                      child: Text(
+                                        widget.goLabel,
+                                        style: const TextStyle(
                                           color: Colors.white,
                                           fontSize: 14,
                                           fontWeight: FontWeight.bold,
@@ -600,7 +672,7 @@ class _ActionOrbState extends State<_ActionOrb>
 
                     const SizedBox(height: 8),
 
-                    // Action name
+                    // Action name (already localized)
                     Text(
                       widget.action.name,
                       textAlign: TextAlign.center,
@@ -615,7 +687,8 @@ class _ActionOrbState extends State<_ActionOrb>
                             : widget.nameColor,
                         letterSpacing: 0.3,
                         shadows: const [
-                          Shadow(color: Colors.white, blurRadius: 4),
+                          Shadow(
+                              color: Colors.white, blurRadius: 4),
                         ],
                       ),
                       maxLines: 2,

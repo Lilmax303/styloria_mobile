@@ -326,7 +326,7 @@ class _BookingsScreenState extends State<BookingsScreen> {
                 children: [
                   Icon(Icons.schedule, color: Colors.orange),
                   const SizedBox(width: 8),
-                  const Expanded(child: Text('Reschedule Required')),
+                  Expanded(child: Text(l10n.rescheduleRequiredTitle)),
                 ],
               ),
               content: Column(
@@ -346,7 +346,7 @@ class _BookingsScreenState extends State<BookingsScreen> {
                         const SizedBox(width: 8),
                         Expanded(
                           child: Text(
-                            'Your booking was left unpaid. Please select a new time for TODAY to continue with payment.',
+                            l10n.rescheduleRequiredMessage,
                             style: TextStyle(
                               fontSize: 13,
                               color: Colors.orange.shade900,
@@ -358,7 +358,7 @@ class _BookingsScreenState extends State<BookingsScreen> {
                   ),
                   const SizedBox(height: 16),
                   Text(
-                    'Select new appointment time:',
+                    l10n.selectNewAppointmentTime,
                     style: const TextStyle(fontWeight: FontWeight.w600),
                   ),
                   const SizedBox(height: 8),
@@ -377,7 +377,7 @@ class _BookingsScreenState extends State<BookingsScreen> {
                             hour: minHour < 24 ? minHour : 23,
                             minute: minMinute,
                           ),
-                          helpText: 'Select time for TODAY',
+                          helpText: l10n.selectTimeForToday,
                         );
                         
                         if (picked != null) {
@@ -394,8 +394,8 @@ class _BookingsScreenState extends State<BookingsScreen> {
                           
                           if (pickedDateTime.isBefore(minDateTime)) {
                             ScaffoldMessenger.of(context).showSnackBar(
-                              const SnackBar(
-                                content: Text('Please select a time at least 30 minutes from now.'),
+                              SnackBar(
+                                content: Text(l10n.selectTimeAtLeast30Min),
                                 backgroundColor: Colors.red,
                               ),
                             );
@@ -410,8 +410,8 @@ class _BookingsScreenState extends State<BookingsScreen> {
                       icon: const Icon(Icons.access_time),
                       label: Text(
                         selectedTime != null
-                            ? 'Today at ${selectedTime!.format(context)}'
-                            : 'Tap to select time',
+                            ? l10n.todayAtTimeSimple(selectedTime!.format(context))
+                            : l10n.tapToSelectTime,
                         style: TextStyle(
                           fontWeight: selectedTime != null ? FontWeight.bold : FontWeight.normal,
                         ),
@@ -420,7 +420,7 @@ class _BookingsScreenState extends State<BookingsScreen> {
                   ),
                   const SizedBox(height: 8),
                   Text(
-                    '* Must be at least 30 minutes from now',
+                    l10n.mustBeAtLeast30MinFromNow,
                     style: TextStyle(
                       fontSize: 11,
                       color: Colors.grey[600],
@@ -460,13 +460,13 @@ class _BookingsScreenState extends State<BookingsScreen> {
                           } else {
                             ScaffoldMessenger.of(context).showSnackBar(
                               SnackBar(
-                                content: Text(result['detail'] ?? 'Failed to update time'),
+                                content: Text(result['detail'] ?? l10n.failedToUpdateTime),
                                 backgroundColor: Colors.red,
                               ),
                             );
                           }
                         },
-                  child: const Text('Continue to Payment'),
+                  child: Text(l10n.continueToPayment),
                 ),
               ],
             );
@@ -623,17 +623,17 @@ class _BookingsScreenState extends State<BookingsScreen> {
             context: context,
             builder: (dialogContext) => AlertDialog(
               title: Row(
-                children: const [
-                  Icon(Icons.check_circle, color: Colors.green),
-                  SizedBox(width: 8),
-                  Text('Payment Successful'),
+                children: [
+                  const Icon(Icons.check_circle, color: Colors.green),
+                  const SizedBox(width: 8),
+                  Text(l10n.paymentSuccessfulTitle),
                 ],
               ),
               content: Text(l10n.paymentSuccessfulShort),
               actions: [
                 ElevatedButton(
                   onPressed: () => Navigator.of(dialogContext).pop(),
-                  child: const Text('OK'),
+                  child: Text(l10n.okButton),
                 ),
               ],
             ),
@@ -727,10 +727,10 @@ class _BookingsScreenState extends State<BookingsScreen> {
           await showDialog(
             context: context,
             builder: (dialogContext) => AlertDialog(
-              title: const Text('Payment successful'),
+              title: Text(l10n.paymentSuccessfulTitle),
               content: Text(l10n.paymentSuccessfulShort),
               actions: [
-                TextButton(onPressed: () => Navigator.of(dialogContext).pop(), child: const Text('OK')),
+                TextButton(onPressed: () => Navigator.of(dialogContext).pop(), child: Text(l10n.okButton)),
               ],
             ),
           );
@@ -823,6 +823,7 @@ class _BookingsScreenState extends State<BookingsScreen> {
 
   /// Opens Paystack checkout URL and automatically polls for payment completion
   Future<bool> _openPaystackCheckout(String authorizationUrl, String reference, int bookingId) async {
+    final l10n = AppLocalizations.of(context)!;
     final uri = Uri.parse(authorizationUrl);
     bool paymentVerified = false;
     bool dialogDismissed = false;
@@ -836,7 +837,7 @@ class _BookingsScreenState extends State<BookingsScreen> {
     if (!launched) {
       if (!mounted) return false;
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Could not open payment page')),
+        SnackBar(content: Text(l10n.couldNotOpenPaymentPage)),
       );
       return false;
     }
@@ -911,7 +912,7 @@ class _BookingsScreenState extends State<BookingsScreen> {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final title = widget.role == 'provider'
-      ? 'Assigned Jobs'
+      ? l10n.myAssignedJobsTitle
       : l10n.myBookingsTitle;
 
     Widget bodyContent;
@@ -1095,7 +1096,9 @@ class _BookingsScreenState extends State<BookingsScreen> {
                             const SizedBox(width: 6),
                             Text(
                               timeStr.isNotEmpty 
-                                  ? (isToday ? 'Today at $timeStr' : '$dateStr at $timeStr')
+                                  ? (isToday 
+                                      ? l10n.todayAtTime(timeStr) 
+                                      : l10n.dateAtTime(dateStr, timeStr))
                                   : dateStr,
                               style: TextStyle(
                                 fontSize: 13,
@@ -1253,9 +1256,9 @@ class _StatusChip extends StatelessWidget {
 
     String display;
     switch (status) {
-     case 'pending':
+      case 'pending':
       case 'open':
-        display = 'Pending';
+        display = l10n.statusPending;
         break;
       case 'accepted':
         display = l10n.statusAccepted;
@@ -1342,7 +1345,7 @@ class _ReviewDialogWidgetState extends State<_ReviewDialogWidget> {
     } else {
       setState(() => _submitting = false);
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Failed to submit review. Please try again.')),
+        SnackBar(content: Text(AppLocalizations.of(context)!.failedSubmitReviewTryAgain)),
       );
     }
   }
@@ -1388,7 +1391,7 @@ class _ReviewDialogWidgetState extends State<_ReviewDialogWidget> {
             enabled: !_submitting,
             decoration: InputDecoration(
               labelText: l10n.commentsOptionalLabel,
-              hintText: 'Share your experience...',
+              hintText: l10n.shareYourExperience,
               border: const OutlineInputBorder(),
             ),
           ),
@@ -1461,12 +1464,13 @@ class _PaymentWaitingDialogState extends State<_PaymentWaitingDialog> {
       // Update status text periodically
       if (mounted) {
         setState(() {
+          final l10n = AppLocalizations.of(context)!;
           if (_pollCount < 5) {
-            _statusText = 'Complete your payment in the browser...';
+            _statusText = l10n.completePaymentInBrowser;
           } else if (_pollCount < 15) {
-            _statusText = 'Waiting for payment confirmation...';
+            _statusText = l10n.waitingForPaymentConfirmation;
           } else {
-            _statusText = 'Still waiting... Please complete payment.';
+            _statusText = l10n.stillWaitingCompletePayment;
           }
         });
       }
@@ -1506,7 +1510,7 @@ class _PaymentWaitingDialogState extends State<_PaymentWaitingDialog> {
     // If we've exceeded max polls, show timeout message
     if (mounted && _polling && _pollCount >= _maxPolls) {
       setState(() {
-        _statusText = 'Payment verification timed out. Please check your bookings.';
+        _statusText = AppLocalizations.of(context)!.paymentVerificationTimedOut;
       });
       await Future.delayed(const Duration(seconds: 2));
       if (mounted && _polling) {
@@ -1519,7 +1523,7 @@ class _PaymentWaitingDialogState extends State<_PaymentWaitingDialog> {
     if (!mounted) return;
 
     setState(() {
-      _statusText = 'Checking payment status...';
+      _statusText = AppLocalizations.of(context)!.checkingPaymentStatus;
     });
 
     try {
@@ -1534,19 +1538,28 @@ class _PaymentWaitingDialogState extends State<_PaymentWaitingDialog> {
         widget.onPaymentVerified();
       } else {
         setState(() {
-          _statusText = 'Payment not yet received. Please complete payment.';
+          _statusText = AppLocalizations.of(context)!.paymentNotYetReceived;
         });
       }
     } catch (e) {
       if (!mounted) return;
       setState(() {
-        _statusText = 'Could not verify. Please try again.';
+        _statusText = AppLocalizations.of(context)!.couldNotVerifyTryAgain;
       });
     }
   }
 
   @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    if (_pollCount == 0) {
+      _statusText = AppLocalizations.of(context)!.completePaymentInBrowser;
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return AlertDialog(
       content: Column(
         mainAxisSize: MainAxisSize.min,
@@ -1557,9 +1570,9 @@ class _PaymentWaitingDialogState extends State<_PaymentWaitingDialog> {
             child: CircularProgressIndicator(strokeWidth: 3),
           ),
           const SizedBox(height: 20),
-          const Text(
-            'Processing Payment',
-            style: TextStyle(
+          Text(
+            l10n.processingPayment,
+            style: const TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.bold,
             ),
@@ -1575,7 +1588,7 @@ class _PaymentWaitingDialogState extends State<_PaymentWaitingDialog> {
           ),
           const SizedBox(height: 8),
           Text(
-            'This will update automatically when payment is complete.',
+            l10n.willUpdateAutomatically,
             style: TextStyle(
               fontSize: 12,
               color: Colors.grey[500],
@@ -1591,14 +1604,14 @@ class _PaymentWaitingDialogState extends State<_PaymentWaitingDialog> {
                     _polling = false;
                     widget.onCancel();
                   },
-                  child: const Text('Cancel'),
+                  child: Text(l10n.cancel),
                 ),
               ),
               const SizedBox(width: 12),
               Expanded(
                 child: ElevatedButton(
                   onPressed: _handleManualCheck,
-                  child: const Text('Check Now'),
+                  child: Text(l10n.checkNow),
                 ),
               ),
             ],

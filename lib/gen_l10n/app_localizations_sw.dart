@@ -231,15 +231,14 @@ class AppLocalizationsSw extends AppLocalizations {
   String get deletionReason12 => 'Nyingine';
 
   @override
-  String get loginWelcomeTitle => 'Karibu Styloria';
+  String get loginWelcomeTitle => 'Karibu Tena';
 
   @override
-  String get loginWelcomeSubtitle =>
-      'Ingia ili kudhibiti nafasi zako na huduma.';
+  String get loginWelcomeSubtitle => 'Ingia kwenye akaunti yako';
 
   @override
   String get loginFailedToLoadUserInfo =>
-      'Umefanikiwa kuingia lakini taarifa za mtumiaji hazikupatikana.';
+      'Imeshindwa kupakia taarifa za mtumiaji.';
 
   @override
   String get username => 'Jina la mtumiaji';
@@ -261,23 +260,361 @@ class AppLocalizationsSw extends AppLocalizations {
       'Omba msimbo wa uthibitishaji wa barua pepe';
 
   @override
+  String get selectYourServicesTitle => 'Chagua Huduma Zako';
+
+  @override
+  String get yourServicesAndPricing => 'Huduma Zako na Bei';
+
+  @override
+  String get tapServiceToAddSubtitle =>
+      'Gusa huduma ili kuiongeza kwenye ofa zako';
+
+  @override
+  String get tapToEditLongPressRemove =>
+      'Gusa kubadilisha bei • Bonyeza kwa muda mrefu kuondoa';
+
+  @override
+  String pricingStepLabel(int current, int total) {
+    return 'Hatua $current/$total';
+  }
+
+  @override
+  String get certRequiredLegend => 'Cheti kinahitajika';
+
+  @override
+  String get pendingLegend => 'Inasubiri';
+
+  @override
+  String get certifiedLegend => 'Imethibitishwa';
+
+  @override
+  String get continueToPricing => 'Endelea kwenye Bei';
+
+  @override
+  String get noServicesSelectedMessage => 'Hakuna huduma zilizochaguliwa bado';
+
+  @override
+  String get selectServicesButton => 'Chagua Huduma';
+
+  @override
+  String get addMoreServicesButton => 'Ongeza Huduma Zaidi';
+
+  @override
+  String get savePricingButton => 'Hifadhi Bei';
+
+  @override
+  String get removeLabel => 'ONDOA';
+
+  @override
+  String get selectLabel => 'CHAGUA';
+
+  @override
+  String get tapToEditHint => 'Gusa kuhariri';
+
+  @override
+  String setPriceForService(String service) {
+    return 'Weka Bei ya $service';
+  }
+
+  @override
+  String get paymentSuccessfulTitle => 'Malipo Yamefanikiwa';
+
+  @override
+  String get paymentCouldNotBeVerified => 'Malipo hayakuweza kuthibitishwa';
+
+  @override
+  String get stripeNotConfigured =>
+      'Mfumo wa malipo haujasanidiwa. Tafadhali wasiliana na msaada au jaribu tena baadaye.';
+
+  @override
+  String get stripeConfigError =>
+      'Stripe haijasanidiwa. Tafadhali hakikisha programu imesanidiwa vizuri.';
+
+  @override
+  String get selectedServiceLabel => 'Huduma Iliyochaguliwa';
+
+  @override
+  String referralDiscountApplied(String amount) {
+    return 'Punguzo la Rufaa Limetumika: $amount';
+  }
+
+  @override
+  String creditsRemainingInfo(int count) {
+    return 'Una mikopo $count iliyobaki (1 itatumika)';
+  }
+
+  @override
   String get serviceLocationHint =>
-      'Enter where you want the service performed. This can be different from your current location.';
+      'Hapa ndipo mtoa huduma atakuja kukuhudumia';
 
   @override
-  String get serviceAddressLabel => 'Service Address';
+  String get serviceAddressLabel => 'Anwani ya Huduma';
 
   @override
-  String get serviceAddressHint => 'e.g., 123 Main St, Accra, Ghana';
+  String get serviceAddressHint => 'Ingiza anwani unayotaka huduma';
 
   @override
-  String get searchAddressTooltip => 'Find this address';
+  String get searchAddressTooltip => 'Tafuta anwani';
 
   @override
-  String get serviceLocationSet => 'Service location set';
+  String get serviceLocationSet => 'Eneo limewekwa';
 
   @override
-  String get coordinatesLabel => 'Coordinates';
+  String get coordinatesLabel => 'Viwianishi';
+
+  @override
+  String get hairServicesCategory => 'Huduma za Nywele';
+
+  @override
+  String get beautyWellnessCategory => 'Urembo & Ustawi';
+
+  @override
+  String get certifiedLabel => 'Imeidhinishwa';
+
+  @override
+  String get removeServiceTooltip => 'Ondoa huduma';
+
+  @override
+  String get tabBasicInfo => 'Taarifa za Msingi';
+
+  @override
+  String get tabPortfolio => 'Kazi Zangu';
+
+  @override
+  String get tabPricing => 'Bei';
+
+  @override
+  String get tabReviews => 'Maoni';
+
+  @override
+  String setPriceOrMarkNotOffered(String service) {
+    return 'Tafadhali weka bei kwa \"$service\" au iweke kama \"Haitolewa\".';
+  }
+
+  @override
+  String get rescheduleRequiredTitle => 'Upangaji Upya Unahitajika';
+
+  @override
+  String get rescheduleRequiredMessage =>
+      'Uhifadhi wako haukuwa umelipwa. Tafadhali chagua wakati mpya wa LEO ili kuendelea na malipo.';
+
+  @override
+  String get selectNewAppointmentTime => 'Chagua wakati mpya wa miadi:';
+
+  @override
+  String get tapToSelectTime => 'Gonga kuchagua wakati';
+
+  @override
+  String todayAtTimeSimple(String time) {
+    return 'Leo saa $time';
+  }
+
+  @override
+  String get selectTimeForToday => 'Chagua wakati wa LEO';
+
+  @override
+  String get selectTimeAtLeast30Min =>
+      'Tafadhali chagua wakati angalau dakika 30 kutoka sasa.';
+
+  @override
+  String get mustBeAtLeast30MinFromNow =>
+      '* Lazima iwe angalau dakika 30 kutoka sasa';
+
+  @override
+  String get continueToPayment => 'Endelea na Malipo';
+
+  @override
+  String get failedToUpdateTime => 'Imeshindwa kusasisha wakati';
+
+  @override
+  String get failedSubmitReviewTryAgain =>
+      'Imeshindwa kutuma maoni. Tafadhali jaribu tena.';
+
+  @override
+  String get processingPayment => 'Inashughulikia Malipo';
+
+  @override
+  String get completePaymentInBrowser =>
+      'Kamilisha malipo yako kwenye kivinjari...';
+
+  @override
+  String get waitingForPaymentConfirmation =>
+      'Inasubiri uthibitishaji wa malipo...';
+
+  @override
+  String get stillWaitingCompletePayment =>
+      'Bado inasubiri... Tafadhali kamilisha malipo.';
+
+  @override
+  String get paymentVerificationTimedOut =>
+      'Uthibitishaji wa malipo umekwisha muda. Tafadhali angalia uhifadhi wako.';
+
+  @override
+  String get checkingPaymentStatus => 'Inakagua hali ya malipo...';
+
+  @override
+  String get paymentNotYetReceived =>
+      'Malipo bado hayajapokelewa. Tafadhali kamilisha malipo.';
+
+  @override
+  String get couldNotVerifyTryAgain =>
+      'Haikuweza kuthibitisha. Tafadhali jaribu tena.';
+
+  @override
+  String get willUpdateAutomatically =>
+      'Hii itasasishwa moja kwa moja malipo yakikamilika.';
+
+  @override
+  String get checkNow => 'Kagua Sasa';
+
+  @override
+  String get providerActionHeader => 'Ungependa kufanya nini leo?';
+
+  @override
+  String get providerActionBrowseJobs => 'Tafuta Kazi';
+
+  @override
+  String get providerActionWallet => 'Pochi';
+
+  @override
+  String get providerActionManageProfile => 'Simamia Wasifu';
+
+  @override
+  String get providerActionNotifications => 'Arifa';
+
+  @override
+  String get providerActionNewBooking => 'Uhifadhi Mpya';
+
+  @override
+  String get providerActionMyReviews => 'Maoni Yangu';
+
+  @override
+  String get providerActionPortfolio => 'Kazi Zangu';
+
+  @override
+  String get providerActionServicesPricing => 'Huduma na Bei';
+
+  @override
+  String get moreActionsButton => 'Vitendo Zaidi';
+
+  @override
+  String get showLessButton => 'Onyesha Kidogo';
+
+  @override
+  String get goButton => 'NENDA';
+
+  @override
+  String get priceInputLabel => 'Bei';
+
+  @override
+  String get pleaseEnterValidPrice => 'Tafadhali ingiza bei halali';
+
+  @override
+  String get savePriceButton => 'Hifadhi Bei';
+
+  @override
+  String pricingCertDialogBody(String service) {
+    return 'Ili kutoa $service, unahitaji cheti kilichothibitishwa. Tafadhali ongeza cheti chako katika kichupo cha Taarifa za Msingi.';
+  }
+
+  @override
+  String get stripeSetupComplete => 'Usanidi wa Stripe umekamilika.';
+
+  @override
+  String get openPayoutSettings => 'Fungua Mipangilio ya Malipo';
+
+  @override
+  String get walletNoWalletSelected => 'Hakuna pochi iliyochaguliwa.';
+
+  @override
+  String get walletNoAvailableBalance => 'Hakuna salio inayopatikana kutoa.';
+
+  @override
+  String walletBelowMinimumCashout(
+      String min, String currency, String available) {
+    return 'Kiwango cha chini cha kutoa ni $min $currency. Salio yako inayopatikana ni $available $currency.';
+  }
+
+  @override
+  String get walletInstantCashoutDisabled =>
+      'Kutoa papo hapo kumezimwa katika mipangilio yako.';
+
+  @override
+  String walletInstantCashoutAvailable(String remaining, String period) {
+    return 'Kutoa papo hapo kunapatikana ($remaining zilizobaki $period). Ada ya 5% inatumika.';
+  }
+
+  @override
+  String get walletInstantCashoutUnlimited =>
+      'Kutoa papo hapo kunapatikana wakati wowote. Ada ya 5% inatumika.';
+
+  @override
+  String get walletEnterAmountToCashOut => 'Tafadhali ingiza kiasi cha kutoa.';
+
+  @override
+  String get walletEnterValidAmount => 'Tafadhali ingiza kiasi halali.';
+
+  @override
+  String get walletCashoutInitiated => 'Kutoa kumeanzishwa kwa mafanikio!';
+
+  @override
+  String walletPayoutFailed(String reason) {
+    return 'Malipo yameshindikana: $reason';
+  }
+
+  @override
+  String get walletTransferCouldNotComplete =>
+      'Uhamisho haukukamilika. Tafadhali angalia mipangilio yako ya malipo.';
+
+  @override
+  String walletPayoutStatusLabel(String status) {
+    return 'Malipo: $status';
+  }
+
+  @override
+  String get serviceSelectorHeader => 'Ni huduma gani tunaweza kukusaidia?';
+
+  @override
+  String get showMore => 'Onyesha zaidi';
+
+  @override
+  String get serviceSelectorSelectButton => 'CHAGUA';
+
+  @override
+  String get certServiceSelectorTitle =>
+      'Cheti hiki kinathibitisha huduma zipi?';
+
+  @override
+  String get certServiceSelectorHint =>
+      'Chagua huduma zote ambazo cheti hiki kinashughulikia. Unaweza kuchagua zaidi ya moja.';
+
+  @override
+  String get certNoServicesSelectedWarning =>
+      'Hakuna huduma zilizochaguliwa. Cheti hiki hakitafungua huduma yoyote.';
+
+  @override
+  String get portfolioShowcaseTitle => 'Onyesha Kazi Zako Bora';
+
+  @override
+  String get portfolioShowcaseSubtitle =>
+      'Kazi zako zinaeleza hadithi yako. Acha kazi yako izungumze yenyewe.';
+
+  @override
+  String get providerUnavailableMessage =>
+      'Kwa sasa hupatikani kwa nafasi za kuhifadhi. Tafadhali washa upatikanaji katika mipangilio ya wasifu wako.';
+
+  @override
+  String get portfolioEmptyTitle => 'Kazi Zako Ni Tupu';
+
+  @override
+  String get portfolioEmptySubtitle =>
+      'Ongeza picha na video za kazi yako ili kuvutia wateja zaidi.';
+
+  @override
+  String get portfolioUploading => 'Inapakia...';
+
+  @override
+  String get portfolioAddButton => 'Ongeza kwenye Kazi';
 
   @override
   String get pleaseEnterAddress => 'Tafadhali weka anwani';
@@ -313,6 +650,207 @@ class AppLocalizationsSw extends AppLocalizations {
   @override
   String get locationMarkedAsOther =>
       'Mahali pamewekwa alama kama \"Nyingine\" - unaweza kuendelea na usajili';
+
+  @override
+  String get referralLoadFailed => 'Imeshindikana kupakia takwimu za rufaa';
+
+  @override
+  String referralCodeCopiedSnackbar(String code) {
+    return 'Msimbo wa rufaa \"$code\" umenakiliwa!';
+  }
+
+  @override
+  String referralShareText(String code, int credits, int discount) {
+    return '🎉 Jiunge nami kwenye Styloria!\n\nTumia msimbo wangu wa rufaa: $code\n\nUnapokamilisha uhifadhi wako wa kwanza, nitapata uhifadhi $credits na punguzo la $discount%!\n\nPakua Styloria upate huduma bora hadi mlangoni mwako.';
+  }
+
+  @override
+  String get referralShareSubject =>
+      'Jiunge na Styloria kwa msimbo wangu wa rufaa!';
+
+  @override
+  String get referralYourCode => 'Msimbo Wako wa Rufaa';
+
+  @override
+  String get shareLabel => 'Shiriki';
+
+  @override
+  String get howItWorks => 'Jinsi Inavyofanya Kazi';
+
+  @override
+  String get referralStep1Share => 'Shiriki msimbo wako na marafiki';
+
+  @override
+  String get referralStep2SignUp => 'Wanajisajili kwa msimbo wako';
+
+  @override
+  String get referralStep3Booking =>
+      'Wanapokamilisha uhifadhi wao wa kwanza...';
+
+  @override
+  String referralStepReward(int credits, int discount) {
+    return 'Utapata uhifadhi $credits na punguzo la $discount%!';
+  }
+
+  @override
+  String get creditsAvailable => 'Mikopo Inayopatikana';
+
+  @override
+  String get successfulReferrals => 'Rufaa Zilizofanikiwa';
+
+  @override
+  String get totalEarned => 'Jumla Iliyopatikana';
+
+  @override
+  String get creditsUsed => 'Mikopo Iliyotumika';
+
+  @override
+  String referralPendingFriendsMessage(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other:
+          'Marafiki $count wamejisajili lakini bado hawajkamilisha uhifadhi.',
+      one: 'Rafiki 1 amejisajili lakini bado hajakamilisha uhifadhi.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get referralHistory => 'Historia ya Rufaa';
+
+  @override
+  String get referralStatusCompleted => 'Imekamilika';
+
+  @override
+  String get referralStatusExpired => 'Imeisha muda';
+
+  @override
+  String get referralStatusPending => 'Inasubiri';
+
+  @override
+  String referralJoinedDate(String date) {
+    return 'Alijiunga $date';
+  }
+
+  @override
+  String get referralJoinedRecently => 'Alijiunga hivi karibuni';
+
+  @override
+  String get noReferralsYet => 'Hakuna rufaa bado';
+
+  @override
+  String get shareCodeForDiscounts =>
+      'Shiriki msimbo wako na marafiki kupata punguzo!';
+
+  @override
+  String get userFallbackName => 'Mtumiaji';
+
+  @override
+  String tierYourTier(String title) {
+    return 'Ngazi Yako: $title';
+  }
+
+  @override
+  String tierTrustScore(int score) {
+    return 'Alama ya Uaminifu: $score/100';
+  }
+
+  @override
+  String get tierYouCanAccept => 'Unaweza kukubali:';
+
+  @override
+  String get tierCertifiedExpert => 'Mtaalamu Aliyeidhinishwa';
+
+  @override
+  String get tierVerifiedPro => 'Mtaalamu Aliyethibitishwa';
+
+  @override
+  String get tierNewAndEager => 'Mpya na Mwenye Bidii';
+
+  @override
+  String get tierPremiumBadge => '💜 Premium';
+
+  @override
+  String get tierStandardBadge => '💙 Standard';
+
+  @override
+  String get tierBudgetBadge => '💚 Bajeti';
+
+  @override
+  String get tierUpgradeHintBudget =>
+      'Kamilisha wasifu wako, ongeza picha za kazi zako, na pakia vyeti ili kufungua kazi za Standard na Premium!';
+
+  @override
+  String get tierUpgradeHintStandard =>
+      'Ongeza vitu zaidi vya kazi na vyeti ili kufungua kazi za Premium zenye mapato zaidi!';
+
+  @override
+  String get filterLabel => 'Chuja: ';
+
+  @override
+  String get filterAll => 'Zote';
+
+  @override
+  String noTierJobsAvailable(String tier) {
+    return 'Hakuna kazi za $tier zinazopatikana';
+  }
+
+  @override
+  String get clearFilter => 'Ondoa kichujio';
+
+  @override
+  String allPricesInYourCurrency(String symbol) {
+    return 'Bei zote zinaonyeshwa kwa sarafu yako ($symbol)';
+  }
+
+  @override
+  String yourCurrencyIs(String symbol) {
+    return 'Sarafu yako: $symbol';
+  }
+
+  @override
+  String get tierRequiredDialogTitle => 'Ngazi Inahitajika';
+
+  @override
+  String thisIsATierJob(String title) {
+    return 'Hii ni kazi ya ngazi ya $title.';
+  }
+
+  @override
+  String get yourTierColon => 'Ngazi yako: ';
+
+  @override
+  String get requiredColon => 'Inayohitajika: ';
+
+  @override
+  String get okButton => 'Sawa';
+
+  @override
+  String get improveProfileButton => 'Boresha Wasifu';
+
+  @override
+  String get customerNoteLabel => 'Maelezo ya Mteja';
+
+  @override
+  String todayAtTime(String time) {
+    return 'Leo saa $time';
+  }
+
+  @override
+  String dateAtTime(String date, String time) {
+    return '$date saa $time';
+  }
+
+  @override
+  String ratingValue(String rating) {
+    return 'Ukadiriaji $rating';
+  }
+
+  @override
+  String reviewsCountParens(int count) {
+    return '(maoni $count)';
+  }
 
   @override
   String get createAccountTitle => 'Unda akaunti';
@@ -484,6 +1022,40 @@ class AppLocalizationsSw extends AppLocalizations {
   String emailVerificationInstructions(Object identifier) {
     return 'Ingiza msimbo wa tarakimu 6 uliotumwa kwenye barua pepe ya akaunti hii:\n$identifier';
   }
+
+  @override
+  String get verifyingPaystackPayment => 'Inathibitisha malipo ya Paystack...';
+
+  @override
+  String get paymentVerifiedSuccessfully =>
+      'Malipo yamethibitishwa kwa mafanikio!';
+
+  @override
+  String get paymentVerificationFailed => 'Uthibitishaji wa malipo umeshindwa';
+
+  @override
+  String errorVerifyingPayment(String error) {
+    return 'Hitilafu katika kuthibitisha malipo: $error';
+  }
+
+  @override
+  String get paymentWasCancelled => 'Malipo yameghairiwa.';
+
+  @override
+  String paymentVerificationFailedDetail(String detail) {
+    return 'Uthibitishaji wa malipo umeshindwa: $detail';
+  }
+
+  @override
+  String helloName(String name) {
+    return 'Habari $name';
+  }
+
+  @override
+  String get hello => 'Habari';
+
+  @override
+  String get view => 'Tazama';
 
   @override
   String get verificationCodeLabel => 'Msimbo wa uthibitishaji';
