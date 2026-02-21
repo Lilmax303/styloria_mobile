@@ -1909,8 +1909,12 @@ class ApiClient {
     return null;
   }
 
-  static Future<List<dynamic>?> getSupportMessages(int threadId) async {
-    final response = await _authorizedRequest('GET', '/api/support_chats/$threadId/messages/');
+  static Future<List<dynamic>?> getSupportMessages(int threadId, {String? since}) async {
+    String url = '/api/support_chats/$threadId/messages/';
+    if (since != null) {
+      url += '?since=${Uri.encodeComponent(since)}';
+    }
+    final response = await _authorizedRequest('GET', url);
     if (response.statusCode == 200) return jsonDecode(response.body) as List<dynamic>;
     return null;
   }
@@ -1924,6 +1928,16 @@ class ApiClient {
     );
     if (response.statusCode == 201) return jsonDecode(response.body) as Map<String, dynamic>;
     return null;
+  }
+
+  static Future<bool> rateSupportThread(int threadId, int rating, String comment) async {
+    final response = await _authorizedRequest(
+      'POST',
+      '/api/support_chats/$threadId/rate/',
+      headers: {'Content-Type': 'application/json'},
+      body: jsonEncode({'rating': rating, 'comment': comment}),
+    );
+    return response.statusCode == 200;
   }
 
   // ---------- PROVIDER EARNINGS ----------

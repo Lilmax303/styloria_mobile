@@ -31,17 +31,27 @@ class _ReferralScreenState extends State<ReferralScreen> {
       _error = null;
     });
 
-    final stats = await ApiClient.getReferralStats();
+    try {
+      final stats = await ApiClient.getReferralStats();
 
-    if (!mounted) return;
+      if (!mounted) return;
 
-    setState(() {
-      _stats = stats;
-      _loading = false;
-      if (stats == null) {
+      setState(() {
+        _stats = stats;
+        _loading = false;
+        if (stats == null) {
+          _error = AppLocalizations.of(context).referralLoadFailed;
+        }
+      });
+    } catch (e) {
+      if (!mounted) return;
+      print('!!!! REFERRAL SCREEN ERROR: Failed to load referral stats: $e');
+      setState(() {
+        _loading = false;
         _error = AppLocalizations.of(context).referralLoadFailed;
-      }
-    });
+        _stats = null; // Ensure stats is cleared on error
+      });
+    }
   }
 
   Future<void> _copyCode() async {
@@ -63,8 +73,8 @@ class _ReferralScreenState extends State<ReferralScreen> {
     final code = _stats?['referral_code']?.toString() ?? '';
     if (code.isEmpty) return;
 
-    final discountPercent = _stats?['discount_percent'] ?? 7;
-    final creditsPerReferral = _stats?['credits_per_referral'] ?? 5;
+    final discountPercent = int.tryParse(_stats?['discount_percent']?.toString() ?? '') ?? 7;
+    final creditsPerReferral = int.tryParse(_stats?['credits_per_referral']?.toString() ?? '') ?? 5;
     final l10n = AppLocalizations.of(context);
 
     final shareText = l10n.referralShareText(code, creditsPerReferral, discountPercent);
@@ -107,14 +117,15 @@ class _ReferralScreenState extends State<ReferralScreen> {
     }
 
     final code = _stats!['referral_code']?.toString() ?? '';
-    final credits = _stats!['referral_credits'] ?? 0;
-    final totalReferrals = _stats!['total_referrals'] ?? 0;
-    final totalEarned = _stats!['total_credits_earned'] ?? 0;
-    final totalUsed = _stats!['total_credits_used'] ?? 0;
-    final discountPercent = _stats!['discount_percent'] ?? 7;
-    final creditsPerReferral = _stats!['credits_per_referral'] ?? 5;
-    final pendingReferrals = _stats!['pending_referrals'] ?? 0;
-    final referrals = (_stats!['referrals'] as List?) ?? [];
+    final credits = int.tryParse(_stats!['referral_credits']?.toString() ?? '') ?? 0;
+    final totalReferrals = int.tryParse(_stats!['total_referrals']?.toString() ?? '') ?? 0;
+    final totalEarned = int.tryParse(_stats!['total_credits_earned']?.toString() ?? '') ?? 0;
+    final totalUsed = int.tryParse(_stats!['total_credits_used']?.toString() ?? '') ?? 0;
+    final discountPercent = int.tryParse(_stats!['discount_percent']?.toString() ?? '') ?? 7;
+    final creditsPerReferral = int.tryParse(_stats!['credits_per_referral']?.toString() ?? '') ?? 5;
+    final pendingReferrals = int.tryParse(_stats!['pending_referrals']?.toString() ?? '') ?? 0;
+    final referralRaw = _stats!['referrals'];
+    final referrals = (referralRaw is List) ? referralRaw : [];
 
     return Scaffold(
       appBar: AppBar(
@@ -180,8 +191,10 @@ class _ReferralScreenState extends State<ReferralScreen> {
                           code,
                           style: Theme.of(context).textTheme.headlineMedium?.copyWith(
                             fontWeight: FontWeight.w900,
-                            letterSpacing: 2,
+                            letterSpacing: 3,
                             color: cs.primary,
+                            fontFamily: 'monospace', // Monospace for code readability
+                            fontSize: code.length > 16 ? 18 : null, // Shrink for legacy codes
                           ),
                         ),
                       ),
@@ -349,7 +362,11 @@ class _ReferralScreenState extends State<ReferralScreen> {
                     itemCount: referrals.length,
                     separatorBuilder: (_, __) => const Divider(height: 1),
                     itemBuilder: (context, index) {
-                      final ref = referrals[index] as Map<String, dynamic>;
+                      final rawRef = referrals[index];
+                      if (rawRef is! Map<String, dynamic>) {
+                        return const SizedBox.shrink();
+                      }
+                      final ref = rawRef;
                       final name = ref['referred_first_name']?.toString() ??
                           ref['referred_username']?.toString() ??
                           l10n.userFallbackName;
@@ -386,7 +403,7 @@ class _ReferralScreenState extends State<ReferralScreen> {
 
                       return ListTile(
                         leading: CircleAvatar(
-                          backgroundColor: statusColor.withOpacity(0.1),
+                          backgroundColor: statusColor.withValues(alpha: 0.1),
                           child: Text(
                             name.isNotEmpty ? name[0].toUpperCase() : '?',
                             style: TextStyle(
@@ -408,7 +425,7 @@ class _ReferralScreenState extends State<ReferralScreen> {
                         trailing: Container(
                           padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                           decoration: BoxDecoration(
-                            color: statusColor.withOpacity(0.1),
+                            color: statusColor.withValues(alpha: 0.1),
                             borderRadius: BorderRadius.circular(12),
                           ),
                           child: Row(
@@ -442,7 +459,7 @@ class _ReferralScreenState extends State<ReferralScreen> {
                       Icon(
                         Icons.people_outline,
                         size: 64,
-                        color: cs.onSurfaceVariant.withOpacity(0.5),
+                        color: cs.onSurfaceVariant.withValues(alpha: 0.5),
                       ),
                       const SizedBox(height: 16),
                       Text(
@@ -457,7 +474,7 @@ class _ReferralScreenState extends State<ReferralScreen> {
                       Text(
                         l10n.shareCodeForDiscounts,
                         style: TextStyle(
-                          color: cs.onSurfaceVariant.withOpacity(0.7),
+                          color: cs.onSurfaceVariant.withValues(alpha: 0.7),
                         ),
                         textAlign: TextAlign.center,
                       ),

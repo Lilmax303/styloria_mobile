@@ -1,6 +1,7 @@
 // lib/register_screen.dart
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';  // for TextInputFormatter
 import 'package:country_state_city_pro/country_state_city_pro.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:intl_phone_field/countries.dart' as phone_countries;
@@ -275,6 +276,17 @@ class _RegisterScreenState extends State<RegisterScreen> {
       return;
     }
 
+    // For new format: need at least 8 alphanumeric chars to validate
+    // For legacy format: need at least 10 chars (STYLORIA-X)
+    final cleaned = code.replaceAll('-', '').replaceAll(' ', '');
+    if (cleaned.length < 8) {
+      setState(() {
+        _referralCodeValid = null;
+        _referrerName = null;
+      });
+      return;
+    }
+
     setState(() => _validatingReferral = true);
 
     final result = await ApiClient.validateReferralCode(code);
@@ -287,6 +299,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       _referrerName = result['referrer_first_name'];
     });
   }
+
 
   Future<void> _openUrl(String url) async {
     final uri = Uri.parse(url);
@@ -852,7 +865,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             controller: _referralCodeController,
                             decoration: InputDecoration(
                               labelText: 'Enter referral code',
-                              hintText: 'e.g., JOHN1X2K',
+                              hintText: 'e.g., XXXX-XXXX-XXXX',
                               border: const OutlineInputBorder(),
                               prefixIcon: const Icon(Icons.card_giftcard),
                               suffixIcon: _validatingReferral
@@ -871,8 +884,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                           : null,
                             ),
                             textCapitalization: TextCapitalization.characters,
+                            inputFormatters: [
+                              _ReferralCodeFormatter(),
+                            ],
                             onChanged: (value) {
-                              if (value.length >= 4) {
+                              // Strip dashes for length check
+                              final cleaned = value.replaceAll('-', '').replaceAll(' ', '');
+                              if (cleaned.length >= 8) {
                                 _validateReferralCode();
                               } else {
                                 setState(() {
@@ -1098,6 +1116,49 @@ class _RegisterScreenState extends State<RegisterScreen> {
           ),
         ),
       ),
+    );
+  }
+}
+
+
+
+/// Auto-formats referral code input as XXXX-XXXX-XXXX
+/// Also supports legacy STYLORIA-USERNAME format (passthrough)
+class _ReferralCodeFormatter extends TextInputFormatter {
+  @override
+  TextEditingValue formatEditUpdate(
+    TextEditingValue oldValue,
+    TextEditingValue newValue,
+  ) {
+    final raw = newValue.text.toUpperCase();
+
+    // If user is typing legacy format (starts with "S" for STYLORIA-), let it through
+    if (raw.startsWith('S')) {
+      return TextEditingValue(
+        text: raw,
+        selection: TextSelection.collapsed(offset: raw.length),
+      );
+    }
+
+    // Strip all non-alphanumeric characters
+    final cleaned = raw.replaceAll(RegExp(r'[^A-Z0-9]'), '');
+
+    // Cap at 12 meaningful characters
+    final capped = cleaned.length > 12 ? cleaned.substring(0, 12) : cleaned;
+
+    // Insert dashes: XXXX-XXXX-XXXX
+    final buffer = StringBuffer();
+    for (int i = 0; i < capped.length; i++) {
+      if (i > 0 && i % 4 == 0) {
+        buffer.write('-');
+      }
+      buffer.write(capped[i]);
+    }
+
+    final formatted = buffer.toString();
+    return TextEditingValue(
+      text: formatted,
+      selection: TextSelection.collapsed(offset: formatted.length),
     );
   }
 }
