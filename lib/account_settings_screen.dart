@@ -6,6 +6,8 @@ import 'about_screen.dart';
 import 'main.dart'; // LoginScreen + StyloriaApp.of(context)
 import 'support_chat_screen.dart';
 import 'api_client.dart';
+import 'onboarding_screen.dart'; // ✅ ADD THIS IMPORT
+import 'app_tab_state.dart'; // ✅ for clearProfilePictureState
 
 class AccountSettingsScreen extends StatefulWidget {
   const AccountSettingsScreen({super.key});
@@ -59,8 +61,6 @@ class _AccountSettingsScreenState extends State<AccountSettingsScreen> {
     final appState = StyloriaApp.of(context);
     final code = appState?.locale?.languageCode;
     
-    // Safety: if the current locale isn't in our dropdown list, 
-    // fall back to null (system default) to prevent DropdownButton crash
     if (code != null && !_languages.any((l) => l['code'] == code)) {
       _selectedLanguageCode = null;
     } else {
@@ -68,8 +68,12 @@ class _AccountSettingsScreenState extends State<AccountSettingsScreen> {
     }
   }
 
+  // ✅ FIX: Preserve onboarding flag during logout
   Future<void> _logout(BuildContext context) async {
-    await ApiClient.logout();
+    await OnboardingScreen.logoutPreservingOnboarding(() async {
+      await ApiClient.logout();
+      clearProfilePictureState();
+    });
     if (!context.mounted) return;
 
     Navigator.of(context).pushAndRemoveUntil(
@@ -244,7 +248,14 @@ class _AccountSettingsScreenState extends State<AccountSettingsScreen> {
       },
     );
 
+    // ✅ FIX: Preserve onboarding flag even after account deletion
+    // (User might create a new account on same device — no need to see onboarding again)
     if (submitted == true && context.mounted) {
+      await OnboardingScreen.logoutPreservingOnboarding(() async {
+        await ApiClient.logout();
+        clearProfilePictureState();
+      });
+      if (!context.mounted) return;
       Navigator.of(context).pushAndRemoveUntil(
         MaterialPageRoute(builder: (_) => const LoginScreen()),
         (route) => false,

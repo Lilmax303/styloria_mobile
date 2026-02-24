@@ -10,6 +10,8 @@ import 'package:styloria_mobile/gen_l10n/app_localizations.dart';
 
 import 'main.dart';
 import 'api_client.dart';
+import 'onboarding_screen.dart';       // ✅ ADD THIS IMPORT
+import 'app_tab_state.dart';   // ✅ for clearProfilePictureState
 
 class ProviderKycScreen extends StatefulWidget {
   final String? verificationStatus;
@@ -36,7 +38,6 @@ class _ProviderKycScreenState extends State<ProviderKycScreen> {
   String? _error;
   String? _status;
 
-  // Track if documents are locked (pending review)
   bool _isLocked = false;
 
   @override
@@ -46,7 +47,6 @@ class _ProviderKycScreenState extends State<ProviderKycScreen> {
   }
 
   void _checkIfLocked() {
-    // Lock documents if status is pending
     if (widget.verificationStatus == 'pending') {
       setState(() {
         _isLocked = true;
@@ -150,17 +150,15 @@ class _ProviderKycScreenState extends State<ProviderKycScreen> {
     try {
       XFile? x;
 
-      // Try camera first (for non-web platforms)
       if (!kIsWeb) {
         try {
           x = await _picker.pickImage(
             source: ImageSource.camera,
-            preferredCameraDevice: CameraDevice.front, // Front camera for selfie
+            preferredCameraDevice: CameraDevice.front,
             imageQuality: 85,
           );
         } catch (cameraError) {
           debugPrint('Camera not available: $cameraError');
-          // Camera failed, show option to use gallery
           if (!mounted) return;
 
           final useGallery = await _showCameraFallbackDialog();
@@ -170,11 +168,10 @@ class _ProviderKycScreenState extends State<ProviderKycScreen> {
               imageQuality: 85,
             );
           } else {
-            return; // User cancelled
+            return;
           }
         }
       } else {
-        // Web: use gallery directly
         x = await _picker.pickImage(
           source: ImageSource.gallery,
           imageQuality: 85,
@@ -198,13 +195,12 @@ class _ProviderKycScreenState extends State<ProviderKycScreen> {
   }
 
   // ═══════════════════════════════════════════════════════════════════
-  // IMAGE SOURCE DIALOG (Camera or Gallery)
+  // IMAGE SOURCE DIALOG
   // ═══════════════════════════════════════════════════════════════════
   Future<ImageSource?> _showImageSourceDialog({
     required String title,
     required String message,
   }) async {
-    // On web, always use gallery
     if (kIsWeb) {
       return ImageSource.gallery;
     }
@@ -327,26 +323,22 @@ class _ProviderKycScreenState extends State<ProviderKycScreen> {
         return;
       }
 
-      // Re-check status
       final profile = await ApiClient.getMyProviderProfileAnyStatus();
 
       if (!mounted) return;
 
       final verificationStatus = profile?['verification_status']?.toString();
 
-      // Lock documents after submission
       setState(() {
         _submitting = false;
         _isLocked = true;
         _status = l10n.kycVerificationSubmittedSuccessfully;
       });
 
-      // Show success notice with sign out prompt
       if (verificationStatus == 'pending') {
         _showSuccessNotice();
       }
 
-      // If instantly approved (unlikely), allow leaving this screen
       if (verificationStatus == 'approved') {
         if (!mounted) return;
         Navigator.of(context).pop(true);
@@ -406,8 +398,8 @@ class _ProviderKycScreenState extends State<ProviderKycScreen> {
                 children: [
                   Row(
                     children: [
-                      Icon(Icons.info_outline, 
-                        size: 20, 
+                      Icon(Icons.info_outline,
+                        size: 20,
                         color: Colors.blue.shade700,
                       ),
                       const SizedBox(width: 8),
@@ -438,8 +430,8 @@ class _ProviderKycScreenState extends State<ProviderKycScreen> {
                     ),
                     child: Row(
                       children: [
-                        Icon(Icons.lock_outline, 
-                          size: 18, 
+                        Icon(Icons.lock_outline,
+                          size: 18,
                           color: Colors.orange.shade700,
                         ),
                         const SizedBox(width: 8),
@@ -473,10 +465,14 @@ class _ProviderKycScreenState extends State<ProviderKycScreen> {
             onPressed: () => Navigator.of(context).pop(),
             child: Text(l10n.kycStaySignedIn),
           ),
+          // ✅ FIX #1: Preserve onboarding flag during sign-out from success dialog
           ElevatedButton.icon(
             onPressed: () async {
               Navigator.of(context).pop(); // Close dialog
-              await ApiClient.logout();
+              await OnboardingScreen.logoutPreservingOnboarding(() async {
+                await ApiClient.logout();
+                clearProfilePictureState();
+              });
               if (!context.mounted) return;
               Navigator.of(context).pushAndRemoveUntil(
                 MaterialPageRoute(builder: (_) => const LoginScreen()),
@@ -593,7 +589,7 @@ class _ProviderKycScreenState extends State<ProviderKycScreen> {
   Widget _buildStatusBanner() {
     final l10n = AppLocalizations.of(context)!;
     final status = widget.verificationStatus;
-    
+
     if (status == null) return const SizedBox.shrink();
 
     Color bgColor;
@@ -685,11 +681,15 @@ class _ProviderKycScreenState extends State<ProviderKycScreen> {
         title: Text(l10n.providerKycTitle),
         automaticallyImplyLeading: false,
         actions: [
+          // ✅ FIX #2: Preserve onboarding flag during AppBar logout
           IconButton(
             tooltip: l10n.logoutTooltip,
             icon: const Icon(Icons.logout),
             onPressed: () async {
-              await ApiClient.logout();
+              await OnboardingScreen.logoutPreservingOnboarding(() async {
+                await ApiClient.logout();
+                clearProfilePictureState();
+              });
               if (!context.mounted) return;
               Navigator.of(context).pushAndRemoveUntil(
                 MaterialPageRoute(builder: (_) => const LoginScreen()),
@@ -704,11 +704,9 @@ class _ProviderKycScreenState extends State<ProviderKycScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            // Status Banner
             _buildStatusBanner(),
             const SizedBox(height: 20),
 
-            // Rejection Notes (if rejected)
             if (widget.verificationStatus == 'rejected' &&
                 (widget.reviewNotes ?? '').trim().isNotEmpty)
               Container(
@@ -746,16 +744,13 @@ class _ProviderKycScreenState extends State<ProviderKycScreen> {
             if (widget.verificationStatus == 'rejected')
               const SizedBox(height: 20),
 
-            // Instructions
             Text(
               l10n.kycInstructions,
               style: const TextStyle(fontSize: 14),
             ),
             const SizedBox(height: 20),
 
-            // ═══════════════════════════════════════════════════════════
             // ID FRONT
-            // ═══════════════════════════════════════════════════════════
             Text(
               l10n.kycIdCardFront,
               style: TextStyle(
@@ -778,9 +773,7 @@ class _ProviderKycScreenState extends State<ProviderKycScreen> {
 
             const SizedBox(height: 20),
 
-            // ═══════════════════════════════════════════════════════════
             // ID BACK
-            // ═══════════════════════════════════════════════════════════
             Text(
               l10n.kycIdCardBack,
               style: TextStyle(
@@ -803,9 +796,7 @@ class _ProviderKycScreenState extends State<ProviderKycScreen> {
 
             const SizedBox(height: 20),
 
-            // ═══════════════════════════════════════════════════════════
             // SELFIE
-            // ═══════════════════════════════════════════════════════════
             Text(
               l10n.kycVerificationSelfie,
               style: TextStyle(
@@ -832,9 +823,6 @@ class _ProviderKycScreenState extends State<ProviderKycScreen> {
 
             const SizedBox(height: 20),
 
-            // ═══════════════════════════════════════════════════════════
-            // ERROR / STATUS MESSAGES
-            // ═══════════════════════════════════════════════════════════
             if (_error != null)
               Container(
                 padding: const EdgeInsets.all(12),
@@ -879,9 +867,6 @@ class _ProviderKycScreenState extends State<ProviderKycScreen> {
 
             const SizedBox(height: 16),
 
-            // ═══════════════════════════════════════════════════════════
-            // SUBMIT BUTTON
-            // ═══════════════════════════════════════════════════════════
             ElevatedButton(
               onPressed: (_submitting || _isLocked) ? null : _submit,
               style: ElevatedButton.styleFrom(
@@ -901,9 +886,6 @@ class _ProviderKycScreenState extends State<ProviderKycScreen> {
 
             const SizedBox(height: 16),
 
-            // ═══════════════════════════════════════════════════════════
-            // HELPFUL TIPS
-            // ═══════════════════════════════════════════════════════════
             Container(
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
@@ -916,8 +898,8 @@ class _ProviderKycScreenState extends State<ProviderKycScreen> {
                 children: [
                   Row(
                     children: [
-                      Icon(Icons.lightbulb_outline, 
-                        size: 18, 
+                      Icon(Icons.lightbulb_outline,
+                        size: 18,
                         color: Colors.amber.shade700,
                       ),
                       const SizedBox(width: 8),

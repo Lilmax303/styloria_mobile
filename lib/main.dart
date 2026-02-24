@@ -552,7 +552,8 @@ class _AuthGateState extends State<AuthGate> {
     if (!mounted) return;
 
     if (userData == null) {
-      await ApiClient.logout();
+      // ✅ FIX: Preserve onboarding flag during logout
+      await OnboardingScreen.logoutPreservingOnboarding(() => ApiClient.logout());
       clearProfilePictureState();
       if (!mounted) return;
       setState(() {
@@ -567,7 +568,8 @@ class _AuthGateState extends State<AuthGate> {
 
     // 3) Email verification gate
     if (!emailVerified) {
-      await ApiClient.logout();
+      // ✅ FIX: Preserve onboarding flag during logout
+      await OnboardingScreen.logoutPreservingOnboarding(() => ApiClient.logout());
       clearProfilePictureState();
       if (!mounted) return;
       setState(() {
@@ -1656,7 +1658,10 @@ class _HomeScreenState extends State<HomeScreen> {
                         IconButton(
                           icon: const Icon(Icons.logout, color: Colors.white),
                           onPressed: () async {
-                            await ApiClient.logout();
+                            // ✅ FIX: Preserve onboarding flag during logout
+                            await OnboardingScreen.logoutPreservingOnboarding(
+                              () => ApiClient.logout(),
+                            );
                             clearProfilePictureState();
                             if (!context.mounted) return;
                             Navigator.of(context).pushAndRemoveUntil(
