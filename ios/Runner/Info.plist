@@ -34,13 +34,22 @@
 
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 
-	<!-- Deep link support -->
+	<!-- ================================== -->
+	<!-- ENCRYPTION DECLARATION -->
+	<!-- ================================== -->
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
+
+	<!-- ================================== -->
+	<!-- DEEP LINK SUPPORT -->
+	<!-- ================================== -->
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -55,6 +64,9 @@
 		</dict>
 	</array>
 
+	<!-- ================================== -->
+	<!-- ORIENTATION SUPPORT -->
+	<!-- ================================== -->
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
@@ -69,6 +81,9 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 
+	<!-- ================================== -->
+	<!-- FLUTTER & MAPS -->
+	<!-- ================================== -->
 	<key>io.flutter.embedded_views_preview</key>
 	<string>YES</string>
 
@@ -80,27 +95,26 @@
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
 
-	<!-- Location Permissions -->
+	<!-- ================================== -->
+	<!-- LOCATION PERMISSIONS -->
+	<!-- ================================== -->
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>This app needs access to location to match you with nearby clients</string>
+	<string>Styloria needs your location to match you with nearby beauty service providers and to set your service delivery address.</string>
 
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>This app needs access to location to update your availability for jobs</string>
+	<string>Styloria needs your location to keep your availability updated for nearby service requests and provide real-time location-based matching.</string>
 
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>This app needs access to location to match you with nearby clients and provide location-based services.</string>
+	<string>Styloria needs your location to match you with nearby beauty service providers, update your availability for service requests, and provide real-time location-based services.</string>
 
-	<!-- Camera & Photo Permissions - NEW -->
+	<!-- ================================== -->
+	<!-- CAMERA & PHOTO PERMISSIONS -->
+	<!-- ================================== -->
 	<key>NSCameraUsageDescription</key>
-	<string>We need camera access to take your verification selfie and ID photos</string>
+	<string>Styloria needs camera access to capture your verification selfie and ID documents for identity verification.</string>
 
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>We need photo library access to upload your ID documents</string>
+	<string>Styloria needs access to your photo library to upload your profile picture, portfolio photos and videos, and identity verification documents.</string>
 
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>We need permission to save photos to your library</string>
-
-	<key>NSMicrophoneUsageDescription</key>
-	<string>We need microphone access for video recording</string>
 </dict>
 </plist>
