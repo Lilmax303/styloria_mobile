@@ -41,6 +41,33 @@
       "name": {}
     }
   },
+
+  "previewBookNowLabel": "BUCHEN",
+  "previewLoginPromptTitle": "Anmelden zum Buchen",
+  "previewLoginPromptSubtitle": "Erstelle ein kostenloses Konto oder melde dich an, um diesen und viele weitere Services zu buchen!",
+
+  "ageRestrictionTitle": "Nur ab 18 Jahren",
+  "ageRestrictionBody": "Du musst mindestens 18 Jahre alt sein, um dich bei Styloria zu registrieren und es zu nutzen. Eine Überprüfung des Geburtsdatums ist erforderlich.",
+  "ageRestrictionInline": "Du musst mindestens 18 Jahre alt sein, um Styloria zu nutzen.",
+
+  "previewTagline": "BEAUTY AUF ABRUF",
+  "previewServicesTitle": "Verfügbare Dienstleistungen",
+  "previewServicesSubtitle": "Entdecke unser breites Angebot an Beauty-Services",
+  "previewServiceHaircut": "Haarschnitt",
+  "previewServiceMakeup": "Make-up",
+  "previewServiceMassage": "Massage",
+  "previewServiceNailArt": "Nageldesign",
+  "previewServiceFacial": "Gesichtsbehandlung",
+  "previewServiceHairColoring": "Haarfärbung",
+  "previewAndMore": "+ viele weitere Services verfügbar",
+  "previewFeatureBrowse": "Entdecke Top-Beauty-Services in deiner Nähe",
+  "previewFeatureVerified": "Nur geprüfte und vertrauenswürdige Anbieter",
+  "previewFeatureSecurePay": "Sichere und geschützte Zahlungen",
+  "previewFeatureReviews": "Echte Bewertungen von echten Kunden",
+  "previewGetStarted": "Loslegen - Konto erstellen",
+  "previewAlreadyHaveAccount": "Ich habe bereits ein Konto - Anmelden",
+  "previewFooterNote": "Durch Fortfahren stimmst du unseren Nutzungsbedingungen und der Datenschutzrichtlinie zu. Mindestalter 18 Jahre.",
+
   "deletionReason1": "Ich brauche Styloria nicht mehr",
   "deletionReason2": "Probleme bei der Kontoverifizierung (E-Mail/KYC)",
   "deletionReason3": "Keine Services/Anbieter in meiner Nähe gefunden",

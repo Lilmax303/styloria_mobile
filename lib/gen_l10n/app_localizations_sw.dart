@@ -65,6 +65,27 @@ class AppLocalizationsSw extends AppLocalizations {
       'Tazama sera na makubaliano ya mtumiaji';
 
   @override
+  String get previewBookNowLabel => 'WEKA NAFASI';
+
+  @override
+  String get previewLoginPromptTitle => 'Ingia ili kuweka nafasi';
+
+  @override
+  String get previewLoginPromptSubtitle =>
+      'Fungua akaunti ya bure au ingia ili kuweka nafasi ya huduma hii na nyingine nyingi!';
+
+  @override
+  String get ageRestrictionTitle => '18+ Pekee';
+
+  @override
+  String get ageRestrictionBody =>
+      'Lazima uwe na umri wa miaka 18 au zaidi ili kusajili na kutumia Styloria. Uthibitishaji wa tarehe ya kuzaliwa unahitajika.';
+
+  @override
+  String get ageRestrictionInline =>
+      'Lazima uwe na umri wa miaka 18 au zaidi kutumia Styloria.';
+
+  @override
   String get logOut => 'Toka';
 
   @override
@@ -133,6 +154,60 @@ class AppLocalizationsSw extends AppLocalizations {
 
   @override
   String get yourNotes => 'Your Notes';
+
+  @override
+  String get previewTagline => 'UZURI KWA MAHITAJI';
+
+  @override
+  String get previewServicesTitle => 'Huduma Zinazopatikana';
+
+  @override
+  String get previewServicesSubtitle => 'Vinjari huduma zetu nyingi za urembo';
+
+  @override
+  String get previewServiceHaircut => 'Kunyoa nywele';
+
+  @override
+  String get previewServiceMakeup => 'Mapambo ya uso';
+
+  @override
+  String get previewServiceMassage => 'Masaji';
+
+  @override
+  String get previewServiceNailArt => 'Sanaa ya kucha';
+
+  @override
+  String get previewServiceFacial => 'Utunzaji wa uso';
+
+  @override
+  String get previewServiceHairColoring => 'Kupaka rangi nywele';
+
+  @override
+  String get previewAndMore => '+ huduma nyingi zaidi zinazopatikana';
+
+  @override
+  String get previewFeatureBrowse =>
+      'Chunguza huduma bora za urembo karibu nawe';
+
+  @override
+  String get previewFeatureVerified =>
+      'Watoa huduma walioidhinishwa na kuaminika tu';
+
+  @override
+  String get previewFeatureSecurePay => 'Malipo salama na yaliyolindwa';
+
+  @override
+  String get previewFeatureReviews => 'Maoni halisi kutoka kwa wateja halisi';
+
+  @override
+  String get previewGetStarted => 'Anza - Fungua akaunti';
+
+  @override
+  String get previewAlreadyHaveAccount => 'Tayari nina akaunti - Ingia';
+
+  @override
+  String get previewFooterNote =>
+      'Kwa kuendelea, unakubali Masharti ya Huduma na Sera ya Faragha yetu. Lazima uwe na umri wa miaka 18 au zaidi kusajili.';
 
   @override
   String get forgotPassword => 'Forgot Password?';

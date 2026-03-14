@@ -41,6 +41,33 @@
       "name": {}
     }
   },
+
+  "previewBookNowLabel": "RÉSERVER",
+  "previewLoginPromptTitle": "Connectez-vous pour réserver",
+  "previewLoginPromptSubtitle": "Créez un compte gratuit ou connectez-vous pour réserver ce service et bien d'autres!",
+
+  "ageRestrictionTitle": "18 ans et plus uniquement",
+  "ageRestrictionBody": "Vous devez avoir au moins 18 ans pour vous inscrire et utiliser Styloria. La vérification de la date de naissance est obligatoire.",
+  "ageRestrictionInline": "Vous devez avoir au moins 18 ans pour utiliser Styloria.",
+
+  "previewTagline": "BEAUTÉ À LA DEMANDE",
+  "previewServicesTitle": "Services Disponibles",
+  "previewServicesSubtitle": "Parcourez notre large gamme de services de beauté",
+  "previewServiceHaircut": "Coupe de cheveux",
+  "previewServiceMakeup": "Maquillage",
+  "previewServiceMassage": "Massage",
+  "previewServiceNailArt": "Nail Art",
+  "previewServiceFacial": "Soin du visage",
+  "previewServiceHairColoring": "Coloration",
+  "previewAndMore": "+ bien d'autres services disponibles",
+  "previewFeatureBrowse": "Explorez les meilleurs services de beauté près de chez vous",
+  "previewFeatureVerified": "Prestataires vérifiés et de confiance uniquement",
+  "previewFeatureSecurePay": "Paiements sûrs et sécurisés",
+  "previewFeatureReviews": "Vrais avis de vrais clients",
+  "previewGetStarted": "Commencer - Créer un compte",
+  "previewAlreadyHaveAccount": "J'ai déjà un compte - Se connecter",
+  "previewFooterNote": "En continuant, vous acceptez nos Conditions d'utilisation et notre Politique de confidentialité. Doit avoir 18 ans ou plus pour s'inscrire.",
+
   "deletionReason1": "Je n’ai plus besoin de Styloria",
   "deletionReason2": "J’ai eu des difficultés à vérifier mon compte (e-mail/KYC)",
   "deletionReason3": "Je n’ai pas trouvé de services/prestataires près de chez moi",

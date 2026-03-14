@@ -24,7 +24,7 @@ class AppLocalizationsAk extends AppLocalizations {
   String get openJobs => 'Adwuma a ɛda hɔ';
 
   @override
-  String get earnings => 'Mfaso';
+  String get earnings => 'Sika a woanya';
 
   @override
   String get paymentMethods => 'Sika tua akwan';
@@ -55,13 +55,34 @@ class AppLocalizationsAk extends AppLocalizations {
   String get helpAndSupport => 'Mmoa ne Support';
 
   @override
-  String get chatWithCustomerService => 'Kasa ne customer service';
+  String get chatWithCustomerService => 'Ɛne Customer Service ɛnkasa';
 
   @override
   String get aboutAndPolicies => 'Fa ho ne mmara';
 
   @override
   String get viewUserPoliciesAndAgreements => 'Hwɛ user mmara ne apam';
+
+  @override
+  String get previewBookNowLabel => 'HYƐ ASE';
+
+  @override
+  String get previewLoginPromptTitle => 'Ko mu na hyɛ ase';
+
+  @override
+  String get previewLoginPromptSubtitle =>
+      'Yɛ account efiri ho anaa ko mu na hyɛ dwumadie yi ne afoforo ase!';
+
+  @override
+  String get ageRestrictionTitle => 'Mfie 18 Ne Soro Nkoaa';
+
+  @override
+  String get ageRestrictionBody =>
+      'Ɛsɛ sɛ wowɔ mfie 18 a ɛboro soro wɔ Styloria ho nkaeɛ ne dwumadie mu. Wɔhia wo awoda kronkron.';
+
+  @override
+  String get ageRestrictionInline =>
+      'Ɛsɛ sɛ wowɔ mfie 18 a ɛboro soro wɔ Styloria dwumadie mu.';
 
   @override
   String get logOut => 'Pue (log out)';
@@ -133,6 +154,59 @@ class AppLocalizationsAk extends AppLocalizations {
 
   @override
   String get yourNotes => 'Your Notes';
+
+  @override
+  String get previewTagline => 'AHOFAM DWUMA WƆ W\'ANIMUONYAM MU';
+
+  @override
+  String get previewServicesTitle => 'Dwumadie a Wɔwɔ';
+
+  @override
+  String get previewServicesSubtitle => 'Hwɛ yɛn dwumadie ahofam pii';
+
+  @override
+  String get previewServiceHaircut => 'Tirim twa';
+
+  @override
+  String get previewServiceMakeup => 'Ahoahoa';
+
+  @override
+  String get previewServiceMassage => 'Massage';
+
+  @override
+  String get previewServiceNailArt => 'Ntikuma dwumadie';
+
+  @override
+  String get previewServiceFacial => 'Anim ho dwumadie';
+
+  @override
+  String get previewServiceHairColoring => 'Ti ho kolor';
+
+  @override
+  String get previewAndMore => '+ dwumadie foforɔ bi ka ho';
+
+  @override
+  String get previewFeatureBrowse => 'Hwɛ ahofam dwumadie pa a ɛbɛn wo';
+
+  @override
+  String get previewFeatureVerified =>
+      'Adwumayɛfoɔ a wɔakyerɛ sɛ wɔyɛ nokwarefoɔ nkoaa';
+
+  @override
+  String get previewFeatureSecurePay => 'Tua ka a ɛhia na ɛkɔ baabi pa';
+
+  @override
+  String get previewFeatureReviews => 'Adiyifoɔ nokware fi adiyifoɔ nokware ho';
+
+  @override
+  String get previewGetStarted => 'Hyɛ Ase - Yɛ Account';
+
+  @override
+  String get previewAlreadyHaveAccount => 'Me wɔ account dada - Ko mu';
+
+  @override
+  String get previewFooterNote =>
+      'Sɛ wukɔ so a, wukɔ bo asuolɛ wɔ yɛn Mfasoɔ Ho Mmara ne Ɔhaw Ho Dwumadie. Ɛsɛ sɛ wowɔ mfe 18 sɛ wobɛhyɛ ase.';
 
   @override
   String get forgotPassword => 'Forgot Password?';
@@ -869,22 +943,22 @@ class AppLocalizationsAk extends AppLocalizations {
   String get firstName => 'Edin a edi kan';
 
   @override
-  String get lastName => 'Edin a ɛto so abien';
+  String get lastName => 'Woabusua din';
 
   @override
-  String get selectDateOfBirth => 'Paw wo da a wo woo wo';
+  String get selectDateOfBirth => 'Wo awo da';
 
   @override
   String get phoneNumber => 'Telefon nɔma';
 
   @override
-  String get pleaseEnterPhoneNumber => 'Yɛsrɛ wo kyerɛ telefon nɔma';
+  String get pleaseEnterPhoneNumber => 'Yɛsrɛ wo twerɛ wo telefon nɔma';
 
   @override
   String get accountInformation => 'Akaunt nsɛm';
 
   @override
-  String get chooseUniqueUsernameHint => 'Paw username a obi nnim';
+  String get chooseUniqueUsernameHint => 'Twerɛ wo username a obi nnim';
 
   @override
   String get youAreCurrentlyUnavailable => 'Wontumi mfa wo ho mma seesei';
@@ -974,7 +1048,7 @@ class AppLocalizationsAk extends AppLocalizations {
   String get createAccountButton => 'Bɔ Akaunt';
 
   @override
-  String get alreadyHaveAccount => 'Wowɔ akaunt dedaw?';
+  String get alreadyHaveAccount => 'Wowɔ akaunt deda?';
 
   @override
   String get emailVerifiedSuccessPleaseLogin =>

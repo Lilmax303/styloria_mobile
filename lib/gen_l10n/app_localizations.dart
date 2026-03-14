@@ -238,6 +238,42 @@ abstract class AppLocalizations {
   /// **'View user policies and agreements'**
   String get viewUserPoliciesAndAgreements;
 
+  /// No description provided for @previewBookNowLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'BOOK NOW'**
+  String get previewBookNowLabel;
+
+  /// No description provided for @previewLoginPromptTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign In to Book'**
+  String get previewLoginPromptTitle;
+
+  /// No description provided for @previewLoginPromptSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Create a free account or sign in to book this service and many more!'**
+  String get previewLoginPromptSubtitle;
+
+  /// No description provided for @ageRestrictionTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'18+ Only'**
+  String get ageRestrictionTitle;
+
+  /// No description provided for @ageRestrictionBody.
+  ///
+  /// In en, this message translates to:
+  /// **'You must be at least 18 years old to register and use Styloria. Date of birth verification is required.'**
+  String get ageRestrictionBody;
+
+  /// No description provided for @ageRestrictionInline.
+  ///
+  /// In en, this message translates to:
+  /// **'You must be at least 18 years old to use Styloria.'**
+  String get ageRestrictionInline;
+
   /// No description provided for @logOut.
   ///
   /// In en, this message translates to:
@@ -363,6 +399,108 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Your Notes'**
   String get yourNotes;
+
+  /// No description provided for @previewTagline.
+  ///
+  /// In en, this message translates to:
+  /// **'BEAUTY ON-DEMAND'**
+  String get previewTagline;
+
+  /// No description provided for @previewServicesTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Services Available'**
+  String get previewServicesTitle;
+
+  /// No description provided for @previewServicesSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Browse our wide range of beauty services'**
+  String get previewServicesSubtitle;
+
+  /// No description provided for @previewServiceHaircut.
+  ///
+  /// In en, this message translates to:
+  /// **'Haircut'**
+  String get previewServiceHaircut;
+
+  /// No description provided for @previewServiceMakeup.
+  ///
+  /// In en, this message translates to:
+  /// **'Makeup'**
+  String get previewServiceMakeup;
+
+  /// No description provided for @previewServiceMassage.
+  ///
+  /// In en, this message translates to:
+  /// **'Massage'**
+  String get previewServiceMassage;
+
+  /// No description provided for @previewServiceNailArt.
+  ///
+  /// In en, this message translates to:
+  /// **'Nail Art'**
+  String get previewServiceNailArt;
+
+  /// No description provided for @previewServiceFacial.
+  ///
+  /// In en, this message translates to:
+  /// **'Facial'**
+  String get previewServiceFacial;
+
+  /// No description provided for @previewServiceHairColoring.
+  ///
+  /// In en, this message translates to:
+  /// **'Hair Coloring'**
+  String get previewServiceHairColoring;
+
+  /// No description provided for @previewAndMore.
+  ///
+  /// In en, this message translates to:
+  /// **'+ many more services available'**
+  String get previewAndMore;
+
+  /// No description provided for @previewFeatureBrowse.
+  ///
+  /// In en, this message translates to:
+  /// **'Explore top beauty services near you'**
+  String get previewFeatureBrowse;
+
+  /// No description provided for @previewFeatureVerified.
+  ///
+  /// In en, this message translates to:
+  /// **'Verified and trusted providers only'**
+  String get previewFeatureVerified;
+
+  /// No description provided for @previewFeatureSecurePay.
+  ///
+  /// In en, this message translates to:
+  /// **'Safe and secure payments'**
+  String get previewFeatureSecurePay;
+
+  /// No description provided for @previewFeatureReviews.
+  ///
+  /// In en, this message translates to:
+  /// **'Real reviews from real customers'**
+  String get previewFeatureReviews;
+
+  /// No description provided for @previewGetStarted.
+  ///
+  /// In en, this message translates to:
+  /// **'Get Started - Create Account'**
+  String get previewGetStarted;
+
+  /// No description provided for @previewAlreadyHaveAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'I already have an account - Sign In'**
+  String get previewAlreadyHaveAccount;
+
+  /// No description provided for @previewFooterNote.
+  ///
+  /// In en, this message translates to:
+  /// **'By continuing, you agree to our Terms of Service and Privacy Policy. Must be 18+ to register.'**
+  String get previewFooterNote;
 
   /// No description provided for @forgotPassword.
   ///

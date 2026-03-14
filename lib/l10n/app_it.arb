@@ -41,6 +41,29 @@
       "name": {}
     }
   },
+
+  "previewBookNowLabel": "PRENOTA ORA",
+  "previewLoginPromptTitle": "Accedi per prenotare",
+  "previewLoginPromptSubtitle": "Crea un account gratuito o accedi per prenotare questo e molti altri servizi!",
+
+  "previewTagline": "BELLEZZA SU RICHIESTA",
+  "previewServicesTitle": "Servizi Disponibili",
+  "previewServicesSubtitle": "Esplora la nostra vasta gamma di servizi di bellezza",
+  "previewServiceHaircut": "Taglio capelli",
+  "previewServiceMakeup": "Trucco",
+  "previewServiceMassage": "Massaggio",
+  "previewServiceNailArt": "Nail Art",
+  "previewServiceFacial": "Trattamento viso",
+  "previewServiceHairColoring": "Colorazione capelli",
+  "previewAndMore": "+ molti altri servizi disponibili",
+  "previewFeatureBrowse": "Esplora i migliori servizi di bellezza vicino a te",
+  "previewFeatureVerified": "Solo professionisti verificati e affidabili",
+  "previewFeatureSecurePay": "Pagamenti sicuri e protetti",
+  "previewFeatureReviews": "Recensioni reali da clienti reali",
+  "previewGetStarted": "Inizia - Crea account",
+  "previewAlreadyHaveAccount": "Ho già un account - Accedi",
+  "previewFooterNote": "Continuando, accetti i nostri Termini di servizio e la Politica sulla privacy. Devi avere almeno 18 anni per registrarti.",
+
   "deletionReason1": "Non ho più bisogno di Styloria",
   "deletionReason2": "Ho avuto problemi a verificare l’account (email/KYC)",
   "deletionReason3": "Non ho trovato servizi/provider vicino a me",
@@ -136,6 +159,11 @@
       "name": {}
     }
   },
+
+  "ageRestrictionTitle": "Solo per maggiori di 18 anni",
+  "ageRestrictionBody": "Devi avere almeno 18 anni per registrarti e utilizzare Styloria. È richiesta la verifica della data di nascita.",
+  "ageRestrictionInline": "Devi avere almeno 18 anni per utilizzare Styloria.",
+
   "deviceCannotPlaceCalls": "Questo dispositivo non può effettuare chiamate telefoniche.",
   "cancelBookingDialogTitle": "Annulla prenotazione",
   "cancelBookingDialogBody": "Vuoi davvero annullare questa prenotazione?\n\nNota: se il fornitore ha già accettato e sono passati più di 7 minuti (ma meno di circa 40 minuti), potrebbe essere applicata una penale secondo le regole.",

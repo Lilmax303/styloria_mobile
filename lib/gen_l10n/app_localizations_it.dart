@@ -65,6 +65,27 @@ class AppLocalizationsIt extends AppLocalizations {
       'Visualizza policy e accordi utente';
 
   @override
+  String get previewBookNowLabel => 'PRENOTA ORA';
+
+  @override
+  String get previewLoginPromptTitle => 'Accedi per prenotare';
+
+  @override
+  String get previewLoginPromptSubtitle =>
+      'Crea un account gratuito o accedi per prenotare questo e molti altri servizi!';
+
+  @override
+  String get ageRestrictionTitle => 'Solo per maggiori di 18 anni';
+
+  @override
+  String get ageRestrictionBody =>
+      'Devi avere almeno 18 anni per registrarti e utilizzare Styloria. È richiesta la verifica della data di nascita.';
+
+  @override
+  String get ageRestrictionInline =>
+      'Devi avere almeno 18 anni per utilizzare Styloria.';
+
+  @override
   String get logOut => 'Esci';
 
   @override
@@ -134,6 +155,61 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get yourNotes => 'Your Notes';
+
+  @override
+  String get previewTagline => 'BELLEZZA SU RICHIESTA';
+
+  @override
+  String get previewServicesTitle => 'Servizi Disponibili';
+
+  @override
+  String get previewServicesSubtitle =>
+      'Esplora la nostra vasta gamma di servizi di bellezza';
+
+  @override
+  String get previewServiceHaircut => 'Taglio capelli';
+
+  @override
+  String get previewServiceMakeup => 'Trucco';
+
+  @override
+  String get previewServiceMassage => 'Massaggio';
+
+  @override
+  String get previewServiceNailArt => 'Nail Art';
+
+  @override
+  String get previewServiceFacial => 'Trattamento viso';
+
+  @override
+  String get previewServiceHairColoring => 'Colorazione capelli';
+
+  @override
+  String get previewAndMore => '+ molti altri servizi disponibili';
+
+  @override
+  String get previewFeatureBrowse =>
+      'Esplora i migliori servizi di bellezza vicino a te';
+
+  @override
+  String get previewFeatureVerified =>
+      'Solo professionisti verificati e affidabili';
+
+  @override
+  String get previewFeatureSecurePay => 'Pagamenti sicuri e protetti';
+
+  @override
+  String get previewFeatureReviews => 'Recensioni reali da clienti reali';
+
+  @override
+  String get previewGetStarted => 'Inizia - Crea account';
+
+  @override
+  String get previewAlreadyHaveAccount => 'Ho già un account - Accedi';
+
+  @override
+  String get previewFooterNote =>
+      'Continuando, accetti i nostri Termini di servizio e la Politica sulla privacy. Devi avere almeno 18 anni per registrarti.';
 
   @override
   String get forgotPassword => 'Forgot Password?';

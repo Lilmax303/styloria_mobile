@@ -63,6 +63,26 @@ class AppLocalizationsAm extends AppLocalizations {
   String get viewUserPoliciesAndAgreements => 'የተጠቃሚ ፖሊሲዎችን እና ስምምነቶችን ይመልከቱ';
 
   @override
+  String get previewBookNowLabel => 'አሁን ይያዙ';
+
+  @override
+  String get previewLoginPromptTitle => 'ለመያዝ ይግቡ';
+
+  @override
+  String get previewLoginPromptSubtitle =>
+      'ይህንን እና ሌሎች ብዙ አገልግሎቶችን ለመያዝ ነፃ መለያ ይፍጠሩ ወይም ይግቡ!';
+
+  @override
+  String get ageRestrictionTitle => 'ከ18 ዓመት በላይ ብቻ';
+
+  @override
+  String get ageRestrictionBody =>
+      'Styloriaን ለመመዝገብ እና ለመጠቀም ቢያንስ 18 ዓመት ሊኖርዎ ይገባል። የልደት ቀን ማረጋገጫ ያስፈልጋል።';
+
+  @override
+  String get ageRestrictionInline => 'Styloriaን ለመጠቀም ቢያንስ 18 ዓመት ሊኖርዎ ይገባል።';
+
+  @override
   String get logOut => 'ውጣ';
 
   @override
@@ -128,6 +148,58 @@ class AppLocalizationsAm extends AppLocalizations {
 
   @override
   String get yourNotes => 'Your Notes';
+
+  @override
+  String get previewTagline => 'ውበት በፍላጎት';
+
+  @override
+  String get previewServicesTitle => 'የሚገኙ አገልግሎቶች';
+
+  @override
+  String get previewServicesSubtitle => 'የእኛን ሰፊ የውበት አገልግሎቶች ያስሱ';
+
+  @override
+  String get previewServiceHaircut => 'የፀጉር ቅርጽ';
+
+  @override
+  String get previewServiceMakeup => 'ሜካፕ';
+
+  @override
+  String get previewServiceMassage => 'ማሳጅ';
+
+  @override
+  String get previewServiceNailArt => 'የጥፍር ጥበብ';
+
+  @override
+  String get previewServiceFacial => 'የፊት እንክብካቤ';
+
+  @override
+  String get previewServiceHairColoring => 'የፀጉር ቀለም';
+
+  @override
+  String get previewAndMore => '+ ሌሎች ብዙ አገልግሎቶች ይገኛሉ';
+
+  @override
+  String get previewFeatureBrowse => 'በአቅራቢያዎ ያሉ ምርጥ የውበት አገልግሎቶችን ያስሱ';
+
+  @override
+  String get previewFeatureVerified => 'የተረጋገጡ እና የሚታመኑ አቅራቢዎች ብቻ';
+
+  @override
+  String get previewFeatureSecurePay => 'ደህንነቱ የተጠበቀ ክፍያ';
+
+  @override
+  String get previewFeatureReviews => 'ከእውነተኛ ደንበኞች እውነተኛ ግምገማዎች';
+
+  @override
+  String get previewGetStarted => 'ጀምር - መለያ ፍጠር';
+
+  @override
+  String get previewAlreadyHaveAccount => 'አስቀድሜ መለያ አለኝ - ግባ';
+
+  @override
+  String get previewFooterNote =>
+      'በመቀጠል፣ የአገልግሎት ውሎቻችንን እና የግላዊነት ፖሊሲያችንን ተቀብለዋለህ። ለመመዝገብ ቢያንስ 18 ዓመት ሊኖርዎ ይገባል።';
 
   @override
   String get forgotPassword => 'Forgot Password?';

@@ -41,6 +41,33 @@
       "name": {}
     }
   },
+
+  "previewBookNowLabel": "今すぐ予約",
+  "previewLoginPromptTitle": "予約するにはサインイン",
+  "previewLoginPromptSubtitle": "無料アカウントを作成またはサインインして、このサービスや他の多くのサービスを予約しましょう！",
+
+  "previewTagline": "ビューティー・オンデマンド",
+  "previewServicesTitle": "利用可能なサービス",
+  "previewServicesSubtitle": "幅広いビューティーサービスをご覧ください",
+  "previewServiceHaircut": "ヘアカット",
+  "previewServiceMakeup": "メイクアップ",
+  "previewServiceMassage": "マッサージ",
+  "previewServiceNailArt": "ネイルアート",
+  "previewServiceFacial": "フェイシャル",
+  "previewServiceHairColoring": "ヘアカラー",
+  "previewAndMore": "+ さらに多くのサービスが利用可能",
+  "previewFeatureBrowse": "あなたの近くのトップビューティーサービスを探そう",
+  "previewFeatureVerified": "認証済みの信頼できるプロバイダーのみ",
+  "previewFeatureSecurePay": "安全で保護された支払い",
+  "previewFeatureReviews": "実際のお客様からの本物のレビュー",
+  "previewGetStarted": "始める - アカウント作成",
+  "previewAlreadyHaveAccount": "すでにアカウントをお持ちの方 - サインイン",
+  "previewFooterNote": "続行することで、利用規約とプライバシーポリシーに同意したことになります。登録には18歳以上である必要があります。",
+
+  "ageRestrictionTitle": "18歳以上限定",
+  "ageRestrictionBody": "Styloriaに登録してご利用いただくには、18歳以上である必要があります。生年月日の確認が必要です。",
+  "ageRestrictionInline": "Styloriaをご利用いただくには、18歳以上である必要があります。",
+
   "deletionReason1": "Styloriaが不要になった",
   "deletionReason2": "アカウント確認（メール/KYC）で問題があった",
   "deletionReason3": "近くのサービス/提供者が見つからなかった",

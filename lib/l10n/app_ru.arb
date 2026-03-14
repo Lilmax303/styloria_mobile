@@ -41,6 +41,33 @@
       "name": {}
     }
   },
+
+  "previewBookNowLabel": "ЗАПИСАТЬСЯ",
+  "previewLoginPromptTitle": "Войдите для записи",
+  "previewLoginPromptSubtitle": "Создайте бесплатный аккаунт или войдите, чтобы записаться на эту и другие услуги!",
+
+  "previewTagline": "КРАСОТА ПО ТРЕБОВАНИЮ",
+  "previewServicesTitle": "Доступные услуги",
+  "previewServicesSubtitle": "Ознакомьтесь с нашим широким спектром услуг красоты",
+  "previewServiceHaircut": "Стрижка",
+  "previewServiceMakeup": "Макияж",
+  "previewServiceMassage": "Массаж",
+  "previewServiceNailArt": "Дизайн ногтей",
+  "previewServiceFacial": "Уход за лицом",
+  "previewServiceHairColoring": "Окрашивание волос",
+  "previewAndMore": "+ ещё много услуг",
+  "previewFeatureBrowse": "Исследуйте лучшие услуги красоты рядом с вами",
+  "previewFeatureVerified": "Только проверенные мастера",
+  "previewFeatureSecurePay": "Безопасные платежи",
+  "previewFeatureReviews": "Реальные отзывы реальных клиентов",
+  "previewGetStarted": "Начать - Создать аккаунт",
+  "previewAlreadyHaveAccount": "У меня уже есть аккаунт - Войти",
+  "previewFooterNote": "Продолжая, вы соглашаетесь с нашими Условиями использования и Политикой конфиденциальности. Возраст 18+.",
+
+  "ageRestrictionTitle": "Только 18+",
+  "ageRestrictionBody": "Вам должно быть не менее 18 лет для регистрации и использования Styloria. Требуется подтверждение даты рождения.",
+  "ageRestrictionInline": "Вам должно быть не менее 18 лет для использования Styloria.",
+
   "deletionReason1": "Мне больше не нужен Styloria",
   "deletionReason2": "Были проблемы с верификацией аккаунта (email/KYC)",
   "deletionReason3": "Не нашёл(ла) сервисы/провайдеров рядом",

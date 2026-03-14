@@ -63,6 +63,26 @@ class AppLocalizationsJa extends AppLocalizations {
   String get viewUserPoliciesAndAgreements => 'ユーザーポリシーと規約を表示';
 
   @override
+  String get previewBookNowLabel => '今すぐ予約';
+
+  @override
+  String get previewLoginPromptTitle => '予約するにはサインイン';
+
+  @override
+  String get previewLoginPromptSubtitle =>
+      '無料アカウントを作成またはサインインして、このサービスや他の多くのサービスを予約しましょう！';
+
+  @override
+  String get ageRestrictionTitle => '18歳以上限定';
+
+  @override
+  String get ageRestrictionBody =>
+      'Styloriaに登録してご利用いただくには、18歳以上である必要があります。生年月日の確認が必要です。';
+
+  @override
+  String get ageRestrictionInline => 'Styloriaをご利用いただくには、18歳以上である必要があります。';
+
+  @override
   String get logOut => 'ログアウト';
 
   @override
@@ -128,6 +148,58 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get yourNotes => 'Your Notes';
+
+  @override
+  String get previewTagline => 'ビューティー・オンデマンド';
+
+  @override
+  String get previewServicesTitle => '利用可能なサービス';
+
+  @override
+  String get previewServicesSubtitle => '幅広いビューティーサービスをご覧ください';
+
+  @override
+  String get previewServiceHaircut => 'ヘアカット';
+
+  @override
+  String get previewServiceMakeup => 'メイクアップ';
+
+  @override
+  String get previewServiceMassage => 'マッサージ';
+
+  @override
+  String get previewServiceNailArt => 'ネイルアート';
+
+  @override
+  String get previewServiceFacial => 'フェイシャル';
+
+  @override
+  String get previewServiceHairColoring => 'ヘアカラー';
+
+  @override
+  String get previewAndMore => '+ さらに多くのサービスが利用可能';
+
+  @override
+  String get previewFeatureBrowse => 'あなたの近くのトップビューティーサービスを探そう';
+
+  @override
+  String get previewFeatureVerified => '認証済みの信頼できるプロバイダーのみ';
+
+  @override
+  String get previewFeatureSecurePay => '安全で保護された支払い';
+
+  @override
+  String get previewFeatureReviews => '実際のお客様からの本物のレビュー';
+
+  @override
+  String get previewGetStarted => '始める - アカウント作成';
+
+  @override
+  String get previewAlreadyHaveAccount => 'すでにアカウントをお持ちの方 - サインイン';
+
+  @override
+  String get previewFooterNote =>
+      '続行することで、利用規約とプライバシーポリシーに同意したことになります。登録には18歳以上である必要があります。';
 
   @override
   String get forgotPassword => 'Forgot Password?';

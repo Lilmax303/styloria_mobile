@@ -65,6 +65,27 @@ class AppLocalizationsHa extends AppLocalizations {
       'Duba manufofi da yarjejeniyar mai amfani';
 
   @override
+  String get previewBookNowLabel => 'YI ALƘAWARI';
+
+  @override
+  String get previewLoginPromptTitle => 'Shiga don yin alƙawari';
+
+  @override
+  String get previewLoginPromptSubtitle =>
+      'Ƙirƙiri asusun kyauta ko shiga don yin alƙawarin wannan da sauran ayyuka!';
+
+  @override
+  String get ageRestrictionTitle => 'Shekaru 18+ Kawai';
+
+  @override
+  String get ageRestrictionBody =>
+      'Dole ne ka kasance da shekaru 18 ko fiye don yin rajista da amfani da Styloria. Ana buƙatar tabbatar da ranar haihuwa.';
+
+  @override
+  String get ageRestrictionInline =>
+      'Dole ne ka kasance da shekaru 18 ko fiye don amfani da Styloria.';
+
+  @override
   String get logOut => 'Fita';
 
   @override
@@ -134,6 +155,60 @@ class AppLocalizationsHa extends AppLocalizations {
 
   @override
   String get yourNotes => 'Your Notes';
+
+  @override
+  String get previewTagline => 'KYAU A BUKATA';
+
+  @override
+  String get previewServicesTitle => 'Ayyukan da Suke Akwai';
+
+  @override
+  String get previewServicesSubtitle => 'Duba ayyukanmu na kyau masu yawa';
+
+  @override
+  String get previewServiceHaircut => 'Aske gashi';
+
+  @override
+  String get previewServiceMakeup => 'Kwalliya';
+
+  @override
+  String get previewServiceMassage => 'Massage';
+
+  @override
+  String get previewServiceNailArt => 'Zanen farce';
+
+  @override
+  String get previewServiceFacial => 'Kulawa da fuska';
+
+  @override
+  String get previewServiceHairColoring => 'Fentin gashi';
+
+  @override
+  String get previewAndMore => '+ ƙarin ayyuka da yawa suna akwai';
+
+  @override
+  String get previewFeatureBrowse => 'Bincika manyan ayyukan kyau kusa da kai';
+
+  @override
+  String get previewFeatureVerified =>
+      'Masu ba da ayyuka da aka tabbatar kawai';
+
+  @override
+  String get previewFeatureSecurePay => 'Biyan kuɗi mai aminci';
+
+  @override
+  String get previewFeatureReviews =>
+      'Gaske ra\'ayoyi daga ainihin abokan ciniki';
+
+  @override
+  String get previewGetStarted => 'Fara - Ƙirƙiri asusun';
+
+  @override
+  String get previewAlreadyHaveAccount => 'Ina da asusun riga - Shiga';
+
+  @override
+  String get previewFooterNote =>
+      'Ta hanyar ci gaba, kana yarda da Sharuɗɗan Sabis da Manufofin Sirri. Dole ne ka kasance ɗan shekara 18 ko fiye don yin rajista.';
 
   @override
   String get forgotPassword => 'Forgot Password?';

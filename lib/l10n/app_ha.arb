@@ -41,6 +41,33 @@
       "name": {}
     }
   },
+
+  "previewBookNowLabel": "YI ALƘAWARI",
+  "previewLoginPromptTitle": "Shiga don yin alƙawari",
+  "previewLoginPromptSubtitle": "Ƙirƙiri asusun kyauta ko shiga don yin alƙawarin wannan da sauran ayyuka!",
+
+  "previewTagline": "KYAU A BUKATA",
+  "previewServicesTitle": "Ayyukan da Suke Akwai",
+  "previewServicesSubtitle": "Duba ayyukanmu na kyau masu yawa",
+  "previewServiceHaircut": "Aske gashi",
+  "previewServiceMakeup": "Kwalliya",
+  "previewServiceMassage": "Massage",
+  "previewServiceNailArt": "Zanen farce",
+  "previewServiceFacial": "Kulawa da fuska",
+  "previewServiceHairColoring": "Fentin gashi",
+  "previewAndMore": "+ ƙarin ayyuka da yawa suna akwai",
+  "previewFeatureBrowse": "Bincika manyan ayyukan kyau kusa da kai",
+  "previewFeatureVerified": "Masu ba da ayyuka da aka tabbatar kawai",
+  "previewFeatureSecurePay": "Biyan kuɗi mai aminci",
+  "previewFeatureReviews": "Gaske ra'ayoyi daga ainihin abokan ciniki",
+  "previewGetStarted": "Fara - Ƙirƙiri asusun",
+  "previewAlreadyHaveAccount": "Ina da asusun riga - Shiga",
+  "previewFooterNote": "Ta hanyar ci gaba, kana yarda da Sharuɗɗan Sabis da Manufofin Sirri. Dole ne ka kasance ɗan shekara 18 ko fiye don yin rajista.",
+
+  "ageRestrictionTitle": "Shekaru 18+ Kawai",
+  "ageRestrictionBody": "Dole ne ka kasance da shekaru 18 ko fiye don yin rajista da amfani da Styloria. Ana buƙatar tabbatar da ranar haihuwa.",
+  "ageRestrictionInline": "Dole ne ka kasance da shekaru 18 ko fiye don amfani da Styloria.",
+
   "deletionReason1": "Ba na buƙatar Styloria kuma",
   "deletionReason2": "Na fuskanci matsala wajen tabbatar da asusu (imel/KYC)",
   "deletionReason3": "Ban samu sabis/masu bayar da sabis kusa da ni ba",

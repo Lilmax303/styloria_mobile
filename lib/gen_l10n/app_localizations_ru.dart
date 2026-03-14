@@ -64,6 +64,27 @@ class AppLocalizationsRu extends AppLocalizations {
       'Просмотр политик и соглашений пользователя';
 
   @override
+  String get previewBookNowLabel => 'ЗАПИСАТЬСЯ';
+
+  @override
+  String get previewLoginPromptTitle => 'Войдите для записи';
+
+  @override
+  String get previewLoginPromptSubtitle =>
+      'Создайте бесплатный аккаунт или войдите, чтобы записаться на эту и другие услуги!';
+
+  @override
+  String get ageRestrictionTitle => 'Только 18+';
+
+  @override
+  String get ageRestrictionBody =>
+      'Вам должно быть не менее 18 лет для регистрации и использования Styloria. Требуется подтверждение даты рождения.';
+
+  @override
+  String get ageRestrictionInline =>
+      'Вам должно быть не менее 18 лет для использования Styloria.';
+
+  @override
   String get logOut => 'Выйти';
 
   @override
@@ -133,6 +154,60 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get yourNotes => 'Your Notes';
+
+  @override
+  String get previewTagline => 'КРАСОТА ПО ТРЕБОВАНИЮ';
+
+  @override
+  String get previewServicesTitle => 'Доступные услуги';
+
+  @override
+  String get previewServicesSubtitle =>
+      'Ознакомьтесь с нашим широким спектром услуг красоты';
+
+  @override
+  String get previewServiceHaircut => 'Стрижка';
+
+  @override
+  String get previewServiceMakeup => 'Макияж';
+
+  @override
+  String get previewServiceMassage => 'Массаж';
+
+  @override
+  String get previewServiceNailArt => 'Дизайн ногтей';
+
+  @override
+  String get previewServiceFacial => 'Уход за лицом';
+
+  @override
+  String get previewServiceHairColoring => 'Окрашивание волос';
+
+  @override
+  String get previewAndMore => '+ ещё много услуг';
+
+  @override
+  String get previewFeatureBrowse =>
+      'Исследуйте лучшие услуги красоты рядом с вами';
+
+  @override
+  String get previewFeatureVerified => 'Только проверенные мастера';
+
+  @override
+  String get previewFeatureSecurePay => 'Безопасные платежи';
+
+  @override
+  String get previewFeatureReviews => 'Реальные отзывы реальных клиентов';
+
+  @override
+  String get previewGetStarted => 'Начать - Создать аккаунт';
+
+  @override
+  String get previewAlreadyHaveAccount => 'У меня уже есть аккаунт - Войти';
+
+  @override
+  String get previewFooterNote =>
+      'Продолжая, вы соглашаетесь с нашими Условиями использования и Политикой конфиденциальности. Возраст 18+.';
 
   @override
   String get forgotPassword => 'Forgot Password?';

@@ -64,6 +64,27 @@ class AppLocalizationsAf extends AppLocalizations {
       'Bekyk gebruikersbeleide en ooreenkomste';
 
   @override
+  String get previewBookNowLabel => 'BESPREEK NOU';
+
+  @override
+  String get previewLoginPromptTitle => 'Teken in om te bespreek';
+
+  @override
+  String get previewLoginPromptSubtitle =>
+      'Skep \'n gratis rekening of teken in om hierdie en nog baie meer dienste te bespreek!';
+
+  @override
+  String get ageRestrictionTitle => 'Slegs 18+';
+
+  @override
+  String get ageRestrictionBody =>
+      'Jy moet ten minste 18 jaar oud wees om by Styloria te registreer en dit te gebruik. Verifikasie van geboortedatum is vereis.';
+
+  @override
+  String get ageRestrictionInline =>
+      'Jy moet ten minste 18 jaar oud wees om Styloria te gebruik.';
+
+  @override
   String get logOut => 'Teken uit';
 
   @override
@@ -134,6 +155,61 @@ class AppLocalizationsAf extends AppLocalizations {
 
   @override
   String get yourNotes => 'Your Notes';
+
+  @override
+  String get previewTagline => 'SKOONHEID OP AANVRAAG';
+
+  @override
+  String get previewServicesTitle => 'Beskikbare Dienste';
+
+  @override
+  String get previewServicesSubtitle =>
+      'Blaai deur ons wye reeks skoonheidsdienste';
+
+  @override
+  String get previewServiceHaircut => 'Haarsnit';
+
+  @override
+  String get previewServiceMakeup => 'Grimering';
+
+  @override
+  String get previewServiceMassage => 'Massering';
+
+  @override
+  String get previewServiceNailArt => 'Naelkuns';
+
+  @override
+  String get previewServiceFacial => 'Gesigsbehandeling';
+
+  @override
+  String get previewServiceHairColoring => 'Haarkleur';
+
+  @override
+  String get previewAndMore => '+ baie meer dienste beskikbaar';
+
+  @override
+  String get previewFeatureBrowse => 'Verken top skoonheidsdienste naby jou';
+
+  @override
+  String get previewFeatureVerified =>
+      'Slegs geverifieerde en betroubare verskaffers';
+
+  @override
+  String get previewFeatureSecurePay => 'Veilige en beveiligde betalings';
+
+  @override
+  String get previewFeatureReviews => 'Regte resensies van regte kliënte';
+
+  @override
+  String get previewGetStarted => 'Begin - Skep rekening';
+
+  @override
+  String get previewAlreadyHaveAccount =>
+      'Ek het reeds \'n rekening - Teken in';
+
+  @override
+  String get previewFooterNote =>
+      'Deur voort te gaan, stem jy in tot ons Diensvoorwaardes en Privaatheidsbeleid. Moet 18+ jaar oud wees om te registreer.';
 
   @override
   String get forgotPassword => 'Forgot Password?';

@@ -41,6 +41,33 @@
       "name": {}
     }
   },
+
+  "previewBookNowLabel": "अभी बुक करें",
+  "previewLoginPromptTitle": "बुक करने के लिए साइन इन करें",
+  "previewLoginPromptSubtitle": "इस और कई अन्य सेवाओं को बुक करने के लिए मुफ्त खाता बनाएं या साइन इन करें!",
+
+  "ageRestrictionTitle": "केवल 18+ के लिए",
+  "ageRestrictionBody": "Styloria में पंजीकरण और उपयोग के लिए आपकी आयु कम से कम 18 वर्ष होनी चाहिए। जन्म तिथि सत्यापन आवश्यक है।",
+  "ageRestrictionInline": "Styloria का उपयोग करने के लिए आपकी आयु कम से कम 18 वर्ष होनी चाहिए।",
+
+  "previewTagline": "ब्यूटी ऑन-डिमांड",
+  "previewServicesTitle": "उपलब्ध सेवाएं",
+  "previewServicesSubtitle": "हमारी व्यापक ब्यूटी सेवाओं को ब्राउज़ करें",
+  "previewServiceHaircut": "बाल कटाई",
+  "previewServiceMakeup": "मेकअप",
+  "previewServiceMassage": "मसाज",
+  "previewServiceNailArt": "नेल आर्ट",
+  "previewServiceFacial": "फेशियल",
+  "previewServiceHairColoring": "बाल रंगाई",
+  "previewAndMore": "+ और भी कई सेवाएं उपलब्ध",
+  "previewFeatureBrowse": "अपने पास के बेहतरीन ब्यूटी सेवाएं खोजें",
+  "previewFeatureVerified": "केवल सत्यापित और विश्वसनीय प्रदाता",
+  "previewFeatureSecurePay": "सुरक्षित भुगतान",
+  "previewFeatureReviews": "वास्तविक ग्राहकों की वास्तविक समीक्षाएं",
+  "previewGetStarted": "शुरू करें - खाता बनाएं",
+  "previewAlreadyHaveAccount": "मेरा पहले से खाता है - साइन इन करें",
+  "previewFooterNote": "जारी रखने पर, आप हमारी सेवा शर्तों और गोपनीयता नीति से सहमत होते हैं। पंजीकरण के लिए 18+ आयु आवश्यक है।",
+
   "deletionReason1": "अब मुझे Styloria की ज़रूरत नहीं है",
   "deletionReason2": "खाता सत्यापन (ईमेल/KYC) में समस्या हुई",
   "deletionReason3": "मेरे पास सेवाएँ/प्रोवाइडर नहीं मिले",

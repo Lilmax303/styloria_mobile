@@ -13,6 +13,7 @@ import 'widgets/service_selector_widget.dart';
 import 'widgets/provider_action_widget.dart';
 import 'profile_picture_state.dart';
 import 'profile_picture_viewer_screen.dart';
+import 'preview_screen.dart'; // ✅ ADD THIS
 
 import 'app_theme.dart';
 import 'widgets/background_layer.dart';
@@ -533,7 +534,21 @@ class _AuthGateState extends State<AuthGate> {
     if (!hasToken) {
       if (!mounted) return;
       setState(() {
-        _child = const LoginScreen();
+        // ✅ Show Preview Screen instead of LoginScreen directly
+        _child = PreviewScreen(
+          onLogin: () {
+            setState(() {
+              _child = const LoginScreen();
+            });
+          },
+          onRegister: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (_) => const RegisterScreen(),
+              ),
+            );
+          },
+        );
         _loading = false;
       });
       return;

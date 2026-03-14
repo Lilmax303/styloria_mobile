@@ -65,6 +65,27 @@ class AppLocalizationsFr extends AppLocalizations {
       'Voir les politiques et accords utilisateurs';
 
   @override
+  String get previewBookNowLabel => 'RÉSERVER';
+
+  @override
+  String get previewLoginPromptTitle => 'Connectez-vous pour réserver';
+
+  @override
+  String get previewLoginPromptSubtitle =>
+      'Créez un compte gratuit ou connectez-vous pour réserver ce service et bien d\'autres!';
+
+  @override
+  String get ageRestrictionTitle => '18 ans et plus uniquement';
+
+  @override
+  String get ageRestrictionBody =>
+      'Vous devez avoir au moins 18 ans pour vous inscrire et utiliser Styloria. La vérification de la date de naissance est obligatoire.';
+
+  @override
+  String get ageRestrictionInline =>
+      'Vous devez avoir au moins 18 ans pour utiliser Styloria.';
+
+  @override
   String get logOut => 'Se déconnecter';
 
   @override
@@ -135,6 +156,61 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get yourNotes => 'Your Notes';
+
+  @override
+  String get previewTagline => 'BEAUTÉ À LA DEMANDE';
+
+  @override
+  String get previewServicesTitle => 'Services Disponibles';
+
+  @override
+  String get previewServicesSubtitle =>
+      'Parcourez notre large gamme de services de beauté';
+
+  @override
+  String get previewServiceHaircut => 'Coupe de cheveux';
+
+  @override
+  String get previewServiceMakeup => 'Maquillage';
+
+  @override
+  String get previewServiceMassage => 'Massage';
+
+  @override
+  String get previewServiceNailArt => 'Nail Art';
+
+  @override
+  String get previewServiceFacial => 'Soin du visage';
+
+  @override
+  String get previewServiceHairColoring => 'Coloration';
+
+  @override
+  String get previewAndMore => '+ bien d\'autres services disponibles';
+
+  @override
+  String get previewFeatureBrowse =>
+      'Explorez les meilleurs services de beauté près de chez vous';
+
+  @override
+  String get previewFeatureVerified =>
+      'Prestataires vérifiés et de confiance uniquement';
+
+  @override
+  String get previewFeatureSecurePay => 'Paiements sûrs et sécurisés';
+
+  @override
+  String get previewFeatureReviews => 'Vrais avis de vrais clients';
+
+  @override
+  String get previewGetStarted => 'Commencer - Créer un compte';
+
+  @override
+  String get previewAlreadyHaveAccount => 'J\'ai déjà un compte - Se connecter';
+
+  @override
+  String get previewFooterNote =>
+      'En continuant, vous acceptez nos Conditions d\'utilisation et notre Politique de confidentialité. Doit avoir 18 ans ou plus pour s\'inscrire.';
 
   @override
   String get forgotPassword => 'Forgot Password?';

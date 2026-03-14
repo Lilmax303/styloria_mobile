@@ -41,6 +41,33 @@
       "name": {}
     }
   },
+
+  "previewBookNowLabel": "አሁን ይያዙ",
+  "previewLoginPromptTitle": "ለመያዝ ይግቡ",
+  "previewLoginPromptSubtitle": "ይህንን እና ሌሎች ብዙ አገልግሎቶችን ለመያዝ ነፃ መለያ ይፍጠሩ ወይም ይግቡ!",
+
+  "previewTagline": "ውበት በፍላጎት",
+  "previewServicesTitle": "የሚገኙ አገልግሎቶች",
+  "previewServicesSubtitle": "የእኛን ሰፊ የውበት አገልግሎቶች ያስሱ",
+  "previewServiceHaircut": "የፀጉር ቅርጽ",
+  "previewServiceMakeup": "ሜካፕ",
+  "previewServiceMassage": "ማሳጅ",
+  "previewServiceNailArt": "የጥፍር ጥበብ",
+  "previewServiceFacial": "የፊት እንክብካቤ",
+  "previewServiceHairColoring": "የፀጉር ቀለም",
+  "previewAndMore": "+ ሌሎች ብዙ አገልግሎቶች ይገኛሉ",
+  "previewFeatureBrowse": "በአቅራቢያዎ ያሉ ምርጥ የውበት አገልግሎቶችን ያስሱ",
+  "previewFeatureVerified": "የተረጋገጡ እና የሚታመኑ አቅራቢዎች ብቻ",
+  "previewFeatureSecurePay": "ደህንነቱ የተጠበቀ ክፍያ",
+  "previewFeatureReviews": "ከእውነተኛ ደንበኞች እውነተኛ ግምገማዎች",
+  "previewGetStarted": "ጀምር - መለያ ፍጠር",
+  "previewAlreadyHaveAccount": "አስቀድሜ መለያ አለኝ - ግባ",
+  "previewFooterNote": "በመቀጠል፣ የአገልግሎት ውሎቻችንን እና የግላዊነት ፖሊሲያችንን ተቀብለዋለህ። ለመመዝገብ ቢያንስ 18 ዓመት ሊኖርዎ ይገባል።",
+
+  "ageRestrictionTitle": "ከ18 ዓመት በላይ ብቻ",
+  "ageRestrictionBody": "Styloriaን ለመመዝገብ እና ለመጠቀም ቢያንስ 18 ዓመት ሊኖርዎ ይገባል። የልደት ቀን ማረጋገጫ ያስፈልጋል።",
+  "ageRestrictionInline": "Styloriaን ለመጠቀም ቢያንስ 18 ዓመት ሊኖርዎ ይገባል።",
+
   "deletionReason1": "Styloria አሁን አልፈልግም",
   "deletionReason2": "መለያ ማረጋገጥ (ኢሜይል/KYC) ላይ ችግኝ ነበር",
   "deletionReason3": "በአቅራቢያዬ አገልግሎት/አቅራቢ አላገኘሁም",

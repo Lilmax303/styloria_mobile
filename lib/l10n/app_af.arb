@@ -41,6 +41,33 @@
       "name": {}
     }
   },
+
+  "previewBookNowLabel": "BESPREEK NOU",
+  "previewLoginPromptTitle": "Teken in om te bespreek",
+  "previewLoginPromptSubtitle": "Skep 'n gratis rekening of teken in om hierdie en nog baie meer dienste te bespreek!",
+
+  "ageRestrictionTitle": "Slegs 18+",
+  "ageRestrictionBody": "Jy moet ten minste 18 jaar oud wees om by Styloria te registreer en dit te gebruik. Verifikasie van geboortedatum is vereis.",
+  "ageRestrictionInline": "Jy moet ten minste 18 jaar oud wees om Styloria te gebruik.",
+
+  "previewTagline": "SKOONHEID OP AANVRAAG",
+  "previewServicesTitle": "Beskikbare Dienste",
+  "previewServicesSubtitle": "Blaai deur ons wye reeks skoonheidsdienste",
+  "previewServiceHaircut": "Haarsnit",
+  "previewServiceMakeup": "Grimering",
+  "previewServiceMassage": "Massering",
+  "previewServiceNailArt": "Naelkuns",
+  "previewServiceFacial": "Gesigsbehandeling",
+  "previewServiceHairColoring": "Haarkleur",
+  "previewAndMore": "+ baie meer dienste beskikbaar",
+  "previewFeatureBrowse": "Verken top skoonheidsdienste naby jou",
+  "previewFeatureVerified": "Slegs geverifieerde en betroubare verskaffers",
+  "previewFeatureSecurePay": "Veilige en beveiligde betalings",
+  "previewFeatureReviews": "Regte resensies van regte kliënte",
+  "previewGetStarted": "Begin - Skep rekening",
+  "previewAlreadyHaveAccount": "Ek het reeds 'n rekening - Teken in",
+  "previewFooterNote": "Deur voort te gaan, stem jy in tot ons Diensvoorwaardes en Privaatheidsbeleid. Moet 18+ jaar oud wees om te registreer.",
+
   "deletionReason1": "Ek het nie meer Styloria nodig nie",
   "deletionReason2": "Ek het gesukkel met rekeningverifikasie (e-pos/KYC)",
   "deletionReason3": "Ek kon nie dienste/verskaffers naby my kry nie",

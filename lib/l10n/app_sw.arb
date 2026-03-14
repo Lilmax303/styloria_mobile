@@ -41,6 +41,33 @@
       "name": {}
     }
   },
+
+  "previewBookNowLabel": "WEKA NAFASI",
+  "previewLoginPromptTitle": "Ingia ili kuweka nafasi",
+  "previewLoginPromptSubtitle": "Fungua akaunti ya bure au ingia ili kuweka nafasi ya huduma hii na nyingine nyingi!",
+
+  "previewTagline": "UZURI KWA MAHITAJI",
+  "previewServicesTitle": "Huduma Zinazopatikana",
+  "previewServicesSubtitle": "Vinjari huduma zetu nyingi za urembo",
+  "previewServiceHaircut": "Kunyoa nywele",
+  "previewServiceMakeup": "Mapambo ya uso",
+  "previewServiceMassage": "Masaji",
+  "previewServiceNailArt": "Sanaa ya kucha",
+  "previewServiceFacial": "Utunzaji wa uso",
+  "previewServiceHairColoring": "Kupaka rangi nywele",
+  "previewAndMore": "+ huduma nyingi zaidi zinazopatikana",
+  "previewFeatureBrowse": "Chunguza huduma bora za urembo karibu nawe",
+  "previewFeatureVerified": "Watoa huduma walioidhinishwa na kuaminika tu",
+  "previewFeatureSecurePay": "Malipo salama na yaliyolindwa",
+  "previewFeatureReviews": "Maoni halisi kutoka kwa wateja halisi",
+  "previewGetStarted": "Anza - Fungua akaunti",
+  "previewAlreadyHaveAccount": "Tayari nina akaunti - Ingia",
+  "previewFooterNote": "Kwa kuendelea, unakubali Masharti ya Huduma na Sera ya Faragha yetu. Lazima uwe na umri wa miaka 18 au zaidi kusajili.",
+
+  "ageRestrictionTitle": "18+ Pekee",
+  "ageRestrictionBody": "Lazima uwe na umri wa miaka 18 au zaidi ili kusajili na kutumia Styloria. Uthibitishaji wa tarehe ya kuzaliwa unahitajika.",
+  "ageRestrictionInline": "Lazima uwe na umri wa miaka 18 au zaidi kutumia Styloria.",
+
   "deletionReason1": "Sihitaji Styloria tena",
   "deletionReason2": "Nilipata shida kuthibitisha akaunti yangu (barua pepe/KYC)",
   "deletionReason3": "Sikuweza kupata huduma/watoa huduma karibu nami",

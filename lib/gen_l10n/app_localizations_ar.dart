@@ -63,6 +63,27 @@ class AppLocalizationsAr extends AppLocalizations {
   String get viewUserPoliciesAndAgreements => 'عرض سياسات واتفاقيات المستخدم';
 
   @override
+  String get previewBookNowLabel => 'احجز الآن';
+
+  @override
+  String get previewLoginPromptTitle => 'سجّل دخولك للحجز';
+
+  @override
+  String get previewLoginPromptSubtitle =>
+      'أنشئ حسابًا مجانيًا أو سجّل دخولك لحجز هذه الخدمة والمزيد!';
+
+  @override
+  String get ageRestrictionTitle => '18 عامًا فما فوق فقط';
+
+  @override
+  String get ageRestrictionBody =>
+      'يجب أن يكون عمرك 18 عامًا على الأقل للتسجيل واستخدام Styloria. يُشترط التحقق من تاريخ الميلاد.';
+
+  @override
+  String get ageRestrictionInline =>
+      'يجب أن يكون عمرك 18 عامًا على الأقل لاستخدام Styloria.';
+
+  @override
   String get logOut => 'تسجيل الخروج';
 
   @override
@@ -130,6 +151,59 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get yourNotes => 'Your Notes';
+
+  @override
+  String get previewTagline => 'الجمال عند الطلب';
+
+  @override
+  String get previewServicesTitle => 'الخدمات المتاحة';
+
+  @override
+  String get previewServicesSubtitle =>
+      'تصفح مجموعتنا الواسعة من خدمات التجميل';
+
+  @override
+  String get previewServiceHaircut => 'قص الشعر';
+
+  @override
+  String get previewServiceMakeup => 'مكياج';
+
+  @override
+  String get previewServiceMassage => 'مساج';
+
+  @override
+  String get previewServiceNailArt => 'تزيين الأظافر';
+
+  @override
+  String get previewServiceFacial => 'العناية بالوجه';
+
+  @override
+  String get previewServiceHairColoring => 'صباغة الشعر';
+
+  @override
+  String get previewAndMore => '+ المزيد من الخدمات المتاحة';
+
+  @override
+  String get previewFeatureBrowse => 'استكشف أفضل خدمات التجميل بالقرب منك';
+
+  @override
+  String get previewFeatureVerified => 'مقدمو خدمات موثوقون فقط';
+
+  @override
+  String get previewFeatureSecurePay => 'مدفوعات آمنة ومضمونة';
+
+  @override
+  String get previewFeatureReviews => 'تقييمات حقيقية من عملاء حقيقيين';
+
+  @override
+  String get previewGetStarted => 'ابدأ الآن - إنشاء حساب';
+
+  @override
+  String get previewAlreadyHaveAccount => 'لدي حساب بالفعل - تسجيل الدخول';
+
+  @override
+  String get previewFooterNote =>
+      'بالمتابعة، أنت توافق على شروط الخدمة وسياسة الخصوصية. يجب أن يكون عمرك 18 عامًا أو أكثر للتسجيل.';
 
   @override
   String get forgotPassword => 'Forgot Password?';

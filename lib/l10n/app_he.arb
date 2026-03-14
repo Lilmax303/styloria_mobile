@@ -41,6 +41,33 @@
       "name": {}
     }
   },
+
+  "previewBookNowLabel": "הזמן עכשיו",
+  "previewLoginPromptTitle": "התחבר כדי להזמין",
+  "previewLoginPromptSubtitle": "צור חשבון חינמי או התחבר כדי להזמין שירות זה ועוד רבים!",
+
+  "previewTagline": "יופי לפי דרישה",
+  "previewServicesTitle": "שירותים זמינים",
+  "previewServicesSubtitle": "עיין במגוון הרחב של שירותי היופי שלנו",
+  "previewServiceHaircut": "תספורת",
+  "previewServiceMakeup": "איפור",
+  "previewServiceMassage": "עיסוי",
+  "previewServiceNailArt": "עיצוב ציפורניים",
+  "previewServiceFacial": "טיפול פנים",
+  "previewServiceHairColoring": "צביעת שיער",
+  "previewAndMore": "+ עוד שירותים רבים זמינים",
+  "previewFeatureBrowse": "גלה את שירותי היופי המובילים בקרבתך",
+  "previewFeatureVerified": "ספקים מאומתים ומהימנים בלבד",
+  "previewFeatureSecurePay": "תשלומים בטוחים ומאובטחים",
+  "previewFeatureReviews": "ביקורות אמיתיות מלקוחות אמיתיים",
+  "previewGetStarted": "התחל - צור חשבון",
+  "previewAlreadyHaveAccount": "כבר יש לי חשבון - התחברות",
+  "previewFooterNote": "בהמשך, אתה מסכים לתנאי השירות ולמדיניות הפרטיות שלנו. יש להיות בן 18 ומעלה כדי להירשם.",
+
+  "ageRestrictionTitle": "18+ בלבד",
+  "ageRestrictionBody": "עליך להיות בן 18 לפחות כדי להירשם ולהשתמש ב-Styloria. נדרש אימות תאריך לידה.",
+  "ageRestrictionInline": "עליך להיות בן 18 לפחות כדי להשתמש ב-Styloria.",
+
   "deletionReason1": "אני כבר לא צריך/ה את Styloria",
   "deletionReason2": "הייתה לי בעיה באימות החשבון (אימייל/KYC)",
   "deletionReason3": "לא מצאתי שירותים/ספקים בקרבתי",

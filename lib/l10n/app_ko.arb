@@ -41,6 +41,33 @@
       "name": {}
     }
   },
+
+  "previewBookNowLabel": "지금 예약",
+  "previewLoginPromptTitle": "예약하려면 로그인하세요",
+  "previewLoginPromptSubtitle": "무료 계정을 만들거나 로그인하여 이 서비스와 더 많은 서비스를 예약하세요!",
+
+  "previewTagline": "뷰티 온-디맨드",
+  "previewServicesTitle": "이용 가능한 서비스",
+  "previewServicesSubtitle": "다양한 뷰티 서비스를 둘러보세요",
+  "previewServiceHaircut": "헤어컷",
+  "previewServiceMakeup": "메이크업",
+  "previewServiceMassage": "마사지",
+  "previewServiceNailArt": "네일아트",
+  "previewServiceFacial": "페이셜",
+  "previewServiceHairColoring": "헤어 컬러링",
+  "previewAndMore": "+ 더 많은 서비스 이용 가능",
+  "previewFeatureBrowse": "내 주변 최고의 뷰티 서비스를 탐색하세요",
+  "previewFeatureVerified": "검증된 신뢰할 수 있는 전문가만",
+  "previewFeatureSecurePay": "안전하고 보안된 결제",
+  "previewFeatureReviews": "실제 고객의 진짜 리뷰",
+  "previewGetStarted": "시작하기 - 계정 만들기",
+  "previewAlreadyHaveAccount": "이미 계정이 있습니다 - 로그인",
+  "previewFooterNote": "계속 진행하면 서비스 약관 및 개인정보 처리방침에 동의하는 것입니다. 등록하려면 만 18세 이상이어야 합니다.",
+
+  "ageRestrictionTitle": "만 18세 이상만 가능",
+  "ageRestrictionBody": "Styloria에 가입하고 이용하려면 만 18세 이상이어야 합니다. 생년월일 인증이 필요합니다.",
+  "ageRestrictionInline": "Styloria를 이용하려면 만 18세 이상이어야 합니다.",
+
   "deletionReason1": "Styloria가 더 이상 필요하지 않아요",
   "deletionReason2": "계정 인증(이메일/KYC)에 문제가 있었어요",
   "deletionReason3": "근처에서 서비스/제공자를 찾을 수 없었어요",

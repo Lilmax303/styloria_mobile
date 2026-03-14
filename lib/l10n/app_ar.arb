@@ -41,6 +41,33 @@
       "name": {}
     }
   },
+
+  "previewBookNowLabel": "احجز الآن",
+  "previewLoginPromptTitle": "سجّل دخولك للحجز",
+  "previewLoginPromptSubtitle": "أنشئ حسابًا مجانيًا أو سجّل دخولك لحجز هذه الخدمة والمزيد!",
+
+  "ageRestrictionTitle": "18 عامًا فما فوق فقط",
+  "ageRestrictionBody": "يجب أن يكون عمرك 18 عامًا على الأقل للتسجيل واستخدام Styloria. يُشترط التحقق من تاريخ الميلاد.",
+  "ageRestrictionInline": "يجب أن يكون عمرك 18 عامًا على الأقل لاستخدام Styloria.",
+
+  "previewTagline": "الجمال عند الطلب",
+  "previewServicesTitle": "الخدمات المتاحة",
+  "previewServicesSubtitle": "تصفح مجموعتنا الواسعة من خدمات التجميل",
+  "previewServiceHaircut": "قص الشعر",
+  "previewServiceMakeup": "مكياج",
+  "previewServiceMassage": "مساج",
+  "previewServiceNailArt": "تزيين الأظافر",
+  "previewServiceFacial": "العناية بالوجه",
+  "previewServiceHairColoring": "صباغة الشعر",
+  "previewAndMore": "+ المزيد من الخدمات المتاحة",
+  "previewFeatureBrowse": "استكشف أفضل خدمات التجميل بالقرب منك",
+  "previewFeatureVerified": "مقدمو خدمات موثوقون فقط",
+  "previewFeatureSecurePay": "مدفوعات آمنة ومضمونة",
+  "previewFeatureReviews": "تقييمات حقيقية من عملاء حقيقيين",
+  "previewGetStarted": "ابدأ الآن - إنشاء حساب",
+  "previewAlreadyHaveAccount": "لدي حساب بالفعل - تسجيل الدخول",
+  "previewFooterNote": "بالمتابعة، أنت توافق على شروط الخدمة وسياسة الخصوصية. يجب أن يكون عمرك 18 عامًا أو أكثر للتسجيل.",
+
   "deletionReason1": "لم أعد بحاجة إلى Styloria",
   "deletionReason2": "واجهت مشكلة في التحقق من الحساب (البريد/KYC)",
   "deletionReason3": "لم أتمكن من العثور على خدمات/مقدمي خدمات بالقرب مني",

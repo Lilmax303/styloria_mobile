@@ -458,6 +458,46 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           ),
                           const SizedBox(height: 20),
 
+                          // ✅ AGE RESTRICTION NOTICE - Visible to Apple and Users
+                          Container(
+                            padding: const EdgeInsets.all(12),
+                            decoration: BoxDecoration(
+                              color: Colors.amber.shade50,
+                              borderRadius: BorderRadius.circular(12),
+                              border: Border.all(color: Colors.amber.shade700, width: 1.5),
+                            ),
+                            child: Row(
+                              children: [
+                                Icon(Icons.verified_user, color: Colors.amber.shade800, size: 24),
+                                const SizedBox(width: 12),
+                                Expanded(
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        l10n.ageRestrictionTitle,  // "18+ Only"
+                                        style: TextStyle(
+                                          color: Colors.amber.shade900,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 15,
+                                        ),
+                                      ),
+                                      const SizedBox(height: 2),
+                                      Text(
+                                        l10n.ageRestrictionBody,   // Full description
+                                        style: TextStyle(
+                                          color: Colors.amber.shade800,
+                                          fontSize: 12,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          const SizedBox(height: 16),
+
                           if (_error != null)
                             Container(
                               padding: const EdgeInsets.all(12),
@@ -579,6 +619,50 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               ],
                             ),
                           ),
+                          const SizedBox(height: 12),
+
+                          // ✅ ADD THIS: Real-time under-18 warning
+                          if (_selectedDate != null) ...[
+                            const SizedBox(height: 6),
+                            Builder(
+                              builder: (context) {
+                                final now = DateTime.now();
+                                int age = now.year - _selectedDate!.year;
+                                if (now.month < _selectedDate!.month ||
+                                    (now.month == _selectedDate!.month &&
+                                        now.day < _selectedDate!.day)) {
+                                  age--;
+                                }
+                                if (age < 18) {
+                                  return Container(
+                                    padding: const EdgeInsets.all(10),
+                                    decoration: BoxDecoration(
+                                      color: Colors.red.shade50,
+                                      borderRadius: BorderRadius.circular(8),
+                                      border: Border.all(color: Colors.red.shade300),
+                                    ),
+                                    child: Row(
+                                      children: [
+                                        Icon(Icons.block, color: Colors.red.shade700, size: 18),
+                                        const SizedBox(width: 8),
+                                        Expanded(
+                                          child: Text(
+                                            l10n.ageRestrictionInline, // Under date picker
+                                            style: TextStyle(
+                                              color: Colors.red.shade700,
+                                              fontSize: 12,
+                                              fontWeight: FontWeight.w500,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  );
+                                }
+                                return const SizedBox.shrink();
+                              },
+                            ),
+                          ],
                           const SizedBox(height: 12),
 
                           // Location Detection Status

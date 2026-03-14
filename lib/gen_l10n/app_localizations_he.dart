@@ -63,6 +63,27 @@ class AppLocalizationsHe extends AppLocalizations {
   String get viewUserPoliciesAndAgreements => 'צפייה במדיניות ובהסכמי משתמש';
 
   @override
+  String get previewBookNowLabel => 'הזמן עכשיו';
+
+  @override
+  String get previewLoginPromptTitle => 'התחבר כדי להזמין';
+
+  @override
+  String get previewLoginPromptSubtitle =>
+      'צור חשבון חינמי או התחבר כדי להזמין שירות זה ועוד רבים!';
+
+  @override
+  String get ageRestrictionTitle => '18+ בלבד';
+
+  @override
+  String get ageRestrictionBody =>
+      'עליך להיות בן 18 לפחות כדי להירשם ולהשתמש ב-Styloria. נדרש אימות תאריך לידה.';
+
+  @override
+  String get ageRestrictionInline =>
+      'עליך להיות בן 18 לפחות כדי להשתמש ב-Styloria.';
+
+  @override
   String get logOut => 'התנתקות';
 
   @override
@@ -128,6 +149,58 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String get yourNotes => 'Your Notes';
+
+  @override
+  String get previewTagline => 'יופי לפי דרישה';
+
+  @override
+  String get previewServicesTitle => 'שירותים זמינים';
+
+  @override
+  String get previewServicesSubtitle => 'עיין במגוון הרחב של שירותי היופי שלנו';
+
+  @override
+  String get previewServiceHaircut => 'תספורת';
+
+  @override
+  String get previewServiceMakeup => 'איפור';
+
+  @override
+  String get previewServiceMassage => 'עיסוי';
+
+  @override
+  String get previewServiceNailArt => 'עיצוב ציפורניים';
+
+  @override
+  String get previewServiceFacial => 'טיפול פנים';
+
+  @override
+  String get previewServiceHairColoring => 'צביעת שיער';
+
+  @override
+  String get previewAndMore => '+ עוד שירותים רבים זמינים';
+
+  @override
+  String get previewFeatureBrowse => 'גלה את שירותי היופי המובילים בקרבתך';
+
+  @override
+  String get previewFeatureVerified => 'ספקים מאומתים ומהימנים בלבד';
+
+  @override
+  String get previewFeatureSecurePay => 'תשלומים בטוחים ומאובטחים';
+
+  @override
+  String get previewFeatureReviews => 'ביקורות אמיתיות מלקוחות אמיתיים';
+
+  @override
+  String get previewGetStarted => 'התחל - צור חשבון';
+
+  @override
+  String get previewAlreadyHaveAccount => 'כבר יש לי חשבון - התחברות';
+
+  @override
+  String get previewFooterNote =>
+      'בהמשך, אתה מסכים לתנאי השירות ולמדיניות הפרטיות שלנו. יש להיות בן 18 ומעלה כדי להירשם.';
 
   @override
   String get forgotPassword => 'Forgot Password?';

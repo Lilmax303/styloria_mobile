@@ -63,6 +63,26 @@ class AppLocalizationsKo extends AppLocalizations {
   String get viewUserPoliciesAndAgreements => '사용자 정책 및 약관 보기';
 
   @override
+  String get previewBookNowLabel => '지금 예약';
+
+  @override
+  String get previewLoginPromptTitle => '예약하려면 로그인하세요';
+
+  @override
+  String get previewLoginPromptSubtitle =>
+      '무료 계정을 만들거나 로그인하여 이 서비스와 더 많은 서비스를 예약하세요!';
+
+  @override
+  String get ageRestrictionTitle => '만 18세 이상만 가능';
+
+  @override
+  String get ageRestrictionBody =>
+      'Styloria에 가입하고 이용하려면 만 18세 이상이어야 합니다. 생년월일 인증이 필요합니다.';
+
+  @override
+  String get ageRestrictionInline => 'Styloria를 이용하려면 만 18세 이상이어야 합니다.';
+
+  @override
   String get logOut => '로그아웃';
 
   @override
@@ -128,6 +148,58 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get yourNotes => 'Your Notes';
+
+  @override
+  String get previewTagline => '뷰티 온-디맨드';
+
+  @override
+  String get previewServicesTitle => '이용 가능한 서비스';
+
+  @override
+  String get previewServicesSubtitle => '다양한 뷰티 서비스를 둘러보세요';
+
+  @override
+  String get previewServiceHaircut => '헤어컷';
+
+  @override
+  String get previewServiceMakeup => '메이크업';
+
+  @override
+  String get previewServiceMassage => '마사지';
+
+  @override
+  String get previewServiceNailArt => '네일아트';
+
+  @override
+  String get previewServiceFacial => '페이셜';
+
+  @override
+  String get previewServiceHairColoring => '헤어 컬러링';
+
+  @override
+  String get previewAndMore => '+ 더 많은 서비스 이용 가능';
+
+  @override
+  String get previewFeatureBrowse => '내 주변 최고의 뷰티 서비스를 탐색하세요';
+
+  @override
+  String get previewFeatureVerified => '검증된 신뢰할 수 있는 전문가만';
+
+  @override
+  String get previewFeatureSecurePay => '안전하고 보안된 결제';
+
+  @override
+  String get previewFeatureReviews => '실제 고객의 진짜 리뷰';
+
+  @override
+  String get previewGetStarted => '시작하기 - 계정 만들기';
+
+  @override
+  String get previewAlreadyHaveAccount => '이미 계정이 있습니다 - 로그인';
+
+  @override
+  String get previewFooterNote =>
+      '계속 진행하면 서비스 약관 및 개인정보 처리방침에 동의하는 것입니다. 등록하려면 만 18세 이상이어야 합니다.';
 
   @override
   String get forgotPassword => 'Forgot Password?';

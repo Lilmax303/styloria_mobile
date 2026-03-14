@@ -50,6 +50,32 @@
     }
   },
 
+  "previewBookNowLabel": "RESERVAR",
+  "previewLoginPromptTitle": "Inicia sesión para reservar",
+  "previewLoginPromptSubtitle": "¡Crea una cuenta gratuita o inicia sesión para reservar este y muchos más servicios!",
+
+  "previewTagline": "BELLEZA A DEMANDA",
+  "previewServicesTitle": "Servicios Disponibles",
+  "previewServicesSubtitle": "Explora nuestra amplia gama de servicios de belleza",
+  "previewServiceHaircut": "Corte de cabello",
+  "previewServiceMakeup": "Maquillaje",
+  "previewServiceMassage": "Masaje",
+  "previewServiceNailArt": "Nail Art",
+  "previewServiceFacial": "Facial",
+  "previewServiceHairColoring": "Coloración",
+  "previewAndMore": "+ muchos más servicios disponibles",
+  "previewFeatureBrowse": "Explora los mejores servicios de belleza cerca de ti",
+  "previewFeatureVerified": "Solo proveedores verificados y de confianza",
+  "previewFeatureSecurePay": "Pagos seguros y protegidos",
+  "previewFeatureReviews": "Opiniones reales de clientes reales",
+  "previewGetStarted": "Comenzar - Crear cuenta",
+  "previewAlreadyHaveAccount": "Ya tengo una cuenta - Iniciar sesión",
+  "previewFooterNote": "Al continuar, aceptas nuestros Términos de servicio y Política de privacidad. Debes tener 18 años o más para registrarte.",
+
+  "ageRestrictionTitle": "Solo mayores de 18 años",
+  "ageRestrictionBody": "Debes tener al menos 18 años para registrarte y usar Styloria. Se requiere verificación de fecha de nacimiento.",
+  "ageRestrictionInline": "Debes tener al menos 18 años para usar Styloria.",
+
   "forgotPassword": "¿Olvidaste tu contraseña?",
   "forgotPasswordTitle": "Restablecer tu Contraseña",
   "forgotPasswordSubtitle": "Ingresa tu correo electrónico y te enviaremos un código para restablecer tu contraseña.",

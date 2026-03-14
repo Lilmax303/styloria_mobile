@@ -63,6 +63,24 @@ class AppLocalizationsZh extends AppLocalizations {
   String get viewUserPoliciesAndAgreements => '查看用户政策与协议';
 
   @override
+  String get previewBookNowLabel => '立即预约';
+
+  @override
+  String get previewLoginPromptTitle => '登录以预约';
+
+  @override
+  String get previewLoginPromptSubtitle => '创建免费账号或登录以预约此服务及更多服务！';
+
+  @override
+  String get ageRestrictionTitle => '仅限18岁以上';
+
+  @override
+  String get ageRestrictionBody => '您必须年满18岁才能注册和使用 Styloria。需要验证出生日期。';
+
+  @override
+  String get ageRestrictionInline => '您必须年满18岁才能使用 Styloria。';
+
+  @override
   String get logOut => '退出登录';
 
   @override
@@ -128,6 +146,57 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get yourNotes => 'Your Notes';
+
+  @override
+  String get previewTagline => '随需美容';
+
+  @override
+  String get previewServicesTitle => '可用服务';
+
+  @override
+  String get previewServicesSubtitle => '浏览我们丰富的美容服务';
+
+  @override
+  String get previewServiceHaircut => '理发';
+
+  @override
+  String get previewServiceMakeup => '化妆';
+
+  @override
+  String get previewServiceMassage => '按摩';
+
+  @override
+  String get previewServiceNailArt => '美甲';
+
+  @override
+  String get previewServiceFacial => '面部护理';
+
+  @override
+  String get previewServiceHairColoring => '染发';
+
+  @override
+  String get previewAndMore => '+ 更多服务可用';
+
+  @override
+  String get previewFeatureBrowse => '探索您附近的顶级美容服务';
+
+  @override
+  String get previewFeatureVerified => '仅限经过验证的可信服务商';
+
+  @override
+  String get previewFeatureSecurePay => '安全有保障的支付';
+
+  @override
+  String get previewFeatureReviews => '来自真实客户的真实评价';
+
+  @override
+  String get previewGetStarted => '开始 - 创建账号';
+
+  @override
+  String get previewAlreadyHaveAccount => '我已有账号 - 登录';
+
+  @override
+  String get previewFooterNote => '继续即表示您同意我们的服务条款和隐私政策。注册须年满18岁。';
 
   @override
   String get forgotPassword => 'Forgot Password?';
