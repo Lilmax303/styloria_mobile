@@ -42,6 +42,16 @@
     }
   },
 
+  "skipStateCityTitle": "Пропустить регион и город",
+  "skipStateCitySubtitle": "Эти поля необязательны",
+  "skipStateCityNote": "Вы пропустили регион и город. Вы всегда можете обновить данные о местоположении в настройках профиля. Примечание: указание местоположения помогает нам точнее подобрать ближайших исполнителей.",
+
+  "stateAndCityOptional": "Регион и город — необязательные поля.",
+
+  "onboardingSkipForNow": "Пропустить сейчас",
+  "dobRequiredReason": "Требуется для подтверждения возраста. Вам должно быть не менее 18 лет.",
+  "countryRequiredReason": "Требуется для определения местной валюты и подбора ближайших исполнителей.",
+
   "previewBookNowLabel": "ЗАПИСАТЬСЯ",
   "previewLoginPromptTitle": "Войдите для записи",
   "previewLoginPromptSubtitle": "Создайте бесплатный аккаунт или войдите, чтобы записаться на эту и другие услуги!",
@@ -56,7 +66,7 @@
   "previewServiceFacial": "Уход за лицом",
   "previewServiceHairColoring": "Окрашивание волос",
   "previewAndMore": "+ ещё много услуг",
-  "previewFeatureBrowse": "Исследуйте лучшие услуги красоты рядом с вами",
+  "previewFeatureBrowse": "Откройте для себя услуги красоты на любой случай",
   "previewFeatureVerified": "Только проверенные мастера",
   "previewFeatureSecurePay": "Безопасные платежи",
   "previewFeatureReviews": "Реальные отзывы реальных клиентов",

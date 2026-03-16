@@ -132,6 +132,17 @@
       "country": {"type": "String"}
     }
   },
+
+  "skipStateCityTitle": "跳过州/省和城市",
+  "skipStateCitySubtitle": "这些字段是可选的",
+  "skipStateCityNote": "您选择了跳过州/省和城市。您可以随时在个人资料设置中更新您的位置信息。注意：提供您的位置有助于我们更准确地为您匹配附近的服务提供商。",
+
+  "stateAndCityOptional": "州/省和城市为可选填写项。",
+
+  "onboardingSkipForNow": "暂时跳过",
+  "dobRequiredReason": "年龄验证所需。您必须年满18岁。",
+  "countryRequiredReason": "检测您的本地货币并与附近服务提供商匹配所需。",
+
   "locationConfirmed": "✓ 位置已确认：{country}",
   "@locationConfirmed": {
     "placeholders": {

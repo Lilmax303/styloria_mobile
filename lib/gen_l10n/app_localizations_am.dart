@@ -73,6 +73,9 @@ class AppLocalizationsAm extends AppLocalizations {
       'ይህንን እና ሌሎች ብዙ አገልግሎቶችን ለመያዝ ነፃ መለያ ይፍጠሩ ወይም ይግቡ!';
 
   @override
+  String get stateAndCityOptional => 'ክልል እና ከተማ አማራጭ መስኮች ናቸው።';
+
+  @override
   String get ageRestrictionTitle => 'ከ18 ዓመት በላይ ብቻ';
 
   @override
@@ -129,6 +132,16 @@ class AppLocalizationsAm extends AppLocalizations {
   String get failedToDeleteAccount => 'መለያ ማጥፋት አልተሳካም። እንደገና ይሞክሩ።';
 
   @override
+  String get onboardingSkipForNow => 'አሁን ዝለል';
+
+  @override
+  String get dobRequiredReason => 'የዕድሜ ማረጋገጫ ያስፈልጋል። 18 ዓመት ወይም በላይ መሆን አለብዎ።';
+
+  @override
+  String get countryRequiredReason =>
+      'የአካባቢ ምንዛሪ ለማወቅ እና ለቅርብ አቅራቢዎች ለማዛመድ ያስፈልጋል።';
+
+  @override
   String get choosePreferredLanguage => 'የሚመርጡትን ቋንቋ ይምረጡ';
 
   @override
@@ -148,6 +161,16 @@ class AppLocalizationsAm extends AppLocalizations {
 
   @override
   String get yourNotes => 'Your Notes';
+
+  @override
+  String get skipStateCityTitle => 'ክልል እና ከተማ ዝለል';
+
+  @override
+  String get skipStateCitySubtitle => 'እነዚህ መስኮች አማራጭ ናቸው';
+
+  @override
+  String get skipStateCityNote =>
+      'ክልል እና ከተማን ለመዝለል መርጠዋል። በመገለጫ ቅንብሮችዎ ውስጥ የአካባቢ ዝርዝሮችዎን ማዘመን ይችላሉ። ማስታወሻ፡ አካባቢዎን መስጠት ከቅርብ አቅራቢዎች ጋር በትክክለኛነት እንዲዛመዱ ይረዳናል።';
 
   @override
   String get previewTagline => 'ውበት በፍላጎት';

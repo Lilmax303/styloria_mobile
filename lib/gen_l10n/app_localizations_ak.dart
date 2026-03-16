@@ -74,6 +74,9 @@ class AppLocalizationsAk extends AppLocalizations {
       'Yɛ account efiri ho anaa ko mu na hyɛ dwumadie yi ne afoforo ase!';
 
   @override
+  String get stateAndCityOptional => 'Ɔman ne kurom yɛ nea ɛho nhia.';
+
+  @override
   String get ageRestrictionTitle => 'Mfie 18 Ne Soro Nkoaa';
 
   @override
@@ -135,6 +138,17 @@ class AppLocalizationsAk extends AppLocalizations {
       'Akaunt pepae no anomaa. Yɛsrɛ wo san yɛ bio.';
 
   @override
+  String get onboardingSkipForNow => 'Twam seesei';
+
+  @override
+  String get dobRequiredReason =>
+      'Ɛhia sɛ wohwɛ wo mfeɛ. Ɛsɛ sɛ wowɔ mfe 18 ne soro.';
+
+  @override
+  String get countryRequiredReason =>
+      'Ɛhia sɛ yɛhu wo sika dwetɛ ne sɛ yɛde wo ka adwumayɛfoɔ a wɔbɛn wo.';
+
+  @override
   String get choosePreferredLanguage => 'Paw kasa a wopɛ';
 
   @override
@@ -154,6 +168,16 @@ class AppLocalizationsAk extends AppLocalizations {
 
   @override
   String get yourNotes => 'Your Notes';
+
+  @override
+  String get skipStateCityTitle => 'Bɔ wo beaeɛ a wote tra';
+
+  @override
+  String get skipStateCitySubtitle => 'Wo beaeɛ yi yɛ nea ɛho nhia';
+
+  @override
+  String get skipStateCityNote =>
+      'Woabɔ wo beaeɛ yi atra. Wobetumi akyerɛ wo beaeɛ ho nsɛm bio wɔ wo profile settings mu. Nsɛm: sɛ wode wo beaeɛ ba a, ɛboa yɛn sɛ yɛde wo ka adwumayɛfoɔ a wɔbɛn wo.';
 
   @override
   String get previewTagline => 'AHOFAM DWUMA WƆ W\'ANIMUONYAM MU';

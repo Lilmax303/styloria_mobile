@@ -74,6 +74,9 @@ class AppLocalizationsAf extends AppLocalizations {
       'Skep \'n gratis rekening of teken in om hierdie en nog baie meer dienste te bespreek!';
 
   @override
+  String get stateAndCityOptional => 'Staat en stad is opsionele velde.';
+
+  @override
   String get ageRestrictionTitle => 'Slegs 18+';
 
   @override
@@ -136,6 +139,17 @@ class AppLocalizationsAf extends AppLocalizations {
       'Kon nie rekening verwyder nie. Probeer asseblief weer.';
 
   @override
+  String get onboardingSkipForNow => 'Slaan vir nou oor';
+
+  @override
+  String get dobRequiredReason =>
+      'Vereis vir ouderdomsverifikasie. Jy moet 18+ jaar oud wees.';
+
+  @override
+  String get countryRequiredReason =>
+      'Vereis om jou plaaslike geldeenheid te bepaal en nabygelegen verskaffers te vind.';
+
+  @override
   String get choosePreferredLanguage => 'Kies jou voorkeurtaal';
 
   @override
@@ -155,6 +169,16 @@ class AppLocalizationsAf extends AppLocalizations {
 
   @override
   String get yourNotes => 'Your Notes';
+
+  @override
+  String get skipStateCityTitle => 'Slaan Staat & Stad oor';
+
+  @override
+  String get skipStateCitySubtitle => 'Hierdie velde is opsioneel';
+
+  @override
+  String get skipStateCityNote =>
+      'Jy het gekies om Staat en Stad oor te slaan. Jy kan jou liggingbesonderhede altyd later in jou profielinstellings opdateer. Let wel: die verskaffing van jou ligging help ons om jou akkurater met nabygelegen diensverskaffers te verbind.';
 
   @override
   String get previewTagline => 'SKOONHEID OP AANVRAAG';
@@ -188,7 +212,8 @@ class AppLocalizationsAf extends AppLocalizations {
   String get previewAndMore => '+ baie meer dienste beskikbaar';
 
   @override
-  String get previewFeatureBrowse => 'Verken top skoonheidsdienste naby jou';
+  String get previewFeatureBrowse =>
+      'Ontdek skoonheidsdienste vir elke behoefte';
 
   @override
   String get previewFeatureVerified =>

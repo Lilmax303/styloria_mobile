@@ -74,6 +74,9 @@ class AppLocalizationsRu extends AppLocalizations {
       'Создайте бесплатный аккаунт или войдите, чтобы записаться на эту и другие услуги!';
 
   @override
+  String get stateAndCityOptional => 'Регион и город — необязательные поля.';
+
+  @override
   String get ageRestrictionTitle => 'Только 18+';
 
   @override
@@ -135,6 +138,17 @@ class AppLocalizationsRu extends AppLocalizations {
       'Не удалось удалить аккаунт. Попробуйте ещё раз.';
 
   @override
+  String get onboardingSkipForNow => 'Пропустить сейчас';
+
+  @override
+  String get dobRequiredReason =>
+      'Требуется для подтверждения возраста. Вам должно быть не менее 18 лет.';
+
+  @override
+  String get countryRequiredReason =>
+      'Требуется для определения местной валюты и подбора ближайших исполнителей.';
+
+  @override
   String get choosePreferredLanguage => 'Выберите предпочитаемый язык';
 
   @override
@@ -154,6 +168,16 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get yourNotes => 'Your Notes';
+
+  @override
+  String get skipStateCityTitle => 'Пропустить регион и город';
+
+  @override
+  String get skipStateCitySubtitle => 'Эти поля необязательны';
+
+  @override
+  String get skipStateCityNote =>
+      'Вы пропустили регион и город. Вы всегда можете обновить данные о местоположении в настройках профиля. Примечание: указание местоположения помогает нам точнее подобрать ближайших исполнителей.';
 
   @override
   String get previewTagline => 'КРАСОТА ПО ТРЕБОВАНИЮ';
@@ -188,7 +212,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get previewFeatureBrowse =>
-      'Исследуйте лучшие услуги красоты рядом с вами';
+      'Откройте для себя услуги красоты на любой случай';
 
   @override
   String get previewFeatureVerified => 'Только проверенные мастера';

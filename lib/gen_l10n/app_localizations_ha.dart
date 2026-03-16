@@ -75,6 +75,9 @@ class AppLocalizationsHa extends AppLocalizations {
       'Ƙirƙiri asusun kyauta ko shiga don yin alƙawarin wannan da sauran ayyuka!';
 
   @override
+  String get stateAndCityOptional => 'Jiha da gari filayen zaɓi ne.';
+
+  @override
   String get ageRestrictionTitle => 'Shekaru 18+ Kawai';
 
   @override
@@ -136,6 +139,17 @@ class AppLocalizationsHa extends AppLocalizations {
       'An kasa goge asusu. Da fatan a sake gwadawa.';
 
   @override
+  String get onboardingSkipForNow => 'Tsallake yanzu';
+
+  @override
+  String get dobRequiredReason =>
+      'Ana buƙata don tabbatar da shekaru. Dole ne ka kasance da shekaru 18+.';
+
+  @override
+  String get countryRequiredReason =>
+      'Ana buƙata don gano kuɗin ka na gida da haɗa ka da masu ba da ayyuka kusa.';
+
+  @override
   String get choosePreferredLanguage => 'Zaɓi harshen da kake so';
 
   @override
@@ -155,6 +169,16 @@ class AppLocalizationsHa extends AppLocalizations {
 
   @override
   String get yourNotes => 'Your Notes';
+
+  @override
+  String get skipStateCityTitle => 'Tsallake Jiha da Gari';
+
+  @override
+  String get skipStateCitySubtitle => 'Waɗannan filayen zaɓi ne';
+
+  @override
+  String get skipStateCityNote =>
+      'Kun zaɓi tsallake Jiha da Gari. Kuna iya sabunta bayanan wurin ku daga cikin saitunan bayanin ku. Lura: bayar da wurin ku yana taimaka mana mu haɗa ku da masu ba da ayyuka kusa da ku daidai.';
 
   @override
   String get previewTagline => 'KYAU A BUKATA';

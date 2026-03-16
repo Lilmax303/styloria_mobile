@@ -75,6 +75,9 @@ class AppLocalizationsIt extends AppLocalizations {
       'Crea un account gratuito o accedi per prenotare questo e molti altri servizi!';
 
   @override
+  String get stateAndCityOptional => 'Stato e città sono campi facoltativi.';
+
+  @override
   String get ageRestrictionTitle => 'Solo per maggiori di 18 anni';
 
   @override
@@ -136,6 +139,17 @@ class AppLocalizationsIt extends AppLocalizations {
       'Impossibile eliminare l’account. Riprova.';
 
   @override
+  String get onboardingSkipForNow => 'Salta per ora';
+
+  @override
+  String get dobRequiredReason =>
+      'Richiesto per la verifica dell\'età. Devi avere almeno 18 anni.';
+
+  @override
+  String get countryRequiredReason =>
+      'Richiesto per rilevare la tua valuta locale e abbinarti ai fornitori vicini.';
+
+  @override
   String get choosePreferredLanguage => 'Scegli la lingua preferita';
 
   @override
@@ -155,6 +169,16 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get yourNotes => 'Your Notes';
+
+  @override
+  String get skipStateCityTitle => 'Salta Stato e Città';
+
+  @override
+  String get skipStateCitySubtitle => 'Questi campi sono facoltativi';
+
+  @override
+  String get skipStateCityNote =>
+      'Hai scelto di saltare Stato e Città. Puoi sempre aggiornare i tuoi dati di posizione dalle impostazioni del profilo. Nota: fornire la tua posizione ci aiuta a metterti in contatto con i fornitori di servizi vicini in modo più accurato.';
 
   @override
   String get previewTagline => 'BELLEZZA SU RICHIESTA';

@@ -1,8 +1,7 @@
 // lib/register_screen.dart
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';  // for TextInputFormatter
-import 'package:country_state_city_pro/country_state_city_pro.dart';
+import 'package:flutter/services.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:intl_phone_field/countries.dart' as phone_countries;
 import 'package:styloria_mobile/gen_l10n/app_localizations.dart';
@@ -24,8 +23,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
   final _formKey = GlobalKey<FormState>();
 
   final TextEditingController _countryController = TextEditingController();
-  final TextEditingController _stateController = TextEditingController();
-  final TextEditingController _cityController = TextEditingController();
 
   final _usernameController = TextEditingController();
   final _emailController = TextEditingController();
@@ -46,22 +43,21 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
   String _selectedIso2ForPhone = 'GH';
 
-  // Password visibility toggles
   bool _showPassword = false;
   bool _showConfirmPassword = false;
 
-  // Referral code
   final _referralCodeController = TextEditingController();
   bool _validatingReferral = false;
   bool? _referralCodeValid;
   String? _referrerName;
 
-  // GPS Detection state
   bool _detectingLocation = false;
   String? _detectedCountry;
   bool _locationDetectionAttempted = false;
   bool _userChangedCountry = false;
 
+  // Build sorted country list once
+  late final List<String> _countryNames;
 
   @override
   void initState() {
@@ -69,19 +65,24 @@ class _RegisterScreenState extends State<RegisterScreen> {
     _selectedDate = DateTime.now().subtract(const Duration(days: 365 * 18));
     _countryController.addListener(_syncPhoneCountryWithSelectedCountry);
     _countryController.addListener(_onCountryChanged);
-    // Auto-detect location on startup
     _detectLocationAndAutoFill();
+
+    // Build sorted country name list
+    final names = phone_countries.countries.map((c) {
+      final dynamic d = c;
+      return d is Map
+          ? (d['name'] ?? '').toString()
+          : (d.name ?? '').toString();
+    }).where((n) => n.isNotEmpty).toSet().toList();
+    names.sort();
+    _countryNames = names;
   }
 
   @override
   void dispose() {
     _countryController.removeListener(_syncPhoneCountryWithSelectedCountry);
     _countryController.removeListener(_onCountryChanged);
-
     _countryController.dispose();
-    _stateController.dispose();
-    _cityController.dispose();
-
     _usernameController.dispose();
     _emailController.dispose();
     _passwordController.dispose();
@@ -95,10 +96,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
   void _syncPhoneCountryWithSelectedCountry() {
     final countryName = _countryController.text.trim();
     if (countryName.isEmpty) return;
-
     final iso2 = _countryNameToIso2(countryName);
     if (iso2 == null) return;
-
     if (iso2 != _selectedIso2ForPhone) {
       setState(() {
         _selectedIso2ForPhone = iso2;
@@ -111,30 +110,18 @@ class _RegisterScreenState extends State<RegisterScreen> {
     if (_detectedCountry != null && _locationDetectionAttempted) {
       final currentCountry = _countryController.text.trim().toLowerCase();
       final detected = _detectedCountry!.toLowerCase();
-      
       if (currentCountry.isNotEmpty && currentCountry != detected) {
-        if (!_userChangedCountry) {
-          setState(() {
-            _userChangedCountry = true;
-          });
-        }
+        if (!_userChangedCountry) setState(() => _userChangedCountry = true);
       } else if (currentCountry.isNotEmpty && currentCountry == detected) {
-        if (_userChangedCountry) {
-          setState(() {
-            _userChangedCountry = false;
-          });
-        }
+        if (_userChangedCountry) setState(() => _userChangedCountry = false);
       }
     }
   }
 
   Future<void> _detectLocationAndAutoFill() async {
-    setState(() {
-      _detectingLocation = true;
-    });
+    setState(() => _detectingLocation = true);
 
     try {
-      // Check if location services are enabled
       final serviceEnabled = await Geolocator.isLocationServiceEnabled();
       if (!serviceEnabled) {
         setState(() {
@@ -144,7 +131,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
         return;
       }
 
-      // Check/request permission
       var permission = await Geolocator.checkPermission();
       if (permission == LocationPermission.denied) {
         permission = await Geolocator.requestPermission();
@@ -165,13 +151,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
         return;
       }
 
-      // Get current position
       final position = await Geolocator.getCurrentPosition(
-        desiredAccuracy: LocationAccuracy.low, // Low accuracy is faster and sufficient for country
+        desiredAccuracy: LocationAccuracy.low,
         timeLimit: const Duration(seconds: 15),
       );
 
-      // Reverse geocode to get country
       final placemarks = await placemarkFromCoordinates(
         position.latitude,
         position.longitude,
@@ -180,23 +164,15 @@ class _RegisterScreenState extends State<RegisterScreen> {
       if (placemarks.isNotEmpty && mounted) {
         final placemark = placemarks.first;
         final country = placemark.country;
-
         if (country != null && country.isNotEmpty) {
-          // ✅ STEP 1: Store detected info and reset controllers
           setState(() {
             _detectedCountry = country;
             _detectingLocation = false;
             _locationDetectionAttempted = true;
-            // ✅ DON'T auto-fill the country controller anymore!
-            // Just store the detected country for comparison
           });
-
-          // ✅ Sync phone country code based on detected country
           final iso2 = _countryNameToIso2(country);
           if (iso2 != null && mounted) {
-            setState(() {
-              _selectedIso2ForPhone = iso2;
-            });
+            setState(() => _selectedIso2ForPhone = iso2);
           }
           return;
         }
@@ -213,17 +189,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
     }
   }
 
-
   String? _countryNameToIso2(String countryName) {
     final name = countryName.trim().toLowerCase();
     if (name.isEmpty) return null;
 
     for (final c in phone_countries.countries) {
       final dynamic d = c;
-
       String cName = '';
       String cCode = '';
-
       if (d is Map) {
         cName = (d['name'] ?? '').toString().trim().toLowerCase();
         cCode = (d['code'] ?? '').toString().trim().toUpperCase();
@@ -233,27 +206,24 @@ class _RegisterScreenState extends State<RegisterScreen> {
         // ignore: avoid_dynamic_calls
         cCode = (d.code ?? '').toString().trim().toUpperCase();
       }
-
       if (cName == name && cCode.isNotEmpty) return cCode;
     }
 
     if (name == 'usa' || name == 'united states of america') return 'US';
     if (name == 'uk' || name == 'great britain') return 'GB';
-
     return null;
   }
 
   Future<void> _pickDate() async {
     final now = DateTime.now();
-    final initialDate = _selectedDate ?? now.subtract(const Duration(days: 365 * 18));
-
+    final initialDate =
+        _selectedDate ?? now.subtract(const Duration(days: 365 * 18));
     final picked = await showDatePicker(
       context: context,
       initialDate: initialDate,
       firstDate: DateTime(1900),
       lastDate: now,
     );
-
     if (!mounted) return;
     if (picked != null) setState(() => _selectedDate = picked);
   }
@@ -265,7 +235,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
     return null;
   }
 
-
   Future<void> _validateReferralCode() async {
     final code = _referralCodeController.text.trim();
     if (code.isEmpty) {
@@ -276,8 +245,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
       return;
     }
 
-    // For new format: need at least 8 alphanumeric chars to validate
-    // For legacy format: need at least 10 chars (STYLORIA-X)
     final cleaned = code.replaceAll('-', '').replaceAll(' ', '');
     if (cleaned.length < 8) {
       setState(() {
@@ -288,11 +255,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
     }
 
     setState(() => _validatingReferral = true);
-
     final result = await ApiClient.validateReferralCode(code);
-
     if (!mounted) return;
-
     setState(() {
       _validatingReferral = false;
       _referralCodeValid = result['valid'] == true;
@@ -300,14 +264,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
     });
   }
 
-
   Future<void> _openUrl(String url) async {
     final uri = Uri.parse(url);
     if (await canLaunchUrl(uri)) {
       await launchUrl(uri, mode: LaunchMode.externalApplication);
     }
   }
-
 
   Future<void> _submitRegistration() async {
     final l10n = AppLocalizations.of(context);
@@ -319,10 +281,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
     }
     if (_countryController.text.isEmpty) {
       setState(() => _error = l10n.pleaseSelectCountry);
-      return;
-    }
-    if (_cityController.text.isEmpty) {
-      setState(() => _error = l10n.pleaseSelectCity);
       return;
     }
     if (_completePhoneNumber.isEmpty) {
@@ -367,7 +325,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       firstName: _firstNameController.text.trim(),
       lastName: _lastNameController.text.trim(),
       countryName: _countryController.text.trim(),
-      cityName: _cityController.text.trim(),
+      cityName: '',
       acceptedTerms: _acceptedTerms,
       password: _passwordController.text,
       passwordConfirm: _passwordConfirmController.text,
@@ -379,7 +337,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
     );
 
     if (!mounted) return;
-
     setState(() => _loading = false);
 
     if (errorMessage != null) {
@@ -389,7 +346,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
     final verified = await Navigator.of(context).push<bool>(
       MaterialPageRoute(
-        builder: (_) => EmailVerificationScreen(identifier: email, role: role),
+        builder: (_) =>
+            EmailVerificationScreen(identifier: email, role: role),
       ),
     );
 
@@ -402,9 +360,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       });
       Navigator.of(context).popUntil((route) => route.isFirst);
     } else {
-      setState(() {
-        _error = l10n.pleaseVerifyEmailToContinue;
-      });
+      setState(() => _error = l10n.pleaseVerifyEmailToContinue);
     }
   }
 
@@ -434,7 +390,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
             ),
             child: Center(
               child: ConstrainedBox(
-                constraints: BoxConstraints(maxWidth: isSmallScreen ? double.infinity : 520),
+                constraints: BoxConstraints(
+                    maxWidth: isSmallScreen ? double.infinity : 520),
                 child: Card(
                   elevation: 12,
                   shape: RoundedRectangleBorder(
@@ -449,7 +406,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         children: [
                           Text(
                             l10n.joinStyloria,
-                            style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                            style: const TextStyle(
+                                fontSize: 24, fontWeight: FontWeight.bold),
                           ),
                           const SizedBox(height: 8),
                           Text(
@@ -458,24 +416,27 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           ),
                           const SizedBox(height: 20),
 
-                          // ✅ AGE RESTRICTION NOTICE - Visible to Apple and Users
+                          // 18+ Notice
                           Container(
                             padding: const EdgeInsets.all(12),
                             decoration: BoxDecoration(
                               color: Colors.amber.shade50,
                               borderRadius: BorderRadius.circular(12),
-                              border: Border.all(color: Colors.amber.shade700, width: 1.5),
+                              border: Border.all(
+                                  color: Colors.amber.shade700, width: 1.5),
                             ),
                             child: Row(
                               children: [
-                                Icon(Icons.verified_user, color: Colors.amber.shade800, size: 24),
+                                Icon(Icons.verified_user,
+                                    color: Colors.amber.shade800, size: 24),
                                 const SizedBox(width: 12),
                                 Expanded(
                                   child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                        l10n.ageRestrictionTitle,  // "18+ Only"
+                                        l10n.ageRestrictionTitle,
                                         style: TextStyle(
                                           color: Colors.amber.shade900,
                                           fontWeight: FontWeight.bold,
@@ -484,7 +445,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                       ),
                                       const SizedBox(height: 2),
                                       Text(
-                                        l10n.ageRestrictionBody,   // Full description
+                                        l10n.ageRestrictionBody,
                                         style: TextStyle(
                                           color: Colors.amber.shade800,
                                           fontSize: 12,
@@ -498,6 +459,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           ),
                           const SizedBox(height: 16),
 
+                          // Error / Success banners
                           if (_error != null)
                             Container(
                               padding: const EdgeInsets.all(12),
@@ -506,10 +468,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 borderRadius: BorderRadius.circular(12),
                                 border: Border.all(color: cs.error),
                               ),
-                              child: Text(
-                                _error!,
-                                style: TextStyle(color: cs.onErrorContainer),
-                              ),
+                              child: Text(_error!,
+                                  style: TextStyle(
+                                      color: cs.onErrorContainer)),
                             ),
 
                           if (_success != null)
@@ -520,18 +481,18 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 borderRadius: BorderRadius.circular(12),
                                 border: Border.all(color: cs.primary),
                               ),
-                              child: Text(
-                                _success!,
-                                style: TextStyle(color: cs.onSurface),
-                              ),
+                              child: Text(_success!,
+                                  style:
+                                      TextStyle(color: cs.onSurface)),
                             ),
 
-                          if (_error != null || _success != null) const SizedBox(height: 16),
+                          if (_error != null || _success != null)
+                            const SizedBox(height: 16),
 
-                          Text(
-                            l10n.iWantTo,
-                            style: const TextStyle(fontWeight: FontWeight.bold),
-                          ),
+                          // Role selector
+                          Text(l10n.iWantTo,
+                              style: const TextStyle(
+                                  fontWeight: FontWeight.bold)),
                           const SizedBox(height: 8),
                           SegmentedButton<String>(
                             segments: [
@@ -548,17 +509,19 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             ],
                             selected: {_selectedRole},
                             onSelectionChanged: (Set<String> newSelection) {
-                              setState(() => _selectedRole = newSelection.first);
+                              setState(
+                                  () => _selectedRole = newSelection.first);
                             },
                           ),
 
                           const SizedBox(height: 20),
-                          Text(
-                            l10n.personalInformation,
-                            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                          ),
+                          Text(l10n.personalInformation,
+                              style: const TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold)),
                           const SizedBox(height: 12),
 
+                          // First / Last name
                           Row(
                             children: [
                               Expanded(
@@ -568,8 +531,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                     labelText: l10n.firstName,
                                     border: const OutlineInputBorder(),
                                   ),
-                                  validator: (value) =>
-                                      value == null || value.isEmpty ? l10n.required : null,
+                                  validator: (value) => value == null ||
+                                          value.isEmpty
+                                      ? l10n.required
+                                      : null,
                                 ),
                               ),
                               const SizedBox(width: 8),
@@ -580,92 +545,108 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                     labelText: l10n.lastName,
                                     border: const OutlineInputBorder(),
                                   ),
-                                  validator: (value) =>
-                                      value == null || value.isEmpty ? l10n.required : null,
+                                  validator: (value) => value == null ||
+                                          value.isEmpty
+                                      ? l10n.required
+                                      : null,
                                 ),
                               ),
                             ],
                           ),
                           const SizedBox(height: 12),
 
-                          // Date of Birth Label
-                          Text(
-                            l10n.dateOfBirth,
-                            style: const TextStyle(fontWeight: FontWeight.bold),
-                          ),
+                          // Date of Birth
+                          Text(l10n.dateOfBirth,
+                              style: const TextStyle(
+                                  fontWeight: FontWeight.bold)),
                           const SizedBox(height: 4),
-
                           OutlinedButton(
                             onPressed: _pickDate,
                             style: OutlinedButton.styleFrom(
-                              padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 12),
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 16, horizontal: 12),
                             ),
                             child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              mainAxisAlignment:
+                                  MainAxisAlignment.spaceBetween,
                               children: [
                                 Row(
                                   children: [
-                                    Icon(Icons.cake_outlined, size: 20, color: cs.onSurfaceVariant),
+                                    Icon(Icons.cake_outlined,
+                                        size: 20,
+                                        color: cs.onSurfaceVariant),
                                     const SizedBox(width: 8),
                                     Text(
                                       dateText,
                                       style: TextStyle(
-                                        color: _selectedDate == null ? cs.onSurfaceVariant : cs.onSurface,
+                                        color: _selectedDate == null
+                                            ? cs.onSurfaceVariant
+                                            : cs.onSurface,
                                       ),
                                     ),
                                   ],
                                 ),
-                                Icon(Icons.calendar_today, size: 20, color: cs.primary),
+                                Icon(Icons.calendar_today,
+                                    size: 20, color: cs.primary),
                               ],
                             ),
                           ),
-                          const SizedBox(height: 12),
+                          const SizedBox(height: 6),
+                          Text(
+                            l10n.dobRequiredReason,
+                            style: TextStyle(
+                              fontSize: 11,
+                              color: cs.onSurfaceVariant,
+                              fontStyle: FontStyle.italic,
+                            ),
+                          ),
 
-                          // ✅ ADD THIS: Real-time under-18 warning
+                          // Under-18 warning
                           if (_selectedDate != null) ...[
                             const SizedBox(height: 6),
-                            Builder(
-                              builder: (context) {
-                                final now = DateTime.now();
-                                int age = now.year - _selectedDate!.year;
-                                if (now.month < _selectedDate!.month ||
-                                    (now.month == _selectedDate!.month &&
-                                        now.day < _selectedDate!.day)) {
-                                  age--;
-                                }
-                                if (age < 18) {
-                                  return Container(
-                                    padding: const EdgeInsets.all(10),
-                                    decoration: BoxDecoration(
-                                      color: Colors.red.shade50,
-                                      borderRadius: BorderRadius.circular(8),
-                                      border: Border.all(color: Colors.red.shade300),
-                                    ),
-                                    child: Row(
-                                      children: [
-                                        Icon(Icons.block, color: Colors.red.shade700, size: 18),
-                                        const SizedBox(width: 8),
-                                        Expanded(
-                                          child: Text(
-                                            l10n.ageRestrictionInline, // Under date picker
-                                            style: TextStyle(
-                                              color: Colors.red.shade700,
-                                              fontSize: 12,
-                                              fontWeight: FontWeight.w500,
-                                            ),
+                            Builder(builder: (context) {
+                              final now = DateTime.now();
+                              int age = now.year - _selectedDate!.year;
+                              if (now.month < _selectedDate!.month ||
+                                  (now.month == _selectedDate!.month &&
+                                      now.day < _selectedDate!.day)) {
+                                age--;
+                              }
+                              if (age < 18) {
+                                return Container(
+                                  padding: const EdgeInsets.all(10),
+                                  decoration: BoxDecoration(
+                                    color: Colors.red.shade50,
+                                    borderRadius: BorderRadius.circular(8),
+                                    border: Border.all(
+                                        color: Colors.red.shade300),
+                                  ),
+                                  child: Row(
+                                    children: [
+                                      Icon(Icons.block,
+                                          color: Colors.red.shade700,
+                                          size: 18),
+                                      const SizedBox(width: 8),
+                                      Expanded(
+                                        child: Text(
+                                          l10n.ageRestrictionInline,
+                                          style: TextStyle(
+                                            color: Colors.red.shade700,
+                                            fontSize: 12,
+                                            fontWeight: FontWeight.w500,
                                           ),
                                         ),
-                                      ],
-                                    ),
-                                  );
-                                }
-                                return const SizedBox.shrink();
-                              },
-                            ),
+                                      ),
+                                    ],
+                                  ),
+                                );
+                              }
+                              return const SizedBox.shrink();
+                            }),
                           ],
                           const SizedBox(height: 12),
 
-                          // Location Detection Status
+                          // Location detecting spinner
                           if (_detectingLocation)
                             Container(
                               padding: const EdgeInsets.all(12),
@@ -679,22 +660,24 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                   const SizedBox(
                                     width: 20,
                                     height: 20,
-                                    child: CircularProgressIndicator(strokeWidth: 2),
+                                    child: CircularProgressIndicator(
+                                        strokeWidth: 2),
                                   ),
                                   const SizedBox(width: 12),
                                   Expanded(
                                     child: Text(
                                       l10n.detectingYourLocation,
-                                      style: TextStyle(color: cs.onPrimaryContainer),
+                                      style: TextStyle(
+                                          color: cs.onPrimaryContainer),
                                     ),
                                   ),
                                 ],
                               ),
                             ),
 
-                          // Location Hint (shows BEFORE user selects country)
-                          if (_detectedCountry != null && 
-                              !_detectingLocation && 
+                          // Detected country hint
+                          if (_detectedCountry != null &&
+                              !_detectingLocation &&
                               _countryController.text.isEmpty)
                             Container(
                               padding: const EdgeInsets.all(12),
@@ -702,25 +685,30 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               decoration: BoxDecoration(
                                 color: cs.primaryContainer,
                                 borderRadius: BorderRadius.circular(8),
-                                border: Border.all(color: cs.primary.withOpacity(0.3)),
+                                border: Border.all(
+                                    color: cs.primary.withOpacity(0.3)),
                               ),
                               child: Row(
                                 children: [
-                                  Icon(Icons.location_on, color: cs.primary, size: 20),
+                                  Icon(Icons.location_on,
+                                      color: cs.primary, size: 20),
                                   const SizedBox(width: 8),
                                   Expanded(
                                     child: Text(
-                                      l10n.weDetectedYoureIn(_detectedCountry!),
-                                      style: TextStyle(color: cs.onPrimaryContainer, fontSize: 13),
+                                      l10n.weDetectedYoureIn(
+                                          _detectedCountry!),
+                                      style: TextStyle(
+                                          color: cs.onPrimaryContainer,
+                                          fontSize: 13),
                                     ),
                                   ),
                                 ],
                               ),
                             ),
 
-                          // Location Confirmed (shows AFTER user selects matching country)
-                          if (_detectedCountry != null && 
-                              !_detectingLocation && 
+                          // Location confirmed
+                          if (_detectedCountry != null &&
+                              !_detectingLocation &&
                               _countryController.text.isNotEmpty &&
                               !_userChangedCountry)
                             Container(
@@ -729,23 +717,28 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               decoration: BoxDecoration(
                                 color: Colors.green.shade50,
                                 borderRadius: BorderRadius.circular(8),
-                                border: Border.all(color: Colors.green.shade200),
+                                border:
+                                    Border.all(color: Colors.green.shade200),
                               ),
                               child: Row(
                                 children: [
-                                  Icon(Icons.check_circle, color: Colors.green.shade700, size: 20),
+                                  Icon(Icons.check_circle,
+                                      color: Colors.green.shade700, size: 20),
                                   const SizedBox(width: 8),
                                   Expanded(
                                     child: Text(
-                                      l10n.locationConfirmed(_countryController.text),
-                                      style: TextStyle(color: Colors.green.shade700, fontSize: 13),
+                                      l10n.locationConfirmed(
+                                          _countryController.text),
+                                      style: TextStyle(
+                                          color: Colors.green.shade700,
+                                          fontSize: 13),
                                     ),
                                   ),
                                 ],
                               ),
                             ),
 
-                          // Country Mismatch Warning
+                          // Country mismatch warning
                           if (_userChangedCountry && _detectedCountry != null)
                             Container(
                               padding: const EdgeInsets.all(12),
@@ -753,16 +746,19 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               decoration: BoxDecoration(
                                 color: Colors.orange.shade50,
                                 borderRadius: BorderRadius.circular(8),
-                                border: Border.all(color: Colors.orange.shade200),
+                                border: Border.all(
+                                    color: Colors.orange.shade200),
                               ),
                               child: Row(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Icon(Icons.info_outline, color: Colors.orange.shade700, size: 20),
+                                  Icon(Icons.info_outline,
+                                      color: Colors.orange.shade700, size: 20),
                                   const SizedBox(width: 8),
                                   Expanded(
                                     child: Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
                                       children: [
                                         Text(
                                           l10n.countryMismatchWarningTitle,
@@ -774,7 +770,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                         ),
                                         const SizedBox(height: 4),
                                         Text(
-                                          l10n.countryMismatchWarningBody(_detectedCountry!),
+                                          l10n.countryMismatchWarningBody(
+                                              _detectedCountry!),
                                           style: TextStyle(
                                             color: Colors.orange.shade700,
                                             fontSize: 12,
@@ -787,137 +784,74 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               ),
                             ),
 
-                          // ✅ COUNTRY PICKER with "Other" support
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.stretch,
-                            children: [
-                              CountryStateCityPicker(
-                                key: const ValueKey('location_picker'),
-                                country: _countryController,
-                                state: _stateController,
-                                city: _cityController,
-                                dialogColor: cs.surface,
-                                textFieldDecoration: const InputDecoration(
-                                  border: OutlineInputBorder(),
-                                  suffixIcon: Icon(Icons.arrow_drop_down),
-                                ),
-                              ),
-                              
-                              // ✅ ULTRA HACK: "Other" helper buttons
-                              const SizedBox(height: 8),
-                              Row(
-                                children: [
-                                  // State "Other" button
-                                  Expanded(
-                                    child: OutlinedButton.icon(
-                                      onPressed: _countryController.text.isEmpty
-                                          ? null
-                                          : () {
-                                              setState(() {
-                                                _stateController.text = 'Other';
-                                              });
-                                            },
-                                      icon: const Icon(Icons.location_city, size: 16),
-                                      label: Text(
-                                        _stateController.text == 'Other'
-                                            ? '✓ State: Other'
-                                            : 'State not listed?',
-                                        style: TextStyle(fontSize: 11),
-                                      ),
-                                      style: OutlinedButton.styleFrom(
-                                        padding: const EdgeInsets.symmetric(
-                                          horizontal: 8,
-                                          vertical: 8,
-                                        ),
-                                        side: BorderSide(
-                                          color: _stateController.text == 'Other'
-                                              ? Colors.green
-                                              : cs.outline,
-                                        ),
-                                        foregroundColor: _stateController.text == 'Other'
-                                            ? Colors.green
-                                            : cs.onSurface,
-                                      ),
-                                    ),
-                                  ),
-                                  const SizedBox(width: 8),
-                                  // City "Other" button
-                                  Expanded(
-                                    child: OutlinedButton.icon(
-                                      onPressed: _countryController.text.isEmpty
-                                          ? null
-                                          : () {
-                                              setState(() {
-                                                _cityController.text = 'Other';
-                                              });
-                                            },
-                                      icon: const Icon(Icons.more_horiz, size: 16),
-                                      label: Text(
-                                        _cityController.text == 'Other'
-                                            ? '✓ City: Other'
-                                            : 'City not listed?',
-                                        style: TextStyle(fontSize: 11),
-                                      ),
-                                      style: OutlinedButton.styleFrom(
-                                        padding: const EdgeInsets.symmetric(
-                                          horizontal: 8,
-                                          vertical: 8,
-                                        ),
-                                        side: BorderSide(
-                                          color: _cityController.text == 'Other'
-                                              ? Colors.green
-                                              : cs.outline,
-                                        ),
-                                        foregroundColor: _cityController.text == 'Other'
-                                            ? Colors.green
-                                            : cs.onSurface,
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              
-                              // Helper text
-                              if (_stateController.text == 'Other' || _cityController.text == 'Other')
-                                Padding(
-                                  padding: const EdgeInsets.only(top: 8),
-                                  child: Container(
-                                    padding: const EdgeInsets.all(8),
-                                    decoration: BoxDecoration(
-                                      color: Colors.green.shade50,
-                                      borderRadius: BorderRadius.circular(8),
-                                      border: Border.all(color: Colors.green.shade200),
-                                    ),
-                                    child: Row(
-                                      children: [
-                                        Icon(Icons.check_circle, 
-                                          color: Colors.green.shade700, 
-                                          size: 16,
-                                        ),
-                                        const SizedBox(width: 8),
-                                        Expanded(
-                                          child: Text(
-                                            l10n.locationMarkedAsOther,
-                                            style: TextStyle(
-                                              color: Colors.green.shade700,
-                                              fontSize: 11,
-                                            ),
-                                          ),
-                                        ),
-                                      ],
+                          // Country required reason
+                          Container(
+                            padding: const EdgeInsets.all(10),
+                            margin: const EdgeInsets.only(bottom: 8),
+                            decoration: BoxDecoration(
+                              color: cs.primaryContainer.withOpacity(0.3),
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            child: Row(
+                              children: [
+                                Icon(Icons.info_outline,
+                                    size: 16, color: cs.primary),
+                                const SizedBox(width: 8),
+                                Expanded(
+                                  child: Text(
+                                    l10n.countryRequiredReason,
+                                    style: TextStyle(
+                                      fontSize: 11,
+                                      color: cs.onSurfaceVariant,
+                                      fontStyle: FontStyle.italic,
                                     ),
                                   ),
                                 ),
-                            ],
+                              ],
+                            ),
                           ),
+
+                          // ── COUNTRY DROPDOWN (country only — state/city removed)
+                          DropdownButtonFormField<String>(
+                            value: _countryController.text.isEmpty
+                                ? null
+                                : _countryController.text,
+                            decoration: const InputDecoration(
+                              labelText: 'Country',
+                              hintText: 'Select country',
+                              border: OutlineInputBorder(),
+                              prefixIcon: Icon(Icons.public),
+                            ),
+                            isExpanded: true,
+                            items: _countryNames
+                                .map(
+                                  (name) => DropdownMenuItem<String>(
+                                    value: name,
+                                    child: Text(
+                                      name,
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
+                                  ),
+                                )
+                                .toList(),
+                            onChanged: (value) {
+                              if (value != null) {
+                                _countryController.text = value;
+                              }
+                            },
+                            validator: (value) =>
+                                (value == null || value.isEmpty)
+                                    ? l10n.required
+                                    : null,
+                          ),
+
                           const SizedBox(height: 12),
 
-                          Text(
-                            l10n.phoneNumber,
-                            style: const TextStyle(fontWeight: FontWeight.bold),
-                          ),
+                          // Phone number
+                          Text(l10n.phoneNumber,
+                              style: const TextStyle(
+                                  fontWeight: FontWeight.bold)),
                           const SizedBox(height: 4),
-
                           IntlPhoneField(
                             key: ValueKey(_selectedIso2ForPhone),
                             decoration: InputDecoration(
@@ -926,7 +860,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             ),
                             initialCountryCode: _selectedIso2ForPhone,
                             onChanged: (phone) {
-                              setState(() => _completePhoneNumber = phone.completeNumber);
+                              setState(() =>
+                                  _completePhoneNumber = phone.completeNumber);
                             },
                             validator: (value) {
                               if (value == null || value.number.isEmpty) {
@@ -936,13 +871,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             },
                           ),
 
-                          // ═══════════════════════════════════════════════════════
-                          // REFERRAL CODE INPUT
-                          // ═══════════════════════════════════════════════════════
+                          // Referral code
                           const SizedBox(height: 20),
-                          Text(
+                          const Text(
                             'Referral Code (Optional)',
-                            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                            style: TextStyle(
+                                fontSize: 18, fontWeight: FontWeight.bold),
                           ),
                           const SizedBox(height: 8),
                           TextFormField(
@@ -958,22 +892,24 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                       child: SizedBox(
                                         width: 20,
                                         height: 20,
-                                        child: CircularProgressIndicator(strokeWidth: 2),
+                                        child: CircularProgressIndicator(
+                                            strokeWidth: 2),
                                       ),
                                     )
                                   : _referralCodeValid == true
-                                      ? const Icon(Icons.check_circle, color: Colors.green)
+                                      ? const Icon(Icons.check_circle,
+                                          color: Colors.green)
                                       : _referralCodeValid == false
-                                          ? const Icon(Icons.error, color: Colors.red)
+                                          ? const Icon(Icons.error,
+                                              color: Colors.red)
                                           : null,
                             ),
                             textCapitalization: TextCapitalization.characters,
-                            inputFormatters: [
-                              _ReferralCodeFormatter(),
-                            ],
+                            inputFormatters: [_ReferralCodeFormatter()],
                             onChanged: (value) {
-                              // Strip dashes for length check
-                              final cleaned = value.replaceAll('-', '').replaceAll(' ', '');
+                              final cleaned = value
+                                  .replaceAll('-', '')
+                                  .replaceAll(' ', '');
                               if (cleaned.length >= 8) {
                                 _validateReferralCode();
                               } else {
@@ -984,31 +920,35 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               }
                             },
                           ),
-                          
-                          // Referral validation feedback
-                          if (_referralCodeValid == true && _referrerName != null)
+
+                          if (_referralCodeValid == true &&
+                              _referrerName != null)
                             Container(
                               margin: const EdgeInsets.only(top: 8),
                               padding: const EdgeInsets.all(12),
                               decoration: BoxDecoration(
                                 color: Colors.green.shade50,
                                 borderRadius: BorderRadius.circular(8),
-                                border: Border.all(color: Colors.green.shade200),
+                                border:
+                                    Border.all(color: Colors.green.shade200),
                               ),
                               child: Row(
                                 children: [
-                                  Icon(Icons.celebration, color: Colors.green.shade700, size: 20),
+                                  Icon(Icons.celebration,
+                                      color: Colors.green.shade700, size: 20),
                                   const SizedBox(width: 8),
                                   Expanded(
                                     child: Text(
                                       'Referred by $_referrerName! You\'ll both get rewards when you complete your first booking.',
-                                      style: TextStyle(color: Colors.green.shade700, fontSize: 13),
+                                      style: TextStyle(
+                                          color: Colors.green.shade700,
+                                          fontSize: 13),
                                     ),
                                   ),
                                 ],
                               ),
                             ),
-                          
+
                           if (_referralCodeValid == false)
                             Container(
                               margin: const EdgeInsets.only(top: 8),
@@ -1020,23 +960,27 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               ),
                               child: Row(
                                 children: [
-                                  Icon(Icons.info_outline, color: Colors.red.shade700, size: 20),
+                                  Icon(Icons.info_outline,
+                                      color: Colors.red.shade700, size: 20),
                                   const SizedBox(width: 8),
                                   Expanded(
                                     child: Text(
                                       'Invalid referral code. You can still continue without one.',
-                                      style: TextStyle(color: Colors.red.shade700, fontSize: 13),
+                                      style: TextStyle(
+                                          color: Colors.red.shade700,
+                                          fontSize: 13),
                                     ),
                                   ),
                                 ],
                               ),
                             ),
 
+                          // Account information
                           const SizedBox(height: 12),
-                          Text(
-                            l10n.accountInformation,
-                            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                          ),
+                          Text(l10n.accountInformation,
+                              style: const TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold)),
                           const SizedBox(height: 12),
 
                           TextFormField(
@@ -1046,8 +990,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               border: const OutlineInputBorder(),
                               hintText: l10n.chooseUniqueUsernameHint,
                             ),
-                            validator: (value) =>
-                                value == null || value.isEmpty ? l10n.required : null,
+                            validator: (value) => value == null ||
+                                    value.isEmpty
+                                ? l10n.required
+                                : null,
                           ),
                           const SizedBox(height: 12),
 
@@ -1060,17 +1006,20 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             ),
                             keyboardType: TextInputType.emailAddress,
                             validator: (value) {
-                              if (value == null || value.isEmpty) return l10n.required;
-                              if (!value.contains('@')) return l10n.enterValidEmail;
+                              if (value == null || value.isEmpty)
+                                return l10n.required;
+                              if (!value.contains('@'))
+                                return l10n.enterValidEmail;
                               return null;
                             },
                           ),
 
+                          // Security
                           const SizedBox(height: 12),
-                          Text(
-                            l10n.security,
-                            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                          ),
+                          Text(l10n.security,
+                              style: const TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold)),
                           const SizedBox(height: 12),
 
                           TextFormField(
@@ -1080,21 +1029,28 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               border: const OutlineInputBorder(),
                               hintText: l10n.passwordHintAtLeast10,
                               suffixIcon: IconButton(
-                                icon: Icon(
-                                  _showPassword ? Icons.visibility_off : Icons.visibility,
-                                ),
-                                onPressed: () => setState(() => _showPassword = !_showPassword),
-                                tooltip: _showPassword ? l10n.hidePassword : l10n.showPassword,
+                                icon: Icon(_showPassword
+                                    ? Icons.visibility_off
+                                    : Icons.visibility),
+                                onPressed: () => setState(
+                                    () => _showPassword = !_showPassword),
+                                tooltip: _showPassword
+                                    ? l10n.hidePassword
+                                    : l10n.showPassword,
                               ),
                             ),
                             obscureText: !_showPassword,
-                            validator: (value) => _validatePassword(context, value),
+                            validator: (value) =>
+                                _validatePassword(context, value),
                           ),
                           Padding(
-                            padding: const EdgeInsets.only(top: 4, left: 4),
+                            padding:
+                                const EdgeInsets.only(top: 4, left: 4),
                             child: Text(
                               l10n.tapEyeToShowPassword,
-                              style: TextStyle(fontSize: 11, color: cs.onSurfaceVariant),
+                              style: TextStyle(
+                                  fontSize: 11,
+                                  color: cs.onSurfaceVariant),
                             ),
                           ),
                           const SizedBox(height: 12),
@@ -1105,52 +1061,63 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               labelText: l10n.confirmPassword,
                               border: const OutlineInputBorder(),
                               suffixIcon: IconButton(
-                                icon: Icon(
-                                  _showConfirmPassword ? Icons.visibility_off : Icons.visibility,
-                                ),
-                                onPressed: () => setState(() => _showConfirmPassword = !_showConfirmPassword),
-                                tooltip: _showConfirmPassword ? l10n.hidePassword : l10n.showPassword,
+                                icon: Icon(_showConfirmPassword
+                                    ? Icons.visibility_off
+                                    : Icons.visibility),
+                                onPressed: () => setState(() =>
+                                    _showConfirmPassword =
+                                        !_showConfirmPassword),
+                                tooltip: _showConfirmPassword
+                                    ? l10n.hidePassword
+                                    : l10n.showPassword,
                               ),
                             ),
                             obscureText: !_showConfirmPassword,
                             validator: (value) {
-                              if (value == null || value.isEmpty) return l10n.required;
-                              if (value != _passwordController.text) return l10n.passwordsDoNotMatch;
+                              if (value == null || value.isEmpty)
+                                return l10n.required;
+                              if (value != _passwordController.text)
+                                return l10n.passwordsDoNotMatch;
                               return null;
                             },
                           ),
                           const SizedBox(height: 12),
 
+                          // Terms
                           Row(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Checkbox(
                                 value: _acceptedTerms,
-                                onChanged: (bool? value) =>
-                                    setState(() => _acceptedTerms = value ?? false),
+                                onChanged: (bool? value) => setState(
+                                    () => _acceptedTerms = value ?? false),
                               ),
                               Expanded(
                                 child: Wrap(
                                   children: [
                                     Text(l10n.iAgreeTo),
                                     GestureDetector(
-                                      onTap: () => _openUrl('https://lilmax303.github.io/styloria-website/terms.html'),
+                                      onTap: () => _openUrl(
+                                          'https://lilmax303.github.io/styloria-website/terms.html'),
                                       child: Text(
                                         l10n.termsOfService,
                                         style: const TextStyle(
                                           color: Colors.blue,
-                                          decoration: TextDecoration.underline,
+                                          decoration:
+                                              TextDecoration.underline,
                                         ),
                                       ),
                                     ),
                                     Text(' ${l10n.and} '),
                                     GestureDetector(
-                                      onTap: () => _openUrl('https://lilmax303.github.io/styloria-website/privacy.html'),
+                                      onTap: () => _openUrl(
+                                          'https://lilmax303.github.io/styloria-website/privacy.html'),
                                       child: Text(
                                         l10n.privacyPolicy,
                                         style: const TextStyle(
                                           color: Colors.blue,
-                                          decoration: TextDecoration.underline,
+                                          decoration:
+                                              TextDecoration.underline,
                                         ),
                                       ),
                                     ),
@@ -1163,15 +1130,18 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           const SizedBox(height: 16),
 
                           ElevatedButton(
-                            onPressed: _loading ? null : _submitRegistration,
+                            onPressed:
+                                _loading ? null : _submitRegistration,
                             style: ElevatedButton.styleFrom(
-                              padding: const EdgeInsets.symmetric(vertical: 16),
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 16),
                             ),
                             child: _loading
                                 ? const SizedBox(
                                     height: 20,
                                     width: 20,
-                                    child: CircularProgressIndicator(strokeWidth: 2),
+                                    child: CircularProgressIndicator(
+                                        strokeWidth: 2),
                                   )
                                 : Text(
                                     l10n.createAccountButton,
@@ -1185,7 +1155,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             children: [
                               Text(l10n.alreadyHaveAccount),
                               TextButton(
-                                onPressed: _loading ? null : () => Navigator.pop(context),
+                                onPressed: _loading
+                                    ? null
+                                    : () => Navigator.pop(context),
                                 child: Text(l10n.login),
                               ),
                             ],
@@ -1204,10 +1176,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   }
 }
 
-
-
 /// Auto-formats referral code input as XXXX-XXXX-XXXX
-/// Also supports legacy STYLORIA-USERNAME format (passthrough)
 class _ReferralCodeFormatter extends TextInputFormatter {
   @override
   TextEditingValue formatEditUpdate(
@@ -1216,7 +1185,6 @@ class _ReferralCodeFormatter extends TextInputFormatter {
   ) {
     final raw = newValue.text.toUpperCase();
 
-    // If user is typing legacy format (starts with "S" for STYLORIA-), let it through
     if (raw.startsWith('S')) {
       return TextEditingValue(
         text: raw,
@@ -1224,18 +1192,13 @@ class _ReferralCodeFormatter extends TextInputFormatter {
       );
     }
 
-    // Strip all non-alphanumeric characters
     final cleaned = raw.replaceAll(RegExp(r'[^A-Z0-9]'), '');
+    final capped =
+        cleaned.length > 12 ? cleaned.substring(0, 12) : cleaned;
 
-    // Cap at 12 meaningful characters
-    final capped = cleaned.length > 12 ? cleaned.substring(0, 12) : cleaned;
-
-    // Insert dashes: XXXX-XXXX-XXXX
     final buffer = StringBuffer();
     for (int i = 0; i < capped.length; i++) {
-      if (i > 0 && i % 4 == 0) {
-        buffer.write('-');
-      }
+      if (i > 0 && i % 4 == 0) buffer.write('-');
       buffer.write(capped[i]);
     }
 

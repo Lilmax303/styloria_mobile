@@ -73,6 +73,9 @@ class AppLocalizationsKo extends AppLocalizations {
       '무료 계정을 만들거나 로그인하여 이 서비스와 더 많은 서비스를 예약하세요!';
 
   @override
+  String get stateAndCityOptional => '주/도 및 도시는 선택 항목입니다.';
+
+  @override
   String get ageRestrictionTitle => '만 18세 이상만 가능';
 
   @override
@@ -129,6 +132,15 @@ class AppLocalizationsKo extends AppLocalizations {
   String get failedToDeleteAccount => '계정 삭제에 실패했습니다. 다시 시도해 주세요.';
 
   @override
+  String get onboardingSkipForNow => '나중에 하기';
+
+  @override
+  String get dobRequiredReason => '나이 확인을 위해 필요합니다. 18세 이상이어야 합니다.';
+
+  @override
+  String get countryRequiredReason => '현지 통화 감지 및 가까운 서비스 제공자 매칭을 위해 필요합니다.';
+
+  @override
   String get choosePreferredLanguage => '선호 언어 선택';
 
   @override
@@ -148,6 +160,16 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get yourNotes => 'Your Notes';
+
+  @override
+  String get skipStateCityTitle => '주/도 및 도시 건너뛰기';
+
+  @override
+  String get skipStateCitySubtitle => '이 항목들은 선택사항입니다';
+
+  @override
+  String get skipStateCityNote =>
+      '주/도 및 도시를 건너뛰었습니다. 프로필 설정에서 언제든지 위치 정보를 업데이트할 수 있습니다. 참고: 위치 정보를 제공하면 근처 서비스 제공자와 더 정확하게 매칭됩니다.';
 
   @override
   String get previewTagline => '뷰티 온-디맨드';

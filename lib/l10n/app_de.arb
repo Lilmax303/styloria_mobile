@@ -42,6 +42,12 @@
     }
   },
 
+  "skipStateCityTitle": "Bundesland & Stadt überspringen",
+  "skipStateCitySubtitle": "Diese Felder sind optional",
+  "skipStateCityNote": "Du hast Bundesland und Stadt übersprungen. Du kannst deine Standortangaben jederzeit in den Profileinstellungen aktualisieren. Hinweis: Dein Standort hilft uns, dich genauer mit nahegelegenen Anbietern zu verbinden.",
+
+  "stateAndCityOptional": "Bundesland und Stadt sind optionale Felder.",
+
   "previewBookNowLabel": "BUCHEN",
   "previewLoginPromptTitle": "Anmelden zum Buchen",
   "previewLoginPromptSubtitle": "Erstelle ein kostenloses Konto oder melde dich an, um diesen und viele weitere Services zu buchen!",
@@ -49,6 +55,10 @@
   "ageRestrictionTitle": "Nur ab 18 Jahren",
   "ageRestrictionBody": "Du musst mindestens 18 Jahre alt sein, um dich bei Styloria zu registrieren und es zu nutzen. Eine Überprüfung des Geburtsdatums ist erforderlich.",
   "ageRestrictionInline": "Du musst mindestens 18 Jahre alt sein, um Styloria zu nutzen.",
+
+  "onboardingSkipForNow": "Vorerst überspringen",
+  "dobRequiredReason": "Erforderlich zur Altersverifizierung. Du musst mindestens 18 Jahre alt sein.",
+  "countryRequiredReason": "Erforderlich zur Erkennung deiner lokalen Währung und Zuordnung nahegelegener Anbieter.",
 
   "previewTagline": "BEAUTY AUF ABRUF",
   "previewServicesTitle": "Verfügbare Dienstleistungen",

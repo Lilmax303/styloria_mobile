@@ -75,6 +75,10 @@ class AppLocalizationsFr extends AppLocalizations {
       'Créez un compte gratuit ou connectez-vous pour réserver ce service et bien d\'autres!';
 
   @override
+  String get stateAndCityOptional =>
+      'Le département et la ville sont des champs facultatifs.';
+
+  @override
   String get ageRestrictionTitle => '18 ans et plus uniquement';
 
   @override
@@ -137,6 +141,17 @@ class AppLocalizationsFr extends AppLocalizations {
       'Échec de la suppression du compte. Veuillez réessayer.';
 
   @override
+  String get onboardingSkipForNow => 'Passer pour l\'instant';
+
+  @override
+  String get dobRequiredReason =>
+      'Requis pour la vérification de l\'âge. Vous devez avoir 18 ans ou plus.';
+
+  @override
+  String get countryRequiredReason =>
+      'Requis pour détecter votre devise locale et vous connecter aux prestataires proches.';
+
+  @override
   String get choosePreferredLanguage => 'Choisissez votre langue préférée';
 
   @override
@@ -156,6 +171,16 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get yourNotes => 'Your Notes';
+
+  @override
+  String get skipStateCityTitle => 'Ignorer l\'État et la Ville';
+
+  @override
+  String get skipStateCitySubtitle => 'Ces champs sont facultatifs';
+
+  @override
+  String get skipStateCityNote =>
+      'Vous avez choisi d\'ignorer l\'État et la Ville. Vous pouvez toujours mettre à jour vos informations de localisation dans les paramètres de votre profil. Remarque: fournir votre localisation nous aide à vous connecter avec des prestataires proches.';
 
   @override
   String get previewTagline => 'BEAUTÉ À LA DEMANDE';

@@ -73,6 +73,9 @@ class AppLocalizationsHe extends AppLocalizations {
       'צור חשבון חינמי או התחבר כדי להזמין שירות זה ועוד רבים!';
 
   @override
+  String get stateAndCityOptional => 'מדינה ועיר הם שדות אופציונליים.';
+
+  @override
   String get ageRestrictionTitle => '18+ בלבד';
 
   @override
@@ -130,6 +133,16 @@ class AppLocalizationsHe extends AppLocalizations {
   String get failedToDeleteAccount => 'מחיקת החשבון נכשלה. נסה/י שוב.';
 
   @override
+  String get onboardingSkipForNow => 'דלג לעת עתה';
+
+  @override
+  String get dobRequiredReason => 'נדרש לאימות גיל. עליך להיות בן 18 ומעלה.';
+
+  @override
+  String get countryRequiredReason =>
+      'נדרש לזיהוי המטבע המקומי שלך והתאמה לספקים קרובים.';
+
+  @override
   String get choosePreferredLanguage => 'בחר/י את השפה המועדפת';
 
   @override
@@ -149,6 +162,16 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String get yourNotes => 'Your Notes';
+
+  @override
+  String get skipStateCityTitle => 'דלג על מדינה ועיר';
+
+  @override
+  String get skipStateCitySubtitle => 'שדות אלה הם אופציונליים';
+
+  @override
+  String get skipStateCityNote =>
+      'בחרת לדלג על מדינה ועיר. תוכל תמיד לעדכן את פרטי המיקום שלך מהגדרות הפרופיל. הערה: מתן המיקום שלך עוזר לנו להתאים אותך עם ספקי שירות קרובים בצורה מדויקת יותר.';
 
   @override
   String get previewTagline => 'יופי לפי דרישה';

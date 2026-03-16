@@ -42,6 +42,16 @@
     }
   },
 
+  "skipStateCityTitle": "ክልል እና ከተማ ዝለል",
+  "skipStateCitySubtitle": "እነዚህ መስኮች አማራጭ ናቸው",
+  "skipStateCityNote": "ክልል እና ከተማን ለመዝለል መርጠዋል። በመገለጫ ቅንብሮችዎ ውስጥ የአካባቢ ዝርዝሮችዎን ማዘመን ይችላሉ። ማስታወሻ፡ አካባቢዎን መስጠት ከቅርብ አቅራቢዎች ጋር በትክክለኛነት እንዲዛመዱ ይረዳናል።",
+
+  "stateAndCityOptional": "ክልል እና ከተማ አማራጭ መስኮች ናቸው።",
+
+  "onboardingSkipForNow": "አሁን ዝለል",
+  "dobRequiredReason": "የዕድሜ ማረጋገጫ ያስፈልጋል። 18 ዓመት ወይም በላይ መሆን አለብዎ።",
+  "countryRequiredReason": "የአካባቢ ምንዛሪ ለማወቅ እና ለቅርብ አቅራቢዎች ለማዛመድ ያስፈልጋል።",
+
   "previewBookNowLabel": "አሁን ይያዙ",
   "previewLoginPromptTitle": "ለመያዝ ይግቡ",
   "previewLoginPromptSubtitle": "ይህንን እና ሌሎች ብዙ አገልግሎቶችን ለመያዝ ነፃ መለያ ይፍጠሩ ወይም ይግቡ!",

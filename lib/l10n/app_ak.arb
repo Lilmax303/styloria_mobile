@@ -42,6 +42,12 @@
     }
   },
 
+  "skipStateCityTitle": "Bɔ wo beaeɛ a wote tra",
+  "skipStateCitySubtitle": "Wo beaeɛ yi yɛ nea ɛho nhia",
+  "skipStateCityNote": "Woabɔ wo beaeɛ yi atra. Wobetumi akyerɛ wo beaeɛ ho nsɛm bio wɔ wo profile settings mu. Nsɛm: sɛ wode wo beaeɛ ba a, ɛboa yɛn sɛ yɛde wo ka adwumayɛfoɔ a wɔbɛn wo.",
+
+  "stateAndCityOptional": "Ɔman ne kurom yɛ nea ɛho nhia.",
+
   "previewBookNowLabel": "HYƐ ASE",
   "previewLoginPromptTitle": "Ko mu na hyɛ ase",
   "previewLoginPromptSubtitle": "Yɛ account efiri ho anaa ko mu na hyɛ dwumadie yi ne afoforo ase!",
@@ -141,6 +147,10 @@
       "identifier": {}
     }
   },
+
+  "onboardingSkipForNow": "Twam seesei",
+  "dobRequiredReason": "Ɛhia sɛ wohwɛ wo mfeɛ. Ɛsɛ sɛ wowɔ mfe 18 ne soro.",
+  "countryRequiredReason": "Ɛhia sɛ yɛhu wo sika dwetɛ ne sɛ yɛde wo ka adwumayɛfoɔ a wɔbɛn wo.",
 
   "stripeSetupComplete": "Stripe setup no awie.",
   "openPayoutSettings": "Bue Payout Settings",

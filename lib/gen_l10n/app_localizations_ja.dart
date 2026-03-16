@@ -73,6 +73,9 @@ class AppLocalizationsJa extends AppLocalizations {
       '無料アカウントを作成またはサインインして、このサービスや他の多くのサービスを予約しましょう！';
 
   @override
+  String get stateAndCityOptional => '州・都市は任意入力項目です。';
+
+  @override
   String get ageRestrictionTitle => '18歳以上限定';
 
   @override
@@ -129,6 +132,15 @@ class AppLocalizationsJa extends AppLocalizations {
   String get failedToDeleteAccount => 'アカウント削除に失敗しました。もう一度お試しください。';
 
   @override
+  String get onboardingSkipForNow => '後で設定する';
+
+  @override
+  String get dobRequiredReason => '年齢確認のために必要です。18歳以上である必要があります。';
+
+  @override
+  String get countryRequiredReason => '現地通貨の検出と近くのプロバイダーとのマッチングに必要です。';
+
+  @override
   String get choosePreferredLanguage => '希望の言語を選択';
 
   @override
@@ -148,6 +160,16 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get yourNotes => 'Your Notes';
+
+  @override
+  String get skipStateCityTitle => '州・都市をスキップ';
+
+  @override
+  String get skipStateCitySubtitle => 'これらの項目は任意です';
+
+  @override
+  String get skipStateCityNote =>
+      '州・都市をスキップしました。プロフィール設定からいつでも位置情報を更新できます。注意：位置情報を提供すると、近くのサービスプロバイダーとより正確にマッチングされます。';
 
   @override
   String get previewTagline => 'ビューティー・オンデマンド';

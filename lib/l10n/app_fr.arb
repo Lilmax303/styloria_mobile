@@ -42,6 +42,16 @@
     }
   },
 
+  "skipStateCityTitle": "Ignorer l'État et la Ville",
+  "skipStateCitySubtitle": "Ces champs sont facultatifs",
+  "skipStateCityNote": "Vous avez choisi d'ignorer l'État et la Ville. Vous pouvez toujours mettre à jour vos informations de localisation dans les paramètres de votre profil. Remarque: fournir votre localisation nous aide à vous connecter avec des prestataires proches.",
+
+  "stateAndCityOptional": "Le département et la ville sont des champs facultatifs.",
+
+  "onboardingSkipForNow": "Passer pour l'instant",
+  "dobRequiredReason": "Requis pour la vérification de l'âge. Vous devez avoir 18 ans ou plus.",
+  "countryRequiredReason": "Requis pour détecter votre devise locale et vous connecter aux prestataires proches.",
+
   "previewBookNowLabel": "RÉSERVER",
   "previewLoginPromptTitle": "Connectez-vous pour réserver",
   "previewLoginPromptSubtitle": "Créez un compte gratuit ou connectez-vous pour réserver ce service et bien d'autres!",

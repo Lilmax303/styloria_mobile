@@ -75,6 +75,9 @@ class AppLocalizationsSw extends AppLocalizations {
       'Fungua akaunti ya bure au ingia ili kuweka nafasi ya huduma hii na nyingine nyingi!';
 
   @override
+  String get stateAndCityOptional => 'Jimbo na mji ni sehemu za hiari.';
+
+  @override
   String get ageRestrictionTitle => '18+ Pekee';
 
   @override
@@ -135,6 +138,17 @@ class AppLocalizationsSw extends AppLocalizations {
       'Imeshindikana kufuta akaunti. Tafadhali jaribu tena.';
 
   @override
+  String get onboardingSkipForNow => 'Ruka kwa sasa';
+
+  @override
+  String get dobRequiredReason =>
+      'Inahitajika kwa uthibitishaji wa umri. Lazima uwe na umri wa miaka 18+.';
+
+  @override
+  String get countryRequiredReason =>
+      'Inahitajika kugundua sarafu yako ya ndani na kukuunganisha na watoa huduma wa karibu.';
+
+  @override
   String get choosePreferredLanguage => 'Chagua lugha unayopendelea';
 
   @override
@@ -154,6 +168,16 @@ class AppLocalizationsSw extends AppLocalizations {
 
   @override
   String get yourNotes => 'Your Notes';
+
+  @override
+  String get skipStateCityTitle => 'Ruka Jimbo na Mji';
+
+  @override
+  String get skipStateCitySubtitle => 'Sehemu hizi ni za hiari';
+
+  @override
+  String get skipStateCityNote =>
+      'Umechagua kuruka Jimbo na Mji. Unaweza kusasisha maelezo ya mahali pako baadaye kutoka mipangilio ya wasifu wako. Kumbuka: kutoa mahali pako kunasaidia kuunganisha na watoa huduma wa karibu nawe kwa usahihi zaidi.';
 
   @override
   String get previewTagline => 'UZURI KWA MAHITAJI';

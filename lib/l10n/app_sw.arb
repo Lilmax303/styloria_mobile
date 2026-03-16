@@ -42,6 +42,12 @@
     }
   },
 
+  "skipStateCityTitle": "Ruka Jimbo na Mji",
+  "skipStateCitySubtitle": "Sehemu hizi ni za hiari",
+  "skipStateCityNote": "Umechagua kuruka Jimbo na Mji. Unaweza kusasisha maelezo ya mahali pako baadaye kutoka mipangilio ya wasifu wako. Kumbuka: kutoa mahali pako kunasaidia kuunganisha na watoa huduma wa karibu nawe kwa usahihi zaidi.",
+
+  "stateAndCityOptional": "Jimbo na mji ni sehemu za hiari.",
+
   "previewBookNowLabel": "WEKA NAFASI",
   "previewLoginPromptTitle": "Ingia ili kuweka nafasi",
   "previewLoginPromptSubtitle": "Fungua akaunti ya bure au ingia ili kuweka nafasi ya huduma hii na nyingine nyingi!",
@@ -197,6 +203,10 @@
       "amount": {}
     }
   },
+
+  "onboardingSkipForNow": "Ruka kwa sasa",
+  "dobRequiredReason": "Inahitajika kwa uthibitishaji wa umri. Lazima uwe na umri wa miaka 18+.",
+  "countryRequiredReason": "Inahitajika kugundua sarafu yako ya ndani na kukuunganisha na watoa huduma wa karibu.",
 
   "providerActionHeader": "Ungependa kufanya nini leo?",
   "providerActionBrowseJobs": "Tafuta Kazi",

@@ -73,6 +73,9 @@ class AppLocalizationsAr extends AppLocalizations {
       'أنشئ حسابًا مجانيًا أو سجّل دخولك لحجز هذه الخدمة والمزيد!';
 
   @override
+  String get stateAndCityOptional => 'الولاية والمدينة حقول اختيارية.';
+
+  @override
   String get ageRestrictionTitle => '18 عامًا فما فوق فقط';
 
   @override
@@ -132,6 +135,17 @@ class AppLocalizationsAr extends AppLocalizations {
   String get failedToDeleteAccount => 'فشل حذف الحساب. يرجى المحاولة مرة أخرى.';
 
   @override
+  String get onboardingSkipForNow => 'تخطي الآن';
+
+  @override
+  String get dobRequiredReason =>
+      'مطلوب للتحقق من العمر. يجب أن يكون عمرك 18 عامًا أو أكثر.';
+
+  @override
+  String get countryRequiredReason =>
+      'مطلوب لتحديد عملتك المحلية ومطابقتك مع مقدمي الخدمات القريبين.';
+
+  @override
   String get choosePreferredLanguage => 'اختر لغتك المفضلة';
 
   @override
@@ -151,6 +165,16 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get yourNotes => 'Your Notes';
+
+  @override
+  String get skipStateCityTitle => 'تخطي الولاية والمدينة';
+
+  @override
+  String get skipStateCitySubtitle => 'هذه الحقول اختيارية';
+
+  @override
+  String get skipStateCityNote =>
+      'لقد اخترت تخطي الولاية والمدينة. يمكنك دائمًا تحديث تفاصيل موقعك لاحقًا من إعدادات ملفك الشخصي. ملاحظة: تقديم موقعك يساعدنا في مطابقتك مع مقدمي الخدمات القريبين بدقة أكبر.';
 
   @override
   String get previewTagline => 'الجمال عند الطلب';

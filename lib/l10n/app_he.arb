@@ -42,6 +42,16 @@
     }
   },
 
+  "skipStateCityTitle": "דלג על מדינה ועיר",
+  "skipStateCitySubtitle": "שדות אלה הם אופציונליים",
+  "skipStateCityNote": "בחרת לדלג על מדינה ועיר. תוכל תמיד לעדכן את פרטי המיקום שלך מהגדרות הפרופיל. הערה: מתן המיקום שלך עוזר לנו להתאים אותך עם ספקי שירות קרובים בצורה מדויקת יותר.",
+
+  "stateAndCityOptional": "מדינה ועיר הם שדות אופציונליים.",
+
+  "onboardingSkipForNow": "דלג לעת עתה",
+  "dobRequiredReason": "נדרש לאימות גיל. עליך להיות בן 18 ומעלה.",
+  "countryRequiredReason": "נדרש לזיהוי המטבע המקומי שלך והתאמה לספקים קרובים.",
+
   "previewBookNowLabel": "הזמן עכשיו",
   "previewLoginPromptTitle": "התחבר כדי להזמין",
   "previewLoginPromptSubtitle": "צור חשבון חינמי או התחבר כדי להזמין שירות זה ועוד רבים!",

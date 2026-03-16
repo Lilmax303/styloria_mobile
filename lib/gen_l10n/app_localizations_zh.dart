@@ -72,6 +72,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get previewLoginPromptSubtitle => '创建免费账号或登录以预约此服务及更多服务！';
 
   @override
+  String get stateAndCityOptional => '州/省和城市为可选填写项。';
+
+  @override
   String get ageRestrictionTitle => '仅限18岁以上';
 
   @override
@@ -127,6 +130,15 @@ class AppLocalizationsZh extends AppLocalizations {
   String get failedToDeleteAccount => '删除账户失败。请重试。';
 
   @override
+  String get onboardingSkipForNow => '暂时跳过';
+
+  @override
+  String get dobRequiredReason => '年龄验证所需。您必须年满18岁。';
+
+  @override
+  String get countryRequiredReason => '检测您的本地货币并与附近服务提供商匹配所需。';
+
+  @override
   String get choosePreferredLanguage => '选择你的首选语言';
 
   @override
@@ -146,6 +158,16 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get yourNotes => 'Your Notes';
+
+  @override
+  String get skipStateCityTitle => '跳过州/省和城市';
+
+  @override
+  String get skipStateCitySubtitle => '这些字段是可选的';
+
+  @override
+  String get skipStateCityNote =>
+      '您选择了跳过州/省和城市。您可以随时在个人资料设置中更新您的位置信息。注意：提供您的位置有助于我们更准确地为您匹配附近的服务提供商。';
 
   @override
   String get previewTagline => '随需美容';

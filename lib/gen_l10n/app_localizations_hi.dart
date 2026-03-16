@@ -74,6 +74,9 @@ class AppLocalizationsHi extends AppLocalizations {
       'इस और कई अन्य सेवाओं को बुक करने के लिए मुफ्त खाता बनाएं या साइन इन करें!';
 
   @override
+  String get stateAndCityOptional => 'राज्य और शहर वैकल्पिक फ़ील्ड हैं।';
+
+  @override
   String get ageRestrictionTitle => 'केवल 18+ के लिए';
 
   @override
@@ -134,6 +137,17 @@ class AppLocalizationsHi extends AppLocalizations {
       'खाता हटाने में विफल। कृपया फिर से प्रयास करें।';
 
   @override
+  String get onboardingSkipForNow => 'अभी छोड़ें';
+
+  @override
+  String get dobRequiredReason =>
+      'आयु सत्यापन के लिए आवश्यक। आपकी आयु 18+ होनी चाहिए।';
+
+  @override
+  String get countryRequiredReason =>
+      'स्थानीय मुद्रा पहचानने और पास के प्रदाताओं से मिलान के लिए आवश्यक।';
+
+  @override
   String get choosePreferredLanguage => 'अपनी पसंदीदा भाषा चुनें';
 
   @override
@@ -153,6 +167,16 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get yourNotes => 'Your Notes';
+
+  @override
+  String get skipStateCityTitle => 'राज्य और शहर छोड़ें';
+
+  @override
+  String get skipStateCitySubtitle => 'ये फ़ील्ड वैकल्पिक हैं';
+
+  @override
+  String get skipStateCityNote =>
+      'आपने राज्य और शहर छोड़ना चुना है। आप बाद में अपनी प्रोफ़ाइल सेटिंग से अपना स्थान अपडेट कर सकते हैं। नोट: आपका स्थान प्रदान करने से हमें आपको पास के सेवा प्रदाताओं से जोड़ने में मदद मिलती है।';
 
   @override
   String get previewTagline => 'ब्यूटी ऑन-डिमांड';

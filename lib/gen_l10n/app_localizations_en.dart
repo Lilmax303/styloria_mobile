@@ -74,6 +74,9 @@ class AppLocalizationsEn extends AppLocalizations {
       'Create a free account or sign in to book this service and many more!';
 
   @override
+  String get stateAndCityOptional => 'State and City are optional fields.';
+
+  @override
   String get ageRestrictionTitle => '18+ Only';
 
   @override
@@ -135,6 +138,17 @@ class AppLocalizationsEn extends AppLocalizations {
       'Failed to delete account. Please try again.';
 
   @override
+  String get onboardingSkipForNow => 'Skip for now';
+
+  @override
+  String get dobRequiredReason =>
+      'Required for age verification. You must be 18+ to use Styloria.';
+
+  @override
+  String get countryRequiredReason =>
+      'Required to detect your local currency and match you with nearby providers.';
+
+  @override
   String get choosePreferredLanguage => 'Choose your preferred language';
 
   @override
@@ -154,6 +168,16 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get yourNotes => 'Your Notes';
+
+  @override
+  String get skipStateCityTitle => 'Skip State & City';
+
+  @override
+  String get skipStateCitySubtitle => 'These fields are optional';
+
+  @override
+  String get skipStateCityNote =>
+      'You\'ve chosen to skip State and City. You can always update your location details later from your profile settings. Note: Providing your location helps us match you with nearby service providers more accurately.';
 
   @override
   String get previewTagline => 'BEAUTY ON-DEMAND';

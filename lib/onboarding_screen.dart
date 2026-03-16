@@ -315,9 +315,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           ),
           const SizedBox(height: 12),
           TextButton(
-            onPressed: _requestingPermission ? null : _handleSkipLocation,
+            onPressed: _requestingPermission ? null : _handleEnableLocation,
             child: Text(
-              l10n.onboardingMaybeLater,
+              l10n.onboardingSkipForNow,
               style: TextStyle(color: Colors.grey[600]),
             ),
           ),

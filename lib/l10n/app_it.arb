@@ -42,6 +42,12 @@
     }
   },
 
+  "skipStateCityTitle": "Salta Stato e Città",
+  "skipStateCitySubtitle": "Questi campi sono facoltativi",
+  "skipStateCityNote": "Hai scelto di saltare Stato e Città. Puoi sempre aggiornare i tuoi dati di posizione dalle impostazioni del profilo. Nota: fornire la tua posizione ci aiuta a metterti in contatto con i fornitori di servizi vicini in modo più accurato.",
+
+  "stateAndCityOptional": "Stato e città sono campi facoltativi.",
+
   "previewBookNowLabel": "PRENOTA ORA",
   "previewLoginPromptTitle": "Accedi per prenotare",
   "previewLoginPromptSubtitle": "Crea un account gratuito o accedi per prenotare questo e molti altri servizi!",
@@ -150,6 +156,11 @@
       "id": {}
     }
   },
+
+  "onboardingSkipForNow": "Salta per ora",
+  "dobRequiredReason": "Richiesto per la verifica dell'età. Devi avere almeno 18 anni.",
+  "countryRequiredReason": "Richiesto per rilevare la tua valuta locale e abbinarti ai fornitori vicini.",  
+
   "invalidBookingIdForChat": "ID prenotazione non valido per la chat.",
   "invalidBookingIdForCall": "ID prenotazione non valido per la chiamata.",
   "unableToLoadContactInfo": "Impossibile caricare le informazioni di contatto. Assicurati che la prenotazione sia attiva.",

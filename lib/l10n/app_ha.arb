@@ -42,6 +42,12 @@
     }
   },
 
+  "skipStateCityTitle": "Tsallake Jiha da Gari",
+  "skipStateCitySubtitle": "Waɗannan filayen zaɓi ne",
+  "skipStateCityNote": "Kun zaɓi tsallake Jiha da Gari. Kuna iya sabunta bayanan wurin ku daga cikin saitunan bayanin ku. Lura: bayar da wurin ku yana taimaka mana mu haɗa ku da masu ba da ayyuka kusa da ku daidai.",
+
+  "stateAndCityOptional": "Jiha da gari filayen zaɓi ne.",
+
   "previewBookNowLabel": "YI ALƘAWARI",
   "previewLoginPromptTitle": "Shiga don yin alƙawari",
   "previewLoginPromptSubtitle": "Ƙirƙiri asusun kyauta ko shiga don yin alƙawarin wannan da sauran ayyuka!",
@@ -154,6 +160,10 @@
       "id": {}
     }
   },
+
+  "onboardingSkipForNow": "Tsallake yanzu",
+  "dobRequiredReason": "Ana buƙata don tabbatar da shekaru. Dole ne ka kasance da shekaru 18+.",
+  "countryRequiredReason": "Ana buƙata don gano kuɗin ka na gida da haɗa ka da masu ba da ayyuka kusa.",
 
   "selectYourServicesTitle": "Zaɓi Sabis ɗin Ka",
   "yourServicesAndPricing": "Sabis ɗin Ka da Farashin su",

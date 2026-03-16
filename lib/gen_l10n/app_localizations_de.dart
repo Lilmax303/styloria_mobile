@@ -74,6 +74,10 @@ class AppLocalizationsDe extends AppLocalizations {
       'Erstelle ein kostenloses Konto oder melde dich an, um diesen und viele weitere Services zu buchen!';
 
   @override
+  String get stateAndCityOptional =>
+      'Bundesland und Stadt sind optionale Felder.';
+
+  @override
   String get ageRestrictionTitle => 'Nur ab 18 Jahren';
 
   @override
@@ -136,6 +140,17 @@ class AppLocalizationsDe extends AppLocalizations {
       'Konto konnte nicht gelöscht werden. Bitte versuchen Sie es erneut.';
 
   @override
+  String get onboardingSkipForNow => 'Vorerst überspringen';
+
+  @override
+  String get dobRequiredReason =>
+      'Erforderlich zur Altersverifizierung. Du musst mindestens 18 Jahre alt sein.';
+
+  @override
+  String get countryRequiredReason =>
+      'Erforderlich zur Erkennung deiner lokalen Währung und Zuordnung nahegelegener Anbieter.';
+
+  @override
   String get choosePreferredLanguage => 'Bevorzugte Sprache auswählen';
 
   @override
@@ -155,6 +170,16 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get yourNotes => 'Your Notes';
+
+  @override
+  String get skipStateCityTitle => 'Bundesland & Stadt überspringen';
+
+  @override
+  String get skipStateCitySubtitle => 'Diese Felder sind optional';
+
+  @override
+  String get skipStateCityNote =>
+      'Du hast Bundesland und Stadt übersprungen. Du kannst deine Standortangaben jederzeit in den Profileinstellungen aktualisieren. Hinweis: Dein Standort hilft uns, dich genauer mit nahegelegenen Anbietern zu verbinden.';
 
   @override
   String get previewTagline => 'BEAUTY AUF ABRUF';

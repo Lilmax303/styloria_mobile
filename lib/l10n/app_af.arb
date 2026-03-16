@@ -42,6 +42,14 @@
     }
   },
 
+  "skipStateCityTitle": "Slaan Staat & Stad oor",
+  "skipStateCitySubtitle": "Hierdie velde is opsioneel",
+  "skipStateCityNote": "Jy het gekies om Staat en Stad oor te slaan. Jy kan jou liggingbesonderhede altyd later in jou profielinstellings opdateer. Let wel: die verskaffing van jou ligging help ons om jou akkurater met nabygelegen diensverskaffers te verbind.",
+
+  "stateAndCityOptional": "Staat en stad is opsionele velde.",
+
+  "previewFeatureBrowse": "Ontdek skoonheidsdienste vir elke behoefte",
+
   "previewBookNowLabel": "BESPREEK NOU",
   "previewLoginPromptTitle": "Teken in om te bespreek",
   "previewLoginPromptSubtitle": "Skep 'n gratis rekening of teken in om hierdie en nog baie meer dienste te bespreek!",
@@ -60,7 +68,6 @@
   "previewServiceFacial": "Gesigsbehandeling",
   "previewServiceHairColoring": "Haarkleur",
   "previewAndMore": "+ baie meer dienste beskikbaar",
-  "previewFeatureBrowse": "Verken top skoonheidsdienste naby jou",
   "previewFeatureVerified": "Slegs geverifieerde en betroubare verskaffers",
   "previewFeatureSecurePay": "Veilige en beveiligde betalings",
   "previewFeatureReviews": "Regte resensies van regte kliënte",
@@ -250,6 +257,11 @@
       }
     }
   },
+
+  "onboardingSkipForNow": "Slaan vir nou oor",
+  "dobRequiredReason": "Vereis vir ouderdomsverifikasie. Jy moet 18+ jaar oud wees.",
+  "countryRequiredReason": "Vereis om jou plaaslike geldeenheid te bepaal en nabygelegen verskaffers te vind.",
+
   "proofOfSkillsPortfolio": "Bewys van vaardighede (Portefeulje)",
   "noPortfolioPostsAvailable": "Geen portefeulje-plasings beskikbaar nie.",
   "bookingLocation": "Besprekingsplek",

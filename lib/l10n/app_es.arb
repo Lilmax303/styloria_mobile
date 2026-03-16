@@ -27,10 +27,16 @@
   "deleteAccount": "Eliminar cuenta",
   "deleteAccountSubtitle": "Esta acción no se puede deshacer",
 
+  "stateAndCityOptional": "El estado y la ciudad son campos opcionales.",
+
   "deleteAccountTitle": "Eliminar cuenta",
   "deleteAccountConfirmBody": "¿Estás seguro de que deseas eliminar tu cuenta?\n\nEsta acción cerrará tu sesión y podrías perder el acceso permanentemente.",
   "no": "No",
   "yesDelete": "Sí, eliminar",
+
+  "onboardingSkipForNow": "Omitir por ahora",
+  "dobRequiredReason": "Requerido para verificación de edad. Debes tener 18 años o más.",
+  "countryRequiredReason": "Requerido para detectar tu moneda local y conectarte con proveedores cercanos.",
 
   "deleteAccountSheetTitle": "Lamentamos verte partir.",
   "deleteAccountSheetPrompt": "¿Puedes decirnos por qué? (Selecciona todas las que apliquen)",
@@ -49,6 +55,10 @@
       "name": {}
     }
   },
+
+  "skipStateCityTitle": "Omitir Estado y Ciudad",
+  "skipStateCitySubtitle": "Estos campos son opcionales",
+  "skipStateCityNote": "Has elegido omitir Estado y Ciudad. Siempre puedes actualizar tu ubicación desde la configuración de tu perfil. Nota: proporcionar tu ubicación nos ayuda a conectarte con proveedores cercanos con mayor precisión.",
 
   "previewBookNowLabel": "RESERVAR",
   "previewLoginPromptTitle": "Inicia sesión para reservar",

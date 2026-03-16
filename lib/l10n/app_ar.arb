@@ -42,6 +42,16 @@
     }
   },
 
+  "skipStateCityTitle": "تخطي الولاية والمدينة",
+  "skipStateCitySubtitle": "هذه الحقول اختيارية",
+  "skipStateCityNote": "لقد اخترت تخطي الولاية والمدينة. يمكنك دائمًا تحديث تفاصيل موقعك لاحقًا من إعدادات ملفك الشخصي. ملاحظة: تقديم موقعك يساعدنا في مطابقتك مع مقدمي الخدمات القريبين بدقة أكبر.",
+
+  "stateAndCityOptional": "الولاية والمدينة حقول اختيارية.",
+
+  "onboardingSkipForNow": "تخطي الآن",
+  "dobRequiredReason": "مطلوب للتحقق من العمر. يجب أن يكون عمرك 18 عامًا أو أكثر.",
+  "countryRequiredReason": "مطلوب لتحديد عملتك المحلية ومطابقتك مع مقدمي الخدمات القريبين.",
+
   "previewBookNowLabel": "احجز الآن",
   "previewLoginPromptTitle": "سجّل دخولك للحجز",
   "previewLoginPromptSubtitle": "أنشئ حسابًا مجانيًا أو سجّل دخولك لحجز هذه الخدمة والمزيد!",
@@ -141,6 +151,7 @@
       "identifier": {}
     }
   },
+
   "verificationCodeLabel": "رمز التحقق",
   "sendingEllipsis": "جارٍ الإرسال...",
   "resendCode": "إعادة إرسال الرمز",

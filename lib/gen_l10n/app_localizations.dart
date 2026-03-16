@@ -256,6 +256,12 @@ abstract class AppLocalizations {
   /// **'Create a free account or sign in to book this service and many more!'**
   String get previewLoginPromptSubtitle;
 
+  /// No description provided for @stateAndCityOptional.
+  ///
+  /// In en, this message translates to:
+  /// **'State and City are optional fields.'**
+  String get stateAndCityOptional;
+
   /// No description provided for @ageRestrictionTitle.
   ///
   /// In en, this message translates to:
@@ -364,6 +370,24 @@ abstract class AppLocalizations {
   /// **'Failed to delete account. Please try again.'**
   String get failedToDeleteAccount;
 
+  /// No description provided for @onboardingSkipForNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Skip for now'**
+  String get onboardingSkipForNow;
+
+  /// No description provided for @dobRequiredReason.
+  ///
+  /// In en, this message translates to:
+  /// **'Required for age verification. You must be 18+ to use Styloria.'**
+  String get dobRequiredReason;
+
+  /// No description provided for @countryRequiredReason.
+  ///
+  /// In en, this message translates to:
+  /// **'Required to detect your local currency and match you with nearby providers.'**
+  String get countryRequiredReason;
+
   /// No description provided for @choosePreferredLanguage.
   ///
   /// In en, this message translates to:
@@ -399,6 +423,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Your Notes'**
   String get yourNotes;
+
+  /// No description provided for @skipStateCityTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Skip State & City'**
+  String get skipStateCityTitle;
+
+  /// No description provided for @skipStateCitySubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'These fields are optional'**
+  String get skipStateCitySubtitle;
+
+  /// No description provided for @skipStateCityNote.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'ve chosen to skip State and City. You can always update your location details later from your profile settings. Note: Providing your location helps us match you with nearby service providers more accurately.'**
+  String get skipStateCityNote;
 
   /// No description provided for @previewTagline.
   ///

@@ -42,6 +42,12 @@
     }
   },
 
+  "skipStateCityTitle": "州・都市をスキップ",
+  "skipStateCitySubtitle": "これらの項目は任意です",
+  "skipStateCityNote": "州・都市をスキップしました。プロフィール設定からいつでも位置情報を更新できます。注意：位置情報を提供すると、近くのサービスプロバイダーとより正確にマッチングされます。",
+
+  "stateAndCityOptional": "州・都市は任意入力項目です。",
+
   "previewBookNowLabel": "今すぐ予約",
   "previewLoginPromptTitle": "予約するにはサインイン",
   "previewLoginPromptSubtitle": "無料アカウントを作成またはサインインして、このサービスや他の多くのサービスを予約しましょう！",
@@ -154,6 +160,11 @@
       "id": {}
     }
   },
+
+  "onboardingSkipForNow": "後で設定する",
+  "dobRequiredReason": "年齢確認のために必要です。18歳以上である必要があります。",
+  "countryRequiredReason": "現地通貨の検出と近くのプロバイダーとのマッチングに必要です。",
+
   "invalidBookingIdForChat": "チャット用の予約IDが無効です。",
   "invalidBookingIdForCall": "通話用の予約IDが無効です。",
   "unableToLoadContactInfo": "連絡先情報を読み込めません。予約が有効か確認してください。",

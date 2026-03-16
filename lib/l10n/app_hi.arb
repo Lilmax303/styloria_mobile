@@ -42,6 +42,12 @@
     }
   },
 
+  "skipStateCityTitle": "राज्य और शहर छोड़ें",
+  "skipStateCitySubtitle": "ये फ़ील्ड वैकल्पिक हैं",
+  "skipStateCityNote": "आपने राज्य और शहर छोड़ना चुना है। आप बाद में अपनी प्रोफ़ाइल सेटिंग से अपना स्थान अपडेट कर सकते हैं। नोट: आपका स्थान प्रदान करने से हमें आपको पास के सेवा प्रदाताओं से जोड़ने में मदद मिलती है।",
+
+  "stateAndCityOptional": "राज्य और शहर वैकल्पिक फ़ील्ड हैं।",
+
   "previewBookNowLabel": "अभी बुक करें",
   "previewLoginPromptTitle": "बुक करने के लिए साइन इन करें",
   "previewLoginPromptSubtitle": "इस और कई अन्य सेवाओं को बुक करने के लिए मुफ्त खाता बनाएं या साइन इन करें!",
@@ -49,6 +55,10 @@
   "ageRestrictionTitle": "केवल 18+ के लिए",
   "ageRestrictionBody": "Styloria में पंजीकरण और उपयोग के लिए आपकी आयु कम से कम 18 वर्ष होनी चाहिए। जन्म तिथि सत्यापन आवश्यक है।",
   "ageRestrictionInline": "Styloria का उपयोग करने के लिए आपकी आयु कम से कम 18 वर्ष होनी चाहिए।",
+
+  "onboardingSkipForNow": "अभी छोड़ें",
+  "dobRequiredReason": "आयु सत्यापन के लिए आवश्यक। आपकी आयु 18+ होनी चाहिए।",
+  "countryRequiredReason": "स्थानीय मुद्रा पहचानने और पास के प्रदाताओं से मिलान के लिए आवश्यक।",
 
   "previewTagline": "ब्यूटी ऑन-डिमांड",
   "previewServicesTitle": "उपलब्ध सेवाएं",
