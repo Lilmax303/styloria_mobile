@@ -138,11 +138,11 @@ class AppLocalizationsAk extends AppLocalizations {
       'Akaunt pepae no anomaa. Yɛsrɛ wo san yɛ bio.';
 
   @override
-  String get onboardingSkipForNow => 'Twam seesei';
+  String get dobOptionalReason =>
+      'Wo awo da no yɛ wo pɛ. Sɛ wode ma yɛn a, ɛboa yɛn sɛ yɛbɛhwɛ sɛ wo mfeɛ aduru nea ɛsɛ';
 
   @override
-  String get dobRequiredReason =>
-      'Ɛhia sɛ wohwɛ wo mfeɛ. Ɛsɛ sɛ wowɔ mfe 18 ne soro.';
+  String get dateOfBirthOptional => 'Awo Da (Wo Pɛ a)';
 
   @override
   String get countryRequiredReason =>
@@ -178,6 +178,16 @@ class AppLocalizationsAk extends AppLocalizations {
   @override
   String get skipStateCityNote =>
       'Woabɔ wo beaeɛ yi atra. Wobetumi akyerɛ wo beaeɛ ho nsɛm bio wɔ wo profile settings mu. Nsɛm: sɛ wode wo beaeɛ ba a, ɛboa yɛn sɛ yɛde wo ka adwumayɛfoɔ a wɔbɛn wo.';
+
+  @override
+  String get onboardingEnableLocationServices => 'Bue Beae Ho Dwumadie';
+
+  @override
+  String get onboardingLocationServicesOffTitle => 'Beae Ho Dwumadie no Adum';
+
+  @override
+  String get onboardingLocationServicesOffMessage =>
+      'Beae ho dwumadie no adum wɔ wo dawubɔ no so. Yɛsrɛ wo bue no wɔ wo dawubɔ no nhyehyɛe mu na woahu beae ho nsɛm.';
 
   @override
   String get previewTagline => 'AHOFAM DWUMA WƆ W\'ANIMUONYAM MU';
@@ -3264,9 +3274,6 @@ class AppLocalizationsAk extends AppLocalizations {
   String get onboardingMaybeLater => 'Maybe Later';
 
   @override
-  String get onboardingEnableLocation => 'Enable Location';
-
-  @override
   String get onboardingWelcomeTitle => 'Welcome to Styloria';
 
   @override
@@ -3355,16 +3362,6 @@ class AppLocalizationsAk extends AppLocalizations {
 
   @override
   String get onboardingOpenSettings => 'Open Settings';
-
-  @override
-  String get onboardingLocationServicesOffTitle => 'Location Services Disabled';
-
-  @override
-  String get onboardingLocationServicesOffMessage =>
-      'Your device\'s location services are turned off. Enable them to get the full Styloria experience.';
-
-  @override
-  String get onboardingEnableLocationServices => 'Enable Location Services';
 
   @override
   String get providerLocationRequiredTitle => 'Location Required';

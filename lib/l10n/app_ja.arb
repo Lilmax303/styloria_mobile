@@ -161,8 +161,8 @@
     }
   },
 
-  "onboardingSkipForNow": "後で設定する",
-  "dobRequiredReason": "年齢確認のために必要です。18歳以上である必要があります。",
+  "dateOfBirthOptional": "生年月日（任意）",
+  "dobOptionalReason": "生年月日は任意です。ご提供いただいた場合、最低年齢要件を満たしているかの確認に役立ちます。",
   "countryRequiredReason": "現地通貨の検出と近くのプロバイダーとのマッチングに必要です。",
 
   "invalidBookingIdForChat": "チャット用の予約IDが無効です。",

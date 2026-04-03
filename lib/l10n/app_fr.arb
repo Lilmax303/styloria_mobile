@@ -48,8 +48,8 @@
 
   "stateAndCityOptional": "Le département et la ville sont des champs facultatifs.",
 
-  "onboardingSkipForNow": "Passer pour l'instant",
-  "dobRequiredReason": "Requis pour la vérification de l'âge. Vous devez avoir 18 ans ou plus.",
+  "dobOptionalReason": "Votre date de naissance est facultative. Si elle est fournie, elle nous aide à vérifier que vous remplissez l'exigence d'âge minimum.",
+  "dateOfBirthOptional": "Date de naissance (Facultatif)",
   "countryRequiredReason": "Requis pour détecter votre devise locale et vous connecter aux prestataires proches.",
 
   "previewBookNowLabel": "RÉSERVER",

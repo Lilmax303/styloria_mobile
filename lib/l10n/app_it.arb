@@ -157,8 +157,8 @@
     }
   },
 
-  "onboardingSkipForNow": "Salta per ora",
-  "dobRequiredReason": "Richiesto per la verifica dell'età. Devi avere almeno 18 anni.",
+  "dateOfBirthOptional": "Data di nascita (Facoltativo)",
+  "dobOptionalReason": "La tua data di nascita è facoltativa. Se fornita, ci aiuta a verificare che soddisfi il requisito di età minima.",
   "countryRequiredReason": "Richiesto per rilevare la tua valuta locale e abbinarti ai fornitori vicini.",  
 
   "invalidBookingIdForChat": "ID prenotazione non valido per la chat.",

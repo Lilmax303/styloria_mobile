@@ -132,10 +132,11 @@ class AppLocalizationsKo extends AppLocalizations {
   String get failedToDeleteAccount => '계정 삭제에 실패했습니다. 다시 시도해 주세요.';
 
   @override
-  String get onboardingSkipForNow => '나중에 하기';
+  String get dobOptionalReason =>
+      '생년월일은 선택 사항입니다. 제공하시면 최소 연령 요건 충족 여부를 확인하는 데 도움이 됩니다.';
 
   @override
-  String get dobRequiredReason => '나이 확인을 위해 필요합니다. 18세 이상이어야 합니다.';
+  String get dateOfBirthOptional => '생년월일 (선택 사항)';
 
   @override
   String get countryRequiredReason => '현지 통화 감지 및 가까운 서비스 제공자 매칭을 위해 필요합니다.';
@@ -170,6 +171,16 @@ class AppLocalizationsKo extends AppLocalizations {
   @override
   String get skipStateCityNote =>
       '주/도 및 도시를 건너뛰었습니다. 프로필 설정에서 언제든지 위치 정보를 업데이트할 수 있습니다. 참고: 위치 정보를 제공하면 근처 서비스 제공자와 더 정확하게 매칭됩니다.';
+
+  @override
+  String get onboardingEnableLocationServices => 'Enable Location Services';
+
+  @override
+  String get onboardingLocationServicesOffTitle => 'Location Services Disabled';
+
+  @override
+  String get onboardingLocationServicesOffMessage =>
+      'Location services are turned off on your device. Please enable them in your device settings to use location-based features.';
 
   @override
   String get previewTagline => '뷰티 온-디맨드';
@@ -3217,9 +3228,6 @@ class AppLocalizationsKo extends AppLocalizations {
   String get onboardingMaybeLater => 'Maybe Later';
 
   @override
-  String get onboardingEnableLocation => 'Enable Location';
-
-  @override
   String get onboardingWelcomeTitle => 'Welcome to Styloria';
 
   @override
@@ -3308,16 +3316,6 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get onboardingOpenSettings => 'Open Settings';
-
-  @override
-  String get onboardingLocationServicesOffTitle => 'Location Services Disabled';
-
-  @override
-  String get onboardingLocationServicesOffMessage =>
-      'Your device\'s location services are turned off. Enable them to get the full Styloria experience.';
-
-  @override
-  String get onboardingEnableLocationServices => 'Enable Location Services';
 
   @override
   String get providerLocationRequiredTitle => 'Location Required';

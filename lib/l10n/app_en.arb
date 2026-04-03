@@ -51,8 +51,8 @@
   "cancel": "Cancel",
   "failedToDeleteAccount": "Failed to delete account. Please try again.",
 
-  "onboardingSkipForNow": "Skip for now",
-  "dobRequiredReason": "Required for age verification. You must be 18+ to use Styloria.",
+  "dobOptionalReason": "Your date of birth is optional. If provided, it helps us verify you meet the minimum age requirement.",
+  "dateOfBirthOptional": "Date of Birth (Optional)",
   "countryRequiredReason": "Required to detect your local currency and match you with nearby providers.",
 
   "choosePreferredLanguage": "Choose your preferred language",
@@ -70,6 +70,11 @@
   "skipStateCityTitle": "Skip State & City",
   "skipStateCitySubtitle": "These fields are optional",
   "skipStateCityNote": "You've chosen to skip State and City. You can always update your location details later from your profile settings. Note: Providing your location helps us match you with nearby service providers more accurately.",
+
+  "onboardingEnableLocationServices": "Enable Location Services",
+  "onboardingLocationServicesOffTitle": "Location Services Disabled",
+  "onboardingLocationServicesOffMessage": "Location services are turned off on your device. Please enable them in your device settings to use location-based features.",
+
 
   "previewTagline": "BEAUTY ON-DEMAND",
   "previewServicesTitle": "Services Available",
@@ -1825,7 +1830,7 @@
   "onboardingSkip": "Skip",
   "onboardingGetStarted": "Get Started",
   "onboardingMaybeLater": "Maybe Later",
-  "onboardingEnableLocation": "Enable Location",
+  "dateOfBirthOptional": "Date of Birth (Optional)",
 
   "onboardingWelcomeTitle": "Welcome to Styloria",
   "onboardingWelcomeSubtitle": "Your personal beauty & grooming marketplace",
@@ -1859,9 +1864,6 @@
   "onboardingContinueWithoutLocation": "Continue Without Location",
   "onboardingOpenSettings": "Open Settings",
 
-  "onboardingLocationServicesOffTitle": "Location Services Disabled",
-  "onboardingLocationServicesOffMessage": "Your device's location services are turned off. Enable them to get the full Styloria experience.",
-  "onboardingEnableLocationServices": "Enable Location Services",
 
   "providerLocationRequiredTitle": "Location Required",
   "providerLocationRequiredMessage": "To appear in search results and receive job requests from nearby clients, you need to enable location access.",

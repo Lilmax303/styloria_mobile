@@ -161,8 +161,8 @@
     }
   },
 
-  "onboardingSkipForNow": "Tsallake yanzu",
-  "dobRequiredReason": "Ana buƙata don tabbatar da shekaru. Dole ne ka kasance da shekaru 18+.",
+  "dateOfBirthOptional": "Ranar Haihuwa (Na Zaɓi)",
+  "dobOptionalReason": "Ranar haihuwar ku na zaɓi ne. Idan an bayar, yana taimaka mana tabbatar da cewa kun cika buƙatun shekarun da ake buƙata.",
   "countryRequiredReason": "Ana buƙata don gano kuɗin ka na gida da haɗa ka da masu ba da ayyuka kusa.",
 
   "selectYourServicesTitle": "Zaɓi Sabis ɗin Ka",

@@ -48,8 +48,8 @@
 
   "stateAndCityOptional": "الولاية والمدينة حقول اختيارية.",
 
-  "onboardingSkipForNow": "تخطي الآن",
-  "dobRequiredReason": "مطلوب للتحقق من العمر. يجب أن يكون عمرك 18 عامًا أو أكثر.",
+  "dateOfBirthOptional": "تاريخ الميلاد (اختياري)",
+  "dobOptionalReason": "تاريخ ميلادك اختياري. إذا تم تقديمه، فإنه يساعدنا في التحقق من استيفائك لمتطلبات الحد الأدنى للعمر.",
   "countryRequiredReason": "مطلوب لتحديد عملتك المحلية ومطابقتك مع مقدمي الخدمات القريبين.",
 
   "previewBookNowLabel": "احجز الآن",

@@ -132,10 +132,11 @@ class AppLocalizationsAm extends AppLocalizations {
   String get failedToDeleteAccount => 'መለያ ማጥፋት አልተሳካም። እንደገና ይሞክሩ።';
 
   @override
-  String get onboardingSkipForNow => 'አሁን ዝለል';
+  String get dobOptionalReason =>
+      'የልደት ቀንዎ አማራጭ ነው። ከተሰጠ፣ አነስተኛውን የዕድሜ መስፈርት ማሟላትዎን ለማረጋገጥ ይረዳናል።';
 
   @override
-  String get dobRequiredReason => 'የዕድሜ ማረጋገጫ ያስፈልጋል። 18 ዓመት ወይም በላይ መሆን አለብዎ።';
+  String get dateOfBirthOptional => 'የልደት ቀን (አማራጭ)';
 
   @override
   String get countryRequiredReason =>
@@ -171,6 +172,16 @@ class AppLocalizationsAm extends AppLocalizations {
   @override
   String get skipStateCityNote =>
       'ክልል እና ከተማን ለመዝለል መርጠዋል። በመገለጫ ቅንብሮችዎ ውስጥ የአካባቢ ዝርዝሮችዎን ማዘመን ይችላሉ። ማስታወሻ፡ አካባቢዎን መስጠት ከቅርብ አቅራቢዎች ጋር በትክክለኛነት እንዲዛመዱ ይረዳናል።';
+
+  @override
+  String get onboardingEnableLocationServices => 'Enable Location Services';
+
+  @override
+  String get onboardingLocationServicesOffTitle => 'Location Services Disabled';
+
+  @override
+  String get onboardingLocationServicesOffMessage =>
+      'Location services are turned off on your device. Please enable them in your device settings to use location-based features.';
 
   @override
   String get previewTagline => 'ውበት በፍላጎት';
@@ -3227,9 +3238,6 @@ class AppLocalizationsAm extends AppLocalizations {
   String get onboardingMaybeLater => 'Maybe Later';
 
   @override
-  String get onboardingEnableLocation => 'Enable Location';
-
-  @override
   String get onboardingWelcomeTitle => 'Welcome to Styloria';
 
   @override
@@ -3318,16 +3326,6 @@ class AppLocalizationsAm extends AppLocalizations {
 
   @override
   String get onboardingOpenSettings => 'Open Settings';
-
-  @override
-  String get onboardingLocationServicesOffTitle => 'Location Services Disabled';
-
-  @override
-  String get onboardingLocationServicesOffMessage =>
-      'Your device\'s location services are turned off. Enable them to get the full Styloria experience.';
-
-  @override
-  String get onboardingEnableLocationServices => 'Enable Location Services';
 
   @override
   String get providerLocationRequiredTitle => 'Location Required';

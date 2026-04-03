@@ -132,10 +132,11 @@ class AppLocalizationsJa extends AppLocalizations {
   String get failedToDeleteAccount => 'アカウント削除に失敗しました。もう一度お試しください。';
 
   @override
-  String get onboardingSkipForNow => '後で設定する';
+  String get dobOptionalReason =>
+      '生年月日は任意です。ご提供いただいた場合、最低年齢要件を満たしているかの確認に役立ちます。';
 
   @override
-  String get dobRequiredReason => '年齢確認のために必要です。18歳以上である必要があります。';
+  String get dateOfBirthOptional => '生年月日（任意）';
 
   @override
   String get countryRequiredReason => '現地通貨の検出と近くのプロバイダーとのマッチングに必要です。';
@@ -170,6 +171,16 @@ class AppLocalizationsJa extends AppLocalizations {
   @override
   String get skipStateCityNote =>
       '州・都市をスキップしました。プロフィール設定からいつでも位置情報を更新できます。注意：位置情報を提供すると、近くのサービスプロバイダーとより正確にマッチングされます。';
+
+  @override
+  String get onboardingEnableLocationServices => 'Enable Location Services';
+
+  @override
+  String get onboardingLocationServicesOffTitle => 'Location Services Disabled';
+
+  @override
+  String get onboardingLocationServicesOffMessage =>
+      'Location services are turned off on your device. Please enable them in your device settings to use location-based features.';
 
   @override
   String get previewTagline => 'ビューティー・オンデマンド';
@@ -3203,9 +3214,6 @@ class AppLocalizationsJa extends AppLocalizations {
   String get onboardingMaybeLater => 'Maybe Later';
 
   @override
-  String get onboardingEnableLocation => 'Enable Location';
-
-  @override
   String get onboardingWelcomeTitle => 'Welcome to Styloria';
 
   @override
@@ -3294,16 +3302,6 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get onboardingOpenSettings => 'Open Settings';
-
-  @override
-  String get onboardingLocationServicesOffTitle => 'Location Services Disabled';
-
-  @override
-  String get onboardingLocationServicesOffMessage =>
-      'Your device\'s location services are turned off. Enable them to get the full Styloria experience.';
-
-  @override
-  String get onboardingEnableLocationServices => 'Enable Location Services';
 
   @override
   String get providerLocationRequiredTitle => 'Location Required';

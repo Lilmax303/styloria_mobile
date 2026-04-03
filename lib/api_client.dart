@@ -464,7 +464,9 @@ class ApiClient {
     required bool acceptedTerms,
     required String password,
     required String passwordConfirm,
-    required String dateOfBirth,
+    // ✅ FIX: dateOfBirth is now optional (was: required String dateOfBirth)
+    // Apple Guideline 5.1.1(v) — DOB cannot be required
+    String dateOfBirth = '',
     String? detectedCountry,
     bool? countryMismatch,
     String? referralCode,
@@ -484,10 +486,13 @@ class ApiClient {
         'accepted_terms': acceptedTerms,
         'password': password,
         'password_confirm': passwordConfirm,
-        'date_of_birth': dateOfBirth,
-        if (detectedCountry != null && detectedCountry.isNotEmpty) 
+        // ✅ FIX: Only include date_of_birth if user provided one
+        // Previously always sent (even as empty string)
+        if (dateOfBirth.isNotEmpty)
+          'date_of_birth': dateOfBirth,
+        if (detectedCountry != null && detectedCountry.isNotEmpty)
           'detected_country': detectedCountry,
-        if (countryMismatch != null) 
+        if (countryMismatch != null)
           'country_mismatch': countryMismatch,
         if (referralCode != null && referralCode.isNotEmpty)
           'referred_by_code': referralCode,
@@ -497,7 +502,6 @@ class ApiClient {
         url,
         headers: {'Content-Type': 'application/json'},
         body: jsonEncode(body),
-
       ).timeout(
         _requestTimeout,
         onTimeout: () {

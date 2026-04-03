@@ -46,6 +46,10 @@
   "skipStateCitySubtitle": "Wo beaeɛ yi yɛ nea ɛho nhia",
   "skipStateCityNote": "Woabɔ wo beaeɛ yi atra. Wobetumi akyerɛ wo beaeɛ ho nsɛm bio wɔ wo profile settings mu. Nsɛm: sɛ wode wo beaeɛ ba a, ɛboa yɛn sɛ yɛde wo ka adwumayɛfoɔ a wɔbɛn wo.",
 
+  "onboardingEnableLocationServices": "Bue Beae Ho Dwumadie",
+  "onboardingLocationServicesOffTitle": "Beae Ho Dwumadie no Adum",
+  "onboardingLocationServicesOffMessage": "Beae ho dwumadie no adum wɔ wo dawubɔ no so. Yɛsrɛ wo bue no wɔ wo dawubɔ no nhyehyɛe mu na woahu beae ho nsɛm.",
+
   "stateAndCityOptional": "Ɔman ne kurom yɛ nea ɛho nhia.",
 
   "previewBookNowLabel": "HYƐ ASE",
@@ -148,8 +152,8 @@
     }
   },
 
-  "onboardingSkipForNow": "Twam seesei",
-  "dobRequiredReason": "Ɛhia sɛ wohwɛ wo mfeɛ. Ɛsɛ sɛ wowɔ mfe 18 ne soro.",
+  "dateOfBirthOptional": "Awo Da (Wo Pɛ a)",
+  "dobOptionalReason": "Wo awo da no yɛ wo pɛ. Sɛ wode ma yɛn a, ɛboa yɛn sɛ yɛbɛhwɛ sɛ wo mfeɛ aduru nea ɛsɛ",
   "countryRequiredReason": "Ɛhia sɛ yɛhu wo sika dwetɛ ne sɛ yɛde wo ka adwumayɛfoɔ a wɔbɛn wo.",
 
   "stripeSetupComplete": "Stripe setup no awie.",

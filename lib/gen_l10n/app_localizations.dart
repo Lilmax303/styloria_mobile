@@ -370,17 +370,17 @@ abstract class AppLocalizations {
   /// **'Failed to delete account. Please try again.'**
   String get failedToDeleteAccount;
 
-  /// No description provided for @onboardingSkipForNow.
+  /// No description provided for @dobOptionalReason.
   ///
   /// In en, this message translates to:
-  /// **'Skip for now'**
-  String get onboardingSkipForNow;
+  /// **'Your date of birth is optional. If provided, it helps us verify you meet the minimum age requirement.'**
+  String get dobOptionalReason;
 
-  /// No description provided for @dobRequiredReason.
+  /// No description provided for @dateOfBirthOptional.
   ///
   /// In en, this message translates to:
-  /// **'Required for age verification. You must be 18+ to use Styloria.'**
-  String get dobRequiredReason;
+  /// **'Date of Birth (Optional)'**
+  String get dateOfBirthOptional;
 
   /// No description provided for @countryRequiredReason.
   ///
@@ -441,6 +441,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'You\'ve chosen to skip State and City. You can always update your location details later from your profile settings. Note: Providing your location helps us match you with nearby service providers more accurately.'**
   String get skipStateCityNote;
+
+  /// No description provided for @onboardingEnableLocationServices.
+  ///
+  /// In en, this message translates to:
+  /// **'Enable Location Services'**
+  String get onboardingEnableLocationServices;
+
+  /// No description provided for @onboardingLocationServicesOffTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Location Services Disabled'**
+  String get onboardingLocationServicesOffTitle;
+
+  /// No description provided for @onboardingLocationServicesOffMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Location services are turned off on your device. Please enable them in your device settings to use location-based features.'**
+  String get onboardingLocationServicesOffMessage;
 
   /// No description provided for @previewTagline.
   ///
@@ -5765,12 +5783,6 @@ abstract class AppLocalizations {
   /// **'Maybe Later'**
   String get onboardingMaybeLater;
 
-  /// No description provided for @onboardingEnableLocation.
-  ///
-  /// In en, this message translates to:
-  /// **'Enable Location'**
-  String get onboardingEnableLocation;
-
   /// No description provided for @onboardingWelcomeTitle.
   ///
   /// In en, this message translates to:
@@ -5932,24 +5944,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Open Settings'**
   String get onboardingOpenSettings;
-
-  /// No description provided for @onboardingLocationServicesOffTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Location Services Disabled'**
-  String get onboardingLocationServicesOffTitle;
-
-  /// No description provided for @onboardingLocationServicesOffMessage.
-  ///
-  /// In en, this message translates to:
-  /// **'Your device\'s location services are turned off. Enable them to get the full Styloria experience.'**
-  String get onboardingLocationServicesOffMessage;
-
-  /// No description provided for @onboardingEnableLocationServices.
-  ///
-  /// In en, this message translates to:
-  /// **'Enable Location Services'**
-  String get onboardingEnableLocationServices;
 
   /// No description provided for @providerLocationRequiredTitle.
   ///

@@ -56,8 +56,8 @@
   "ageRestrictionBody": "Du musst mindestens 18 Jahre alt sein, um dich bei Styloria zu registrieren und es zu nutzen. Eine Überprüfung des Geburtsdatums ist erforderlich.",
   "ageRestrictionInline": "Du musst mindestens 18 Jahre alt sein, um Styloria zu nutzen.",
 
-  "onboardingSkipForNow": "Vorerst überspringen",
-  "dobRequiredReason": "Erforderlich zur Altersverifizierung. Du musst mindestens 18 Jahre alt sein.",
+  "dateOfBirthOptional": "Geburtsdatum (Optional)",
+  "dobOptionalReason": "Ihr Geburtsdatum ist optional. Falls angegeben, hilft es uns zu überprüfen, ob Sie die Mindestaltersanforderung erfüllen.",
   "countryRequiredReason": "Erforderlich zur Erkennung deiner lokalen Währung und Zuordnung nahegelegener Anbieter.",
 
   "previewTagline": "BEAUTY AUF ABRUF",

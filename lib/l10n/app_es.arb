@@ -34,8 +34,8 @@
   "no": "No",
   "yesDelete": "Sí, eliminar",
 
-  "onboardingSkipForNow": "Omitir por ahora",
-  "dobRequiredReason": "Requerido para verificación de edad. Debes tener 18 años o más.",
+  "dateOfBirthOptional": "Fecha de nacimiento (Opcional)",
+  "dobOptionalReason": "Tu fecha de nacimiento es opcional. Si la proporcionas, nos ayuda a verificar que cumples con el requisito de edad mínima.",
   "countryRequiredReason": "Requerido para detectar tu moneda local y conectarte con proveedores cercanos.",
 
   "deleteAccountSheetTitle": "Lamentamos verte partir.",
@@ -59,6 +59,10 @@
   "skipStateCityTitle": "Omitir Estado y Ciudad",
   "skipStateCitySubtitle": "Estos campos son opcionales",
   "skipStateCityNote": "Has elegido omitir Estado y Ciudad. Siempre puedes actualizar tu ubicación desde la configuración de tu perfil. Nota: proporcionar tu ubicación nos ayuda a conectarte con proveedores cercanos con mayor precisión.",
+
+  "onboardingEnableLocationServices": "Activar servicios de ubicación",
+  "onboardingLocationServicesOffTitle": "Servicios de ubicación desactivados",
+  "onboardingLocationServicesOffMessage": "Los servicios de ubicación están desactivados en tu dispositivo. Actívalos en los ajustes de tu dispositivo para usar funciones basadas en ubicación.",
 
   "previewBookNowLabel": "RESERVAR",
   "previewLoginPromptTitle": "Inicia sesión para reservar",

@@ -139,11 +139,11 @@ class AppLocalizationsHa extends AppLocalizations {
       'An kasa goge asusu. Da fatan a sake gwadawa.';
 
   @override
-  String get onboardingSkipForNow => 'Tsallake yanzu';
+  String get dobOptionalReason =>
+      'Ranar haihuwar ku na zaɓi ne. Idan an bayar, yana taimaka mana tabbatar da cewa kun cika buƙatun shekarun da ake buƙata.';
 
   @override
-  String get dobRequiredReason =>
-      'Ana buƙata don tabbatar da shekaru. Dole ne ka kasance da shekaru 18+.';
+  String get dateOfBirthOptional => 'Ranar Haihuwa (Na Zaɓi)';
 
   @override
   String get countryRequiredReason =>
@@ -179,6 +179,16 @@ class AppLocalizationsHa extends AppLocalizations {
   @override
   String get skipStateCityNote =>
       'Kun zaɓi tsallake Jiha da Gari. Kuna iya sabunta bayanan wurin ku daga cikin saitunan bayanin ku. Lura: bayar da wurin ku yana taimaka mana mu haɗa ku da masu ba da ayyuka kusa da ku daidai.';
+
+  @override
+  String get onboardingEnableLocationServices => 'Enable Location Services';
+
+  @override
+  String get onboardingLocationServicesOffTitle => 'Location Services Disabled';
+
+  @override
+  String get onboardingLocationServicesOffMessage =>
+      'Location services are turned off on your device. Please enable them in your device settings to use location-based features.';
 
   @override
   String get previewTagline => 'KYAU A BUKATA';
@@ -3278,9 +3288,6 @@ class AppLocalizationsHa extends AppLocalizations {
   String get onboardingMaybeLater => 'Maybe Later';
 
   @override
-  String get onboardingEnableLocation => 'Enable Location';
-
-  @override
   String get onboardingWelcomeTitle => 'Welcome to Styloria';
 
   @override
@@ -3369,16 +3376,6 @@ class AppLocalizationsHa extends AppLocalizations {
 
   @override
   String get onboardingOpenSettings => 'Open Settings';
-
-  @override
-  String get onboardingLocationServicesOffTitle => 'Location Services Disabled';
-
-  @override
-  String get onboardingLocationServicesOffMessage =>
-      'Your device\'s location services are turned off. Enable them to get the full Styloria experience.';
-
-  @override
-  String get onboardingEnableLocationServices => 'Enable Location Services';
 
   @override
   String get providerLocationRequiredTitle => 'Location Required';

@@ -133,10 +133,11 @@ class AppLocalizationsHe extends AppLocalizations {
   String get failedToDeleteAccount => 'מחיקת החשבון נכשלה. נסה/י שוב.';
 
   @override
-  String get onboardingSkipForNow => 'דלג לעת עתה';
+  String get dobOptionalReason =>
+      'תאריך הלידה שלך הוא אופציונלי. אם יסופק, הוא עוזר לנו לוודא שאתה עומד בדרישת הגיל המינימלית.';
 
   @override
-  String get dobRequiredReason => 'נדרש לאימות גיל. עליך להיות בן 18 ומעלה.';
+  String get dateOfBirthOptional => 'תאריך לידה (אופציונלי)';
 
   @override
   String get countryRequiredReason =>
@@ -172,6 +173,16 @@ class AppLocalizationsHe extends AppLocalizations {
   @override
   String get skipStateCityNote =>
       'בחרת לדלג על מדינה ועיר. תוכל תמיד לעדכן את פרטי המיקום שלך מהגדרות הפרופיל. הערה: מתן המיקום שלך עוזר לנו להתאים אותך עם ספקי שירות קרובים בצורה מדויקת יותר.';
+
+  @override
+  String get onboardingEnableLocationServices => 'Enable Location Services';
+
+  @override
+  String get onboardingLocationServicesOffTitle => 'Location Services Disabled';
+
+  @override
+  String get onboardingLocationServicesOffMessage =>
+      'Location services are turned off on your device. Please enable them in your device settings to use location-based features.';
 
   @override
   String get previewTagline => 'יופי לפי דרישה';
@@ -3250,9 +3261,6 @@ class AppLocalizationsHe extends AppLocalizations {
   String get onboardingMaybeLater => 'Maybe Later';
 
   @override
-  String get onboardingEnableLocation => 'Enable Location';
-
-  @override
   String get onboardingWelcomeTitle => 'Welcome to Styloria';
 
   @override
@@ -3341,16 +3349,6 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String get onboardingOpenSettings => 'Open Settings';
-
-  @override
-  String get onboardingLocationServicesOffTitle => 'Location Services Disabled';
-
-  @override
-  String get onboardingLocationServicesOffMessage =>
-      'Your device\'s location services are turned off. Enable them to get the full Styloria experience.';
-
-  @override
-  String get onboardingEnableLocationServices => 'Enable Location Services';
 
   @override
   String get providerLocationRequiredTitle => 'Location Required';

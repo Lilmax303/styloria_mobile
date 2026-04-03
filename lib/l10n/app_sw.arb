@@ -204,8 +204,8 @@
     }
   },
 
-  "onboardingSkipForNow": "Ruka kwa sasa",
-  "dobRequiredReason": "Inahitajika kwa uthibitishaji wa umri. Lazima uwe na umri wa miaka 18+.",
+  "dateOfBirthOptional": "Tarehe ya Kuzaliwa (Si Lazima)",
+  "dobOptionalReason": "Tarehe yako ya kuzaliwa si lazima. Ikitolewa, inatusaidia kuthibitisha kuwa unakidhi mahitaji ya umri wa chini.",
   "countryRequiredReason": "Inahitajika kugundua sarafu yako ya ndani na kukuunganisha na watoa huduma wa karibu.",
 
   "providerActionHeader": "Ungependa kufanya nini leo?",

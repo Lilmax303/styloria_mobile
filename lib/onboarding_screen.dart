@@ -12,25 +12,21 @@ class OnboardingScreen extends StatefulWidget {
 
   static const String _onboardingCompleteKey = 'onboarding_complete';
 
-  /// Check if onboarding has been completed
   static Future<bool> isOnboardingComplete() async {
     final prefs = await SharedPreferences.getInstance();
     return prefs.getBool(_onboardingCompleteKey) ?? false;
   }
 
-  /// Mark onboarding as complete
   static Future<void> setOnboardingComplete() async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setBool(_onboardingCompleteKey, true);
   }
 
-  /// Reset onboarding (for testing only)
   static Future<void> resetOnboarding() async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setBool(_onboardingCompleteKey, false);
   }
 
-  /// ✅ NEW: Re-save the onboarding flag (call AFTER any logout that might clear prefs)
   static Future<void> preserveOnboardingFlag() async {
     final prefs = await SharedPreferences.getInstance();
     final wasComplete = prefs.getBool(_onboardingCompleteKey) ?? false;
@@ -39,7 +35,6 @@ class OnboardingScreen extends StatefulWidget {
     }
   }
 
-  /// ✅ NEW: Safely perform logout while preserving onboarding completion
   static Future<void> logoutPreservingOnboarding(Future<void> Function() logoutFn) async {
     final wasComplete = await isOnboardingComplete();
     await logoutFn();
@@ -57,10 +52,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   int _currentPage = 0;
   bool _requestingPermission = false;
 
-  // ✅ Gold color helper - pulls from your app theme
   Color _goldColor(BuildContext context) => Theme.of(context).colorScheme.primary;
-
-  // ✅ Black color for dark accents
   Color _blackColor(BuildContext context) => const Color(0xFF111827);
 
   void _nextPage() {
@@ -81,10 +73,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     }
   }
 
-  Future<void> _handleEnableLocation() async {
+  Future<void> _handleLocationContinue() async {
     setState(() => _requestingPermission = true);
 
-    // ✅ Capture gold color before async gap
     final goldColor = _goldColor(context);
 
     final result = await LocationService.requestLocationPermission();
@@ -98,7 +89,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text(l10n.onboardingLocationEnabled),
-          backgroundColor: goldColor, // ✅ Changed from Colors.green to gold
+          backgroundColor: goldColor,
         ),
       );
     } else if (result.status == LocationPermissionStatus.permanentlyDenied) {
@@ -112,9 +103,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     await _completeOnboarding();
   }
 
-  Future<void> _handleSkipLocation() async {
-    await _completeOnboarding();
-  }
+  // ✅ REMOVED: _handleSkipLocation() — Apple requires users always
+  //    proceed to the system permission dialog; no skipping allowed.
 
   Future<void> _completeOnboarding() async {
     await OnboardingScreen.setOnboardingComplete();
@@ -138,7 +128,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             },
             child: Text(
               l10n.onboardingContinueWithoutLocation,
-              style: TextStyle(color: goldColor), // ✅ Gold accent
+              style: TextStyle(color: goldColor),
             ),
           ),
           ElevatedButton(
@@ -147,7 +137,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               await LocationService.openAppSettings();
             },
             style: ElevatedButton.styleFrom(
-              backgroundColor: goldColor, // ✅ Gold button
+              backgroundColor: goldColor,
               foregroundColor: Colors.black,
             ),
             child: Text(l10n.onboardingOpenSettings),
@@ -174,7 +164,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             },
             child: Text(
               l10n.onboardingContinueWithoutLocation,
-              style: TextStyle(color: goldColor), // ✅ Gold accent
+              style: TextStyle(color: goldColor),
             ),
           ),
           ElevatedButton(
@@ -183,7 +173,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               await LocationService.openLocationSettings();
             },
             style: ElevatedButton.styleFrom(
-              backgroundColor: goldColor, // ✅ Gold button
+              backgroundColor: goldColor,
               foregroundColor: Colors.black,
             ),
             child: Text(l10n.onboardingEnableLocationServices),
@@ -208,7 +198,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       body: SafeArea(
         child: Column(
           children: [
-            // Skip button (only on first 3 pages)
             if (_currentPage < 3)
               Align(
                 alignment: Alignment.topRight,
@@ -222,7 +211,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     ),
                     child: Text(
                       l10n.onboardingSkip,
-                      style: TextStyle(color: goldColor), // ✅ Gold skip text
+                      style: TextStyle(color: goldColor),
                     ),
                   ),
                 ),
@@ -230,7 +219,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             else
               const SizedBox(height: 56),
 
-            // Page content
             Expanded(
               child: PageView(
                 controller: _pageController,
@@ -244,7 +232,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               ),
             ),
 
-            // Page indicator — ✅ Gold active dot
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 16),
               child: Row(
@@ -257,8 +244,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     height: 8,
                     decoration: BoxDecoration(
                       color: _currentPage == index
-                          ? goldColor       // ✅ Gold active indicator
-                          : goldColor.withOpacity(0.25), // ✅ Faded gold inactive
+                          ? goldColor
+                          : goldColor.withOpacity(0.25),
                       borderRadius: BorderRadius.circular(4),
                     ),
                   );
@@ -266,7 +253,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               ),
             ),
 
-            // Navigation buttons
             Padding(
               padding: const EdgeInsets.fromLTRB(24, 0, 24, 24),
               child: _buildNavigationButtons(l10n),
@@ -277,22 +263,25 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     );
   }
 
+  // =====================================================
+  // ✅ FIX 1 & FIX 2 — Both Apple issues resolved here
+  // =====================================================
   Widget _buildNavigationButtons(AppLocalizations l10n) {
     final goldColor = _goldColor(context);
     final blackColor = _blackColor(context);
 
     if (_currentPage == 3) {
-      // Location page — special buttons
+      // ✅ Location page — single "Continue" button, NO skip button
       return Column(
         children: [
           SizedBox(
             width: double.infinity,
             child: ElevatedButton(
-              onPressed: _requestingPermission ? null : _handleEnableLocation,
+              onPressed: _requestingPermission ? null : _handleLocationContinue,
               style: ElevatedButton.styleFrom(
                 padding: const EdgeInsets.symmetric(vertical: 16),
-                backgroundColor: goldColor,      // ✅ Gold button
-                foregroundColor: blackColor,      // ✅ Black text on gold
+                backgroundColor: goldColor,
+                foregroundColor: blackColor,
                 disabledBackgroundColor: goldColor.withOpacity(0.4),
               ),
               child: _requestingPermission
@@ -301,11 +290,13 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       width: 20,
                       child: CircularProgressIndicator(
                         strokeWidth: 2,
-                        color: blackColor,  // ✅ Black spinner on gold
+                        color: blackColor,
                       ),
                     )
                   : Text(
-                      l10n.onboardingEnableLocation,
+                      // ✅ FIX 1: Changed from l10n.onboardingEnableLocation
+                      //    to neutral "Continue" / "Next" wording
+                      l10n.nextButton,
                       style: const TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w600,
@@ -313,19 +304,14 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     ),
             ),
           ),
-          const SizedBox(height: 12),
-          TextButton(
-            onPressed: _requestingPermission ? null : _handleEnableLocation,
-            child: Text(
-              l10n.onboardingSkipForNow,
-              style: TextStyle(color: Colors.grey[600]),
-            ),
-          ),
+          // ✅ FIX 2: REMOVED the "Skip for now" TextButton entirely.
+          //    Apple requires users always proceed to the system
+          //    permission dialog — no exit/bypass allowed.
         ],
       );
     }
 
-    // Other pages — Next/Back buttons
+    // Other pages — Next/Back buttons (unchanged)
     return Row(
       children: [
         if (_currentPage > 0)
@@ -334,8 +320,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               onPressed: _previousPage,
               style: OutlinedButton.styleFrom(
                 padding: const EdgeInsets.symmetric(vertical: 14),
-                side: BorderSide(color: goldColor),        // ✅ Gold border
-                foregroundColor: goldColor,                  // ✅ Gold text
+                side: BorderSide(color: goldColor),
+                foregroundColor: goldColor,
               ),
               child: Text(l10n.backButton),
             ),
@@ -346,8 +332,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             onPressed: _nextPage,
             style: ElevatedButton.styleFrom(
               padding: const EdgeInsets.symmetric(vertical: 14),
-              backgroundColor: goldColor,    // ✅ Gold button
-              foregroundColor: blackColor,    // ✅ Black text on gold
+              backgroundColor: goldColor,
+              foregroundColor: blackColor,
             ),
             child: Text(
               _currentPage == 0 ? l10n.onboardingGetStarted : l10n.nextButton,
@@ -360,13 +346,13 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   }
 
   // ============================================================
-  //  PAGE BUILDERS — All using gold color consistently
+  //  PAGE BUILDERS (unchanged)
   // ============================================================
 
   Widget _buildWelcomePage(AppLocalizations l10n) {
     return _OnboardingPage(
       icon: Icons.spa,
-      iconColor: _goldColor(context),   // ✅ Gold (was already primaryColor)
+      iconColor: _goldColor(context),
       title: l10n.onboardingWelcomeTitle,
       subtitle: l10n.onboardingWelcomeSubtitle,
       description: l10n.onboardingWelcomeDescription,
@@ -376,7 +362,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   Widget _buildCustomerPage(AppLocalizations l10n) {
     return _OnboardingPage(
       icon: Icons.calendar_today,
-      iconColor: _goldColor(context),   // ✅ Gold (was Colors.blue)
+      iconColor: _goldColor(context),
       title: l10n.onboardingCustomerTitle,
       subtitle: l10n.onboardingCustomerSubtitle,
       bulletPoints: [
@@ -391,7 +377,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   Widget _buildProviderPage(AppLocalizations l10n) {
     return _OnboardingPage(
       icon: Icons.work_outline,
-      iconColor: _goldColor(context),   // ✅ Gold (was Colors.green)
+      iconColor: _goldColor(context),
       title: l10n.onboardingProviderTitle,
       subtitle: l10n.onboardingProviderSubtitle,
       bulletPoints: [
@@ -412,7 +398,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const SizedBox(height: 40),
-          // ✅ Gold circle icon (was orange)
           Container(
             width: 100,
             height: 100,
@@ -445,13 +430,11 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 32),
-          // Benefits list — ✅ all gold
           _buildLocationBenefit(Icons.search, l10n.onboardingLocationBenefit1),
           _buildLocationBenefit(Icons.attach_money, l10n.onboardingLocationBenefit2),
           _buildLocationBenefit(Icons.people, l10n.onboardingLocationBenefit3),
           _buildLocationBenefit(Icons.navigation, l10n.onboardingLocationBenefit4),
           const SizedBox(height: 24),
-          // ✅ Privacy note — gold themed (was blue)
           Container(
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
@@ -488,7 +471,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       padding: const EdgeInsets.symmetric(vertical: 8),
       child: Row(
         children: [
-          // ✅ Gold benefit icon (was green)
           Container(
             width: 40,
             height: 40,
@@ -511,7 +493,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   }
 }
 
-/// Reusable onboarding page widget — ✅ No changes needed (iconColor is passed in)
 class _OnboardingPage extends StatelessWidget {
   final IconData icon;
   final Color iconColor;

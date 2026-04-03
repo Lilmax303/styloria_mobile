@@ -48,8 +48,8 @@
 
   "stateAndCityOptional": "ክልል እና ከተማ አማራጭ መስኮች ናቸው።",
 
-  "onboardingSkipForNow": "አሁን ዝለል",
-  "dobRequiredReason": "የዕድሜ ማረጋገጫ ያስፈልጋል። 18 ዓመት ወይም በላይ መሆን አለብዎ።",
+  "dateOfBirthOptional": "የልደት ቀን (አማራጭ)",
+  "dobOptionalReason": "የልደት ቀንዎ አማራጭ ነው። ከተሰጠ፣ አነስተኛውን የዕድሜ መስፈርት ማሟላትዎን ለማረጋገጥ ይረዳናል።",
   "countryRequiredReason": "የአካባቢ ምንዛሪ ለማወቅ እና ለቅርብ አቅራቢዎች ለማዛመድ ያስፈልጋል።",
 
   "previewBookNowLabel": "አሁን ይያዙ",

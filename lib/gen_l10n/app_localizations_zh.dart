@@ -130,10 +130,10 @@ class AppLocalizationsZh extends AppLocalizations {
   String get failedToDeleteAccount => '删除账户失败。请重试。';
 
   @override
-  String get onboardingSkipForNow => '暂时跳过';
+  String get dobOptionalReason => '您的出生日期为选填项。如果提供，将帮助我们验证您是否满足最低年龄要求。';
 
   @override
-  String get dobRequiredReason => '年龄验证所需。您必须年满18岁。';
+  String get dateOfBirthOptional => '出生日期（选填）';
 
   @override
   String get countryRequiredReason => '检测您的本地货币并与附近服务提供商匹配所需。';
@@ -168,6 +168,16 @@ class AppLocalizationsZh extends AppLocalizations {
   @override
   String get skipStateCityNote =>
       '您选择了跳过州/省和城市。您可以随时在个人资料设置中更新您的位置信息。注意：提供您的位置有助于我们更准确地为您匹配附近的服务提供商。';
+
+  @override
+  String get onboardingEnableLocationServices => '启用定位服务';
+
+  @override
+  String get onboardingLocationServicesOffTitle => '定位服务已禁用';
+
+  @override
+  String get onboardingLocationServicesOffMessage =>
+      '您设备上的定位服务已关闭。请在设备设置中启用它们以使用基于位置的功能。';
 
   @override
   String get previewTagline => '随需美容';
@@ -3153,9 +3163,6 @@ class AppLocalizationsZh extends AppLocalizations {
   String get onboardingMaybeLater => 'Maybe Later';
 
   @override
-  String get onboardingEnableLocation => 'Enable Location';
-
-  @override
   String get onboardingWelcomeTitle => 'Welcome to Styloria';
 
   @override
@@ -3244,16 +3251,6 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get onboardingOpenSettings => 'Open Settings';
-
-  @override
-  String get onboardingLocationServicesOffTitle => 'Location Services Disabled';
-
-  @override
-  String get onboardingLocationServicesOffMessage =>
-      'Your device\'s location services are turned off. Enable them to get the full Styloria experience.';
-
-  @override
-  String get onboardingEnableLocationServices => 'Enable Location Services';
 
   @override
   String get providerLocationRequiredTitle => 'Location Required';

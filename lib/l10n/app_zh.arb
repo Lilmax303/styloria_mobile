@@ -137,10 +137,14 @@
   "skipStateCitySubtitle": "这些字段是可选的",
   "skipStateCityNote": "您选择了跳过州/省和城市。您可以随时在个人资料设置中更新您的位置信息。注意：提供您的位置有助于我们更准确地为您匹配附近的服务提供商。",
 
+  "onboardingEnableLocationServices": "启用定位服务",
+  "onboardingLocationServicesOffTitle": "定位服务已禁用",
+  "onboardingLocationServicesOffMessage": "您设备上的定位服务已关闭。请在设备设置中启用它们以使用基于位置的功能。",
+
   "stateAndCityOptional": "州/省和城市为可选填写项。",
 
-  "onboardingSkipForNow": "暂时跳过",
-  "dobRequiredReason": "年龄验证所需。您必须年满18岁。",
+  "dobOptionalReason": "您的出生日期为选填项。如果提供，将帮助我们验证您是否满足最低年龄要求。",
+  "dateOfBirthOptional": "出生日期（选填）",
   "countryRequiredReason": "检测您的本地货币并与附近服务提供商匹配所需。",
 
   "locationConfirmed": "✓ 位置已确认：{country}",

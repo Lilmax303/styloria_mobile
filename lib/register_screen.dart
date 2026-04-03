@@ -33,6 +33,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
   String _completePhoneNumber = '';
 
+  // ✅ FIX: No longer pre-filled — DOB is optional
   DateTime? _selectedDate;
   String _selectedRole = 'user';
   bool _acceptedTerms = false;
@@ -56,18 +57,17 @@ class _RegisterScreenState extends State<RegisterScreen> {
   bool _locationDetectionAttempted = false;
   bool _userChangedCountry = false;
 
-  // Build sorted country list once
   late final List<String> _countryNames;
 
   @override
   void initState() {
     super.initState();
-    _selectedDate = DateTime.now().subtract(const Duration(days: 365 * 18));
+    // ✅ FIX: REMOVED the line that pre-filled _selectedDate
+    // _selectedDate = DateTime.now().subtract(const Duration(days: 365 * 18));
     _countryController.addListener(_syncPhoneCountryWithSelectedCountry);
     _countryController.addListener(_onCountryChanged);
     _detectLocationAndAutoFill();
 
-    // Build sorted country name list
     final names = phone_countries.countries.map((c) {
       final dynamic d = c;
       return d is Map
@@ -201,9 +201,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
         cName = (d['name'] ?? '').toString().trim().toLowerCase();
         cCode = (d['code'] ?? '').toString().trim().toUpperCase();
       } else {
-        // ignore: avoid_dynamic_calls
         cName = (d.name ?? '').toString().trim().toLowerCase();
-        // ignore: avoid_dynamic_calls
         cCode = (d.code ?? '').toString().trim().toUpperCase();
       }
       if (cName == name && cCode.isNotEmpty) return cCode;
@@ -275,10 +273,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
     final l10n = AppLocalizations.of(context);
     if (!_formKey.currentState!.validate()) return;
 
-    if (_selectedDate == null) {
-      setState(() => _error = l10n.pleaseSelectDob);
-      return;
-    }
+    // ✅ FIX: REMOVED the DOB null check — DOB is now optional
+    // Previously: if (_selectedDate == null) { ... return; }
+
     if (_countryController.text.isEmpty) {
       setState(() => _error = l10n.pleaseSelectCountry);
       return;
@@ -298,24 +295,34 @@ class _RegisterScreenState extends State<RegisterScreen> {
       _success = null;
     });
 
-    final dateOfBirth = _selectedDate!;
-    final now = DateTime.now();
-    int age = now.year - dateOfBirth.year;
-    if (now.month < dateOfBirth.month ||
-        (now.month == dateOfBirth.month && now.day < dateOfBirth.day)) {
-      age--;
-    }
+    // ✅ FIX: Only validate age IF the user voluntarily provided a DOB
+    if (_selectedDate != null) {
+      final dateOfBirth = _selectedDate!;
+      final now = DateTime.now();
+      int age = now.year - dateOfBirth.year;
+      if (now.month < dateOfBirth.month ||
+          (now.month == dateOfBirth.month && now.day < dateOfBirth.day)) {
+        age--;
+      }
 
-    if (age < 18) {
-      setState(() {
-        _loading = false;
-        _error = l10n.mustBeAtLeast18;
-      });
-      return;
+      if (age < 18) {
+        setState(() {
+          _loading = false;
+          _error = l10n.mustBeAtLeast18;
+        });
+        return;
+      }
     }
 
     final email = _emailController.text.trim();
     final role = _selectedRole;
+
+    // ✅ FIX: Build DOB string only if provided, otherwise empty string
+    String dateOfBirthStr = '';
+    if (_selectedDate != null) {
+      dateOfBirthStr =
+          '${_selectedDate!.year}-${_selectedDate!.month.toString().padLeft(2, '0')}-${_selectedDate!.day.toString().padLeft(2, '0')}';
+    }
 
     final errorMessage = await ApiClient.registerUser(
       username: _usernameController.text.trim(),
@@ -329,8 +336,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       acceptedTerms: _acceptedTerms,
       password: _passwordController.text,
       passwordConfirm: _passwordConfirmController.text,
-      dateOfBirth:
-          '${dateOfBirth.year}-${dateOfBirth.month.toString().padLeft(2, '0')}-${dateOfBirth.day.toString().padLeft(2, '0')}',
+      dateOfBirth: dateOfBirthStr, // ✅ Empty string if not provided
       detectedCountry: _detectedCountry,
       countryMismatch: _userChangedCountry,
       referralCode: _referralCodeController.text.trim(),
@@ -416,50 +422,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           ),
                           const SizedBox(height: 20),
 
-                          // 18+ Notice
-                          Container(
-                            padding: const EdgeInsets.all(12),
-                            decoration: BoxDecoration(
-                              color: Colors.amber.shade50,
-                              borderRadius: BorderRadius.circular(12),
-                              border: Border.all(
-                                  color: Colors.amber.shade700, width: 1.5),
-                            ),
-                            child: Row(
-                              children: [
-                                Icon(Icons.verified_user,
-                                    color: Colors.amber.shade800, size: 24),
-                                const SizedBox(width: 12),
-                                Expanded(
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        l10n.ageRestrictionTitle,
-                                        style: TextStyle(
-                                          color: Colors.amber.shade900,
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 15,
-                                        ),
-                                      ),
-                                      const SizedBox(height: 2),
-                                      Text(
-                                        l10n.ageRestrictionBody,
-                                        style: TextStyle(
-                                          color: Colors.amber.shade800,
-                                          fontSize: 12,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          const SizedBox(height: 16),
-
-                          // Error / Success banners
                           if (_error != null)
                             Container(
                               padding: const EdgeInsets.all(12),
@@ -489,7 +451,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           if (_error != null || _success != null)
                             const SizedBox(height: 16),
 
-                          // Role selector
                           Text(l10n.iWantTo,
                               style: const TextStyle(
                                   fontWeight: FontWeight.bold)),
@@ -521,7 +482,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                   fontWeight: FontWeight.bold)),
                           const SizedBox(height: 12),
 
-                          // First / Last name
                           Row(
                             children: [
                               Expanded(
@@ -555,8 +515,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           ),
                           const SizedBox(height: 12),
 
-                          // Date of Birth
-                          Text(l10n.dateOfBirth,
+                          // ✅ FIX: Changed label to "Date of Birth (Optional)"
+                          Text(l10n.dateOfBirthOptional,
                               style: const TextStyle(
                                   fontWeight: FontWeight.bold)),
                           const SizedBox(height: 4),
@@ -592,8 +552,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             ),
                           ),
                           const SizedBox(height: 6),
+                          // ✅ FIX: Changed from dobRequiredReason to dobOptionalReason
                           Text(
-                            l10n.dobRequiredReason,
+                            l10n.dobOptionalReason,
                             style: TextStyle(
                               fontSize: 11,
                               color: cs.onSurfaceVariant,
@@ -601,7 +562,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             ),
                           ),
 
-                          // Under-18 warning
+                          // Under-18 warning — still shown if user voluntarily picks a date
                           if (_selectedDate != null) ...[
                             const SizedBox(height: 6),
                             Builder(builder: (context) {
@@ -646,7 +607,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           ],
                           const SizedBox(height: 12),
 
-                          // Location detecting spinner
                           if (_detectingLocation)
                             Container(
                               padding: const EdgeInsets.all(12),
@@ -675,7 +635,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               ),
                             ),
 
-                          // Detected country hint
                           if (_detectedCountry != null &&
                               !_detectingLocation &&
                               _countryController.text.isEmpty)
@@ -706,7 +665,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               ),
                             ),
 
-                          // Location confirmed
                           if (_detectedCountry != null &&
                               !_detectingLocation &&
                               _countryController.text.isNotEmpty &&
@@ -738,7 +696,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               ),
                             ),
 
-                          // Country mismatch warning
                           if (_userChangedCountry && _detectedCountry != null)
                             Container(
                               padding: const EdgeInsets.all(12),
@@ -784,7 +741,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               ),
                             ),
 
-                          // Country required reason
                           Container(
                             padding: const EdgeInsets.all(10),
                             margin: const EdgeInsets.only(bottom: 8),
@@ -811,7 +767,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             ),
                           ),
 
-                          // ── COUNTRY DROPDOWN (country only — state/city removed)
                           DropdownButtonFormField<String>(
                             value: _countryController.text.isEmpty
                                 ? null
@@ -847,7 +802,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
                           const SizedBox(height: 12),
 
-                          // Phone number
                           Text(l10n.phoneNumber,
                               style: const TextStyle(
                                   fontWeight: FontWeight.bold)),
@@ -871,7 +825,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             },
                           ),
 
-                          // Referral code
                           const SizedBox(height: 20),
                           const Text(
                             'Referral Code (Optional)',
@@ -975,12 +928,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               ),
                             ),
 
-                          // Account information
                           const SizedBox(height: 12),
                           Text(l10n.accountInformation,
                               style: const TextStyle(
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold)),
+
                           const SizedBox(height: 12),
 
                           TextFormField(
@@ -1014,7 +967,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             },
                           ),
 
-                          // Security
                           const SizedBox(height: 12),
                           Text(l10n.security,
                               style: const TextStyle(
@@ -1083,7 +1035,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           ),
                           const SizedBox(height: 12),
 
-                          // Terms
                           Row(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [

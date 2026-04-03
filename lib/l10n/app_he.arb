@@ -48,8 +48,8 @@
 
   "stateAndCityOptional": "מדינה ועיר הם שדות אופציונליים.",
 
-  "onboardingSkipForNow": "דלג לעת עתה",
-  "dobRequiredReason": "נדרש לאימות גיל. עליך להיות בן 18 ומעלה.",
+  "dateOfBirthOptional": "תאריך לידה (אופציונלי)",
+  "dobOptionalReason": "תאריך הלידה שלך הוא אופציונלי. אם יסופק, הוא עוזר לנו לוודא שאתה עומד בדרישת הגיל המינימלית.",
   "countryRequiredReason": "נדרש לזיהוי המטבע המקומי שלך והתאמה לספקים קרובים.",
 
   "previewBookNowLabel": "הזמן עכשיו",

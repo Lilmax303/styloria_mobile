@@ -46,6 +46,10 @@
   "skipStateCitySubtitle": "Hierdie velde is opsioneel",
   "skipStateCityNote": "Jy het gekies om Staat en Stad oor te slaan. Jy kan jou liggingbesonderhede altyd later in jou profielinstellings opdateer. Let wel: die verskaffing van jou ligging help ons om jou akkurater met nabygelegen diensverskaffers te verbind.",
 
+  "onboardingEnableLocationServices": "Aktiveer Liggingdienste",
+  "onboardingLocationServicesOffTitle": "Liggingdienste Gedeaktiveer",
+  "onboardingLocationServicesOffMessage": "Liggingdienste is op jou toestel afgeskakel. Aktiveer dit asseblief in jou toestelinstellings om ligginggebaseerde kenmerke te gebruik.",
+
   "stateAndCityOptional": "Staat en stad is opsionele velde.",
 
   "previewFeatureBrowse": "Ontdek skoonheidsdienste vir elke behoefte",
@@ -181,6 +185,10 @@
       "amount": {}
     }
   },
+
+  "dateOfBirthOptional": "Geboortedatum (Opsioneel)",
+  "dobOptionalReason": "Jou geboortedatum is opsioneel. Indien verskaf, help dit ons om te verifieer dat jy aan die minimum ouderdomsvereiste voldoen",
+
   "bookingCancelledSuccessfully": "Bespreking suksesvol gekanselleer.",
   "failedToConfirmCompletion": "Kon nie voltooiing bevestig nie. Probeer asseblief weer.",
   "bothSidesConfirmedCompletedPayoutReleased": "Albei kante het bevestig. Bespreking is as voltooi gemerk en uitbetaling is vrygestel.",
