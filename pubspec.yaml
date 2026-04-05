@@ -57,7 +57,7 @@ dependencies:
   image_picker: ^1.0.4   # For profile picture upload
   video_player: ^2.9.1
   chewie: ^1.8.5
-  flutter_stripe: ^12.1.1 # For payments
+  flutter_stripe: ^12.5.0 # For payments
   file_picker: ^10.3.8
   flutterwave_standard: ^1.1.0
 
