@@ -99,22 +99,28 @@
 	<!-- LOCATION PERMISSIONS -->
 	<!-- ================================== -->
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Styloria needs your location to match you with nearby beauty service providers and to set your service delivery address.</string>
+	<string>Styloria uses your location while you are using the app to match you with nearby beauty service providers and set your service delivery address.</string>
 
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Styloria needs your location to keep your availability updated for nearby service requests and provide real-time location-based matching.</string>
 
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Styloria needs your location to match you with nearby beauty service providers, update your availability for service requests, and provide real-time location-based services.</string>
+	<string>Styloria uses your location even when the app is not open to update availability, improve nearby service matching, and support real-time location-based services.</string>
 
 	<!-- ================================== -->
 	<!-- CAMERA & PHOTO PERMISSIONS -->
 	<!-- ================================== -->
 	<key>NSCameraUsageDescription</key>
-	<string>Styloria needs camera access to capture your verification selfie and ID documents for identity verification.</string>
+	<string>Styloria uses your camera to capture your verification selfie and ID documents for identity verification.</string>
 
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Styloria needs access to your photo library to upload your profile picture, portfolio photos and videos, and identity verification documents.</string>
+
+        <!-- ================================== -->
+ 	<!-- NOTIFICATION-RELATED BACKGROUND MODE -->
+ 	<!-- ================================== -->
+ 	<key>UIBackgroundModes</key>
+ 	<array>
+ 		<string>remote-notification</string>
+ 	</array>
 
 </dict>
 </plist>

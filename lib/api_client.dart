@@ -1560,6 +1560,30 @@ class ApiClient {
   }
 
 
+  // ---------- NEW USER PROMO & UNIFIED DISCOUNTS ----------
+
+  /// Get new user promo status
+  static Future<Map<String, dynamic>?> getNewUserPromoStatus() async {
+    final response = await _authorizedRequest('GET', '/api/promotions/new_user_status/');
+    if (response.statusCode == 200) {
+      return jsonDecode(response.body) as Map<String, dynamic>;
+    }
+    return null;
+  }
+
+  /// Get unified discount preview for a booking (referral + new user promo)
+  static Future<Map<String, dynamic>?> getDiscountPreview(int serviceRequestId) async {
+    final response = await _authorizedRequest(
+      'GET',
+      '/api/discounts/preview/$serviceRequestId/',
+    );
+    if (response.statusCode == 200) {
+      return jsonDecode(response.body) as Map<String, dynamic>;
+    }
+    return null;
+  }
+
+
   // ---------- TIPS ----------
   // POST /api/service_requests/<id>/tip/create_payment_intent/
 

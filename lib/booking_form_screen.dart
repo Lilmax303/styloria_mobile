@@ -97,6 +97,11 @@ class _BookingFormScreenState extends State<BookingFormScreen> {
   double? _finalPrice;
   int _creditsRemaining = 0;
 
+  bool _hasNewUserDiscount = false;
+  double _newUserDiscountAmount = 0.0;
+  int _newUserPromoMonthsRemaining = 0;
+  double _totalDiscountAmount = 0.0;
+
   @override
   void initState() {
     super.initState();
@@ -590,24 +595,66 @@ class _BookingFormScreenState extends State<BookingFormScreen> {
     }
   }
 
-  /// Recalculate referral discount based on currently selected price
-  void _recalculateReferralDiscount() {
-    if (_selectedOffer == null || _creditsRemaining <= 0) {
+  /// Recalculate all discounts based on currently selected price
+  void _recalculateDiscounts() {
+    if (_selectedOffer == null) {
       setState(() {
         _hasReferralDiscount = false;
+        _hasNewUserDiscount = false;
         _discountAmount = 0.0;
+        _newUserDiscountAmount = 0.0;
+        _totalDiscountAmount = 0.0;
         _finalPrice = _selectedOffer;
       });
       return;
     }
-    
-    final discount = _selectedOffer! * 0.07; // 7% discount
-    final discountedPrice = _selectedOffer! - discount;
-    
+
+    final base = _selectedOffer!;
+    double referralAmt = 0.0;
+    double newUserAmt = 0.0;
+
+    // Referral: 7%
+    if (_creditsRemaining > 0) {
+      referralAmt = base * 0.07;
+    }
+
+    // New user promo: 5%
+    if (_newUserPromoMonthsRemaining > 0) {
+      newUserAmt = base * 0.05;
+    }
+
+    // Cap at platform share (15%)
+    double total = referralAmt + newUserAmt;
+    final platformShare = base * 0.15;
+    if (total > platformShare && total > 0) {
+      final ratio = platformShare / total;
+      referralAmt = referralAmt * ratio;
+      newUserAmt = newUserAmt * ratio;
+      total = referralAmt + newUserAmt;
+    }
+
+    final finalP = base - total;
+
+    if (finalP <= 0) {
+      // Safety — shouldn't happen, but just in case
+      setState(() {
+        _hasReferralDiscount = false;
+        _hasNewUserDiscount = false;
+        _discountAmount = 0.0;
+        _newUserDiscountAmount = 0.0;
+        _totalDiscountAmount = 0.0;
+        _finalPrice = base;
+      });
+      return;
+    }
+
     setState(() {
-      _hasReferralDiscount = true;
-      _discountAmount = discount;
-      _finalPrice = discountedPrice;
+      _hasReferralDiscount = referralAmt > 0;
+      _discountAmount = referralAmt;
+      _hasNewUserDiscount = newUserAmt > 0;
+      _newUserDiscountAmount = newUserAmt;
+      _totalDiscountAmount = total;
+      _finalPrice = finalP;
     });
   }
 
@@ -754,9 +801,14 @@ class _BookingFormScreenState extends State<BookingFormScreen> {
      
      final credits = userData?['referral_credits'] ?? 0;
      _creditsRemaining = credits;
+
+     // Fetch new user promo status
+     final promoStatus = await ApiClient.getNewUserPromoStatus();
+     if (!mounted) return;
+     _newUserPromoMonthsRemaining = promoStatus?['months_remaining'] ?? 0;
      
-     // Recalculate discount for the selected tier
-     _recalculateReferralDiscount();
+     // Recalculate all discounts for the selected tier
+     _recalculateDiscounts();
 
     } else {
       // fallback
@@ -1219,7 +1271,7 @@ class _BookingFormScreenState extends State<BookingFormScreen> {
             _selectedOffer = price;
           });
           // Recalculate discount for new tier
-          _recalculateReferralDiscount();
+          _recalculateDiscounts();
         },
         borderRadius: BorderRadius.circular(16),
         child: Padding(
@@ -1239,7 +1291,7 @@ class _BookingFormScreenState extends State<BookingFormScreen> {
                         _selectedOffer = price;
                       });
                       // Recalculate discount for new tier
-                      _recalculateReferralDiscount();
+                      _recalculateDiscounts();
                     },
                     activeColor: accentColor,
                   ),
@@ -1766,8 +1818,35 @@ class _BookingFormScreenState extends State<BookingFormScreen> {
                         ),
                       ),
 
-                    if (_hasReferralDiscount) ...[
+                    if (_hasNewUserDiscount) ...[
                       const SizedBox(height: 12),
+                      Container(
+                        padding: const EdgeInsets.all(12),
+                        decoration: BoxDecoration(
+                          color: Colors.blue.withOpacity(0.1),
+                          borderRadius: BorderRadius.circular(8),
+                          border: Border.all(color: Colors.blue),
+                        ),
+                        child: Row(
+                          children: [
+                            const Icon(Icons.celebration, color: Colors.blue),
+                            const SizedBox(width: 8),
+                            Expanded(
+                              child: Text(
+                                '🎉 New User Discount: -${_money(_newUserDiscountAmount)} (5% off — ${_newUserPromoMonthsRemaining} month${_newUserPromoMonthsRemaining == 1 ? "" : "s"} left)',
+                                style: const TextStyle(
+                                  color: Colors.blue,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 13,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                    if (_hasReferralDiscount) ...[
+                      const SizedBox(height: 8),
                       Container(
                         padding: const EdgeInsets.all(12),
                         decoration: BoxDecoration(
@@ -1781,10 +1860,11 @@ class _BookingFormScreenState extends State<BookingFormScreen> {
                             const SizedBox(width: 8),
                             Expanded(
                               child: Text(
-                                l10n.referralDiscountApplied(_money(_discountAmount)),
+                                'Referral Discount: -${_money(_discountAmount)} (7% off)',
                                 style: const TextStyle(
                                   color: Colors.green,
                                   fontWeight: FontWeight.bold,
+                                  fontSize: 13,
                                 ),
                               ),
                             ),
@@ -1793,8 +1873,63 @@ class _BookingFormScreenState extends State<BookingFormScreen> {
                       ),
                       const SizedBox(height: 4),
                       Text(
-                        l10n.creditsRemainingInfo(_creditsRemaining),
+                        '${_creditsRemaining} referral credit${_creditsRemaining == 1 ? "" : "s"} remaining',
                         style: TextStyle(fontSize: 12, color: Colors.grey[600]),
+                      ),
+                    ],
+                    if (_totalDiscountAmount > 0) ...[
+                      const SizedBox(height: 12),
+                      Container(
+                        padding: const EdgeInsets.all(14),
+                        decoration: BoxDecoration(
+                          color: cs.primary.withOpacity(0.08),
+                          borderRadius: BorderRadius.circular(12),
+                          border: Border.all(color: cs.primary, width: 1.5),
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text('Original Price:', style: TextStyle(color: cs.onSurfaceVariant)),
+                                Text(
+                                  _money(_selectedOffer),
+                                  style: TextStyle(
+                                    decoration: TextDecoration.lineThrough,
+                                    color: cs.onSurfaceVariant,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(height: 4),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text('Total Savings:', style: TextStyle(color: Colors.green[700], fontWeight: FontWeight.w600)),
+                                Text(
+                                  '-${_money(_totalDiscountAmount)}',
+                                  style: TextStyle(color: Colors.green[700], fontWeight: FontWeight.bold),
+                                ),
+                              ],
+                            ),
+                            const Divider(height: 16),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text('You Pay:', style: TextStyle(fontWeight: FontWeight.w800, fontSize: 16)),
+                                Text(
+                                  _money(_finalPrice),
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w900,
+                                    fontSize: 18,
+                                    color: cs.primary,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
                     ],
 
